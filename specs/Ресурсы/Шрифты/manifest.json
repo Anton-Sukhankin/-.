@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "receivedOn": "2026-11-02",
+  "source": "Files supplied by the user for frontend handoff",
+  "sourceArchiveName": "шрифт (установить в первую очередь)-20260317T094232Z-3-001.zip",
+  "sourceArchiveSha256": "850c4e4c3b572ec554bc9b65f89792bfe14861e09db4af3b5fa526975bd76653",
+  "sourceBytesPreserved": true,
+  "fonts": [
+    {
+      "path": "CoFoSans-Regular.otf",
+      "family": "CoFo Sans",
+      "style": "Regular",
+      "weight": 400,
+      "fontStyle": "normal",
+      "format": "OpenType-CFF",
+      "role": "approved-ui-font",
+      "sizeBytes": 100556,
+      "sha256": "052bad1dcead839289b2dcde6bf539f798bdfe9865356923613bfed3d265cccb",
+      "postScriptName": "CoFoSans-Regular",
+      "sourceArchiveMember": "шрифт (установить в первую очередь)/CoFoSans-Regular.otf",
+      "licenseDescription": [
+        "The Contrast Foundry Font Software is protected under domestic and international trademark and copyright law."
+      ],
+      "licenseURL": [
+        "https://contrastfoundry.com/licensing"
+      ]
+    },
+    {
+      "path": "Дополнительные/CoFoRobert-MediumItalic.ttf",
+      "family": "CoFo Robert",
+      "style": "Medium Italic",
+      "weight": 500,
+      "fontStyle": "italic",
+      "format": "TrueType",
+      "role": "additional-supplied-font-not-ui-reference",
+      "sizeBytes": 465236,
+      "sha256": "763068e8ced05ff25e2ccc20f0d6caa645cf76db31e83a9dee6e31b27fd7e101",
+      "postScriptName": "CoFoRobert-MediumItalic",
+      "sourceArchiveMember": "шрифт (установить в первую очередь)/CoFoRobert-MediumItalic.ttf",
+      "licenseDescription": [
+        "The Contrast Foundry Font Software is protected under domestic and international trademark and copyright law."
+      ],
+      "licenseURL": [
+        "https://contrastfoundry.com/licensing"
+      ]
+    },
+    {
+      "path": "CoFoSans-Medium.otf",
+      "family": "CoFo Sans",
+      "style": "Medium",
+      "weight": 500,
+      "fontStyle": "normal",
+      "format": "OpenType-CFF",
+      "role": "approved-ui-font",
+      "sizeBytes": 100884,
+      "sha256": "115f86a5fdb85d003a0425ac197035cd68aa28b8a68c718aab93dea226590586",
+      "postScriptName": "CoFoSans-Medium",
+      "sourceArchiveMember": "шрифт (установить в первую очередь)/CoFoSans-Medium.otf",
+      "licenseDescription": [
+        "The Contrast Foundry Font Software is protected under domestic and international trademark and copyright law."
+      ],
+      "licenseURL": [
+        "https://contrastfoundry.com/licensing"
+      ]
+    }
+  ]
+}

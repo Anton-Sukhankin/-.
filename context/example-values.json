@@ -1,0 +1,722 @@
+{
+  "formatVersion": 1,
+  "owner": "Состав карточек.md",
+  "status": "source-backed historical examples with explicit unknowns",
+  "date": "2026-11-02",
+  "purpose": "Данные наблюдаемых примеров для A/B; это не целевая обязательность, не API/DTO и не полный seed продукта.",
+  "policy": [
+    "Значения читаются с названного кадра; null — неизвестно/неразборчиво, не пустота продукта.",
+    "Усечение не раскрывается догадкой. Фото и имена не берутся из placeholders C.",
+    "Графики каждого отчёта доступны только на его строке исходного изображения. Точные временные ряды и vector geometry не извлечены; чужой sparkline переносить запрещено.",
+    "Знаки check/alert описывают форму/наличие и цвет, не утверждённую семантику.",
+    "Короткие инициальные сокращения не раскрывают полного ФИО без источника того же объекта.",
+    "Числа и даты — исторический пример, не текущие сведения сервиса."
+  ],
+  "reports": [
+    {
+      "name": "Сводный отчёт Гостеприимства",
+      "source": {
+        "path": "../work/catalog-screen-analysis-2026-10-19/frames/t0040.png",
+        "time": "00:40",
+        "rowFromTop": 1
+      },
+      "depth": "С: обычная таблица отчётов, не поисковый R02 и не целевая mini",
+      "values": {
+        "platform": "Visiology",
+        "domain": "Гостеприимство",
+        "masterSystem": "Домиленд",
+        "ownerAbbreviation": "Ручнов К.",
+        "ownerInitials": "РК",
+        "MAU": 146,
+        "MAUDelta": "+421%",
+        "lastViewed": "1 дн. назад"
+      },
+      "visual": {
+        "circularCheck": {
+          "visible": true,
+          "color": "green",
+          "businessMeaning": "не установлено"
+        },
+        "alert": {
+          "visible": true,
+          "color": "red",
+          "businessMeaning": "не установлено"
+        },
+        "sparkline": {
+          "sourceOnly": true,
+          "series": null,
+          "geometryTranscribed": false,
+          "reuseFromAnotherReport": false
+        }
+      },
+      "unknowns": [
+        "Период/формула MAU, база процента и даты графика не установлены."
+      ]
+    },
+    {
+      "name": "Мотивация сотрудников",
+      "source": {
+        "path": "../work/catalog-screen-analysis-2026-10-19/frames/t0040.png",
+        "time": "00:40",
+        "rowFromTop": 3
+      },
+      "depth": "С: обычная таблица отчётов, не поисковый R02 и не целевая mini",
+      "values": {
+        "platform": "Visiology",
+        "domain": "Гостеприимство",
+        "masterSystem": "Домиленд",
+        "ownerAbbreviation": null,
+        "ownerInitials": "АИ",
+        "MAU": 91,
+        "MAUDelta": "+379%",
+        "lastViewed": "1 дн. назад"
+      },
+      "visual": {
+        "circularCheck": {
+          "visible": true,
+          "color": "green",
+          "businessMeaning": "не установлено"
+        },
+        "alert": {
+          "visible": true,
+          "color": "red",
+          "businessMeaning": "не установлено"
+        },
+        "sparkline": {
+          "sourceOnly": true,
+          "series": null,
+          "geometryTranscribed": false,
+          "reuseFromAnotherReport": false
+        }
+      },
+      "unknowns": [
+        "Сокращение владельца недостаточно надёжно прочитано побуквенно; не заполнять из C placeholders или другого отчёта.",
+        "Период/формула MAU, база процента и даты графика не установлены."
+      ]
+    },
+    {
+      "name": "Отчет по дебиторской задолженности",
+      "source": {
+        "path": "../work/catalog-screen-analysis-2026-10-19/frames/t0040.png",
+        "time": "00:40",
+        "rowFromTop": 9
+      },
+      "depth": "С: обычная таблица отчётов, не поисковый R02 и не целевая mini",
+      "values": {
+        "platform": "Visiology",
+        "domain": "Гостеприимство",
+        "masterSystem": "1С ЖКХ",
+        "ownerAbbreviation": null,
+        "ownerInitials": null,
+        "MAU": 31,
+        "MAUDelta": "+675%",
+        "lastViewed": "1 дн. назад"
+      },
+      "visual": {
+        "circularCheck": {
+          "visible": true,
+          "color": "green",
+          "businessMeaning": "не установлено"
+        },
+        "alert": {
+          "visible": false,
+          "color": null,
+          "businessMeaning": "не установлено"
+        },
+        "sparkline": {
+          "sourceOnly": true,
+          "series": null,
+          "geometryTranscribed": false,
+          "reuseFromAnotherReport": false
+        }
+      },
+      "unknowns": [
+        "Сокращение владельца недостаточно надёжно прочитано побуквенно; не заполнять из C placeholders или другого отчёта.",
+        "Инициалы аватара не подтверждены побуквенно.",
+        "Период/формула MAU, база процента и даты графика не установлены."
+      ]
+    },
+    {
+      "name": "УК Москва/СПБ",
+      "source": {
+        "path": "../work/catalog-screen-analysis-2026-10-19/frames/t0040.png",
+        "time": "00:40",
+        "rowFromTop": 10
+      },
+      "depth": "С: обычная таблица отчётов, не поисковый R02 и не целевая mini",
+      "values": {
+        "platform": "Visiology",
+        "domain": "Гостеприимство",
+        "masterSystem": "Домиленд",
+        "ownerAbbreviation": null,
+        "ownerInitials": null,
+        "MAU": 30,
+        "MAUDelta": "+275%",
+        "lastViewed": "1 дн. назад"
+      },
+      "visual": {
+        "circularCheck": {
+          "visible": true,
+          "color": "green",
+          "businessMeaning": "не установлено"
+        },
+        "alert": {
+          "visible": true,
+          "color": "red",
+          "businessMeaning": "не установлено"
+        },
+        "sparkline": {
+          "sourceOnly": true,
+          "series": null,
+          "geometryTranscribed": false,
+          "reuseFromAnotherReport": false
+        }
+      },
+      "unknowns": [
+        "Сокращение владельца недостаточно надёжно прочитано побуквенно; не заполнять из C placeholders или другого отчёта.",
+        "Инициалы аватара не подтверждены побуквенно.",
+        "Период/формула MAU, база процента и даты графика не установлены."
+      ]
+    },
+    {
+      "name": "План-Факт продажи",
+      "source": {
+        "path": "../work/catalog-screen-analysis-2026-10-19/frames/t0040.png",
+        "time": "00:40",
+        "rowFromTop": 2
+      },
+      "depth": "С: обычная таблица отчётов, не поисковый R02 и не целевая mini",
+      "values": {
+        "platform": "Visiology",
+        "domain": null,
+        "masterSystem": "CRM (CRM Dynamics)",
+        "ownerAbbreviation": "Головин Ю.",
+        "ownerInitials": null,
+        "MAU": 98,
+        "MAUDelta": "−6%",
+        "lastViewed": "1 дн. назад"
+      },
+      "visual": {
+        "circularCheck": {
+          "visible": true,
+          "color": "green",
+          "businessMeaning": "не установлено"
+        },
+        "alert": {
+          "visible": false,
+          "color": null,
+          "businessMeaning": "не установлено"
+        },
+        "sparkline": {
+          "sourceOnly": true,
+          "series": null,
+          "geometryTranscribed": false,
+          "reuseFromAnotherReport": false
+        }
+      },
+      "unknowns": [
+        "Инициалы аватара не подтверждены побуквенно.",
+        "Домен усечён: полный текст не восстановлен.",
+        "Период/формула MAU, база процента и даты графика не установлены."
+      ],
+      "visibleFragments": {
+        "domain": "Продажи и марке…"
+      },
+      "literalMinusGlyphNote": "Визуально отрицательное -6%; типографика минуса не является проверкой байтов исходного текста."
+    }
+  ],
+  "metric": {
+    "name": "CSAT менеджер",
+    "source": {
+      "path": "../work/catalog-screen-analysis-2026-10-19/frames/t0044.png",
+      "time": "00:44",
+      "rowFromTop": 2
+    },
+    "depth": "С: карточка списка",
+    "values": {
+      "type": "Показатель",
+      "status": "Черновик",
+      "domain": "Гостеприимство",
+      "description": "Показатель удовлетворенности клиентов работой менеджера при передаче квартиры. Используется для мониторинга качества клиентского сервиса в процессе заселения.",
+      "unitVisible": "—",
+      "updated": "09.07.2026"
+    },
+    "unknowns": [
+      "Прочерк единицы — не нулевая единица. Семантика пропуска не установлена.",
+      "Приравнивание Показателя к целевой Метрике требует решения.",
+      "Полная карточка, отдельные методология и формула не показаны."
+    ]
+  },
+  "sourceCard": {
+    "name": "reportcrm20.dbo.dimdate",
+    "variant": "S01",
+    "source": {
+      "path": "../work/catalog-screen-analysis-2026-10-19/frames/t0052.png",
+      "time": "00:52",
+      "rowFromTop": 1
+    },
+    "depth": "С: карточка списка",
+    "values": {
+      "technicalName": "reportcrm20.dbo.dimdate",
+      "storageContext": "SQL Server · Без слоя · Reportcrm20",
+      "platform": "SQL Server",
+      "layerVisible": "Без слоя",
+      "thirdContextFragment": "Reportcrm20",
+      "descriptionVisible": "Описание отсутствует",
+      "objectType": "Table",
+      "columns": 34,
+      "usedInAnalytics": true,
+      "domain": "Продажи и маркетинг",
+      "responsibleAnalyst": "Лапова Юлия Владимировна",
+      "reports": 84,
+      "metrics": 0,
+      "lineage": 0,
+      "MCP": 0,
+      "eyeCount": 22
+    },
+    "unknowns": [
+      "Reportcrm20 — третий неподписанный фрагмент; не подтверждён как отдельное поле БД/ИС.",
+      "Ответственный аналитик не заменяется владельцем/разработчиком.",
+      "Глаз22 — отдельный счётчик, не 22 связи; формула/период неизвестны.",
+      "Active, DataHub-синхронизация и технический владелец из UI-06 относятся к другому источнику, не подставлять их в S01."
+    ]
+  },
+  "reportPassport": {
+    "name": "Сводный отчёт Гостеприимства",
+    "source": {
+      "path": "../work/catalog-screen-analysis-2026-10-19/frames/t0672.png",
+      "time": "11:12",
+      "continuation": "../work/catalog-screen-analysis-2026-10-19/frames/t0674.png",
+      "descriptionInspectionCrop": "../work/figma-registry-audit-2026-10-19/source-media/report-description-text.png"
+    },
+    "depth": "Ф: UI-05",
+    "values": {
+      "id": 562,
+      "domain": "Гостеприимство",
+      "title": "Сводный отчёт Гостеприимства",
+      "subtitle": "Отчет по заявкам Домиленда",
+      "descriptionProvenance": "Сгенерировано ИИ",
+      "descriptionExcerpt": "Отчет предназначен для мониторинга эффективности работы Блока Гостеприимства, контроля качества клиентского сервиса и оперативности обработки заявок в жилых комплексах.",
+      "descriptionExcerptOnly": false,
+      "descriptionFull": "Отчет предназначен для мониторинга эффективности работы Блока Гостеприимства, контроля качества клиентского сервиса и оперативности обработки заявок в жилых комплексах. Ключевыми показателями являются CSAT, уровень оперативности, а также количество и структура заявок по статусам: созданные, выполненные, отмененные, гарантийные, приостановленные и переоткрытые. Аналитика охватывает динамику показателей в ежедневном и ежемесячном разрезах, сравнение эффективности подразделений и исполнителей, а также анализ распределения обращений по категориям услуг. Данные детализируются по регионам, проектам (ЖК), подразделениям, ответственным сотрудникам и отдельным заявкам. Пользователь может исследовать причины отклонений через анализ текстовых комментариев и отзывов клиентов, сгруппированных по категориям. Доступна генерация аналитической справки по выбранному периоду и проекту для оперативного информирования.",
+      "owner": "Ручнов Константин Михайлович",
+      "ownerJobTitle": "Директор по клиентскому сервису",
+      "analyst": "Губина Екатерина Игоревна",
+      "analystJobTitle": "Бизнес-аналитик",
+      "refreshSchedule": "Ежедневно, в 5:00",
+      "platform": "Visiology",
+      "masterSystem": "Домиленд",
+      "reportStatus": "Стабильный отчёт",
+      "sensitiveSources": "Нет",
+      "checkedBy": "Губина Екатерина Игоревна",
+      "checkerJobTitle": "Бизнес-аналитик",
+      "checkedAt": "24.07.2026, 15:02",
+      "slidePosition": "1/10",
+      "tabCounts": {
+        "slides": 10,
+        "metrics": 1,
+        "sources": 8
+      },
+      "methodologyVisible": "—",
+      "businessContext": "Управление качеством сервиса",
+      "businessTermsVisible": "—",
+      "businessQuestions": [
+        "Каков текущий уровень CSAT и оперативности закрытия заявок?",
+        "Как различается уровень удовлетворенности клиентов (CSAT) между проектами (ЖК)?",
+        "Какие услуги формируют основной объем низких оценок и просроченных заявок?",
+        "Какие подразделения демонстрируют наиболее низкие показатели CSAT и оперативности?",
+        "Сколько гарантийных заявок находится в работе или приостановлено более 90 дней по проектам?",
+        "Как распределяются заявки по статусам в разрезе подразделений и услуг?",
+        "Какие исполнители закрывают наибольшее количество заявок с низкими оценками?",
+        "Какие заявки являются просроченными или незакрытыми на текущий момент?"
+      ],
+      "businessQuestionsProvenance": "Сгенерировано ИИ"
+    },
+    "visual": {
+      "circularCheckVisible": true,
+      "alertVisible": true
+    },
+    "unknowns": [
+      "Департамент владельца в этом паспорте не подтверждён, фото для target mini не извлечено.",
+      "Чувствительные источники «Нет» не равны признаку ПДн или несистемных источников.",
+      "Полное имя владельца установлено в паспорте того же отчёта; полные имена владельцев других отчётов этим не раскрываются.",
+      "Восемь бизнес-вопросов транскрибированы по t0674, не скопированы из C defaults. Блок пользовательских Q&A содержит только видимое действие; явное сообщение о пустоте на кадре не показано.",
+      "Полное описание вручную прочитано по t0672; упомянутая в тексте генерация справки является значением описания, а не проверенным выполнением соответствующей функции."
+    ],
+    "ui": {
+      "backLabel": "Назад",
+      "userQuestionsHeading": "Вопросы и ответы",
+      "userQuestionsAction": "Задать вопрос",
+      "userQuestionsEmptyMessage": null,
+      "tabScrollVisible": true
+    }
+  },
+  "sourcePassport": {
+    "name": "rewedo_crm_production.public.versions",
+    "source": {
+      "path": "../work/catalog-screen-analysis-2026-10-19/frames/t0683.png",
+      "time": "11:23",
+      "continuation": "../work/catalog-screen-analysis-2026-10-19/frames/t0685.png"
+    },
+    "depth": "Ф: UI-06 / S06; другой объект, не sourceCard S01",
+    "values": {
+      "technicalName": "rewedo_crm_production.public.versions",
+      "storageContext": "PostgreSQL · Без слоя · Amocrm Rerooms",
+      "platform": "PostgreSQL",
+      "layerVisible": "Без слоя",
+      "thirdContextFragment": "Amocrm Rerooms",
+      "descriptionVisible": "Описание отсутствует",
+      "objectType": "Table",
+      "objectStatus": "Active",
+      "columns": 8,
+      "dataHubSyncVisible": "вчера, 23:48",
+      "domainVisible": "—",
+      "masterSystemVisible": "—",
+      "responsibleAnalystVisible": "—",
+      "technicalOwnerVisible": "—",
+      "eyeCount": 0
+    },
+    "ui": {
+      "tabs": [
+        {
+          "label": "Описание полей",
+          "countVisible": 8,
+          "activeAt1123": true
+        },
+        {
+          "label": "Связанные отчёты",
+          "countVisible": 0,
+          "activeAt1123": false
+        },
+        {
+          "label": "Метрики",
+          "countVisible": 0,
+          "activeAt1123": false
+        },
+        {
+          "label": "Lineage",
+          "countVisible": null,
+          "activeAt1123": false
+        },
+        {
+          "label": "MCP-инструменты",
+          "countVisible": 0,
+          "activeAt1123": false
+        },
+        {
+          "label": "Похожие источники",
+          "countVisible": 0,
+          "activeAt1123": false
+        }
+      ],
+      "relatedReportsStateAt1125": "Связанные отчёты не найдены",
+      "visibleActions": [
+        "Назад к списку",
+        "карандаш редактирования",
+        "закладка, залитая",
+        "Получить доступ",
+        "Скачать метаданные"
+      ]
+    },
+    "visibleFieldRows": [
+      {
+        "name": "id",
+        "sqlType": "INTEGER",
+        "generalType": "NumberType",
+        "nullability": "Required",
+        "key": "Key",
+        "metricsCountVisible": 0
+      },
+      {
+        "name": "item_type",
+        "sqlType": "VARCHAR",
+        "generalType": "StringType",
+        "nullability": "Required",
+        "key": "Not key",
+        "metricsCountVisible": 0
+      },
+      {
+        "name": "item_id",
+        "sqlType": "BIGINT",
+        "generalType": "NumberType",
+        "nullability": "Required",
+        "key": "Not key",
+        "metricsCountVisible": 0
+      },
+      {
+        "name": "event",
+        "sqlType": "VARCHAR",
+        "generalType": "StringType",
+        "nullability": "Required",
+        "key": "Not key",
+        "metricsCountVisible": null
+      },
+      {
+        "name": "whodunnit",
+        "sqlType": "VARCHAR",
+        "generalType": "StringType",
+        "nullability": "Nullable",
+        "key": "Not key",
+        "metricsCountVisible": null
+      },
+      {
+        "name": "object",
+        "sqlType": "TEXT",
+        "generalType": "StringType",
+        "nullability": "Nullable",
+        "key": "Not key",
+        "metricsCountVisible": null
+      }
+    ],
+    "unknowns": [
+      "На видимом фрагменте перечислены шесть из восьми колонок; остальные имена не извлечены. Это не полный словарь таблицы.",
+      "null у счётчика означает, что значение не зафиксировано надёжно; не нулевое число.",
+      "Третий фрагмент Amocrm Rerooms не объявляется автоматически ИС/БД/мастер-системой.",
+      "Содержимое вкладок MCP-инструменты, Метрики, Lineage и Похожие источники не раскрыто; наличие вкладки не доказывает фильтр каталога.",
+      "Показаны элементы доступа/скачивания/редактирования/закладки/возврата, но их результат и права не проверены.",
+      "Относительное время синхронизации — текст исторического примера. Прочерки ролей и домена не заменяются данными dimdate из S01."
+    ]
+  },
+  "revision": "card-examples-2026-10-22-r5",
+  "mailingExample": {
+    "source": {
+      "list": "../knowledge/evidence/attachments/SRC-06-03.png",
+      "schedule": "../knowledge/evidence/attachments/SRC-06-04.png"
+    },
+    "depth": "Ф/рассылки; отдельный пример инструкции, не отчёт ID562",
+    "reportIdentity": null,
+    "tabCounts": {
+      "slides": 3,
+      "metrics": 0,
+      "sources": 5
+    },
+    "subTabs": [
+      {
+        "label": "Доступные рассылки",
+        "selected": true
+      },
+      {
+        "label": "Создать рассылку",
+        "selected": false
+      },
+      {
+        "label": "Ручная отправка",
+        "selected": false
+      }
+    ],
+    "mailings": [
+      {
+        "name": "Мои продажи сегодня",
+        "visibleDate": "06.10.2026, 09:00:00",
+        "actionLabel": "Отписаться"
+      },
+      {
+        "name": "Еженедельный статус",
+        "visibleDate": "06.10.2026, 09:00:00",
+        "actionLabel": "Подписаться"
+      }
+    ],
+    "schedule": {
+      "selectedDays": [
+        "Пн",
+        "Вт",
+        "Ср",
+        "Чт",
+        "Пт"
+      ],
+      "notSelectedDays": [
+        "Сб",
+        "Вс"
+      ],
+      "timeVisible": "09:00",
+      "timezoneVisible": "МСК",
+      "timeWidgetType": null,
+      "channelsVisible": [
+        "Почта, себе",
+        "Толк, себе"
+      ],
+      "channelWidgetSemantics": null
+    },
+    "sheet": {
+      "label": "Профайл РГП",
+      "selected": true,
+      "expanded": true,
+      "fields": [
+        {
+          "label": "РГП (ПРОЕКТ)",
+          "searchVisible": true,
+          "searchPlaceholder": "Поиск значения",
+          "lastValueCheckbox": false
+        },
+        {
+          "label": "Проекты РГП",
+          "searchVisible": false,
+          "searchPlaceholder": null,
+          "lastValueCheckbox": false
+        },
+        {
+          "label": "профайлы менеджер РГП",
+          "searchVisible": true,
+          "searchPlaceholder": "Поиск значения",
+          "lastValueCheckbox": false
+        },
+        {
+          "label": "Исключенные тех проекты Потенциал",
+          "searchVisible": true,
+          "searchPlaceholder": "Поиск значения",
+          "lastValueCheckbox": false
+        }
+      ]
+    },
+    "describedAction": "Отправить заявку в SD",
+    "actionButtonVisibleInCrop": false,
+    "unknowns": [
+      "Имя/ID отчёта не видны в иллюстрации; не переносить счётчики3/0/5в562.",
+      "У Проекты РГП виден только checkbox последнего значения, не четвёртое поле поиска.",
+      "Семантика последнего значения описана инструкцией; успешная отправка заявки/сохранение не продемонстрированы.",
+      "Контролы дней/листа/полей применяются к рассылке конкретного листа, не к поиску объектов каталога."
+    ]
+  },
+  "homeSubscriptionExample": {
+    "source": "../knowledge/evidence/attachments/SRC-06-05.png",
+    "depth": "Главная/подписка; заполненный пример инструкции",
+    "values": {
+      "name": "Мои продажи сегодня",
+      "reportTitle": "Профайл МОП",
+      "statusVisible": "Включена",
+      "nextVisible": "06.10.2026, 09:00:00",
+      "channelVisible": "Контур.Толк: напишите боту",
+      "actionLabel": "Отписаться"
+    }
+  },
+  "previousRevision": "card-examples-2026-10-19-r4",
+  "reportPassport193": {
+    "name": "План-Факт продажи",
+    "depth": "полная карточка отчёта",
+    "source": {
+      "id": "SRC-09",
+      "frames": [
+        "../knowledge/evidence/video/SRC-09/frames/t0025.png",
+        "../knowledge/evidence/video/SRC-09/frames/t0155.png",
+        "../knowledge/evidence/video/SRC-09/frames/t0180.png"
+      ]
+    },
+    "values": {
+      "reportId": 193,
+      "tabCounts": {
+        "slides": 13,
+        "metrics": 2,
+        "sources": 6
+      },
+      "alternativeSources": "—",
+      "availableMailings": "Доступных рассылок пока нет",
+      "usage30Days": {
+        "users": 102,
+        "events": 414,
+        "regularity": "14%",
+        "significanceIndex": "0,63",
+        "lastActivity": "1 дн. назад",
+        "activeDays": 29,
+        "averageDAU": "13,8",
+        "eventsGrowth": "+46%"
+      },
+      "usageLifetime": {
+        "peakMAU": 111,
+        "uniqueUsers": 258,
+        "last3MonthsMAUChange": "-4%",
+        "averageMAU": "96,1",
+        "firstActiveMonth": "янв. 2026 г.",
+        "lastActiveMonth": "окт. 2026 г.",
+        "months": 10,
+        "activeMonths": 10,
+        "activeShare": "100%"
+      }
+    },
+    "unknowns": [
+      "Формулы статистики, серверный расчёт и права не проверены",
+      "Это отдельный отчёт, не замена ID 562 или примера SRC-06",
+      "Часть полей намеренно не транскрибирована; полный вид доступен в кадрах"
+    ]
+  },
+  "metricPassport4": {
+    "name": "Объём продаж",
+    "depth": "полная карточка показателя",
+    "source": {
+      "id": "SRC-09",
+      "frames": [
+        "../knowledge/evidence/video/SRC-09/frames/t0105.png",
+        "../knowledge/evidence/video/SRC-09/frames/t0115.png",
+        "../knowledge/evidence/video/SRC-09/frames/t0125.png"
+      ]
+    },
+    "values": {
+      "type": "Показатель",
+      "status": "Проверена",
+      "domain": "Продажи и маркетинг",
+      "description": "Продажи на конечного клиента по предметам договоров с учетом расторжений",
+      "unit": "квадратный метр",
+      "created": "08.07.2026",
+      "modified": "11.08.2026",
+      "verified": "11.08.2026",
+      "formula": "SUM(Метры), SUM(Метры СП)",
+      "businessQuestions": "Бизнес-вопросы не заданы",
+      "technicalMeasuresVisible": 2,
+      "relatedReportsVisible": 2,
+      "relatedMetric": {
+        "name": "Чистая прибыль",
+        "relation": "влияет на"
+      }
+    },
+    "unknowns": [
+      "Полный текст определения не транскрибирован; смысловые условия доступны в исходных кадрах",
+      "Права редактирования/отвязки и отправка вопроса не проверены",
+      "Адреса контактов не дублируются без необходимости"
+    ]
+  },
+  "source11Examples": {
+    "source": "SRC-11",
+    "meetingDate": "2026-10-30",
+    "status": "Н: исторические значения stage, не seed/API",
+    "dictionary": {
+      "allCount": 498,
+      "termCount": 330,
+      "domainCount": 63,
+      "term": {
+        "name": "Business Client Response (BCR)",
+        "type": "бизнес-термин",
+        "status": "утвержден",
+        "domain": "Без домена",
+        "owner": "Не указан"
+      },
+      "source": "../knowledge/evidence/video/SRC-11/frames/t0200.png"
+    },
+    "crm": {
+      "count": 20855,
+      "entity": "Организация",
+      "logicalEntity": "Account",
+      "attribute": "Категория",
+      "logicalAttribute": "accountcategorycode",
+      "optionPreview": "1 — Продавец",
+      "additionalOptions": 7,
+      "source": "../knowledge/evidence/video/SRC-11/frames/t0275.png"
+    },
+    "question": {
+      "title": "Вопрос по отчёту: «План-Факт продажи»",
+      "status": "Новый",
+      "lastMessage": "28.10.2026, 00:00:47",
+      "source": "../knowledge/evidence/video/SRC-11/frames/t0285.png"
+    },
+    "manual": {
+      "reportId": 193,
+      "channels": [
+        "Почта",
+        "Контур.Толк"
+      ],
+      "format": "PNG",
+      "orientation": "Landscape",
+      "pageType": "original",
+      "recipientsSelected": false,
+      "source": "../knowledge/evidence/video/SRC-11/frames/t0435.png"
+    }
+  }
+}

@@ -1,0 +1,2815 @@
+{
+  "title": "Каталог данных — frontend handoff",
+  "snapshot": "2026-11-02 / after sidebar Tasks",
+  "scope": [
+    "Главная",
+    "Навигатор",
+    "Каталог Отчётов",
+    "Восемь общих компонентов"
+  ],
+  "sourceProjectNotIncluded": true,
+  "projectContextSkillNotIncludedOrChanged": true,
+  "trialImplementationStarted": false,
+  "files": [
+    {
+      "path": ".gitattributes",
+      "bytes": 68,
+      "sha256": "8dd7e9247e01b2879a6d92ea9b5b06650fe30843cc5c64b305712dc30da28798"
+    },
+    {
+      "path": "AGENTS.md",
+      "bytes": 2291,
+      "sha256": "e54264e14e3663c120e4995618dbe89576a66c5d873e395c94ec37e5251f949e"
+    },
+    {
+      "path": "context/data-attributes.md",
+      "bytes": 114122,
+      "sha256": "06270ad55071aec007e0e9950b30a09c10279ca525e0adf7d8a8caa28b390b8b"
+    },
+    {
+      "path": "context/design-system.md",
+      "bytes": 3358,
+      "sha256": "9d16c876b394ed2973b877dc6dc29072ec5008c6c2d8e5b4837ba613259b5c20"
+    },
+    {
+      "path": "context/example-values.json",
+      "bytes": 32820,
+      "sha256": "9f90928c403df2097fee3b65ad2f4064c0196bc3274cfcd7abda02e99fc04d11"
+    },
+    {
+      "path": "context/flows/filters.md",
+      "bytes": 15040,
+      "sha256": "4d74348718113c04a546088fa146e1904cf996dd71bb80a34a4f6815738cc40c"
+    },
+    {
+      "path": "context/flows/home.md",
+      "bytes": 9479,
+      "sha256": "6d6cf19d03ee61612a242882e02a741acac896d0bf112581619079f6dee77118"
+    },
+    {
+      "path": "context/flows/README.md",
+      "bytes": 3108,
+      "sha256": "9c68ab02f73d2906aadd16bae2cae45d6639459a0d477108cf13ab9ccd394c13"
+    },
+    {
+      "path": "context/flows/reports.md",
+      "bytes": 11524,
+      "sha256": "406b4cfb418f5d7b95c4bb1467136afb180ee1c591c220a63617894332cca17a"
+    },
+    {
+      "path": "context/navigator-foundation.md",
+      "bytes": 48446,
+      "sha256": "c2138bb5fc8871b41fa082e360c68096ca36f24116b12e1154edca46420cb537"
+    },
+    {
+      "path": "context/requirements.md",
+      "bytes": 65386,
+      "sha256": "13825190b7a72fc61efbc66bc8fc742db24929a60623f4379fcdd0658e0d8bf9"
+    },
+    {
+      "path": "README.md",
+      "bytes": 5610,
+      "sha256": "fd2913395139a57424668d1d0dba4d4f5dd48f8223e3b5d243d7acdb579e5633"
+    },
+    {
+      "path": "specs/Обзор.md",
+      "bytes": 44172,
+      "sha256": "169808e09eba0099bd6de99f7fa2a42cd6932c91f8d93741c2b7bb4195a3f1f3"
+    },
+    {
+      "path": "specs/Общие компоненты/Боковая навигация/assets/collapsed-boundary-hover.png",
+      "bytes": 5462,
+      "sha256": "45448c022be526bb6ce0447fd19859a06e50ca9fc594924973e1b009e849e82b"
+    },
+    {
+      "path": "specs/Общие компоненты/Боковая навигация/assets/context-collapsed.png",
+      "bytes": 82542,
+      "sha256": "d097ef5978e84573128c5e7cdad393b01a489834a30f47b1dd9947d1cf1b261e"
+    },
+    {
+      "path": "specs/Общие компоненты/Боковая навигация/assets/context-home.png",
+      "bytes": 92310,
+      "sha256": "b1b3aee5425e5c8452a36d60d7f84c5fa7b49f3c664f646c29c67f4d037d019e"
+    },
+    {
+      "path": "specs/Общие компоненты/Боковая навигация/assets/expanded-boundary-hover.png",
+      "bytes": 20861,
+      "sha256": "0e82031beaceba9a94ee658429da4a7f6589fd8d7ddf2e1877b95323be7823ee"
+    },
+    {
+      "path": "specs/Общие компоненты/Боковая навигация/assets/expanded.png",
+      "bytes": 19161,
+      "sha256": "2d41bfa9097ddb0b68346ecfc57a1297f3df99ea01399a68780ce87bfab1a052"
+    },
+    {
+      "path": "specs/Общие компоненты/Боковая навигация/assets/icons/ai-hub.svg",
+      "bytes": 317,
+      "sha256": "6e8db067d3647177bd57624f41642831de2ba92f4cf8696545dca9eafbf5928d"
+    },
+    {
+      "path": "specs/Общие компоненты/Боковая навигация/assets/icons/collapse.svg",
+      "bytes": 229,
+      "sha256": "7838832171d18e8e8446441a97c989304a86066c0e2635bce9e4de770c03c962"
+    },
+    {
+      "path": "specs/Общие компоненты/Боковая навигация/assets/icons/dictionary.svg",
+      "bytes": 405,
+      "sha256": "2a322cd0f5c67b7a7ae81eb59cf3aa83aed7cf7166c938d19e185644e5e11be3"
+    },
+    {
+      "path": "specs/Общие компоненты/Боковая навигация/assets/icons/expand.svg",
+      "bytes": 230,
+      "sha256": "6d6e95bd466d0c181b1f17d379aa5faa7e0bc35c21fbf3c9b0f08a95a7acdc2e"
+    },
+    {
+      "path": "specs/Общие компоненты/Боковая навигация/assets/icons/home.svg",
+      "bytes": 420,
+      "sha256": "a16afca97a8b37d2f7110704601230ec92898903e55f5eaba5ba8ee26741e306"
+    },
+    {
+      "path": "specs/Общие компоненты/Боковая навигация/assets/icons/metrics.svg",
+      "bytes": 265,
+      "sha256": "b992fc2a9b6eb83cccc33559cca1cae2d8776a9fd0a285b0e987b745cea9c344"
+    },
+    {
+      "path": "specs/Общие компоненты/Боковая навигация/assets/icons/questions.svg",
+      "bytes": 1022,
+      "sha256": "e38dcb21ba5549f75020fcf016058d77a8ec99d2ae5131e6d1b743fbedc7b525"
+    },
+    {
+      "path": "specs/Общие компоненты/Боковая навигация/assets/icons/reports.svg",
+      "bytes": 594,
+      "sha256": "501a7cfcf9ed1fde201809e4e955a1ed27b90d57d263789127f4bdd4f71d8e20"
+    },
+    {
+      "path": "specs/Общие компоненты/Боковая навигация/assets/icons/sources.svg",
+      "bytes": 540,
+      "sha256": "3c37d20ab5236f115111cdc4d6ce8ca1afad6a4074677342816e4f72e2fe9543"
+    },
+    {
+      "path": "specs/Общие компоненты/Боковая навигация/assets/icons/systems.svg",
+      "bytes": 1151,
+      "sha256": "bfab0ab731d6b12096fbb793d3707104a67ecb06df417798daaf7dacf65544e8"
+    },
+    {
+      "path": "specs/Общие компоненты/Боковая навигация/assets/icons/tasks-collapsed.svg",
+      "bytes": 519,
+      "sha256": "e7c251d906c60202469df00edadc13911e85364b5677ecc5fa4ba0a749a58568"
+    },
+    {
+      "path": "specs/Общие компоненты/Боковая навигация/assets/icons/tasks.svg",
+      "bytes": 482,
+      "sha256": "df125baab56b3b6a2a11339f5302a7035d77047be170d945f3c282948caa7ba6"
+    },
+    {
+      "path": "specs/Общие компоненты/Боковая навигация/assets/reports-active.png",
+      "bytes": 19237,
+      "sha256": "b7ae672cabd54d48d2a38e4833e5f9f71d08cc17c5ae6259b60aefc7447eb9e8"
+    },
+    {
+      "path": "specs/Общие компоненты/Боковая навигация/assets/row-default.png",
+      "bytes": 2718,
+      "sha256": "d45283b22fdf9cbbb8393e04eb1c7cc6ae91d9cb8c12d87504a6eca536ea9e36"
+    },
+    {
+      "path": "specs/Общие компоненты/Боковая навигация/assets/row-hover.png",
+      "bytes": 3500,
+      "sha256": "a64887acb56e0c0b181b7efc445c3ee3cade64022e22849a4f83468f3d7b3fdd"
+    },
+    {
+      "path": "specs/Общие компоненты/Боковая навигация/assets/row-selected-hover.png",
+      "bytes": 3666,
+      "sha256": "a53a3004f96962f53017a6d3392c7707cab5c3b329a4314ad69158650531af8e"
+    },
+    {
+      "path": "specs/Общие компоненты/Боковая навигация/assets/row-selected.png",
+      "bytes": 3234,
+      "sha256": "5fbbf541c297c38a6c02df0acf6231817f67073ff90666d60901271a1b497402"
+    },
+    {
+      "path": "specs/Общие компоненты/Боковая навигация/assets-manifest.json",
+      "bytes": 9051,
+      "sha256": "1763e279668ed01bc0002670c957188834e2b80911908c88f123a6f9bc28b296"
+    },
+    {
+      "path": "specs/Общие компоненты/Боковая навигация/Контракт.md",
+      "bytes": 41638,
+      "sha256": "586d3ae3b6811c0fe3b9e729a56a9068a1aa73b1f603a70fccbef7712d6f9113"
+    },
+    {
+      "path": "specs/Общие компоненты/Карточка подписки/assets/subscription-consumer.png",
+      "bytes": 16937,
+      "sha256": "919b553c35edfeb166ebd7d19610f176b5d3c76c01a031df07421fe8d5e949eb"
+    },
+    {
+      "path": "specs/Общие компоненты/Карточка подписки/assets/subscription-group.png",
+      "bytes": 48146,
+      "sha256": "3b0158c9d5187da4562e63726ca81be837ba6c0ae517b7f4cec79becfd74acfa"
+    },
+    {
+      "path": "specs/Общие компоненты/Карточка подписки/assets/subscription-master.png",
+      "bytes": 15120,
+      "sha256": "8e9ff8efd151e3e152b0c910efcbf6015e3dff99f6aa8dbc0d0c17f30a99d5c5"
+    },
+    {
+      "path": "specs/Общие компоненты/Карточка подписки/assets-manifest.json",
+      "bytes": 2441,
+      "sha256": "a71cf381d8112a4b7e6d2bbb5e6c960f23b4b042262412cb095a988f47429553"
+    },
+    {
+      "path": "specs/Общие компоненты/Карточка подписки/Контракт.md",
+      "bytes": 13775,
+      "sha256": "0cc25af451d9e2d9182cbf6b07e95d86e8a00c59a32478d2afaf95026fa18882"
+    },
+    {
+      "path": "specs/Общие компоненты/Карточка участника/assets/contribution-consumer.png",
+      "bytes": 16596,
+      "sha256": "f71bdf8083fd7b9bc342ca34a74db8415730a565b00ba8bd2038606480a017d1"
+    },
+    {
+      "path": "specs/Общие компоненты/Карточка участника/assets-manifest.json",
+      "bytes": 947,
+      "sha256": "6191924f129848bf9da36b8795f33c3475d3fb01b993721b3de04566cc45cbee"
+    },
+    {
+      "path": "specs/Общие компоненты/Карточка участника/Контракт.md",
+      "bytes": 11703,
+      "sha256": "1731909fea0a72f03d60b2fcfa57204edcdd00535f73f61af9d918ca18821783"
+    },
+    {
+      "path": "specs/Общие компоненты/Карточки отчётов/assets/compact-catalog.png",
+      "bytes": 18920,
+      "sha256": "38752869ae5c80a6520337575bc99a329ae8c0b5d9857fced1e36a56195364e1"
+    },
+    {
+      "path": "specs/Общие компоненты/Карточки отчётов/assets/compact-hover-master.png",
+      "bytes": 18284,
+      "sha256": "0b5b8e62a629f34397b1fc7e82c5c5adf995aa8702e6f1d4437b5a7538bdcc24"
+    },
+    {
+      "path": "specs/Общие компоненты/Карточки отчётов/assets/compact-unverified.png",
+      "bytes": 13818,
+      "sha256": "362c648bb79f0a2ab6f910af2bb585a40bb8bd095acc85099c77db6e81c1791c"
+    },
+    {
+      "path": "specs/Общие компоненты/Карточки отчётов/assets/compact-verified.png",
+      "bytes": 18914,
+      "sha256": "dc9c9c87ea460d821fe2d2a76ce060a255dd8f85feb7a8fa28ed46b40c674313"
+    },
+    {
+      "path": "specs/Общие компоненты/Карточки отчётов/assets/edit.svg",
+      "bytes": 636,
+      "sha256": "ce2b880a5b3df0f1ab61be1c7d749990a4744cbe4d8e716a6cad6b94b21d9614"
+    },
+    {
+      "path": "specs/Общие компоненты/Карточки отчётов/assets/report-document-hover.svg",
+      "bytes": 400,
+      "sha256": "c1b77dfb2fb3399fbd01ae09bd73e54ab8c6818b747a8acee1482efcdd6ee546"
+    },
+    {
+      "path": "specs/Общие компоненты/Карточки отчётов/assets/report-document.svg",
+      "bytes": 329,
+      "sha256": "d2881760d870a43d6412d905c727dd6492629484747dc61d6378068f8ca13f28"
+    },
+    {
+      "path": "specs/Общие компоненты/Карточки отчётов/assets/verified-badge.svg",
+      "bytes": 392,
+      "sha256": "e617ee09b658b17c412e634a5639bd3f53c03c23cb97702df718373e619396bb"
+    },
+    {
+      "path": "specs/Общие компоненты/Карточки отчётов/assets-manifest.json",
+      "bytes": 4650,
+      "sha256": "72ef16d745c9b73797f0dba5cbf399633f322cc8bc2860897f473f84530a1af6"
+    },
+    {
+      "path": "specs/Общие компоненты/Карточки отчётов/Контракт.md",
+      "bytes": 19796,
+      "sha256": "d79a4d76e82c76b599363806455314ede87ebd8f4d65b148fe5c6f29ba8e1e88"
+    },
+    {
+      "path": "specs/Общие компоненты/Поиск и навигатор/visual-manifest.json",
+      "bytes": 12507,
+      "sha256": "81569fd17159c3c5ebf2c60e410a90f33b1dce49a1722f99cba7eef48a07ff26"
+    },
+    {
+      "path": "specs/Общие компоненты/Поиск и навигатор/Вид.md",
+      "bytes": 28966,
+      "sha256": "bca868ce98dacec35375c7d63ae505e35ec0c7bee0b24d65b37fae35af79c26b"
+    },
+    {
+      "path": "specs/Общие компоненты/Поиск и навигатор/Изображения/actual-before-input.png",
+      "bytes": 91960,
+      "sha256": "02ec3a2f86585582565e3b35c33ce7dbc7c2017471ef80007639a71b8fb2f887"
+    },
+    {
+      "path": "specs/Общие компоненты/Поиск и навигатор/Изображения/actual-highlighted-row.png",
+      "bytes": 6341,
+      "sha256": "82c6b2cc8e38c513769ebc94226694c99beafa1a49a621efd6e9ae8b201a5aeb"
+    },
+    {
+      "path": "specs/Общие компоненты/Поиск и навигатор/Изображения/actual-reports.png",
+      "bytes": 93046,
+      "sha256": "04ea0d0cf52fdf7de7aa6c8d8a31fb0ba7f7721d134d55da7d41ae78482314aa"
+    },
+    {
+      "path": "specs/Общие компоненты/Поиск и навигатор/Изображения/actual-single-result.png",
+      "bytes": 58359,
+      "sha256": "b39112e87e411f4f25b91bcd63f52b4764cf297c0e529af79bf0525a4697dd33"
+    },
+    {
+      "path": "specs/Общие компоненты/Поиск и навигатор/Изображения/chevron-down.svg",
+      "bytes": 247,
+      "sha256": "74b2625e26035fd9a92330d52139011d63358e5cf80b448e4707eed2a1b7a546"
+    },
+    {
+      "path": "specs/Общие компоненты/Поиск и навигатор/Изображения/chevron-up.svg",
+      "bytes": 242,
+      "sha256": "cb9bb44409805318ff3cbee4958e4ba538dcdc1088f67a82aa21b1125b6d4619"
+    },
+    {
+      "path": "specs/Общие компоненты/Поиск и навигатор/Изображения/context-1440.png",
+      "bytes": 91410,
+      "sha256": "bd72709a733207fe2faaf0f5f80f183e4ff2600c87549bea188dcd767c038492"
+    },
+    {
+      "path": "specs/Общие компоненты/Поиск и навигатор/Изображения/dropdown-before-input.png",
+      "bytes": 91932,
+      "sha256": "5ebbed8ee7ee67221670dc7c8c22533d5c16977ccd7a134785072c3b24d71c87"
+    },
+    {
+      "path": "specs/Общие компоненты/Поиск и навигатор/Изображения/dropdown-compact.png",
+      "bytes": 124724,
+      "sha256": "9d6760eda189cb5b6207cbebd1598b530c54c110412e4bc01da1efa800946491"
+    },
+    {
+      "path": "specs/Общие компоненты/Поиск и навигатор/Изображения/dropdown-expanded.png",
+      "bytes": 138218,
+      "sha256": "6723a621babe6b74200ede0e0d77c2115f68dc024fd7a7d7cc65839c33458c2e"
+    },
+    {
+      "path": "specs/Общие компоненты/Поиск и навигатор/Изображения/dropdown-metrics.png",
+      "bytes": 103128,
+      "sha256": "2cea72c1cb93cbc66cc2be71df3975afce90b97c410ee84e6c9bd7484443aa73"
+    },
+    {
+      "path": "specs/Общие компоненты/Поиск и навигатор/Изображения/dropdown-no-results.png",
+      "bytes": 93339,
+      "sha256": "806d33dcafa417cc2bb85012370ce56c09dce43c393424acdc9141355cda6c18"
+    },
+    {
+      "path": "specs/Общие компоненты/Поиск и навигатор/Изображения/dropdown-reports-metrics.png",
+      "bytes": 142489,
+      "sha256": "2a2632389ba9d0af2191f9f0d51428520f50a9beddc831b4d52f0ef44ec19698"
+    },
+    {
+      "path": "specs/Общие компоненты/Поиск и навигатор/Изображения/dropdown-reports-sources.png",
+      "bytes": 140791,
+      "sha256": "3c4bdd4f0542a91db9745885ac5b24f1a69cadad63d73b772d171a964b4a3590"
+    },
+    {
+      "path": "specs/Общие компоненты/Поиск и навигатор/Изображения/dropdown-reports.png",
+      "bytes": 91586,
+      "sha256": "1846e0ee1abafffbe8a583365aec23bcce4bb73cc2eb77f6848584a8ee21f7f2"
+    },
+    {
+      "path": "specs/Общие компоненты/Поиск и навигатор/Изображения/dropdown-sources-metrics.png",
+      "bytes": 140462,
+      "sha256": "4eebcc510c4ddad15ced28be86f8b726e1bafec0ef71fda3ef2b064136e1a4b5"
+    },
+    {
+      "path": "specs/Общие компоненты/Поиск и навигатор/Изображения/dropdown-sources.png",
+      "bytes": 111161,
+      "sha256": "4adc60f8b3a5fe945b28d510ff6886b18cc544632931e7e74091ad91e8c2704e"
+    },
+    {
+      "path": "specs/Общие компоненты/Поиск и навигатор/Изображения/dropdown-three-types.png",
+      "bytes": 140896,
+      "sha256": "9e5d13b656ea9afa6993d6919ae657ae0acaf23fa23df7cc83865e68878f442d"
+    },
+    {
+      "path": "specs/Общие компоненты/Поиск и навигатор/Изображения/field-closed.png",
+      "bytes": 2738,
+      "sha256": "78b56a9096a714a7816bb7c5035ede5ad5517600c7fe84ced8d127fd3f185079"
+    },
+    {
+      "path": "specs/Общие компоненты/Поиск и навигатор/Изображения/more-closed-chip.png",
+      "bytes": 1223,
+      "sha256": "deac09e363a17ba735c9e11787a1f2fbbbcc084fc7320ba75176c33f026b1077"
+    },
+    {
+      "path": "specs/Общие компоненты/Поиск и навигатор/Изображения/more-open-chip.png",
+      "bytes": 1490,
+      "sha256": "1e0cfb2030883f407f7919a0564f384ebf96b2343d827d1cbd25de9ebed30f9b"
+    },
+    {
+      "path": "specs/Общие компоненты/Поиск и навигатор/Изображения/more-panel.png",
+      "bytes": 4231,
+      "sha256": "f03998d4b0cf59dcc0ff9e896fa4a7e8d9b4220bf113e3f6f6c5ea2d135fd3da"
+    },
+    {
+      "path": "specs/Общие компоненты/Поиск и навигатор/Изображения/reset-button.png",
+      "bytes": 159,
+      "sha256": "06c8edc17122b1dbff43fb2435dc6cd438094aa7fdf5438491a801d8e70cf9f6"
+    },
+    {
+      "path": "specs/Общие компоненты/Поиск и навигатор/Изображения/reset-types.svg",
+      "bytes": 406,
+      "sha256": "56176b1987fb45c181629a8692d8d4ca764c35941655557c019a2b9381c5ffcd"
+    },
+    {
+      "path": "specs/Общие компоненты/Поиск и навигатор/Изображения/row-default.png",
+      "bytes": 6526,
+      "sha256": "de5cf83d834bddd48e0453ba47ffdf626cac99afc143dcf4f10468df3ee58602"
+    },
+    {
+      "path": "specs/Общие компоненты/Поиск и навигатор/Изображения/row-hover.png",
+      "bytes": 6404,
+      "sha256": "810acd16428acd1242549216841ef3423d04658bc350238a869ae6ced03f71fe"
+    },
+    {
+      "path": "specs/Общие компоненты/Поиск и навигатор/Контракт.md",
+      "bytes": 12417,
+      "sha256": "0feafcb8fab91501bf1312584f827b2359edfcd489cb56b3bbb37342684796aa"
+    },
+    {
+      "path": "specs/Общие компоненты/Поиск и навигатор/Ресурсы/clear.svg",
+      "bytes": 339,
+      "sha256": "5d226400ecaecbda2b35ed6e8947acd8a68ef97d4cb8f692aeff65f7a0b5990f"
+    },
+    {
+      "path": "specs/Общие компоненты/Поиск и навигатор/Ресурсы/group-report.svg",
+      "bytes": 724,
+      "sha256": "5bc86d8805d39f229edbecc170a3c19bf865dd0018ce2dfd68b632cf61190539"
+    },
+    {
+      "path": "specs/Общие компоненты/Поиск и навигатор/Ресурсы/illustration-before-input.png",
+      "bytes": 45112,
+      "sha256": "bfb247c2fce36fc0e5de474bf1bec689f218d425f490cc353c7c957b7a4e6b4a"
+    },
+    {
+      "path": "specs/Общие компоненты/Поиск и навигатор/Ресурсы/illustration-no-results.png",
+      "bytes": 49949,
+      "sha256": "e9ba769cce22e4d8f45c096e97956367a8965b6af16c29fdb09f7030b8b9f80b"
+    },
+    {
+      "path": "specs/Общие компоненты/Поиск и навигатор/Ресурсы/search.svg",
+      "bytes": 731,
+      "sha256": "616c8d6408391303310d3fddf14c26a884a7bff674d659fd38f40779a8ae6b1c"
+    },
+    {
+      "path": "specs/Общие компоненты/Поиск и навигатор/Состояния.md",
+      "bytes": 15841,
+      "sha256": "c2c62d1f7b6d63180cb90dbe2ce2f5307cc01d71a88200450cf2a750cbb98514"
+    },
+    {
+      "path": "specs/Общие компоненты/Таблица отчётов/assets/adaptive/catalogue-1440-end-domain-applied.png",
+      "bytes": 107232,
+      "sha256": "618ee46746f891987f33f8255aa6292c41dcc2c6d46c50fd9d8ef9efab9e008c"
+    },
+    {
+      "path": "specs/Общие компоненты/Таблица отчётов/assets/adaptive/catalogue-1440-end-filter-open.png",
+      "bytes": 176400,
+      "sha256": "47d8091d911b5c97b8380fb73637ff2aafbaaeef1319897509537214fd7a1b5e"
+    },
+    {
+      "path": "specs/Общие компоненты/Таблица отчётов/assets/adaptive/catalogue-1440-end.png",
+      "bytes": 132824,
+      "sha256": "7821ea2d5d45b1af808e98a46db3b61d4467391fc1e493f6303a9757c42c7dd4"
+    },
+    {
+      "path": "specs/Общие компоненты/Таблица отчётов/assets/adaptive/catalogue-1440-start.png",
+      "bytes": 125990,
+      "sha256": "92518236e27eae36ca7998f7ebe70dc1daace9b5a51fc7ecad33a286577a768b"
+    },
+    {
+      "path": "specs/Общие компоненты/Таблица отчётов/assets/adaptive/catalogue-1920-domain-applied.png",
+      "bytes": 126854,
+      "sha256": "bc51f9a3f77a78c0c454ea6a7c2a640954b9ca4f7cfdfe0c73407af21ad08eea"
+    },
+    {
+      "path": "specs/Общие компоненты/Таблица отчётов/assets/adaptive/catalogue-1920-filter-open.png",
+      "bytes": 202424,
+      "sha256": "df1b271a523d65cbd7aa0d487657fbc21ccc1ca28a47983708fc6e47100771f2"
+    },
+    {
+      "path": "specs/Общие компоненты/Таблица отчётов/assets/adaptive/catalogue-1920.png",
+      "bytes": 157468,
+      "sha256": "c1e27ba0a4f9fe2e8c5fdd1e0bae811117d553afc3e6b140a01322a4e96fb1d8"
+    },
+    {
+      "path": "specs/Общие компоненты/Таблица отчётов/assets/adaptive/component-1557-115222.png",
+      "bytes": 516,
+      "sha256": "e6bee6f6f359c0d74ce4b2eadebc236b489a4c63c61aeccccde657bb051dc246"
+    },
+    {
+      "path": "specs/Общие компоненты/Таблица отчётов/assets/adaptive/crop-narrow-end-left.png",
+      "bytes": 12421,
+      "sha256": "5cefce17209161fbb04d2d3e73b837f628c7c69b3fe49a57909bb4975efb0ac6"
+    },
+    {
+      "path": "specs/Общие компоненты/Таблица отчётов/assets/adaptive/crop-narrow-end-right.png",
+      "bytes": 4407,
+      "sha256": "f29b242bd0ac06b745cc2f4f50fca6f66efb8676d028ffe6db14f2ead038f088"
+    },
+    {
+      "path": "specs/Общие компоненты/Таблица отчётов/assets/adaptive/crop-wide-left.png",
+      "bytes": 13683,
+      "sha256": "4e5c1eec3a36246507f9e857c58a0ad1b3e4c8a733b90662246c5893a80ff31a"
+    },
+    {
+      "path": "specs/Общие компоненты/Таблица отчётов/assets/adaptive/crop-wide-right.png",
+      "bytes": 4336,
+      "sha256": "ac5c792a6ee2a89a5cc4ee3f41bf5c6d8b7e70c9bd69bd3d81a8eda5bdc42fd2"
+    },
+    {
+      "path": "specs/Общие компоненты/Таблица отчётов/assets/adaptive/home-1440-end.png",
+      "bytes": 136179,
+      "sha256": "54bc322c654c9672ee815411b274e35722b122ee05a6ff916845bbff6ded712b"
+    },
+    {
+      "path": "specs/Общие компоненты/Таблица отчётов/assets/adaptive/master-1629-115231.png",
+      "bytes": 4611,
+      "sha256": "0b85a55f708be45f95593050127708cdf4d82ff9098e9f8fbbf2bef20367b7cf"
+    },
+    {
+      "path": "specs/Общие компоненты/Таблица отчётов/assets/adaptive/master-1629-115249.png",
+      "bytes": 10088,
+      "sha256": "3c681100bda3528c0df75cd0e2f1195c0d9bd11a2569189e0150a195937f0ecf"
+    },
+    {
+      "path": "specs/Общие компоненты/Таблица отчётов/assets/adaptive/master-1629-115281.png",
+      "bytes": 9980,
+      "sha256": "bc5999c03e2c3957f30ae66b14d7720af3db5343139266ed90ee14e1c0b0c5d9"
+    },
+    {
+      "path": "specs/Общие компоненты/Таблица отчётов/assets/adaptive/master-1629-115308.png",
+      "bytes": 4666,
+      "sha256": "4dcc5729d799a6e9633e226713ad6d32971e65462464894c979939fabc01c52b"
+    },
+    {
+      "path": "specs/Общие компоненты/Таблица отчётов/assets/adaptive/master-1629-115326.png",
+      "bytes": 10102,
+      "sha256": "f89d1c6d60e02ecc13af6918c6bb91d18dc2aaeea4ecbaa7553bbe50bbb86379"
+    },
+    {
+      "path": "specs/Общие компоненты/Таблица отчётов/assets/adaptive/master-1629-115351.png",
+      "bytes": 9995,
+      "sha256": "c66511c211503ff7a2614c25ff279c03308c95dc0a601353aff58252629e1745"
+    },
+    {
+      "path": "specs/Общие компоненты/Таблица отчётов/assets/adaptive/master-1629-115378.png",
+      "bytes": 5537,
+      "sha256": "a6f5e982365b8d4aec19b8d4fefccd2c8cb0a1f2a45c55a48062cdb8ae63c7d3"
+    },
+    {
+      "path": "specs/Общие компоненты/Таблица отчётов/assets/adaptive/master-1629-115396.png",
+      "bytes": 13236,
+      "sha256": "0d89f22e34e171bcaf2cae6c3d6fc0d4f50f89aae3140c44781f6dc6561e06b2"
+    },
+    {
+      "path": "specs/Общие компоненты/Таблица отчётов/assets/adaptive/master-1629-115421.png",
+      "bytes": 13172,
+      "sha256": "fd12c8bc2da67174a98a056afb2b80b11fa3ea55d919a10e3090c471da923d7f"
+    },
+    {
+      "path": "specs/Общие компоненты/Таблица отчётов/assets/catalogue-row-default.png",
+      "bytes": 12453,
+      "sha256": "73ce4c128b2c848c71b85766b798c6126d527c1d23063c46c08c8dc14de9cfa7"
+    },
+    {
+      "path": "specs/Общие компоненты/Таблица отчётов/assets/cell-active-context.png",
+      "bytes": 68944,
+      "sha256": "604b2a81c9c5da85493708504fae67028db9b9d844066289902a1cca5bd18ae6"
+    },
+    {
+      "path": "specs/Общие компоненты/Таблица отчётов/assets/cell-hover.png",
+      "bytes": 1490,
+      "sha256": "2e67fe0169c058324d35269e988dd067827c58711e6b2b9e505598cfe52e60bb"
+    },
+    {
+      "path": "specs/Общие компоненты/Таблица отчётов/assets/header-applied.png",
+      "bytes": 5092,
+      "sha256": "c9406f4206f75d7bb08cd25679ae10ce6f4495829b54423eda25984bcfddd210"
+    },
+    {
+      "path": "specs/Общие компоненты/Таблица отчётов/assets/header-default.png",
+      "bytes": 4823,
+      "sha256": "ce36ed435ff547acc65d8988dadb3e6cc1ca13a80cb09b1a3e8cdb85ef9e049f"
+    },
+    {
+      "path": "specs/Общие компоненты/Таблица отчётов/assets/manifest.json",
+      "bytes": 17773,
+      "sha256": "c8e7ead7078a90af6e21075ae21d47250d384bc5e3fd0bfeda382a46176a03d6"
+    },
+    {
+      "path": "specs/Общие компоненты/Таблица отчётов/assets/row-default.png",
+      "bytes": 11041,
+      "sha256": "284c3fa1e9fc0be7ad2df752b3ec03e68ce7461d9b41178d73fabfe788ea6ba9"
+    },
+    {
+      "path": "specs/Общие компоненты/Таблица отчётов/assets/row-hover.png",
+      "bytes": 10981,
+      "sha256": "ae07fe67dd0487f64372296de4845626deaee8195d3cc25fe52aa68fd6f963e4"
+    },
+    {
+      "path": "specs/Общие компоненты/Таблица отчётов/assets/table-context.png",
+      "bytes": 125998,
+      "sha256": "ecc5d07a247a18d49ba704ee8e05b0738bd08c942b234a63512559c0cf69bfa8"
+    },
+    {
+      "path": "specs/Общие компоненты/Таблица отчётов/Контракт.md",
+      "bytes": 53339,
+      "sha256": "8a695974b12435ae19f61b45ed5457e982cc83e0131968cb11464c9ca05cf306"
+    },
+    {
+      "path": "specs/Общие компоненты/Фильтрация отчётов/assets/column-menu-domain.png",
+      "bytes": 66883,
+      "sha256": "a52a88af401cd51ea01056e1e22fd6b4d2dbfe37056eba9e1fef7fbd8e6e69df"
+    },
+    {
+      "path": "specs/Общие компоненты/Фильтрация отчётов/assets/column-menu-master.png",
+      "bytes": 61775,
+      "sha256": "caa09ee14b06274e1e182a6915035d3df0f15b8fdc4a20f10f5648ea71e248d8"
+    },
+    {
+      "path": "specs/Общие компоненты/Фильтрация отчётов/assets/column-menu-mau.png",
+      "bytes": 61837,
+      "sha256": "f55b06046dc26cf6fcd75bc45b6739ec40881fe2a742d72d6a29596ef5c471e5"
+    },
+    {
+      "path": "specs/Общие компоненты/Фильтрация отчётов/assets/column-menu-owner.png",
+      "bytes": 43870,
+      "sha256": "a23988ac91ee72adbdafffee9e60e20892178ca4426d05596d4244a48691df8b"
+    },
+    {
+      "path": "specs/Общие компоненты/Фильтрация отчётов/assets/column-menu-platform.png",
+      "bytes": 39971,
+      "sha256": "573013e038b15cd978d43ceecadb8393d98a02dcc3ae546ae826f065e765aa7f"
+    },
+    {
+      "path": "specs/Общие компоненты/Фильтрация отчётов/assets/column-menu-report.png",
+      "bytes": 70832,
+      "sha256": "ecfab2a3263b978b19272ea77183f755c25edeab345b5739f92bdd4056b3eb41"
+    },
+    {
+      "path": "specs/Общие компоненты/Фильтрация отчётов/assets/column-menu-viewed.png",
+      "bytes": 57863,
+      "sha256": "fcfaacd27f51e4a42e1c3498d4a14f5f4f06953535269c18468b7d084250748e"
+    },
+    {
+      "path": "specs/Общие компоненты/Фильтрация отчётов/assets/domain-list-selected.png",
+      "bytes": 37009,
+      "sha256": "f6510ef1b444389289ed21c2f7d26a2199408729fbbddf60abf73111cd6b3c13"
+    },
+    {
+      "path": "specs/Общие компоненты/Фильтрация отчётов/assets/domain-open-context.png",
+      "bytes": 124532,
+      "sha256": "08a21a7a99e3ac29c6206e96cfb8664897b661fecd31893094bfa97b9e474431"
+    },
+    {
+      "path": "specs/Общие компоненты/Фильтрация отчётов/assets/manifest.json",
+      "bytes": 9445,
+      "sha256": "6217c157c8ef3893b7cbbd800ef42e81529f48b64ec8fbb3324a3fb4ffd51025"
+    },
+    {
+      "path": "specs/Общие компоненты/Фильтрация отчётов/assets/panel-default.png",
+      "bytes": 21744,
+      "sha256": "885bd0f1317f13480a4dcbfaaff9de36875457c76c1e77ce0aa7333bffc030fd"
+    },
+    {
+      "path": "specs/Общие компоненты/Фильтрация отчётов/assets/panel-list-domain.png",
+      "bytes": 51999,
+      "sha256": "621967646a4646a6728ea6e8aa4440fc615435f52ad8bb6e596df916ebd33625"
+    },
+    {
+      "path": "specs/Общие компоненты/Фильтрация отчётов/assets/panel-list-master.png",
+      "bytes": 47040,
+      "sha256": "6fb83e1cff4a8cfe4368ee468e75e2c0fa3487775b563d6045143cabb805cbba"
+    },
+    {
+      "path": "specs/Общие компоненты/Фильтрация отчётов/assets/panel-list-mau.png",
+      "bytes": 46074,
+      "sha256": "5322a3e58ced45ff5464883c672d97ed0cfc3865be4b4c923f13f1e97afc94e4"
+    },
+    {
+      "path": "specs/Общие компоненты/Фильтрация отчётов/assets/panel-list-owner.png",
+      "bytes": 28378,
+      "sha256": "83115d5bc31a88238c28996b6e28a5b1a06663058e6ab3a96b30a9481b496bfa"
+    },
+    {
+      "path": "specs/Общие компоненты/Фильтрация отчётов/assets/panel-list-platform.png",
+      "bytes": 24669,
+      "sha256": "55f5ecf31dcfb39931bac4da2aa6ee1e411ec1a25775929132431add6304b756"
+    },
+    {
+      "path": "specs/Общие компоненты/Фильтрация отчётов/assets/panel-list-report.png",
+      "bytes": 55484,
+      "sha256": "67dbbc39a2c73102ee25e46070982decb49fa78f7a2b4cc8e63fcfb2992bbec3"
+    },
+    {
+      "path": "specs/Общие компоненты/Фильтрация отчётов/assets/panel-list-viewed.png",
+      "bytes": 41425,
+      "sha256": "c2593137d500e0ea8491cfdae6661b337a695d429f98147a52c73af24b7c05f9"
+    },
+    {
+      "path": "specs/Общие компоненты/Фильтрация отчётов/assets/panel-selected.png",
+      "bytes": 24006,
+      "sha256": "34f828276bff9c75100dd2c5694a842948803736ff7833054c7587b0b9f715ae"
+    },
+    {
+      "path": "specs/Общие компоненты/Фильтрация отчётов/Визуальные эталоны.md",
+      "bytes": 8109,
+      "sha256": "aa29e0d87ae5a009458e3042166d9539caa4fe5d7719d26b4ad7f2e0d0ccf380"
+    },
+    {
+      "path": "specs/Общие компоненты/Фильтрация отчётов/Контракт.md",
+      "bytes": 31337,
+      "sha256": "1af0e956544a9c213723f6bba1cb063f40c638599b7f089d031447df343f18e7"
+    },
+    {
+      "path": "specs/Общие компоненты/Хедер/assets/brand-mark.svg",
+      "bytes": 1413,
+      "sha256": "f030bb8c2502fedcd992c2803cef62d5e994df3af46654a850ff6ed1edacc898"
+    },
+    {
+      "path": "specs/Общие компоненты/Хедер/assets/header-1440.png",
+      "bytes": 7368,
+      "sha256": "38701a608a2dc57e0023959c484508ab71de1551945a727724cbf6eedf031e52"
+    },
+    {
+      "path": "specs/Общие компоненты/Хедер/assets/header-1920.png",
+      "bytes": 7564,
+      "sha256": "60a2d17312574c2c5705b02ff43ae246f9a2136fddada2fbfd4ab69ab91a42ca"
+    },
+    {
+      "path": "specs/Общие компоненты/Хедер/assets/profile-avatar.png",
+      "bytes": 7768,
+      "sha256": "b11070e4c29fd6cfbb3875c6908cd99e62f1b3aeac69c54b7a6bceb032f8bec4"
+    },
+    {
+      "path": "specs/Общие компоненты/Хедер/assets-manifest.json",
+      "bytes": 2509,
+      "sha256": "1611380289e9786a79c986258bc4a8ba07645bde2cd42f76ff8d572d1e4e1f44"
+    },
+    {
+      "path": "specs/Общие компоненты/Хедер/Контракт.md",
+      "bytes": 16785,
+      "sha256": "c606aaf977f5bb8528c1df95a94112c93efa0b5082546b75cc83fcbe3e761597"
+    },
+    {
+      "path": "specs/Разделы/Главная/assets/back-0.svg",
+      "bytes": 214,
+      "sha256": "138eb2ff9c6e675393e19267b655f31f7a42046e99356e58ccacb2f24a31c140"
+    },
+    {
+      "path": "specs/Разделы/Главная/assets/contribution-table-row.png",
+      "bytes": 10477,
+      "sha256": "373fe1db4863c2162740919b77bc6a62e606f60bb8931175ba2107d6f5904fb0"
+    },
+    {
+      "path": "specs/Разделы/Главная/assets/empty-contribution.png",
+      "bytes": 13582,
+      "sha256": "c4aaaf950aa78b460f2f65772f160d6766553070650115c9f6b01b76761715cb"
+    },
+    {
+      "path": "specs/Разделы/Главная/assets/empty-favorites.png",
+      "bytes": 9683,
+      "sha256": "31f41220af07eb3cbc146131405e587415979d3b86518ccb5a8a267dcae4875c"
+    },
+    {
+      "path": "specs/Разделы/Главная/assets/empty-news.png",
+      "bytes": 14958,
+      "sha256": "f22059e00f484b066fd6aac2819b72d7d8b4d1ae944c303c8b1b39941cf59e9a"
+    },
+    {
+      "path": "specs/Разделы/Главная/assets/empty-subscriptions.png",
+      "bytes": 12172,
+      "sha256": "914171a6d19916ee998a8f669e578530eec8a2696a54c46a05e34d2b03939fa0"
+    },
+    {
+      "path": "specs/Разделы/Главная/assets/group-0.svg",
+      "bytes": 1657,
+      "sha256": "56ab3085a3f06a69034e6d5842b9088a58ede2dae8855a50ad0330bb66a0bf7c"
+    },
+    {
+      "path": "specs/Разделы/Главная/assets/news-article-content.png",
+      "bytes": 430076,
+      "sha256": "b6156e849c6c166c507406f95ac9b1c1cc1e56ae879799b98940e4d2573439cf"
+    },
+    {
+      "path": "specs/Разделы/Главная/assets/news-card.png",
+      "bytes": 505614,
+      "sha256": "6693cbb552c0cebc86d47b0e25ef7c63536f2dce35f420fe21b978ebefc9adb8"
+    },
+    {
+      "path": "specs/Разделы/Главная/assets/news-hero.png",
+      "bytes": 281044,
+      "sha256": "985c90e2de405a90dc1f642b80a61a88cc30576daeacf17452f61a4fdf4ff40f"
+    },
+    {
+      "path": "specs/Разделы/Главная/assets/news-image-1.png",
+      "bytes": 112465,
+      "sha256": "b31d8ad4cffdd1530a3d77855521299998e7932cc485821436c31521abd39190"
+    },
+    {
+      "path": "specs/Разделы/Главная/assets/news-image-2.png",
+      "bytes": 136732,
+      "sha256": "752f8340aba1bd287e6ef910069a0a8371d2a21e6a682efc1715c613782fc5f5"
+    },
+    {
+      "path": "specs/Разделы/Главная/assets/news-image-3.png",
+      "bytes": 80252,
+      "sha256": "8d107ce523bd246cc071d513bfc9a8c42010ea99e02d40221b0ab9c22cdd4542"
+    },
+    {
+      "path": "specs/Разделы/Главная/assets/news-image-4.png",
+      "bytes": 71551,
+      "sha256": "f58d5b2cfa84ba76376adca1112ed03726cb4eadc9534c72fb7f53d1a1b21902"
+    },
+    {
+      "path": "specs/Разделы/Главная/assets/news-image-5.png",
+      "bytes": 72822,
+      "sha256": "372ec124bbc14ecfd77542e1b8375dce0c8654c7dc06da004b4d4d3db16f13c4"
+    },
+    {
+      "path": "specs/Разделы/Главная/assets/news-image-6.png",
+      "bytes": 60693,
+      "sha256": "72cf42a2d509206ce5932936506b9d7b333fced38fe35677252f1b1c0b7fe19d"
+    },
+    {
+      "path": "specs/Разделы/Главная/assets/news-image-7.png",
+      "bytes": 61061,
+      "sha256": "f9c2be49c6fbf7a18f857dc6a7ee8082d3972904d15b1c92ff99bc85d65fe00b"
+    },
+    {
+      "path": "specs/Разделы/Главная/assets/news-image-8.png",
+      "bytes": 56854,
+      "sha256": "7775f65792db3d6c06c2dc26ac75fbe17c182cc6fdddb67ca714969a74ecf27f"
+    },
+    {
+      "path": "specs/Разделы/Главная/assets/news-image-9.png",
+      "bytes": 53227,
+      "sha256": "5bcc5a50b5d40fd941aef16211008cc5e1af7b04545c838aa6c06e280bd1e661"
+    },
+    {
+      "path": "specs/Разделы/Главная/assets/news-nav-default.png",
+      "bytes": 9785,
+      "sha256": "9ae87140e9f7c4b3d346085dfbe0d5c3129e1dabf0a0dc50f440ab8a35da853f"
+    },
+    {
+      "path": "specs/Разделы/Главная/assets/news-nav-hover-master.png",
+      "bytes": 9075,
+      "sha256": "ebd933d41984f971dd6048290c10ca37fe755661ae0d65904d9885896fd7364d"
+    },
+    {
+      "path": "specs/Разделы/Главная/assets/news-nav-selected.png",
+      "bytes": 9577,
+      "sha256": "301def8e26f3d2a1db964728bcbedfc3d52eb830b5063a676babaa1aec9e7852"
+    },
+    {
+      "path": "specs/Разделы/Главная/assets/next-0.svg",
+      "bytes": 213,
+      "sha256": "1c3f4fdf214ec8b763aae1393aaa00b1d526d839a45470ff2fe9c837a8645c73"
+    },
+    {
+      "path": "specs/Разделы/Главная/assets/s1-01.png",
+      "bytes": 92310,
+      "sha256": "b1b3aee5425e5c8452a36d60d7f84c5fa7b49f3c664f646c29c67f4d037d019e"
+    },
+    {
+      "path": "specs/Разделы/Главная/assets/s1-02.png",
+      "bytes": 134400,
+      "sha256": "2a9115b006508518f0f22c6b65cc4f66960e2d1c3a3b81f1ace3f7d78f223cf1"
+    },
+    {
+      "path": "specs/Разделы/Главная/assets/s1-03.png",
+      "bytes": 139711,
+      "sha256": "860c07d05852a86f94da7f15b650deed371f4e8e4896dae22ffc825eafaef9b5"
+    },
+    {
+      "path": "specs/Разделы/Главная/assets/s1-04.png",
+      "bytes": 100103,
+      "sha256": "23ec24e9635d0208b92e3e15f7f425c795900b8c0a3651fc6abc5777fba0cf6e"
+    },
+    {
+      "path": "specs/Разделы/Главная/assets/s1-05.png",
+      "bytes": 65614,
+      "sha256": "565e468544d920aad551c50a2c41de2acbb019fa23235f82420267ce5d2a3499"
+    },
+    {
+      "path": "specs/Разделы/Главная/assets/s1-06.png",
+      "bytes": 93514,
+      "sha256": "fa136404df8be02df5fac8762de97110b79056b8d9e6ae49b7b02054f81a1ba9"
+    },
+    {
+      "path": "specs/Разделы/Главная/assets/s1-07.png",
+      "bytes": 82542,
+      "sha256": "d097ef5978e84573128c5e7cdad393b01a489834a30f47b1dd9947d1cf1b261e"
+    },
+    {
+      "path": "specs/Разделы/Главная/assets/s2-01.png",
+      "bytes": 125218,
+      "sha256": "3eda2fb43549d3642ba48276c1a6247156ff8ee30cc334e2caab245140325ef4"
+    },
+    {
+      "path": "specs/Разделы/Главная/assets/s2-02.png",
+      "bytes": 135192,
+      "sha256": "e592db951a500c327f5dea0953bd679b1235f32036e25dc7bdc383116d25b1dc"
+    },
+    {
+      "path": "specs/Разделы/Главная/assets/s2-03.png",
+      "bytes": 64619,
+      "sha256": "697cc97eaa5d2dc275f8c92821dddb7ee2aebe30a92dce7ec6fbb6a010b03d2e"
+    },
+    {
+      "path": "specs/Разделы/Главная/assets/s3-01.png",
+      "bytes": 106305,
+      "sha256": "792aac8e05dbe4dd9969261f58db61997dda167e175225b5c2c70561df2a51c8"
+    },
+    {
+      "path": "specs/Разделы/Главная/assets/s3-02.png",
+      "bytes": 134915,
+      "sha256": "c4577c05cf24f057acf856a2d9c611c1d2f8a913bd90188915c052091100dec8"
+    },
+    {
+      "path": "specs/Разделы/Главная/assets/s3-03.png",
+      "bytes": 67292,
+      "sha256": "c0d62f0b59cf6a3ce4a73dde77baf596fed3f1954c2f87b8be50129a6aef24d4"
+    },
+    {
+      "path": "specs/Разделы/Главная/assets/s4-01.png",
+      "bytes": 694978,
+      "sha256": "b853f36e314770bfb9917d348c0f4fd2ae2729ca6940d5526317822fe98cbbdd"
+    },
+    {
+      "path": "specs/Разделы/Главная/assets/s4-02.png",
+      "bytes": 404970,
+      "sha256": "ef310aa42400afbe904c28755e4634bbc2abf1213bdbb211e535433c4468ec2a"
+    },
+    {
+      "path": "specs/Разделы/Главная/assets/s4-03.png",
+      "bytes": 60547,
+      "sha256": "629c0452bc0bff1aedbae56e2c19f1b3d4782adf3c0a9be5a3549f6f7e7bd54b"
+    },
+    {
+      "path": "specs/Разделы/Главная/assets/s5-01.png",
+      "bytes": 122589,
+      "sha256": "b4f682d25bd90e9c167b5011bec49cc38e44bd443675385e56ccba3915959070"
+    },
+    {
+      "path": "specs/Разделы/Главная/assets/s6-01.png",
+      "bytes": 92308,
+      "sha256": "950be8fdd983523fe89ba73a41ea02e5f1184f17c061c60371cf5fa2426198cf"
+    },
+    {
+      "path": "specs/Разделы/Главная/assets/s6-02.png",
+      "bytes": 93611,
+      "sha256": "33a410382248028b196bcdc82919d553c393cef504cc5d923dfecd5d6c0832ff"
+    },
+    {
+      "path": "specs/Разделы/Главная/assets/s6-03.png",
+      "bytes": 113676,
+      "sha256": "275ad93dce75d125d1efeffa719a5b21819cbf67b96458ca858679a1d4b045a7"
+    },
+    {
+      "path": "specs/Разделы/Главная/assets/s6-04.png",
+      "bytes": 96218,
+      "sha256": "bc23a90c448e9d15c457f62906c3b43bf08e8b586b4a231f9957588242797d91"
+    },
+    {
+      "path": "specs/Разделы/Главная/assets/s6-05.png",
+      "bytes": 76044,
+      "sha256": "b7c60014f17460ce3db69063e9df24b59cf98865d81d9574d22f825d00551ea5"
+    },
+    {
+      "path": "specs/Разделы/Главная/assets/s6-06.png",
+      "bytes": 76392,
+      "sha256": "70f30895e9fae80b7a74daebb81ddd70af28abe43ba6ae2c54264a3bab6ebe91"
+    },
+    {
+      "path": "specs/Разделы/Главная/assets/s7-01.png",
+      "bytes": 128000,
+      "sha256": "0bad2c0f21c7bb472034b366de583364adb044694e140cfc12c4f522aeef706a"
+    },
+    {
+      "path": "specs/Разделы/Главная/assets/s7-02.png",
+      "bytes": 172164,
+      "sha256": "d23f17b7aac30c27e5cc7373d854285f57d2961e0ef9e9884e8e063898685199"
+    },
+    {
+      "path": "specs/Разделы/Главная/assets/s7-03.png",
+      "bytes": 172305,
+      "sha256": "a2241d92adcf59c046d6e2253f5d2a23de050dea2fb1dc6aa56ca5add1b97058"
+    },
+    {
+      "path": "specs/Разделы/Главная/assets/s7-04.png",
+      "bytes": 106958,
+      "sha256": "124c4ee720cf7f18f21ba7635ec8103a6e491e665c4d3d03374d878fb14c1ea7"
+    },
+    {
+      "path": "specs/Разделы/Главная/assets/s7-05.png",
+      "bytes": 106960,
+      "sha256": "c265e0bdfa48b6949c81872bf7d6dc87ec52d5118f180221bfbf43849addaa56"
+    },
+    {
+      "path": "specs/Разделы/Главная/assets/s7-06.png",
+      "bytes": 96364,
+      "sha256": "b50aaf1011e6a024b007c7199513134d50d029e327e77f4ecd6f35980bfcab4b"
+    },
+    {
+      "path": "specs/Разделы/Главная/assets/s7-07.png",
+      "bytes": 76555,
+      "sha256": "150673db216faeb1f163b2672e3439ee6c1d1cdd71a6d987c78fc6006c2b8db1"
+    },
+    {
+      "path": "specs/Разделы/Главная/assets/s7-08.png",
+      "bytes": 85140,
+      "sha256": "2ccdf1dce1962719df4ef51dd6e8c47bd93ac2a300964a4b341d959f2fcc58f1"
+    },
+    {
+      "path": "specs/Разделы/Главная/assets/s7-09.png",
+      "bytes": 92308,
+      "sha256": "950be8fdd983523fe89ba73a41ea02e5f1184f17c061c60371cf5fa2426198cf"
+    },
+    {
+      "path": "specs/Разделы/Главная/assets/subscription-table-row.png",
+      "bytes": 13564,
+      "sha256": "4f58b61616c0ed37597b70e05b39cebe540adb37f5a7922865be80414fe52bf3"
+    },
+    {
+      "path": "specs/Разделы/Главная/assets/view-0.svg",
+      "bytes": 513,
+      "sha256": "dcd2efadec93ed88770b718b7e70123ba46614dfe9465f81b9c9146a6e020b42"
+    },
+    {
+      "path": "specs/Разделы/Главная/assets/view-1.svg",
+      "bytes": 706,
+      "sha256": "b3e844e397dd4b7e4598abbdb3cb9c5ec0c64d29acac581391ee2da9eab7d5f6"
+    },
+    {
+      "path": "specs/Разделы/Главная/assets-manifest.json",
+      "bytes": 41021,
+      "sha256": "78f579d6a8af95a18ba2ab8c914385488fe5b36b5da9c553a8813d97dd04a171"
+    },
+    {
+      "path": "specs/Разделы/Главная/Виды.md",
+      "bytes": 24440,
+      "sha256": "45c8546ce34fd039b0516c594c2278b6105cad6b8c99253fef674067825d054f"
+    },
+    {
+      "path": "specs/Разделы/Главная/Контракт.md",
+      "bytes": 17568,
+      "sha256": "b2dd204b1b81ac2ae8c22823b877817240fbc93f204fbc4ecc7206b7da270eae"
+    },
+    {
+      "path": "specs/Разделы/Главная/Новости.md",
+      "bytes": 13591,
+      "sha256": "b3b4c96ecf5bc723fefcc6e926f1d11fa0582cd12ac288aec96eadcebe865fae"
+    },
+    {
+      "path": "specs/Разделы/Главная/Состояния.md",
+      "bytes": 21439,
+      "sha256": "3ed33f20edbfcc4e861b22c6122c078170464a2e50b09d276e1b427560b60f23"
+    },
+    {
+      "path": "specs/Разделы/Навигатор/visual-manifest.json",
+      "bytes": 5518,
+      "sha256": "1afb429fb386d9eee34f7941bf08c60719aef9c73a06fca558e4a4f3905f480f"
+    },
+    {
+      "path": "specs/Разделы/Навигатор/Изображения/01-start.png",
+      "bytes": 132348,
+      "sha256": "f325c03b62aa4943773ecd18e955b37fa532eb0f3f36c9c58ca030018157a2ec"
+    },
+    {
+      "path": "specs/Разделы/Навигатор/Изображения/02-mixed.png",
+      "bytes": 158326,
+      "sha256": "af819e16bc7ccba468867d284ee9c382112be2f5c093dce6d45a0d78349c42ef"
+    },
+    {
+      "path": "specs/Разделы/Навигатор/Изображения/03-reports.png",
+      "bytes": 135136,
+      "sha256": "6a63746908eaa505b09bd2275a50d8779cd7f3d5dbc10f2c4c1f25b9dc6a2731"
+    },
+    {
+      "path": "specs/Разделы/Навигатор/Изображения/a1-wide.png",
+      "bytes": 188045,
+      "sha256": "cae324cbe49f4f6a315f1efae23a1286d4adc791c5bd3c49551fde7333117075"
+    },
+    {
+      "path": "specs/Разделы/Навигатор/Изображения/d1-single.png",
+      "bytes": 119653,
+      "sha256": "8031541a71d09f2261171562d758c51c7413e19ff4311118d67245f343e8d051"
+    },
+    {
+      "path": "specs/Разделы/Навигатор/Изображения/d2-two-types.png",
+      "bytes": 161007,
+      "sha256": "c705af46b13952feb40d130ac1fc720b2019bd2ce10551a8245771d6eaaa4911"
+    },
+    {
+      "path": "specs/Разделы/Навигатор/Изображения/d3-three-types.png",
+      "bytes": 160509,
+      "sha256": "e31c09662aaa1b5d5d6d0b0f9b94f7d34b03d1cac2010f16b51bb56c084c6636"
+    },
+    {
+      "path": "specs/Разделы/Навигатор/Изображения/d4-expanded.png",
+      "bytes": 157739,
+      "sha256": "2469acb676bf084ee35b263c57034507fdc9657f3dff9e28bfc770d65ff3addf"
+    },
+    {
+      "path": "specs/Разделы/Навигатор/Изображения/d5-cleared.png",
+      "bytes": 132895,
+      "sha256": "242c1ef0c8e1e4e8c3a173cfb22fafcf78f1a8eca920a40cb1cc942fe58b4eee"
+    },
+    {
+      "path": "specs/Разделы/Навигатор/Изображения/d6-more-open.png",
+      "bytes": 175047,
+      "sha256": "635f62fcdd9c1d679234a66cc91968763b9b8d228aa6cffe9382d4400a7ef542"
+    },
+    {
+      "path": "specs/Разделы/Навигатор/Контракт.md",
+      "bytes": 26898,
+      "sha256": "d89aa824e55b58aacbc0afe1c258815a3073d7c656cf6ba29889851020a10f09"
+    },
+    {
+      "path": "specs/Разделы/Отчёты/assets/manifest.json",
+      "bytes": 13646,
+      "sha256": "6a140ddca9b155984ed73323872b332bfecd9efc304854456311b15ef5640602"
+    },
+    {
+      "path": "specs/Разделы/Отчёты/assets/screen-01.png",
+      "bytes": 125998,
+      "sha256": "ecc5d07a247a18d49ba704ee8e05b0738bd08c942b234a63512559c0cf69bfa8"
+    },
+    {
+      "path": "specs/Разделы/Отчёты/assets/screen-02.png",
+      "bytes": 170453,
+      "sha256": "3ec57b6c03e2c6864828225b6e0d0a5a9982cabd1bc006d2bec480aad4299e11"
+    },
+    {
+      "path": "specs/Разделы/Отчёты/assets/screen-03.png",
+      "bytes": 89591,
+      "sha256": "c51f803778027b89a302bc62bd060626cb2dfb5928a9ef733ac268c36a0f7de0"
+    },
+    {
+      "path": "specs/Разделы/Отчёты/assets/screen-04.png",
+      "bytes": 89591,
+      "sha256": "62214796bd77e218702b4c4b5e5dfc94a50780df875c00603dc8bf12d5d75909"
+    },
+    {
+      "path": "specs/Разделы/Отчёты/assets/screen-05.png",
+      "bytes": 88516,
+      "sha256": "7a8cac5709d9ff56dd62fd445814f6be9a274cf9126304c7ac0a51f93197ff6b"
+    },
+    {
+      "path": "specs/Разделы/Отчёты/assets/screen-06.png",
+      "bytes": 124532,
+      "sha256": "08a21a7a99e3ac29c6206e96cfb8664897b661fecd31893094bfa97b9e474431"
+    },
+    {
+      "path": "specs/Разделы/Отчёты/assets/screen-07.png",
+      "bytes": 91193,
+      "sha256": "a4dfa66b74e1feda8657e41309b697f2043a88a0063686057f61b3e7d267ecf0"
+    },
+    {
+      "path": "specs/Разделы/Отчёты/assets/screen-08.png",
+      "bytes": 68653,
+      "sha256": "d4cd978dc5b7cd20256f8b6c4ba56da7591b5c9d23edfd912059414ba2408e3c"
+    },
+    {
+      "path": "specs/Разделы/Отчёты/assets/screen-09.png",
+      "bytes": 68962,
+      "sha256": "008175071ec09ca77478e257776fa10472a20040c3c569f33a949ccd0ac4cc84"
+    },
+    {
+      "path": "specs/Разделы/Отчёты/assets/screen-10.png",
+      "bytes": 125998,
+      "sha256": "ecc5d07a247a18d49ba704ee8e05b0738bd08c942b234a63512559c0cf69bfa8"
+    },
+    {
+      "path": "specs/Разделы/Отчёты/assets/screen-11.png",
+      "bytes": 169980,
+      "sha256": "207f7e2ec8ac319375311e871110aafef3feb3172a6335d8638220a2d9c4177d"
+    },
+    {
+      "path": "specs/Разделы/Отчёты/assets/screen-12.png",
+      "bytes": 170344,
+      "sha256": "2815cf2495aad7ff0ce0dc234860775886acaf0bfe383044feaa94a934986781"
+    },
+    {
+      "path": "specs/Разделы/Отчёты/assets/screen-13.png",
+      "bytes": 100235,
+      "sha256": "41dcd78ab72441bd76e4e37bda53152d2d5b954dcc266c772579c5428637631d"
+    },
+    {
+      "path": "specs/Разделы/Отчёты/assets/screen-14.png",
+      "bytes": 87150,
+      "sha256": "bfdc4fde66fbcf8bf47ad6d56c78e79e673c92abbbe32946f1069d0db6829fbb"
+    },
+    {
+      "path": "specs/Разделы/Отчёты/assets/screen-15.png",
+      "bytes": 68653,
+      "sha256": "d4cd978dc5b7cd20256f8b6c4ba56da7591b5c9d23edfd912059414ba2408e3c"
+    },
+    {
+      "path": "specs/Разделы/Отчёты/assets/screen-16.png",
+      "bytes": 77132,
+      "sha256": "4d0e6828748dfe5f434b065f948b20e5cc2e1986764e44c9a08064bd56336bbe"
+    },
+    {
+      "path": "specs/Разделы/Отчёты/assets/screen-17.png",
+      "bytes": 100224,
+      "sha256": "a248727d0385f44cb920d3a74fd5d352e76c6f0ce6233ed0214fc355570ee552"
+    },
+    {
+      "path": "specs/Разделы/Отчёты/assets/screen-18.png",
+      "bytes": 89591,
+      "sha256": "c51f803778027b89a302bc62bd060626cb2dfb5928a9ef733ac268c36a0f7de0"
+    },
+    {
+      "path": "specs/Разделы/Отчёты/Визуальные эталоны.md",
+      "bytes": 5819,
+      "sha256": "649faaa407ecf1f711115d701cd09e69ad4aa8263ebb2faf55af53052bd3a05c"
+    },
+    {
+      "path": "specs/Разделы/Отчёты/Изображения/sort-1.png",
+      "bytes": 168070,
+      "sha256": "e6ecd003526fb62b19313cd340c51dea48bb7f8febf106015098c17975eb0511"
+    },
+    {
+      "path": "specs/Разделы/Отчёты/Изображения/sort-2.png",
+      "bytes": 167999,
+      "sha256": "2370a9cd3bbe72a0459d72f4f78d80dd5039544cf7df61aa8f66fd9d1b853571"
+    },
+    {
+      "path": "specs/Разделы/Отчёты/Изображения/sort-3.png",
+      "bytes": 126073,
+      "sha256": "5e6ab5a357c2f027e70fb4dddaa2bad5ac9e156522d6119014afc451b07778d7"
+    },
+    {
+      "path": "specs/Разделы/Отчёты/Изображения/sort-4.png",
+      "bytes": 168187,
+      "sha256": "292ecb91e98e0e7c517fc49cb298939f7d48242e2d08ee27a91ceae872510336"
+    },
+    {
+      "path": "specs/Разделы/Отчёты/Изображения/sort-5.png",
+      "bytes": 168255,
+      "sha256": "e9a359342cc8452628d545c173a5eb76b74fc26f19b3d7aead0f27cb22500044"
+    },
+    {
+      "path": "specs/Разделы/Отчёты/Изображения/sort-6.png",
+      "bytes": 125998,
+      "sha256": "ecc5d07a247a18d49ba704ee8e05b0738bd08c942b234a63512559c0cf69bfa8"
+    },
+    {
+      "path": "specs/Разделы/Отчёты/Контракт.md",
+      "bytes": 33707,
+      "sha256": "961d6f108de0b1088bb6a70ee246a2a8653ea4639c78a897c377e51ff3dc484d"
+    },
+    {
+      "path": "specs/Ресурсы/Шрифты/CoFoSans-Medium.otf",
+      "bytes": 100884,
+      "sha256": "115f86a5fdb85d003a0425ac197035cd68aa28b8a68c718aab93dea226590586"
+    },
+    {
+      "path": "specs/Ресурсы/Шрифты/CoFoSans-Regular.otf",
+      "bytes": 100556,
+      "sha256": "052bad1dcead839289b2dcde6bf539f798bdfe9865356923613bfed3d265cccb"
+    },
+    {
+      "path": "specs/Ресурсы/Шрифты/manifest.json",
+      "bytes": 2716,
+      "sha256": "9b8ffccc0c61181c48bd66b6ff4dcdd433a8a70c45e6169e80622242f2f7ffb0"
+    },
+    {
+      "path": "specs/Ресурсы/Шрифты/README.md",
+      "bytes": 4384,
+      "sha256": "0af063cc55267b588e56b0ef779945ededf8749efb5e97e6827a66cd259ed15a"
+    },
+    {
+      "path": "specs/Ресурсы/Шрифты/Дополнительные/CoFoRobert-MediumItalic.ttf",
+      "bytes": 465236,
+      "sha256": "763068e8ced05ff25e2ccc20f0d6caa645cf76db31e83a9dee6e31b27fd7e101"
+    }
+  ],
+  "origin": [
+    {
+      "path": "specs/Обзор.md",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Обзор.md",
+      "sourceSha256": "6ea258675660ba7061248fa04751d819378dadc536a3daa12b0dc62230fe4f72",
+      "transfer": "text-with-portable-links"
+    },
+    {
+      "path": "specs/Общие компоненты/Боковая навигация/assets-manifest.json",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Боковая навигация/assets-manifest.json",
+      "sourceSha256": "1763e279668ed01bc0002670c957188834e2b80911908c88f123a6f9bc28b296",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Общие компоненты/Боковая навигация/Контракт.md",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Боковая навигация/Контракт.md",
+      "sourceSha256": "101412374ad25ac902ad3db732a6a79648b60964d7fb9365ac5002c1a895e33f",
+      "transfer": "text-with-portable-links"
+    },
+    {
+      "path": "specs/Общие компоненты/Карточка подписки/assets-manifest.json",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Карточка подписки/assets-manifest.json",
+      "sourceSha256": "a71cf381d8112a4b7e6d2bbb5e6c960f23b4b042262412cb095a988f47429553",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Общие компоненты/Карточка подписки/Контракт.md",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Карточка подписки/Контракт.md",
+      "sourceSha256": "e268664e0ab192ee2023da6b79c95669bc5676395d8cd3af53b4fb8d1cf6f16c",
+      "transfer": "text-with-portable-links"
+    },
+    {
+      "path": "specs/Общие компоненты/Карточка участника/assets-manifest.json",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Карточка участника/assets-manifest.json",
+      "sourceSha256": "6191924f129848bf9da36b8795f33c3475d3fb01b993721b3de04566cc45cbee",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Общие компоненты/Карточка участника/Контракт.md",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Карточка участника/Контракт.md",
+      "sourceSha256": "0bc5debc8da74eaff0d96aace8dbf055d3352e4876b219b4536c2eb7b999d75e",
+      "transfer": "text-with-portable-links"
+    },
+    {
+      "path": "specs/Общие компоненты/Карточки отчётов/assets-manifest.json",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Карточки отчётов/assets-manifest.json",
+      "sourceSha256": "72ef16d745c9b73797f0dba5cbf399633f322cc8bc2860897f473f84530a1af6",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Общие компоненты/Карточки отчётов/Контракт.md",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Карточки отчётов/Контракт.md",
+      "sourceSha256": "6bc1dca2d9ae98947be99f9f34fa31a3f2db926fc7e2e7e45cd391fd4200d719",
+      "transfer": "text-with-portable-links"
+    },
+    {
+      "path": "specs/Общие компоненты/Поиск и навигатор/visual-manifest.json",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Поиск и навигатор/visual-manifest.json",
+      "sourceSha256": "81569fd17159c3c5ebf2c60e410a90f33b1dce49a1722f99cba7eef48a07ff26",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Общие компоненты/Поиск и навигатор/Вид.md",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Поиск и навигатор/Вид.md",
+      "sourceSha256": "86e56ae34722243a11bd46adedc03c2ace785649a73a1064e014b4bfdff2ca9a",
+      "transfer": "text-with-portable-links"
+    },
+    {
+      "path": "specs/Общие компоненты/Поиск и навигатор/Контракт.md",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Поиск и навигатор/Контракт.md",
+      "sourceSha256": "d2ed6258da76d24f26a387fe78ca26885225337a4251cde6142a84d1b25b7382",
+      "transfer": "text-with-portable-links"
+    },
+    {
+      "path": "specs/Общие компоненты/Поиск и навигатор/Состояния.md",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Поиск и навигатор/Состояния.md",
+      "sourceSha256": "491b9a405d28e9479b2ba09d0ddcf85f7d6b72e32bf7add0651b21d77c1c81c7",
+      "transfer": "text-with-portable-links"
+    },
+    {
+      "path": "specs/Общие компоненты/Таблица отчётов/Контракт.md",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Таблица отчётов/Контракт.md",
+      "sourceSha256": "04bb22a1efde922e14b64be878a35c2a299d74a3e5335d25416aed424dd1f422",
+      "transfer": "text-with-portable-links"
+    },
+    {
+      "path": "specs/Общие компоненты/Фильтрация отчётов/Визуальные эталоны.md",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Фильтрация отчётов/Визуальные эталоны.md",
+      "sourceSha256": "5e16fca12b46b5cf668e1bb1018f5b8eb45b40049a9a844ec6284fcd7f935ce3",
+      "transfer": "text-with-portable-links"
+    },
+    {
+      "path": "specs/Общие компоненты/Фильтрация отчётов/Контракт.md",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Фильтрация отчётов/Контракт.md",
+      "sourceSha256": "cc718ca0e5e7e7e65c3f671260264f6d22195247eb6076ff0381d38f929dd929",
+      "transfer": "text-with-portable-links"
+    },
+    {
+      "path": "specs/Общие компоненты/Хедер/assets-manifest.json",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Хедер/assets-manifest.json",
+      "sourceSha256": "1611380289e9786a79c986258bc4a8ba07645bde2cd42f76ff8d572d1e4e1f44",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Общие компоненты/Хедер/Контракт.md",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Хедер/Контракт.md",
+      "sourceSha256": "a420c61661560be3ab974462002675ae8da75f2ddcdd27c306a151a4f4b16344",
+      "transfer": "text-with-portable-links"
+    },
+    {
+      "path": "specs/Общие компоненты/Боковая навигация/assets/collapsed-boundary-hover.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Боковая навигация/assets/collapsed-boundary-hover.png",
+      "sourceSha256": "45448c022be526bb6ce0447fd19859a06e50ca9fc594924973e1b009e849e82b",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Общие компоненты/Боковая навигация/assets/context-collapsed.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Боковая навигация/assets/context-collapsed.png",
+      "sourceSha256": "d097ef5978e84573128c5e7cdad393b01a489834a30f47b1dd9947d1cf1b261e",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Общие компоненты/Боковая навигация/assets/context-home.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Боковая навигация/assets/context-home.png",
+      "sourceSha256": "b1b3aee5425e5c8452a36d60d7f84c5fa7b49f3c664f646c29c67f4d037d019e",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Общие компоненты/Боковая навигация/assets/expanded-boundary-hover.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Боковая навигация/assets/expanded-boundary-hover.png",
+      "sourceSha256": "0e82031beaceba9a94ee658429da4a7f6589fd8d7ddf2e1877b95323be7823ee",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Общие компоненты/Боковая навигация/assets/expanded.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Боковая навигация/assets/expanded.png",
+      "sourceSha256": "2d41bfa9097ddb0b68346ecfc57a1297f3df99ea01399a68780ce87bfab1a052",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Общие компоненты/Боковая навигация/assets/reports-active.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Боковая навигация/assets/reports-active.png",
+      "sourceSha256": "b7ae672cabd54d48d2a38e4833e5f9f71d08cc17c5ae6259b60aefc7447eb9e8",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Общие компоненты/Боковая навигация/assets/row-default.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Боковая навигация/assets/row-default.png",
+      "sourceSha256": "d45283b22fdf9cbbb8393e04eb1c7cc6ae91d9cb8c12d87504a6eca536ea9e36",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Общие компоненты/Боковая навигация/assets/row-hover.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Боковая навигация/assets/row-hover.png",
+      "sourceSha256": "a64887acb56e0c0b181b7efc445c3ee3cade64022e22849a4f83468f3d7b3fdd",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Общие компоненты/Боковая навигация/assets/row-selected-hover.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Боковая навигация/assets/row-selected-hover.png",
+      "sourceSha256": "a53a3004f96962f53017a6d3392c7707cab5c3b329a4314ad69158650531af8e",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Общие компоненты/Боковая навигация/assets/row-selected.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Боковая навигация/assets/row-selected.png",
+      "sourceSha256": "5fbbf541c297c38a6c02df0acf6231817f67073ff90666d60901271a1b497402",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Общие компоненты/Боковая навигация/assets/icons/ai-hub.svg",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Боковая навигация/assets/icons/ai-hub.svg",
+      "sourceSha256": "6e8db067d3647177bd57624f41642831de2ba92f4cf8696545dca9eafbf5928d",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Общие компоненты/Боковая навигация/assets/icons/collapse.svg",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Боковая навигация/assets/icons/collapse.svg",
+      "sourceSha256": "7838832171d18e8e8446441a97c989304a86066c0e2635bce9e4de770c03c962",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Общие компоненты/Боковая навигация/assets/icons/dictionary.svg",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Боковая навигация/assets/icons/dictionary.svg",
+      "sourceSha256": "2a322cd0f5c67b7a7ae81eb59cf3aa83aed7cf7166c938d19e185644e5e11be3",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Общие компоненты/Боковая навигация/assets/icons/expand.svg",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Боковая навигация/assets/icons/expand.svg",
+      "sourceSha256": "6d6e95bd466d0c181b1f17d379aa5faa7e0bc35c21fbf3c9b0f08a95a7acdc2e",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Общие компоненты/Боковая навигация/assets/icons/home.svg",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Боковая навигация/assets/icons/home.svg",
+      "sourceSha256": "a16afca97a8b37d2f7110704601230ec92898903e55f5eaba5ba8ee26741e306",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Общие компоненты/Боковая навигация/assets/icons/metrics.svg",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Боковая навигация/assets/icons/metrics.svg",
+      "sourceSha256": "b992fc2a9b6eb83cccc33559cca1cae2d8776a9fd0a285b0e987b745cea9c344",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Общие компоненты/Боковая навигация/assets/icons/questions.svg",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Боковая навигация/assets/icons/questions.svg",
+      "sourceSha256": "e38dcb21ba5549f75020fcf016058d77a8ec99d2ae5131e6d1b743fbedc7b525",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Общие компоненты/Боковая навигация/assets/icons/reports.svg",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Боковая навигация/assets/icons/reports.svg",
+      "sourceSha256": "501a7cfcf9ed1fde201809e4e955a1ed27b90d57d263789127f4bdd4f71d8e20",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Общие компоненты/Боковая навигация/assets/icons/sources.svg",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Боковая навигация/assets/icons/sources.svg",
+      "sourceSha256": "3c37d20ab5236f115111cdc4d6ce8ca1afad6a4074677342816e4f72e2fe9543",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Общие компоненты/Боковая навигация/assets/icons/systems.svg",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Боковая навигация/assets/icons/systems.svg",
+      "sourceSha256": "bfab0ab731d6b12096fbb793d3707104a67ecb06df417798daaf7dacf65544e8",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Общие компоненты/Боковая навигация/assets/icons/tasks-collapsed.svg",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Боковая навигация/assets/icons/tasks-collapsed.svg",
+      "sourceSha256": "e7c251d906c60202469df00edadc13911e85364b5677ecc5fa4ba0a749a58568",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Общие компоненты/Боковая навигация/assets/icons/tasks.svg",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Боковая навигация/assets/icons/tasks.svg",
+      "sourceSha256": "df125baab56b3b6a2a11339f5302a7035d77047be170d945f3c282948caa7ba6",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Общие компоненты/Карточка подписки/assets/subscription-consumer.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Карточка подписки/assets/subscription-consumer.png",
+      "sourceSha256": "919b553c35edfeb166ebd7d19610f176b5d3c76c01a031df07421fe8d5e949eb",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Общие компоненты/Карточка подписки/assets/subscription-group.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Карточка подписки/assets/subscription-group.png",
+      "sourceSha256": "3b0158c9d5187da4562e63726ca81be837ba6c0ae517b7f4cec79becfd74acfa",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Общие компоненты/Карточка подписки/assets/subscription-master.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Карточка подписки/assets/subscription-master.png",
+      "sourceSha256": "8e9ff8efd151e3e152b0c910efcbf6015e3dff99f6aa8dbc0d0c17f30a99d5c5",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Общие компоненты/Карточка участника/assets/contribution-consumer.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Карточка участника/assets/contribution-consumer.png",
+      "sourceSha256": "f71bdf8083fd7b9bc342ca34a74db8415730a565b00ba8bd2038606480a017d1",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Общие компоненты/Карточки отчётов/assets/compact-catalog.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Карточки отчётов/assets/compact-catalog.png",
+      "sourceSha256": "38752869ae5c80a6520337575bc99a329ae8c0b5d9857fced1e36a56195364e1",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Общие компоненты/Карточки отчётов/assets/compact-hover-master.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Карточки отчётов/assets/compact-hover-master.png",
+      "sourceSha256": "0b5b8e62a629f34397b1fc7e82c5c5adf995aa8702e6f1d4437b5a7538bdcc24",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Общие компоненты/Карточки отчётов/assets/compact-unverified.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Карточки отчётов/assets/compact-unverified.png",
+      "sourceSha256": "362c648bb79f0a2ab6f910af2bb585a40bb8bd095acc85099c77db6e81c1791c",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Общие компоненты/Карточки отчётов/assets/compact-verified.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Карточки отчётов/assets/compact-verified.png",
+      "sourceSha256": "dc9c9c87ea460d821fe2d2a76ce060a255dd8f85feb7a8fa28ed46b40c674313",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Общие компоненты/Карточки отчётов/assets/edit.svg",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Карточки отчётов/assets/edit.svg",
+      "sourceSha256": "ce2b880a5b3df0f1ab61be1c7d749990a4744cbe4d8e716a6cad6b94b21d9614",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Общие компоненты/Карточки отчётов/assets/report-document-hover.svg",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Карточки отчётов/assets/report-document-hover.svg",
+      "sourceSha256": "c1b77dfb2fb3399fbd01ae09bd73e54ab8c6818b747a8acee1482efcdd6ee546",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Общие компоненты/Карточки отчётов/assets/report-document.svg",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Карточки отчётов/assets/report-document.svg",
+      "sourceSha256": "d2881760d870a43d6412d905c727dd6492629484747dc61d6378068f8ca13f28",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Общие компоненты/Карточки отчётов/assets/verified-badge.svg",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Карточки отчётов/assets/verified-badge.svg",
+      "sourceSha256": "e617ee09b658b17c412e634a5639bd3f53c03c23cb97702df718373e619396bb",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Общие компоненты/Поиск и навигатор/Изображения/actual-before-input.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Поиск и навигатор/Изображения/actual-before-input.png",
+      "sourceSha256": "02ec3a2f86585582565e3b35c33ce7dbc7c2017471ef80007639a71b8fb2f887",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Общие компоненты/Поиск и навигатор/Изображения/actual-highlighted-row.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Поиск и навигатор/Изображения/actual-highlighted-row.png",
+      "sourceSha256": "82c6b2cc8e38c513769ebc94226694c99beafa1a49a621efd6e9ae8b201a5aeb",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Общие компоненты/Поиск и навигатор/Изображения/actual-reports.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Поиск и навигатор/Изображения/actual-reports.png",
+      "sourceSha256": "04ea0d0cf52fdf7de7aa6c8d8a31fb0ba7f7721d134d55da7d41ae78482314aa",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Общие компоненты/Поиск и навигатор/Изображения/actual-single-result.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Поиск и навигатор/Изображения/actual-single-result.png",
+      "sourceSha256": "b39112e87e411f4f25b91bcd63f52b4764cf297c0e529af79bf0525a4697dd33",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Общие компоненты/Поиск и навигатор/Изображения/chevron-down.svg",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Поиск и навигатор/Изображения/chevron-down.svg",
+      "sourceSha256": "74b2625e26035fd9a92330d52139011d63358e5cf80b448e4707eed2a1b7a546",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Общие компоненты/Поиск и навигатор/Изображения/chevron-up.svg",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Поиск и навигатор/Изображения/chevron-up.svg",
+      "sourceSha256": "cb9bb44409805318ff3cbee4958e4ba538dcdc1088f67a82aa21b1125b6d4619",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Общие компоненты/Поиск и навигатор/Изображения/context-1440.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Поиск и навигатор/Изображения/context-1440.png",
+      "sourceSha256": "bd72709a733207fe2faaf0f5f80f183e4ff2600c87549bea188dcd767c038492",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Общие компоненты/Поиск и навигатор/Изображения/dropdown-before-input.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Поиск и навигатор/Изображения/dropdown-before-input.png",
+      "sourceSha256": "5ebbed8ee7ee67221670dc7c8c22533d5c16977ccd7a134785072c3b24d71c87",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Общие компоненты/Поиск и навигатор/Изображения/dropdown-compact.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Поиск и навигатор/Изображения/dropdown-compact.png",
+      "sourceSha256": "9d6760eda189cb5b6207cbebd1598b530c54c110412e4bc01da1efa800946491",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Общие компоненты/Поиск и навигатор/Изображения/dropdown-expanded.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Поиск и навигатор/Изображения/dropdown-expanded.png",
+      "sourceSha256": "6723a621babe6b74200ede0e0d77c2115f68dc024fd7a7d7cc65839c33458c2e",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Общие компоненты/Поиск и навигатор/Изображения/dropdown-metrics.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Поиск и навигатор/Изображения/dropdown-metrics.png",
+      "sourceSha256": "2cea72c1cb93cbc66cc2be71df3975afce90b97c410ee84e6c9bd7484443aa73",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Общие компоненты/Поиск и навигатор/Изображения/dropdown-no-results.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Поиск и навигатор/Изображения/dropdown-no-results.png",
+      "sourceSha256": "806d33dcafa417cc2bb85012370ce56c09dce43c393424acdc9141355cda6c18",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Общие компоненты/Поиск и навигатор/Изображения/dropdown-reports-metrics.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Поиск и навигатор/Изображения/dropdown-reports-metrics.png",
+      "sourceSha256": "2a2632389ba9d0af2191f9f0d51428520f50a9beddc831b4d52f0ef44ec19698",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Общие компоненты/Поиск и навигатор/Изображения/dropdown-reports-sources.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Поиск и навигатор/Изображения/dropdown-reports-sources.png",
+      "sourceSha256": "3c4bdd4f0542a91db9745885ac5b24f1a69cadad63d73b772d171a964b4a3590",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Общие компоненты/Поиск и навигатор/Изображения/dropdown-reports.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Поиск и навигатор/Изображения/dropdown-reports.png",
+      "sourceSha256": "1846e0ee1abafffbe8a583365aec23bcce4bb73cc2eb77f6848584a8ee21f7f2",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Общие компоненты/Поиск и навигатор/Изображения/dropdown-sources-metrics.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Поиск и навигатор/Изображения/dropdown-sources-metrics.png",
+      "sourceSha256": "4eebcc510c4ddad15ced28be86f8b726e1bafec0ef71fda3ef2b064136e1a4b5",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Общие компоненты/Поиск и навигатор/Изображения/dropdown-sources.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Поиск и навигатор/Изображения/dropdown-sources.png",
+      "sourceSha256": "4adc60f8b3a5fe945b28d510ff6886b18cc544632931e7e74091ad91e8c2704e",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Общие компоненты/Поиск и навигатор/Изображения/dropdown-three-types.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Поиск и навигатор/Изображения/dropdown-three-types.png",
+      "sourceSha256": "9e5d13b656ea9afa6993d6919ae657ae0acaf23fa23df7cc83865e68878f442d",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Общие компоненты/Поиск и навигатор/Изображения/field-closed.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Поиск и навигатор/Изображения/field-closed.png",
+      "sourceSha256": "78b56a9096a714a7816bb7c5035ede5ad5517600c7fe84ced8d127fd3f185079",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Общие компоненты/Поиск и навигатор/Изображения/more-closed-chip.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Поиск и навигатор/Изображения/more-closed-chip.png",
+      "sourceSha256": "deac09e363a17ba735c9e11787a1f2fbbbcc084fc7320ba75176c33f026b1077",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Общие компоненты/Поиск и навигатор/Изображения/more-open-chip.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Поиск и навигатор/Изображения/more-open-chip.png",
+      "sourceSha256": "1e0cfb2030883f407f7919a0564f384ebf96b2343d827d1cbd25de9ebed30f9b",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Общие компоненты/Поиск и навигатор/Изображения/more-panel.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Поиск и навигатор/Изображения/more-panel.png",
+      "sourceSha256": "f03998d4b0cf59dcc0ff9e896fa4a7e8d9b4220bf113e3f6f6c5ea2d135fd3da",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Общие компоненты/Поиск и навигатор/Изображения/reset-button.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Поиск и навигатор/Изображения/reset-button.png",
+      "sourceSha256": "06c8edc17122b1dbff43fb2435dc6cd438094aa7fdf5438491a801d8e70cf9f6",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Общие компоненты/Поиск и навигатор/Изображения/reset-types.svg",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Поиск и навигатор/Изображения/reset-types.svg",
+      "sourceSha256": "56176b1987fb45c181629a8692d8d4ca764c35941655557c019a2b9381c5ffcd",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Общие компоненты/Поиск и навигатор/Изображения/row-default.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Поиск и навигатор/Изображения/row-default.png",
+      "sourceSha256": "de5cf83d834bddd48e0453ba47ffdf626cac99afc143dcf4f10468df3ee58602",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Общие компоненты/Поиск и навигатор/Изображения/row-hover.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Поиск и навигатор/Изображения/row-hover.png",
+      "sourceSha256": "810acd16428acd1242549216841ef3423d04658bc350238a869ae6ced03f71fe",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Общие компоненты/Поиск и навигатор/Ресурсы/clear.svg",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Поиск и навигатор/Ресурсы/clear.svg",
+      "sourceSha256": "5d226400ecaecbda2b35ed6e8947acd8a68ef97d4cb8f692aeff65f7a0b5990f",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Общие компоненты/Поиск и навигатор/Ресурсы/group-report.svg",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Поиск и навигатор/Ресурсы/group-report.svg",
+      "sourceSha256": "5bc86d8805d39f229edbecc170a3c19bf865dd0018ce2dfd68b632cf61190539",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Общие компоненты/Поиск и навигатор/Ресурсы/illustration-before-input.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Поиск и навигатор/Ресурсы/illustration-before-input.png",
+      "sourceSha256": "bfb247c2fce36fc0e5de474bf1bec689f218d425f490cc353c7c957b7a4e6b4a",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Общие компоненты/Поиск и навигатор/Ресурсы/illustration-no-results.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Поиск и навигатор/Ресурсы/illustration-no-results.png",
+      "sourceSha256": "e9ba769cce22e4d8f45c096e97956367a8965b6af16c29fdb09f7030b8b9f80b",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Общие компоненты/Поиск и навигатор/Ресурсы/search.svg",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Поиск и навигатор/Ресурсы/search.svg",
+      "sourceSha256": "616c8d6408391303310d3fddf14c26a884a7bff674d659fd38f40779a8ae6b1c",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Общие компоненты/Таблица отчётов/assets/catalogue-row-default.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Таблица отчётов/assets/catalogue-row-default.png",
+      "sourceSha256": "73ce4c128b2c848c71b85766b798c6126d527c1d23063c46c08c8dc14de9cfa7",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Общие компоненты/Таблица отчётов/assets/cell-active-context.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Таблица отчётов/assets/cell-active-context.png",
+      "sourceSha256": "604b2a81c9c5da85493708504fae67028db9b9d844066289902a1cca5bd18ae6",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Общие компоненты/Таблица отчётов/assets/cell-hover.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Таблица отчётов/assets/cell-hover.png",
+      "sourceSha256": "2e67fe0169c058324d35269e988dd067827c58711e6b2b9e505598cfe52e60bb",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Общие компоненты/Таблица отчётов/assets/header-applied.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Таблица отчётов/assets/header-applied.png",
+      "sourceSha256": "c9406f4206f75d7bb08cd25679ae10ce6f4495829b54423eda25984bcfddd210",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Общие компоненты/Таблица отчётов/assets/header-default.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Таблица отчётов/assets/header-default.png",
+      "sourceSha256": "ce36ed435ff547acc65d8988dadb3e6cc1ca13a80cb09b1a3e8cdb85ef9e049f",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Общие компоненты/Таблица отчётов/assets/manifest.json",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Таблица отчётов/assets/manifest.json",
+      "sourceSha256": "c8e7ead7078a90af6e21075ae21d47250d384bc5e3fd0bfeda382a46176a03d6",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Общие компоненты/Таблица отчётов/assets/row-default.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Таблица отчётов/assets/row-default.png",
+      "sourceSha256": "284c3fa1e9fc0be7ad2df752b3ec03e68ce7461d9b41178d73fabfe788ea6ba9",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Общие компоненты/Таблица отчётов/assets/row-hover.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Таблица отчётов/assets/row-hover.png",
+      "sourceSha256": "ae07fe67dd0487f64372296de4845626deaee8195d3cc25fe52aa68fd6f963e4",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Общие компоненты/Таблица отчётов/assets/table-context.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Таблица отчётов/assets/table-context.png",
+      "sourceSha256": "ecc5d07a247a18d49ba704ee8e05b0738bd08c942b234a63512559c0cf69bfa8",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Общие компоненты/Таблица отчётов/assets/adaptive/catalogue-1440-end-domain-applied.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Таблица отчётов/assets/adaptive/catalogue-1440-end-domain-applied.png",
+      "sourceSha256": "618ee46746f891987f33f8255aa6292c41dcc2c6d46c50fd9d8ef9efab9e008c",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Общие компоненты/Таблица отчётов/assets/adaptive/catalogue-1440-end-filter-open.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Таблица отчётов/assets/adaptive/catalogue-1440-end-filter-open.png",
+      "sourceSha256": "47d8091d911b5c97b8380fb73637ff2aafbaaeef1319897509537214fd7a1b5e",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Общие компоненты/Таблица отчётов/assets/adaptive/catalogue-1440-end.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Таблица отчётов/assets/adaptive/catalogue-1440-end.png",
+      "sourceSha256": "7821ea2d5d45b1af808e98a46db3b61d4467391fc1e493f6303a9757c42c7dd4",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Общие компоненты/Таблица отчётов/assets/adaptive/catalogue-1440-start.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Таблица отчётов/assets/adaptive/catalogue-1440-start.png",
+      "sourceSha256": "92518236e27eae36ca7998f7ebe70dc1daace9b5a51fc7ecad33a286577a768b",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Общие компоненты/Таблица отчётов/assets/adaptive/catalogue-1920-domain-applied.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Таблица отчётов/assets/adaptive/catalogue-1920-domain-applied.png",
+      "sourceSha256": "bc51f9a3f77a78c0c454ea6a7c2a640954b9ca4f7cfdfe0c73407af21ad08eea",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Общие компоненты/Таблица отчётов/assets/adaptive/catalogue-1920-filter-open.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Таблица отчётов/assets/adaptive/catalogue-1920-filter-open.png",
+      "sourceSha256": "df1b271a523d65cbd7aa0d487657fbc21ccc1ca28a47983708fc6e47100771f2",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Общие компоненты/Таблица отчётов/assets/adaptive/catalogue-1920.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Таблица отчётов/assets/adaptive/catalogue-1920.png",
+      "sourceSha256": "c1e27ba0a4f9fe2e8c5fdd1e0bae811117d553afc3e6b140a01322a4e96fb1d8",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Общие компоненты/Таблица отчётов/assets/adaptive/component-1557-115222.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Таблица отчётов/assets/adaptive/component-1557-115222.png",
+      "sourceSha256": "e6bee6f6f359c0d74ce4b2eadebc236b489a4c63c61aeccccde657bb051dc246",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Общие компоненты/Таблица отчётов/assets/adaptive/crop-narrow-end-left.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Таблица отчётов/assets/adaptive/crop-narrow-end-left.png",
+      "sourceSha256": "5cefce17209161fbb04d2d3e73b837f628c7c69b3fe49a57909bb4975efb0ac6",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Общие компоненты/Таблица отчётов/assets/adaptive/crop-narrow-end-right.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Таблица отчётов/assets/adaptive/crop-narrow-end-right.png",
+      "sourceSha256": "f29b242bd0ac06b745cc2f4f50fca6f66efb8676d028ffe6db14f2ead038f088",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Общие компоненты/Таблица отчётов/assets/adaptive/crop-wide-left.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Таблица отчётов/assets/adaptive/crop-wide-left.png",
+      "sourceSha256": "4e5c1eec3a36246507f9e857c58a0ad1b3e4c8a733b90662246c5893a80ff31a",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Общие компоненты/Таблица отчётов/assets/adaptive/crop-wide-right.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Таблица отчётов/assets/adaptive/crop-wide-right.png",
+      "sourceSha256": "ac5c792a6ee2a89a5cc4ee3f41bf5c6d8b7e70c9bd69bd3d81a8eda5bdc42fd2",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Общие компоненты/Таблица отчётов/assets/adaptive/home-1440-end.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Таблица отчётов/assets/adaptive/home-1440-end.png",
+      "sourceSha256": "54bc322c654c9672ee815411b274e35722b122ee05a6ff916845bbff6ded712b",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Общие компоненты/Таблица отчётов/assets/adaptive/master-1629-115231.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Таблица отчётов/assets/adaptive/master-1629-115231.png",
+      "sourceSha256": "0b85a55f708be45f95593050127708cdf4d82ff9098e9f8fbbf2bef20367b7cf",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Общие компоненты/Таблица отчётов/assets/adaptive/master-1629-115249.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Таблица отчётов/assets/adaptive/master-1629-115249.png",
+      "sourceSha256": "3c681100bda3528c0df75cd0e2f1195c0d9bd11a2569189e0150a195937f0ecf",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Общие компоненты/Таблица отчётов/assets/adaptive/master-1629-115281.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Таблица отчётов/assets/adaptive/master-1629-115281.png",
+      "sourceSha256": "bc5999c03e2c3957f30ae66b14d7720af3db5343139266ed90ee14e1c0b0c5d9",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Общие компоненты/Таблица отчётов/assets/adaptive/master-1629-115308.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Таблица отчётов/assets/adaptive/master-1629-115308.png",
+      "sourceSha256": "4dcc5729d799a6e9633e226713ad6d32971e65462464894c979939fabc01c52b",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Общие компоненты/Таблица отчётов/assets/adaptive/master-1629-115326.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Таблица отчётов/assets/adaptive/master-1629-115326.png",
+      "sourceSha256": "f89d1c6d60e02ecc13af6918c6bb91d18dc2aaeea4ecbaa7553bbe50bbb86379",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Общие компоненты/Таблица отчётов/assets/adaptive/master-1629-115351.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Таблица отчётов/assets/adaptive/master-1629-115351.png",
+      "sourceSha256": "c66511c211503ff7a2614c25ff279c03308c95dc0a601353aff58252629e1745",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Общие компоненты/Таблица отчётов/assets/adaptive/master-1629-115378.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Таблица отчётов/assets/adaptive/master-1629-115378.png",
+      "sourceSha256": "a6f5e982365b8d4aec19b8d4fefccd2c8cb0a1f2a45c55a48062cdb8ae63c7d3",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Общие компоненты/Таблица отчётов/assets/adaptive/master-1629-115396.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Таблица отчётов/assets/adaptive/master-1629-115396.png",
+      "sourceSha256": "0d89f22e34e171bcaf2cae6c3d6fc0d4f50f89aae3140c44781f6dc6561e06b2",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Общие компоненты/Таблица отчётов/assets/adaptive/master-1629-115421.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Таблица отчётов/assets/adaptive/master-1629-115421.png",
+      "sourceSha256": "fd12c8bc2da67174a98a056afb2b80b11fa3ea55d919a10e3090c471da923d7f",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Общие компоненты/Фильтрация отчётов/assets/column-menu-domain.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Фильтрация отчётов/assets/column-menu-domain.png",
+      "sourceSha256": "a52a88af401cd51ea01056e1e22fd6b4d2dbfe37056eba9e1fef7fbd8e6e69df",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Общие компоненты/Фильтрация отчётов/assets/column-menu-master.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Фильтрация отчётов/assets/column-menu-master.png",
+      "sourceSha256": "caa09ee14b06274e1e182a6915035d3df0f15b8fdc4a20f10f5648ea71e248d8",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Общие компоненты/Фильтрация отчётов/assets/column-menu-mau.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Фильтрация отчётов/assets/column-menu-mau.png",
+      "sourceSha256": "f55b06046dc26cf6fcd75bc45b6739ec40881fe2a742d72d6a29596ef5c471e5",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Общие компоненты/Фильтрация отчётов/assets/column-menu-owner.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Фильтрация отчётов/assets/column-menu-owner.png",
+      "sourceSha256": "a23988ac91ee72adbdafffee9e60e20892178ca4426d05596d4244a48691df8b",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Общие компоненты/Фильтрация отчётов/assets/column-menu-platform.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Фильтрация отчётов/assets/column-menu-platform.png",
+      "sourceSha256": "573013e038b15cd978d43ceecadb8393d98a02dcc3ae546ae826f065e765aa7f",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Общие компоненты/Фильтрация отчётов/assets/column-menu-report.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Фильтрация отчётов/assets/column-menu-report.png",
+      "sourceSha256": "ecfab2a3263b978b19272ea77183f755c25edeab345b5739f92bdd4056b3eb41",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Общие компоненты/Фильтрация отчётов/assets/column-menu-viewed.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Фильтрация отчётов/assets/column-menu-viewed.png",
+      "sourceSha256": "fcfaacd27f51e4a42e1c3498d4a14f5f4f06953535269c18468b7d084250748e",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Общие компоненты/Фильтрация отчётов/assets/domain-list-selected.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Фильтрация отчётов/assets/domain-list-selected.png",
+      "sourceSha256": "f6510ef1b444389289ed21c2f7d26a2199408729fbbddf60abf73111cd6b3c13",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Общие компоненты/Фильтрация отчётов/assets/domain-open-context.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Фильтрация отчётов/assets/domain-open-context.png",
+      "sourceSha256": "08a21a7a99e3ac29c6206e96cfb8664897b661fecd31893094bfa97b9e474431",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Общие компоненты/Фильтрация отчётов/assets/manifest.json",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Фильтрация отчётов/assets/manifest.json",
+      "sourceSha256": "6217c157c8ef3893b7cbbd800ef42e81529f48b64ec8fbb3324a3fb4ffd51025",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Общие компоненты/Фильтрация отчётов/assets/panel-default.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Фильтрация отчётов/assets/panel-default.png",
+      "sourceSha256": "885bd0f1317f13480a4dcbfaaff9de36875457c76c1e77ce0aa7333bffc030fd",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Общие компоненты/Фильтрация отчётов/assets/panel-list-domain.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Фильтрация отчётов/assets/panel-list-domain.png",
+      "sourceSha256": "621967646a4646a6728ea6e8aa4440fc615435f52ad8bb6e596df916ebd33625",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Общие компоненты/Фильтрация отчётов/assets/panel-list-master.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Фильтрация отчётов/assets/panel-list-master.png",
+      "sourceSha256": "6fb83e1cff4a8cfe4368ee468e75e2c0fa3487775b563d6045143cabb805cbba",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Общие компоненты/Фильтрация отчётов/assets/panel-list-mau.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Фильтрация отчётов/assets/panel-list-mau.png",
+      "sourceSha256": "5322a3e58ced45ff5464883c672d97ed0cfc3865be4b4c923f13f1e97afc94e4",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Общие компоненты/Фильтрация отчётов/assets/panel-list-owner.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Фильтрация отчётов/assets/panel-list-owner.png",
+      "sourceSha256": "83115d5bc31a88238c28996b6e28a5b1a06663058e6ab3a96b30a9481b496bfa",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Общие компоненты/Фильтрация отчётов/assets/panel-list-platform.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Фильтрация отчётов/assets/panel-list-platform.png",
+      "sourceSha256": "55f5ecf31dcfb39931bac4da2aa6ee1e411ec1a25775929132431add6304b756",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Общие компоненты/Фильтрация отчётов/assets/panel-list-report.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Фильтрация отчётов/assets/panel-list-report.png",
+      "sourceSha256": "67dbbc39a2c73102ee25e46070982decb49fa78f7a2b4cc8e63fcfb2992bbec3",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Общие компоненты/Фильтрация отчётов/assets/panel-list-viewed.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Фильтрация отчётов/assets/panel-list-viewed.png",
+      "sourceSha256": "c2593137d500e0ea8491cfdae6661b337a695d429f98147a52c73af24b7c05f9",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Общие компоненты/Фильтрация отчётов/assets/panel-selected.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Фильтрация отчётов/assets/panel-selected.png",
+      "sourceSha256": "34f828276bff9c75100dd2c5694a842948803736ff7833054c7587b0b9f715ae",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Общие компоненты/Хедер/assets/brand-mark.svg",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Хедер/assets/brand-mark.svg",
+      "sourceSha256": "f030bb8c2502fedcd992c2803cef62d5e994df3af46654a850ff6ed1edacc898",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Общие компоненты/Хедер/assets/header-1440.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Хедер/assets/header-1440.png",
+      "sourceSha256": "38701a608a2dc57e0023959c484508ab71de1551945a727724cbf6eedf031e52",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Общие компоненты/Хедер/assets/header-1920.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Хедер/assets/header-1920.png",
+      "sourceSha256": "60a2d17312574c2c5705b02ff43ae246f9a2136fddada2fbfd4ab69ab91a42ca",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Общие компоненты/Хедер/assets/profile-avatar.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Хедер/assets/profile-avatar.png",
+      "sourceSha256": "b11070e4c29fd6cfbb3875c6908cd99e62f1b3aeac69c54b7a6bceb032f8bec4",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Разделы/Главная/assets-manifest.json",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Разделы/Главная/assets-manifest.json",
+      "sourceSha256": "78f579d6a8af95a18ba2ab8c914385488fe5b36b5da9c553a8813d97dd04a171",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Разделы/Главная/Виды.md",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Разделы/Главная/Виды.md",
+      "sourceSha256": "3220c1f0a8f777b6c2b1a1b10a69ce5b054497356eedebbea19782f1710127b1",
+      "transfer": "text-with-portable-links"
+    },
+    {
+      "path": "specs/Разделы/Главная/Контракт.md",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Разделы/Главная/Контракт.md",
+      "sourceSha256": "f375dd95e56e7fe85134cb5256fa7d8c164a068b7d5bc9f7638fed0eb8816c29",
+      "transfer": "text-with-portable-links"
+    },
+    {
+      "path": "specs/Разделы/Главная/Новости.md",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Разделы/Главная/Новости.md",
+      "sourceSha256": "70e4a27235223eded1b0e0294277250666dc5b1d669359a89efefa220a286714",
+      "transfer": "text-with-portable-links"
+    },
+    {
+      "path": "specs/Разделы/Главная/Состояния.md",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Разделы/Главная/Состояния.md",
+      "sourceSha256": "5b385372929a3b98f153c8fedee55e3b518825b0633fc262e65f94d0c716a616",
+      "transfer": "text-with-portable-links"
+    },
+    {
+      "path": "specs/Разделы/Навигатор/visual-manifest.json",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Разделы/Навигатор/visual-manifest.json",
+      "sourceSha256": "1afb429fb386d9eee34f7941bf08c60719aef9c73a06fca558e4a4f3905f480f",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Разделы/Навигатор/Контракт.md",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Разделы/Навигатор/Контракт.md",
+      "sourceSha256": "31022972f09fe209f9673dba11d3bea0c2347f95c8dddec0af7a73061e9a5e67",
+      "transfer": "text-with-portable-links"
+    },
+    {
+      "path": "specs/Разделы/Отчёты/Визуальные эталоны.md",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Разделы/Отчёты/Визуальные эталоны.md",
+      "sourceSha256": "33e418dbd7c177c252c38478c2effb0b87b0f549e66e9338be75274231cb43d0",
+      "transfer": "text-with-portable-links"
+    },
+    {
+      "path": "specs/Разделы/Отчёты/Контракт.md",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Разделы/Отчёты/Контракт.md",
+      "sourceSha256": "89bfa07477c7e633f0862b9e801b9046de0c4cc355a83b6c9069b18c9d61e26c",
+      "transfer": "text-with-portable-links"
+    },
+    {
+      "path": "specs/Разделы/Главная/assets/back-0.svg",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Разделы/Главная/assets/back-0.svg",
+      "sourceSha256": "138eb2ff9c6e675393e19267b655f31f7a42046e99356e58ccacb2f24a31c140",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Разделы/Главная/assets/contribution-table-row.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Разделы/Главная/assets/contribution-table-row.png",
+      "sourceSha256": "373fe1db4863c2162740919b77bc6a62e606f60bb8931175ba2107d6f5904fb0",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Разделы/Главная/assets/empty-contribution.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Разделы/Главная/assets/empty-contribution.png",
+      "sourceSha256": "c4aaaf950aa78b460f2f65772f160d6766553070650115c9f6b01b76761715cb",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Разделы/Главная/assets/empty-favorites.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Разделы/Главная/assets/empty-favorites.png",
+      "sourceSha256": "31f41220af07eb3cbc146131405e587415979d3b86518ccb5a8a267dcae4875c",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Разделы/Главная/assets/empty-news.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Разделы/Главная/assets/empty-news.png",
+      "sourceSha256": "f22059e00f484b066fd6aac2819b72d7d8b4d1ae944c303c8b1b39941cf59e9a",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Разделы/Главная/assets/empty-subscriptions.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Разделы/Главная/assets/empty-subscriptions.png",
+      "sourceSha256": "914171a6d19916ee998a8f669e578530eec8a2696a54c46a05e34d2b03939fa0",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Разделы/Главная/assets/group-0.svg",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Разделы/Главная/assets/group-0.svg",
+      "sourceSha256": "56ab3085a3f06a69034e6d5842b9088a58ede2dae8855a50ad0330bb66a0bf7c",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Разделы/Главная/assets/news-article-content.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Разделы/Главная/assets/news-article-content.png",
+      "sourceSha256": "b6156e849c6c166c507406f95ac9b1c1cc1e56ae879799b98940e4d2573439cf",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Разделы/Главная/assets/news-card.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Разделы/Главная/assets/news-card.png",
+      "sourceSha256": "6693cbb552c0cebc86d47b0e25ef7c63536f2dce35f420fe21b978ebefc9adb8",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Разделы/Главная/assets/news-hero.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Разделы/Главная/assets/news-hero.png",
+      "sourceSha256": "985c90e2de405a90dc1f642b80a61a88cc30576daeacf17452f61a4fdf4ff40f",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Разделы/Главная/assets/news-image-1.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Разделы/Главная/assets/news-image-1.png",
+      "sourceSha256": "b31d8ad4cffdd1530a3d77855521299998e7932cc485821436c31521abd39190",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Разделы/Главная/assets/news-image-2.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Разделы/Главная/assets/news-image-2.png",
+      "sourceSha256": "752f8340aba1bd287e6ef910069a0a8371d2a21e6a682efc1715c613782fc5f5",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Разделы/Главная/assets/news-image-3.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Разделы/Главная/assets/news-image-3.png",
+      "sourceSha256": "8d107ce523bd246cc071d513bfc9a8c42010ea99e02d40221b0ab9c22cdd4542",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Разделы/Главная/assets/news-image-4.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Разделы/Главная/assets/news-image-4.png",
+      "sourceSha256": "f58d5b2cfa84ba76376adca1112ed03726cb4eadc9534c72fb7f53d1a1b21902",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Разделы/Главная/assets/news-image-5.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Разделы/Главная/assets/news-image-5.png",
+      "sourceSha256": "372ec124bbc14ecfd77542e1b8375dce0c8654c7dc06da004b4d4d3db16f13c4",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Разделы/Главная/assets/news-image-6.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Разделы/Главная/assets/news-image-6.png",
+      "sourceSha256": "72cf42a2d509206ce5932936506b9d7b333fced38fe35677252f1b1c0b7fe19d",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Разделы/Главная/assets/news-image-7.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Разделы/Главная/assets/news-image-7.png",
+      "sourceSha256": "f9c2be49c6fbf7a18f857dc6a7ee8082d3972904d15b1c92ff99bc85d65fe00b",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Разделы/Главная/assets/news-image-8.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Разделы/Главная/assets/news-image-8.png",
+      "sourceSha256": "7775f65792db3d6c06c2dc26ac75fbe17c182cc6fdddb67ca714969a74ecf27f",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Разделы/Главная/assets/news-image-9.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Разделы/Главная/assets/news-image-9.png",
+      "sourceSha256": "5bcc5a50b5d40fd941aef16211008cc5e1af7b04545c838aa6c06e280bd1e661",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Разделы/Главная/assets/news-nav-default.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Разделы/Главная/assets/news-nav-default.png",
+      "sourceSha256": "9ae87140e9f7c4b3d346085dfbe0d5c3129e1dabf0a0dc50f440ab8a35da853f",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Разделы/Главная/assets/news-nav-hover-master.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Разделы/Главная/assets/news-nav-hover-master.png",
+      "sourceSha256": "ebd933d41984f971dd6048290c10ca37fe755661ae0d65904d9885896fd7364d",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Разделы/Главная/assets/news-nav-selected.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Разделы/Главная/assets/news-nav-selected.png",
+      "sourceSha256": "301def8e26f3d2a1db964728bcbedfc3d52eb830b5063a676babaa1aec9e7852",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Разделы/Главная/assets/next-0.svg",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Разделы/Главная/assets/next-0.svg",
+      "sourceSha256": "1c3f4fdf214ec8b763aae1393aaa00b1d526d839a45470ff2fe9c837a8645c73",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Разделы/Главная/assets/s1-01.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Разделы/Главная/assets/s1-01.png",
+      "sourceSha256": "b1b3aee5425e5c8452a36d60d7f84c5fa7b49f3c664f646c29c67f4d037d019e",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Разделы/Главная/assets/s1-02.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Разделы/Главная/assets/s1-02.png",
+      "sourceSha256": "2a9115b006508518f0f22c6b65cc4f66960e2d1c3a3b81f1ace3f7d78f223cf1",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Разделы/Главная/assets/s1-03.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Разделы/Главная/assets/s1-03.png",
+      "sourceSha256": "860c07d05852a86f94da7f15b650deed371f4e8e4896dae22ffc825eafaef9b5",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Разделы/Главная/assets/s1-04.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Разделы/Главная/assets/s1-04.png",
+      "sourceSha256": "23ec24e9635d0208b92e3e15f7f425c795900b8c0a3651fc6abc5777fba0cf6e",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Разделы/Главная/assets/s1-05.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Разделы/Главная/assets/s1-05.png",
+      "sourceSha256": "565e468544d920aad551c50a2c41de2acbb019fa23235f82420267ce5d2a3499",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Разделы/Главная/assets/s1-06.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Разделы/Главная/assets/s1-06.png",
+      "sourceSha256": "fa136404df8be02df5fac8762de97110b79056b8d9e6ae49b7b02054f81a1ba9",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Разделы/Главная/assets/s1-07.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Разделы/Главная/assets/s1-07.png",
+      "sourceSha256": "d097ef5978e84573128c5e7cdad393b01a489834a30f47b1dd9947d1cf1b261e",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Разделы/Главная/assets/s2-01.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Разделы/Главная/assets/s2-01.png",
+      "sourceSha256": "3eda2fb43549d3642ba48276c1a6247156ff8ee30cc334e2caab245140325ef4",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Разделы/Главная/assets/s2-02.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Разделы/Главная/assets/s2-02.png",
+      "sourceSha256": "e592db951a500c327f5dea0953bd679b1235f32036e25dc7bdc383116d25b1dc",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Разделы/Главная/assets/s2-03.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Разделы/Главная/assets/s2-03.png",
+      "sourceSha256": "697cc97eaa5d2dc275f8c92821dddb7ee2aebe30a92dce7ec6fbb6a010b03d2e",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Разделы/Главная/assets/s3-01.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Разделы/Главная/assets/s3-01.png",
+      "sourceSha256": "792aac8e05dbe4dd9969261f58db61997dda167e175225b5c2c70561df2a51c8",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Разделы/Главная/assets/s3-02.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Разделы/Главная/assets/s3-02.png",
+      "sourceSha256": "c4577c05cf24f057acf856a2d9c611c1d2f8a913bd90188915c052091100dec8",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Разделы/Главная/assets/s3-03.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Разделы/Главная/assets/s3-03.png",
+      "sourceSha256": "c0d62f0b59cf6a3ce4a73dde77baf596fed3f1954c2f87b8be50129a6aef24d4",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Разделы/Главная/assets/s4-01.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Разделы/Главная/assets/s4-01.png",
+      "sourceSha256": "b853f36e314770bfb9917d348c0f4fd2ae2729ca6940d5526317822fe98cbbdd",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Разделы/Главная/assets/s4-02.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Разделы/Главная/assets/s4-02.png",
+      "sourceSha256": "ef310aa42400afbe904c28755e4634bbc2abf1213bdbb211e535433c4468ec2a",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Разделы/Главная/assets/s4-03.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Разделы/Главная/assets/s4-03.png",
+      "sourceSha256": "629c0452bc0bff1aedbae56e2c19f1b3d4782adf3c0a9be5a3549f6f7e7bd54b",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Разделы/Главная/assets/s5-01.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Разделы/Главная/assets/s5-01.png",
+      "sourceSha256": "b4f682d25bd90e9c167b5011bec49cc38e44bd443675385e56ccba3915959070",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Разделы/Главная/assets/s6-01.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Разделы/Главная/assets/s6-01.png",
+      "sourceSha256": "950be8fdd983523fe89ba73a41ea02e5f1184f17c061c60371cf5fa2426198cf",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Разделы/Главная/assets/s6-02.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Разделы/Главная/assets/s6-02.png",
+      "sourceSha256": "33a410382248028b196bcdc82919d553c393cef504cc5d923dfecd5d6c0832ff",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Разделы/Главная/assets/s6-03.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Разделы/Главная/assets/s6-03.png",
+      "sourceSha256": "275ad93dce75d125d1efeffa719a5b21819cbf67b96458ca858679a1d4b045a7",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Разделы/Главная/assets/s6-04.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Разделы/Главная/assets/s6-04.png",
+      "sourceSha256": "bc23a90c448e9d15c457f62906c3b43bf08e8b586b4a231f9957588242797d91",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Разделы/Главная/assets/s6-05.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Разделы/Главная/assets/s6-05.png",
+      "sourceSha256": "b7c60014f17460ce3db69063e9df24b59cf98865d81d9574d22f825d00551ea5",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Разделы/Главная/assets/s6-06.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Разделы/Главная/assets/s6-06.png",
+      "sourceSha256": "70f30895e9fae80b7a74daebb81ddd70af28abe43ba6ae2c54264a3bab6ebe91",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Разделы/Главная/assets/s7-01.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Разделы/Главная/assets/s7-01.png",
+      "sourceSha256": "0bad2c0f21c7bb472034b366de583364adb044694e140cfc12c4f522aeef706a",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Разделы/Главная/assets/s7-02.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Разделы/Главная/assets/s7-02.png",
+      "sourceSha256": "d23f17b7aac30c27e5cc7373d854285f57d2961e0ef9e9884e8e063898685199",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Разделы/Главная/assets/s7-03.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Разделы/Главная/assets/s7-03.png",
+      "sourceSha256": "a2241d92adcf59c046d6e2253f5d2a23de050dea2fb1dc6aa56ca5add1b97058",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Разделы/Главная/assets/s7-04.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Разделы/Главная/assets/s7-04.png",
+      "sourceSha256": "124c4ee720cf7f18f21ba7635ec8103a6e491e665c4d3d03374d878fb14c1ea7",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Разделы/Главная/assets/s7-05.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Разделы/Главная/assets/s7-05.png",
+      "sourceSha256": "c265e0bdfa48b6949c81872bf7d6dc87ec52d5118f180221bfbf43849addaa56",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Разделы/Главная/assets/s7-06.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Разделы/Главная/assets/s7-06.png",
+      "sourceSha256": "b50aaf1011e6a024b007c7199513134d50d029e327e77f4ecd6f35980bfcab4b",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Разделы/Главная/assets/s7-07.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Разделы/Главная/assets/s7-07.png",
+      "sourceSha256": "150673db216faeb1f163b2672e3439ee6c1d1cdd71a6d987c78fc6006c2b8db1",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Разделы/Главная/assets/s7-08.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Разделы/Главная/assets/s7-08.png",
+      "sourceSha256": "2ccdf1dce1962719df4ef51dd6e8c47bd93ac2a300964a4b341d959f2fcc58f1",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Разделы/Главная/assets/s7-09.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Разделы/Главная/assets/s7-09.png",
+      "sourceSha256": "950be8fdd983523fe89ba73a41ea02e5f1184f17c061c60371cf5fa2426198cf",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Разделы/Главная/assets/subscription-table-row.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Разделы/Главная/assets/subscription-table-row.png",
+      "sourceSha256": "4f58b61616c0ed37597b70e05b39cebe540adb37f5a7922865be80414fe52bf3",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Разделы/Главная/assets/view-0.svg",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Разделы/Главная/assets/view-0.svg",
+      "sourceSha256": "dcd2efadec93ed88770b718b7e70123ba46614dfe9465f81b9c9146a6e020b42",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Разделы/Главная/assets/view-1.svg",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Разделы/Главная/assets/view-1.svg",
+      "sourceSha256": "b3e844e397dd4b7e4598abbdb3cb9c5ec0c64d29acac581391ee2da9eab7d5f6",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Разделы/Навигатор/Изображения/01-start.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Разделы/Навигатор/Изображения/01-start.png",
+      "sourceSha256": "f325c03b62aa4943773ecd18e955b37fa532eb0f3f36c9c58ca030018157a2ec",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Разделы/Навигатор/Изображения/02-mixed.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Разделы/Навигатор/Изображения/02-mixed.png",
+      "sourceSha256": "af819e16bc7ccba468867d284ee9c382112be2f5c093dce6d45a0d78349c42ef",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Разделы/Навигатор/Изображения/03-reports.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Разделы/Навигатор/Изображения/03-reports.png",
+      "sourceSha256": "6a63746908eaa505b09bd2275a50d8779cd7f3d5dbc10f2c4c1f25b9dc6a2731",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Разделы/Навигатор/Изображения/a1-wide.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Разделы/Навигатор/Изображения/a1-wide.png",
+      "sourceSha256": "cae324cbe49f4f6a315f1efae23a1286d4adc791c5bd3c49551fde7333117075",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Разделы/Навигатор/Изображения/d1-single.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Разделы/Навигатор/Изображения/d1-single.png",
+      "sourceSha256": "8031541a71d09f2261171562d758c51c7413e19ff4311118d67245f343e8d051",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Разделы/Навигатор/Изображения/d2-two-types.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Разделы/Навигатор/Изображения/d2-two-types.png",
+      "sourceSha256": "c705af46b13952feb40d130ac1fc720b2019bd2ce10551a8245771d6eaaa4911",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Разделы/Навигатор/Изображения/d3-three-types.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Разделы/Навигатор/Изображения/d3-three-types.png",
+      "sourceSha256": "e31c09662aaa1b5d5d6d0b0f9b94f7d34b03d1cac2010f16b51bb56c084c6636",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Разделы/Навигатор/Изображения/d4-expanded.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Разделы/Навигатор/Изображения/d4-expanded.png",
+      "sourceSha256": "2469acb676bf084ee35b263c57034507fdc9657f3dff9e28bfc770d65ff3addf",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Разделы/Навигатор/Изображения/d5-cleared.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Разделы/Навигатор/Изображения/d5-cleared.png",
+      "sourceSha256": "242c1ef0c8e1e4e8c3a173cfb22fafcf78f1a8eca920a40cb1cc942fe58b4eee",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Разделы/Навигатор/Изображения/d6-more-open.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Разделы/Навигатор/Изображения/d6-more-open.png",
+      "sourceSha256": "635f62fcdd9c1d679234a66cc91968763b9b8d228aa6cffe9382d4400a7ef542",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Разделы/Отчёты/assets/manifest.json",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Разделы/Отчёты/assets/manifest.json",
+      "sourceSha256": "6a140ddca9b155984ed73323872b332bfecd9efc304854456311b15ef5640602",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Разделы/Отчёты/assets/screen-01.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Разделы/Отчёты/assets/screen-01.png",
+      "sourceSha256": "ecc5d07a247a18d49ba704ee8e05b0738bd08c942b234a63512559c0cf69bfa8",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Разделы/Отчёты/assets/screen-02.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Разделы/Отчёты/assets/screen-02.png",
+      "sourceSha256": "3ec57b6c03e2c6864828225b6e0d0a5a9982cabd1bc006d2bec480aad4299e11",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Разделы/Отчёты/assets/screen-03.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Разделы/Отчёты/assets/screen-03.png",
+      "sourceSha256": "c51f803778027b89a302bc62bd060626cb2dfb5928a9ef733ac268c36a0f7de0",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Разделы/Отчёты/assets/screen-04.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Разделы/Отчёты/assets/screen-04.png",
+      "sourceSha256": "62214796bd77e218702b4c4b5e5dfc94a50780df875c00603dc8bf12d5d75909",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Разделы/Отчёты/assets/screen-05.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Разделы/Отчёты/assets/screen-05.png",
+      "sourceSha256": "7a8cac5709d9ff56dd62fd445814f6be9a274cf9126304c7ac0a51f93197ff6b",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Разделы/Отчёты/assets/screen-06.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Разделы/Отчёты/assets/screen-06.png",
+      "sourceSha256": "08a21a7a99e3ac29c6206e96cfb8664897b661fecd31893094bfa97b9e474431",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Разделы/Отчёты/assets/screen-07.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Разделы/Отчёты/assets/screen-07.png",
+      "sourceSha256": "a4dfa66b74e1feda8657e41309b697f2043a88a0063686057f61b3e7d267ecf0",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Разделы/Отчёты/assets/screen-08.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Разделы/Отчёты/assets/screen-08.png",
+      "sourceSha256": "d4cd978dc5b7cd20256f8b6c4ba56da7591b5c9d23edfd912059414ba2408e3c",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Разделы/Отчёты/assets/screen-09.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Разделы/Отчёты/assets/screen-09.png",
+      "sourceSha256": "008175071ec09ca77478e257776fa10472a20040c3c569f33a949ccd0ac4cc84",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Разделы/Отчёты/assets/screen-10.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Разделы/Отчёты/assets/screen-10.png",
+      "sourceSha256": "ecc5d07a247a18d49ba704ee8e05b0738bd08c942b234a63512559c0cf69bfa8",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Разделы/Отчёты/assets/screen-11.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Разделы/Отчёты/assets/screen-11.png",
+      "sourceSha256": "207f7e2ec8ac319375311e871110aafef3feb3172a6335d8638220a2d9c4177d",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Разделы/Отчёты/assets/screen-12.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Разделы/Отчёты/assets/screen-12.png",
+      "sourceSha256": "2815cf2495aad7ff0ce0dc234860775886acaf0bfe383044feaa94a934986781",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Разделы/Отчёты/assets/screen-13.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Разделы/Отчёты/assets/screen-13.png",
+      "sourceSha256": "41dcd78ab72441bd76e4e37bda53152d2d5b954dcc266c772579c5428637631d",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Разделы/Отчёты/assets/screen-14.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Разделы/Отчёты/assets/screen-14.png",
+      "sourceSha256": "bfdc4fde66fbcf8bf47ad6d56c78e79e673c92abbbe32946f1069d0db6829fbb",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Разделы/Отчёты/assets/screen-15.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Разделы/Отчёты/assets/screen-15.png",
+      "sourceSha256": "d4cd978dc5b7cd20256f8b6c4ba56da7591b5c9d23edfd912059414ba2408e3c",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Разделы/Отчёты/assets/screen-16.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Разделы/Отчёты/assets/screen-16.png",
+      "sourceSha256": "4d0e6828748dfe5f434b065f948b20e5cc2e1986764e44c9a08064bd56336bbe",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Разделы/Отчёты/assets/screen-17.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Разделы/Отчёты/assets/screen-17.png",
+      "sourceSha256": "a248727d0385f44cb920d3a74fd5d352e76c6f0ce6233ed0214fc355570ee552",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Разделы/Отчёты/assets/screen-18.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Разделы/Отчёты/assets/screen-18.png",
+      "sourceSha256": "c51f803778027b89a302bc62bd060626cb2dfb5928a9ef733ac268c36a0f7de0",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Разделы/Отчёты/Изображения/sort-1.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Разделы/Отчёты/Изображения/sort-1.png",
+      "sourceSha256": "e6ecd003526fb62b19313cd340c51dea48bb7f8febf106015098c17975eb0511",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Разделы/Отчёты/Изображения/sort-2.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Разделы/Отчёты/Изображения/sort-2.png",
+      "sourceSha256": "2370a9cd3bbe72a0459d72f4f78d80dd5039544cf7df61aa8f66fd9d1b853571",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Разделы/Отчёты/Изображения/sort-3.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Разделы/Отчёты/Изображения/sort-3.png",
+      "sourceSha256": "5e6ab5a357c2f027e70fb4dddaa2bad5ac9e156522d6119014afc451b07778d7",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Разделы/Отчёты/Изображения/sort-4.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Разделы/Отчёты/Изображения/sort-4.png",
+      "sourceSha256": "292ecb91e98e0e7c517fc49cb298939f7d48242e2d08ee27a91ceae872510336",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Разделы/Отчёты/Изображения/sort-5.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Разделы/Отчёты/Изображения/sort-5.png",
+      "sourceSha256": "e9a359342cc8452628d545c173a5eb76b74fc26f19b3d7aead0f27cb22500044",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Разделы/Отчёты/Изображения/sort-6.png",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Разделы/Отчёты/Изображения/sort-6.png",
+      "sourceSha256": "ecc5d07a247a18d49ba704ee8e05b0738bd08c942b234a63512559c0cf69bfa8",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Ресурсы/Шрифты/CoFoSans-Medium.otf",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Ресурсы/Шрифты/CoFoSans-Medium.otf",
+      "sourceSha256": "115f86a5fdb85d003a0425ac197035cd68aa28b8a68c718aab93dea226590586",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Ресурсы/Шрифты/CoFoSans-Regular.otf",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Ресурсы/Шрифты/CoFoSans-Regular.otf",
+      "sourceSha256": "052bad1dcead839289b2dcde6bf539f798bdfe9865356923613bfed3d265cccb",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Ресурсы/Шрифты/manifest.json",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Ресурсы/Шрифты/manifest.json",
+      "sourceSha256": "9b8ffccc0c61181c48bd66b6ff4dcdd433a8a70c45e6169e80622242f2f7ffb0",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "specs/Ресурсы/Шрифты/README.md",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Ресурсы/Шрифты/README.md",
+      "sourceSha256": "78fddc043a5672d8cfd7897c63ed494e1fb44435ecd7e4367fb7b30b4b7e3408",
+      "transfer": "text-with-portable-links"
+    },
+    {
+      "path": "specs/Ресурсы/Шрифты/Дополнительные/CoFoRobert-MediumItalic.ttf",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Ресурсы/Шрифты/Дополнительные/CoFoRobert-MediumItalic.ttf",
+      "sourceSha256": "763068e8ced05ff25e2ccc20f0d6caa645cf76db31e83a9dee6e31b27fd7e101",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "context/requirements.md",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Требования и границы.md",
+      "sourceSha256": "e091100f66e948e65d1a51fc8dfad1842a7831a74c82dc42e96ae3612095c34d",
+      "transfer": "text-with-portable-links"
+    },
+    {
+      "path": "context/data-attributes.md",
+      "source": "Документация ／ Documentation/Состав карточек.md",
+      "sourceSha256": "d2d16138100c623e5f83ac5a61f1e347f48cd000f4a29982ac4b7eca4fc943bb",
+      "transfer": "text-with-portable-links"
+    },
+    {
+      "path": "context/example-values.json",
+      "source": "Документация ／ Documentation/Значения примеров карточек.json",
+      "sourceSha256": "9f90928c403df2097fee3b65ad2f4064c0196bc3274cfcd7abda02e99fc04d11",
+      "transfer": "verbatim-binary-or-json"
+    },
+    {
+      "path": "context/navigator-foundation.md",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Навигатор.md",
+      "sourceSha256": "3f5c5c43c6c085616590cef8317d259dfaf3b8a8a58c97a82f70aad4ff584a29",
+      "transfer": "text-with-portable-links"
+    },
+    {
+      "path": "context/flows/home.md",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Пользовательские пути/Главная.md",
+      "sourceSha256": "70b64dfc88cf5f0d981cfb033ad6b5724735d8762d3d9773f50fb73c3f8bd252",
+      "transfer": "text-with-portable-links"
+    },
+    {
+      "path": "context/flows/reports.md",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Пользовательские пути/Отчёты.md",
+      "sourceSha256": "1e58ed4437d877f3aaf8da8dbcc4e923857b5e14414a59226974a7cdae1f79ef",
+      "transfer": "text-with-portable-links"
+    },
+    {
+      "path": "context/flows/filters.md",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Пользовательские пути/Фильтрация отчётов.md",
+      "sourceSha256": "b7dbd0ee9636cd0f8e2489db4df005a07205e37239bd8c98cebc9ac64b0cfe72",
+      "transfer": "text-with-portable-links"
+    },
+    {
+      "path": "context/flows/README.md",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Пользовательские пути/Обзор.md",
+      "sourceSha256": "41985ef27aa07bdf5c648bb6db8bbe3143c80aa00d0fb61ae9ded8ff45cc25a2",
+      "transfer": "text-with-portable-links"
+    },
+    {
+      "path": "context/design-system.md",
+      "source": "Дизайн-система ／ Design system/Рабочая копия ／ Working copy/docs/design-system/catalog-context.md",
+      "sourceSha256": "b91635b80e846902e1dae3f9fbeebb3a52aa846cb1a8bd6f1efb6bf7d4aacd9a",
+      "transfer": "bounded implementation dependency extract"
+    }
+  ]
+}

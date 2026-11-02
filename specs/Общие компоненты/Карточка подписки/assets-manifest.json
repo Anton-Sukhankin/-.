@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "capturedOn": "2026-11-02",
+  "fileKey": "lnOcWh4ElGkhppWe6Kn5AA",
+  "workingPageId": "32:2",
+  "masterPageId": "749:16562",
+  "figmaReadOnly": true,
+  "immutableRevisionKnown": false,
+  "assets": [
+    {
+      "path": "assets/subscription-master.png",
+      "kind": "PNG",
+      "sourceNodeId": "361:15667",
+      "sourceName": "Главная / Подписки / Строка",
+      "state": "Сырой мастер подписки",
+      "sourceWidth": 780,
+      "sourceHeight": 171,
+      "exportScale": 1,
+      "width": 780,
+      "height": 171,
+      "expectedDimensionsMatch": true,
+      "sha256": "8e9ff8efd151e3e152b0c910efcbf6015e3dff99f6aa8dbc0d0c17f30a99d5c5",
+      "role": "raw-master-reference",
+      "captureStage": "accepted-Figma-sync-2026-11-02"
+    },
+    {
+      "path": "assets/subscription-consumer.png",
+      "kind": "PNG",
+      "sourceNodeId": "478:8737",
+      "sourceName": "Главная / Подписки / Строка",
+      "state": "Подписка · экранный экземпляр в группе",
+      "sourceWidth": 1094,
+      "sourceHeight": 170,
+      "exportScale": 1,
+      "width": 1094,
+      "height": 170,
+      "expectedDimensionsMatch": true,
+      "sha256": "919b553c35edfeb166ebd7d19610f176b5d3c76c01a031df07421fe8d5e949eb",
+      "role": "configured-state-reference",
+      "captureStage": "accepted-Figma-sync-2026-11-02"
+    },
+    {
+      "path": "assets/subscription-group.png",
+      "kind": "PNG",
+      "sourceNodeId": "1366:40376",
+      "sourceName": "Подписки группы · без отступов",
+      "state": "Группа подписок · внешнее скругление",
+      "sourceWidth": 1096,
+      "sourceHeight": 511,
+      "exportScale": 1,
+      "width": 1096,
+      "height": 511,
+      "expectedDimensionsMatch": true,
+      "sha256": "3b0158c9d5187da4562e63726ca81be837ba6c0ae517b7f4cec79becfd74acfa",
+      "role": "configured-state-reference",
+      "captureStage": "accepted-Figma-sync-2026-11-02"
+    }
+  ],
+  "sharedReferences": [
+    {
+      "path": "../Карточки отчётов/assets/report-document.svg",
+      "role": "shared-document-glyph",
+      "sourceNodeId": "1442:115133",
+      "sha256": "d2881760d870a43d6412d905c727dd6492629484747dc61d6378068f8ca13f28"
+    }
+  ],
+  "synchronizedAt": "2026-11-02"
+}

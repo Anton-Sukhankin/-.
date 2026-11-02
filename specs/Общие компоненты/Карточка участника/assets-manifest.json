@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "capturedOn": "2026-11-02",
+  "fileKey": "lnOcWh4ElGkhppWe6Kn5AA",
+  "workingPageId": "32:2",
+  "masterPageId": "749:16562",
+  "figmaReadOnly": true,
+  "immutableRevisionKnown": false,
+  "assets": [
+    {
+      "path": "assets/contribution-consumer.png",
+      "kind": "PNG",
+      "sourceNodeId": "I471:2005;361:15729",
+      "sourceName": "Главная / Вклад / Карточка участника",
+      "state": "Вклад · карточка участника",
+      "sourceWidth": 1094,
+      "sourceHeight": 162,
+      "exportScale": 1,
+      "width": 1094,
+      "height": 162,
+      "expectedDimensionsMatch": true,
+      "sha256": "f71bdf8083fd7b9bc342ca34a74db8415730a565b00ba8bd2038606480a017d1",
+      "role": "configured-state-reference",
+      "captureStage": "accepted-Figma-sync-2026-11-02"
+    }
+  ],
+  "sharedReferences": [],
+  "synchronizedAt": "2026-11-02"
+}
