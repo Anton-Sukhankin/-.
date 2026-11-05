@@ -1,0 +1,9 @@
+.trigger { position: relative; flex: 0 0 40px; width: 40px; height: 40px; }
+.open { display: grid; place-items: center; width: 40px; height: 40px; padding: 0; border: 1px solid #d7e6f5; border-radius: 20px; background: #fff; cursor: pointer; backdrop-filter: blur(20px); }
+.open img { display: block; }
+.count { position: absolute; left: 28px; top: -4px; display: grid; place-items: center; min-width: 16px; max-width: 20px; height: 16px; padding: 3.5px 3px 2.5px; border: 0; border-radius: 999px; outline: 2px solid #fff; background: #007bfc; color: #fff; font: inherit; font-size: 10px; font-weight: 500; line-height: 10px; letter-spacing: -.05px; cursor: pointer; }
+.count img { display: none; }
+.count:hover { background: #e2e4ea; padding: 0; }
+.count:hover span { display: none; }
+.count:hover img { display: block; }
+.trigger button:focus-visible { outline: 2px solid #007bfc; outline-offset: 2px; }

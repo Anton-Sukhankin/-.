@@ -1,0 +1,25 @@
+.card { width: 100%; min-width: 0; background: #fff; color: #101d3b; font-family: 'CoFo Sans', sans-serif; font-weight: 400; }
+.standalone { border: 1px solid #d7e6f5; border-radius: 12px; }
+.joined { border: 0; border-bottom: 1px solid #d7e6f5; }
+.group { overflow: hidden; width: 100%; border: 1px solid #d7e6f5; border-radius: 12px; }
+.group > .joined:last-child { border-bottom: 0; }
+.header { display: flex; align-items: center; gap: 12px; overflow: hidden; padding: 24px; border-bottom: 1px solid #d7e6f5; }
+.standalone .header { border-bottom-color: #e2e4ea; }
+.document { display: grid; place-items: center; flex: 0 0 40px; width: 40px; height: 40px; border-radius: 24px; background: #eef2f6; }
+.document img { display: block; }
+.information { display: flex; flex: 1 1 0; flex-direction: column; gap: 4px; overflow: hidden; min-width: 1px; }
+.typeAndStatus { display: flex; align-items: center; gap: 8px; height: 18px; white-space: nowrap; }
+.typeAndStatus > .label { min-width: 41px; }
+.label { color: #52698c; font-size: 12px; line-height: 18px; letter-spacing: -.12px; white-space: nowrap; }
+.status { display: flex; align-items: center; justify-content: center; min-width: 55px; height: 18px; padding: 1px 4px; border-radius: 6px; background: #e6f6f1; color: #107f70; font-size: 10px; font-weight: 500; line-height: 10px; letter-spacing: -.05px; backdrop-filter: blur(20px); }
+.title { font-size: 18px; line-height: 22px; white-space: nowrap; }
+.unsubscribe { display: flex; align-items: center; justify-content: center; flex: 0 0 140px; width: 140px; height: 32px; padding: 0 12px; border: 0; border-radius: 999px; background: #f0f1f4; color: #202028; font: inherit; font-size: 14px; font-weight: 500; line-height: 14px; letter-spacing: -.14px; backdrop-filter: blur(20px); cursor: pointer; }
+.details { display: flex; align-items: flex-start; overflow: hidden; width: 100%; margin: 0; padding: 0; }
+.field { display: flex; flex: 0 0 auto; flex-direction: column; align-items: flex-start; gap: 4px; overflow: hidden; padding: 16px 12px 16px 24px; }
+.report { width: 286px; border-right: 1px solid #e9eef5; }
+.nextDelivery { width: 252px; border-right: 1px solid #e9eef5; }
+.channel { width: 240px; padding-right: 24px; }
+.value { margin: 0; font-size: 14px; line-height: 20px; letter-spacing: -.14px; white-space: nowrap; }
+.link { display: flex; align-items: center; height: 22px; margin: 0; padding: 0; border: 0; background: transparent; color: #007bfc; font: inherit; line-height: 20px; letter-spacing: inherit; white-space: nowrap; cursor: pointer; }
+.deliveryValue { height: 20px; }
+.card button:focus-visible { outline: 2px solid #007bfc; outline-offset: 2px; }

@@ -1,0 +1,289 @@
+schemaVersion: 1
+component:
+  id: link-action
+  title: Ссылочное действие
+  contract: specs/Общие компоненты/Базовые элементы/Ссылочное действие/Контракт.md
+  status: observed-source
+sources:
+  subscription:
+    kind: document
+    uri: specs/Общие компоненты/Карточка подписки/Контракт.md
+    status: observed-snapshot
+    snapshot: Срез владельца до декомпозиции 4 ноября 2026; актуализация 2 ноября; 381:13331 и 381:13345
+      → 377:13317; цвет key b17c096b16ef1dd88036810114c8e658149e1564
+  subscription-master:
+    kind: figma
+    uri: https://www.figma.com/design/lnOcWh4ElGkhppWe6Kn5AA?node-id=361-15667
+    nodeId: 361:15667
+    status: observed-snapshot
+    snapshot: Мастер подписки; срез владельца 2 ноября 2026; immutable revision не закреплён
+  subscription-consumer:
+    kind: asset
+    uri: specs/Общие компоненты/Карточка подписки/assets/subscription-consumer.png
+    status: observed-snapshot
+    snapshot: Экземпляр 478:8737; сохранённый PNG/манифест 2 ноября 2026
+  news:
+    kind: document
+    uri: specs/Разделы/Главная/Новости.md
+    status: observed-snapshot
+    snapshot: Срез владельца до декомпозиции 4 ноября 2026; исходная типографика «Читать» и intent 799:15195
+  news-master:
+    kind: figma
+    uri: https://www.figma.com/design/lnOcWh4ElGkhppWe6Kn5AA?node-id=375-13303
+    nodeId: 375:13303
+    status: observed-snapshot
+    snapshot: Мастер карточки новости; рабочие consumers 471:2342/2343; исходный срез 2 ноября 2026
+  news-card:
+    kind: asset
+    uri: specs/Разделы/Главная/assets/news-card.png
+    status: observed-snapshot
+    snapshot: Сохранённый consumer; размеры/scale/SHA256 у манифеста Главной
+  news-article:
+    kind: asset
+    uri: specs/Разделы/Главная/assets/news-article-content.png
+    status: observed-snapshot
+    snapshot: Видимый нативный материал 799:15171 и нижнее действие 799:15195; не скрытый bitmap
+  news-card-code:
+    kind: document
+    uri: references/implementation/features/news/NewsCard.tsx
+    status: observed-snapshot
+    snapshot: "Статическое чтение 4 ноября 2026: .read и onRead(news.id); не новый целевой binding"
+  news-card-css:
+    kind: document
+    uri: references/implementation/features/news/News.module.css
+    status: observed-snapshot
+    snapshot: "Статическое чтение 4 ноября 2026: .read и .read:focus-visible; отдельный вариант
+      news-read-observed"
+  news-reading-code:
+    kind: document
+    uri: references/implementation/features/news/NewsContent.tsx
+    status: observed-snapshot
+    snapshot: "Статическое чтение 4 ноября 2026: footer next/disabled и onChangeArticle(next.id); без
+      runtime-проверки"
+  news-reading-css:
+    kind: document
+    uri: references/implementation/features/news/NewsReading.module.css
+    status: observed-snapshot
+    snapshot: "Статическое чтение 4 ноября 2026: .articleFooter button, :disabled, .content
+      button:not([data-round-action]):focus-visible; binding к Figma 799:15195 не подтверждён"
+  fonts:
+    kind: document
+    uri: specs/Ресурсы/Шрифты/README.md
+    status: approved-decision
+    snapshot: CoFo Sans Regular400/Medium500; предоставленный комплект 2 ноября 2026; подключение не
+      проверено
+base:
+  sourceRefs:
+    - subscription
+    - news-reading-css
+    - fonts
+  parameters:
+    font-family:
+      type: font-family
+      value: CoFo Sans
+    font-weight:
+      type: font-weight
+      value: 400
+    font-size:
+      type: dimension
+      value: 14
+      unit: px
+    line-height:
+      type: dimension
+      value: 20
+      unit: px
+variants:
+  subscription-report:
+    description: Ссылочное значение отчёта; назначение и текст передаёт C07, источник 381:13331 → 377:13317
+    sourceRefs:
+      - subscription
+      - subscription-master
+      - subscription-consumer
+    parameters:
+      instance-height:
+        type: dimension
+        value: 22
+        unit: px
+      letter-spacing:
+        type: dimension
+        value: -0.14
+        unit: px
+      foreground:
+        type: color
+        format: hex
+        value: "#007BFC"
+  subscription-bot:
+    description: Ссылочное действие канала; назначение и «Напишите боту» передаёт C07, источник
+      381:13345 → 377:13317
+    sourceRefs:
+      - subscription
+      - subscription-master
+      - subscription-consumer
+    parameters:
+      letter-spacing:
+        type: dimension
+        value: -0.14
+        unit: px
+      foreground:
+        type: color
+        format: hex
+        value: "#007BFC"
+  news-read:
+    description: Исходная типографика «Читать» из владельца новостей, с сохранением относительной
+      единицы line-height
+    sourceRefs:
+      - news
+      - news-master
+      - news-card
+    parameters:
+      font-weight:
+        type: font-weight
+        value: 500
+      font-size:
+        type: dimension
+        value: 12
+        unit: px
+      line-height:
+        type: dimension
+        value: 100
+        unit: "%"
+  news-read-observed:
+    description: Наблюдаемый .read текущего CSS; не объединяется с news-read и не доказывает целевой
+      Figma-binding
+    sourceRefs:
+      - news-card-code
+      - news-card-css
+    parameters:
+      font-weight:
+        type: font-weight
+        value: 500
+      font-size:
+        type: dimension
+        value: 12
+        unit: px
+      line-height:
+        type: dimension
+        value: 12
+        unit: px
+      width:
+        type: dimension
+        value: 39
+        unit: px
+      height:
+        type: dimension
+        value: 16
+        unit: px
+      padding:
+        type: dimension
+        value: 0
+        unit: px
+      border-width:
+        type: dimension
+        value: 0
+        unit: px
+      background:
+        type: string
+        value: transparent
+      letter-spacing:
+        type: dimension
+        value: -0.12
+        unit: px
+      foreground:
+        type: color
+        format: hex
+        value: "#007bfc"
+    states:
+      focus-visible:
+        sourceRefs:
+          - news-card-css
+        parameters:
+          outline-width:
+            type: dimension
+            value: 2
+            unit: px
+          outline-style:
+            type: string
+            value: solid
+          outline-color:
+            type: color
+            format: hex
+            value: "#007bfc"
+          outline-offset:
+            type: dimension
+            value: 2
+            unit: px
+  news-next-observed:
+    description: "Нижнее действие следующей статьи: текущий .articleFooter button; точный binding
+      внутренних параметров к Figma 799:15195 не установлен"
+    sourceRefs:
+      - news-reading-css
+      - news-reading-code
+      - news-article
+    parameters:
+      padding:
+        type: dimension
+        value: 0
+        unit: px
+      border-width:
+        type: dimension
+        value: 0
+        unit: px
+      background:
+        type: string
+        value: transparent
+      foreground:
+        type: color
+        format: hex
+        value: "#007bff"
+    states:
+      available:
+        sourceRefs:
+          - news-reading-code
+          - news-reading-css
+        parameters:
+          cursor:
+            type: string
+            value: pointer
+      disabled:
+        sourceRefs:
+          - news-reading-code
+          - news-reading-css
+        parameters:
+          opacity:
+            type: opacity
+            value: 0.35
+          cursor:
+            type: string
+            value: default
+      focus-visible:
+        sourceRefs:
+          - news-reading-css
+        parameters:
+          outline-width:
+            type: dimension
+            value: 2
+            unit: px
+          outline-style:
+            type: string
+            value: solid
+          outline-color:
+            type: color
+            format: hex
+            value: "#007bfc"
+          outline-offset:
+            type: dimension
+            value: -2
+            unit: px
+dependencies:
+  - id: subscription-application
+    document: specs/Общие компоненты/Карточка подписки/Контракт.md
+    role: external-owner
+  - id: news-application
+    document: specs/Разделы/Главная/Новости.md
+    role: external-owner
+  - id: home-news-scenario
+    document: context/target/Пользовательские пути/Главная.md
+    role: external-owner
+  - id: fonts
+    document: specs/Ресурсы/Шрифты/README.md
+    role: external-owner

@@ -1,0 +1,9 @@
+.button { box-sizing:border-box; display:inline-flex; flex:0 0 32px; align-items:center; justify-content:center; width:32px; height:32px; margin:0; padding:0; border:1px solid #d7e6f5; border-radius:50%; background:#fff; color:#202028; cursor:pointer; backdrop-filter:blur(20px); transition:border-color 160ms ease,color 160ms ease; }
+.button[data-round-action='back'] { flex-basis:24px; width:24px; height:24px; }
+.glyph { display:block; flex:none; width:16px; height:16px; background:currentColor; mask-position:center; mask-size:16px 16px; mask-repeat:no-repeat; }
+.button[data-round-action='back'] .glyph { width:12px; height:12px; mask-size:12px 12px; }
+.button:hover:not(:disabled) { border-color:#0067dc; color:#0067dc; }
+.button[aria-pressed='true'] { background:#e5f1ff; }
+.button:focus-visible { outline:2px solid #007bfc; outline-offset:2px; }
+.button:disabled { opacity:.35; cursor:default; }
+@media (prefers-reduced-motion:reduce) { .button { transition:none; } }

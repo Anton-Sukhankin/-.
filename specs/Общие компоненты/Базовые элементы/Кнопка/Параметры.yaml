@@ -1,0 +1,361 @@
+schemaVersion: 1
+component:
+  id: button
+  title: Кнопка и кнопка с иконкой — подтверждённые варианты
+  contract: specs/Общие компоненты/Базовые элементы/Кнопка/Контракт.md
+  status: approved-target
+sources:
+  filter-footer:
+    kind: figma
+    uri: https://www.figma.com/design/lnOcWh4ElGkhppWe6Kn5AA?node-id=1333-40174
+    nodeId: 1333:40174
+    status: unverified-live
+    snapshot: Срез 02.11 общей панели; внутренние кнопки, не поздняя сетка диапазонов
+  filter-inactive:
+    kind: figma
+    uri: https://www.figma.com/design/lnOcWh4ElGkhppWe6Kn5AA?node-id=1310-38270
+    nodeId: 1310:38270
+    status: unverified-live
+    snapshot: Визуально неактивный Apply; цвет текста приблизительный, критерий доступности у FL-01
+  column-footer:
+    kind: document
+    uri: specs/Общие компоненты/Фильтрация отчётов/Контракт.md
+    status: observed-snapshot
+    snapshot: Локальные Reset/Apply из сохранённого среза; собственная транзакция FL-02
+  subscription:
+    kind: figma
+    uri: https://www.figma.com/design/lnOcWh4ElGkhppWe6Kn5AA?node-id=361-15667
+    nodeId: 361:15667
+    status: unverified-live
+    snapshot: Отписаться — экземпляр1112:29384, источник242:12313; ширина у применения
+  outlined:
+    kind: figma
+    uri: https://www.figma.com/design/lnOcWh4ElGkhppWe6Kn5AA?node-id=1284-144659
+    nodeId: 1284:144659
+    status: unverified-live
+    snapshot: Общий локальный outlined-мастер; настройки экземпляров шапки и поиска проверяются отдельно
+  outlined-text:
+    kind: figma
+    uri: https://www.figma.com/design/lnOcWh4ElGkhppWe6Kn5AA?node-id=1284-146200
+    nodeId: 1284:146200
+    status: unverified-live
+    snapshot: Открыть отчёт — белая кнопка с рамкой, не насыщенный primary
+  chrome-source:
+    kind: document
+    uri: references/visual-data/report-detail-chrome-2026-11-03/panel-context.txt
+    status: observed-snapshot
+    snapshot: Сохранённое чтение шапки03.11 — body32, icon16, label14, tracking и border; не API приложения
+  filter-trigger:
+    kind: document
+    uri: specs/Разделы/Отчёты/Контракт.md
+    status: observed-snapshot
+    snapshot: Общий корпус40 и отдельный applied badge; позиция/данные badge не входят в B01
+  fonts:
+    kind: document
+    uri: specs/Ресурсы/Шрифты/README.md
+    status: reference-only
+    snapshot: Эталонный CoFo Sans, предоставленные Regular/Medium
+  round-actions-decision:
+    kind: document
+    uri: specs/Общие компоненты/Базовые элементы/Кнопка/Контракт.md
+    status: approved-decision
+    snapshot: Прямое решение пользователя4ноября2026; outlined-icon32 — edit/bookmark в списках и
+      паспортах;круглые кнопки back удалены последним поручением4ноября. Профиль
+      round-actions-current сохраняет бывший applicationOverrides.round-actions-2026-11-04;
+      радиус50% представлен типизированным размером50 с единицей%.
+  round-actions-implementation:
+    kind: document
+    uri: references/implementation/components/RoundIconButton/RoundIconButton.tsx
+    status: observed-snapshot
+    snapshot: Указанная реализация текущих круглых действий; источник наблюдаемого применения, не новая
+      проверка кода, Figma или пользовательская визуальная приёмка
+tokens:
+  ui-font:
+    type: font-family
+    sourceRef: fonts
+    locator: Эталонное семейство CoFo Sans из README шрифтов
+base:
+  sourceRefs:
+    - filter-footer
+    - subscription
+    - chrome-source
+    - fonts
+  parameters:
+    height:
+      type: dimension
+      value: 32
+      unit: px
+    radius:
+      type: dimension
+      value: 999
+      unit: px
+    padding-inline:
+      type: dimension
+      value: 12
+      unit: px
+    content-gap:
+      type: dimension
+      value: 8
+      unit: px
+    content-alignment:
+      type: string
+      value: center
+    label-font-family:
+      type: token
+      ref: ui-font
+      expectedType: font-family
+    label-font-weight:
+      type: font-weight
+      value: 500
+    label-font-size:
+      type: dimension
+      value: 14
+      unit: px
+    label-line-height:
+      type: dimension
+      value: 14
+      unit: px
+    foreground:
+      type: color
+      format: hex
+      value: "#202028"
+    background:
+      type: color
+      format: hex
+      value: "#F0F1F4"
+    optional-glyph-size:
+      type: dimension
+      value: 16
+      unit: px
+variants:
+  neutral32:
+    description: Нейтральный текстовый footer общей фильтрации; исходный blur не задаёт hover/focus
+    sourceRefs:
+      - filter-footer
+    parameters:
+      figma-background-blur:
+        type: dimension
+        value: 20
+        unit: px
+  neutral-subscription32:
+    description: Отписаться — точный tracking источника, ширина по применению
+    sourceRefs:
+      - subscription
+    parameters:
+      label-letter-spacing:
+        type: dimension
+        value: -0.14
+        unit: px
+      figma-background-blur:
+        type: dimension
+        value: 20
+        unit: px
+  neutral-local32:
+    description: Reset меню колонки; blur для этого применения не установлен, не означает0
+    sourceRefs:
+      - column-footer
+  primary32:
+    description: Общий Apply; допустимость задаёт родитель, не само оформление
+    sourceRefs:
+      - filter-footer
+    parameters:
+      background:
+        type: color
+        format: hex
+        value: "#007BFC"
+      foreground:
+        type: color
+        format: hex
+        value: "#FFFFFF"
+      figma-background-blur:
+        type: dimension
+        value: 20
+        unit: px
+    states:
+      inactive-source:
+        sourceRefs:
+          - filter-inactive
+        parameters:
+          background:
+            type: color
+            format: hex
+            value: "#F0F1F4"
+          foreground:
+            type: color
+            format: hex
+            value: "#B4B6C5"
+          foreground-approximate:
+            type: boolean
+            value: true
+  accent-soft32:
+    description: Локальный Apply; opacity касается только фона на белой поверхности
+    sourceRefs:
+      - column-footer
+    parameters:
+      background:
+        type: color
+        format: hex
+        value: "#007BFC"
+      background-opacity:
+        type: opacity
+        value: 0.1
+      foreground:
+        type: color
+        format: hex
+        value: "#007BFC"
+  outlined-text32:
+    description: Открыть отчёт; ширина конкретного экземпляра у паспорта
+    sourceRefs:
+      - outlined-text
+      - chrome-source
+    parameters:
+      background:
+        type: color
+        format: hex
+        value: "#FFFFFF"
+      border-color:
+        type: color
+        format: hex
+        value: "#D7E6F5"
+      border-width:
+        type: dimension
+        value: 1
+        unit: px
+      border-alignment:
+        type: string
+        value: inside
+      min-width:
+        type: dimension
+        value: 48
+        unit: px
+      label-wrapper-height:
+        type: dimension
+        value: 16
+        unit: px
+      label-letter-spacing:
+        type: dimension
+        value: -0.14
+        unit: px
+  outlined-icon32:
+    description: Корпус действий шапки отчёта/сброса типов; самостоятельный reset PNG непригоден
+    sourceRefs:
+      - outlined
+      - chrome-source
+    parameters:
+      width:
+        type: dimension
+        value: 32
+        unit: px
+      radius:
+        type: dimension
+        value: 32
+        unit: px
+      padding-inline:
+        type: dimension
+        value: 8
+        unit: px
+      glyph-inset:
+        type: dimension
+        value: 8
+        unit: px
+      background:
+        type: color
+        format: hex
+        value: "#FFFFFF"
+      border-color:
+        type: color
+        format: hex
+        value: "#D7E6F5"
+      border-width:
+        type: dimension
+        value: 1
+        unit: px
+      border-alignment:
+        type: string
+        value: inside
+    states:
+      round-actions-current:
+        sourceRefs:
+          - round-actions-decision
+          - round-actions-implementation
+        parameters:
+          width:
+            type: dimension
+            value: 32
+            unit: px
+          height:
+            type: dimension
+            value: 32
+            unit: px
+          radius:
+            type: dimension
+            value: 50
+            unit: "%"
+          glyph-size:
+            type: dimension
+            value: 16
+            unit: px
+          background:
+            type: color
+            format: hex
+            value: "#FFFFFF"
+          border-color:
+            type: color
+            format: hex
+            value: "#D7E6F5"
+          border-width:
+            type: dimension
+            value: 1
+            unit: px
+          glyph-color:
+            type: color
+            format: hex
+            value: "#202028"
+          hover-border-color:
+            type: color
+            format: hex
+            value: "#0067DC"
+          hover-glyph-color:
+            type: color
+            format: hex
+            value: "#0067DC"
+          transition:
+            type: string
+            value: border-color/color160ms ease;none при reduced motion
+  outlined-icon40:
+    description: Корпус кнопки общей фильтрации, без внешнего badge
+    sourceRefs:
+      - filter-trigger
+    parameters:
+      width:
+        type: dimension
+        value: 40
+        unit: px
+      height:
+        type: dimension
+        value: 40
+        unit: px
+      radius:
+        type: dimension
+        value: 20
+        unit: px
+      glyph-inset:
+        type: dimension
+        value: 12
+        unit: px
+      background:
+        type: color
+        format: hex
+        value: "#FFFFFF"
+      border-color:
+        type: color
+        format: hex
+        value: "#D7E6F5"
+      border-width:
+        type: dimension
+        value: 1
+        unit: px
+dependencies:
+  - id: button-design-source
+    document: references/design-system/docs/design-system/components/generated/DS-01-141-28631.md
+    role: design-source

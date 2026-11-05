@@ -1,0 +1,27 @@
+{
+  "capturedDate": "2026-11-04",
+  "authority": "Согласованный пользователем Paper после возвращения стрелок влево",
+  "paperFile": "01M6J38DD9H9GFNEWH86Q7DD82",
+  "paperPage": "p-1-0",
+  "tokenHash": "4abe57a8",
+  "scale": 1,
+  "status": "Дизайн принят пользователем; реализация по SD01 отдельно",
+  "states": [
+    {
+      "file": "source-detail-fields-1440.png",
+      "paperNode": "374-0",
+      "state": "Описание полей",
+      "width": 1440,
+      "height": 1150,
+      "sha256": "97e14540175ad10a761a546d7385f3840e4b95bd9273108231f48b0646da93b8"
+    },
+    {
+      "file": "source-detail-reports-1440.png",
+      "paperNode": "3FN-0",
+      "state": "Связанные отчёты",
+      "width": 1440,
+      "height": 900,
+      "sha256": "92699cb452913be75eacba5afb7a1f1d71c0b17564ccae3accca65eb302d3ddf"
+    }
+  ]
+}

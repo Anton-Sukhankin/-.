@@ -1,0 +1,4 @@
+.breadcrumbRow { display:flex; align-items:center; gap:8px; min-height:24px; }
+.headingBlock { display:flex; flex-direction:column; min-width:0; }
+.title { min-height:32px; margin:0; color:#101d3b; font-family:'CoFo Sans',sans-serif; font-size:20px; font-weight:500; line-height:28px; letter-spacing:normal; }
+.description { display:flex; flex-wrap:wrap; align-items:center; gap:12px; min-height:20px; margin:0; color:#52698c; font-size:12px; font-weight:400; line-height:20px; }

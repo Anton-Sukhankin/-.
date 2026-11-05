@@ -1,0 +1,6 @@
+.pagination { position: absolute; left: 0; right: 0; bottom: 0; z-index: 3; display: flex; align-items: center; justify-content: space-between; height: 64px; padding: 0 16px 0 8px; border-radius: 20px 20px 0 0; background: #fff; box-shadow: 0 -4px 16px rgb(15 28 59 / 12%); color: #1a243d; font-size: 12px; line-height: 20px; }
+.pages { display: flex; align-items: center; gap: 8px; }
+.pages button { display: grid; place-items: center; width: 32px; height: 32px; padding: 8px; border: 0; border-radius: 8px; background: transparent; color: inherit; font-size: 12px; line-height: 20px; cursor: pointer; }
+.pages button[aria-current='page'] { background: #e8ebf0; }
+.pages button:disabled { opacity: .3; cursor: default; }
+.pages button:focus-visible { outline: 2px solid #007bfc; outline-offset: -2px; }

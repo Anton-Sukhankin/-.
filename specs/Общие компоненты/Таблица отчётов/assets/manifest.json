@@ -540,5 +540,35 @@
     "captureStage": "accepted-Figma-sync-2026-11-02",
     "role": "boundary-crop",
     "exportMethod": "Crop of current native frame export at documented cropBounds; canvas unchanged"
+  },
+  {
+    "file": "sort-applied.svg",
+    "format": "svg",
+    "mimeType": "image/svg+xml",
+    "role": "implementation-asset",
+    "nodeId": "1715:61032",
+    "url": "https://www.figma.com/design/lnOcWh4ElGkhppWe6Kn5AA?node-id=1715-61032",
+    "masterNodeId": "1435:51192",
+    "sourceFrameId": "1715:60297",
+    "state": "sort-applied-ascending",
+    "sourceDimensions": [
+      16,
+      16
+    ],
+    "renderDimensions": [
+      16,
+      16
+    ],
+    "viewportBounds": {
+      "x": 398,
+      "y": 136,
+      "width": 16,
+      "height": 16
+    },
+    "checkedAt": "2026-11-03",
+    "sha256": "2558db2bf424c6e3c3bf753fa0edfadd2361d32f571e50190280d7d2ba4b17a1",
+    "captureStage": "read-only-peer-export-I17",
+    "origin": "Exact SVG exported for Figma instance1715:61032; copied unchanged from the independently retrieved implementation resource.",
+    "scope": "Ascending source glyph; descending180-degree rotation is an agreed demo state, not a separately exported Figma variant."
   }
 ]

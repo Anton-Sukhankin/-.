@@ -1,2 +1,2 @@
-# Preserve exact transferred bytes for published checksums.
+# Preserve the exact bytes listed in PACKAGE.json.
 * -text

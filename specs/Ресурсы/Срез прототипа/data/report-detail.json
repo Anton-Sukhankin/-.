@@ -1,0 +1,560 @@
+{
+  "snapshot_id": "prototype-2026-11-04-c1",
+  "role": "generated local UI fixtures, not a production API or full database",
+  "data": {
+    "report_id": "demo-report-summary",
+    "content": {
+      "overview": {
+        "description": "Отчет предназначен для мониторинга эффективности работы Блока Гостеприимства, контроля качества клиентского сервиса и оперативности обработки заявок в жилых комплексах. Ключевыми показателями являются CSAT, уровень оперативности, а также количество и структура заявок по статусам: созданные, выполненные, отмененные, гарантийные, приостановленные и переоткрытые. Аналитика охватывает динамику показателей в ежедневном и ежемесячном разрезах, сравнение эффективности подразделений и исполнителей, а также анализ распределения обращений по категориям услуг. Данные детализируются по регионам, проектам (ЖК), подразделениям, ответственным сотрудникам и отдельным заявкам. Пользователь может исследовать причины отклонений через анализ текстовых комментариев и отзывов клиентов, сгруппированных по категориям. Доступна генерация аналитической справки по выбранному периоду и проекту для оперативного информирования.",
+        "businessQuestions": [
+          "Как изменился объём обращений за выбранный период?",
+          "Какие категории формируют наибольшую нагрузку?",
+          "Как распределяется работа между командами?",
+          "Какие обращения чаще всего открываются повторно?",
+          "На каких площадках увеличился накопленный остаток?",
+          "Как меняются сроки выполнения по категориям?",
+          "Какие команды сократили количество просроченных задач?",
+          "Какие темы требуют дополнительного анализа?"
+        ],
+        "terms": [
+          "Бизнес-юнит (БЮ)",
+          "Выполнение плана",
+          "Группа компаний «Московский ипотечный центр» (ГК МИЦ)",
+          "Дата продажи",
+          "Жилье",
+          "Объект недвижимости (ОН)",
+          "Объем продаж",
+          "План продаж",
+          "План-фактное отклонение",
+          "Потенциал продаж",
+          "Предмет договора",
+          "Прогноз продаж на конец месяца",
+          "Продажи без учета расторжений",
+          "Продажи с учетом расторжений / чистые продажи",
+          "Расторжение / возврат продажи",
+          "Руководитель группы продаж (РГП)",
+          "Сделка",
+          "Срез прогноза",
+          "Территориальные управления (ТУ)",
+          "Технико-экономические показатели (ТЭП)",
+          "Техническое переоформление",
+          "Факт продаж"
+        ],
+        "methodology": [
+          "Все расчеты считаются за выбранный пользователем период. Для каждого показателя формируется 4 меры с расчетом необходимого показателя при сочетании выбранных фильтров \"Тип плана\", \"Вид плана\", \"Вид факта\", \"Показатель\".",
+          "Таким образом пользователю доступно четыре фильтра с выбором и настройкой показателя, который выводит в сводную таблицу расчет плановых значений, фактических значений, разницы и процента выполнения."
+        ],
+        "additional": "Виджет выгрузки сводной таблицы в эксель на каждом листе",
+        "context": "Управление качеством сервиса",
+        "questions": [
+          {
+            "title": "Почему долго прогружается лист «План-Факт. Месяцы»?",
+            "answer": "При выборе большого количества месяцев время отрисовки данных может быть долгим. Рекомендуется использование листа для оценки план-фактовых показателей для конкретных месяцев. Для большой выборки необходимо использовать лист «План-Факт. Проекты накопительно»."
+          },
+          {
+            "title": "Что считается онлайн-сделкой?",
+            "answer": "Онлайн-сделка определяется по признаку Инициатор процесса = «Онлайн сделка 2.0» на договоре."
+          },
+          {
+            "title": "Откуда взят расчет прогноза?",
+            "answer": "Расчет прогноза и факта взят из 07 расчета CRM."
+          },
+          {
+            "title": "Как скачать таблицу в excel?",
+            "answer": "В правом верхнем углу нужной таблицы вы увидите значок трёх точек, по нажатию появляется меню, в котором надо выбрать «Экспортировать данные как» и выбрать формат файла."
+          }
+        ]
+      },
+      "slides": [
+        "План-Факт. Проекты накопительно",
+        "План-Факт. Без наценки",
+        "План-Факт. Без сертификатов",
+        "План-Факт. Проекты/Очереди/Этапы накопительно"
+      ],
+      "sources": [
+        {
+          "id": "requests",
+          "name": "demo.requests",
+          "category": "datahub",
+          "platform": "Демо SQL",
+          "database": "demo_catalog",
+          "schema": "demo",
+          "environment": "DEV",
+          "status": "Активен",
+          "fieldCount": 24,
+          "urn": "urn:li:dataset:(urn:li:dataPlatform:mssql,demo_catalog.demo.requests,DEV)"
+        },
+        {
+          "id": "events",
+          "name": "demo.events",
+          "category": "datahub",
+          "platform": "Демо SQL"
+        },
+        {
+          "id": "teams",
+          "name": "demo.teams",
+          "category": "datahub",
+          "platform": "Демо SQL"
+        },
+        {
+          "id": "services",
+          "name": "demo.services",
+          "category": "catalog",
+          "platform": "Демо SQL"
+        },
+        {
+          "id": "locations",
+          "name": "demo.locations",
+          "category": "catalog",
+          "platform": "Демо SQL"
+        }
+      ],
+      "lineage": {
+        "nodes": [
+          {
+            "sourceId": "requests",
+            "x": 24,
+            "y": 220
+          },
+          {
+            "sourceId": "events",
+            "x": 375,
+            "y": 220
+          },
+          {
+            "sourceId": "teams",
+            "x": 726,
+            "y": 220
+          },
+          {
+            "sourceId": "services",
+            "x": 199.5,
+            "y": 350
+          },
+          {
+            "sourceId": "locations",
+            "x": 550.5,
+            "y": 350
+          }
+        ],
+        "edges": [
+          {
+            "sourceId": "requests"
+          },
+          {
+            "sourceId": "events"
+          },
+          {
+            "sourceId": "teams"
+          },
+          {
+            "sourceId": "services"
+          },
+          {
+            "sourceId": "locations"
+          }
+        ]
+      }
+    },
+    "related_metrics": [
+      {
+        "id": "demo-report-summary:metric:1",
+        "title": "Объём продаж",
+        "description": "Продажи на конечного клиента по предметам договоров с учетом расторжений",
+        "type": "Показатель",
+        "status": "Проверена",
+        "domain": "Продажи и маркетинг",
+        "unit": "м²",
+        "updated": "11.08.2026",
+        "metricId": "4",
+        "reportId": "demo-report-summary",
+        "formula": "SUM(Метры), SUM(Метры СП)"
+      },
+      {
+        "id": "demo-report-summary:metric:2",
+        "title": "План объёма продаж",
+        "description": "Планы продаж в метрах",
+        "type": "Показатель",
+        "status": "Проверена",
+        "domain": "Продажи и маркетинг",
+        "unit": "м²",
+        "updated": "11.08.2026",
+        "metricId": "sales-volume-plan",
+        "reportId": "demo-report-summary",
+        "formula": "План объёма = SUM(Утверждённая плановая площадь)"
+      },
+      {
+        "id": "demo-report-summary:metric:3",
+        "title": "Объём продаж без наценки",
+        "description": "Продажи по базовой стоимости без дополнительной наценки",
+        "type": "Показатель",
+        "status": "Проверена",
+        "domain": "Продажи и маркетинг",
+        "unit": "м²",
+        "updated": "11.08.2026",
+        "metricId": "sales-volume-base",
+        "reportId": "demo-report-summary",
+        "formula": "Объём без наценки = SUM(Площадь WHERE Наценка = 0)"
+      },
+      {
+        "id": "demo-report-summary:metric:4",
+        "title": "Объём продаж без сертификатов",
+        "description": "Продажи без учёта договоров с использованием сертификатов",
+        "type": "Показатель",
+        "status": "Проверена",
+        "domain": "Продажи и маркетинг",
+        "unit": "м²",
+        "updated": "11.08.2026",
+        "metricId": "sales-volume-no-certificates",
+        "reportId": "demo-report-summary",
+        "formula": "Объём без сертификатов = SUM(Площадь WHERE Сертификат = false)"
+      },
+      {
+        "id": "demo-report-summary:metric:5",
+        "title": "Объём продаж по проектам",
+        "description": "Продажи в разрезе проектов за выбранный период",
+        "type": "Показатель",
+        "status": "Проверена",
+        "domain": "Продажи и маркетинг",
+        "unit": "м²",
+        "updated": "11.08.2026",
+        "metricId": "sales-volume-projects",
+        "reportId": "demo-report-summary",
+        "formula": "Объём по проекту = SUM(Площадь) GROUP BY Проект"
+      },
+      {
+        "id": "demo-report-summary:metric:6",
+        "title": "План продаж по проектам",
+        "description": "Плановый объём продаж в разрезе проектов",
+        "type": "Показатель",
+        "status": "Проверена",
+        "domain": "Продажи и маркетинг",
+        "unit": "м²",
+        "updated": "11.08.2026",
+        "metricId": "sales-plan-projects",
+        "reportId": "demo-report-summary",
+        "formula": "План по проекту = SUM(Плановая площадь) GROUP BY Проект"
+      },
+      {
+        "id": "demo-report-summary:metric:7",
+        "title": "Объём продаж по очередям",
+        "description": "Продажи в разрезе очередей строительства",
+        "type": "Показатель",
+        "status": "Проверена",
+        "domain": "Продажи и маркетинг",
+        "unit": "м²",
+        "updated": "11.08.2026",
+        "metricId": "sales-volume-phases",
+        "reportId": "demo-report-summary",
+        "formula": "Объём по очереди = SUM(Площадь) GROUP BY Очередь"
+      },
+      {
+        "id": "demo-report-summary:metric:8",
+        "title": "План продаж по очередям",
+        "description": "Плановый объём продаж в разрезе очередей",
+        "type": "Показатель",
+        "status": "Проверена",
+        "domain": "Продажи и маркетинг",
+        "unit": "м²",
+        "updated": "11.08.2026",
+        "metricId": "sales-plan-phases",
+        "reportId": "demo-report-summary",
+        "formula": "План по очереди = SUM(Распределённая плановая площадь) GROUP BY Очередь"
+      },
+      {
+        "id": "demo-report-summary:metric:9",
+        "title": "Объём продаж по этапам",
+        "description": "Продажи в разрезе этапов реализации проектов",
+        "type": "Показатель",
+        "status": "Проверена",
+        "domain": "Продажи и маркетинг",
+        "unit": "м²",
+        "updated": "11.08.2026",
+        "metricId": "sales-volume-stages",
+        "reportId": "demo-report-summary",
+        "formula": "Объём по этапу = SUM(Площадь) GROUP BY Этап на дату продажи"
+      },
+      {
+        "id": "demo-report-summary:metric:10",
+        "title": "Накопленный объём продаж",
+        "description": "Суммарный объём продаж с начала выбранного периода",
+        "type": "Показатель",
+        "status": "Проверена",
+        "domain": "Продажи и маркетинг",
+        "unit": "м²",
+        "updated": "11.08.2026",
+        "metricId": "sales-volume-cumulative",
+        "reportId": "demo-report-summary",
+        "formula": "Накопленный объём(t) = SUM(Дневная чистая площадь от начала периода до t)"
+      }
+    ],
+    "usage": {
+      "platform": "Visiology · данные примера",
+      "current": [
+        {
+          "label": "Пользователи",
+          "value": "102"
+        },
+        {
+          "label": "События",
+          "value": "414"
+        },
+        {
+          "label": "Средний DAU",
+          "value": "13,8"
+        },
+        {
+          "label": "Активные дни",
+          "value": "29"
+        },
+        {
+          "label": "Регулярность",
+          "value": "14%"
+        },
+        {
+          "label": "Индекс значимости",
+          "value": "0,63"
+        },
+        {
+          "label": "Последняя активность",
+          "value": "1 день назад"
+        },
+        {
+          "label": "Рост событий",
+          "value": "+46%"
+        }
+      ],
+      "lifetimePeriod": "Январь — октябрь 2026",
+      "lifetime": [
+        {
+          "label": "Уникальные пользователи",
+          "value": "258"
+        },
+        {
+          "label": "Средний MAU",
+          "value": "96,1"
+        },
+        {
+          "label": "Пиковый MAU",
+          "value": "111"
+        },
+        {
+          "label": "Динамика MAU · последние 3 месяца",
+          "value": "−4%"
+        },
+        {
+          "label": "Месяцев с активностью",
+          "value": "10"
+        },
+        {
+          "label": "Доля активных месяцев",
+          "value": "100%"
+        },
+        {
+          "label": "Первый месяц активности",
+          "value": "Январь 2026"
+        },
+        {
+          "label": "Последний месяц активности",
+          "value": "Октябрь 2026"
+        },
+        {
+          "label": "Месяцев в жизненном цикле",
+          "value": "10"
+        }
+      ],
+      "classifications": [
+        {
+          "label": "Текущий статус",
+          "value": "Популярный отчёт"
+        },
+        {
+          "label": "Статус жизненного цикла",
+          "value": "Стабильный отчёт"
+        },
+        {
+          "label": "Текущая аудитория",
+          "value": "Массовый отчёт"
+        },
+        {
+          "label": "Историческая аудитория",
+          "value": "Широко используемый отчёт"
+        }
+      ],
+      "history": [
+        {
+          "id": "2026-01",
+          "label": "Январь 2026",
+          "shortLabel": "Янв 2026",
+          "mau": 66,
+          "events": 183,
+          "activeDays": 24,
+          "averageDau": 7.1,
+          "peakDau": 15,
+          "regularity": 11,
+          "mauChange": null,
+          "eventChange": null,
+          "audience": "Массовый отчёт"
+        },
+        {
+          "id": "2026-02",
+          "label": "Февраль 2026",
+          "shortLabel": "Фев",
+          "mau": 110,
+          "events": 322,
+          "activeDays": 27,
+          "averageDau": 14.5,
+          "peakDau": 28,
+          "regularity": 13,
+          "mauChange": 66.7,
+          "eventChange": 76,
+          "audience": "Массовый отчёт"
+        },
+        {
+          "id": "2026-03",
+          "label": "Март 2026",
+          "shortLabel": "Мар",
+          "mau": 99,
+          "events": 285,
+          "activeDays": 29,
+          "averageDau": 11.6,
+          "peakDau": 24,
+          "regularity": 12,
+          "mauChange": -10,
+          "eventChange": -11.5,
+          "audience": "Массовый отчёт"
+        },
+        {
+          "id": "2026-04",
+          "label": "Апрель 2026",
+          "shortLabel": "Апр",
+          "mau": 84,
+          "events": 248,
+          "activeDays": 26,
+          "averageDau": 8.9,
+          "peakDau": 18,
+          "regularity": 11,
+          "mauChange": -15.2,
+          "eventChange": -13,
+          "audience": "Массовый отчёт"
+        },
+        {
+          "id": "2026-05",
+          "label": "Май 2026",
+          "shortLabel": "Май",
+          "mau": 98,
+          "events": 310,
+          "activeDays": 28,
+          "averageDau": 12.1,
+          "peakDau": 25,
+          "regularity": 12,
+          "mauChange": 16.7,
+          "eventChange": 25,
+          "audience": "Массовый отчёт"
+        },
+        {
+          "id": "2026-06",
+          "label": "Июнь 2026",
+          "shortLabel": "Июн",
+          "mau": 98,
+          "events": 329,
+          "activeDays": 27,
+          "averageDau": 12.4,
+          "peakDau": 27,
+          "regularity": 13,
+          "mauChange": 0,
+          "eventChange": 6.1,
+          "audience": "Массовый отчёт"
+        },
+        {
+          "id": "2026-07",
+          "label": "Июль 2026",
+          "shortLabel": "Июл",
+          "mau": 111,
+          "events": 371,
+          "activeDays": 30,
+          "averageDau": 15.2,
+          "peakDau": 31,
+          "regularity": 14,
+          "mauChange": 13.3,
+          "eventChange": 12.8,
+          "audience": "Массовый отчёт"
+        },
+        {
+          "id": "2026-08",
+          "label": "Август 2026",
+          "shortLabel": "Авг",
+          "mau": 104,
+          "events": 352,
+          "activeDays": 28,
+          "averageDau": 14,
+          "peakDau": 29,
+          "regularity": 13,
+          "mauChange": -6.3,
+          "eventChange": -5.1,
+          "audience": "Массовый отчёт"
+        },
+        {
+          "id": "2026-09",
+          "label": "Сентябрь 2026",
+          "shortLabel": "Сен",
+          "mau": 98,
+          "events": 284,
+          "activeDays": 27,
+          "averageDau": 12.7,
+          "peakDau": 26,
+          "regularity": 13,
+          "mauChange": -5.8,
+          "eventChange": -19.3,
+          "audience": "Массовый отчёт"
+        },
+        {
+          "id": "2026-10",
+          "label": "Октябрь 2026",
+          "shortLabel": "Окт",
+          "mau": 93,
+          "events": 414,
+          "activeDays": 29,
+          "averageDau": 13.8,
+          "peakDau": 27,
+          "regularity": 15,
+          "mauChange": -5.1,
+          "eventChange": 45.8,
+          "audience": "Массовый отчёт"
+        }
+      ],
+      "chartMonthIds": [
+        "2026-01",
+        "2026-02",
+        "2026-03",
+        "2026-04",
+        "2026-05",
+        "2026-06",
+        "2026-07",
+        "2026-08",
+        "2026-09"
+      ],
+      "provenance": {
+        "summary": "SRC-09, 21.10.2026: historical report 193 inside an explicitly authored prototype fixture.",
+        "history": "Illustrative values authored in Paper screen 06; not production observations."
+      }
+    },
+    "mailings": [
+      {
+        "id": "sales-today",
+        "name": "Мои продажи сегодня",
+        "subscribed": true,
+        "dateTime": "2026-10-06T09:00:00+03:00",
+        "displayDate": "06.10.2026, 09:00:00"
+      },
+      {
+        "id": "weekly-status",
+        "name": "Еженедельный статус",
+        "subscribed": false,
+        "dateTime": "2026-10-06T09:00:00+03:00",
+        "displayDate": "06.10.2026, 09:00:00"
+      }
+    ],
+    "scope": "summary local fixture; displayID/update/people must not be inferred for another provider (RM13)"
+  }
+}

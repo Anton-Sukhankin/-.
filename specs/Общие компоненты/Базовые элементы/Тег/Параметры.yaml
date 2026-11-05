@@ -1,0 +1,698 @@
+schemaVersion: 1
+component:
+  id: tag
+  title: Пассивная метка типа, статуса, роли или категории
+  contract: specs/Общие компоненты/Базовые элементы/Тег/Контракт.md
+  status: approved-target
+sources:
+  subscription-source:
+    kind: figma
+    uri: https://www.figma.com/design/lnOcWh4ElGkhppWe6Kn5AA?node-id=389-13531
+    nodeId: 389:13531
+    status: unverified-live
+    snapshot: C07, показанная Включена, срез1 ноября; не новая проверка живого узла
+  participant-source:
+    kind: figma
+    uri: https://www.figma.com/design/lnOcWh4ElGkhppWe6Kn5AA?node-id=413-15646
+    nodeId: 413:15646
+    status: unverified-live
+    snapshot: C08, роль Аналитик; оформление не определяет права
+  news-source:
+    kind: figma
+    uri: https://www.figma.com/design/lnOcWh4ElGkhppWe6Kn5AA?node-id=375-13306
+    nodeId: 375:13306
+    status: unverified-live
+    snapshot: Категория news-card18 из рабочего consumer; срез2 ноября
+  subscription-css:
+    kind: document
+    uri: references/implementation/features/subscriptions/SubscriptionCard.module.css
+    status: observed-snapshot
+    snapshot: Дополнительный min-width55 и blur20 текущего status; не общий лимит текста
+  participant-css:
+    kind: document
+    uri: references/implementation/features/contributors/ContributorCard.module.css
+    status: observed-snapshot
+    snapshot: Роль с hug/округлением ширины, без принудительной фиксированной ширины53
+  news-card-css:
+    kind: document
+    uri: references/implementation/features/news/News.module.css
+    status: observed-snapshot
+    snapshot: Три точные подписи и их текущие ширины; не правило для произвольной строки
+  news-reading-css:
+    kind: document
+    uri: references/implementation/features/news/NewsReading.module.css
+    status: observed-snapshot
+    snapshot: articleTag24 и navTag18 с собственной палитрой, без автоматического selected/прочитано
+  metric-catalog-css:
+    kind: document
+    uri: references/implementation/features/metrics/catalog/MetricsCatalog.module.css
+    status: observed-snapshot
+    snapshot: tag24 нейтральный/typeTag alpha0.1 и текущие overflow/hug/blur
+  metric-related-css:
+    kind: document
+    uri: references/implementation/features/report-detail/metrics/MetricsTab.module.css
+    status: observed-snapshot
+    snapshot: tags span/type24; отдельный непрозрачный фон типа E4F2FF
+  metric-role-css:
+    kind: document
+    uri: references/implementation/features/metrics/detail/MetricDetail.module.css
+    status: observed-snapshot
+    snapshot: Роль ответственного24 с padding0x8 и line12
+  report-css:
+    kind: document
+    uri: references/implementation/features/report-detail/Detail.module.css
+    status: observed-snapshot
+    snapshot: Поздний font-weight500 chip; context/term наследуют цвет и line-height, person role
+      переопределяет цвета
+  fonts:
+    kind: document
+    uri: specs/Ресурсы/Шрифты/README.md
+    status: reference-only
+    snapshot: CoFo Sans и предоставленные файлы Regular/Medium
+tokens:
+  ui-font:
+    type: font-family
+    sourceRef: fonts
+    locator: CoFo Sans
+base:
+  sourceRefs:
+    - fonts
+    - subscription-source
+    - participant-source
+    - news-source
+    - metric-catalog-css
+    - metric-related-css
+    - metric-role-css
+    - report-css
+  parameters:
+    font-family:
+      type: token
+      ref: ui-font
+      expectedType: font-family
+    font-weight:
+      type: font-weight
+      value: 500
+variants:
+  subscription18:
+    description: Показанный статус подписки; другие бизнес-состояния не выводятся из цвета
+    sourceRefs:
+      - subscription-source
+      - subscription-css
+    parameters:
+      display:
+        type: string
+        value: flex
+      align-items:
+        type: string
+        value: center
+      justify-content:
+        type: string
+        value: center
+      height:
+        type: dimension
+        value: 18
+        unit: px
+      min-width:
+        type: dimension
+        value: 55
+        unit: px
+      radius:
+        type: dimension
+        value: 6
+        unit: px
+      padding-block:
+        type: dimension
+        value: 1
+        unit: px
+      padding-inline:
+        type: dimension
+        value: 4
+        unit: px
+      content-gap:
+        type: dimension
+        value: 4
+        unit: px
+      font-size:
+        type: dimension
+        value: 10
+        unit: px
+      line-height:
+        type: dimension
+        value: 10
+        unit: px
+      letter-spacing:
+        type: dimension
+        value: -0.05
+        unit: px
+      background:
+        type: color
+        format: hex
+        value: "#E6F6F1"
+      foreground:
+        type: color
+        format: hex
+        value: "#107F70"
+    states:
+      layout-implementation:
+        sourceRefs:
+          - subscription-css
+        parameters:
+          backdrop-blur:
+            type: dimension
+            value: 20
+            unit: px
+  participant-role18:
+    description: Текст роли участника с шириной по содержимому
+    sourceRefs:
+      - participant-source
+      - participant-css
+    parameters:
+      display:
+        type: string
+        value: flex
+      align-items:
+        type: string
+        value: center
+      justify-content:
+        type: string
+        value: center
+      height:
+        type: dimension
+        value: 18
+        unit: px
+      radius:
+        type: dimension
+        value: 6
+        unit: px
+      padding-block:
+        type: dimension
+        value: 1
+        unit: px
+      padding-inline:
+        type: dimension
+        value: 4
+        unit: px
+      content-gap:
+        type: dimension
+        value: 4
+        unit: px
+      font-size:
+        type: dimension
+        value: 10
+        unit: px
+      line-height:
+        type: dimension
+        value: 10
+        unit: px
+      letter-spacing:
+        type: dimension
+        value: -0.05
+        unit: px
+      foreground:
+        type: color
+        format: hex
+        value: "#007BFC"
+      background:
+        type: color
+        format: srgb
+        value:
+          r: 0
+          g: 0.4823529411764706
+          b: 0.9882352941176471
+          a: 0.1
+      width-mode:
+        type: string
+        value: hug-content
+  news-card18:
+    description: Категория карточки; родитель передаёт tone и точную подпись
+    sourceRefs:
+      - news-source
+      - news-card-css
+    parameters:
+      height:
+        type: dimension
+        value: 18
+        unit: px
+      radius:
+        type: dimension
+        value: 4
+        unit: px
+      padding-block:
+        type: dimension
+        value: 1
+        unit: px
+      padding-inline:
+        type: dimension
+        value: 6
+        unit: px
+      font-size:
+        type: dimension
+        value: 10
+        unit: px
+      line-height:
+        type: dimension
+        value: 16
+        unit: px
+    states:
+      tone-new:
+        sourceRefs:
+          - news-source
+          - news-card-css
+        parameters:
+          foreground:
+            type: color
+            format: hex
+            value: "#087569"
+          background:
+            type: color
+            format: hex
+            value: "#ECF7F3"
+          width:
+            type: dimension
+            value: 41
+            unit: px
+      tone-important:
+        sourceRefs:
+          - news-source
+          - news-card-css
+        parameters:
+          foreground:
+            type: color
+            format: hex
+            value: "#8A5100"
+          background:
+            type: color
+            format: hex
+            value: "#FFF3DF"
+          width:
+            type: dimension
+            value: 43
+            unit: px
+      tone-change:
+        sourceRefs:
+          - news-source
+          - news-card-css
+        parameters:
+          foreground:
+            type: color
+            format: hex
+            value: "#175CD3"
+          background:
+            type: color
+            format: hex
+            value: "#E8F2FF"
+          width:
+            type: dimension
+            value: 66
+            unit: px
+  news-neighbor18:
+    description: Категория соседней новости; отдельный отступ и палитра
+    sourceRefs:
+      - news-reading-css
+    parameters:
+      height:
+        type: dimension
+        value: 18
+        unit: px
+      radius:
+        type: dimension
+        value: 4
+        unit: px
+      padding-block:
+        type: dimension
+        value: 1
+        unit: px
+      padding-inline:
+        type: dimension
+        value: 5
+        unit: px
+      font-size:
+        type: dimension
+        value: 10
+        unit: px
+      line-height:
+        type: dimension
+        value: 16
+        unit: px
+      width-mode:
+        type: string
+        value: hug-content
+    states:
+      tone-new:
+        sourceRefs:
+          - news-reading-css
+        parameters:
+          foreground:
+            type: color
+            format: hex
+            value: "#007E73"
+          background:
+            type: color
+            format: hex
+            value: "#EAF7F5"
+      tone-important:
+        sourceRefs:
+          - news-reading-css
+        parameters:
+          foreground:
+            type: color
+            format: hex
+            value: "#925800"
+          background:
+            type: color
+            format: hex
+            value: "#FFF4DF"
+      tone-change:
+        sourceRefs:
+          - news-reading-css
+        parameters:
+          foreground:
+            type: color
+            format: hex
+            value: "#0056E8"
+          background:
+            type: color
+            format: hex
+            value: "#EAF2FF"
+  news-reading24:
+    description: Метка в полном материале; единый текущий синий вид
+    sourceRefs:
+      - news-reading-css
+    parameters:
+      display:
+        type: string
+        value: flex
+      align-items:
+        type: string
+        value: center
+      justify-content:
+        type: string
+        value: center
+      height:
+        type: dimension
+        value: 24
+        unit: px
+      radius:
+        type: dimension
+        value: 8
+        unit: px
+      padding-block:
+        type: dimension
+        value: 0
+        unit: px
+      padding-inline:
+        type: dimension
+        value: 8
+        unit: px
+      font-size:
+        type: dimension
+        value: 12
+        unit: px
+      line-height:
+        type: dimension
+        value: 12
+        unit: px
+      letter-spacing:
+        type: dimension
+        value: -0.12
+        unit: px
+      foreground:
+        type: color
+        format: hex
+        value: "#007BFC"
+      background:
+        type: color
+        format: srgb
+        value:
+          r: 0
+          g: 0.4823529411764706
+          b: 0.9882352941176471
+          a: 0.1
+  metric-catalog24:
+    description: Нейтральные метки карточки и синяя форма типа; не обычные ячейки статуса/домена
+    sourceRefs:
+      - metric-catalog-css
+    parameters:
+      display:
+        type: string
+        value: block
+      height:
+        type: dimension
+        value: 24
+        unit: px
+      radius:
+        type: dimension
+        value: 8
+        unit: px
+      padding-block:
+        type: dimension
+        value: 6
+        unit: px
+      padding-inline:
+        type: dimension
+        value: 8
+        unit: px
+      font-size:
+        type: dimension
+        value: 12
+        unit: px
+      line-height:
+        type: dimension
+        value: 12
+        unit: px
+      letter-spacing:
+        type: dimension
+        value: -0.12
+        unit: px
+      foreground:
+        type: color
+        format: hex
+        value: "#202028"
+      background:
+        type: color
+        format: hex
+        value: "#F0F1F4"
+      overflow:
+        type: string
+        value: hidden
+      text-overflow:
+        type: string
+        value: ellipsis
+      white-space:
+        type: string
+        value: nowrap
+      max-width:
+        type: string
+        value: 100%
+      backdrop-blur:
+        type: dimension
+        value: 20
+        unit: px
+    states:
+      type-presentation:
+        sourceRefs:
+          - metric-catalog-css
+        parameters:
+          foreground:
+            type: color
+            format: hex
+            value: "#007BFC"
+          background:
+            type: color
+            format: srgb
+            value:
+              r: 0
+              g: 0.4823529411764706
+              b: 0.9882352941176471
+              a: 0.1
+          backdrop-blur:
+            type: dimension
+            value: 0
+            unit: px
+  metric-related24:
+    description: Связанные метрики отчёта; отдельный фон типа
+    sourceRefs:
+      - metric-related-css
+    parameters:
+      display:
+        type: string
+        value: block
+      height:
+        type: dimension
+        value: 24
+        unit: px
+      radius:
+        type: dimension
+        value: 8
+        unit: px
+      padding-block:
+        type: dimension
+        value: 6
+        unit: px
+      padding-inline:
+        type: dimension
+        value: 8
+        unit: px
+      font-size:
+        type: dimension
+        value: 12
+        unit: px
+      line-height:
+        type: dimension
+        value: 12
+        unit: px
+      letter-spacing:
+        type: dimension
+        value: -0.12
+        unit: px
+      foreground:
+        type: color
+        format: hex
+        value: "#202028"
+      background:
+        type: color
+        format: hex
+        value: "#F0F1F4"
+      overflow:
+        type: string
+        value: hidden
+      text-overflow:
+        type: string
+        value: ellipsis
+      white-space:
+        type: string
+        value: nowrap
+      max-width:
+        type: string
+        value: 100%
+    states:
+      type-presentation:
+        sourceRefs:
+          - metric-related-css
+        parameters:
+          foreground:
+            type: color
+            format: hex
+            value: "#007BFC"
+          background:
+            type: color
+            format: hex
+            value: "#E4F2FF"
+  metric-role24:
+    description: Роль ответственного в полном профиле метрики
+    sourceRefs:
+      - metric-role-css
+    parameters:
+      display:
+        type: string
+        value: inline-flex
+      align-items:
+        type: string
+        value: center
+      height:
+        type: dimension
+        value: 24
+        unit: px
+      radius:
+        type: dimension
+        value: 8
+        unit: px
+      padding-block:
+        type: dimension
+        value: 0
+        unit: px
+      padding-inline:
+        type: dimension
+        value: 8
+        unit: px
+      font-size:
+        type: dimension
+        value: 12
+        unit: px
+      line-height:
+        type: dimension
+        value: 12
+        unit: px
+      letter-spacing:
+        type: dimension
+        value: -0.12
+        unit: px
+      foreground:
+        type: color
+        format: hex
+        value: "#007BFC"
+      background:
+        type: color
+        format: srgb
+        value:
+          r: 0
+          g: 0.4823529411764706
+          b: 0.9882352941176471
+          a: 0.1
+  report-token12:
+    description: Контекст/термины Обзора; текущий inline и наследование сохранены
+    sourceRefs:
+      - report-css
+    parameters:
+      radius:
+        type: dimension
+        value: 6
+        unit: px
+      padding-block:
+        type: dimension
+        value: 3
+        unit: px
+      padding-inline:
+        type: dimension
+        value: 8
+        unit: px
+      font-size:
+        type: dimension
+        value: 12
+        unit: px
+      background:
+        type: color
+        format: hex
+        value: "#F0F1F4"
+      foreground-mode:
+        type: string
+        value: inherit
+      line-height-mode:
+        type: string
+        value: inherit
+  report-role12:
+    description: Роль правой колонки отчёта; line-height наследуется
+    sourceRefs:
+      - report-css
+    parameters:
+      radius:
+        type: dimension
+        value: 6
+        unit: px
+      padding-block:
+        type: dimension
+        value: 3
+        unit: px
+      padding-inline:
+        type: dimension
+        value: 8
+        unit: px
+      font-size:
+        type: dimension
+        value: 12
+        unit: px
+      foreground:
+        type: color
+        format: hex
+        value: "#007BFC"
+      background:
+        type: color
+        format: hex
+        value: "#E6F3FF"
+      line-height-mode:
+        type: string
+        value: inherit
+dependencies:
+  - id: source-tag
+    document: references/design-system/docs/design-system/components/generated/DS-01-279-2058.md
+    role: design-source

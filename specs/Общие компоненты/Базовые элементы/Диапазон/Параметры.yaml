@@ -1,0 +1,422 @@
+schemaVersion: 1
+component:
+  id: number-range
+  title: Диапазон с двумя краями и ползунками
+  contract: specs/Общие компоненты/Базовые элементы/Диапазон/Контракт.md
+  status: approved-target
+sources:
+  range-source:
+    kind: figma
+    uri: https://www.figma.com/design/Hwq9fTAws3U2qjKK9mYZty?node-id=4159-5222
+    nodeId: 4159:5222
+    status: unverified-live
+    snapshot: DS-01 multi/s — принятая основа геометрии из C05, не новый полный макет панели
+  preset-enabled:
+    kind: figma
+    uri: https://www.figma.com/design/Hwq9fTAws3U2qjKK9mYZty?node-id=20223-17745
+    nodeId: 20223:17745
+    status: unverified-live
+    snapshot: Геометрия XS segment item без icon/info/counter/tooltip; не все варианты будущего B08
+  preset-active:
+    kind: figma
+    uri: https://www.figma.com/design/Hwq9fTAws3U2qjKK9mYZty?node-id=20223-17764
+    nodeId: 20223:17764
+    status: unverified-live
+    snapshot: Основа активного пресета; локальное оформление для белой панели сохранено отдельно
+  chip-contract:
+    kind: document
+    uri: specs/Общие компоненты/Базовые элементы/Чипс/Контракт.md
+    status: approved-decision
+    snapshot: Внутреннее оформление пресета передано B08 mau-preset28; здесь только ряд и вычисление
+      диапазона
+  current-application:
+    kind: document
+    uri: specs/Общие компоненты/Фильтрация отчётов/Контракт.md
+    status: approved-decision
+    snapshot: Поздние подписи/состав4ноября и конфигурация MAU/просмотра; источники Figma сохранены как
+      происхождение
+  flow:
+    kind: document
+    uri: context/target/Пользовательские пути/Фильтрация отчётов.md
+    status: approved-decision
+    snapshot: Допустимость чисел, включённые границы, смысл отсутствующего края и Apply/Reset; не backend DTO
+  implementation:
+    kind: document
+    uri: references/implementation/components/ReportRangeField/ReportRangeField.module.css
+    status: observed-snapshot
+    snapshot: Дополнительные стили совмещения, focus/error и active пресетов — наблюдение существующего кода
+  behavior-source:
+    kind: document
+    uri: references/implementation/components/ReportRangeField/ReportRangeField.tsx
+    status: observed-snapshot
+    snapshot: Native number/range и пустые края/шкала/подписи; код только прочитан, новый runtime не
+      запускался
+  thumb:
+    kind: asset
+    uri: assets/images/report-range/thumb.svg
+    status: observed-snapshot
+    snapshot: Существующий root68x68, тело20x20 в x24/y8; ресурс не уменьшать и не перерисовывать
+  table-hover:
+    kind: document
+    uri: specs/Общие компоненты/Таблица отчётов/Контракт.md
+    status: approved-decision
+    snapshot: Общий --table-heading-hover, использованный текущими пресетами; значение не копируется
+  fonts:
+    kind: document
+    uri: specs/Ресурсы/Шрифты/README.md
+    status: reference-only
+    snapshot: Переданные CoFo Sans Regular/Medium, без замены на Inter
+tokens:
+  ui-font:
+    type: font-family
+    sourceRef: fonts
+    locator: Эталонное семейство CoFo Sans из README шрифтов
+base:
+  sourceRefs:
+    - range-source
+    - current-application
+    - implementation
+    - behavior-source
+    - fonts
+    - thumb
+  parameters:
+    layout-width:
+      type: string
+      value: fill-container
+    content-gap:
+      type: dimension
+      value: 12
+      unit: px
+    font-family:
+      type: token
+      ref: ui-font
+      expectedType: font-family
+    foreground:
+      type: color
+      format: hex
+      value: "#202028"
+    label-font-size:
+      type: dimension
+      value: 12
+      unit: px
+    label-line-height:
+      type: dimension
+      value: 12
+      unit: px
+    label-letter-spacing:
+      type: dimension
+      value: -0.12
+      unit: px
+    label-gap:
+      type: dimension
+      value: 12
+      unit: px
+    muted-color:
+      type: color
+      format: hex
+      value: "#52698C"
+    field-height:
+      type: dimension
+      value: 40
+      unit: px
+    field-radius:
+      type: dimension
+      value: 10
+      unit: px
+    field-padding-inline:
+      type: dimension
+      value: 12
+      unit: px
+    field-background:
+      type: color
+      format: hex
+      value: "#F0F1F4"
+    field-content-gap:
+      type: dimension
+      value: 16
+      unit: px
+    value-prefix-gap:
+      type: dimension
+      value: 8
+      unit: px
+    prefix-font-size:
+      type: dimension
+      value: 12
+      unit: px
+    prefix-line-height:
+      type: dimension
+      value: 16
+      unit: px
+    value-font-size:
+      type: dimension
+      value: 14
+      unit: px
+    value-line-height:
+      type: dimension
+      value: 16
+      unit: px
+    value-font-weight:
+      type: font-weight
+      value: 500
+    value-letter-spacing:
+      type: dimension
+      value: -0.14
+      unit: px
+    placeholder-color:
+      type: color
+      format: hex
+      value: "#687D96"
+    placeholder-font-weight:
+      type: font-weight
+      value: 400
+    lower-prefix:
+      type: string
+      value: От
+    upper-prefix:
+      type: string
+      value: До
+    lower-placeholder:
+      type: string
+      value: "0"
+    upper-placeholder:
+      type: string
+      value: Любое
+    input-minimum:
+      type: integer
+      value: 0
+    input-step:
+      type: integer
+      value: 1
+    slider-scale-floor:
+      type: integer
+      value: 1
+    slider-height:
+      type: dimension
+      value: 20
+      unit: px
+    slider-inset-inline:
+      type: dimension
+      value: 8
+      unit: px
+    slider-bottom:
+      type: dimension
+      value: -10
+      unit: px
+    track-inset-inline:
+      type: dimension
+      value: 10
+      unit: px
+    track-top:
+      type: dimension
+      value: 9.5
+      unit: px
+    track-height:
+      type: dimension
+      value: 1
+      unit: px
+    track-radius:
+      type: dimension
+      value: 2
+      unit: px
+    track-color:
+      type: color
+      format: hex
+      value: "#D4D6DF"
+    progress-top:
+      type: dimension
+      value: 9
+      unit: px
+    progress-height:
+      type: dimension
+      value: 2
+      unit: px
+    progress-radius:
+      type: dimension
+      value: 2
+      unit: px
+    progress-color:
+      type: color
+      format: hex
+      value: "#007BFC"
+    thumb-slot-size:
+      type: dimension
+      value: 20
+      unit: px
+    thumb-resource-width:
+      type: dimension
+      value: 68
+      unit: px
+    thumb-resource-height:
+      type: dimension
+      value: 68
+      unit: px
+    thumb-image-left:
+      type: dimension
+      value: -24
+      unit: px
+    thumb-image-top:
+      type: dimension
+      value: -8
+      unit: px
+    native-thumb-size:
+      type: dimension
+      value: 20
+      unit: px
+    native-lower-layer:
+      type: integer
+      value: 2
+    native-upper-layer:
+      type: integer
+      value: 3
+    native-lower-at-scale-end-layer:
+      type: integer
+      value: 4
+    native-track-pointer-events:
+      type: string
+      value: none
+    native-thumb-pointer-events:
+      type: string
+      value: auto
+    error-font-size:
+      type: dimension
+      value: 12
+      unit: px
+    error-line-height:
+      type: dimension
+      value: 16
+      unit: px
+    error-min-height:
+      type: dimension
+      value: 16
+      unit: px
+variants:
+  mau:
+    description: Пояснение справа и нижние пресеты; их значения/подписи передаёт C05
+    sourceRefs:
+      - current-application
+      - chip-contract
+      - implementation
+    parameters:
+      description-visible:
+        type: boolean
+        value: true
+      presets-visible:
+        type: boolean
+        value: true
+      presets-row-margin-top:
+        type: dimension
+        value: 8
+        unit: px
+      presets-gap:
+        type: dimension
+        value: 8
+        unit: px
+      last-row-padding-bottom:
+        type: dimension
+        value: 0
+        unit: px
+    states:
+      invalid:
+        sourceRefs:
+          - flow
+          - implementation
+        parameters:
+          error-color:
+            type: color
+            format: hex
+            value: "#BA2018"
+          field-error-inset-width:
+            type: dimension
+            value: 1
+            unit: px
+      focus-implementation:
+        sourceRefs:
+          - implementation
+        parameters:
+          field-outline-width:
+            type: dimension
+            value: 2
+            unit: px
+          field-outline-offset:
+            type: dimension
+            value: 1
+            unit: px
+          slider-outline-width:
+            type: dimension
+            value: 2
+            unit: px
+          slider-outline-offset:
+            type: dimension
+            value: 2
+            unit: px
+          outline-color:
+            type: color
+            format: hex
+            value: "#007BFC"
+  last-viewed:
+    description: Без пояснения/пресетов; нижний резерв под выступающие ползунки
+    sourceRefs:
+      - current-application
+      - implementation
+    parameters:
+      description-visible:
+        type: boolean
+        value: false
+      presets-visible:
+        type: boolean
+        value: false
+      last-row-padding-bottom:
+        type: dimension
+        value: 10
+        unit: px
+    states:
+      invalid:
+        sourceRefs:
+          - flow
+          - implementation
+        parameters:
+          error-color:
+            type: color
+            format: hex
+            value: "#BA2018"
+          field-error-inset-width:
+            type: dimension
+            value: 1
+            unit: px
+      focus-implementation:
+        sourceRefs:
+          - implementation
+        parameters:
+          field-outline-width:
+            type: dimension
+            value: 2
+            unit: px
+          field-outline-offset:
+            type: dimension
+            value: 1
+            unit: px
+          slider-outline-width:
+            type: dimension
+            value: 2
+            unit: px
+          slider-outline-offset:
+            type: dimension
+            value: 2
+            unit: px
+          outline-color:
+            type: color
+            format: hex
+            value: "#007BFC"
+dependencies:
+  - id: preset-chip
+    document: specs/Общие компоненты/Базовые элементы/Чипс/Контракт.md
+    role: child-contract
+  - id: range-field-source
+    document: references/design-system/docs/design-system/components/generated/DS-01-427-6332.md
+    role: design-source
+  - id: range-source
+    document: references/design-system/docs/design-system/components/generated/DS-01-418-2560.md
+    role: design-source
+  - id: range-item-source
+    document: references/design-system/docs/design-system/components/generated/DS-01-418-2553.md
+    role: design-source

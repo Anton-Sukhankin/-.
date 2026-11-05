@@ -1,0 +1,101 @@
+{
+  "baseline": "prototype-navigator-accepted-2026-11-05",
+  "acceptedDate": "2026-11-05",
+  "route": "/preview/navigation",
+  "runtime": "React prototype with local demo data",
+  "browser": "Playwright Chromium",
+  "deviceScaleFactor": 1,
+  "reproduction": "../../Источники вида.md#кадры-принятой-реализации",
+  "prototypeSourceFingerprints": {
+    "prototype/package-lock.json": "ddb605e7922ce15a3cd5ed173219b590873f427d774ef0f935bd2d7d9d394b6e",
+    "prototype/src/app/NavigationPreview.tsx": "ebb567d886099297e8c71d1426797664c36eadfc96c47264481b2e9251f317c8",
+    "prototype/src/components/Search/CatalogSearch.tsx": "500007dc007a4216231dcdfb7f2862b87933ad2955b188fff5b784c304424517",
+    "prototype/src/components/Search/CatalogSearch.module.css": "f110dd815ae628972a52e1a05eb04be86507e9c9a1fcd80920aedd3e4f8348cf",
+    "prototype/src/components/Search/SearchMatch.tsx": "9b19771100de87988ab5d3f00495ca9232837aa4e0fcc5ffa0908957e8c0bda2",
+    "prototype/src/components/Search/SearchMatch.module.css": "82c5cade71b1ad6e812b00dc2bde0f6bba07eb7f21ce2b77d72cd4c740e4bd7d",
+    "prototype/src/data/catalogSearch.ts": "1777c6d4374b5716fe59fd0864676b85f26d602fec4c2c051a829c84033944ce",
+    "prototype/src/demo/catalogSearch.ts": "169f3f211d4f1cd92b844296b68ffbfdbf2eb7f915ff2230c9d790e657719eea"
+  },
+  "images": [
+    {
+      "path": "before-input.png",
+      "viewport": [
+        1440,
+        900
+      ],
+      "sha256": "40ce53c1393ed3da15bbc97f28e2d6e9a13eb0e166c9def9e5b077222ae04660"
+    },
+    {
+      "path": "no-results.png",
+      "viewport": [
+        1440,
+        900
+      ],
+      "sha256": "21b1a5b6009edc60045067121295b0aa67379acf8d42e4a0bb8354c8b453976e"
+    },
+    {
+      "path": "search-actions.png",
+      "viewport": [
+        1440,
+        900
+      ],
+      "sha256": "d468f65132ee8caa49df334c3eae6e9fe04fc1869c3100f57dd8a6848b6cc51d"
+    },
+    {
+      "path": "metric-search-results.png",
+      "viewport": [
+        1440,
+        900
+      ],
+      "sha256": "5872e4aec432107bd269d9ab8127b02c0d3bf125987fe2b29d51ed9ed6ec96fd"
+    },
+    {
+      "path": "source-description.png",
+      "viewport": [
+        1440,
+        900
+      ],
+      "sha256": "abf0d5b47abb7d154b5caa29393fa538c9e7a896bf96c8545f5f9a22246fb528"
+    },
+    {
+      "path": "source-field.png",
+      "viewport": [
+        1440,
+        900
+      ],
+      "sha256": "cecfb0bae8086d74bbbb04a1b92ed8c6ae6014f18d9ae51e44764fc79585c485"
+    },
+    {
+      "path": "metric-block.png",
+      "viewport": [
+        1440,
+        900
+      ],
+      "sha256": "65faac0d3cf8fe198efe39f50771093315efdd18f8cafc40d03fe8f868e8fdbc"
+    },
+    {
+      "path": "type-selected.png",
+      "viewport": [
+        1440,
+        900
+      ],
+      "sha256": "8dfab1485a4f44cbad7162816653d75911ddb3b4a10417ae822fbf8b095d4b19"
+    },
+    {
+      "path": "location-unavailable.png",
+      "viewport": [
+        1440,
+        900
+      ],
+      "sha256": "f021ef72efb1b402a59d8b821a67772fe6d3168abc392c39bb2c8c169fa6bbac"
+    },
+    {
+      "path": "report-page-stepper.png",
+      "viewport": [
+        1440,
+        900
+      ],
+      "sha256": "d5803d635e2738d41a29a678196086a0493def2a247cefc665aee3895c1e4a79"
+    }
+  ]
+}

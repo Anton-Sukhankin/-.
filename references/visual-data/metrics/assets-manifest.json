@@ -1,0 +1,52 @@
+{
+  "source": "Figma target export; user-selected section 710:13771",
+  "capturedOn": "2026-11-03",
+  "fileKey": "lnOcWh4ElGkhppWe6Kn5AA",
+  "items": [
+    {
+      "name": "cards",
+      "file": "assets/cards.png",
+      "nodeId": "723:13895",
+      "width": 1440,
+      "height": 900,
+      "sha256": "55f2f1ec5eabd8544f14cf4e41a303711389f668dc64f4f80b7008d877aa12a8",
+      "bytes": 114747
+    },
+    {
+      "name": "table",
+      "file": "assets/table.png",
+      "nodeId": "794:14896",
+      "width": 1440,
+      "height": 900,
+      "sha256": "63a0a42acda4d0bc2fcad9c5aea84a44274cbcfb7a4caf1fb833fc4767327b46",
+      "bytes": 132769
+    },
+    {
+      "name": "detail",
+      "file": "assets/detail.png",
+      "nodeId": "1167:28009",
+      "width": 1440,
+      "height": 900,
+      "sha256": "148ebc0b42feb9f6ef5db2e2af2ea3efccf6972d6f80444aab00b64b5f9fecae",
+      "bytes": 181086
+    },
+    {
+      "name": "detail-first-open",
+      "file": "assets/detail-first-open.png",
+      "nodeId": "1190:30560",
+      "width": 1440,
+      "height": 1910,
+      "sha256": "572a3959294ee7fc407cf4cda47f813f9e46e34bcbf02960073ea2f456fbb5bf",
+      "bytes": 285865
+    },
+    {
+      "name": "detail-all-open",
+      "file": "assets/detail-all-open.png",
+      "nodeId": "1167:27625",
+      "width": 1440,
+      "height": 4030,
+      "sha256": "e548aebca204b98063408dbddb30c7bb34a9f8c8170f01060d44b20178252b75",
+      "bytes": 468781
+    }
+  ]
+}

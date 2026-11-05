@@ -1,0 +1,262 @@
+schemaVersion: 1
+component:
+  id: selection-control
+  title: Чекбокс и одиночный выбор — подтверждённые применения
+  contract: specs/Общие компоненты/Базовые элементы/Контрол выбора/Контракт.md
+  status: approved-target
+sources:
+  list-source:
+    kind: figma
+    uri: https://www.figma.com/design/lnOcWh4ElGkhppWe6Kn5AA?node-id=1436-179840
+    nodeId: 1436:179840
+    status: unverified-live
+    snapshot: Срез02.11 списка; размер квадрата/обёртки перенесён из принятого B04, не все состояния DS
+  list-implementation:
+    kind: document
+    uri: references/implementation/components/FilterValueList/FilterValueList.module.css
+    status: observed-snapshot
+    snapshot: Совмещение native input, unchecked и технический focus — наблюдение существующей реализации
+  checked-svg:
+    kind: asset
+    uri: assets/images/column-filter/checkbox-checked.svg
+    status: observed-snapshot
+    snapshot: Существующий ресурс intrinsic/viewBox16x20; plate16x16 с y2 и точным цветом007BFB; не
+      перекрашивать и не обрезать
+  form-source:
+    kind: figma
+    uri: https://www.figma.com/design/lnOcWh4ElGkhppWe6Kn5AA?node-id=1116-28132
+    nodeId: 1116:28132
+    status: unverified-live
+    snapshot: Четыре unchecked-флага Последнего значения на кадре1440x1180, не проверка отправки
+  form-implementation:
+    kind: document
+    uri: references/implementation/features/report-detail/mailings/MailingsTab.module.css
+    status: observed-snapshot
+    snapshot: Размеры/цвета и подача checked background16x16 наблюдены в CSS; новая визуальная приёмка
+      не заявлена
+  status-decision:
+    kind: document
+    uri: specs/Общие компоненты/Фильтрация отчётов/Контракт.md
+    status: approved-decision
+    snapshot: Статус — одиночный выбор без видимого radio; значения/смысл Все и DRAFT принадлежат C05
+  native-implementation:
+    kind: document
+    uri: references/implementation/components/FilterValueList/FilterValueList.tsx
+    status: observed-snapshot
+    snapshot: Native checkbox/radio, группа по useId и отдельный декоративный mark; без назначения
+      обязательного API
+base:
+  sourceRefs:
+    - native-implementation
+    - status-decision
+  parameters:
+    native-control-required:
+      type: boolean
+      value: true
+    state-owner:
+      type: string
+      value: parent
+variants:
+  filter-checkbox16:
+    description: Видимый квадрат в обёртке списка; дополнительные CSS-параметры — наблюдение
+    sourceRefs:
+      - list-source
+      - list-implementation
+      - checked-svg
+    parameters:
+      visual-size:
+        type: dimension
+        value: 16
+        unit: px
+      wrapper-width:
+        type: dimension
+        value: 16
+        unit: px
+      wrapper-height:
+        type: dimension
+        value: 20
+        unit: px
+      native-width:
+        type: dimension
+        value: 16
+        unit: px
+      native-height:
+        type: dimension
+        value: 20
+        unit: px
+      native-opacity:
+        type: opacity
+        value: 0
+      decorative-mark-aria-hidden:
+        type: boolean
+        value: true
+    states:
+      unchecked:
+        sourceRefs:
+          - list-implementation
+        parameters:
+          background:
+            type: color
+            format: hex
+            value: "#FFFFFF"
+          border-width:
+            type: dimension
+            value: 1
+            unit: px
+          border-color:
+            type: color
+            format: hex
+            value: "#D2D3D7"
+          radius:
+            type: dimension
+            value: 4
+            unit: px
+      checked:
+        sourceRefs:
+          - checked-svg
+        parameters:
+          svg-intrinsic-width:
+            type: dimension
+            value: 16
+            unit: px
+          svg-intrinsic-height:
+            type: dimension
+            value: 20
+            unit: px
+          svg-display-width:
+            type: dimension
+            value: 16
+            unit: px
+          svg-display-height:
+            type: dimension
+            value: 20
+            unit: px
+          plate-size:
+            type: dimension
+            value: 16
+            unit: px
+          plate-top:
+            type: dimension
+            value: 2
+            unit: px
+          plate-color:
+            type: color
+            format: hex
+            value: "#007BFB"
+      focus-implementation:
+        sourceRefs:
+          - list-implementation
+        parameters:
+          outline-width:
+            type: dimension
+            value: 2
+            unit: px
+          outline-offset:
+            type: dimension
+            value: -2
+            unit: px
+          outline-color:
+            type: color
+            format: hex
+            value: "#007BFC"
+          outline-radius:
+            type: dimension
+            value: 4
+            unit: px
+  form-checkbox16:
+    description: Флаг Последнего значения; стили текущей реализации, внешний margin у формы
+    sourceRefs:
+      - form-source
+      - form-implementation
+    parameters:
+      native-width:
+        type: dimension
+        value: 16
+        unit: px
+      native-height:
+        type: dimension
+        value: 16
+        unit: px
+      background:
+        type: color
+        format: hex
+        value: "#FFFFFF"
+      border-width:
+        type: dimension
+        value: 1
+        unit: px
+      border-color:
+        type: color
+        format: hex
+        value: "#007BFC"
+      radius:
+        type: dimension
+        value: 4
+        unit: px
+      label-gap:
+        type: dimension
+        value: 8
+        unit: px
+      label-font-size:
+        type: dimension
+        value: 14
+        unit: px
+      label-line-height:
+        type: dimension
+        value: 20
+        unit: px
+      label-color:
+        type: color
+        format: hex
+        value: "#101D3B"
+    states:
+      checked:
+        sourceRefs:
+          - form-implementation
+          - checked-svg
+        parameters:
+          background:
+            type: color
+            format: hex
+            value: "#007BFC"
+          svg-display-width:
+            type: dimension
+            value: 16
+            unit: px
+          svg-display-height:
+            type: dimension
+            value: 16
+            unit: px
+  text-radio:
+    description: Native radio заполняет строку; его кружок скрыт, отдельная выбранная DS-галочка и
+      текст/hover принадлежат B05
+    sourceRefs:
+      - status-decision
+      - list-implementation
+      - native-implementation
+    parameters:
+      indicator-visible:
+        type: boolean
+        value: false
+      native-opacity:
+        type: opacity
+        value: 0
+      native-position:
+        type: string
+        value: overlay-parent-row
+      native-width:
+        type: dimension
+        value: 100
+        unit: "%"
+      native-height:
+        type: dimension
+        value: 100
+        unit: "%"
+      native-inset:
+        type: dimension
+        value: 0
+        unit: px
+dependencies:
+  - id: choice-design-source
+    document: references/design-system/docs/design-system/components/generated/DS-01-446-5030.md
+    role: design-source

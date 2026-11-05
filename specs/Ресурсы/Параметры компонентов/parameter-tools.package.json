@@ -1,0 +1,6 @@
+{
+  "name": "catalog-documentation-parameter-checks",
+  "private": true,
+  "description": "Required checker libraries; this is not an application dependency change",
+  "dependencies": {"yaml": "2.9.1", "ajv": "8.20.0"}
+}

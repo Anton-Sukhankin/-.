@@ -1,0 +1,189 @@
+const assetPathPrefix = "https://www.figma.com/api/mcp/asset/ea70299f-01ee-4ad1-96f0-6e50d86ed027";
+const img16 = `${assetPathPrefix}/19b5b.svg`;
+const imgChevronRight = `${assetPathPrefix}/da972.svg`;
+const img11DocumentEditor11Pencil = `${assetPathPrefix}/85045.svg`;
+const img = `${assetPathPrefix}/972bb.svg`;
+const img05System25Share2 = `${assetPathPrefix}/a4303.svg`;
+const img33 = `${assetPathPrefix}/019ad.svg`;
+const imgPack1 = `${assetPathPrefix}/392ef.svg`;
+const img1 = `${assetPathPrefix}/be958.svg`;
+const img2 = `${assetPathPrefix}/9808b.svg`;
+const img3 = `${assetPathPrefix}/3ab19.svg`;
+const img4 = `${assetPathPrefix}/14757.svg`;
+const img5 = `${assetPathPrefix}/a8e19.svg`;
+const img6 = `${assetPathPrefix}/75666.svg`;
+
+function Component16({ className }: { className?: string }) {
+  return (
+    <div className={className || "relative size-[16px]"} data-node-id="1442:115298" data-name="Иконка / Карточка проверена · круглая галочка 16">
+      <img alt="" className="absolute block inset-0 max-w-none size-full" src={img16} />
+    </div>
+  );
+}
+
+export default function Component() {
+  return (
+    <div className="content-stretch flex flex-col gap-[12px] items-start relative size-full" data-node-id="893:19328" data-name="Отчёты / Паспорт / Панель">
+      <div className="content-stretch flex gap-[4px] h-[20px] items-center overflow-clip relative shrink-0" data-node-id="I893:19328;1015:21419" data-name="Хлебные крошки">
+        <p className="[word-break:break-word] font-['CoFo_Sans:Regular'] leading-[20px] not-italic relative shrink-0 text-[#7a808a] text-[12px] whitespace-nowrap" data-node-id="I893:19328;1015:21420">
+          Отчёты
+        </p>
+        <div className="relative shrink-0 size-[16px]" data-node-id="I893:19328;1015:21421" data-name="Разделитель · Chevron Right">
+          <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgChevronRight} />
+        </div>
+        <p className="[word-break:break-word] font-['CoFo_Sans:Regular'] leading-[20px] not-italic relative shrink-0 text-[12px] text-[color:var(--draft-color-text,#101d3b)] whitespace-nowrap" data-node-id="I893:19328;1015:21424">
+          Паспорт отчёта
+        </p>
+      </div>
+      <div className="content-stretch flex flex-col items-start overflow-clip relative shrink-0 w-full" data-node-id="I893:19328;893:2775" data-name="Frame">
+        <div className="content-stretch flex gap-[16px] items-center overflow-clip relative shrink-0 w-full" data-node-id="I893:19328;893:2776" data-name="Название и действия">
+          <p className="[word-break:break-word] flex-[1_0_0] font-['CoFo_Sans:Medium'] h-full leading-[28px] min-w-px not-italic relative text-[20px] text-[color:var(--draft-color-text,#101d3b)]">Сводный отчёт Гостеприимства</p>
+          <div className="content-stretch flex gap-[8px] items-center overflow-clip relative shrink-0" data-node-id="I893:19328;893:2778" data-name="Frame">
+            <div className="backdrop-blur-[10px] bg-[var(--draft-color-surface,white)] border border-[var(--draft-color-border,#d7e6f5)] border-solid content-stretch flex gap-[8px] h-[32px] items-center justify-center max-h-[32px] max-w-[32px] min-h-[32px] min-w-[32px] p-[8px] relative rounded-[32px] shrink-0" data-node-id="I893:19328;893:2779" data-name="Редактировать · Accent secondary / S32">
+              <div className="relative shrink-0 size-[16px]" data-node-id="I893:19328;893:2779;3922:34598" data-name="11. Document & editor / 11. Pencil">
+                <img alt="" className="absolute block inset-0 max-w-none size-full" src={img11DocumentEditor11Pencil} />
+              </div>
+            </div>
+            <div className="backdrop-blur-[10px] bg-[var(--draft-color-surface,white)] border border-[var(--draft-color-border,#d7e6f5)] border-solid content-stretch flex gap-[8px] h-[32px] items-center justify-center max-h-[32px] max-w-[32px] min-h-[32px] min-w-[32px] p-[8px] relative rounded-[32px] shrink-0" data-node-id="I893:19328;893:2783" data-name="Добавить в избранное · Accent secondary / S32">
+              <div className="relative shrink-0 size-[16px]" data-node-id="I893:19328;893:2783;3922:34598" data-name="05. System / 03. Add">
+                <img alt="" className="absolute block inset-0 max-w-none size-full" src={img} />
+              </div>
+            </div>
+            <div className="backdrop-blur-[10px] bg-[var(--draft-color-surface,white)] border border-[var(--draft-color-border,#d7e6f5)] border-solid content-stretch flex gap-[8px] h-[32px] items-center justify-center max-h-[32px] min-h-[32px] min-w-[48px] px-[12px] relative rounded-[var(--content\/radius\/ellipse,999px)] shrink-0" data-node-id="I893:19328;893:2787" data-name="Открыть отчёт · DS">
+              <div className="content-stretch flex items-center relative shrink-0 w-[16px]" data-node-id="I893:19328;893:2787;3922:8918" data-name="Left icon wrapper">
+                <div className="aspect-[24/24] flex-[1_0_0] min-w-px relative" data-node-id="I893:19328;893:2787;338:1432" data-name="05. System / 25. Share-2">
+                  <img alt="" className="absolute block inset-0 max-w-none size-full" src={img05System25Share2} />
+                </div>
+              </div>
+              <div className="content-stretch flex h-[16px] items-center justify-center relative shrink-0" data-node-id="I893:19328;893:2787;3599:7448" data-name="Label wrapper">
+                <p className="[word-break:break-word] font-[family-name:var(--font-family\/base,'CoFo_Sans:Medium')] font-[var(--font-style\/medium,normal)] leading-none relative shrink-0 text-[color:var(--component\/selection-items\/tabs\/text\/enabled,#202028)] text-[length:var(--font-size\/14,14px)] text-center tracking-[var(--letter-spacing\/label\/14,-0.14px)] whitespace-nowrap" data-node-id="I893:19328;893:2787;141:29033">
+                  Открыть отчёт
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="content-stretch flex gap-[12px] items-center overflow-clip relative shrink-0 w-full" data-node-id="I893:19328;893:2805" data-name="Атрибуты отчёта">
+          <div className="content-stretch flex gap-[4px] items-center overflow-clip relative shrink-0" data-node-id="I893:19328;1016:21451" data-name="Проверка карточки · иконка и текст">
+            <Component16 className="relative shrink-0 size-[16px]" />
+            <p className="[word-break:break-word] font-['CoFo_Sans:Regular'] leading-[20px] not-italic relative shrink-0 text-[12px] text-[color:var(--draft-color-muted,#52698c)] whitespace-nowrap" data-node-id="I893:19328;893:2806">
+              Карточка проверена
+            </p>
+          </div>
+          <div className="relative shrink-0 size-[3px]" data-node-id="I893:19328;917:21524" data-name="Разделитель · серая точка 3×3">
+            <img alt="" className="absolute block inset-0 max-w-none size-full" src={img33} />
+          </div>
+          <p className="[word-break:break-word] font-['CoFo_Sans:Regular'] leading-[20px] not-italic relative shrink-0 text-[12px] text-[color:var(--draft-color-muted,#52698c)] whitespace-nowrap" data-node-id="I893:19328;893:2808">
+            Гостеприимство
+          </p>
+          <div className="relative shrink-0 size-[3px]" data-node-id="I893:19328;917:21525" data-name="Разделитель · серая точка 3×3">
+            <img alt="" className="absolute block inset-0 max-w-none size-full" src={img33} />
+          </div>
+          <p className="[word-break:break-word] font-['CoFo_Sans:Regular'] leading-[20px] not-italic relative shrink-0 text-[12px] text-[color:var(--draft-color-muted,#52698c)] whitespace-nowrap" data-node-id="I893:19328;893:2810">
+            ID 562
+          </p>
+          <div className="relative shrink-0 size-[3px]" data-node-id="I893:19328;917:21526" data-name="Разделитель · серая точка 3×3">
+            <img alt="" className="absolute block inset-0 max-w-none size-full" src={img33} />
+          </div>
+          <p className="[word-break:break-word] font-['CoFo_Sans:Regular'] leading-[20px] not-italic relative shrink-0 text-[12px] text-[color:var(--draft-color-muted,#52698c)] whitespace-pre" data-node-id="I893:19328;893:2812">{`Стабильный отчёт   •   Отчет по заявкам Домиленда`}</p>
+        </div>
+      </div>
+      <div className="content-stretch flex gap-[16px] items-center overflow-x-auto overflow-y-clip pt-[12px] relative shrink-0 w-full" data-node-id="I893:19328;893:2813" data-name="Вкладки паспорта">
+        <div className="absolute bg-[var(--draft-color-border,#d7e6f5)] bottom-0 h-px left-0 right-0" data-node-id="I893:19328;915:19410" data-name="Нижний бордер панели · под индикатором" />
+        <div className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0" data-node-id="I893:19328;1063:4002" data-name="Вкладка · Обзор">
+          <div className="content-stretch flex gap-[8px] items-center overflow-clip relative shrink-0" data-node-id="I893:19328;1063:4002;1063:3993" data-name="Содержимое вкладки">
+            <div className="relative shrink-0 size-[16px]" data-node-id="I893:19328;1063:4002;1063:3994" data-name="Pack 1">
+              <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgPack1} />
+            </div>
+            <p className="[word-break:break-word] font-[family-name:var(--font-family\/base,'CoFo_Sans:Medium')] leading-none not-italic relative shrink-0 text-[color:var(--component\/selection-items\/tabs\/border\/active,#007bfc)] text-[length:var(--font-size\/16,16px)] tracking-[var(--letter-spacing\/label\/16,-0.24px)] whitespace-nowrap" data-node-id="I893:19328;1063:4002;348:312">
+              Обзор
+            </p>
+          </div>
+          <div className="bg-[var(--component\/selection-items\/tabs\/border\/active,#007bfc)] h-[2px] relative shrink-0 w-full" data-node-id="I893:19328;1063:4002;1063:3999" data-name="Индикатор" />
+        </div>
+        <div className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0" data-node-id="I893:19328;1063:4012" data-name="Вкладка · Слайды">
+          <div className="content-stretch flex gap-[8px] items-center overflow-clip relative shrink-0" data-node-id="I893:19328;1063:4012;1063:3977" data-name="Содержимое вкладки">
+            <div className="relative shrink-0 size-[16px]" data-node-id="I893:19328;1063:4012;1063:3978" data-name="Иконка">
+              <img alt="" className="absolute block inset-0 max-w-none size-full" src={img1} />
+            </div>
+            <p className="[word-break:break-word] font-[family-name:var(--font-family\/base,'CoFo_Sans:Medium')] leading-none not-italic relative shrink-0 text-[color:var(--component\/selection-items\/tabs\/text\/enabled,#202028)] text-[length:var(--font-size\/16,16px)] tracking-[var(--letter-spacing\/label\/16,-0.24px)] whitespace-nowrap" data-node-id="I893:19328;1063:4012;348:312">
+              Слайды
+            </p>
+            <div className="bg-[var(--component\/info\/counter\/secondary\/bg,#e2e4ea)] content-stretch flex h-[16px] items-center justify-center max-w-[20px] min-w-[16px] pb-[2.5px] pt-[3.5px] px-[3px] relative rounded-[14px] shrink-0" data-node-id="I893:19328;1063:4012;1063:3981" data-name="Счётчик">
+              <div className="[word-break:break-word] flex flex-col font-[family-name:var(--font-family\/base,'CoFo_Sans:Medium')] font-[var(--font-style\/medium,normal)] justify-center leading-[0] max-w-[26px] relative shrink-0 text-[color:var(--component\/info\/counter\/secondary\/text,#202028)] text-[length:var(--font-size\/10,10px)] text-center tracking-[var(--letter-spacing\/label\/10-m,-0.05px)] whitespace-nowrap" data-node-id="I893:19328;1063:4012;1063:3981;5667:17433">
+                <p className="leading-none">10</p>
+              </div>
+            </div>
+          </div>
+          <div className="bg-[var(--component\/selection-items\/tabs\/border\/active,#007bfc)] h-[2px] opacity-0 relative shrink-0 w-full" data-node-id="I893:19328;1063:4012;1063:3983" data-name="Индикатор" />
+        </div>
+        <div className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0" data-node-id="I893:19328;1063:4028" data-name="Вкладка · Метрики и показатели">
+          <div className="content-stretch flex gap-[8px] items-center overflow-clip relative shrink-0" data-node-id="I893:19328;1063:4028;1063:3977" data-name="Содержимое вкладки">
+            <div className="relative shrink-0 size-[16px]" data-node-id="I893:19328;1063:4028;1063:3978" data-name="Иконка">
+              <img alt="" className="absolute block inset-0 max-w-none size-full" src={img2} />
+            </div>
+            <p className="[word-break:break-word] font-[family-name:var(--font-family\/base,'CoFo_Sans:Medium')] leading-none not-italic relative shrink-0 text-[color:var(--component\/selection-items\/tabs\/text\/enabled,#202028)] text-[length:var(--font-size\/16,16px)] tracking-[var(--letter-spacing\/label\/16,-0.24px)] whitespace-nowrap" data-node-id="I893:19328;1063:4028;348:312">
+              Метрики и показатели
+            </p>
+            <div className="bg-[var(--component\/info\/counter\/secondary\/bg,#e2e4ea)] content-stretch flex h-[16px] items-center justify-center max-w-[20px] min-w-[16px] pb-[2.5px] pt-[3.5px] px-[3px] relative rounded-[14px] shrink-0" data-node-id="I893:19328;1063:4028;1063:3981" data-name="Счётчик">
+              <div className="[word-break:break-word] flex flex-col font-[family-name:var(--font-family\/base,'CoFo_Sans:Medium')] font-[var(--font-style\/medium,normal)] justify-center leading-[0] max-w-[26px] relative shrink-0 text-[color:var(--component\/info\/counter\/secondary\/text,#202028)] text-[length:var(--font-size\/10,10px)] text-center tracking-[var(--letter-spacing\/label\/10-m,-0.05px)] whitespace-nowrap" data-node-id="I893:19328;1063:4028;1063:3981;5667:17433">
+                <p className="leading-none">1</p>
+              </div>
+            </div>
+          </div>
+          <div className="bg-[var(--component\/selection-items\/tabs\/border\/active,#007bfc)] h-[2px] opacity-0 relative shrink-0 w-full" data-node-id="I893:19328;1063:4028;1063:3983" data-name="Индикатор" />
+        </div>
+        <div className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0" data-node-id="I893:19328;1063:4037" data-name="Вкладка · Источники данных">
+          <div className="content-stretch flex gap-[8px] items-center overflow-clip relative shrink-0" data-node-id="I893:19328;1063:4037;1063:3977" data-name="Содержимое вкладки">
+            <div className="relative shrink-0 size-[16px]" data-node-id="I893:19328;1063:4037;1063:3978" data-name="Иконка">
+              <img alt="" className="absolute block inset-0 max-w-none size-full" src={img3} />
+            </div>
+            <p className="[word-break:break-word] font-[family-name:var(--font-family\/base,'CoFo_Sans:Medium')] leading-none not-italic relative shrink-0 text-[color:var(--component\/selection-items\/tabs\/text\/enabled,#202028)] text-[length:var(--font-size\/16,16px)] tracking-[var(--letter-spacing\/label\/16,-0.24px)] whitespace-nowrap" data-node-id="I893:19328;1063:4037;348:312">
+              Источники данных
+            </p>
+            <div className="bg-[var(--component\/info\/counter\/secondary\/bg,#e2e4ea)] content-stretch flex h-[16px] items-center justify-center max-w-[20px] min-w-[16px] pb-[2.5px] pt-[3.5px] px-[3px] relative rounded-[14px] shrink-0" data-node-id="I893:19328;1063:4037;1063:3981" data-name="Счётчик">
+              <div className="[word-break:break-word] flex flex-col font-[family-name:var(--font-family\/base,'CoFo_Sans:Medium')] font-[var(--font-style\/medium,normal)] justify-center leading-[0] max-w-[26px] relative shrink-0 text-[color:var(--component\/info\/counter\/secondary\/text,#202028)] text-[length:var(--font-size\/10,10px)] text-center tracking-[var(--letter-spacing\/label\/10-m,-0.05px)] whitespace-nowrap" data-node-id="I893:19328;1063:4037;1063:3981;5667:17433">
+                <p className="leading-none">8</p>
+              </div>
+            </div>
+          </div>
+          <div className="bg-[var(--component\/selection-items\/tabs\/border\/active,#007bfc)] h-[2px] opacity-0 relative shrink-0 w-full" data-node-id="I893:19328;1063:4037;1063:3983" data-name="Индикатор" />
+        </div>
+        <div className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0" data-node-id="I893:19328;1063:4047" data-name="Вкладка · Использование">
+          <div className="content-stretch flex gap-[8px] items-center overflow-clip relative shrink-0" data-node-id="I893:19328;1063:4047;1063:3977" data-name="Содержимое вкладки">
+            <div className="relative shrink-0 size-[16px]" data-node-id="I893:19328;1063:4047;1063:3978" data-name="Иконка">
+              <img alt="" className="absolute block inset-0 max-w-none size-full" src={img4} />
+            </div>
+            <p className="[word-break:break-word] font-[family-name:var(--font-family\/base,'CoFo_Sans:Medium')] leading-none not-italic relative shrink-0 text-[color:var(--component\/selection-items\/tabs\/text\/enabled,#202028)] text-[length:var(--font-size\/16,16px)] tracking-[var(--letter-spacing\/label\/16,-0.24px)] whitespace-nowrap" data-node-id="I893:19328;1063:4047;348:312">
+              Использование
+            </p>
+          </div>
+          <div className="bg-[var(--component\/selection-items\/tabs\/border\/active,#007bfc)] h-[2px] opacity-0 relative shrink-0 w-full" data-node-id="I893:19328;1063:4047;1063:3983" data-name="Индикатор" />
+        </div>
+        <div className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0" data-node-id="I893:19328;1063:4056" data-name="Вкладка · Рассылки">
+          <div className="content-stretch flex gap-[8px] items-center overflow-clip relative shrink-0" data-node-id="I893:19328;1063:4056;1063:3977" data-name="Содержимое вкладки">
+            <div className="relative shrink-0 size-[16px]" data-node-id="I893:19328;1063:4056;1063:3978" data-name="Иконка">
+              <img alt="" className="absolute block inset-0 max-w-none size-full" src={img5} />
+            </div>
+            <p className="[word-break:break-word] font-[family-name:var(--font-family\/base,'CoFo_Sans:Medium')] leading-none not-italic relative shrink-0 text-[color:var(--component\/selection-items\/tabs\/text\/enabled,#202028)] text-[length:var(--font-size\/16,16px)] tracking-[var(--letter-spacing\/label\/16,-0.24px)] whitespace-nowrap" data-node-id="I893:19328;1063:4056;348:312">
+              Рассылки
+            </p>
+          </div>
+          <div className="bg-[var(--component\/selection-items\/tabs\/border\/active,#007bfc)] h-[2px] opacity-0 relative shrink-0 w-full" data-node-id="I893:19328;1063:4056;1063:3983" data-name="Индикатор" />
+        </div>
+        <div className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0" data-node-id="I893:19328;1063:4065" data-name="Вкладка · Техническая информация">
+          <div className="content-stretch flex gap-[8px] items-center overflow-clip relative shrink-0" data-node-id="I893:19328;1063:4065;1063:3977" data-name="Содержимое вкладки">
+            <div className="relative shrink-0 size-[16px]" data-node-id="I893:19328;1063:4065;1063:3978" data-name="Иконка">
+              <img alt="" className="absolute block inset-0 max-w-none size-full" src={img6} />
+            </div>
+            <p className="[word-break:break-word] font-[family-name:var(--font-family\/base,'CoFo_Sans:Medium')] leading-none not-italic relative shrink-0 text-[color:var(--component\/selection-items\/tabs\/text\/enabled,#202028)] text-[length:var(--font-size\/16,16px)] tracking-[var(--letter-spacing\/label\/16,-0.24px)] whitespace-nowrap" data-node-id="I893:19328;1063:4065;348:312">
+              Техническая информация
+            </p>
+          </div>
+          <div className="bg-[var(--component\/selection-items\/tabs\/border\/active,#007bfc)] h-[2px] opacity-0 relative shrink-0 w-full" data-node-id="I893:19328;1063:4065;1063:3983" data-name="Индикатор" />
+        </div>
+      </div>
+    </div>
+  );
+}
+

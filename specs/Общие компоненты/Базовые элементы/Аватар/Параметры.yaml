@@ -1,0 +1,257 @@
+schemaVersion: 1
+component:
+  id: avatar
+  title: Аватар и визуальный контейнер профиля
+  contract: specs/Общие компоненты/Базовые элементы/Аватар/Контракт.md
+  status: approved-target
+sources:
+  header-figma:
+    kind: figma
+    uri: https://www.figma.com/design/lnOcWh4ElGkhppWe6Kn5AA?node-id=339-30139
+    nodeId: 339:30139
+    status: unverified-live
+    snapshot: "C02, срез1–2 ноября2026: Profile40, внутренний Avatar32; не новая проверка живого узла"
+  table-figma:
+    kind: figma
+    uri: https://www.figma.com/design/lnOcWh4ElGkhppWe6Kn5AA?node-id=579-10372
+    nodeId: 579:10372
+    status: unverified-live
+    snapshot: "C04, каталог: аватар40; исходные фото/заглушка различаются содержимым"
+  report-figma:
+    kind: figma
+    uri: https://www.figma.com/design/lnOcWh4ElGkhppWe6Kn5AA?node-id=884-17723
+    nodeId: 884:17723
+    status: unverified-live
+    snapshot: Паспорт отчёта, сохранённый overview; дополнительные CSS-параметры наблюдены отдельно
+  metric-figma:
+    kind: figma
+    uri: https://www.figma.com/design/lnOcWh4ElGkhppWe6Kn5AA?node-id=1167-28009
+    nodeId: 1167:28009
+    status: unverified-live
+    snapshot: Паспорт показателя, срез3 ноября2026; фото и силуэт в персональных строках
+  header-css:
+    kind: document
+    uri: references/implementation/components/Header/Header.module.css
+    status: observed-snapshot
+    snapshot: profile grid40 и image32/cover/50%; не интерактивная кнопка
+  table-css:
+    kind: document
+    uri: references/implementation/components/ReportTable/ReportTable.module.css
+    status: observed-snapshot
+    snapshot: owner img flex-basis40 и radius24; object-fit не задан
+  report-css:
+    kind: document
+    uri: references/implementation/features/report-detail/Detail.module.css
+    status: observed-snapshot
+    snapshot: person img32/50%; object-fit и flex-shrink не заданы
+  metric-css:
+    kind: document
+    uri: references/implementation/features/metrics/detail/MetricDetail.module.css
+    status: observed-snapshot
+    snapshot: avatar32/50%/cover/flex:none
+  source-contract:
+    kind: document
+    uri: specs/Разделы/Источники/Детальная карточка/Контракт.md
+    status: reference-only
+    snapshot: "Отдельный Paper-контракт4 ноября: аватар32 и собственное условие заглушки; не расширение
+      приёмки всей страницы"
+  source-css:
+    kind: document
+    uri: references/implementation/features/sources/detail/SourceDetail.module.css
+    status: observed-snapshot
+    snapshot: person img flex-basis32 и radius50%; размеры32 заданы img
+  header-resource:
+    kind: document
+    uri: specs/Общие компоненты/Хедер/assets/profile-avatar.png
+    status: reference-only
+    snapshot: Сохранённый экспорт узла32×32 в PNG64×64,2×; фотография примера не идентичность
+  silhouette32:
+    kind: document
+    uri: assets/images/metrics/detail/unknown-avatar.svg
+    status: reference-only
+    snapshot: Самостоятельный SVG32×32, круг/маска/силуэт; не заливка одного круга
+  silhouette40:
+    kind: document
+    uri: assets/images/favorites/avatar-placeholder.svg
+    status: reference-only
+    snapshot: Самостоятельный SVG40×40; report/source отображают его32 по своему варианту
+base:
+  sourceRefs:
+    - header-figma
+    - table-figma
+    - metric-figma
+    - report-figma
+  parameters:
+    shape:
+      type: string
+      value: circle
+variants:
+  profile32:
+    description: Изображение32 внутри визуального контейнера профиля40; координаты в полосе принадлежат C02
+    sourceRefs:
+      - header-figma
+      - header-resource
+    parameters:
+      width:
+        type: dimension
+        value: 32
+        unit: px
+      height:
+        type: dimension
+        value: 32
+        unit: px
+      radius:
+        type: dimension
+        value: 999999
+        unit: px
+      profile-width:
+        type: dimension
+        value: 40
+        unit: px
+      profile-height:
+        type: dimension
+        value: 40
+        unit: px
+      image-inset-x:
+        type: dimension
+        value: 4
+        unit: px
+      image-inset-y:
+        type: dimension
+        value: 4
+        unit: px
+      profile-fill:
+        type: string
+        value: none
+      profile-stroke:
+        type: string
+        value: none
+      profile-effects:
+        type: string
+        value: none
+    states:
+      observed-css:
+        sourceRefs:
+          - header-css
+        parameters:
+          radius:
+            type: dimension
+            value: 50
+            unit: "%"
+          object-fit:
+            type: string
+            value: cover
+          profile-display:
+            type: string
+            value: grid
+          profile-place-items:
+            type: string
+            value: center
+  table-owner40:
+    description: Фото или показанная синяя заглушка в ячейке владельца отчёта
+    sourceRefs:
+      - table-figma
+    parameters:
+      width:
+        type: dimension
+        value: 40
+        unit: px
+      height:
+        type: dimension
+        value: 40
+        unit: px
+    states:
+      observed-css:
+        sourceRefs:
+          - table-css
+        parameters:
+          radius:
+            type: dimension
+            value: 24
+            unit: px
+          flex-basis:
+            type: dimension
+            value: 40
+            unit: px
+          flex-grow:
+            type: number
+            value: 0
+          flex-shrink:
+            type: number
+            value: 0
+  report-person32:
+    description: Проверил/Владелец/Аналитик в Обзоре; подпись и роль снаружи
+    sourceRefs:
+      - report-figma
+      - report-css
+    parameters:
+      width:
+        type: dimension
+        value: 32
+        unit: px
+      height:
+        type: dimension
+        value: 32
+        unit: px
+      radius:
+        type: dimension
+        value: 50
+        unit: "%"
+  metric-person32:
+    description: Человек в Сведениях паспорта метрики; placeholder выбирает родитель
+    sourceRefs:
+      - metric-figma
+      - metric-css
+    parameters:
+      width:
+        type: dimension
+        value: 32
+        unit: px
+      height:
+        type: dimension
+        value: 32
+        unit: px
+      radius:
+        type: dimension
+        value: 50
+        unit: "%"
+      object-fit:
+        type: string
+        value: cover
+      flex-grow:
+        type: number
+        value: 0
+      flex-shrink:
+        type: number
+        value: 0
+      flex-basis:
+        type: string
+        value: auto
+  source-person32:
+    description: Персональная строка отдельного паспорта Источника; Paper-основание не заменяется ссылкой Figma
+    sourceRefs:
+      - source-contract
+      - source-css
+    parameters:
+      width:
+        type: dimension
+        value: 32
+        unit: px
+      height:
+        type: dimension
+        value: 32
+        unit: px
+      radius:
+        type: dimension
+        value: 50
+        unit: "%"
+      flex-grow:
+        type: number
+        value: 0
+      flex-shrink:
+        type: number
+        value: 0
+      flex-basis:
+        type: dimension
+        value: 32
+        unit: px

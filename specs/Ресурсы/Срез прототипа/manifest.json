@@ -1,0 +1,1319 @@
+{
+  "snapshot_id": "prototype-2026-11-04-c1",
+  "source_tree_sha256": "93ae8340a958eebfe6688cf8550f453e9beb32789708986e71df1783f41366fb",
+  "source_file_count": 393,
+  "captured_at_utc": "2026-11-04T17:35:15.587659+00:00",
+  "timezone": "Europe/Moscow",
+  "runtime": {
+    "build": "production from frozen source",
+    "browser": "156.0.8078.4",
+    "dpr": 1,
+    "fonts": [
+      {
+        "family": "CoFo Sans",
+        "weights": [
+          400,
+          500
+        ],
+        "status": "loaded"
+      }
+    ],
+    "color_scheme": "light",
+    "reduced_motion": "reduce",
+    "gateway": "local fixtures; no backend"
+  },
+  "authority": "Working render evidence plus governing user decisions; observed code defects are not target rules. Figma URLs are historical provenance, not a mandatory connection.",
+  "frames": [
+    {
+      "id": "home",
+      "path": "frames/home.png",
+      "route": "/preview/navigation",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "722d98a134e80037b8b2019f225eac4fb36e8466f1a285688f29e0e25e887376",
+      "role": "observed-reference",
+      "known_deviations": [],
+      "setup_actions": []
+    },
+    {
+      "id": "news",
+      "path": "frames/news.png",
+      "route": "/preview/navigation?tab=news",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "3f44dff23a468f58d075c383240243f9892639bbc9f899fcd108687cd55495d9",
+      "role": "observed-reference",
+      "known_deviations": [],
+      "setup_actions": []
+    },
+    {
+      "id": "news-reading",
+      "path": "frames/news-reading.png",
+      "route": "/preview/navigation?tab=news&news=demo-news-2",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "5e94f4535ed830671233b62f04bdbf77dd1531e29c264567a1bb27281fd829a8",
+      "role": "observed-reference",
+      "known_deviations": [],
+      "setup_actions": []
+    },
+    {
+      "id": "reports",
+      "path": "frames/reports.png",
+      "route": "/preview/navigation?section=reports",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "2af1b6d7baa384177042f2913d2de44a9665c9cb52b39b978b5351463a6cc0f1",
+      "role": "observed-reference",
+      "known_deviations": [],
+      "setup_actions": []
+    },
+    {
+      "id": "reports-single",
+      "path": "frames/reports-single.png",
+      "route": "/preview/navigation?section=reports&tableCase=single-page",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "b74771fb517dfde2c66f78a04512d871a5ec2aae1c5b875ff3c0ccc7404b880d",
+      "role": "observed-reference",
+      "known_deviations": [],
+      "setup_actions": []
+    },
+    {
+      "id": "report-overview",
+      "path": "frames/report-overview.png",
+      "route": "/preview/navigation?section=reports&report=demo-report-summary&reportTab=overview",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "5afd1d3b74e12235202f3cc071122b813d1c5e3695beeb0766c942da9f8d86e5",
+      "role": "observed-reference",
+      "known_deviations": [],
+      "setup_actions": []
+    },
+    {
+      "id": "report-sources",
+      "path": "frames/report-sources.png",
+      "route": "/preview/navigation?section=reports&report=demo-report-summary&reportTab=sources",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "4a8c7436527a7ac6cffec5d916de3fc2c2f38139da39bb2040f245d3d5be3dc4",
+      "role": "observed-reference",
+      "known_deviations": [],
+      "setup_actions": []
+    },
+    {
+      "id": "report-usage",
+      "path": "frames/report-usage.png",
+      "route": "/preview/navigation?section=reports&report=demo-report-summary&reportTab=usage",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "2c6f0f3225a47f90fe648403655ae999380a9e2d6655db1d90e118b6055a7060",
+      "role": "observed-reference",
+      "known_deviations": [
+        "RM-04: approved classification description absent; do not reproduce omission",
+        "Usage classification label/value stack order differs from approved value-above-label target; target remains in the Usage owner"
+      ],
+      "setup_actions": []
+    },
+    {
+      "id": "report-metrics",
+      "path": "frames/report-metrics.png",
+      "route": "/preview/navigation?section=reports&report=demo-report-summary&reportTab=metrics",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "8d7b0eb2d95eee0090c1ba0d313720468f53de8ff83233292fc159ab74d3f9d0",
+      "role": "observed-reference",
+      "known_deviations": [],
+      "setup_actions": []
+    },
+    {
+      "id": "report-slides",
+      "path": "frames/report-slides.png",
+      "route": "/preview/navigation?section=reports&report=demo-report-summary&reportTab=slides",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "dbdce11350cc4a5346e361e56954a30a7da6511f70cea642fd695f7700fe4980",
+      "role": "observed-reference",
+      "known_deviations": [],
+      "setup_actions": []
+    },
+    {
+      "id": "report-mailings",
+      "path": "frames/report-mailings.png",
+      "route": "/preview/navigation?section=reports&report=demo-report-summary&reportTab=mailings",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "54210f0b96e9b183e9aba02061e1ccecbbff297f64393301be4695472a267d0e",
+      "role": "observed-reference",
+      "known_deviations": [],
+      "setup_actions": []
+    },
+    {
+      "id": "report-technical",
+      "path": "frames/report-technical.png",
+      "route": "/preview/navigation?section=reports&report=demo-report-summary&reportTab=technical",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "337b8adc43079a25897b1ff40e039838491e44e0a0a8906ce1a863a28a034b25",
+      "role": "observed-boundary",
+      "known_deviations": [],
+      "setup_actions": []
+    },
+    {
+      "id": "metrics",
+      "path": "frames/metrics.png",
+      "route": "/preview/navigation?section=metrics",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "cedcff3db3002ac2a5d501fe46be2848f9a13753cd6f134587a762bccfdeea76",
+      "role": "observed-reference",
+      "known_deviations": [],
+      "setup_actions": []
+    },
+    {
+      "id": "metric-detail",
+      "path": "frames/metric-detail.png",
+      "route": "/preview/navigation?section=metrics&metric=4",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "5dc50f1f4b7110edecc168751e92fa5160d4145eec5b59f0e58cd3fa85ca71e3",
+      "role": "observed-reference",
+      "known_deviations": [],
+      "setup_actions": []
+    },
+    {
+      "id": "sources",
+      "path": "frames/sources.png",
+      "route": "/preview/navigation?section=sources",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "41a3a3fa70b87cf58fc14f31e35238dc3edf9ab99ccc5c64c20aeac918486f8d",
+      "role": "observed-reference",
+      "known_deviations": [],
+      "setup_actions": []
+    },
+    {
+      "id": "source-detail",
+      "path": "frames/source-detail.png",
+      "route": "/preview/navigation?section=sources&source=source-reportcrm-date",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "78d8df4a29daa73018a9a2afcb453dad322831e0c3d55f5883f157335d88aff6",
+      "role": "observed-reference",
+      "known_deviations": [],
+      "setup_actions": []
+    },
+    {
+      "id": "reports-filter-open",
+      "path": "frames/reports-filter-open.png",
+      "route": "/preview/navigation?section=reports",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "d9d8d1475cbe7a8b7c8aa0dce07774c1989d4310e1ac081895b4f24c37fd20f7",
+      "role": "observed-reference",
+      "known_deviations": [],
+      "setup_actions": [
+        "Нажать «Открыть фильтры отчётов»"
+      ]
+    },
+    {
+      "id": "report-accordion-closed",
+      "path": "frames/report-accordion-closed.png",
+      "route": "/preview/navigation?section=reports&report=demo-report-summary&reportTab=overview",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "9bae6934d762f6ee831eb77aac2fb09393500896e273c02a7c83aa1b28b54e0e",
+      "role": "observed-reference",
+      "known_deviations": [],
+      "setup_actions": [
+        "В «Обзоре» свернуть «Методология»"
+      ]
+    },
+    {
+      "id": "reports-1024",
+      "path": "frames/reports-1024.png",
+      "route": "/preview/navigation?section=reports",
+      "viewport": {
+        "width": 1024,
+        "height": 768
+      },
+      "sha256": "0e520a0da6a5719c5006f78c238fc3ab9448baee94e21cc662e85b4959b74ec1",
+      "role": "observed-reference",
+      "known_deviations": [],
+      "setup_actions": []
+    },
+    {
+      "id": "report-1024",
+      "path": "frames/report-1024.png",
+      "route": "/preview/navigation?section=reports&report=demo-report-summary",
+      "viewport": {
+        "width": 1024,
+        "height": 768
+      },
+      "sha256": "1b5595a5a392e9e9ffe1b17a9115e5b1ab9837e5ae04fe4209f130fada63a5d6",
+      "role": "observed-reference",
+      "known_deviations": [],
+      "setup_actions": []
+    },
+    {
+      "id": "subscriptions",
+      "path": "frames/subscriptions.png",
+      "route": "/preview/navigation?segment=subscriptions",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "8d407197549134201792f252e657fee32a435bf8500f7124eedebb9b04e75030",
+      "role": "observed-reference",
+      "known_deviations": [],
+      "setup_actions": []
+    },
+    {
+      "id": "contribution",
+      "path": "frames/contribution.png",
+      "route": "/preview/navigation?segment=contribution",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "888225ee191ee90ad3768730fa022f8cec19329c04a336148cd1d1429cfdb015",
+      "role": "observed-reference",
+      "known_deviations": [],
+      "setup_actions": []
+    },
+    {
+      "id": "reports-cards",
+      "path": "frames/reports-cards.png",
+      "route": "/preview/navigation?section=reports",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "aab54c4f2adc97293cb3aa7f3ac5d85cf675dd5cced9d18b4ef350579a2e1827",
+      "role": "observed-reference",
+      "known_deviations": [],
+      "setup_actions": [
+        "Нажать «Карточный вид» после входа; view хранится локально, reportView в URL его не выбирает"
+      ]
+    },
+    {
+      "id": "sidebar-boundary",
+      "path": "frames/sidebar-boundary.png",
+      "route": "/preview/navigation",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "f04f767976c28873c370c907261737ba4b360a0e50377351dc24dfdb25322dd1",
+      "setup_actions": [
+        "Hover sidebar right boundary"
+      ],
+      "role": "working-render",
+      "known_deviations": []
+    },
+    {
+      "id": "sidebar-collapsed",
+      "path": "frames/sidebar-collapsed.png",
+      "route": "/preview/navigation",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "0b35d221d774fadad83f9d10f72d5560cc1b7ed75e0cc9d98bc4cbe2aab4a1d6",
+      "setup_actions": [
+        "Focus collapse button; collapse; focus expand button"
+      ],
+      "role": "working-render",
+      "known_deviations": []
+    },
+    {
+      "id": "search-empty",
+      "path": "frames/search-empty.png",
+      "route": "/preview/navigation",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "3499d01de6c21853902acca28c61883cb103ac916b16b47cf3907eb2640dbda2",
+      "setup_actions": [
+        "Focus empty global search"
+      ],
+      "role": "working-render",
+      "known_deviations": []
+    },
+    {
+      "id": "search-reports",
+      "path": "frames/search-reports.png",
+      "route": "/preview/navigation",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "89abcb0b196b340223e1e4cf7c31fe28954b306e6a80437076fc30f5c9562f2d",
+      "setup_actions": [
+        "Enter отчёт; select Отчёты type"
+      ],
+      "role": "working-render",
+      "known_deviations": []
+    },
+    {
+      "id": "search-one",
+      "path": "frames/search-one.png",
+      "route": "/preview/navigation",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "eceb4d9adb54564bda751ee78f25e3cf798635cff7fb3d4febe97eef15722099",
+      "setup_actions": [
+        "Enter Visiology"
+      ],
+      "role": "working-render",
+      "known_deviations": []
+    },
+    {
+      "id": "search-none",
+      "path": "frames/search-none.png",
+      "route": "/preview/navigation",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "b009abc11f85cd90b9c1458ffd8544329b8f62e4a8a2291d5f967500a0f524cf",
+      "setup_actions": [
+        "Enter zzz-no-match"
+      ],
+      "role": "working-render",
+      "known_deviations": []
+    },
+    {
+      "id": "home-cards",
+      "path": "frames/home-cards.png",
+      "route": "/preview/navigation",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "a09349fb013a0edc4c8d220991c18e11b8100ec6cd90cb71f2fa2b18b9cbd37d",
+      "setup_actions": [
+        "Click Карточный вид"
+      ],
+      "role": "working-render",
+      "known_deviations": []
+    },
+    {
+      "id": "subscriptions-cards",
+      "path": "frames/subscriptions-cards.png",
+      "route": "/preview/navigation?segment=subscriptions",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "8a6dc0eb6f6e8783560586a7ec44f0ef5375df44e58d60ec69384573141f6ab5",
+      "setup_actions": [
+        "Click Карточный вид"
+      ],
+      "role": "working-render",
+      "known_deviations": []
+    },
+    {
+      "id": "contribution-cards",
+      "path": "frames/contribution-cards.png",
+      "route": "/preview/navigation?segment=contribution",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "5f06ef09bdc1338af7767ce42e1a388a93bac27a2416e52d0ed6dae3c6953e99",
+      "setup_actions": [
+        "Click Карточный вид"
+      ],
+      "role": "working-render",
+      "known_deviations": []
+    },
+    {
+      "id": "news-first",
+      "path": "frames/news-first.png",
+      "route": "/preview/navigation?tab=news&news=demo-news-1",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "670802b51f333373c065f013c754d5a816cf588075d88877dc12e4080dba8c90",
+      "setup_actions": [],
+      "role": "working-render",
+      "known_deviations": []
+    },
+    {
+      "id": "news-last",
+      "path": "frames/news-last.png",
+      "route": "/preview/navigation?tab=news&news=demo-news-9",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "cfd2dec74d672327cafab0ae2c9de0def2d6db19ee8dc442f7bdf98540de8ef3",
+      "setup_actions": [],
+      "role": "working-render",
+      "known_deviations": []
+    },
+    {
+      "id": "sources-cards",
+      "path": "frames/sources-cards.png",
+      "route": "/preview/navigation?section=sources&sourceView=cards",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "11ca3a8c3b400d980f3e034952d60aa4456857e4cc67155e90642957b1c02b69",
+      "setup_actions": [],
+      "role": "working-render",
+      "known_deviations": []
+    },
+    {
+      "id": "source-rewedo-fields",
+      "path": "frames/source-rewedo-fields.png",
+      "route": "/preview/navigation?section=sources&source=source-demo-rewedo-versions&sourceTab=fields",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "c6450fed318ccc7f3f105c5af3aef9496b809aeae5942c4f2d45d8b2be050958",
+      "setup_actions": [],
+      "role": "working-render",
+      "known_deviations": []
+    },
+    {
+      "id": "source-rewedo-reports",
+      "path": "frames/source-rewedo-reports.png",
+      "route": "/preview/navigation?section=sources&source=source-demo-rewedo-versions&sourceTab=reports",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "148b125b80c04461333fe35693421bd2a175148b33f6bef7a146b30838c73b75",
+      "setup_actions": [],
+      "role": "working-render",
+      "known_deviations": []
+    },
+    {
+      "id": "source-filter-panel",
+      "path": "frames/source-filter-panel.png",
+      "route": "/preview/navigation?section=sources",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "0b0821818a52dc167dc71be7864aca1e37720063e46fc892724b195c4e491958",
+      "setup_actions": [
+        "Open Фильтры источников"
+      ],
+      "role": "working-render",
+      "known_deviations": []
+    },
+    {
+      "id": "source-filter-domain",
+      "path": "frames/source-filter-domain.png",
+      "route": "/preview/navigation?section=sources",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "1928350db6ec02578d6f7c11ea2ac19c66a4c402dfcad33edbf312c9834ec76b",
+      "setup_actions": [
+        "Open Фильтры источников; open Домен"
+      ],
+      "role": "working-render",
+      "known_deviations": []
+    },
+    {
+      "id": "source52-open-applied",
+      "path": "frames/source52-open-applied.png",
+      "route": "/preview/navigation?section=sources&source.platform=SQL%20Server&source.layer=%D0%91%D0%B5%D0%B7%20%D1%81%D0%BB%D0%BE%D1%8F&source.domain=%D0%9F%D1%80%D0%BE%D0%B4%D0%B0%D0%B6%D0%B8%20%D0%B8%20%D0%BC%D0%B0%D1%80%D0%BA%D0%B5%D1%82%D0%B8%D0%BD%D0%B3",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "8cf518e306e0658ddf0dcf3775fe53c83f72237d6ffe924d869de5f5f486aa9c",
+      "setup_actions": [
+        "Open Фильтр: Источник"
+      ],
+      "role": "working-render",
+      "known_deviations": []
+    },
+    {
+      "id": "source52-cleared",
+      "path": "frames/source52-cleared.png",
+      "route": "/preview/navigation?section=sources&source.domain=%D0%9F%D1%80%D0%BE%D0%B4%D0%B0%D0%B6%D0%B8+%D0%B8+%D0%BC%D0%B0%D1%80%D0%BA%D0%B5%D1%82%D0%B8%D0%BD%D0%B3",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "7774cca81f3ee07f3e7d5088eb974e676a775fa05ac472b4b93ffdc495b5d360",
+      "setup_actions": [
+        "Open Фильтр: Источник; Сбросить only platform/layer"
+      ],
+      "role": "working-render",
+      "known_deviations": []
+    },
+    {
+      "id": "report-menu-report",
+      "path": "frames/report-menu-report.png",
+      "route": "/preview/navigation?section=reports",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "7b21914367eff0a647ffe10c6f41ee21c92fd8da5d128eaa9125d54a1e0735ec",
+      "setup_actions": [
+        "Click Фильтр «Отчёт»"
+      ],
+      "role": "working-render",
+      "known_deviations": []
+    },
+    {
+      "id": "report-menu-platform",
+      "path": "frames/report-menu-platform.png",
+      "route": "/preview/navigation?section=reports",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "b2c28047d369411b4d3b1708bd759d138e0c9ab8fd6e1ee311d12f3f8803585d",
+      "setup_actions": [
+        "Click Фильтр «Платформа»"
+      ],
+      "role": "working-render",
+      "known_deviations": [],
+      "state_note": "Nine platform values in frozen fixture; search visible; viewport shows at most seven rows. Not a no-search example."
+    },
+    {
+      "id": "report-panel-status",
+      "path": "frames/report-panel-status.png",
+      "route": "/preview/navigation?section=reports",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "a3ae7e29d190aff7a2cd9b5ef17f0de89d421f401b23ef215ac7bdc8e0fc3192",
+      "setup_actions": [
+        "Open Фильтры отчётов; open Статус проверки"
+      ],
+      "role": "working-render",
+      "known_deviations": []
+    },
+    {
+      "id": "report-source-matrix",
+      "path": "frames/report-source-matrix.png",
+      "route": "/preview/navigation?section=reports&report=demo-report-summary&reportTab=sources",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "ce345c0eca5983cbb7d00bb263c49127943a9f4e51ff614bc182cf08dbbd66db",
+      "setup_actions": [
+        "Scroll Состав источника of first demo.requests into view"
+      ],
+      "role": "working-render",
+      "known_deviations": []
+    },
+    {
+      "id": "report-lineage-fullscreen",
+      "path": "frames/report-lineage-fullscreen.png",
+      "route": "/preview/navigation?section=reports&report=demo-report-summary&reportTab=sources",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "1691aee4926c61ca48906c8233d67b6867f7147b98288aadafa4d066a02f91c7",
+      "setup_actions": [
+        "Click Граф на полный экран; native fullscreen"
+      ],
+      "role": "working-render",
+      "known_deviations": []
+    },
+    {
+      "id": "home-empty-favorites",
+      "path": "frames/home-empty-favorites.png",
+      "route": "/preview/navigation?homeCase=empty-favorites",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "47ca7958616bcb0e24656aabbf8a8f6664d13f4f4d9362cb7fed464cbe67e08b",
+      "setup_actions": [
+        "Technical existing empty input; no production API inference"
+      ],
+      "role": "working-render",
+      "known_deviations": []
+    },
+    {
+      "id": "home-empty-subscriptions",
+      "path": "frames/home-empty-subscriptions.png",
+      "route": "/preview/navigation?segment=subscriptions&homeCase=empty-subscriptions",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "6f0aa9aeeb8e8f6315d4a3daad4779c560e3d213d64abcbfec13cf759ebdd33f",
+      "setup_actions": [
+        "Technical existing empty input; no production API inference"
+      ],
+      "role": "working-render",
+      "known_deviations": []
+    },
+    {
+      "id": "home-empty-contribution",
+      "path": "frames/home-empty-contribution.png",
+      "route": "/preview/navigation?segment=contribution&homeCase=empty-contribution",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "2025cade292e0b3df5ff22f5d2211330b2aa9e8d9c56c7c09e9b1d2036ee8d25",
+      "setup_actions": [
+        "Technical existing empty input; no production API inference"
+      ],
+      "role": "working-render",
+      "known_deviations": []
+    },
+    {
+      "id": "home-empty-news",
+      "path": "frames/home-empty-news.png",
+      "route": "/preview/navigation?tab=news&homeCase=empty-news",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "667df1de1990a1dcfc40e3e5735aa842c060058e58178ba4d8838144dacfa681",
+      "setup_actions": [
+        "Technical existing empty input; no production API inference"
+      ],
+      "role": "working-render",
+      "known_deviations": []
+    },
+    {
+      "id": "home-paginated-favorites",
+      "path": "frames/home-paginated-favorites.png",
+      "route": "/preview/navigation?favoriteCase=two-pages",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "e335536179658d49d034eadcd29e3e21c4a1a0d9fe254d2b85b6ea4873c1e9c3",
+      "setup_actions": [
+        "Technical favoritePageSize8 of10"
+      ],
+      "role": "working-render",
+      "known_deviations": []
+    },
+    {
+      "id": "home-paginated-subscriptions",
+      "path": "frames/home-paginated-subscriptions.png",
+      "route": "/preview/navigation?segment=subscriptions&homeCase=paginated",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "a8d396c1fcbab83d2941b3f09535428afc6af1a41f2333f719115bde057cb321",
+      "setup_actions": [
+        "Technical homePageSize3 of10"
+      ],
+      "role": "working-render",
+      "known_deviations": []
+    },
+    {
+      "id": "home-paginated-contribution",
+      "path": "frames/home-paginated-contribution.png",
+      "route": "/preview/navigation?segment=contribution&homeCase=paginated",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "dbcc9f5bb3dd5370c7a68ced777bddc2c11e7b76d425424051e80c4133e50bb2",
+      "setup_actions": [
+        "Technical homePageSize3 of5"
+      ],
+      "role": "working-render",
+      "known_deviations": []
+    },
+    {
+      "id": "subscription-unavailable-notice",
+      "path": "frames/subscription-unavailable-notice.png",
+      "route": "/preview/navigation?segment=subscriptions",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "97b7e058671cc46ff5e07394ace575b7892d246f7ff37ac19ae6aa0442304f08",
+      "setup_actions": [
+        "Click first Отписаться; server action unavailable"
+      ],
+      "role": "working-render",
+      "known_deviations": []
+    },
+    {
+      "id": "news-article-footer",
+      "path": "frames/news-article-footer.png",
+      "route": "/preview/navigation?tab=news&news=demo-news-2",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "82dbf29fe9a86b3479b33be36ae189ed720dfddf427fd03129a9ebcfd0181a6e",
+      "setup_actions": [
+        "Scroll native article to end"
+      ],
+      "role": "working-render",
+      "known_deviations": []
+    },
+    {
+      "id": "news-last-footer",
+      "path": "frames/news-last-footer.png",
+      "route": "/preview/navigation?tab=news&news=demo-news-9",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "59d1c80afa42c23c4b36d5551e05e7af909778a9d1ceb546ade280e99dbc8563",
+      "setup_actions": [
+        "Scroll native article to end"
+      ],
+      "role": "working-render",
+      "known_deviations": []
+    },
+    {
+      "id": "report-menu-owner",
+      "path": "frames/report-menu-owner.png",
+      "route": "/preview/navigation?section=reports",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "b608c76e9667e9ed6f81e19ebf269bd0a7dff6ba85c8f347602e4dbbe318b12f",
+      "setup_actions": [
+        "Click Фильтр «Владелец»; five options; no search input"
+      ],
+      "role": "working-render",
+      "known_deviations": []
+    }
+  ],
+  "data_files": [
+    {
+      "path": "data/home.json",
+      "sha256": "8481257506f8a228edde6ee7dbcbf9456cbb47288bae8dfcca64e39cc39887ab"
+    },
+    {
+      "path": "data/metrics.json",
+      "sha256": "2fe44c23da1eda12b881d1263280665ba8f426c583263e5409bafda4499b757e"
+    },
+    {
+      "path": "data/report-detail.json",
+      "sha256": "e248ad6801ed8a969fb37ca019496102512416e887c6240fca745ca8e626fa98"
+    },
+    {
+      "path": "data/reports.json",
+      "sha256": "6e41185f2a9344e6f56d4b5c35cc01df00ab598cc630ed885eb74f23d82ab38c"
+    },
+    {
+      "path": "data/sources.json",
+      "sha256": "a344314ccea297fd5a02fd73043f67106e71bac487578bb016a56b74a4e81247"
+    }
+  ],
+  "data_generation": "Read-only TypeScript/JSON modules from the frozen input. TSX loading forbidden. Generated values are local UI fixtures, not an API.",
+  "implementation_assets": [
+    {
+      "id": "fonts/CoFoSans-Medium.otf",
+      "source": "../../../assets/fonts/CoFoSans-Medium.otf",
+      "sha256": "115f86a5fdb85d003a0425ac197035cd68aa28b8a68c718aab93dea226590586",
+      "consumers": [
+        "../../../references/implementation/styles/base.css"
+      ],
+      "role": "exact implementation resource from same frozen source; no redraw"
+    },
+    {
+      "id": "fonts/CoFoSans-Regular.otf",
+      "source": "../../../assets/fonts/CoFoSans-Regular.otf",
+      "sha256": "052bad1dcead839289b2dcde6bf539f798bdfe9865356923613bfed3d265cccb",
+      "consumers": [
+        "../../../references/implementation/styles/base.css"
+      ],
+      "role": "exact implementation resource from same frozen source; no redraw"
+    },
+    {
+      "id": "icons/reports/domain-group.svg",
+      "source": "../../../assets/icons/reports/domain-group.svg",
+      "sha256": "56ab3085a3f06a69034e6d5842b9088a58ede2dae8855a50ad0330bb66a0bf7c",
+      "consumers": [
+        "../../../references/implementation/components/ReportTable/ReportTable.tsx",
+        "../../../references/implementation/features/subscriptions/SubscriptionsContent.tsx"
+      ],
+      "role": "exact implementation resource from same frozen source; no redraw"
+    },
+    {
+      "id": "icons/reports/report-document.svg",
+      "source": "../../../assets/icons/reports/report-document.svg",
+      "sha256": "119d07aab4e4835b6a932b7f9ae42260b790dcdeec6b313f9a479f16e4d18b3c",
+      "consumers": [
+        "../../../references/implementation/features/subscriptions/SubscriptionCard.tsx",
+        "../../../references/implementation/features/subscriptions/SubscriptionsContent.tsx"
+      ],
+      "role": "exact implementation resource from same frozen source; no redraw"
+    },
+    {
+      "id": "icons/search/clear.svg",
+      "source": "../../../assets/icons/search/clear.svg",
+      "sha256": "5d226400ecaecbda2b35ed6e8947acd8a68ef97d4cb8f692aeff65f7a0b5990f",
+      "consumers": [
+        "../../../references/implementation/components/Search/CatalogSearch.tsx"
+      ],
+      "role": "exact implementation resource from same frozen source; no redraw"
+    },
+    {
+      "id": "icons/search/group-report.svg",
+      "source": "../../../assets/icons/search/group-report.svg",
+      "sha256": "69ff4951afbd67eae0b62ffaef9981a5cb350edb3d0f76582e5fcd466788e4b8",
+      "consumers": [
+        "../../../references/implementation/components/Search/CatalogSearch.tsx"
+      ],
+      "role": "exact implementation resource from same frozen source; no redraw"
+    },
+    {
+      "id": "icons/search/reset-types.svg",
+      "source": "../../../assets/icons/search/reset-types.svg",
+      "sha256": "56176b1987fb45c181629a8692d8d4ca764c35941655557c019a2b9381c5ffcd",
+      "consumers": [
+        "../../../references/implementation/components/Search/CatalogSearch.tsx"
+      ],
+      "role": "exact implementation resource from same frozen source; no redraw"
+    },
+    {
+      "id": "icons/search/search.svg",
+      "source": "../../../assets/icons/search/search.svg",
+      "sha256": "616c8d6408391303310d3fddf14c26a884a7bff674d659fd38f40779a8ae6b1c",
+      "consumers": [
+        "../../../references/implementation/features/report-detail/metrics/MetricsTab.tsx"
+      ],
+      "role": "exact implementation resource from same frozen source; no redraw"
+    },
+    {
+      "id": "images/accordion/chevron.svg",
+      "source": "../../../assets/images/accordion/chevron.svg",
+      "sha256": "35ae5801bfd988a27f8c63ecd694764e3b2ed0a7a388b7d69dbe59f0435d8d4b",
+      "consumers": [
+        "../../../references/implementation/components/Accordion/Accordion.module.css"
+      ],
+      "role": "exact implementation resource from same frozen source; no redraw"
+    },
+    {
+      "id": "images/column-filter/checkbox-checked.svg",
+      "source": "../../../assets/images/column-filter/checkbox-checked.svg",
+      "sha256": "b8f2d8088ab26f7558bed622d2360b9f8692017b52a8fd3c949c27faebd94989",
+      "consumers": [
+        "../../../references/implementation/components/FilterValueList/FilterValueList.tsx",
+        "../../../references/implementation/features/report-detail/mailings/MailingsTab.module.css"
+      ],
+      "role": "exact implementation resource from same frozen source; no redraw"
+    },
+    {
+      "id": "images/column-filter/search.svg",
+      "source": "../../../assets/images/column-filter/search.svg",
+      "sha256": "f117efb6db28c60989d53d37917e03ca07b9e5984e149931a349751054cb8e60",
+      "consumers": [
+        "../../../references/implementation/components/FilterValueList/FilterValueList.tsx"
+      ],
+      "role": "exact implementation resource from same frozen source; no redraw"
+    },
+    {
+      "id": "images/contributors/empty.png",
+      "source": "../../../assets/images/contributors/empty.png",
+      "sha256": "767c246a1e7c0c47cf7c91ac17193d2bb3ab484af14224cbc81494f39a3295bc",
+      "consumers": [
+        "../../../references/implementation/features/contributors/ContributionContent.tsx"
+      ],
+      "role": "exact implementation resource from same frozen source; no redraw"
+    },
+    {
+      "id": "images/dropdown/check.svg",
+      "source": "../../../assets/images/dropdown/check.svg",
+      "sha256": "33a2d7b180602b8192c0502f3d4bb3e1f366312583ec7df19d28ca58813c1a6a",
+      "consumers": [
+        "../../../references/implementation/components/DropdownItem/SelectionCheck.tsx"
+      ],
+      "role": "exact implementation resource from same frozen source; no redraw"
+    },
+    {
+      "id": "images/favorites/avatar-placeholder.svg",
+      "source": "../../../assets/images/favorites/avatar-placeholder.svg",
+      "sha256": "0735fe131615b04f60fbdaddd1b8fbf8ae0c73c99a8dec6d7ab903b2198bce12",
+      "consumers": [
+        "../../../references/implementation/features/report-detail/overview/OverviewTab.tsx"
+      ],
+      "role": "exact implementation resource from same frozen source; no redraw"
+    },
+    {
+      "id": "images/filter-trigger/reset-hover.svg",
+      "source": "../../../assets/images/filter-trigger/reset-hover.svg",
+      "sha256": "fa71e65fc5f30e82707c3accd4d4d0b9fd39a7894bbe6b463c6cde2412073e04",
+      "consumers": [
+        "../../../references/implementation/components/FilterButton/FilterButton.tsx"
+      ],
+      "role": "exact implementation resource from same frozen source; no redraw"
+    },
+    {
+      "id": "images/header/brand-mark.svg",
+      "source": "../../../assets/images/header/brand-mark.svg",
+      "sha256": "f030bb8c2502fedcd992c2803cef62d5e994df3af46654a850ff6ed1edacc898",
+      "consumers": [
+        "Справочный источник в рабочем проекте"
+      ],
+      "role": "exact implementation resource from same frozen source; no redraw"
+    },
+    {
+      "id": "images/header/profile-avatar.png",
+      "source": "../../../assets/images/header/profile-avatar.png",
+      "sha256": "b11070e4c29fd6cfbb3875c6908cd99e62f1b3aeac69c54b7a6bceb032f8bec4",
+      "consumers": [
+        "Справочный источник в рабочем проекте"
+      ],
+      "role": "exact implementation resource from same frozen source; no redraw"
+    },
+    {
+      "id": "images/metrics/catalog/chevron-down.svg",
+      "source": "../../../assets/images/metrics/catalog/chevron-down.svg",
+      "sha256": "1827ef03a217f9ddeaf61df31cb2bd9b7b82790213fd3c329aa7f002fd188279",
+      "consumers": [
+        "../../../references/implementation/components/SingleSelect/SingleSelect.tsx"
+      ],
+      "role": "exact implementation resource from same frozen source; no redraw"
+    },
+    {
+      "id": "images/news/news-hero.png",
+      "source": "../../../assets/images/news/news-hero.png",
+      "sha256": "985c90e2de405a90dc1f642b80a61a88cc30576daeacf17452f61a4fdf4ff40f",
+      "consumers": [
+        "../../../references/implementation/features/news/articles.ts"
+      ],
+      "role": "exact implementation resource from same frozen source; no redraw"
+    },
+    {
+      "id": "images/news/reading-back.svg",
+      "source": "../../../assets/images/news/reading-back.svg",
+      "sha256": "05f1c6a4cbffbf983fa796aa4c2f1576559fdc48d6c0c02e2702d19b82f90c6c",
+      "consumers": [
+        "../../../references/implementation/components/RoundIconButton/RoundIconButton.tsx"
+      ],
+      "role": "exact implementation resource from same frozen source; no redraw"
+    },
+    {
+      "id": "images/news/reading-next.svg",
+      "source": "../../../assets/images/news/reading-next.svg",
+      "sha256": "8eafcebfc9191ae259d7450261d453f4a4fb9efff6bc7995ddb88377f54d05c6",
+      "consumers": [
+        "../../../references/implementation/features/news/NewsContent.tsx"
+      ],
+      "role": "exact implementation resource from same frozen source; no redraw"
+    },
+    {
+      "id": "images/news/reading-previous.svg",
+      "source": "../../../assets/images/news/reading-previous.svg",
+      "sha256": "68c98a2c4c4ded2e1e3653993a97179e5da01029ed207a07a108d3132245f6e6",
+      "consumers": [
+        "../../../references/implementation/features/news/NewsContent.tsx"
+      ],
+      "role": "exact implementation resource from same frozen source; no redraw"
+    },
+    {
+      "id": "images/report-detail/ai-hint.svg",
+      "source": "../../../assets/images/report-detail/ai-hint.svg",
+      "sha256": "6fece8b92809f93334ce434f9c36162b43a8925a6158e047f10032527815ce10",
+      "consumers": [
+        "../../../references/implementation/features/report-detail/overview/OverviewTab.tsx"
+      ],
+      "role": "exact implementation resource from same frozen source; no redraw"
+    },
+    {
+      "id": "images/report-detail/chrome/bookmark.svg",
+      "source": "../../../assets/images/report-detail/chrome/bookmark.svg",
+      "sha256": "882f3f17b4f87d60bb90f581af6719872d811eb47ef3b499f88ae3e8572e0baa",
+      "consumers": [
+        "../../../references/implementation/components/RoundIconButton/RoundIconButton.tsx"
+      ],
+      "role": "exact implementation resource from same frozen source; no redraw"
+    },
+    {
+      "id": "images/report-detail/chrome/breadcrumb-chevron.svg",
+      "source": "../../../assets/images/report-detail/chrome/breadcrumb-chevron.svg",
+      "sha256": "9ba79494775b4c47b9b05e668f0cda0f8c717278dafb5c32123dfd35248ba644",
+      "consumers": [
+        "../../../references/implementation/features/report-detail/ReportDetail.tsx"
+      ],
+      "role": "exact implementation resource from same frozen source; no redraw"
+    },
+    {
+      "id": "images/report-detail/chrome/dot.svg",
+      "source": "../../../assets/images/report-detail/chrome/dot.svg",
+      "sha256": "fdd7f396d9c9f91a086d9bee2a9e9c1df62f47730f52418954f40f7d2cdd953e",
+      "consumers": [
+        "../../../references/implementation/features/report-detail/ReportDetail.tsx"
+      ],
+      "role": "exact implementation resource from same frozen source; no redraw"
+    },
+    {
+      "id": "images/report-detail/chrome/edit.svg",
+      "source": "../../../assets/images/report-detail/chrome/edit.svg",
+      "sha256": "47b3400bb8da450e70ab8bb2006a5b3ae374426a76131c78156149f3e1773e56",
+      "consumers": [
+        "../../../references/implementation/components/RoundIconButton/RoundIconButton.tsx"
+      ],
+      "role": "exact implementation resource from same frozen source; no redraw"
+    },
+    {
+      "id": "images/report-detail/chrome/open-report.svg",
+      "source": "../../../assets/images/report-detail/chrome/open-report.svg",
+      "sha256": "9c49979d34e49f6f891cfbb20d79fe948e833d06648a2a2df08a3d09a185178c",
+      "consumers": [
+        "../../../references/implementation/features/report-detail/ReportDetail.tsx"
+      ],
+      "role": "exact implementation resource from same frozen source; no redraw"
+    },
+    {
+      "id": "images/report-detail/chrome/verified.svg",
+      "source": "../../../assets/images/report-detail/chrome/verified.svg",
+      "sha256": "dc44d39760c131380b547733f6c197825d6d3e9295bc7180e9371d80d4cea03e",
+      "consumers": [
+        "../../../references/implementation/features/report-detail/ReportDetail.tsx"
+      ],
+      "role": "exact implementation resource from same frozen source; no redraw"
+    },
+    {
+      "id": "images/report-detail/empty.png",
+      "source": "../../../assets/images/report-detail/empty.png",
+      "sha256": "b957e45de769dfb9adc2511bba5d3e763f2b56424de9287b26c4556b1e8a195d",
+      "consumers": [
+        "../../../references/implementation/features/report-detail/overview/OverviewTab.tsx"
+      ],
+      "role": "exact implementation resource from same frozen source; no redraw"
+    },
+    {
+      "id": "images/report-range/thumb.svg",
+      "source": "../../../assets/images/report-range/thumb.svg",
+      "sha256": "a6de1b4b8c10f77a4c9b68578f555c405a9adcc7524a184db697908c0f445057",
+      "consumers": [
+        "../../../references/implementation/components/ReportRangeField/ReportRangeField.tsx"
+      ],
+      "role": "exact implementation resource from same frozen source; no redraw"
+    },
+    {
+      "id": "images/report-table/avatar-sales-plan.png",
+      "source": "../../../assets/images/report-table/avatar-sales-plan.png",
+      "sha256": "c6427ea8eebbf03473b843f8a50a49c904c0ea2998af9ac7df40e7dcbc7af862",
+      "consumers": [
+        "../../../references/implementation/features/report-detail/overview/OverviewTab.tsx"
+      ],
+      "role": "exact implementation resource from same frozen source; no redraw"
+    },
+    {
+      "id": "images/report-table/avatar-summary.png",
+      "source": "../../../assets/images/report-table/avatar-summary.png",
+      "sha256": "ec3eb8c71688ea0355c8913989167a32594e291f2df1518caef8565ff14de7e9",
+      "consumers": [
+        "../../../references/implementation/features/report-detail/overview/OverviewTab.tsx"
+      ],
+      "role": "exact implementation resource from same frozen source; no redraw"
+    },
+    {
+      "id": "images/report-table/chart-sales-funnel.svg",
+      "source": "../../../assets/images/report-table/chart-sales-funnel.svg",
+      "sha256": "eb844e19e97fc7c01a4a6c5b8f82c6242f05ebc919a25735f75008a4177a42f9",
+      "consumers": [
+        "../../../references/implementation/demo/reportDiversity.ts"
+      ],
+      "role": "exact implementation resource from same frozen source; no redraw"
+    },
+    {
+      "id": "images/report-table/chart-sales-plan.svg",
+      "source": "../../../assets/images/report-table/chart-sales-plan.svg",
+      "sha256": "fb73b4fa2670c1eb03fd85626b6a5144e91c86f5209d7e1266196c858926619c",
+      "consumers": [
+        "../../../references/implementation/demo/reportDiversity.ts"
+      ],
+      "role": "exact implementation resource from same frozen source; no redraw"
+    },
+    {
+      "id": "images/report-table/chevron-left.svg",
+      "source": "../../../assets/images/report-table/chevron-left.svg",
+      "sha256": "0022859ed67c2593dfc074d5e5f5c1999e90720a67ffe05ae8396309bb35e22c",
+      "consumers": [
+        "../../../references/implementation/components/ListPagination/ListPagination.tsx"
+      ],
+      "role": "exact implementation resource from same frozen source; no redraw"
+    },
+    {
+      "id": "images/report-table/chevron-right.svg",
+      "source": "../../../assets/images/report-table/chevron-right.svg",
+      "sha256": "ebaf9a99ea08d83333bc6da26ba280e72a39143ba3d04f13588af0d2f1b2e7a4",
+      "consumers": [
+        "../../../references/implementation/components/ListPagination/ListPagination.tsx"
+      ],
+      "role": "exact implementation resource from same frozen source; no redraw"
+    },
+    {
+      "id": "images/report-table/filter-minus.svg",
+      "source": "../../../assets/images/report-table/filter-minus.svg",
+      "sha256": "769c8b2d2a84a6f15ebe31b1af255f167b5c4e62cfa65b3f705924cbe944cdb3",
+      "consumers": [
+        "../../../references/implementation/features/sources/SourceCatalog.tsx"
+      ],
+      "role": "exact implementation resource from same frozen source; no redraw"
+    },
+    {
+      "id": "images/source-catalog/eye.svg",
+      "source": "../../../assets/images/source-catalog/eye.svg",
+      "sha256": "36c1d7c868eb8191a2d667d4fb05b4e429d2bf5bdcda8044e5fdbcae8c52ed36",
+      "consumers": [
+        "../../../references/implementation/features/sources/SourceCatalog.tsx"
+      ],
+      "role": "exact implementation resource from same frozen source; no redraw"
+    },
+    {
+      "id": "images/subscriptions/empty.png",
+      "source": "../../../assets/images/subscriptions/empty.png",
+      "sha256": "d0ac3d22744f095cd2dbc24cb4d5c79f8cf997603a2b946adf00a324778dc516",
+      "consumers": [
+        "../../../references/implementation/features/subscriptions/SubscriptionsContent.tsx"
+      ],
+      "role": "exact implementation resource from same frozen source; no redraw"
+    }
+  ],
+  "inline_svg_exports": [
+    {
+      "id": "heading",
+      "path": "vectors/lineage/heading.svg",
+      "sha256": "f5e65dcaa395654ea1c33502ae16827f2dac213c739c4b7299f36176f6ca368d",
+      "route": "/preview/navigation?section=reports&report=demo-report-summary&reportTab=sources",
+      "setup_actions": [],
+      "visible_role": "heading",
+      "provenance": "SVG DOM export from immutable c1 render; paths/geometry retained; CSS class removed, xmlns added; currentColor inherits consumer color"
+    },
+    {
+      "id": "report",
+      "path": "vectors/lineage/report.svg",
+      "sha256": "f733ffcf1fbafbab46531f8a67b77325b985a0909481002b4f7d3076367b1f67",
+      "route": "/preview/navigation?section=reports&report=demo-report-summary&reportTab=sources",
+      "setup_actions": [],
+      "visible_role": "report",
+      "provenance": "SVG DOM export from immutable c1 render; paths/geometry retained; CSS class removed, xmlns added; currentColor inherits consumer color"
+    },
+    {
+      "id": "datahub",
+      "path": "vectors/lineage/datahub.svg",
+      "sha256": "4eba4d2630a0317dc76c5ed0b7ca746dd84f50e4f33d91870c39ad4747182707",
+      "route": "/preview/navigation?section=reports&report=demo-report-summary&reportTab=sources",
+      "setup_actions": [],
+      "visible_role": "Источник DataHub",
+      "provenance": "SVG DOM export from immutable c1 render; paths/geometry retained; CSS class removed, xmlns added; currentColor inherits consumer color"
+    },
+    {
+      "id": "catalog",
+      "path": "vectors/lineage/catalog.svg",
+      "sha256": "5596ba046dd992b0140080c972e4ef450efe425ea84839df58c075a7bf7f1506",
+      "route": "/preview/navigation?section=reports&report=demo-report-summary&reportTab=sources",
+      "setup_actions": [],
+      "visible_role": "Источник (каталог)",
+      "provenance": "SVG DOM export from immutable c1 render; paths/geometry retained; CSS class removed, xmlns added; currentColor inherits consumer color"
+    },
+    {
+      "id": "fit",
+      "path": "vectors/lineage/fit.svg",
+      "sha256": "f145d9e2de413476635e5d7f7545e88b2feaf5b2b727b901aeef9c46dfa343fb",
+      "route": "/preview/navigation?section=reports&report=demo-report-summary&reportTab=sources",
+      "setup_actions": [],
+      "visible_role": "Масштаб по умолчанию",
+      "provenance": "SVG DOM export from immutable c1 render; paths/geometry retained; CSS class removed, xmlns added; currentColor inherits consumer color"
+    },
+    {
+      "id": "move",
+      "path": "vectors/lineage/move.svg",
+      "sha256": "852c78811a00c88a2635d30e228473378f572169aa8decb28c735ab17109354a",
+      "route": "/preview/navigation?section=reports&report=demo-report-summary&reportTab=sources",
+      "setup_actions": [],
+      "visible_role": "Перетаскивать блоки",
+      "provenance": "SVG DOM export from immutable c1 render; paths/geometry retained; CSS class removed, xmlns added; currentColor inherits consumer color"
+    },
+    {
+      "id": "hand",
+      "path": "vectors/lineage/hand.svg",
+      "sha256": "f37e06556be39333646c6ba7c397984ffdf037ddee5058f3f6fc44cade362106",
+      "route": "/preview/navigation?section=reports&report=demo-report-summary&reportTab=sources",
+      "setup_actions": [],
+      "visible_role": "Перемещаться по холсту",
+      "provenance": "SVG DOM export from immutable c1 render; paths/geometry retained; CSS class removed, xmlns added; currentColor inherits consumer color"
+    },
+    {
+      "id": "group",
+      "path": "vectors/lineage/group.svg",
+      "sha256": "e8302af2793c39ce70e47d61a22688d66f4fca8d5f6ca5486b42555eee562a3a",
+      "route": "/preview/navigation?section=reports&report=demo-report-summary&reportTab=sources",
+      "setup_actions": [],
+      "visible_role": "Группировка по умолчанию",
+      "provenance": "SVG DOM export from immutable c1 render; paths/geometry retained; CSS class removed, xmlns added; currentColor inherits consumer color"
+    },
+    {
+      "id": "maximize",
+      "path": "vectors/lineage/maximize.svg",
+      "sha256": "8300d1790fabbf880cfbd19973957c64f91bfb63b80aeb3b65fb12e0d36a3ce6",
+      "route": "/preview/navigation?section=reports&report=demo-report-summary&reportTab=sources",
+      "setup_actions": [],
+      "visible_role": "Граф на полный экран",
+      "provenance": "SVG DOM export from immutable c1 render; paths/geometry retained; CSS class removed, xmlns added; currentColor inherits consumer color"
+    },
+    {
+      "id": "exit",
+      "path": "vectors/lineage/exit.svg",
+      "sha256": "5c3475eb786407a65771f11f293462d510636c9dce1f6e2c7cd1272c1b210502",
+      "route": "/preview/navigation?section=reports&report=demo-report-summary&reportTab=sources",
+      "setup_actions": [
+        "Enter native Fullscreen"
+      ],
+      "visible_role": "Свернуть",
+      "provenance": "SVG DOM export from immutable c1 render; paths/geometry retained; CSS class removed, xmlns added; currentColor inherits consumer color"
+    }
+  ]
+}

@@ -1,0 +1,90 @@
+schemaVersion: 1
+component:
+  id: select-format-example
+  title: Селект — пример проверки формата
+  contract: specs/Общие компоненты/Фильтрация отчётов/Контракт.md
+  status: example-only
+sources:
+  filter-contract:
+    kind: document
+    uri: specs/Общие компоненты/Фильтрация отчётов/Контракт.md
+    status: approved-decision
+    snapshot: Текущий локальный контракт; пример формата, не копия всех его правил
+  source-field:
+    kind: figma
+    uri: https://www.figma.com/design/lnOcWh4ElGkhppWe6Kn5AA?node-id=1310-38277
+    nodeId: 1310:38277
+    status: unverified-live
+    snapshot: Сохранённое происхождение поля; актуальность живого узла не подтверждена
+  fonts:
+    kind: document
+    uri: specs/Ресурсы/Шрифты/README.md
+    status: reference-only
+    snapshot: Переданные пользователем CoFo Sans Regular и Medium
+tokens:
+  field-border:
+    type: color
+    sourceRef: filter-contract
+    locator: Figma variable 113:19; literal values remain at their current owner
+base:
+  sourceRefs:
+    - filter-contract
+    - source-field
+    - fonts
+  parameters:
+    control-height:
+      type: dimension
+      value: 40
+      unit: px
+    corner-radius:
+      type: dimension
+      value: 10
+      unit: px
+    padding-inline:
+      type: dimension
+      value: 12
+      unit: px
+    font-family:
+      type: font-family
+      value: CoFo Sans
+    font-weight:
+      type: font-weight
+      value: 400
+    border-color:
+      type: token
+      ref: field-border
+      expectedType: color
+variants:
+  wide:
+    description: Пример ширины поля внутри общей панели
+    sourceRefs:
+      - filter-contract
+    parameters:
+      width:
+        type: dimension
+        value: 440
+        unit: px
+    states:
+      closed:
+        sourceRefs:
+          - filter-contract
+        parameters:
+          dropdown-visible:
+            type: boolean
+            value: false
+      opened:
+        sourceRefs:
+          - filter-contract
+        parameters:
+          dropdown-visible:
+            type: boolean
+            value: true
+  narrow:
+    description: Пример узкого поля; это не определяет способ применения выбора
+    sourceRefs:
+      - filter-contract
+    parameters:
+      width:
+        type: dimension
+        value: 212
+        unit: px

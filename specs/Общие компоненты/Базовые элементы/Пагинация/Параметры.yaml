@@ -1,0 +1,380 @@
+schemaVersion: 1
+component:
+  id: pagination
+  title: Пагинация списков
+  contract: specs/Общие компоненты/Базовые элементы/Пагинация/Контракт.md
+  status: approved-target
+sources:
+  decision:
+    kind: document
+    uri: context/target/Требования и границы.md
+    status: reference-only
+    snapshot: "Пагинация списков · решение1ноября2026: N>pageSize, не viewport; освобождение
+      специального резерва"
+  table-figma:
+    kind: figma
+    uri: https://www.figma.com/design/lnOcWh4ElGkhppWe6Kn5AA?node-id=1026-21715
+    nodeId: 1026:21715
+    status: unverified-live
+    snapshot: Демонстрация999 страниц/9990 записей, срез1–2ноября; не реальный total и не полный
+      алгоритм многоточия
+  home-figma:
+    kind: figma
+    uri: https://www.figma.com/design/lnOcWh4ElGkhppWe6Kn5AA?node-id=1030-21711
+    nodeId: 1030:21711
+    status: unverified-live
+    snapshot: "Панель избранных карточек: высота64, верхние radius20, точный цвет Figma shadow"
+  hidden-figma:
+    kind: figma
+    uri: https://www.figma.com/design/lnOcWh4ElGkhppWe6Kn5AA?node-id=1400-47075
+    nodeId: 1400:47075
+    status: unverified-live
+    snapshot: "Применённый домен, одна страница: hidden, нижний резерв16 вместо80"
+  table-owner:
+    kind: document
+    uri: specs/Общие компоненты/Таблица отчётов/Контракт.md
+    status: reference-only
+    snapshot: Внешняя композиция/непрокручиваемый footer и ограничения demo-total
+  home-owner:
+    kind: document
+    uri: specs/Разделы/Главная/Виды.md
+    status: reference-only
+    snapshot: Локальные размещения и сохранённый дефект z-order вкладчиков; не общая норма
+  pagination-css:
+    kind: document
+    uri: references/implementation/components/ListPagination/ListPagination.module.css
+    status: observed-snapshot
+    snapshot: Корпус/кнопки/selected/disabled/focus; точные текущие CSS-цвета
+  pagination-code:
+    kind: document
+    uri: references/implementation/components/ListPagination/ListPagination.tsx
+    status: observed-snapshot
+    snapshot: ceil total/pageSize, null при<=1, все номера, zero-based intent и фактический диапазон
+  source-flow-css:
+    kind: document
+    uri: references/implementation/features/sources/Sources.module.css
+    status: observed-snapshot
+    snapshot: pagination nav position:relative/width100%; внешний flow-wrapper принадлежит каталогу
+      Источников
+  fonts:
+    kind: document
+    uri: specs/Ресурсы/Шрифты/README.md
+    status: reference-only
+    snapshot: CoFo Sans; действующие файлы и начертания у общего ресурса
+  glyph-left:
+    kind: document
+    uri: assets/images/report-table/chevron-left.svg
+    status: reference-only
+    snapshot: Полный SVG16×16; непрозрачность границы задаёт disabled кнопки
+  glyph-right:
+    kind: document
+    uri: assets/images/report-table/chevron-right.svg
+    status: reference-only
+    snapshot: Полный SVG16×16; не иконка сворачивания меню
+tokens:
+  ui-font:
+    type: font-family
+    sourceRef: fonts
+    locator: CoFo Sans
+base:
+  sourceRefs:
+    - table-figma
+    - home-figma
+    - table-owner
+    - home-owner
+    - fonts
+  parameters:
+    font-family:
+      type: token
+      ref: ui-font
+      expectedType: font-family
+    plate-height:
+      type: dimension
+      value: 64
+      unit: px
+    padding-top:
+      type: dimension
+      value: 0
+      unit: px
+    padding-right:
+      type: dimension
+      value: 16
+      unit: px
+    padding-bottom:
+      type: dimension
+      value: 0
+      unit: px
+    padding-left:
+      type: dimension
+      value: 8
+      unit: px
+    radius-top-left:
+      type: dimension
+      value: 20
+      unit: px
+    radius-top-right:
+      type: dimension
+      value: 20
+      unit: px
+    radius-bottom-left:
+      type: dimension
+      value: 0
+      unit: px
+    radius-bottom-right:
+      type: dimension
+      value: 0
+      unit: px
+    plate-background:
+      type: color
+      format: hex
+      value: "#FFFFFF"
+    shadow-x:
+      type: dimension
+      value: 0
+      unit: px
+    shadow-y:
+      type: dimension
+      value: -4
+      unit: px
+    shadow-blur:
+      type: dimension
+      value: 16
+      unit: px
+    shadow-spread:
+      type: dimension
+      value: 0
+      unit: px
+    shadow-color:
+      type: color
+      format: srgb
+      value:
+        r: 0.06
+        g: 0.11
+        b: 0.23
+        a: 0.12
+    display:
+      type: string
+      value: flex
+      sourceRefs:
+        - pagination-css
+    align-items:
+      type: string
+      value: center
+      sourceRefs:
+        - pagination-css
+    justify-content:
+      type: string
+      value: space-between
+      sourceRefs:
+        - pagination-css
+    z-index:
+      type: integer
+      value: 3
+      sourceRefs:
+        - pagination-css
+    foreground:
+      type: color
+      format: hex
+      value: "#1A243D"
+      sourceRefs:
+        - pagination-css
+    font-size:
+      type: dimension
+      value: 12
+      unit: px
+      sourceRefs:
+        - pagination-css
+    line-height:
+      type: dimension
+      value: 20
+      unit: px
+      sourceRefs:
+        - pagination-css
+    font-weight-mode:
+      type: string
+      value: inherit
+      sourceRefs:
+        - pagination-css
+    pages-display:
+      type: string
+      value: flex
+      sourceRefs:
+        - pagination-css
+    pages-align-items:
+      type: string
+      value: center
+      sourceRefs:
+        - pagination-css
+    pages-gap:
+      type: dimension
+      value: 8
+      unit: px
+      sourceRefs:
+        - pagination-css
+    button-width:
+      type: dimension
+      value: 32
+      unit: px
+      sourceRefs:
+        - pagination-css
+    button-height:
+      type: dimension
+      value: 32
+      unit: px
+      sourceRefs:
+        - pagination-css
+    button-padding:
+      type: dimension
+      value: 8
+      unit: px
+      sourceRefs:
+        - pagination-css
+    button-radius:
+      type: dimension
+      value: 8
+      unit: px
+      sourceRefs:
+        - pagination-css
+    button-border-width:
+      type: dimension
+      value: 0
+      unit: px
+      sourceRefs:
+        - pagination-css
+    button-background:
+      type: string
+      value: transparent
+      sourceRefs:
+        - pagination-css
+    button-display:
+      type: string
+      value: grid
+      sourceRefs:
+        - pagination-css
+    button-place-items:
+      type: string
+      value: center
+      sourceRefs:
+        - pagination-css
+    button-cursor:
+      type: string
+      value: pointer
+      sourceRefs:
+        - pagination-css
+    button-foreground-mode:
+      type: string
+      value: inherit
+      sourceRefs:
+        - pagination-css
+    page-selected-background:
+      type: color
+      format: hex
+      value: "#E8EBF0"
+      sourceRefs:
+        - pagination-css
+    button-disabled-opacity:
+      type: opacity
+      value: 0.3
+      sourceRefs:
+        - pagination-css
+    button-disabled-cursor:
+      type: string
+      value: default
+      sourceRefs:
+        - pagination-css
+    button-focus-outline-width:
+      type: dimension
+      value: 2
+      unit: px
+      sourceRefs:
+        - pagination-css
+    button-focus-outline-color:
+      type: color
+      format: hex
+      value: "#007BFC"
+      sourceRefs:
+        - pagination-css
+    button-focus-outline-offset:
+      type: dimension
+      value: -2
+      unit: px
+      sourceRefs:
+        - pagination-css
+    glyph-width:
+      type: dimension
+      value: 16
+      unit: px
+      sourceRefs:
+        - pagination-code
+        - glyph-left
+        - glyph-right
+    glyph-height:
+      type: dimension
+      value: 16
+      unit: px
+      sourceRefs:
+        - pagination-code
+        - glyph-left
+        - glyph-right
+variants:
+  overlay64:
+    description: Панель поверх результатов вне их вертикального scroll
+    sourceRefs:
+      - table-figma
+      - home-figma
+      - pagination-css
+    parameters:
+      position:
+        type: string
+        value: absolute
+      left:
+        type: dimension
+        value: 0
+        unit: px
+      right:
+        type: dimension
+        value: 0
+        unit: px
+      bottom:
+        type: dimension
+        value: 0
+        unit: px
+    states:
+      observed-css:
+        sourceRefs:
+          - pagination-css
+        parameters:
+          shadow-color:
+            type: color
+            format: srgb
+            value:
+              r: 0.058823529411764705
+              g: 0.10980392156862745
+              b: 0.23137254901960785
+              a: 0.12
+  flow64:
+    description: Панель в потоке каталога Источников; внешний wrapper остаётся у него
+    sourceRefs:
+      - source-flow-css
+      - pagination-css
+    parameters:
+      position:
+        type: string
+        value: relative
+      width:
+        type: dimension
+        value: 100
+        unit: "%"
+    states:
+      observed-css:
+        sourceRefs:
+          - pagination-css
+        parameters:
+          shadow-color:
+            type: color
+            format: srgb
+            value:
+              r: 0.058823529411764705
+              g: 0.10980392156862745
+              b: 0.23137254901960785
+              a: 0.12

@@ -1,0 +1,283 @@
+schemaVersion: 1
+component:
+  id: segmented-control
+  title: Сегмент-контрол — текст и выбор вида
+  contract: specs/Общие компоненты/Базовые элементы/Сегмент-контрол/Контракт.md
+  status: approved-target
+sources:
+  home-geometry:
+    kind: figma
+    uri: https://www.figma.com/design/lnOcWh4ElGkhppWe6Kn5AA?node-id=611-11897
+    nodeId: 611:11897
+    status: unverified-live
+    snapshot: Перенос среза Главной2 ноября; text item2697:14044/14045/14046, не новое live чтение
+  view-geometry:
+    kind: figma
+    uri: https://www.figma.com/design/lnOcWh4ElGkhppWe6Kn5AA?node-id=640-15431
+    nodeId: 640:15431
+    status: unverified-live
+    snapshot: Согласованный consumer icon-only; источник подписок не эталон обратных цветов
+  reports-geometry:
+    kind: figma
+    uri: https://www.figma.com/design/lnOcWh4ElGkhppWe6Kn5AA?node-id=1084-30778
+    nodeId: 1084:30778
+    status: unverified-live
+    snapshot: Геометрия двух48x36 items и контейнера; inactive фон различается по baseline
+  home-view:
+    kind: document
+    uri: specs/Разделы/Главная/Виды.md
+    status: observed-snapshot
+    snapshot: Происхождение параметров и сохранённые item/token IDs; после переноса внутренние значения
+      ведёт B09
+  controls-css:
+    kind: document
+    uri: references/implementation/components/HomeControls/HomeControls.module.css
+    status: observed-snapshot
+    snapshot: Шрифт/tracking, focus/blur и отдельный внутренний gap optionContent; не новая визуальная норма
+  controls-native:
+    kind: document
+    uri: references/implementation/components/HomeControls/HomeControls.tsx
+    status: observed-snapshot
+    snapshot: Разные text tablist и icon group, controlled callbacks и клавиатурная механика
+  override-review:
+    kind: document
+    uri: references/visual-data/iterations/I09a/view-source-conflict.json
+    status: observed-snapshot
+    snapshot: Четыре consumers; выбранный Cards с противоположным glyph в подписках остаётся известным
+      отклонением
+  fonts:
+    kind: document
+    uri: specs/Ресурсы/Шрифты/README.md
+    status: reference-only
+    snapshot: CoFo Sans, существующие файлы Regular/Medium
+tokens:
+  ui-font:
+    type: font-family
+    sourceRef: fonts
+    locator: CoFo Sans
+base:
+  sourceRefs:
+    - home-geometry
+    - view-geometry
+    - reports-geometry
+    - home-view
+  parameters:
+    track-height:
+      type: dimension
+      value: 40
+      unit: px
+    track-padding:
+      type: dimension
+      value: 2
+      unit: px
+    track-gap:
+      type: dimension
+      value: 2
+      unit: px
+    track-radius:
+      type: dimension
+      value: 48
+      unit: px
+    track-background:
+      type: color
+      format: hex
+      value: "#F3F4F9"
+    track-border-width:
+      type: dimension
+      value: 0
+      unit: px
+    item-height:
+      type: dimension
+      value: 36
+      unit: px
+    item-radius:
+      type: dimension
+      value: 44
+      unit: px
+    item-padding-block:
+      type: dimension
+      value: 10
+      unit: px
+    item-padding-inline:
+      type: dimension
+      value: 16
+      unit: px
+    item-border-width:
+      type: dimension
+      value: 0
+      unit: px
+    item-background:
+      type: color
+      format: hex
+      value: "#F3F4F9"
+    foreground:
+      type: color
+      format: hex
+      value: "#202028"
+variants:
+  text40:
+    description: Подпись и необязательный счётчик; ширина по содержимому
+    sourceRefs:
+      - home-geometry
+      - home-view
+      - controls-css
+      - fonts
+    parameters:
+      width-mode:
+        type: string
+        value: hug-content
+      item-gap:
+        type: dimension
+        value: 8
+        unit: px
+      font-family:
+        type: token
+        ref: ui-font
+        expectedType: font-family
+      font-weight:
+        type: font-weight
+        value: 500
+      font-size:
+        type: dimension
+        value: 14
+        unit: px
+      line-height:
+        type: dimension
+        value: 14
+        unit: px
+      letter-spacing:
+        type: dimension
+        value: -0.14
+        unit: px
+    states:
+      selected:
+        sourceRefs:
+          - home-geometry
+          - home-view
+        parameters:
+          item-background:
+            type: color
+            format: hex
+            value: "#FFFFFF"
+          foreground:
+            type: color
+            format: hex
+            value: "#007BFC"
+      unselected-neutral:
+        sourceRefs:
+          - controls-css
+        parameters:
+          item-background:
+            type: color
+            format: hex
+            value: "#F0F1F4"
+      focus-implementation:
+        sourceRefs:
+          - controls-css
+        parameters:
+          outline-width:
+            type: dimension
+            value: 2
+            unit: px
+          outline-offset:
+            type: dimension
+            value: 2
+            unit: px
+          outline-color:
+            type: color
+            format: hex
+            value: "#007BFC"
+      content-implementation:
+        sourceRefs:
+          - controls-css
+        parameters:
+          inner-content-gap:
+            type: dimension
+            value: 4
+            unit: px
+          inner-content-height:
+            type: dimension
+            value: 16
+            unit: px
+      track-implementation:
+        sourceRefs:
+          - controls-css
+        parameters:
+          backdrop-blur:
+            type: dimension
+            value: 20
+            unit: px
+  icon40:
+    description: Два icon-only элемента list/cards с раздельными ресурсами выбранного/невыбранного вида
+    sourceRefs:
+      - view-geometry
+      - reports-geometry
+      - override-review
+      - controls-css
+    parameters:
+      width:
+        type: dimension
+        value: 102
+        unit: px
+      item-width:
+        type: dimension
+        value: 48
+        unit: px
+      icon-size:
+        type: dimension
+        value: 16
+        unit: px
+    states:
+      selected:
+        sourceRefs:
+          - view-geometry
+          - override-review
+        parameters:
+          item-background:
+            type: color
+            format: hex
+            value: "#FFFFFF"
+          foreground:
+            type: color
+            format: hex
+            value: "#007BFC"
+      unselected-neutral:
+        sourceRefs:
+          - reports-geometry
+          - controls-css
+        parameters:
+          item-background:
+            type: color
+            format: hex
+            value: "#F0F1F4"
+      focus-implementation:
+        sourceRefs:
+          - controls-css
+        parameters:
+          outline-width:
+            type: dimension
+            value: 2
+            unit: px
+          outline-offset:
+            type: dimension
+            value: 2
+            unit: px
+          outline-color:
+            type: color
+            format: hex
+            value: "#007BFC"
+      track-implementation:
+        sourceRefs:
+          - controls-css
+        parameters:
+          backdrop-blur:
+            type: dimension
+            value: 20
+            unit: px
+dependencies:
+  - id: segment-family-source
+    document: references/design-system/docs/design-system/components/generated/DS-01-288-3336.md
+    role: design-source
+  - id: counter-current-owner
+    document: specs/Общие компоненты/Базовые элементы/Счётчик/Контракт.md
+    role: child-contract

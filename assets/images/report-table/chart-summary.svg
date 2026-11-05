@@ -1,0 +1,12 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="56" height="32" viewBox="0 0 56 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="&#208;&#158;&#209;&#130;&#209;&#135;&#209;&#145;&#209;&#130;&#209;&#139; / MAU / &#208;&#148;&#208;&#181;&#208;&#188;&#208;&#190; 1">
+<path id="Vector" d="M2 25.8C8 25.8 9 24.9333 15 24.9333C21 24.9333 22 22.3333 28 22.3333C34 22.3333 35 18 41 18C47 18 48 5 54 5V31H2V25.8Z" fill="url(#paint0_linear_0_290)"/>
+<path id="Vector_2" d="M2 26C8 26 9 25.125 15 25.125C21 25.125 22 22.5 28 22.5C34 22.5 35 18.125 41 18.125C47 18.125 48 5 54 5" stroke-width="1.6" stroke="#5B947E"/>
+</g>
+<defs>
+<linearGradient id="paint0_linear_0_290" x1="0" y1="0" x2="0" y2="32" gradientUnits="userSpaceOnUse">
+<stop stop-color="#5B947E" stop-opacity="0.28"/>
+<stop offset="1" stop-color="#5B947E" stop-opacity="0"/>
+</linearGradient>
+</defs>
+</svg>

@@ -1,0 +1,662 @@
+{
+  "snapshot_id": "prototype-2026-11-04-c1",
+  "role": "generated local UI fixtures, not a production API or full database",
+  "data": {
+    "catalog_rows": [
+      {
+        "id": "demo-report-summary",
+        "title": "Сводный отчёт Гостеприимства",
+        "mau": "146",
+        "delta": "+421%",
+        "domain": "Гостеприимство",
+        "masterSystem": "Домиленд",
+        "owner": "Ручнов Константин Михайлович",
+        "lastViewed": "1 дн. назад",
+        "report": {
+          "id": "demo-report-summary",
+          "type": "report",
+          "title": "Сводный отчёт Гостеприимства",
+          "domain": "Гостеприимство",
+          "platform": "Visiology",
+          "masterSystem": "Домиленд",
+          "verification": {
+            "status": "verified",
+            "reviewer": "Губина Екатерина Игоревна"
+          }
+        },
+        "platform": "Visiology",
+        "chartSrc": "../../../../assets/images/report-table/chart-summary.svg",
+        "avatarSrc": "../../../../assets/images/report-table/avatar-summary.png",
+        "verifiedIndicator": true,
+        "warningIndicator": true
+      },
+      {
+        "id": "demo-report-motivation",
+        "title": "Мотивация сотрудников",
+        "mau": "91",
+        "delta": "−18%",
+        "domain": "Гостеприимство",
+        "masterSystem": "Домиленд",
+        "owner": "Соколова Анна Сергеевна",
+        "lastViewed": "1 дн. назад",
+        "report": {
+          "id": "demo-report-motivation",
+          "type": "report",
+          "title": "Отчёт о мотивации сотрудников",
+          "cardTitle": "Мотивация сотрудников",
+          "domain": "Гостеприимство",
+          "platform": "Спектр BI · демо",
+          "masterSystem": "Домиленд",
+          "verification": {
+            "status": "verified",
+            "reviewer": "Губина Екатерина Игоревна"
+          }
+        },
+        "platform": "Спектр BI · демо",
+        "chartSrc": "../../../../assets/images/report-table/chart-sales-plan.svg",
+        "avatarSrc": "../../../../assets/images/report-table/avatar-motivation.png",
+        "verifiedIndicator": true,
+        "warningIndicator": true
+      },
+      {
+        "id": "demo-report-debt",
+        "title": "Отчет по дебиторской задолженности",
+        "mau": "31",
+        "delta": "+675%",
+        "domain": "Гостеприимство",
+        "masterSystem": "1С ЖКХ",
+        "owner": "Морозов Павел Андреевич",
+        "lastViewed": "1 дн. назад",
+        "report": {
+          "id": "demo-report-debt",
+          "type": "report",
+          "title": "Отчёт по дебиторской задолженности",
+          "cardTitle": "Дебиторская задолженность",
+          "domain": "Гостеприимство",
+          "platform": "Горизонт BI · демо",
+          "masterSystem": "1С ЖКХ",
+          "verification": {
+            "status": "verified",
+            "reviewer": "Губина Екатерина Игоревна"
+          }
+        },
+        "platform": "Горизонт BI · демо",
+        "chartSrc": "../../../../assets/images/report-table/chart-debt.svg",
+        "avatarSrc": "../../../../assets/images/report-table/avatar-debt.png",
+        "verifiedIndicator": true,
+        "warningIndicator": false
+      },
+      {
+        "id": "demo-report-management",
+        "title": "УК Москва/СПБ",
+        "mau": "30",
+        "delta": "−9%",
+        "domain": "Гостеприимство",
+        "masterSystem": "Домиленд",
+        "owner": "Орлова Мария Дмитриевна",
+        "lastViewed": "1 дн. назад",
+        "report": {
+          "id": "demo-report-management",
+          "type": "report",
+          "title": "Отчёт УК Москва/СПБ",
+          "cardTitle": "УК Москва/СПБ",
+          "domain": "Гостеприимство",
+          "platform": "Вектор BI · демо",
+          "masterSystem": "Домиленд",
+          "verification": {
+            "status": "verified",
+            "reviewer": "Губина Екатерина Игоревна"
+          }
+        },
+        "platform": "Вектор BI · демо",
+        "chartSrc": "../../../../assets/images/report-table/chart-sales-funnel.svg",
+        "avatarSrc": "../../../../assets/images/report-table/avatar-management.png",
+        "verifiedIndicator": true,
+        "warningIndicator": true
+      },
+      {
+        "id": "demo-report-occupancy",
+        "title": "Динамика заселения",
+        "mau": "124",
+        "delta": "+18%",
+        "domain": "Гостеприимство",
+        "masterSystem": "Домиленд",
+        "owner": "Ручнов Константин Михайлович",
+        "lastViewed": "12 дн. назад",
+        "report": {
+          "id": "demo-report-occupancy",
+          "type": "report",
+          "title": "Динамика заселения",
+          "domain": "Гостеприимство · демо",
+          "domainGroup": "Гостеприимство",
+          "platform": "Пульс BI · демо",
+          "masterSystem": "Домиленд",
+          "verification": {
+            "status": "unverified"
+          }
+        },
+        "platform": "Пульс BI · демо",
+        "chartSrc": "../../../../assets/images/report-table/chart-occupancy.svg",
+        "avatarSrc": "../../../../assets/images/report-table/avatar-occupancy.png",
+        "verifiedIndicator": false,
+        "warningIndicator": true
+      },
+      {
+        "id": "demo-report-client-service",
+        "title": "Качество клиентского сервиса",
+        "mau": "58",
+        "delta": "+24%",
+        "domain": "Клиентский сервис",
+        "masterSystem": "Service Desk",
+        "owner": "Губина Екатерина Игоревна",
+        "lastViewed": "21 дн. назад",
+        "report": {
+          "id": "demo-report-client-service",
+          "type": "report",
+          "title": "Качество клиентского сервиса",
+          "domain": "Клиентский сервис · демо",
+          "domainGroup": "Клиентский сервис",
+          "platform": "Орбита BI · демо",
+          "masterSystem": "Service Desk",
+          "verification": {
+            "status": "unverified"
+          }
+        },
+        "platform": "Орбита BI · демо",
+        "chartSrc": "../../../../assets/images/report-table/chart-client-service.svg",
+        "avatarSrc": "../../../../assets/images/report-table/avatar-client-service.png",
+        "verifiedIndicator": false,
+        "warningIndicator": true
+      },
+      {
+        "id": "demo-report-sales-plan",
+        "title": "План-Факт продажи",
+        "mau": "98",
+        "delta": "−6%",
+        "domain": "Продажи и маркетинг",
+        "masterSystem": "CRM (CRM Dynamics)",
+        "owner": "Ручнов Константин Михайлович",
+        "lastViewed": "1 дн. назад",
+        "report": {
+          "id": "demo-report-sales-plan",
+          "type": "report",
+          "title": "План-Факт продажи",
+          "domain": "Продажи и маркетинг",
+          "platform": "Сфера BI · демо",
+          "masterSystem": "CRM (CRM Dynamics)",
+          "verification": {
+            "status": "verified",
+            "reviewer": "—"
+          }
+        },
+        "platform": "Сфера BI · демо",
+        "chartSrc": "../../../../assets/images/report-table/chart-sales-plan.svg",
+        "avatarSrc": "../../../../assets/images/report-table/avatar-sales-plan.png",
+        "verifiedIndicator": true,
+        "warningIndicator": false
+      },
+      {
+        "id": "demo-report-sales-funnel",
+        "title": "Воронка продаж",
+        "mau": "76",
+        "delta": "−12%",
+        "domain": "Продажи и маркетинг",
+        "masterSystem": "CRM Dynamics",
+        "owner": "Соколова Анна Сергеевна",
+        "lastViewed": "3 дн. назад",
+        "report": {
+          "id": "demo-report-sales-funnel",
+          "type": "report",
+          "title": "Воронка продаж",
+          "domain": "Продажи и маркетинг · демо",
+          "domainGroup": "Продажи и маркетинг",
+          "platform": "Фокус BI · демо",
+          "masterSystem": "CRM Dynamics",
+          "verification": {
+            "status": "unverified"
+          }
+        },
+        "platform": "Фокус BI · демо",
+        "chartSrc": "../../../../assets/images/report-table/chart-sales-funnel.svg",
+        "avatarSrc": "../../../../assets/images/report-table/avatar-sales-funnel.png",
+        "verifiedIndicator": false,
+        "warningIndicator": false
+      },
+      {
+        "id": "demo-report-finance-plan",
+        "title": "Выполнение плана поступлений",
+        "mau": "203",
+        "delta": "+32%",
+        "domain": "Финансы",
+        "masterSystem": "1С ERP",
+        "owner": "Ручнов Константин Михайлович",
+        "lastViewed": "2 дн. назад",
+        "report": {
+          "id": "demo-report-finance-plan",
+          "type": "report",
+          "title": "Выполнение плана поступлений",
+          "domain": "Финансы · демо",
+          "domainGroup": "Финансы",
+          "platform": "Ритм BI · демо",
+          "masterSystem": "1С ERP",
+          "verification": {
+            "status": "unverified"
+          }
+        },
+        "platform": "Ритм BI · демо",
+        "chartSrc": "../../../../assets/images/report-table/chart-finance-plan.svg",
+        "avatarSrc": "../../../../assets/images/report-table/avatar-finance-plan.png",
+        "verifiedIndicator": false,
+        "warningIndicator": true
+      }
+    ],
+    "favorite_rows": [
+      {
+        "title": "Сводный отчёт Гостеприимства",
+        "mau": "146",
+        "delta": "+421%",
+        "chartSrc": "../../../../assets/images/report-table/chart-summary.svg",
+        "platform": "Visiology",
+        "masterSystem": "Домиленд",
+        "owner": "Ручнов Константин Михайлович",
+        "avatarSrc": "../../../../assets/images/favorites/avatar-summary.png",
+        "lastViewed": "1 дн. назад",
+        "warningIndicator": true,
+        "id": "demo-report-summary",
+        "report": {
+          "id": "demo-report-summary",
+          "type": "report",
+          "title": "Сводный отчёт Гостеприимства",
+          "domain": "Гостеприимство",
+          "platform": "Visiology",
+          "masterSystem": "Домиленд",
+          "verification": {
+            "status": "verified",
+            "reviewer": "Губина Екатерина Игоревна"
+          }
+        },
+        "domain": "Гостеприимство",
+        "verifiedIndicator": true
+      },
+      {
+        "title": "Мотивация сотрудников",
+        "mau": "91",
+        "delta": "−18%",
+        "chartSrc": "../../../../assets/images/report-table/chart-sales-plan.svg",
+        "platform": "Спектр BI · демо",
+        "masterSystem": "Домиленд",
+        "owner": "Соколова Анна Сергеевна",
+        "avatarSrc": "../../../../assets/images/favorites/avatar-motivation.png",
+        "lastViewed": "1 дн. назад",
+        "warningIndicator": true,
+        "id": "demo-report-motivation",
+        "report": {
+          "id": "demo-report-motivation",
+          "type": "report",
+          "title": "Отчёт о мотивации сотрудников",
+          "cardTitle": "Мотивация сотрудников",
+          "domain": "Гостеприимство",
+          "platform": "Спектр BI · демо",
+          "masterSystem": "Домиленд",
+          "verification": {
+            "status": "verified",
+            "reviewer": "Губина Екатерина Игоревна"
+          }
+        },
+        "domain": "Гостеприимство",
+        "verifiedIndicator": true
+      },
+      {
+        "title": "Отчет по дебиторской задолженности",
+        "mau": "31",
+        "delta": "+675%",
+        "chartSrc": "../../../../assets/images/favorites/chart-debt.svg",
+        "platform": "Горизонт BI · демо",
+        "masterSystem": "1С ЖКХ",
+        "owner": "Морозов Павел Андреевич",
+        "avatarSrc": "../../../../assets/images/favorites/avatar-debt.png",
+        "lastViewed": "1 дн. назад",
+        "warningIndicator": false,
+        "id": "demo-report-debt",
+        "report": {
+          "id": "demo-report-debt",
+          "type": "report",
+          "title": "Отчёт по дебиторской задолженности",
+          "cardTitle": "Дебиторская задолженность",
+          "domain": "Гостеприимство",
+          "platform": "Горизонт BI · демо",
+          "masterSystem": "1С ЖКХ",
+          "verification": {
+            "status": "verified",
+            "reviewer": "Губина Екатерина Игоревна"
+          }
+        },
+        "domain": "Гостеприимство",
+        "verifiedIndicator": true
+      },
+      {
+        "title": "УК Москва/СПБ",
+        "mau": "30",
+        "delta": "−9%",
+        "chartSrc": "../../../../assets/images/report-table/chart-sales-funnel.svg",
+        "platform": "Вектор BI · демо",
+        "masterSystem": "Домиленд",
+        "owner": "Орлова Мария Дмитриевна",
+        "avatarSrc": "../../../../assets/images/favorites/avatar-placeholder.svg",
+        "lastViewed": "1 дн. назад",
+        "warningIndicator": true,
+        "id": "demo-report-management",
+        "report": {
+          "id": "demo-report-management",
+          "type": "report",
+          "title": "Отчёт УК Москва/СПБ",
+          "cardTitle": "УК Москва/СПБ",
+          "domain": "Гостеприимство",
+          "platform": "Вектор BI · демо",
+          "masterSystem": "Домиленд",
+          "verification": {
+            "status": "verified",
+            "reviewer": "Губина Екатерина Игоревна"
+          }
+        },
+        "domain": "Гостеприимство",
+        "verifiedIndicator": true
+      },
+      {
+        "title": "Динамика заселения",
+        "mau": "124",
+        "delta": "+18%",
+        "chartSrc": "../../../../assets/images/favorites/chart-occupancy.svg",
+        "platform": "Пульс BI · демо",
+        "masterSystem": "Домиленд",
+        "owner": "Ручнов Константин Михайлович",
+        "avatarSrc": "../../../../assets/images/favorites/avatar-shared.png",
+        "lastViewed": "12 дн. назад",
+        "warningIndicator": true,
+        "id": "demo-report-occupancy",
+        "report": {
+          "id": "demo-report-occupancy",
+          "type": "report",
+          "title": "Динамика заселения",
+          "domain": "Гостеприимство · демо",
+          "domainGroup": "Гостеприимство",
+          "platform": "Пульс BI · демо",
+          "masterSystem": "Домиленд",
+          "verification": {
+            "status": "unverified"
+          }
+        },
+        "domain": "Гостеприимство",
+        "verifiedIndicator": false
+      },
+      {
+        "title": "Качество клиентского сервиса",
+        "mau": "58",
+        "delta": "+24%",
+        "chartSrc": "../../../../assets/images/favorites/chart-client-service.svg",
+        "platform": "Орбита BI · демо",
+        "masterSystem": "Service Desk",
+        "owner": "Губина Екатерина Игоревна",
+        "avatarSrc": "../../../../assets/images/favorites/avatar-placeholder-client-service.svg",
+        "lastViewed": "21 дн. назад",
+        "warningIndicator": true,
+        "id": "demo-report-client-service",
+        "report": {
+          "id": "demo-report-client-service",
+          "type": "report",
+          "title": "Качество клиентского сервиса",
+          "domain": "Клиентский сервис · демо",
+          "domainGroup": "Клиентский сервис",
+          "platform": "Орбита BI · демо",
+          "masterSystem": "Service Desk",
+          "verification": {
+            "status": "unverified"
+          }
+        },
+        "domain": "Клиентский сервис",
+        "verifiedIndicator": false
+      },
+      {
+        "title": "Воронка продаж",
+        "mau": "76",
+        "delta": "−12%",
+        "chartSrc": "../../../../assets/images/favorites/chart-sales-funnel.svg",
+        "platform": "Фокус BI · демо",
+        "masterSystem": "CRM Dynamics",
+        "owner": "Соколова Анна Сергеевна",
+        "avatarSrc": "../../../../assets/images/favorites/avatar-shared.png",
+        "lastViewed": "3 дн. назад",
+        "warningIndicator": false,
+        "id": "demo-report-sales-funnel",
+        "report": {
+          "id": "demo-report-sales-funnel",
+          "type": "report",
+          "title": "Воронка продаж",
+          "domain": "Продажи и маркетинг · демо",
+          "domainGroup": "Продажи и маркетинг",
+          "platform": "Фокус BI · демо",
+          "masterSystem": "CRM Dynamics",
+          "verification": {
+            "status": "unverified"
+          }
+        },
+        "domain": "Продажи и маркетинг",
+        "verifiedIndicator": false
+      },
+      {
+        "title": "Статус строительных проектов",
+        "mau": "—",
+        "delta": "—",
+        "chartSrc": "../../../../assets/images/report-table/chart-summary.svg",
+        "platform": "Маяк BI · демо",
+        "masterSystem": "—",
+        "owner": "Морозов Павел Андреевич",
+        "avatarSrc": "../../../../assets/images/favorites/avatar-shared.png",
+        "lastViewed": "—",
+        "warningIndicator": true,
+        "id": "demo-report-construction",
+        "report": {
+          "id": "demo-report-construction",
+          "type": "report",
+          "title": "Статус строительных проектов",
+          "domain": "Строительство · демо",
+          "domainGroup": "Строительство",
+          "verification": {
+            "status": "unverified"
+          },
+          "platform": "Маяк BI · демо"
+        },
+        "domain": "Строительство",
+        "verifiedIndicator": false
+      },
+      {
+        "title": "Загрузка команды",
+        "mau": "—",
+        "delta": "—",
+        "chartSrc": "../../../../assets/images/report-table/chart-summary.svg",
+        "platform": "Атлас BI · демо",
+        "masterSystem": "—",
+        "owner": "Орлова Мария Дмитриевна",
+        "avatarSrc": "../../../../assets/images/favorites/avatar-shared.png",
+        "lastViewed": "—",
+        "warningIndicator": true,
+        "id": "demo-report-team-workload",
+        "report": {
+          "id": "demo-report-team-workload",
+          "type": "report",
+          "title": "Загрузка команды",
+          "domain": "Управление персоналом · демо",
+          "domainGroup": "Управление персоналом",
+          "verification": {
+            "status": "unverified"
+          },
+          "platform": "Атлас BI · демо"
+        },
+        "domain": "Управление персоналом",
+        "verifiedIndicator": false
+      },
+      {
+        "title": "Выполнение плана поступлений",
+        "mau": "203",
+        "delta": "+32%",
+        "chartSrc": "../../../../assets/images/favorites/chart-finance-plan.svg",
+        "platform": "Ритм BI · демо",
+        "masterSystem": "1С ERP",
+        "owner": "Ручнов Константин Михайлович",
+        "avatarSrc": "../../../../assets/images/favorites/avatar-shared.png",
+        "lastViewed": "2 дн. назад",
+        "warningIndicator": true,
+        "id": "demo-report-finance-plan",
+        "report": {
+          "id": "demo-report-finance-plan",
+          "type": "report",
+          "title": "Выполнение плана поступлений",
+          "domain": "Финансы · демо",
+          "domainGroup": "Финансы",
+          "platform": "Ритм BI · демо",
+          "masterSystem": "1С ERP",
+          "verification": {
+            "status": "unverified"
+          }
+        },
+        "domain": "Финансы",
+        "verifiedIndicator": false
+      }
+    ],
+    "summaries": [
+      {
+        "id": "demo-report-summary",
+        "type": "report",
+        "title": "Сводный отчёт Гостеприимства",
+        "domain": "Гостеприимство",
+        "platform": "Visiology",
+        "masterSystem": "Домиленд",
+        "verification": {
+          "status": "verified",
+          "reviewer": "Губина Екатерина Игоревна"
+        }
+      },
+      {
+        "id": "demo-report-motivation",
+        "type": "report",
+        "title": "Отчёт о мотивации сотрудников",
+        "cardTitle": "Мотивация сотрудников",
+        "domain": "Гостеприимство",
+        "platform": "Спектр BI · демо",
+        "masterSystem": "Домиленд",
+        "verification": {
+          "status": "verified",
+          "reviewer": "Губина Екатерина Игоревна"
+        }
+      },
+      {
+        "id": "demo-report-debt",
+        "type": "report",
+        "title": "Отчёт по дебиторской задолженности",
+        "cardTitle": "Дебиторская задолженность",
+        "domain": "Гостеприимство",
+        "platform": "Горизонт BI · демо",
+        "masterSystem": "1С ЖКХ",
+        "verification": {
+          "status": "verified",
+          "reviewer": "Губина Екатерина Игоревна"
+        }
+      },
+      {
+        "id": "demo-report-management",
+        "type": "report",
+        "title": "Отчёт УК Москва/СПБ",
+        "cardTitle": "УК Москва/СПБ",
+        "domain": "Гостеприимство",
+        "platform": "Вектор BI · демо",
+        "masterSystem": "Домиленд",
+        "verification": {
+          "status": "verified",
+          "reviewer": "Губина Екатерина Игоревна"
+        }
+      },
+      {
+        "id": "demo-report-occupancy",
+        "type": "report",
+        "title": "Динамика заселения",
+        "domain": "Гостеприимство · демо",
+        "domainGroup": "Гостеприимство",
+        "platform": "Пульс BI · демо",
+        "masterSystem": "Домиленд",
+        "verification": {
+          "status": "unverified"
+        }
+      },
+      {
+        "id": "demo-report-client-service",
+        "type": "report",
+        "title": "Качество клиентского сервиса",
+        "domain": "Клиентский сервис · демо",
+        "domainGroup": "Клиентский сервис",
+        "platform": "Орбита BI · демо",
+        "masterSystem": "Service Desk",
+        "verification": {
+          "status": "unverified"
+        }
+      },
+      {
+        "id": "demo-report-sales-funnel",
+        "type": "report",
+        "title": "Воронка продаж",
+        "domain": "Продажи и маркетинг · демо",
+        "domainGroup": "Продажи и маркетинг",
+        "platform": "Фокус BI · демо",
+        "masterSystem": "CRM Dynamics",
+        "verification": {
+          "status": "unverified"
+        }
+      },
+      {
+        "id": "demo-report-construction",
+        "type": "report",
+        "title": "Статус строительных проектов",
+        "domain": "Строительство · демо",
+        "domainGroup": "Строительство",
+        "verification": {
+          "status": "unverified"
+        },
+        "platform": "Маяк BI · демо"
+      },
+      {
+        "id": "demo-report-team-workload",
+        "type": "report",
+        "title": "Загрузка команды",
+        "domain": "Управление персоналом · демо",
+        "domainGroup": "Управление персоналом",
+        "verification": {
+          "status": "unverified"
+        },
+        "platform": "Атлас BI · демо"
+      },
+      {
+        "id": "demo-report-finance-plan",
+        "type": "report",
+        "title": "Выполнение плана поступлений",
+        "domain": "Финансы · демо",
+        "domainGroup": "Финансы",
+        "platform": "Ритм BI · демо",
+        "masterSystem": "1С ERP",
+        "verification": {
+          "status": "unverified"
+        }
+      },
+      {
+        "id": "demo-report-sales-plan",
+        "type": "report",
+        "title": "План-Факт продажи",
+        "domain": "Продажи и маркетинг",
+        "platform": "Сфера BI · демо",
+        "masterSystem": "CRM (CRM Dynamics)",
+        "verification": {
+          "status": "verified",
+          "reviewer": "—"
+        }
+      }
+    ]
+  }
+}

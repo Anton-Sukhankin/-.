@@ -1,0 +1,261 @@
+schemaVersion: 1
+component:
+  id: definition-tooltip
+  title: Подсказка краткого определения
+  contract: specs/Общие компоненты/Базовые элементы/Подсказка/Контракт.md
+  status: approved-target
+sources:
+  decision:
+    kind: document
+    uri: context/target/Требования и границы.md
+    status: reference-only
+    snapshot: "Полная карточка показателя · определение в подсказке, решение28октября: краткое
+      определение/hover/focus/pointer persistence/Escape"
+  approved-metric-detail:
+    kind: document
+    uri: specs/Разделы/Метрики и показатели/Детальная карточка/Контракт.md
+    status: reference-only
+    snapshot: Действующий контракт паспорта метрики и его правило подсказки определения
+  figma-open:
+    kind: figma
+    uri: https://www.figma.com/design/lnOcWh4ElGkhppWe6Kn5AA?node-id=1183-1645
+    nodeId: 1183:1645
+    status: unverified-live
+    snapshot: Срез28октября; читаемый open.png1280×720. Экспорт внутреннего узла1×1 не пригоден как эталон
+  figma-closed:
+    kind: figma
+    uri: https://www.figma.com/design/lnOcWh4ElGkhppWe6Kn5AA?node-id=1183-1641
+    nodeId: 1183:1641
+    status: unverified-live
+    snapshot: Закрытый вариант локального семейства1183:1649; не новая проверка живого файла
+  figma-text:
+    kind: figma
+    uri: https://www.figma.com/design/lnOcWh4ElGkhppWe6Kn5AA?node-id=1183-1651
+    nodeId: 1183:1651
+    status: unverified-live
+    snapshot: Краткое определение исходного ID4; текст не становится общей константой B16
+  metric-css:
+    kind: document
+    uri: references/implementation/features/metrics/detail/MetricDetail.module.css
+    status: observed-snapshot
+    snapshot: info/button/img/tooltip/hover bridge; z-index5 локален, glyph13.3333 внутри слота16
+  metric-code:
+    kind: document
+    uri: references/implementation/features/metrics/detail/MetricDetail.tsx
+    status: observed-snapshot
+    snapshot: "DefinitionTooltip: hover/focus/Escape, dismissed guard, aria-describedby; key metric.id и
+      text metric.description задаёт родитель"
+  glyph:
+    kind: document
+    uri: assets/images/metrics/detail/info.svg
+    status: reference-only
+    snapshot: SVG13.3334×13.3334/viewBox, синий path0085FF; не вырезка скриншота
+  fonts:
+    kind: document
+    uri: specs/Ресурсы/Шрифты/README.md
+    status: reference-only
+    snapshot: CoFo Sans Regular, общий предоставленный ресурс
+  overflow-owner:
+    kind: document
+    uri: specs/Общие компоненты/Текстовые подсказки/Контракт.md
+    status: reference-only
+    snapshot: Отдельный владелец fullText только при фактическом clipping; browser-native title, не
+      оформление B16
+tokens:
+  ui-font:
+    type: font-family
+    sourceRef: fonts
+    locator: CoFo Sans
+base:
+  sourceRefs:
+    - decision
+    - approved-metric-detail
+    - fonts
+  parameters:
+    font-family:
+      type: token
+      ref: ui-font
+      expectedType: font-family
+variants:
+  metric-definition16:
+    description: Подсказка определения на info-иконке паспорта выбранной метрики/показателя
+    sourceRefs:
+      - decision
+      - approved-metric-detail
+      - figma-open
+      - figma-closed
+    parameters:
+      trigger-width:
+        type: dimension
+        value: 16
+        unit: px
+      trigger-height:
+        type: dimension
+        value: 16
+        unit: px
+      popup-width:
+        type: dimension
+        value: 340
+        unit: px
+      popup-padding:
+        type: dimension
+        value: 12
+        unit: px
+      popup-radius:
+        type: dimension
+        value: 8
+        unit: px
+      popup-background:
+        type: color
+        format: hex
+        value: "#141F33"
+      popup-foreground:
+        type: color
+        format: hex
+        value: "#FFFFFF"
+      popup-font-size:
+        type: dimension
+        value: 14
+        unit: px
+      popup-line-height:
+        type: dimension
+        value: 20
+        unit: px
+      popup-font-weight:
+        type: font-weight
+        value: 400
+      popup-top:
+        type: dimension
+        value: 24
+        unit: px
+      popup-left:
+        type: dimension
+        value: 0
+        unit: px
+      popup-height-mode:
+        type: string
+        value: content
+      trigger-display:
+        type: string
+        value: inline-flex
+        sourceRefs:
+          - metric-css
+      trigger-position:
+        type: string
+        value: relative
+        sourceRefs:
+          - metric-css
+      trigger-flex-grow:
+        type: number
+        value: 0
+        sourceRefs:
+          - metric-css
+      trigger-flex-shrink:
+        type: number
+        value: 0
+        sourceRefs:
+          - metric-css
+      trigger-flex-basis:
+        type: string
+        value: auto
+        sourceRefs:
+          - metric-css
+      button-display:
+        type: string
+        value: grid
+        sourceRefs:
+          - metric-css
+      button-place-items:
+        type: string
+        value: center
+        sourceRefs:
+          - metric-css
+      button-cursor:
+        type: string
+        value: help
+        sourceRefs:
+          - metric-css
+      button-border-width:
+        type: dimension
+        value: 0
+        unit: px
+        sourceRefs:
+          - metric-css
+      button-padding:
+        type: dimension
+        value: 0
+        unit: px
+        sourceRefs:
+          - metric-css
+      button-background:
+        type: string
+        value: none
+        sourceRefs:
+          - metric-css
+      glyph-render-width:
+        type: dimension
+        value: 13.3333
+        unit: px
+        sourceRefs:
+          - metric-css
+      glyph-render-height:
+        type: dimension
+        value: 13.3333
+        unit: px
+        sourceRefs:
+          - metric-css
+      popup-position:
+        type: string
+        value: absolute
+        sourceRefs:
+          - metric-css
+      popup-z-index:
+        type: integer
+        value: 5
+        sourceRefs:
+          - metric-css
+      bridge-position:
+        type: string
+        value: absolute
+        sourceRefs:
+          - metric-css
+      bridge-top:
+        type: dimension
+        value: 16
+        unit: px
+        sourceRefs:
+          - metric-css
+      bridge-left:
+        type: dimension
+        value: 0
+        unit: px
+        sourceRefs:
+          - metric-css
+      bridge-height:
+        type: dimension
+        value: 8
+        unit: px
+        sourceRefs:
+          - metric-css
+      bridge-width-mode:
+        type: string
+        value: popup-width
+        sourceRefs:
+          - metric-css
+    states:
+      closed:
+        sourceRefs:
+          - metric-code
+          - figma-closed
+        parameters:
+          popup-visible:
+            type: boolean
+            value: false
+      open:
+        sourceRefs:
+          - metric-code
+          - figma-open
+        parameters:
+          popup-visible:
+            type: boolean
+            value: true

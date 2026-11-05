@@ -1,0 +1,21 @@
+{
+  "capturedOn": "2026-11-04",
+  "role": "state-matched reference for folder-inline region only; adjacent graph/header not accepted by B18",
+  "assets": [
+    {
+      "path": "paper07.jpg",
+      "sourceUri": "https://app.paper.design/file/01M6J38DD9H9GFNEWH86Q7DD82/p-1-0/2GS-0",
+      "sourceArtboardDimensions": [
+        1440,
+        1542.8
+      ],
+      "pixelDimensions": [
+        1440,
+        1543
+      ],
+      "sha256": "70e74dc1932437ae73220cd3088e3c209c016992663486ef10b84931f5bc0368",
+      "copyByteIdentical": true,
+      "note": "Existing export copied unchanged; fractional source artboard height rounds to JPEG pixels. No crop, edit, new render or Paper mutation."
+    }
+  ]
+}

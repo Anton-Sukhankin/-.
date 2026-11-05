@@ -1,0 +1,213 @@
+{
+  "readOnly": true,
+  "fileKey": "lnOcWh4ElGkhppWe6Kn5AA",
+  "sessionId": "fde2b00e-fccc-4a81-aade-aa8c058686a3",
+  "observations": [
+    {
+      "id": "640:15431",
+      "name": "Вид отчётов · Таблица / Карточки",
+      "width": 102,
+      "height": 40,
+      "items": [
+        {
+          "id": "I640:15431;2697:14052",
+          "name": "Табличный вид",
+          "background": [
+            {
+              "hex": "#F3F4F9",
+              "opacity": 1
+            }
+          ]
+        },
+        {
+          "id": "I640:15431;2697:14053",
+          "name": "Карточный вид",
+          "background": [
+            {
+              "hex": "#FFFFFF",
+              "opacity": 1,
+              "variable": "VariableID:ac29b600058813f10f09ce9653e1cd2a671b3af6/22147:1479"
+            }
+          ]
+        }
+      ],
+      "glyphs": [
+        {
+          "id": "I640:15431;2697:14052;6363:33876;2525:1020",
+          "name": "Vector",
+          "fills": [
+            {
+              "hex": "#202028",
+              "variable": "VariableID:74b53bb053c97232ef26ea1625b6e886071af646/22147:2179"
+            }
+          ]
+        },
+        {
+          "id": "I640:15431;2697:14053;6363:33140;2525:1018",
+          "name": "Union",
+          "fills": [
+            {
+              "hex": "#007BFC",
+              "variable": "VariableID:c549cbef297b4644841ce2d6a03832cc13537257/22148:138"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "640:23952",
+      "name": "Вид отчётов · Таблица / Карточки",
+      "width": 102,
+      "height": 40,
+      "items": [
+        {
+          "id": "I640:23952;2697:14052",
+          "name": "Табличный вид",
+          "background": [
+            {
+              "hex": "#FFFFFF",
+              "opacity": 1,
+              "variable": "VariableID:ac29b600058813f10f09ce9653e1cd2a671b3af6/22147:1479"
+            }
+          ]
+        },
+        {
+          "id": "I640:23952;2697:14053",
+          "name": "Карточный вид",
+          "background": [
+            {
+              "hex": "#F3F4F9",
+              "opacity": 1
+            }
+          ]
+        }
+      ],
+      "glyphs": [
+        {
+          "id": "I640:23952;2697:14052;6363:33140;2525:1020",
+          "name": "Vector",
+          "fills": [
+            {
+              "hex": "#007BFC",
+              "variable": "VariableID:c549cbef297b4644841ce2d6a03832cc13537257/22148:138"
+            }
+          ]
+        },
+        {
+          "id": "I640:23952;2697:14053;6363:33876;2525:1018",
+          "name": "Union",
+          "fills": [
+            {
+              "hex": "#202028",
+              "variable": "VariableID:74b53bb053c97232ef26ea1625b6e886071af646/22147:2179"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "1038:22312",
+      "name": "Вид подписок · Таблица / Карточки",
+      "width": 102,
+      "height": 40,
+      "items": [
+        {
+          "id": "I1038:22312;2697:14052",
+          "name": "Табличный вид",
+          "background": [
+            {
+              "hex": "#F3F4F9",
+              "opacity": 1
+            }
+          ]
+        },
+        {
+          "id": "I1038:22312;2697:14053",
+          "name": "Карточный вид",
+          "background": [
+            {
+              "hex": "#FFFFFF",
+              "opacity": 1,
+              "variable": "VariableID:ac29b600058813f10f09ce9653e1cd2a671b3af6/22147:1479"
+            }
+          ]
+        }
+      ],
+      "glyphs": [
+        {
+          "id": "I1038:22312;2697:14052;6363:33876;2525:1020",
+          "name": "Vector",
+          "fills": [
+            {
+              "hex": "#007BFC",
+              "variable": "VariableID:c549cbef297b4644841ce2d6a03832cc13537257/22148:138"
+            }
+          ]
+        },
+        {
+          "id": "I1038:22312;2697:14053;6363:33140;2525:1018",
+          "name": "Union",
+          "fills": [
+            {
+              "hex": "#202028",
+              "variable": "VariableID:74b53bb053c97232ef26ea1625b6e886071af646/22147:2179"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "778:17746",
+      "name": "Вид вклада · Таблица / Карточки",
+      "width": 102,
+      "height": 40,
+      "items": [
+        {
+          "id": "I778:17746;2697:14052",
+          "name": "Табличный вид",
+          "background": [
+            {
+              "hex": "#F3F4F9",
+              "opacity": 1
+            }
+          ]
+        },
+        {
+          "id": "I778:17746;2697:14053",
+          "name": "Карточный вид",
+          "background": [
+            {
+              "hex": "#FFFFFF",
+              "opacity": 1,
+              "variable": "VariableID:ac29b600058813f10f09ce9653e1cd2a671b3af6/22147:1479"
+            }
+          ]
+        }
+      ],
+      "glyphs": [
+        {
+          "id": "I778:17746;2697:14052;6363:33876;2525:1020",
+          "name": "Vector",
+          "fills": [
+            {
+              "hex": "#202028",
+              "variable": "VariableID:74b53bb053c97232ef26ea1625b6e886071af646/22147:2179"
+            }
+          ]
+        },
+        {
+          "id": "I778:17746;2697:14053;6363:33140;2525:1018",
+          "name": "Union",
+          "fills": [
+            {
+              "hex": "#007BFC",
+              "variable": "VariableID:c549cbef297b4644841ce2d6a03832cc13537257/22148:138"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "conflict": "1038:22312: Cards background is white but List glyph is blue and Cards glyph dark.",
+  "coordinatorDecision": "Controlled value and selected white background determine active state. Use the same exact blue/dark source SVGs consistently, supported by 640:15431,778:17746,640:23952. Preserve dimensions/positions of 1038:22312; do not adopt its contradictory glyph override as a state rule. Source/Figma stays unchanged."
+}

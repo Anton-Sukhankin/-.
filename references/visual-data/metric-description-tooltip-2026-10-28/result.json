@@ -1,0 +1,142 @@
+{
+  "status": "implemented_visual_and_structural_verified",
+  "set": "1183:1649",
+  "closed": "1183:1641",
+  "open": "1183:1645",
+  "info": "1183:1656",
+  "zone": "1183:1655",
+  "text": "Продажи на конечного клиента по предметам договоров с учетом расторжений",
+  "createdNodeIds": [
+    "1183:1649",
+    "1183:1641",
+    "1183:1642",
+    "1183:1643",
+    "1183:1644",
+    "1183:1645",
+    "1183:1646",
+    "1183:1647",
+    "1183:1648",
+    "1183:1650",
+    "1183:1651",
+    "1183:1655",
+    "1183:1660",
+    "1183:1656",
+    "I1183:1656;1183:1642",
+    "I1183:1656;1183:1643",
+    "I1183:1656;1183:1644"
+  ],
+  "mutatedNodeIds": [
+    "1172:28516",
+    "1172:28522",
+    "1172:28523"
+  ],
+  "headerMaster": "1172:28516",
+  "nativeScreen": "1147:30852",
+  "openPreview": "1183:2652",
+  "longTitlePreview": "1184:32416",
+  "checks": [
+    {
+      "id": "1147:30852",
+      "w": 1440,
+      "h": 4198,
+      "headerHeight": 84,
+      "topPadding": 16,
+      "crumbToTitle": 12,
+      "titleHeight": 32,
+      "titleToAttributes": 0,
+      "headerToContent": 20,
+      "titleWidth": 140,
+      "iconGap": 8,
+      "icon": [
+        16,
+        16
+      ]
+    },
+    {
+      "id": "1152:453",
+      "w": 1366,
+      "h": 768,
+      "headerHeight": 84,
+      "topPadding": 16,
+      "crumbToTitle": 12,
+      "titleHeight": 32,
+      "titleToAttributes": 0,
+      "headerToContent": 20,
+      "titleWidth": 140,
+      "iconGap": 8,
+      "icon": [
+        16,
+        16
+      ]
+    },
+    {
+      "id": "1152:789",
+      "w": 1280,
+      "h": 720,
+      "headerHeight": 84,
+      "topPadding": 16,
+      "crumbToTitle": 12,
+      "titleHeight": 32,
+      "titleToAttributes": 0,
+      "headerToContent": 20,
+      "titleWidth": 140,
+      "iconGap": 8,
+      "icon": [
+        16,
+        16
+      ]
+    }
+  ],
+  "spacing": {
+    "beforeTooltip": {
+      "crumbToTitle": 12,
+      "titleToAttributes": 0,
+      "headerToContent": 20
+    },
+    "regression": "Empty auto-layout spacer had default height 100 and enlarged title row.",
+    "fix": "Spacer resized to 1px high, horizontal FILL retained; title row HUG, final height 32.",
+    "after": {
+      "top": 16,
+      "crumbToTitle": 12,
+      "titleToAttributes": 0,
+      "headerToContent": 20,
+      "headerHeight": 84
+    }
+  },
+  "longTitle": {
+    "width": 740,
+    "height": 56,
+    "wrap": true,
+    "iconGap": 8
+  },
+  "triggers": {
+    "open": "MOUSE_ENTER → CHANGE_TO Open",
+    "close": "MOUSE_LEAVE → CHANGE_TO Default",
+    "escape": "ON_KEY_DOWN key 27 → Default"
+  },
+  "verified": {
+    "visualClosed": true,
+    "visualOpen": true,
+    "icon16": true,
+    "gap8": true,
+    "descriptionExact": true,
+    "prototypeReactionsStored": true
+  },
+  "limitations": [
+    "Mouse interaction was not exercised in presentation mode; configured reactions are not an end-to-end hover test.",
+    "Keyboard focus acquisition and persistence when moving pointer onto tooltip text are not verified. React implementation must support focus, hover persistence and Escape.",
+    "Open tooltip intentionally overlays underlying content without affecting layout."
+  ],
+  "preservation": {
+    "onlyLocalMetricHeaderAndMetricInstanceZOrderChanged": true,
+    "reportMastersUnchanged": true,
+    "sourceScreenshotsUnchanged": true,
+    "magicpathUnchanged": true,
+    "fullDefinitionUnchanged": true
+  },
+  "files": [
+    "closed.png",
+    "open.png"
+  ],
+  "prototypeUrl": "https://www.figma.com/proto/lnOcWh4ElGkhppWe6Kn5AA/Untitled?node-id=1152-789&starting-point-node-id=1152%3A789"
+}

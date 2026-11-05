@@ -1,0 +1,15 @@
+.header {
+  display: grid;
+  grid-template-columns: 112px 167px minmax(0, 1fr) 242px 40px;
+  align-items: center;
+  width: 100%;
+  height: 48px;
+  padding: 0 16px;
+  background: #007bfb;
+  color: #fff;
+}
+.brand { grid-column: 1; display: flex; align-items: center; gap: 8px; height: 32px; font-size: 14px; font-weight: 500; line-height: 20px; white-space: nowrap; }
+.brand img { flex: 0 0 20px; }
+.searchSlot { grid-column: 3; min-width: 0; height: 32px; }
+.profile { grid-column: 5; display: grid; place-items: center; width: 40px; height: 40px; }
+.profile img { width: 32px; height: 32px; object-fit: cover; border-radius: 50%; }
