@@ -19,6 +19,11 @@
       "sha256": "70ccae427f18665fdb6929a9700e9054f996ac13941944e33a8b4588a70c49a9"
     },
     {
+      "path": "README.md",
+      "bytes": 3299,
+      "sha256": "b7352145ffb17e7a8b5d8239f4b7eee4e9265626ef6437d79382daee6042f7fd"
+    },
+    {
       "path": "assets/fonts/CoFoSans-Medium.otf",
       "bytes": 100884,
       "sha256": "115f86a5fdb85d003a0425ac197035cd68aa28b8a68c718aab93dea226590586",
@@ -699,10 +704,17 @@
     },
     {
       "path": "context/product/Правила/Реализация интерфейсов.md",
-      "bytes": 39838,
-      "sha256": "353172430e4f8a660899c5b9f857b53adb6c045d5ff36cb97438db5115ae4203",
+      "bytes": 40157,
+      "sha256": "7434cfe12a8bb8799e96113ddd9832f81e9ea3d8bb3de03434b60c1514b0cf17",
       "source": "Документация ／ Documentation/Правила/Реализация интерфейсов.md",
-      "source_sha256": "04bc34341f502e6951196a9b92c3616c3405cd693243c2e40999229df4c55833"
+      "source_sha256": "3574c084e48cc324f7fc9a8eef73db7a5c63a8b51178192c34865c335421b706"
+    },
+    {
+      "path": "context/product/Состав карточек.md",
+      "bytes": 55654,
+      "sha256": "9612f73dc7b030fe52fbc9ae026dd285b1c929538dc253d4bf473d6d2b99518f",
+      "source": "Документация ／ Documentation/Состав карточек.md",
+      "source_sha256": "2c681b511d56750949718b8ff4dd016b32b2e121d2a51764d14655da5e91b997"
     },
     {
       "path": "context/product/Состав карточек/Главная и дополнительные поверхности.md",
@@ -724,13 +736,6 @@
       "sha256": "f339b11ffdfc785cedd6fb2f93346428131639e50ff528229e7812317492138b",
       "source": "Документация ／ Documentation/Состав карточек/Примеры и сверка.md",
       "source_sha256": "5c4b1eb212df900424047fc9d266a7af7ec44ed5f186907954eaafbc23bd037c"
-    },
-    {
-      "path": "context/product/Состав карточек.md",
-      "bytes": 55654,
-      "sha256": "9612f73dc7b030fe52fbc9ae026dd285b1c929538dc253d4bf473d6d2b99518f",
-      "source": "Документация ／ Documentation/Состав карточек.md",
-      "source_sha256": "2c681b511d56750949718b8ff4dd016b32b2e121d2a51764d14655da5e91b997"
     },
     {
       "path": "context/target/Демонстрационные данные отчётов.md",
@@ -768,6 +773,13 @@
       "source_sha256": "604448b71ef51d2396246f4bd327bd725bb6bfbe671f8b90e9f1d77f4094e435"
     },
     {
+      "path": "context/target/Пользовательские пути/Фильтрация отчётов.md",
+      "bytes": 6277,
+      "sha256": "fb88c56b03bae4072c043e9e1feebc14a538399cdb47195e800c42e0a3243255",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Пользовательские пути/Фильтрация отчётов.md",
+      "source_sha256": "6a823fc1bc60b2d1aee25be9dc6e5fc6754e9b35877bd264a2a8978bc9c9be2e"
+    },
+    {
       "path": "context/target/Пользовательские пути/Фильтрация отчётов/Колонка.md",
       "bytes": 16329,
       "sha256": "aaef0251f9a22b1ab1ee460875cf1f382a9d6e4e977762fafe950a2bfb02fce6",
@@ -782,11 +794,11 @@
       "source_sha256": "30819c09686d4ae09e18f59c589ce29b9b5978a008502431aa9f9042cafc39f9"
     },
     {
-      "path": "context/target/Пользовательские пути/Фильтрация отчётов.md",
-      "bytes": 6277,
-      "sha256": "fb88c56b03bae4072c043e9e1feebc14a538399cdb47195e800c42e0a3243255",
-      "source": "Документация ／ Documentation/Целевое решение ／ Target/Пользовательские пути/Фильтрация отчётов.md",
-      "source_sha256": "6a823fc1bc60b2d1aee25be9dc6e5fc6754e9b35877bd264a2a8978bc9c9be2e"
+      "path": "context/target/Требования и границы.md",
+      "bytes": 33268,
+      "sha256": "9ee85f991ed7a83fd58c63250910028080fec92979a1712667fb702f33b80ebf",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Требования и границы.md",
+      "source_sha256": "cdd2e5c0d5ddd64046379f7d56fe9686f13b925a5808aee4fb7fca8e05c9c6f0"
     },
     {
       "path": "context/target/Требования/Главная.md",
@@ -801,18 +813,6 @@
       "sha256": "e216e8e5fff7c4e0cf09641c5f86a830c86c2c7b862987ed69d318154b54b263",
       "source": "Документация ／ Documentation/Целевое решение ／ Target/Требования/Карточки.md",
       "source_sha256": "15714e654a1ec140708be19020131a1c9dd270c21588d2d09da699fb310eaf37"
-    },
-    {
-      "path": "context/target/Требования и границы.md",
-      "bytes": 33268,
-      "sha256": "9ee85f991ed7a83fd58c63250910028080fec92979a1712667fb702f33b80ebf",
-      "source": "Документация ／ Documentation/Целевое решение ／ Target/Требования и границы.md",
-      "source_sha256": "cdd2e5c0d5ddd64046379f7d56fe9686f13b925a5808aee4fb7fca8e05c9c6f0"
-    },
-    {
-      "path": "README.md",
-      "bytes": 3205,
-      "sha256": "ffc9dfb495d5ad3535120c98f4780b00b7458611e1325a078af279df750768d9"
     },
     {
       "path": "references/design-system/docs/design-system/acceptance.md",
@@ -1305,13 +1305,6 @@
       "source_sha256": "d8561bedbc3b5fbbf8b04078a427ecb325a67db851719837d1e530d1b31a58a8"
     },
     {
-      "path": "references/implementation/features/contributors/contentFixture.ts",
-      "bytes": 724,
-      "sha256": "70fd5539cf7952181febda97b66ddfde04f0291577663b0dc884d7b4f2e98e90",
-      "source": "prototype/src/features/contributors/contentFixture.ts",
-      "source_sha256": "70fd5539cf7952181febda97b66ddfde04f0291577663b0dc884d7b4f2e98e90"
-    },
-    {
       "path": "references/implementation/features/contributors/ContributionContent.module.css",
       "bytes": 2946,
       "sha256": "4bdf876d91197dbc3071d557787550cf26491eb90a05c133bebfb9ebb013eecb",
@@ -1331,6 +1324,13 @@
       "sha256": "0e5392a94187899f5346e36c83dbdba318c67a8b6396400049373c149e06c5e8",
       "source": "prototype/src/features/contributors/ContributorCard.module.css",
       "source_sha256": "0e5392a94187899f5346e36c83dbdba318c67a8b6396400049373c149e06c5e8"
+    },
+    {
+      "path": "references/implementation/features/contributors/contentFixture.ts",
+      "bytes": 724,
+      "sha256": "70fd5539cf7952181febda97b66ddfde04f0291577663b0dc884d7b4f2e98e90",
+      "source": "prototype/src/features/contributors/contentFixture.ts",
+      "source_sha256": "70fd5539cf7952181febda97b66ddfde04f0291577663b0dc884d7b4f2e98e90"
     },
     {
       "path": "references/implementation/features/metrics/catalog/MetricsCatalog.module.css",
@@ -1361,13 +1361,6 @@
       "source_sha256": "1bfd8862c8feb63053ec808c36762cd81ad8add9041cecfce0a84b7394cc166c"
     },
     {
-      "path": "references/implementation/features/news/articles.ts",
-      "bytes": 27323,
-      "sha256": "b08902a007f398f386f1ff2b4aed9665cac1c62ba86c3f23b6a4f54b567c62a0",
-      "source": "prototype/src/features/news/articles.ts",
-      "source_sha256": "b08902a007f398f386f1ff2b4aed9665cac1c62ba86c3f23b6a4f54b567c62a0"
-    },
-    {
       "path": "references/implementation/features/news/News.module.css",
       "bytes": 2808,
       "sha256": "6ce9865f2907f050958ebb85d83f4e595d1aa635fe6015dd61da4f98c1ca8997",
@@ -1396,11 +1389,25 @@
       "source_sha256": "a88478254a34fe7e8afe7b343fee435e4fa8899b7854e2d6ae58105f8784c1a9"
     },
     {
+      "path": "references/implementation/features/news/articles.ts",
+      "bytes": 27323,
+      "sha256": "b08902a007f398f386f1ff2b4aed9665cac1c62ba86c3f23b6a4f54b567c62a0",
+      "source": "prototype/src/features/news/articles.ts",
+      "source_sha256": "b08902a007f398f386f1ff2b4aed9665cac1c62ba86c3f23b6a4f54b567c62a0"
+    },
+    {
       "path": "references/implementation/features/report-detail/Detail.module.css",
       "bytes": 7062,
       "sha256": "001cc82a460b719d4a6e733ffed3c4349f15087de95a60007b56761d4fcfc79e",
       "source": "prototype/src/features/report-detail/Detail.module.css",
       "source_sha256": "001cc82a460b719d4a6e733ffed3c4349f15087de95a60007b56761d4fcfc79e"
+    },
+    {
+      "path": "references/implementation/features/report-detail/ReportDetail.tsx",
+      "bytes": 7564,
+      "sha256": "6d103f2f735310df910f19709c6f7c79f965472c7283eb901cd9f58d34b9558d",
+      "source": "prototype/src/features/report-detail/ReportDetail.tsx",
+      "source_sha256": "6d103f2f735310df910f19709c6f7c79f965472c7283eb901cd9f58d34b9558d"
     },
     {
       "path": "references/implementation/features/report-detail/mailings/MailingsTab.module.css",
@@ -1438,13 +1445,6 @@
       "source_sha256": "0f8de3f75e5ee752a23ba1f0098c547db8385398f34dd459b3f7f404c22ec006"
     },
     {
-      "path": "references/implementation/features/report-detail/ReportDetail.tsx",
-      "bytes": 7564,
-      "sha256": "6d103f2f735310df910f19709c6f7c79f965472c7283eb901cd9f58d34b9558d",
-      "source": "prototype/src/features/report-detail/ReportDetail.tsx",
-      "source_sha256": "6d103f2f735310df910f19709c6f7c79f965472c7283eb901cd9f58d34b9558d"
-    },
-    {
       "path": "references/implementation/features/report-detail/source.ts",
       "bytes": 862,
       "sha256": "4d0a15ae40bf44ae66e42c8bc039533319a2257dddd7c0ddf4202479974a8ce9",
@@ -1473,20 +1473,6 @@
       "source_sha256": "364f89fe1ddab6609563b99b3c565415808bd7837277a30d9658a238ff3b01e8"
     },
     {
-      "path": "references/implementation/features/sources/detail/SourceDetail.module.css",
-      "bytes": 6010,
-      "sha256": "b64e5ac7d127f5e0fe2114977d26b70995a08c71fcd2ad443faa20b5e0b27756",
-      "source": "prototype/src/features/sources/detail/SourceDetail.module.css",
-      "source_sha256": "b64e5ac7d127f5e0fe2114977d26b70995a08c71fcd2ad443faa20b5e0b27756"
-    },
-    {
-      "path": "references/implementation/features/sources/detail/SourceDetail.tsx",
-      "bytes": 9803,
-      "sha256": "020b371fe9eb885475a03662a5a814bf76f08448007c14c3c09191977a423d4f",
-      "source": "prototype/src/features/sources/detail/SourceDetail.tsx",
-      "source_sha256": "020b371fe9eb885475a03662a5a814bf76f08448007c14c3c09191977a423d4f"
-    },
-    {
       "path": "references/implementation/features/sources/SourceCatalog.tsx",
       "bytes": 6109,
       "sha256": "7b7ff18799d9532c60a7aba7c6ca51ff98b9b33eb97f232bf46cfd5dd211499a",
@@ -1501,11 +1487,18 @@
       "source_sha256": "bbed961655612811d6c9c49202193932d98c9011691b4263a0c07a10771dbe79"
     },
     {
-      "path": "references/implementation/features/subscriptions/contentFixture.ts",
-      "bytes": 5095,
-      "sha256": "a482ad9e72095a819dbe6d48abdf9474375d925b9ba28ca2ec87dfef525ce170",
-      "source": "prototype/src/features/subscriptions/contentFixture.ts",
-      "source_sha256": "a482ad9e72095a819dbe6d48abdf9474375d925b9ba28ca2ec87dfef525ce170"
+      "path": "references/implementation/features/sources/detail/SourceDetail.module.css",
+      "bytes": 6010,
+      "sha256": "b64e5ac7d127f5e0fe2114977d26b70995a08c71fcd2ad443faa20b5e0b27756",
+      "source": "prototype/src/features/sources/detail/SourceDetail.module.css",
+      "source_sha256": "b64e5ac7d127f5e0fe2114977d26b70995a08c71fcd2ad443faa20b5e0b27756"
+    },
+    {
+      "path": "references/implementation/features/sources/detail/SourceDetail.tsx",
+      "bytes": 9803,
+      "sha256": "020b371fe9eb885475a03662a5a814bf76f08448007c14c3c09191977a423d4f",
+      "source": "prototype/src/features/sources/detail/SourceDetail.tsx",
+      "source_sha256": "020b371fe9eb885475a03662a5a814bf76f08448007c14c3c09191977a423d4f"
     },
     {
       "path": "references/implementation/features/subscriptions/SubscriptionCard.module.css",
@@ -1534,6 +1527,13 @@
       "sha256": "b2a1dc622605bfb1b2d727450c0ab0beb0e7d093e07e1ea96f70a7258eba19ba",
       "source": "prototype/src/features/subscriptions/SubscriptionsContent.tsx",
       "source_sha256": "b2a1dc622605bfb1b2d727450c0ab0beb0e7d093e07e1ea96f70a7258eba19ba"
+    },
+    {
+      "path": "references/implementation/features/subscriptions/contentFixture.ts",
+      "bytes": 5095,
+      "sha256": "a482ad9e72095a819dbe6d48abdf9474375d925b9ba28ca2ec87dfef525ce170",
+      "source": "prototype/src/features/subscriptions/contentFixture.ts",
+      "source_sha256": "a482ad9e72095a819dbe6d48abdf9474375d925b9ba28ca2ec87dfef525ce170"
     },
     {
       "path": "references/implementation/styles/base.css",
@@ -1571,6 +1571,13 @@
       "source_sha256": "f7413f3c90f8d7d53983cc75533109f0de1a649f1f113dfa731517d32a8af804"
     },
     {
+      "path": "references/visual-data/metrics/assets-manifest.json",
+      "bytes": 1443,
+      "sha256": "486cd2c6337b8b92c00960976c44a447951b20ed58c9b24c0618dff4ad9e00e3",
+      "source": "prototype/plans/metrics/assets-manifest.json",
+      "source_sha256": "f69b203d654de73ff27b0c1a8f718825fac1a82f5374f430c0e08f39778f3d2d"
+    },
+    {
       "path": "references/visual-data/metrics/assets/cards.png",
       "bytes": 114747,
       "sha256": "55f2f1ec5eabd8544f14cf4e41a303711389f668dc64f4f80b7008d877aa12a8",
@@ -1604,13 +1611,6 @@
       "sha256": "63a0a42acda4d0bc2fcad9c5aea84a44274cbcfb7a4caf1fb833fc4767327b46",
       "source": "prototype/plans/metrics/assets/table.png",
       "source_sha256": "63a0a42acda4d0bc2fcad9c5aea84a44274cbcfb7a4caf1fb833fc4767327b46"
-    },
-    {
-      "path": "references/visual-data/metrics/assets-manifest.json",
-      "bytes": 1443,
-      "sha256": "486cd2c6337b8b92c00960976c44a447951b20ed58c9b24c0618dff4ad9e00e3",
-      "source": "prototype/plans/metrics/assets-manifest.json",
-      "source_sha256": "f69b203d654de73ff27b0c1a8f718825fac1a82f5374f430c0e08f39778f3d2d"
     },
     {
       "path": "references/visual-data/metrics/evidence/figma-inventory.json",
@@ -1649,8 +1649,8 @@
     },
     {
       "path": "specs/Общие компоненты/Базовые элементы/Аватар/Контракт.md",
-      "bytes": 14350,
-      "sha256": "66dd032c0e8f863598852918426cf905bca665d506f184bc784422820c88d40d",
+      "bytes": 14368,
+      "sha256": "7acb592c1e0a6baf31d8344ca3a586281d0e45b079445c322fec5f4926f4e375",
       "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Базовые элементы/Аватар/Контракт.md",
       "source_sha256": "3e1f8b1a42c6484efd91e100746c804860877b4e2812e67b214e0cdfb4335a51"
     },
@@ -1789,8 +1789,8 @@
     },
     {
       "path": "specs/Общие компоненты/Базовые элементы/Пустое состояние/assets/manifest.json",
-      "bytes": 721,
-      "sha256": "d45a55a08e3c284b4d7b101b1c03ed276c052c889c8a56cebd4489a9126ebcb8",
+      "bytes": 762,
+      "sha256": "a06559e66678def0254ef85b35bcb620f240085ad86333d583fac0a22ff466be",
       "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Базовые элементы/Пустое состояние/assets/manifest.json",
       "source_sha256": "d45a55a08e3c284b4d7b101b1c03ed276c052c889c8a56cebd4489a9126ebcb8"
     },
@@ -1803,8 +1803,8 @@
     },
     {
       "path": "specs/Общие компоненты/Базовые элементы/Пустое состояние/Контракт.md",
-      "bytes": 17585,
-      "sha256": "c1d4958b077239e73f9350969c089c43c5dbcfc4acb1718445d41cdc4139bfcb",
+      "bytes": 17438,
+      "sha256": "2a6bc4b818ef7c53e650468d282aeb829d7d52c30144d90218c97f068cf75f2a",
       "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Базовые элементы/Пустое состояние/Контракт.md",
       "source_sha256": "1ae671cd3016bc9e4cf8facf41633944e4b3b4b41b9ada36192c753a88209324"
     },
@@ -1901,8 +1901,8 @@
     },
     {
       "path": "specs/Общие компоненты/Базовые элементы/Хлебные крошки/Контракт.md",
-      "bytes": 14146,
-      "sha256": "42ae8fbfe8b3494be9a81bda545887f00850256982e808db320850ea9800e61c",
+      "bytes": 14147,
+      "sha256": "0485732b79a929c3852e246d5ea0739e632d589f315b95bbb084014c16ec6c9e",
       "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Базовые элементы/Хлебные крошки/Контракт.md",
       "source_sha256": "65cdf08c80aa42e1e1d217cb7e8193ed9ff06be84b92a4e2ff35ba2c78938447"
     },
@@ -1926,6 +1926,13 @@
       "sha256": "579773decc62d8a5610335f1ad5d575029c47031b8a6fecfa1bc49917ab633bb",
       "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Базовые элементы/Чипс/Параметры.yaml",
       "source_sha256": "3984b42a05d6d07a9a27b6a35b7e68c4ee3cdb443883fb48e77828f16d5ffdb5"
+    },
+    {
+      "path": "specs/Общие компоненты/Боковая навигация/assets-manifest.json",
+      "bytes": 8864,
+      "sha256": "07b6f16cc9ad7ef53579f06f464d1ead06e0cb09593579fd37a9de4fefcc143d",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Боковая навигация/assets-manifest.json",
+      "source_sha256": "1763e279668ed01bc0002670c957188834e2b80911908c88f123a6f9bc28b296"
     },
     {
       "path": "specs/Общие компоненты/Боковая навигация/assets/collapsed-boundary-hover.png",
@@ -2040,13 +2047,6 @@
       "source_sha256": "5fbbf541c297c38a6c02df0acf6231817f67073ff90666d60901271a1b497402"
     },
     {
-      "path": "specs/Общие компоненты/Боковая навигация/assets-manifest.json",
-      "bytes": 8864,
-      "sha256": "07b6f16cc9ad7ef53579f06f464d1ead06e0cb09593579fd37a9de4fefcc143d",
-      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Боковая навигация/assets-manifest.json",
-      "source_sha256": "1763e279668ed01bc0002670c957188834e2b80911908c88f123a6f9bc28b296"
-    },
-    {
       "path": "specs/Общие компоненты/Боковая навигация/Источники.md",
       "bytes": 13566,
       "sha256": "d5945ca5829cf66807bb9b6ed287392450b1947a74f4bff3b9dc79b4ce31179e",
@@ -2059,6 +2059,13 @@
       "sha256": "9add11e7281fd23e12211d9edd9debf3f6dd559809ee5811c0c78e16b54836a5",
       "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Боковая навигация/Контракт.md",
       "source_sha256": "58b9084d9b0432e1e09469bfa71ad0d6621c831a5c067c2ead2f80d6255b04bc"
+    },
+    {
+      "path": "specs/Общие компоненты/Карточка подписки/assets-manifest.json",
+      "bytes": 2441,
+      "sha256": "a71cf381d8112a4b7e6d2bbb5e6c960f23b4b042262412cb095a988f47429553",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Карточка подписки/assets-manifest.json",
+      "source_sha256": "a71cf381d8112a4b7e6d2bbb5e6c960f23b4b042262412cb095a988f47429553"
     },
     {
       "path": "specs/Общие компоненты/Карточка подписки/assets/subscription-consumer.png",
@@ -2082,25 +2089,11 @@
       "source_sha256": "8e9ff8efd151e3e152b0c910efcbf6015e3dff99f6aa8dbc0d0c17f30a99d5c5"
     },
     {
-      "path": "specs/Общие компоненты/Карточка подписки/assets-manifest.json",
-      "bytes": 2441,
-      "sha256": "a71cf381d8112a4b7e6d2bbb5e6c960f23b4b042262412cb095a988f47429553",
-      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Карточка подписки/assets-manifest.json",
-      "source_sha256": "a71cf381d8112a4b7e6d2bbb5e6c960f23b4b042262412cb095a988f47429553"
-    },
-    {
       "path": "specs/Общие компоненты/Карточка подписки/Контракт.md",
       "bytes": 21604,
       "sha256": "0aeef8a3e55ba0bb148891e986bc9f1d26458e413756cb30b931a460d0dd20e6",
       "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Карточка подписки/Контракт.md",
       "source_sha256": "586b46c5b5874b4b2686ee313f33c31857b8e92c42f6b05a3d7e1ec811d1e96f"
-    },
-    {
-      "path": "specs/Общие компоненты/Карточка участника/assets/contribution-consumer.png",
-      "bytes": 16596,
-      "sha256": "f71bdf8083fd7b9bc342ca34a74db8415730a565b00ba8bd2038606480a017d1",
-      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Карточка участника/assets/contribution-consumer.png",
-      "source_sha256": "f71bdf8083fd7b9bc342ca34a74db8415730a565b00ba8bd2038606480a017d1"
     },
     {
       "path": "specs/Общие компоненты/Карточка участника/assets-manifest.json",
@@ -2110,11 +2103,25 @@
       "source_sha256": "6191924f129848bf9da36b8795f33c3475d3fb01b993721b3de04566cc45cbee"
     },
     {
+      "path": "specs/Общие компоненты/Карточка участника/assets/contribution-consumer.png",
+      "bytes": 16596,
+      "sha256": "f71bdf8083fd7b9bc342ca34a74db8415730a565b00ba8bd2038606480a017d1",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Карточка участника/assets/contribution-consumer.png",
+      "source_sha256": "f71bdf8083fd7b9bc342ca34a74db8415730a565b00ba8bd2038606480a017d1"
+    },
+    {
       "path": "specs/Общие компоненты/Карточка участника/Контракт.md",
       "bytes": 12042,
       "sha256": "fbadaf895a1270f45b4f7deee6a8ccc556bc3863f2d42dead2b7495f499fb736",
       "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Карточка участника/Контракт.md",
       "source_sha256": "31c46d59d129afa703e4cc99418536c769c879b71014a51d0e26965873ab2b46"
+    },
+    {
+      "path": "specs/Общие компоненты/Карточки отчётов/assets-manifest.json",
+      "bytes": 4650,
+      "sha256": "72ef16d745c9b73797f0dba5cbf399633f322cc8bc2860897f473f84530a1af6",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Карточки отчётов/assets-manifest.json",
+      "source_sha256": "72ef16d745c9b73797f0dba5cbf399633f322cc8bc2860897f473f84530a1af6"
     },
     {
       "path": "specs/Общие компоненты/Карточки отчётов/assets/compact-catalog.png",
@@ -2171,13 +2178,6 @@
       "sha256": "e617ee09b658b17c412e634a5639bd3f53c03c23cb97702df718373e619396bb",
       "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Карточки отчётов/assets/verified-badge.svg",
       "source_sha256": "e617ee09b658b17c412e634a5639bd3f53c03c23cb97702df718373e619396bb"
-    },
-    {
-      "path": "specs/Общие компоненты/Карточки отчётов/assets-manifest.json",
-      "bytes": 4650,
-      "sha256": "72ef16d745c9b73797f0dba5cbf399633f322cc8bc2860897f473f84530a1af6",
-      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Карточки отчётов/assets-manifest.json",
-      "source_sha256": "72ef16d745c9b73797f0dba5cbf399633f322cc8bc2860897f473f84530a1af6"
     },
     {
       "path": "specs/Общие компоненты/Карточки отчётов/Контракт.md",
@@ -2922,6 +2922,13 @@
       "source_sha256": "5f7e9f710bb3cbae01f93db42cd0e75439b087b57fdbcd0da0462ea490cd00fb"
     },
     {
+      "path": "specs/Общие компоненты/Хедер/assets-manifest.json",
+      "bytes": 2509,
+      "sha256": "1611380289e9786a79c986258bc4a8ba07645bde2cd42f76ff8d572d1e4e1f44",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Хедер/assets-manifest.json",
+      "source_sha256": "1611380289e9786a79c986258bc4a8ba07645bde2cd42f76ff8d572d1e4e1f44"
+    },
+    {
       "path": "specs/Общие компоненты/Хедер/assets/brand-mark.svg",
       "bytes": 1413,
       "sha256": "f030bb8c2502fedcd992c2803cef62d5e994df3af46654a850ff6ed1edacc898",
@@ -2950,18 +2957,18 @@
       "source_sha256": "b11070e4c29fd6cfbb3875c6908cd99e62f1b3aeac69c54b7a6bceb032f8bec4"
     },
     {
-      "path": "specs/Общие компоненты/Хедер/assets-manifest.json",
-      "bytes": 2509,
-      "sha256": "1611380289e9786a79c986258bc4a8ba07645bde2cd42f76ff8d572d1e4e1f44",
-      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Хедер/assets-manifest.json",
-      "source_sha256": "1611380289e9786a79c986258bc4a8ba07645bde2cd42f76ff8d572d1e4e1f44"
-    },
-    {
       "path": "specs/Общие компоненты/Хедер/Контракт.md",
       "bytes": 19012,
       "sha256": "74385e2a7211c028b2ee596863fa1351f5006e13e2e3c27f4e240174e106ccb2",
       "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Общие компоненты/Хедер/Контракт.md",
       "source_sha256": "3f6c29c6a743389507367e9fee0d0e2ff49530a9163fd6e9a2d5427c2f222cc9"
+    },
+    {
+      "path": "specs/Разделы/Главная/assets-manifest.json",
+      "bytes": 41021,
+      "sha256": "78f579d6a8af95a18ba2ab8c914385488fe5b36b5da9c553a8813d97dd04a171",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Разделы/Главная/assets-manifest.json",
+      "source_sha256": "78f579d6a8af95a18ba2ab8c914385488fe5b36b5da9c553a8813d97dd04a171"
     },
     {
       "path": "specs/Разделы/Главная/assets/back-0.svg",
@@ -3370,13 +3377,6 @@
       "source_sha256": "b3e844e397dd4b7e4598abbdb3cb9c5ec0c64d29acac581391ee2da9eab7d5f6"
     },
     {
-      "path": "specs/Разделы/Главная/assets-manifest.json",
-      "bytes": 41021,
-      "sha256": "78f579d6a8af95a18ba2ab8c914385488fe5b36b5da9c553a8813d97dd04a171",
-      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Разделы/Главная/assets-manifest.json",
-      "source_sha256": "78f579d6a8af95a18ba2ab8c914385488fe5b36b5da9c553a8813d97dd04a171"
-    },
-    {
       "path": "specs/Разделы/Главная/Виды.md",
       "bytes": 33824,
       "sha256": "3a62dbcb2aff25e782f642dc38fe520a2a9383c8301ca63e197b660d3c74696f",
@@ -3469,8 +3469,8 @@
     },
     {
       "path": "specs/Разделы/Источники/Детальная карточка/Контракт.md",
-      "bytes": 42789,
-      "sha256": "7b64335d939632de661f0f12438a2f89289b4bda75eb7a448cf448843c87cfd0",
+      "bytes": 42527,
+      "sha256": "2ceee11d60a4e99fd1270af876261c15d375a6f3b7884b9455f2957acf74b605",
       "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Разделы/Источники/Детальная карточка/Контракт.md",
       "source_sha256": "94260dad9e3513ad04189cf7d7b9c4a3adc597db01954243c62ea6f00c775297"
     },
@@ -3706,25 +3706,39 @@
       "source_sha256": "0874d06d05404f2e4ea21b66b254aecbeef30361f39f26cb12d92ffcde781ab9"
     },
     {
+      "path": "specs/Разделы/Отчёты/Паспорт/Изображения/usage-full-1440.png",
+      "source": "prototype/verification/report-usage/usage-1440x900.png",
+      "source_sha256": "fd884c89d7c4e0a31dc629636f9cff809c81ca9ed12d0d46ef47876d12f94cc8",
+      "bytes": 262594,
+      "sha256": "fd884c89d7c4e0a31dc629636f9cff809c81ca9ed12d0d46ef47876d12f94cc8"
+    },
+    {
       "path": "specs/Разделы/Отчёты/Паспорт/Использование.md",
-      "bytes": 16377,
-      "sha256": "4d97f9630388fef5470a811e3bee0c1d33e5c3ffec03c86d316c08bfb6ccf073",
+      "bytes": 16311,
+      "sha256": "feda056ed1eac747ff412921f7a66e63fee987b04ed2b2ca8a88bf4ee9dafc23",
       "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Разделы/Отчёты/Паспорт/Использование.md",
       "source_sha256": "4c0abb0017a3f8e7ddcd6941e10c9afa4d7995077734a08819dfc5169ee54601"
     },
     {
       "path": "specs/Разделы/Отчёты/Паспорт/Источники данных.md",
-      "bytes": 12172,
-      "sha256": "b46f2fb49e4ad34a03ede99d35b7eba407df01f4738633473165d26e1d7af77f",
+      "bytes": 11990,
+      "sha256": "1c9c020300272d049b990a62ffb547d4940bc5b8a20549a1fba70ba02ec81378",
       "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Разделы/Отчёты/Паспорт/Источники данных.md",
       "source_sha256": "f3a412118006fdc5ec1a01627faf24019d3053e1adb4dff25320bc3241bbeacf"
     },
     {
       "path": "specs/Разделы/Отчёты/Паспорт/Контракт.md",
-      "bytes": 41052,
-      "sha256": "17537b8955960206c908d529243b2e893285dc6f2bc1d4793b65356b94f2d6f8",
+      "bytes": 41065,
+      "sha256": "0f84e6b048ddd1bb643bd8744a41f3c21c59e4446caf8922382c11cfcf5fe89d",
       "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Разделы/Отчёты/Паспорт/Контракт.md",
       "source_sha256": "76c5678b22955ce6de1b20ad6003869414e217160965cbe0ac081d42fd5754db"
+    },
+    {
+      "path": "specs/Ресурсы/Параметры компонентов/README.md",
+      "bytes": 11950,
+      "sha256": "9528db5229f9d8225cfae8f69e57d795a3b3532322b90dbd95e15defa0d64959",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Ресурсы/Параметры компонентов/README.md",
+      "source_sha256": "69939064608126ea1e0e1eb7c36d151b3873ebf4d22df5794a9be90aebf92a30"
     },
     {
       "path": "specs/Ресурсы/Параметры компонентов/build_parameter_schema.py",
@@ -3762,18 +3776,18 @@
       "source_sha256": "68a1330db89e689b26abc968ea6ee9e840a49121b9b30b07dab6f1375cc941b2"
     },
     {
-      "path": "specs/Ресурсы/Параметры компонентов/README.md",
-      "bytes": 11950,
-      "sha256": "9528db5229f9d8225cfae8f69e57d795a3b3532322b90dbd95e15defa0d64959",
-      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Ресурсы/Параметры компонентов/README.md",
-      "source_sha256": "69939064608126ea1e0e1eb7c36d151b3873ebf4d22df5794a9be90aebf92a30"
-    },
-    {
       "path": "specs/Ресурсы/Параметры компонентов/schemas/component-parameters.schema.json",
       "bytes": 17188,
       "sha256": "2d7f5529fe196e96f530ec5c5ad19245eb2b8640f3dc54885ce74a77f3dd19dc",
       "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Ресурсы/Параметры компонентов/schemas/component-parameters.schema.json",
       "source_sha256": "2d7f5529fe196e96f530ec5c5ad19245eb2b8640f3dc54885ce74a77f3dd19dc"
+    },
+    {
+      "path": "specs/Ресурсы/Срез прототипа/README.md",
+      "bytes": 10637,
+      "sha256": "c005c3ef9e9e4275ab28feb957686eda51bc57e8953f046901aa2aec08293d65",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Ресурсы/Срез прототипа/README.md",
+      "source_sha256": "ab5ae5d6682c4fd5dbbd662b9d6c9392d66b360228db6df4644b535f93f4c7de"
     },
     {
       "path": "specs/Ресурсы/Срез прототипа/data/home.json",
@@ -4217,13 +4231,6 @@
       "source_sha256": "8bbd87d4a9cf18606dfeb8767e3c63da56407d40d0c5dd1caf22e80f0845e2e2"
     },
     {
-      "path": "specs/Ресурсы/Срез прототипа/README.md",
-      "bytes": 10626,
-      "sha256": "57ff6e378585189fbf60fc118486f3217e4a4b8ebe943f358d69cab692296be2",
-      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Ресурсы/Срез прототипа/README.md",
-      "source_sha256": "ab5ae5d6682c4fd5dbbd662b9d6c9392d66b360228db6df4644b535f93f4c7de"
-    },
-    {
       "path": "specs/Ресурсы/Срез прототипа/vectors/lineage/catalog.svg",
       "bytes": 285,
       "sha256": "5596ba046dd992b0140080c972e4ef450efe425ea84839df58c075a7bf7f1506",
@@ -4308,18 +4315,18 @@
       "source_sha256": "052bad1dcead839289b2dcde6bf539f798bdfe9865356923613bfed3d265cccb"
     },
     {
-      "path": "specs/Ресурсы/Шрифты/manifest.json",
-      "bytes": 2716,
-      "sha256": "9b8ffccc0c61181c48bd66b6ff4dcdd433a8a70c45e6169e80622242f2f7ffb0",
-      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Ресурсы/Шрифты/manifest.json",
-      "source_sha256": "9b8ffccc0c61181c48bd66b6ff4dcdd433a8a70c45e6169e80622242f2f7ffb0"
-    },
-    {
       "path": "specs/Ресурсы/Шрифты/README.md",
       "bytes": 4417,
       "sha256": "897c6badfe48ca36a794862f39d2540df24ff8f26efd1057ceb9d2b079eba628",
       "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Ресурсы/Шрифты/README.md",
       "source_sha256": "78fddc043a5672d8cfd7897c63ed494e1fb44435ecd7e4367fb7b30b4b7e3408"
+    },
+    {
+      "path": "specs/Ресурсы/Шрифты/manifest.json",
+      "bytes": 2716,
+      "sha256": "9b8ffccc0c61181c48bd66b6ff4dcdd433a8a70c45e6169e80622242f2f7ffb0",
+      "source": "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Ресурсы/Шрифты/manifest.json",
+      "source_sha256": "9b8ffccc0c61181c48bd66b6ff4dcdd433a8a70c45e6169e80622242f2f7ffb0"
     },
     {
       "path": "specs/Ресурсы/Шрифты/Дополнительные/CoFoRobert-MediumItalic.ttf",
