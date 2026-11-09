@@ -1,0 +1,57 @@
+.catalog, .catalog * { box-sizing:border-box; }
+.catalog { width:100%; min-width:0; font-family:'CoFo Sans',sans-serif; font-synthesis:none; color:#101d3b; }
+.toolbar { display:flex; align-items:center; justify-content:space-between; gap:12px; height:40px; margin-bottom:16px; }
+.filters { display:flex; gap:8px; min-width:0; }
+.select { position:relative; display:block; width:220px; min-width:0; height:40px; }
+.selectControl { width:100%; min-width:0; border:0; box-shadow:inset 0 0 0 1px #d7e6f5; color:#1f2126; line-height:14px; letter-spacing:-.14px; }
+.resetFilters { margin-inline-start:4px; }
+.results { --metric-header-height:48px; position:relative; height:calc(100vh - 148px - var(--section-heading-gap)); padding:0 16px; border-radius:16px 16px 0 0; background:#f3f4f9; overflow:hidden; }
+.results:has(.header)::before { position:absolute; z-index:2; inset:calc(var(--metric-header-height) - 1px) 0 auto; border-block-end:1px solid var(--table-header-line); pointer-events:none; content:''; }
+.cardResults { padding-top:16px; }
+.scroll { width:100%; height:100%; overflow:auto; scrollbar-width:none; container:metric-results / inline-size; }
+.scroll::-webkit-scrollbar { display:none; }
+.scroll[data-paginated='true'] { padding-block-end:64px; }
+.emptyResults { min-block-size:100%; }
+.cards { display:grid; grid-template-columns:minmax(0,1fr); gap:8px; padding-bottom:16px; }
+/* Two cards need 640px each so the footer and actions remain readable. */
+@container metric-results (min-width:1288px) { .cards { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+.card { composes:card from "../../../components/MetricSurface/MetricSurface.module.css"; flex:none; min-width:0; height:125px; overflow:hidden; border:1px solid #d7e6f5; border-radius:12px; background:#fff; cursor:pointer; }
+.cardHeading { display:flex; align-items:center; gap:16px; width:100%; height:74px; padding:16px 24px; }
+.cardText, .nameText { flex:1; min-width:0; }
+.cardText { display:flex; flex-direction:column; gap:4px; }
+.cardFooter { display:flex; align-items:center; justify-content:space-between; gap:16px; height:49px; padding:12px 20px; border-top:1px solid #d7e6f5; }
+.tags { display:flex; align-items:center; gap:8px; min-width:0; }
+/* Figma hug bounds exclude the trailing letter spacing applied by CSS. */
+.tag { display:block; flex:none; width:max-content; width:calc-size(max-content,round(up,size + .12px,1px)); max-width:100%; height:24px; padding:6px 8px; overflow:hidden; border-radius:8px; background:#f0f1f4; color:#202028; font-size:12px; font-weight:500; line-height:12px; letter-spacing:-.12px; text-overflow:ellipsis; white-space:nowrap; backdrop-filter:blur(20px); }
+.typeTag { background:rgb(0 123 252 / 10%); color:#007bfc; backdrop-filter:none; }
+.domainTag { flex:0 1 auto; min-width:24px; }
+.updated { display:flex; flex:none; align-items:center; gap:8px; font-size:12px; font-weight:400; line-height:18px; white-space:nowrap; }
+.updated span { width:max-content; width:calc-size(max-content,round(up,size + .14px,1px)); letter-spacing:-.14px; }
+.updated span:first-child { width:calc-size(max-content,round(up,size + .12px,1px)); color:#52698c; letter-spacing:-.12px; }
+.table { width:100%; min-width:1046px; padding-bottom:16px; }
+.grid { display:grid; grid-template-columns:minmax(360px,1fr) 120px 104px minmax(160px,202px) 90px 116px 96px; }
+/* Preserve the baseline; the name receives 80% of extra width, the domain 20%. */
+@container metric-results (min-width:1088px) {
+  .grid { grid-template-columns:calc(80cqw - 510.4px) 120px 104px minmax(202px,1fr) 90px 116px 96px; }
+}
+.header { position:sticky; top:0; z-index:1; height:var(--metric-header-height); background:#f3f4f9; }
+.headerCell { display:flex; align-items:center; min-width:0; height:100%; padding:4px 12px; color:#687d96; font-size:12px; font-weight:500; line-height:18px; }
+.header > .grid { height:100%; }
+.headerCell:first-child { padding-left:20px; }
+.headerCell > span { overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.rows { display:flex; flex-direction:column; gap:4px; padding-block-start:8px; }
+.row { composes:outlinedRow from "../../../components/MetricSurface/MetricSurface.module.css"; position:relative; height:80px; overflow:hidden; border-radius:12px; background:#fff; cursor:pointer; }
+.row::after { position:absolute; inset:0; border:1px solid #d7e6f5; border-radius:inherit; content:''; pointer-events:none; }
+.card:has([data-catalog-search-match]), .cardHeading:has([data-catalog-search-match]), .row:has([data-catalog-search-match]), .nameCell:has([data-catalog-search-match]) { height:auto; }
+.row:has([data-catalog-search-match]) { min-height:80px; }
+.cardHeading:has([data-catalog-search-match]) { min-height:74px; }
+.cardText :has(> [data-catalog-search-match]), .nameCell :has(> [data-catalog-search-match]) { display:block; overflow:visible; white-space:normal; overflow-wrap:anywhere; }
+.searchContext { margin:0 0 8px; color:#52698c; font-size:13px; }
+.nameCell { display:flex; align-items:center; gap:12px; min-width:0; height:80px; padding:10px 12px 10px 20px; }
+.cell { display:flex; align-items:center; min-width:0; height:80px; padding:0 12px; overflow:hidden; color:#243247; font-size:13px; font-weight:400; line-height:20px; }
+.cellText { min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.empty { margin:0; padding:24px; color:#687d96; font-size:14px; line-height:20px; }
+.notice { position:fixed; z-index:80; right:24px; bottom:24px; display:flex; align-items:center; gap:12px; max-width:520px; padding:16px; border:1px solid #d7e6f5; border-radius:12px; background:#fff; box-shadow:0 4px 16px rgb(16 29 59 / 12%); color:#101d3b; font-size:14px; line-height:20px; }
+.notice button { padding:0; border:0; background:transparent; font:inherit; font-size:20px; cursor:pointer; }
+.srOnly { position:absolute; width:1px; height:1px; overflow:hidden; clip-path:inset(50%); white-space:nowrap; }
+.catalog button:focus-visible, .catalog select:focus-visible { outline:2px solid #007bfc; outline-offset:-2px; }

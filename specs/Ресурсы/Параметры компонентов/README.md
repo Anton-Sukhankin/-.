@@ -33,11 +33,11 @@ Token-параметр содержит ref и expectedType; проверяет�
 
 Для запуска нужен Node и библиотеки yaml/ajv указанных в [манифесте инструмента](<parameter-tools.package.json>) версий в отдельном доступном runtime. Это зависимости проверки документации; package.json приложения и его зависимости не меняются. Параметр --runtime указывает каталог с этими установленными библиотеками; его локальный путь не записывается в продуктовые контракты. Корень проверяемого пакета обязательно передаётся через --root; инструмент не угадывает его по глубине расположения файла.
 
-Пример вызова из корня проекта (RUNTIME — выбранный каталог инструмента):
+Запускайте из корня переданного пакета. RUNTIME — каталог с библиотеками инструмента.
 
 ```text
-node "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Ресурсы/Параметры компонентов/check_parameters.mjs" --root . --runtime RUNTIME --self-test --report REPORT
-node "Документация ／ Documentation/Целевое решение ／ Target/Спецификации интерфейса/Ресурсы/Параметры компонентов/check_parameters.mjs" --root PACKAGE_ROOT --runtime RUNTIME --file PATH_TO_PARAMETERS
+node "specs/Ресурсы/Параметры компонентов/check_parameters.mjs" --root . --runtime RUNTIME --self-test --report REPORT
+node "specs/Ресурсы/Параметры компонентов/check_parameters.mjs" --root . --runtime RUNTIME --file PATH_TO_PARAMETERS
 ```
 
 Положительные и намеренно повреждённые данные проверяются одной схемой. Итог печатается; необязательный --report сохраняет подробности в выбранном рабочем месте вне нормативного ресурса. Синтаксис, типы и ссылки не заменяют проверку полноты, источника, смысла состояния, соответствия изображениям и маршрута применения. Unknown правила остаются явными ограничениями, а не значениями, придуманными для прохождения схемы.
@@ -47,9 +47,9 @@ node "Документация ／ Documentation/Целевое решение �
 [Инструмент чтения](<read_context.mjs>) выводит выбранную запись JSON либо один вариант и одно названное состояние YAML. Канонические файлы не изменяются. Вывод — временное представление для чтения, а не второй редактируемый источник.
 
 ```text
-node read_context.mjs --file PARAMETERS.yaml --runtime RUNTIME --variant VARIANT --state STATE --keys field-height,glyph-open-angle
-node read_context.mjs --file DATA.json --pointer /data/profiles --field id --equals EXACT_ID
-node read_context.mjs --file PACKAGE.json --pointer /origins --field path --equals EXACT_PACKAGE_PATH
+node "specs/Ресурсы/Параметры компонентов/read_context.mjs" --file "specs/Общие компоненты/Базовые элементы/Селект/Параметры.yaml" --runtime RUNTIME --variant panel-narrow --keys field-height,glyph-open-angle
+node "specs/Ресурсы/Параметры компонентов/read_context.mjs" --file "specs/Ресурсы/Срез прототипа/data/metrics.json" --pointer /data/profiles --field metricId --equals metric-ebitda
+node "specs/Ресурсы/Параметры компонентов/read_context.mjs" --file PACKAGE.json --pointer /files --field path --equals "specs/Обзор.md"
 ```
 
 Имена варианта/состояния и путь JSON берутся из действующего контракта, а не из примера команды. `--state` и `--keys` необязательны. Для JSON `--pointer` обязателен; `--field`/`--equals` выбирают ровно одну запись массива и отвергают неоднозначный или отсутствующий ID. Число0, null и типы сохраняются. Для YAML порядок — base → выбранный variant → выбранный state; вывод содержит определения использованных токенов, происхождение значений, источники слоёв и зависимости. Комбинации состояний этим порядком не изобретаются. Ссылки токенов на внешние определения остаются ссылками с locator; чтобы получить значение, читать указанного владельца, включая его режимы/ограничения.

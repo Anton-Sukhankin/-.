@@ -1,0 +1,60 @@
+schemaVersion: 1
+component:
+  id: ai-hub-filter-panel
+  title: "Панель поиска и фильтрации AI Hub"
+  contract: "specs/Разделы/AI Hub/Панель поиска и фильтрации/Контракт.md"
+  status: observed-source
+sources:
+  catalog-style:
+    kind: document
+    uri: "references/implementation/features/ai-hub/AiHubCatalog.module.css"
+    status: observed-snapshot
+    snapshot: "Оболочка, строки панели и локальное поле поиска"
+  shadow-style:
+    kind: document
+    uri: "references/implementation/styles/sticky-panel-shadow.module.css"
+    status: observed-snapshot
+    snapshot: "Тень при фиксации панели"
+  toggle-style:
+    kind: document
+    uri: "references/implementation/components/FilterButton/SearchPanelToggle.module.css"
+    status: observed-snapshot
+    snapshot: "Кнопка сворачивания и раскрытия"
+base:
+  sourceRefs: [catalog-style, shadow-style, toggle-style]
+  parameters:
+    surface-padding: {"type":"dimension","value":16,"unit":"px"}
+    surface-radius: {"type":"dimension","value":12,"unit":"px"}
+    surface-border-width: {"type":"dimension","value":1,"unit":"px"}
+    search-height: {"type":"dimension","value":40,"unit":"px"}
+    search-padding-inline: {"type":"dimension","value":12,"unit":"px"}
+    search-to-toggle-gap: {"type":"dimension","value":12,"unit":"px"}
+    controls-gap: {"type":"dimension","value":12,"unit":"px"}
+    chip-gap: {"type":"dimension","value":8,"unit":"px"}
+    two-select-columns-max: {"type":"dimension","value":720,"unit":"px"}
+    one-select-column-max: {"type":"dimension","value":350,"unit":"px"}
+    narrow-detail-select-gap: {"type":"dimension","value":8,"unit":"px"}
+    surface-border-color: {"type":"color","format":"hex","value":"#D7E6F5"}
+    search-background: {"type":"color","format":"hex","value":"#F3F4F9"}
+variants:
+  pinned:
+    description: "Тень при фиксации каталога"
+    sourceRefs: [shadow-style]
+    parameters:
+      shadow-offset-x: {"type":"dimension","value":0,"unit":"px"}
+      shadow-offset-y: {"type":"dimension","value":10,"unit":"px"}
+      shadow-blur: {"type":"dimension","value":20,"unit":"px"}
+      shadow-spread: {"type":"dimension","value":-7,"unit":"px"}
+      shadow-color: {"type":"color","format":"srgb","value":{"r":0.06274509803921569,"g":0.11372549019607843,"b":0.23137254901960785,"a":0.24}}
+  toggle:
+    description: "Кнопка «Свернуть» / «Развернуть»"
+    sourceRefs: [toggle-style]
+    parameters:
+      height: {"type":"dimension","value":40,"unit":"px"}
+      padding-inline: {"type":"dimension","value":12,"unit":"px"}
+      gap: {"type":"dimension","value":8,"unit":"px"}
+      radius: {"type":"dimension","value":20,"unit":"px"}
+      font-size: {"type":"dimension","value":13,"unit":"px"}
+      line-height: {"type":"dimension","value":18,"unit":"px"}
+      font-weight: {"type":"font-weight","value":500}
+

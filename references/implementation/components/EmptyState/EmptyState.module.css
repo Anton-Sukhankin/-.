@@ -1,0 +1,29 @@
+.root {
+  display:grid;
+  justify-items:center;
+  align-content:safe center;
+  gap:8px;
+  min-inline-size:0;
+  padding:24px 16px;
+  color:#101d3b;
+  text-align:center;
+}
+.root[data-compact='true'] { padding-block:16px; }
+.illustration { display:block; max-inline-size:100%; object-fit:contain; mix-blend-mode:multiply; }
+.root .title { margin:0; font-size:16px; line-height:24px; font-weight:500; }
+.root[data-compact='true'] .title { font-size:14px; line-height:20px; }
+.root .description { max-inline-size:48ch; margin:0; color:#52698c; font-size:14px; line-height:20px; text-wrap:pretty; }
+.action {
+  margin-block-start:4px;
+  padding:0 16px;
+  min-block-size:32px;
+  border:1px solid #d7e6f5;
+  border-radius:999px;
+  background:#fff;
+  color:inherit;
+  cursor:pointer;
+}
+.action:not(.reset) { font:inherit; font-size:14px; }
+.reset { composes:typography from '../ResetFiltersButton/ResetFiltersButton.module.css'; }
+.action:hover { background:#f3f4f9; }
+.action:focus-visible { outline:2px solid #007bfc; outline-offset:2px; }

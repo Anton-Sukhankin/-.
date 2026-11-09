@@ -1,0 +1,43 @@
+schemaVersion: 1
+component:
+  id: questions-appeal-card
+  title: Карточка обращения
+  contract: "specs/Разделы/Вопросы и ответы/Карточка обращения/Контракт.md"
+  status: observed-source
+sources:
+  css:
+    kind: document
+    uri: "references/implementation/features/questions/QuestionsWorkspace.module.css"
+    status: observed-snapshot
+    snapshot: 8 ноября 2026
+  status-tag-css:
+    kind: document
+    uri: "references/implementation-current/features/metrics/catalog/MetricsCatalog.module.css"
+    status: observed-snapshot
+    snapshot: 8 ноября 2026
+base:
+  sourceRefs: [css]
+  parameters:
+    list-gap: {type: dimension, value: 4, unit: px}
+variants:
+  appeal-card:
+    description: Геометрия и типографика строки личного обращения
+    sourceRefs: [css, status-tag-css]
+    parameters:
+      card-padding: {type: dimension, value: 20, unit: px}
+      subject-meta-gap: {type: dimension, value: 8, unit: px}
+      subject-size: {type: dimension, value: 16, unit: px}
+      subject-line-height: {type: dimension, value: 22, unit: px}
+      subject-weight: {type: font-weight, value: 500}
+      meta-size: {type: dimension, value: 13, unit: px}
+      meta-line-height: {type: dimension, value: 18, unit: px}
+      meta-gap: {type: dimension, value: 8, unit: px}
+      meta-color: {type: color, format: hex, value: "#52698C"}
+      new-status-color: {type: color, format: hex, value: "#006BDB"}
+      new-status-background: {type: color, format: hex, value: "#EBF4FF"}
+      in-progress-status-color: {type: color, format: hex, value: "#5932A9"}
+      in-progress-status-background: {type: color, format: hex, value: "#F0EBFA"}
+      resolved-status-color: {type: color, format: hex, value: "#176448"}
+      resolved-status-background: {type: color, format: hex, value: "#E8F6ED"}
+      closed-status-color: {type: color, format: hex, value: "#202028", sourceRefs: [status-tag-css]}
+      closed-status-background: {type: color, format: hex, value: "#F0F1F4", sourceRefs: [status-tag-css]}

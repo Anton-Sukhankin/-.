@@ -1,6 +1,6 @@
 # Типографика, сетки, эффекты и цветовые стили
 
-Основной пользовательский источник — [DS-01 «air kit 3.0 → Дизайн система»](https://www.figma.com/design/Hwq9fTAws3U2qjKK9mYZty/), проверен 29.09.2026. Владелец документа — главный агент. Ниже различаются local styles, конкретно применённые remote definitions, прямые author descriptions и рекомендации выбора.
+Основной пользовательский источник — DS-01 «air kit 3.0 → Дизайн система», проверен 29.09.2026. Владелец документа — главный агент. Ниже различаются local styles, конкретно применённые remote definitions, прямые author descriptions и рекомендации выбора.
 
 Исходные определения собраны и нормализованы; их наличие не доказывает публикацию библиотеки или разрешённость произвольного override. Актуальная независимая приёмка и её свидетельства — у [общего владельца](<../acceptance.md>), границы — в foundation-status.json.
 
@@ -113,7 +113,7 @@
 
 ## Сравнительные снимки Nova и Review
 
-[DS-04 Nova](https://www.figma.com/design/QlTEuR31Bq7JbD5MjbArtm/) и [DS-05 Review](https://www.figma.com/design/u775kZdxNvOlRugbFuBSHI/) остаются отдельными источниками от 22.09.2026: по 148 local styles (44 TEXT, 6 EFFECT, 4 GRID, 94 PAINT). Прежние точные IDs и определения сохранены: Nova typography, продолжение 15, продолжение 30, Nova GRID, Nova EFFECT, Review styles. Их прежняя независимая проверка относится к прежнему объёму.
+DS-04 Nova и DS-05 Review остаются отдельными источниками от 22.09.2026: по 148 local styles (44 TEXT, 6 EFFECT, 4 GRID, 94 PAINT). Прежние точные IDs и определения сохранены: Nova typography, продолжение 15, продолжение 30, Nova GRID, Nova EFFECT, Review styles. Их прежняя независимая проверка относится к прежнему объёму.
 
 У DS-01 совпадают exact names 44 TEXT, 6 EFFECT и 4 GRID, но ни один style key/ID с этими двумя источниками не совпадает. Четырнадцать Paragraph — дополнительные local names. У десяти одноимённых TEXT изменён tracking относительно обоих снимков:
 

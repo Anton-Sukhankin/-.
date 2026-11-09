@@ -1,42 +1,45 @@
 schemaVersion: 1
 component:
   id: text-input
-  title: Однострочное поле поиска — два подтверждённых применения
-  contract: specs/Общие компоненты/Базовые элементы/Поле ввода/Контракт.md
+  title: Однострочное поле поиска
+  contract: "specs/Общие компоненты/Базовые элементы/Поле ввода/Контракт.md"
   status: approved-target
 sources:
   global-field:
     kind: figma
     uri: https://www.figma.com/design/lnOcWh4ElGkhppWe6Kn5AA/Untitled?node-id=494-3520
-    nodeId: 494:3520
+    nodeId: "494:3520"
     status: unverified-live
     snapshot: Срез02.11 поля C03 с локальными overrides, не всех состояний v-input
   list-field:
     kind: figma
     uri: https://www.figma.com/design/lnOcWh4ElGkhppWe6Kn5AA?node-id=1436-179840
-    nodeId: 1436:179840
+    nodeId: "1436:179840"
     status: unverified-live
-    snapshot: Поиск в списке — высота/шрифт/placeholder перенесены из принятого B04; другие внутренние
-      стили не восстановлены из этого PNG
+    snapshot: Поиск в списке — высота/шрифт/placeholder перенесены из принятого B04; другие внутренние стили не восстановлены из этого PNG
   search-colors:
     kind: document
-    uri: specs/Общие компоненты/Поиск и навигатор/Вид.md
+    uri: "specs/Общие компоненты/Поиск и навигатор/Вид.md"
     status: observed-snapshot
     snapshot: Каноническая роль color/text C03, не рамка поля; цвет query не назначает тему другим элементам
   list-implementation:
     kind: document
-    uri: references/implementation/components/FilterValueList/FilterValueList.module.css
+    uri: "references/implementation-current/components/FilterValueList/FilterValueList.module.css"
     status: observed-snapshot
-    snapshot: Дополнительные внутренние стили и focus list-search32 — наблюдение существующего кода, не
-      новые утверждённые значения Figma
+    snapshot: Геометрия и оформление вложенного поиска в текущей реализации
   global-implementation:
     kind: document
-    uri: references/implementation/components/Search/SearchField.module.css
+    uri: "references/implementation-current/components/Search/SearchField.module.css"
     status: observed-snapshot
-    snapshot: Техническая focus-outline существующей реализации, не Figma State=Focused
+    snapshot: Общий стиль рамки фокуса и вариант поля в шапке
+  search-appearance-2026-11-07:
+    kind: document
+    uri: "specs/Общие компоненты/Базовые элементы/Поле ввода/Контракт.md"
+    status: approved-decision
+    snapshot: Решение 7 ноября о радиусе вне шапки и единой синей рамке фокуса
   fonts:
     kind: document
-    uri: specs/Ресурсы/Шрифты/README.md
+    uri: "specs/Ресурсы/Шрифты/README.md"
     status: reference-only
     snapshot: Предоставленные файлы и эталонное семейство CoFo Sans
 tokens:
@@ -49,177 +52,52 @@ tokens:
     sourceRef: search-colors
     locator: Таблица цветов C03 — color/text113:17 → primitive/ink113:6
 base:
-  sourceRefs:
-    - global-field
-    - list-field
-    - fonts
+  sourceRefs: [global-field, list-field, fonts]
   parameters:
-    height:
-      type: dimension
-      value: 32
-      unit: px
-    font-family:
-      type: token
-      ref: ui-font
-      expectedType: font-family
-    font-size:
-      type: dimension
-      value: 14
-      unit: px
-    line-height:
-      type: dimension
-      value: 20
-      unit: px
-    font-weight:
-      type: font-weight
-      value: 400
-    placeholder-color:
-      type: color
-      format: hex
-      value: "#A5A7AF"
+    height: {type: dimension, value: 32, unit: px}
+    font-family: {type: token, ref: ui-font, expectedType: font-family}
+    font-size: {type: dimension, value: 14, unit: px}
+    line-height: {type: dimension, value: 20, unit: px}
+    font-weight: {type: font-weight, value: 400}
+    placeholder-color: {type: color, format: hex, value: "#A5A7AF"}
+    radius: {type: dimension, value: 8, unit: px, sourceRefs: [search-appearance-2026-11-07]}
+    focus-border-width: {type: dimension, value: 2, unit: px, sourceRefs: [search-appearance-2026-11-07, global-implementation]}
+    focus-border-color: {type: color, format: hex, value: "#007BFC", sourceRefs: [search-appearance-2026-11-07, global-implementation]}
 variants:
   global-search32:
     description: Визуальный срез поля C03; ширина/внешняя выдача и очистка принадлежат C03
-    sourceRefs:
-      - global-field
-      - search-colors
+    sourceRefs: [global-field, search-colors]
     parameters:
-      radius:
-        type: dimension
-        value: 24
-        unit: px
-      padding-block:
-        type: dimension
-        value: 4
-        unit: px
-      padding-inline:
-        type: dimension
-        value: 8
-        unit: px
-      content-gap:
-        type: dimension
-        value: 8
-        unit: px
-      glyph-size:
-        type: dimension
-        value: 16
-        unit: px
-      background:
-        type: color
-        format: hex
-        value: "#FFFFFF"
-      border-width:
-        type: dimension
-        value: 1
-        unit: px
-      border-color:
-        type: color
-        format: hex
-        value: "#D2D3D7"
-      clip-content:
-        type: boolean
-        value: true
-      letter-spacing:
-        type: dimension
-        value: 0
-        unit: px
-      value-color:
-        type: token
-        ref: global-text
-        expectedType: color
-      trailing-glyph-size:
-        type: dimension
-        value: 16
-        unit: px
-      trailing-inset-right:
-        type: dimension
-        value: 8
-        unit: px
-      trailing-inset-top:
-        type: dimension
-        value: 8
-        unit: px
-    states:
-      focus-implementation:
-        sourceRefs:
-          - global-implementation
-        parameters:
-          outline-width:
-            type: dimension
-            value: 2
-            unit: px
-          outline-offset:
-            type: dimension
-            value: 1
-            unit: px
-          outline-color:
-            type: color
-            format: hex
-            value: "#B5DAFF"
+      radius: {type: dimension, value: 24, unit: px}
+      padding-block: {type: dimension, value: 4, unit: px}
+      padding-inline: {type: dimension, value: 8, unit: px}
+      content-gap: {type: dimension, value: 8, unit: px}
+      glyph-size: {type: dimension, value: 16, unit: px}
+      background: {type: color, format: hex, value: "#FFFFFF"}
+      border-width: {type: dimension, value: 1, unit: px}
+      border-color: {type: color, format: hex, value: "#D2D3D7"}
+      clip-content: {type: boolean, value: true}
+      letter-spacing: {type: dimension, value: 0, unit: px}
+      value-color: {type: token, ref: global-text, expectedType: color}
+      trailing-glyph-size: {type: dimension, value: 16, unit: px}
+      trailing-inset-right: {type: dimension, value: 8, unit: px}
+      trailing-inset-top: {type: dimension, value: 8, unit: px}
+      focus-separator-width: {type: dimension, value: 1, unit: px, sourceRefs: [global-implementation]}
+      focus-separator-color: {type: color, format: hex, value: "#D2D3D7", sourceRefs: [global-implementation]}
   list-search32:
-    description: Высота/шрифт из B04; остальные параметры — наблюдаемые стили текущей реализации, без
-      новой визуальной приёмки
-    sourceRefs:
-      - list-field
-      - list-implementation
+    description: Высота/шрифт из B04; остальные параметры — наблюдаемые стили текущей реализации, без новой визуальной приёмки
+    sourceRefs: [list-field, list-implementation]
     parameters:
-      radius:
-        type: dimension
-        value: 24
-        unit: px
-      padding-block:
-        type: dimension
-        value: 4
-        unit: px
-      padding-inline:
-        type: dimension
-        value: 8
-        unit: px
-      content-gap:
-        type: dimension
-        value: 8
-        unit: px
-      glyph-size:
-        type: dimension
-        value: 16
-        unit: px
-      background:
-        type: color
-        format: hex
-        value: "#F3F4F9"
-      border-width:
-        type: dimension
-        value: 1
-        unit: px
-      border-color:
-        type: color
-        format: hex
-        value: "#D7E6F5"
-      border-rendering:
-        type: string
-        value: inset-shadow
-      value-color:
-        type: color
-        format: hex
-        value: "#172438"
-    states:
-      focus-implementation:
-        sourceRefs:
-          - list-implementation
-        parameters:
-          outline-width:
-            type: dimension
-            value: 2
-            unit: px
-          outline-offset:
-            type: dimension
-            value: 1
-            unit: px
-          outline-color:
-            type: color
-            format: hex
-            value: "#007BFC"
+      padding-block: {type: dimension, value: 4, unit: px}
+      padding-inline: {type: dimension, value: 8, unit: px}
+      content-gap: {type: dimension, value: 8, unit: px}
+      glyph-size: {type: dimension, value: 16, unit: px}
+      background: {type: color, format: hex, value: "#F3F4F9"}
+      border-width: {type: dimension, value: 1, unit: px}
+      border-color: {type: color, format: hex, value: "#D7E6F5"}
+      border-rendering: {type: string, value: solid}
+      value-color: {type: color, format: hex, value: "#172438"}
 dependencies:
   - id: input-design-source
-    document: references/design-system/docs/design-system/components/generated/DS-01-418-2000.md
+    document: "references/design-system/docs/design-system/components/generated/DS-01-418-2000.md"
     role: design-source

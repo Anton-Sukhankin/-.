@@ -1,0 +1,10 @@
+.surface::after {
+  content:'';
+  position:absolute;
+  inset:0;
+  border-radius:inherit;
+  pointer-events:none;
+  box-shadow:0 10px 20px -7px rgb(16 29 59 / 24%);
+  opacity:var(--sticky-panel-shadow-opacity, 0);
+  transition:opacity var(--navigation-hover-duration) ease;
+}

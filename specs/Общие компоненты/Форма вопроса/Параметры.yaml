@@ -1,0 +1,49 @@
+schemaVersion: 1
+component:
+  id: ask-question-dialog
+  title: Форма «Задать вопрос»
+  contract: "specs/Общие компоненты/Форма вопроса/Контракт.md"
+  status: approved-target
+sources:
+  css:
+    kind: document
+    uri: "references/implementation/features/questions/AskQuestionDialog.module.css"
+    status: observed-snapshot
+    snapshot: 8 ноября 2026
+base:
+  sourceRefs: [css]
+  parameters:
+    maximum-width: {type: dimension, value: 560, unit: px}
+variants:
+  modal:
+    description: Форма двух обязательных полей
+    sourceRefs: [css]
+    parameters:
+      viewport-margin: {type: dimension, value: 16, unit: px}
+      padding: {type: dimension, value: 24, unit: px}
+      radius: {type: dimension, value: 16, unit: px}
+      field-radius: {type: dimension, value: 8, unit: px}
+      field-gap: {type: dimension, value: 16, unit: px}
+      subject-height: {type: dimension, value: 40, unit: px}
+      question-minimum-height: {type: dimension, value: 104, unit: px}
+      action-height: {type: dimension, value: 36, unit: px}
+      action-radius: {type: dimension, value: 18, unit: px}
+      action-inline-padding: {type: dimension, value: 16, unit: px}
+      action-gap: {type: dimension, value: 8, unit: px}
+      action-padding-top: {type: dimension, value: 8, unit: px}
+      action-text-size: {type: dimension, value: 14, unit: px}
+      action-line-height: {type: dimension, value: 20, unit: px}
+      action-weight: {type: font-weight, value: 500}
+      cancel-background: {type: color, format: hex, value: "#FFFFFF"}
+      cancel-border: {type: color, format: hex, value: "#D7E6F5"}
+      primary-background: {type: color, format: hex, value: "#0067DC"}
+      primary-hover-background: {type: color, format: hex, value: "#005CBF"}
+      primary-text: {type: color, format: hex, value: "#FFFFFF"}
+      backdrop: {type: string, value: "#101D3B5C"}
+      dialog-shadow: {type: string, value: "0 12px 40px #101D3B29"}
+      label-gap: {type: dimension, value: 6, unit: px}
+      field-inline-padding: {type: dimension, value: 12, unit: px}
+      textarea-block-padding: {type: dimension, value: 10, unit: px}
+      field-background: {type: color, format: hex, value: "#F3F4F9"}
+      field-border: {type: color, format: hex, value: "#D7E6F5"}
+      error-color: {type: color, format: hex, value: "#CC260F"}

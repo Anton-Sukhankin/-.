@@ -1,0 +1,10 @@
+.overlay { position:absolute; inset:0; z-index:3; pointer-events:none; }
+.thumb { position:absolute; width:3px; border-radius:999px; background:#a5acb6; opacity:0; transition:opacity 160ms ease; }
+.thumb[data-visible='true'] { opacity:1; }
+@media (prefers-reduced-motion:reduce) { .thumb { transition:none; } }
+
+:global([data-list-scroll]::-webkit-scrollbar) { width:0; }
+:global([data-list-scroll]::-webkit-scrollbar-button:vertical) { display:none; }
+@supports not selector(::-webkit-scrollbar) {
+  :global([data-list-scroll]) { scrollbar-width:none; }
+}

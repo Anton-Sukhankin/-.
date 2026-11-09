@@ -1,0 +1,112 @@
+{
+  "reportId": "demo-report-summary",
+  "role": "Демонстрационный набор прототипа, 8 ноября 2026",
+  "sources": [
+    {
+      "id": "requests",
+      "name": "demo.requests",
+      "category": "datahub",
+      "platform": "Демо SQL",
+      "database": "demo_catalog",
+      "schema": "demo",
+      "environment": "DEV",
+      "status": "Активен",
+      "fieldCount": 24,
+      "urn": "urn:li:dataset:(urn:li:dataPlatform:mssql,demo_catalog.demo.requests,DEV)"
+    },
+    {
+      "id": "events",
+      "name": "demo.events",
+      "category": "datahub",
+      "platform": "Демо PostgreSQL",
+      "database": "demo_catalog",
+      "schema": "demo",
+      "environment": "TEST",
+      "status": "Активен",
+      "fieldCount": 18,
+      "urn": "urn:li:dataset:(urn:li:dataPlatform:postgres,demo_catalog.demo.events,TEST)"
+    },
+    {
+      "id": "teams",
+      "name": "demo.teams",
+      "category": "datahub",
+      "platform": "Демо SQL",
+      "database": "demo_reference",
+      "schema": "demo",
+      "environment": "DEV",
+      "status": "Активен",
+      "fieldCount": 9,
+      "urn": "urn:li:dataset:(urn:li:dataPlatform:mssql,demo_reference.demo.teams,DEV)"
+    },
+    {
+      "id": "services",
+      "name": "demo.services",
+      "category": "catalog",
+      "platform": "Демо SQL",
+      "database": "demo_reference",
+      "schema": "demo",
+      "environment": "DEV",
+      "status": "Активен",
+      "fieldCount": 12,
+      "urn": "urn:demo:catalog:demo_reference.demo.services"
+    },
+    {
+      "id": "locations",
+      "name": "demo.locations",
+      "category": "catalog",
+      "platform": "Демо PostgreSQL",
+      "database": "demo_geo",
+      "schema": "demo",
+      "environment": "TEST",
+      "status": "Активен",
+      "fieldCount": 15,
+      "urn": "urn:demo:catalog:demo_geo.demo.locations"
+    }
+  ],
+  "lineage": {
+    "nodes": [
+      {
+        "sourceId": "requests",
+        "x": 24,
+        "y": 220
+      },
+      {
+        "sourceId": "events",
+        "x": 375,
+        "y": 220
+      },
+      {
+        "sourceId": "teams",
+        "x": 726,
+        "y": 220
+      },
+      {
+        "sourceId": "services",
+        "x": 199.5,
+        "y": 350
+      },
+      {
+        "sourceId": "locations",
+        "x": 550.5,
+        "y": 350
+      }
+    ],
+    "edges": [
+      {
+        "sourceId": "requests"
+      },
+      {
+        "sourceId": "events"
+      },
+      {
+        "sourceId": "teams"
+      },
+      {
+        "sourceId": "services"
+      },
+      {
+        "sourceId": "locations"
+      }
+    ]
+  }
+}

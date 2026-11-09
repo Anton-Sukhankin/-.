@@ -732,7 +732,7 @@
         },
         {
           "id": "I1167:28037;894:25486",
-          "text": "Управляющий директор · a.gorbun@samolet.ru"
+          "text": "Управляющий директор · contact-1@example.invalid"
         },
         {
           "id": "I1167:28037;894:25500",
@@ -744,7 +744,7 @@
         },
         {
           "id": "I1167:28037;894:25501",
-          "text": "Бизнес-аналитик · yu.lapova@samolet.ru"
+          "text": "Бизнес-аналитик · contact-2@example.invalid"
         }
       ],
       "reactions": []

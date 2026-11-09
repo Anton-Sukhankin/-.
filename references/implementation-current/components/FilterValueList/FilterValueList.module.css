@@ -1,0 +1,28 @@
+.surface, .surface *, .embedded, .embedded * { box-sizing: border-box; }
+.surface, .embedded { font-family: 'CoFo Sans', sans-serif; font-synthesis: none; }
+.surface { overflow: hidden; border-radius:12px; background:#fff; box-shadow:0 8px 24px rgb(0 0 0 / 12%); }
+.searchArea { height: 56px; padding: 12px; }
+.searchField { composes: surface from '../Search/SearchField.module.css'; display: flex; align-items: center; gap: 8px; width: 100%; height: 32px; padding: 3px 7px; border: 1px solid #d7e6f5; background: #f3f4f9; }
+.searchField img { display: block; flex: 0 0 16px; }
+.searchField input { flex: 1; width: 100%; min-width: 0; height: 24px; padding: 0; border: 0; outline: none; background: transparent; color: #172438; font-family: inherit; font-size: 14px; font-weight: 400; line-height: 20px; font-feature-settings: 'lnum' 1, 'tnum' 1; }
+.searchField input::placeholder { color: #a5a7af; opacity: 1; }
+.searchField input::-webkit-search-cancel-button { appearance: none; }
+.listArea { position: relative; padding: 0 12px 12px; }
+.viewport { width: 100%; max-height: 276px; overflow-y: auto; overflow-x: hidden; scrollbar-width: none; }
+.viewport::-webkit-scrollbar { display: none; }
+.track { position: absolute; top: 0; right: 4px; width: 4px; height: 276px; border-radius: 2px; background: #f0f1f2; touch-action: none; }
+.thumb { position: absolute; left: 0; width: 4px; border-radius: 2px; background: #a8b0ba; }
+.options { display: flex; flex-direction: column; gap: 4px; width: 100%; }
+.option { display: flex; flex: 0 0 36px; align-items: center; gap: 10px; width: 100%; height: 36px; cursor: pointer; }
+.singleOption { position:relative; padding:0 8px; }
+.singleOption[data-selected='true'] .optionText { color:#0067dc; }
+.singleInput { position:absolute; inset:0; width:100%; height:100%; margin:0; opacity:0; cursor:pointer; }
+.singleOption:has(.singleInput:focus-visible) { outline:2px solid #007bfc; outline-offset:-2px; }
+.checkbox { position: relative; flex: 0 0 16px; width: 16px; height: 20px; }
+.checkbox input { position: absolute; inset: 0; z-index: 1; width: 16px; height: 20px; margin: 0; opacity: 0; cursor: pointer; }
+.checkboxVisual { display: flex; align-items: center; width: 16px; height: 20px; }
+.checkboxVisual img { display: block; }
+.unchecked { display: block; width: 16px; height: 16px; border: 1px solid #d2d3d7; border-radius: 4px; background: #fff; }
+.optionText { display: -webkit-box; flex: 1; min-width: 0; overflow: hidden; -webkit-line-clamp: 2; -webkit-box-orient: vertical; color: #172438; font-size: 14px; font-weight: 500; line-height: 18px; overflow-wrap: anywhere; }
+
+.checkbox input:focus-visible + .checkboxVisual { outline: 2px solid #007bfc; outline-offset:-2px; border-radius:4px; }

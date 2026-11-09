@@ -1,0 +1,39 @@
+{
+  "snapshot_id": "prototype-2026-11-05-source-fields",
+  "captured_date": "2026-11-05",
+  "build": {
+    "mode": "Vite production",
+    "entry_asset": "assets/main-PTt5dRko.js",
+    "entry_sha256": "e5bb55f6e2009c39b10cab761334fc45d8380555671979159134d333173b839a"
+  },
+  "browser": {
+    "engine": "Chromium",
+    "device_scale_factor": 1,
+    "color_scheme": "light",
+    "reduced_motion": "reduce",
+    "fonts": "CoFo Sans 400/500"
+  },
+  "authority": "Visual evidence for field rows only. The source-detail contract owns the rest of the page.",
+  "frames": [
+    {
+      "path": "fields-aligned-1440.png",
+      "route": "/preview/navigation?section=sources&source=source-reportcrm-date",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "action": "Открыть «Описание полей» указанного источника. Все строки свёрнуты, прокрутка в начале.",
+      "sha256": "fa4f4161498a0a5d8ded91da552065f502a211ff4a8668031c561f5293f68541"
+    },
+    {
+      "path": "fields-expanded-900.png",
+      "route": "/preview/navigation?section=sources&source=source-reportcrm-date",
+      "viewport": {
+        "width": 900,
+        "height": 900
+      },
+      "action": "Открыть «Описание полей». Перевести фокус на date_key и нажать Enter. Другие строки остаются свёрнутыми.",
+      "sha256": "ca1d52970a86b4c9d29daa43c4a8313d315ef554dff2b169e51b9e66776f8bd1"
+    }
+  ]
+}

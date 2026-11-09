@@ -2,151 +2,161 @@ schemaVersion: 1
 component:
   id: column-heading
   title: Заголовок колонки
-  contract: specs/Общие компоненты/Базовые элементы/Заголовок колонки/Контракт.md
+  contract: "specs/Общие компоненты/Базовые элементы/Заголовок колонки/Контракт.md"
   status: approved-target
 sources:
+  reset-css:
+    kind: document
+    uri: "references/implementation/components/ResetBadge/ResetBadge.module.css"
+    status: observed-snapshot
+    snapshot: "Размер и цвета общего крестика сброса проверены в Chromium"
   header-composed:
     kind: figma
-    uri: https://www.figma.com/design/lnOcWh4ElGkhppWe6Kn5AA?node-id=1555-163953
-    nodeId: 1555:163953
+    uri: "https://www.figma.com/design/lnOcWh4ElGkhppWe6Kn5AA?node-id=1555-163953"
+    nodeId: "1555:163953"
     status: unverified-live
-    snapshot: Принятый composed-срез02.11.2026; CoFo Sans Medium12/18 и muted530:272, не новая проверка live
+    snapshot: "Принятый composed-срез02.11.2026; CoFo Sans Medium12/18 и muted530:272, не новая проверка live"
   cell-hover:
     kind: figma
-    uri: https://www.figma.com/design/lnOcWh4ElGkhppWe6Kn5AA?node-id=821-16818
-    nodeId: 821:16818
+    uri: "https://www.figma.com/design/lnOcWh4ElGkhppWe6Kn5AA?node-id=821-16818"
+    nodeId: "821:16818"
     status: unverified-live
-    snapshot: Isolated144×48; геометрия и заливка, типографика по composed-шапке
+    snapshot: "Isolated144×48; геометрия и заливка, типографика по composed-шапке"
   cell-open:
     kind: figma
-    uri: https://www.figma.com/design/lnOcWh4ElGkhppWe6Kn5AA?node-id=821-16825
-    nodeId: 821:16825
+    uri: "https://www.figma.com/design/lnOcWh4ElGkhppWe6Kn5AA?node-id=821-16825"
+    nodeId: "821:16825"
     status: unverified-live
-    snapshot: Active означает открытость меню, а не применение
+    snapshot: "Active означает открытость меню, а не применение"
   cell-applied:
     kind: figma
-    uri: https://www.figma.com/design/lnOcWh4ElGkhppWe6Kn5AA?node-id=1555-164482
-    nodeId: 1555:164482
+    uri: "https://www.figma.com/design/lnOcWh4ElGkhppWe6Kn5AA?node-id=1555-164482"
+    nodeId: "1555:164482"
     status: unverified-live
-    snapshot: Срез02.11.2026 после исправления двойного значка; один applied-индикатор
+    snapshot: "Срез02.11.2026 после исправления двойного значка; один applied-индикатор"
   filter-master:
     kind: figma
-    uri: https://www.figma.com/design/lnOcWh4ElGkhppWe6Kn5AA?node-id=1435-51167
-    nodeId: 1435:51167
+    uri: "https://www.figma.com/design/lnOcWh4ElGkhppWe6Kn5AA?node-id=1435-51167"
+    nodeId: "1435:51167"
     status: unverified-live
-    snapshot: Исходный фильтр16×16
+    snapshot: "Исходный фильтр16×16"
   sort-applied:
     kind: figma
-    uri: https://www.figma.com/design/lnOcWh4ElGkhppWe6Kn5AA?node-id=1715-61032
-    nodeId: 1715:61032
+    uri: "https://www.figma.com/design/lnOcWh4ElGkhppWe6Kn5AA?node-id=1715-61032"
+    nodeId: "1715:61032"
     status: unverified-live
-    snapshot: Применено А→Я; самостоятельная стрелка в кадре1715:60297, не потомок header master
+    snapshot: "Применено А→Я; самостоятельная стрелка в кадре1715:60297, не потомок header master"
   subscription-figma:
     kind: figma
-    uri: https://www.figma.com/design/lnOcWh4ElGkhppWe6Kn5AA?node-id=814-16158
-    nodeId: 814:16158
+    uri: "https://www.figma.com/design/lnOcWh4ElGkhppWe6Kn5AA?node-id=814-16158"
+    nodeId: "814:16158"
     status: unverified-live
-    snapshot: Generic-шапка814:16403; текст814:16404, INSTANCE696:13277/дата696:13305; menus не показаны
+    snapshot: "Generic-шапка814:16403; текст814:16404, INSTANCE696:13277/дата696:13305; menus не показаны"
   contribution-figma:
     kind: figma
-    uri: https://www.figma.com/design/lnOcWh4ElGkhppWe6Kn5AA?node-id=778-17886
-    nodeId: 778:17886
+    uri: "https://www.figma.com/design/lnOcWh4ElGkhppWe6Kn5AA?node-id=778-17886"
+    nodeId: "778:17886"
     status: unverified-live
-    snapshot: Generic-шапка778:18147, текст778:18157; CoFo Sans Medium12/20
+    snapshot: "Generic-шапка778:18147, текст778:18157; CoFo Sans Medium12/20"
   table-code:
     kind: document
-    uri: references/implementation/components/ReportTable/ReportTable.tsx
+    uri: "references/implementation-current/components/ReportTable/ReportTable.tsx"
     status: observed-snapshot
-    snapshot: "04.11.2026 heading(): label/activeColumn/appliedColumns/sort и раздельные open/clear; UI
-      не запускался"
+    snapshot: "04.11.2026 heading(): label/activeColumn/appliedColumns/sort и раздельные open/clear; UI не запускался"
   table-css:
     kind: document
-    uri: references/implementation/components/ReportTable/ReportTable.module.css
+    uri: "references/implementation-current/components/ReportTable/ReportTable.module.css"
     status: observed-snapshot
-    snapshot: headerCell/headerButton/openHeading/clearFilter/sortIndicator; current-* — наблюдаемый CSS
+    snapshot: "headerCell/headerButton/openHeading/clearFilter/sortIndicator; current-* — наблюдаемый CSS"
   subscription-css:
     kind: document
-    uri: references/implementation/features/subscriptions/SubscriptionsContent.module.css
+    uri: "references/implementation-current/features/subscriptions/SubscriptionsContent.module.css"
     status: observed-snapshot
-    snapshot: heading/heading:first-child/heading span; внутренние padding и span-height — наблюдение
+    snapshot: "heading/heading:first-child/heading span; внутренние padding и span-height — наблюдение"
   contribution-css:
     kind: document
-    uri: references/implementation/features/contributors/ContributionContent.module.css
+    uri: "references/implementation-current/features/contributors/ContributionContent.module.css"
     status: observed-snapshot
-    snapshot: heading/metricHeading; специальная высота трёх подписей не передаётся Usage
+    snapshot: "heading/metricHeading; специальная высота трёх подписей не передаётся Usage"
   metric-css:
     kind: document
-    uri: references/implementation/features/report-detail/metrics/MetricsTab.module.css
+    uri: "references/implementation-current/features/report-detail/metrics/MetricsTab.module.css"
     status: observed-snapshot
-    snapshot: table th и first-child; компактная высота/отступы соответствуют прямому уточнению4ноября,
-      фон/цвет/weight наблюдаемы
+    snapshot: "table th и first-child; компактная высота/отступы соответствуют прямому уточнению4ноября, фон/цвет/weight наблюдаемы"
   metric-decision:
     kind: document
-    uri: specs/Разделы/Отчёты/Паспорт/Контракт.md
+    uri: "specs/Разделы/Отчёты/Паспорт/Контракт.md"
     status: reference-only
-    snapshot: Прямое уточнение4ноября о компактных заголовках перенесено к B22; родитель сохраняет
-      конфигурацию и интервалы до строк
+    snapshot: "Прямое уточнение4ноября о компактных заголовках перенесено к B22; родитель сохраняет конфигурацию и интервалы до строк"
   usage-css:
     kind: document
-    uri: references/implementation/features/report-detail/usage/Usage.module.css
+    uri: "references/implementation-current/features/report-detail/usage/Usage.module.css"
     status: observed-snapshot
-    snapshot: "columnHeading/first-child: статический текст12/18, padding0/12, nowrap; высота от
-      table.header"
+    snapshot: "columnHeading/first-child: статический текст12/18, padding0/12, nowrap; высота от table.header"
   usage-code:
     kind: document
-    uri: references/implementation/features/report-detail/usage/UsageHistoryTable.tsx
+    uri: "references/implementation-current/features/report-detail/usage/UsageHistoryTable.tsx"
     status: observed-snapshot
-    snapshot: 10 статических columnheader, без фильтров/сортировки; общая оболочка ReportTable не
-      переносит controls
+    snapshot: "10 статических columnheader, без фильтров/сортировки; общая оболочка ReportTable не переносит controls"
   fonts:
     kind: document
-    uri: specs/Ресурсы/Шрифты/README.md
+    uri: "specs/Ресурсы/Шрифты/README.md"
     status: reference-only
-    snapshot: Канонические CoFo Sans Regular/Medium
+    snapshot: "Канонические CoFo Sans Regular/Medium"
   base-css:
     kind: document
-    uri: references/implementation/styles/base.css
+    uri: "references/implementation-current/styles/base.css"
     status: observed-snapshot
-    snapshot: root CoFo Sans; --table-heading-hover:#e2e6ec
+    snapshot: "root CoFo Sans; --table-heading-hover:#e2e6ec"
   padding-decision:
     kind: document
-    uri: specs/Общие компоненты/Базовые элементы/Заголовок колонки/Контракт.md
+    uri: "specs/Общие компоненты/Базовые элементы/Заголовок колонки/Контракт.md"
     status: approved-decision
     snapshot: Прямое уточнение4ноября о вертикальном padding8 без увеличения высоты фильтруемой шапки
   source-catalog-css:
     kind: document
-    uri: references/implementation/features/sources/Sources.module.css
+    uri: "references/implementation-current/features/sources/Sources.module.css"
     status: observed-snapshot
-    snapshot: Существующий th52 и интервал до строк сохранены, padding8/4, зона36 после прямого
-      поручения пользователя
+    snapshot: Ячейка 48 px и внутренний элемент 32 px совпадают с геометрией отчётов. Начальный отступ входит в прокручиваемые строки
   source-catalog-native:
     kind: document
-    uri: references/implementation/features/sources/SourceCatalog.tsx
+    uri: "references/implementation-current/features/sources/SourceCatalog.tsx"
     status: observed-snapshot
-    snapshot: "prototype-2026-11-04-c1; SourceTable: open/applied по колонке, active glyph плюс
-      отдельный clear, не report48 substitution"
+    snapshot: "prototype-2026-11-04-c1; SourceTable: open/applied по колонке, active glyph плюс отдельный clear, не report48 substitution"
   source-contract:
     kind: document
-    uri: specs/Разделы/Источники/Контракт.md
+    uri: "specs/Разделы/Источники/Контракт.md"
     status: approved-decision
-    snapshot: Источник=Платформа+Слой; Описание/Домен/В аналитике; DRAFT/APPLIED и Reset у родителя
+    snapshot: "Источник=Платформа+Слой; Описание/Домен/В аналитике; DRAFT/APPLIED и Reset у родителя"
   source-render:
     kind: document
-    uri: specs/Ресурсы/Срез прототипа/frames/sources.png
+    uri: "specs/Ресурсы/Срез прототипа/frames/sources.png"
     status: observed-snapshot
-    snapshot: prototype-2026-11-04-c1; list,1440×900,без условий; не изображение всех source-состояний
+    snapshot: "prototype-2026-11-04-c1; list,1440×900,без условий; не изображение всех source-состояний"
   source-open-render:
     kind: document
-    uri: specs/Ресурсы/Срез прототипа/frames/source52-open-applied.png
+    uri: "specs/Ресурсы/Срез прототипа/frames/source52-open-applied.png"
     status: observed-snapshot
-    snapshot: prototype-2026-11-04-c1; platform+layer+domain applied,6 объектов,count3; открыто меню Источник
+    snapshot: "prototype-2026-11-04-c1; platform+layer+domain applied,6 объектов,count3; открыто меню Источник"
   source-cleared-render:
     kind: document
-    uri: specs/Ресурсы/Срез прототипа/frames/source52-cleared.png
+    uri: "specs/Ресурсы/Срез прототипа/frames/source52-cleared.png"
     status: observed-snapshot
-    snapshot: prototype-2026-11-04-c1; footer Reset очистил platform/layer, domain сохраняется,7
-      объектов,count1
+    snapshot: "prototype-2026-11-04-c1; footer Reset очистил platform/layer, domain сохраняется,7 объектов,count1"
+  select-reset-parameters:
+    kind: document
+    uri: "specs/Общие компоненты/Базовые элементы/Селект/Параметры.yaml"
+    status: approved-decision
+    snapshot: Общие цвета сброса для компактного круга заголовка колонки
 tokens:
+  reset-background:
+    type: color
+    sourceRef: select-reset-parameters
+    locator: base.parameters.multi-clear-background
+  reset-foreground:
+    type: color
+    sourceRef: select-reset-parameters
+    locator: base.parameters.multi-clear-glyph-color
   ui-font:
     type: font-family
     sourceRef: fonts
@@ -154,590 +164,148 @@ tokens:
   header-muted:
     type: color
     sourceRef: header-composed
-    locator: VariableID:530:272, color/muted; сохраняет composed-binding
+    locator: "VariableID:530:272, color/muted; сохраняет composed-binding"
 base:
-  sourceRefs:
-    - fonts
-    - base-css
+  sourceRefs: [fonts, base-css]
   parameters:
-    font-family:
-      type: token
-      ref: ui-font
-      expectedType: font-family
-    font-size:
-      type: dimension
-      value: 12
-      unit: px
-      sourceRefs:
-        - header-composed
-        - subscription-figma
-        - contribution-figma
-        - metric-css
-        - usage-css
-    font-weight:
-      type: font-weight
-      value: 500
-      sourceRefs:
-        - header-composed
-        - subscription-figma
-        - contribution-figma
-        - metric-css
-        - usage-css
+    font-family: {type: token, ref: ui-font, expectedType: font-family}
+    font-size: {type: dimension, value: 12, unit: px, sourceRefs: [header-composed, subscription-figma, contribution-figma, metric-css, usage-css]}
+    font-weight: {type: font-weight, value: 500, sourceRefs: [header-composed, subscription-figma, contribution-figma, metric-css, usage-css]}
 variants:
   report48:
-    description: "Принятый отчётный заголовок: open/applied/sort независимы; current-* сохраняет
-      наблюдаемые CSS-добавления"
-    sourceRefs:
-      - header-composed
-      - cell-hover
-      - table-code
-      - table-css
+    description: "Принятый отчётный заголовок: open/applied/sort независимы; current-* сохраняет наблюдаемые CSS-добавления"
+    sourceRefs: [header-composed, cell-hover, table-code, table-css]
     parameters:
-      height:
-        type: dimension
-        value: 48
-        unit: px
-      outer-padding-x:
-        type: dimension
-        value: 4
-        unit: px
-      outer-padding-y:
-        type: dimension
-        value: 8
-        unit: px
-        sourceRefs:
-          - padding-decision
-      content-height:
-        type: dimension
-        value: 32
-        unit: px
-        sourceRefs:
-          - padding-decision
-      content-padding-y:
-        type: dimension
-        value: 0
-        unit: px
-      content-padding-x:
-        type: dimension
-        value: 8
-        unit: px
-      content-gap:
-        type: dimension
-        value: 8
-        unit: px
-      content-justify:
-        type: string
-        value: MIN
-        sourceRefs:
-          - cell-hover
-      radius:
-        type: dimension
-        value: 8
-        unit: px
-      line-height:
-        type: dimension
-        value: 18
-        unit: px
-        sourceRefs:
-          - header-composed
-      foreground:
-        type: token
-        ref: header-muted
-        expectedType: color
-        sourceRefs:
-          - header-composed
-      background:
-        type: color
-        format: hex
-        value: "#00000000"
-      label-line-count:
-        type: integer
-        value: 1
-        sourceRefs:
-          - header-composed
-      label-overflow:
-        type: string
-        value: ENDING
-        sourceRefs:
-          - header-composed
-      filter-width:
-        type: dimension
-        value: 16
-        unit: px
-        sourceRefs:
-          - filter-master
-      filter-height:
-        type: dimension
-        value: 16
-        unit: px
-        sourceRefs:
-          - filter-master
-      sort-width:
-        type: dimension
-        value: 16
-        unit: px
-        sourceRefs:
-          - sort-applied
-      sort-height:
-        type: dimension
-        value: 16
-        unit: px
-        sourceRefs:
-          - sort-applied
-      sort-gap:
-        type: dimension
-        value: 8
-        unit: px
-        sourceRefs:
-          - sort-applied
-      sort-color:
-        type: color
-        format: hex
-        value: "#007BFC"
-        sourceRefs:
-          - sort-applied
-      sort-desc-rotation:
-        type: angle
-        value: 180
-        unit: deg
-        sourceRefs:
-          - table-css
-          - table-code
-      current-first-content-padding-left:
-        type: dimension
-        value: 16
-        unit: px
-        sourceRefs:
-          - table-css
-      current-clear-outline-width:
-        type: dimension
-        value: 2
-        unit: px
-        sourceRefs:
-          - table-css
-      current-clear-outline-color:
-        type: color
-        format: hex
-        value: "#FFFFFF"
-        sourceRefs:
-          - table-css
-      current-focus-width:
-        type: dimension
-        value: 2
-        unit: px
-        sourceRefs:
-          - table-css
-      current-focus-offset:
-        type: dimension
-        value: -2
-        unit: px
-        sourceRefs:
-          - table-css
-      current-focus-color:
-        type: color
-        format: hex
-        value: "#007BFC"
-        sourceRefs:
-          - table-css
-      current-label-white-space:
-        type: string
-        value: nowrap
-        sourceRefs:
-          - table-css
-      current-sorted-label-overflow:
-        type: string
-        value: ellipsis
-        sourceRefs:
-          - table-css
+      height: {type: dimension, value: 48, unit: px}
+      outer-padding-x: {type: dimension, value: 4, unit: px}
+      outer-padding-y: {type: dimension, value: 8, unit: px, sourceRefs: [padding-decision]}
+      content-height: {type: dimension, value: 32, unit: px, sourceRefs: [padding-decision]}
+      content-padding-y: {type: dimension, value: 0, unit: px}
+      content-padding-x: {type: dimension, value: 8, unit: px}
+      content-gap: {type: dimension, value: 8, unit: px}
+      content-justify: {type: string, value: MIN, sourceRefs: [cell-hover]}
+      radius: {type: dimension, value: 8, unit: px}
+      line-height: {type: dimension, value: 18, unit: px, sourceRefs: [header-composed]}
+      foreground: {type: token, ref: header-muted, expectedType: color, sourceRefs: [header-composed]}
+      background: {type: color, format: hex, value: "#00000000"}
+      label-line-count: {type: integer, value: 1, sourceRefs: [header-composed]}
+      label-overflow: {type: string, value: ENDING, sourceRefs: [header-composed]}
+      filter-width: {type: dimension, value: 16, unit: px, sourceRefs: [filter-master]}
+      filter-height: {type: dimension, value: 16, unit: px, sourceRefs: [filter-master]}
+      sort-width: {type: dimension, value: 16, unit: px, sourceRefs: [sort-applied]}
+      sort-height: {type: dimension, value: 16, unit: px, sourceRefs: [sort-applied]}
+      sort-gap: {type: dimension, value: 8, unit: px, sourceRefs: [sort-applied]}
+      sort-color: {type: color, format: hex, value: "#007BFC", sourceRefs: [sort-applied]}
+      sort-desc-rotation: {type: angle, value: 180, unit: deg, sourceRefs: [table-css, table-code]}
+      current-first-content-padding-left: {type: dimension, value: 16, unit: px, sourceRefs: [table-css]}
+      current-clear-outline-width: {type: dimension, value: 2, unit: px, sourceRefs: [table-css]}
+      current-clear-outline-color: {type: color, format: hex, value: "#FFFFFF", sourceRefs: [table-css]}
+      current-focus-width: {type: dimension, value: 2, unit: px, sourceRefs: [table-css]}
+      current-focus-offset: {type: dimension, value: -2, unit: px, sourceRefs: [table-css]}
+      current-focus-color: {type: color, format: hex, value: "#007BFC", sourceRefs: [table-css]}
+      current-label-white-space: {type: string, value: nowrap, sourceRefs: [table-css]}
+      current-sorted-label-overflow: {type: string, value: ellipsis, sourceRefs: [table-css]}
     states:
       hover:
-        sourceRefs:
-          - cell-hover
+        sourceRefs: [cell-hover]
         parameters:
-          background:
-            type: color
-            format: hex
-            value: "#E2E6EC"
+          background: {type: color, format: hex, value: "#E2E6EC"}
       open:
-        sourceRefs:
-          - cell-open
+        sourceRefs: [cell-open]
         parameters:
-          background:
-            type: color
-            format: hex
-            value: "#E2E6EC"
-          filter-color:
-            type: color
-            format: hex
-            value: "#007BFC"
+          background: {type: color, format: hex, value: "#E2E6EC"}
+          filter-color: {type: color, format: hex, value: "#007BFC"}
       applied:
-        sourceRefs:
-          - cell-applied
-          - table-css
+        sourceRefs: [table-css]
         parameters:
-          clear-width:
-            type: dimension
-            value: 16
-            unit: px
-          clear-height:
-            type: dimension
-            value: 16
-            unit: px
-          clear-background:
-            type: color
-            format: hex
-            value: "#007BFC"
-          current-minus-width:
-            type: dimension
-            value: 10
-            unit: px
-            sourceRefs:
-              - table-code
-          current-minus-height:
-            type: dimension
-            value: 10
-            unit: px
-            sourceRefs:
-              - table-code
+          filter-color: {type: color, format: hex, value: "#007BFC"}
       applied-hover:
-        sourceRefs:
-          - cell-applied
-          - table-css
+        sourceRefs: [reset-css]
         parameters:
-          clear-width:
-            type: dimension
-            value: 16
-            unit: px
-          clear-height:
-            type: dimension
-            value: 16
-            unit: px
-          clear-background:
-            type: color
-            format: hex
-            value: "#E2E4EA"
-          current-minus-width:
-            type: dimension
-            value: 10
-            unit: px
-            sourceRefs:
-              - table-code
-          current-minus-height:
-            type: dimension
-            value: 10
-            unit: px
-            sourceRefs:
-              - table-code
+          clear-width: {type: dimension, value: 16, unit: px}
+          clear-height: {type: dimension, value: 16, unit: px}
+          clear-background: {type: token, ref: reset-background, expectedType: color}
+          clear-cross-color: {type: token, ref: reset-foreground, expectedType: color}
+          clear-cross-size: {type: dimension, value: 10, unit: px}
   source-filter52:
-    description: Фильтруемые заголовки источников с сохранением структурной высоты и межстрочного
-      отступа таблицы
-    sourceRefs:
-      - padding-decision
-      - source-catalog-css
-      - source-catalog-native
-      - source-contract
-      - source-render
-      - source-open-render
-      - source-cleared-render
+    description: Фильтруемые заголовки источников высотой 48 px. Идентификатор сохраняется для действующих ссылок
+    sourceRefs: [padding-decision, source-catalog-css, source-catalog-native, source-contract, source-render, source-open-render, source-cleared-render]
     parameters:
-      height:
-        type: dimension
-        value: 52
-        unit: px
-      outer-padding-x:
-        type: dimension
-        value: 4
-        unit: px
-      outer-padding-y:
-        type: dimension
-        value: 8
-        unit: px
-      content-height:
-        type: dimension
-        value: 36
-        unit: px
-      content-padding-x:
-        type: dimension
-        value: 8
-        unit: px
-      content-gap:
-        type: dimension
-        value: 8
-        unit: px
-      radius:
-        type: dimension
-        value: 8
-        unit: px
-      line-height:
-        type: dimension
-        value: 18
-        unit: px
-      foreground:
-        type: color
-        format: hex
-        value: "#687D96"
-      filter-width:
-        type: dimension
-        value: 16
-        unit: px
-      filter-height:
-        type: dimension
-        value: 16
-        unit: px
-      first-content-padding-left:
-        type: dimension
-        value: 16
-        unit: px
-      clear-size:
-        type: dimension
-        value: 16
-        unit: px
-      clear-margin-right:
-        type: dimension
-        value: 8
-        unit: px
-      minus-width:
-        type: dimension
-        value: 10
-        unit: px
-      minus-height:
-        type: dimension
-        value: 10
-        unit: px
-      clear-background:
-        type: color
-        format: hex
-        value: "#007BFC"
-      background:
-        type: color
-        format: hex
-        value: "#00000000"
-      filter-appearance:
-        type: string
-        value: neutral
-      clear-visible:
-        type: boolean
-        value: false
-      sort-visible:
-        type: boolean
-        value: false
+      height: {type: dimension, value: 48, unit: px}
+      outer-padding-x: {type: dimension, value: 4, unit: px}
+      outer-padding-y: {type: dimension, value: 8, unit: px}
+      content-height: {type: dimension, value: 32, unit: px}
+      content-padding-x: {type: dimension, value: 8, unit: px}
+      content-gap: {type: dimension, value: 8, unit: px}
+      radius: {type: dimension, value: 8, unit: px}
+      line-height: {type: dimension, value: 18, unit: px}
+      foreground: {type: color, format: hex, value: "#687D96"}
+      filter-width: {type: dimension, value: 16, unit: px}
+      filter-height: {type: dimension, value: 16, unit: px}
+      first-content-padding-left: {type: dimension, value: 16, unit: px}
+      background: {type: color, format: hex, value: "#00000000"}
+      filter-appearance: {type: string, value: "neutral"}
+      clear-visible: {type: boolean, value: false}
+      sort-visible: {type: boolean, value: false}
     states:
       hover:
-        sourceRefs:
-          - source-catalog-css
+        sourceRefs: [source-catalog-css]
         parameters:
-          background:
-            type: color
-            format: hex
-            value: "#E2E6EC"
+          background: {type: color, format: hex, value: "#E2E6EC"}
       open:
-        sourceRefs:
-          - source-catalog-css
-          - source-catalog-native
+        sourceRefs: [source-catalog-css, source-catalog-native]
         parameters:
-          background:
-            type: color
-            format: hex
-            value: "#E2E6EC"
-          filter-appearance:
-            type: string
-            value: active
+          background: {type: color, format: hex, value: "#E2E6EC"}
+          filter-appearance: {type: string, value: "active"}
       applied:
-        sourceRefs:
-          - source-catalog-css
-          - source-catalog-native
-          - source-contract
+        sourceRefs: [source-catalog-css, source-catalog-native, source-contract]
         parameters:
-          filter-appearance:
-            type: string
-            value: active
-          clear-visible:
-            type: boolean
-            value: true
+          filter-appearance: {type: string, value: "active"}
+          clear-visible: {type: boolean, value: false}
       open-applied:
-        sourceRefs:
-          - source-catalog-css
-          - source-catalog-native
-          - source-contract
+        sourceRefs: [source-catalog-css, source-catalog-native, source-contract]
         parameters:
-          background:
-            type: color
-            format: hex
-            value: "#E2E6EC"
-          filter-appearance:
-            type: string
-            value: active
-          clear-visible:
-            type: boolean
-            value: true
-      applied-hover:
-        sourceRefs:
-          - source-catalog-css
-          - source-catalog-native
-          - source-contract
+          background: {type: color, format: hex, value: "#E2E6EC"}
+          filter-appearance: {type: string, value: "active"}
+          clear-visible: {type: boolean, value: false}
+      applied-reset-indicator:
+        sourceRefs: [source-catalog-native, source-contract, reset-css]
         parameters:
-          background:
-            type: color
-            format: hex
-            value: "#E2E6EC"
-          filter-appearance:
-            type: string
-            value: active
-          clear-visible:
-            type: boolean
-            value: true
+          filter-appearance: {type: string, value: hidden}
+          clear-visible: {type: boolean, value: true}
   home-static48:
-    description: Принятая типографика generic-шапок подписок/вклада; current-* — только наблюдаемые
-      внутренние CSS-параметры
-    sourceRefs:
-      - subscription-figma
-      - contribution-figma
-      - subscription-css
-      - contribution-css
+    description: "Принятая типографика generic-шапок подписок/вклада; current-* — только наблюдаемые внутренние CSS-параметры"
+    sourceRefs: [subscription-figma, contribution-figma, subscription-css, contribution-css]
     parameters:
-      height:
-        type: dimension
-        value: 48
-        unit: px
-      line-height:
-        type: dimension
-        value: 20
-        unit: px
-      foreground:
-        type: token
-        ref: header-muted
-        expectedType: color
-      current-padding-y:
-        type: dimension
-        value: 4
-        unit: px
-        sourceRefs:
-          - subscription-css
-          - contribution-css
-      current-padding-x:
-        type: dimension
-        value: 12
-        unit: px
-        sourceRefs:
-          - subscription-css
-          - contribution-css
-      current-first-padding-left:
-        type: dimension
-        value: 20
-        unit: px
-        sourceRefs:
-          - subscription-css
-          - contribution-css
-      current-text-container-height:
-        type: dimension
-        value: 18
-        unit: px
-        sourceRefs:
-          - subscription-css
-          - contribution-css
-      current-contribution-metric-container-height:
-        type: dimension
-        value: 20
-        unit: px
-        sourceRefs:
-          - contribution-css
+      height: {type: dimension, value: 48, unit: px}
+      line-height: {type: dimension, value: 20, unit: px}
+      foreground: {type: token, ref: header-muted, expectedType: color}
+      current-padding-y: {type: dimension, value: 4, unit: px, sourceRefs: [subscription-css, contribution-css]}
+      current-padding-x: {type: dimension, value: 12, unit: px, sourceRefs: [subscription-css, contribution-css]}
+      current-first-padding-left: {type: dimension, value: 20, unit: px, sourceRefs: [subscription-css, contribution-css]}
+      current-text-container-height: {type: dimension, value: 18, unit: px, sourceRefs: [subscription-css, contribution-css]}
+      current-contribution-metric-container-height: {type: dimension, value: 20, unit: px, sourceRefs: [contribution-css]}
   related-metric24:
-    description: "Прямое уточнение4ноября: компактные статические заголовки; current-* — наблюдаемые
-      дополнения CSS"
-    sourceRefs:
-      - metric-decision
-      - metric-css
+    description: "Прямое уточнение4ноября: компактные статические заголовки; current-* — наблюдаемые дополнения CSS"
+    sourceRefs: [metric-decision, metric-css]
     parameters:
-      height:
-        type: dimension
-        value: 24
-        unit: px
-      line-height:
-        type: dimension
-        value: 18
-        unit: px
-      padding-y:
-        type: dimension
-        value: 2
-        unit: px
-      padding-x:
-        type: dimension
-        value: 12
-        unit: px
-      first-padding-left:
-        type: dimension
-        value: 20
-        unit: px
-      current-foreground:
-        type: color
-        format: hex
-        value: "#687D96"
-        sourceRefs:
-          - metric-css
-      current-background:
-        type: color
-        format: hex
-        value: "#F3F4F9"
-        sourceRefs:
-          - metric-css
-      current-border-width:
-        type: dimension
-        value: 0
-        unit: px
-        sourceRefs:
-          - metric-css
-      current-text-align:
-        type: string
-        value: left
-        sourceRefs:
-          - metric-css
+      height: {type: dimension, value: 24, unit: px}
+      line-height: {type: dimension, value: 18, unit: px}
+      padding-y: {type: dimension, value: 2, unit: px}
+      padding-x: {type: dimension, value: 12, unit: px}
+      first-padding-left: {type: dimension, value: 20, unit: px}
+      current-foreground: {type: color, format: hex, value: "#687D96", sourceRefs: [metric-css]}
+      current-background: {type: color, format: hex, value: "#F3F4F9", sourceRefs: [metric-css]}
+      current-border-width: {type: dimension, value: 0, unit: px, sourceRefs: [metric-css]}
+      current-text-align: {type: string, value: left, sourceRefs: [metric-css]}
   usage-static48:
-    description: "Неинтерактивная история по месяцам: однострочность — принятое уточнение; численные
-      CSS-параметры — наблюдаемый срез"
-    sourceRefs:
-      - metric-decision
-      - usage-code
-      - usage-css
-      - table-css
+    description: "Неинтерактивная история по месяцам: однострочность — принятое уточнение; численные CSS-параметры — наблюдаемый срез"
+    sourceRefs: [metric-decision, usage-code, usage-css, table-css]
     parameters:
-      height:
-        type: dimension
-        value: 48
-        unit: px
-        sourceRefs:
-          - table-css
-      line-height:
-        type: dimension
-        value: 18
-        unit: px
-        sourceRefs:
-          - usage-css
-      padding-y:
-        type: dimension
-        value: 0
-        unit: px
-        sourceRefs:
-          - usage-css
-      padding-x:
-        type: dimension
-        value: 12
-        unit: px
-        sourceRefs:
-          - usage-css
-      first-padding-left:
-        type: dimension
-        value: 20
-        unit: px
-        sourceRefs:
-          - usage-css
-      foreground:
-        type: color
-        format: hex
-        value: "#687D96"
-        sourceRefs:
-          - usage-css
-      white-space:
-        type: string
-        value: nowrap
-        sourceRefs:
-          - usage-css
+      height: {type: dimension, value: 48, unit: px, sourceRefs: [table-css]}
+      line-height: {type: dimension, value: 18, unit: px, sourceRefs: [usage-css]}
+      padding-y: {type: dimension, value: 0, unit: px, sourceRefs: [usage-css]}
+      padding-x: {type: dimension, value: 12, unit: px, sourceRefs: [usage-css]}
+      first-padding-left: {type: dimension, value: 20, unit: px, sourceRefs: [usage-css]}
+      foreground: {type: color, format: hex, value: "#687D96", sourceRefs: [usage-css]}
+      white-space: {type: string, value: nowrap, sourceRefs: [usage-css]}

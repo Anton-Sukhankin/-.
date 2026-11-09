@@ -1,0 +1,81 @@
+schemaVersion: 1
+component:
+  id: crm-reference-search
+  title: Панель поиска CRM
+  contract: "specs/Разделы/Справочники ИС/Панель поиска CRM.md"
+  status: observed-source
+sources:
+  panel-style:
+    kind: document
+    uri: "references/implementation/features/system-references/ReferenceSearchPanel.module.css"
+    status: observed-snapshot
+    snapshot: Геометрия и пороги ширины панели в React, 8 ноября 2026
+  panel-markup:
+    kind: document
+    uri: "references/implementation/features/system-references/ReferenceSearchPanel.tsx"
+    status: observed-snapshot
+    snapshot: Размер иконки переключателя раскрытия
+  search-field-style:
+    kind: document
+    uri: "references/implementation-current/components/Search/SearchField.module.css"
+    status: observed-snapshot
+    snapshot: Радиус и цвет фокуса общих полей
+  action-style:
+    kind: document
+    uri: "references/implementation/components/FilterButton/SearchPanelToggle.module.css"
+    status: observed-snapshot
+    snapshot: Высота действий панели
+  fixed-header-style:
+    kind: document
+    uri: "references/implementation/features/system-references/SystemReferencesWorkspace.module.css"
+    status: observed-snapshot
+    snapshot: Верхнее поле фиксируемой части
+  count-style:
+    kind: document
+    uri: "references/implementation-current/components/FilterButton/FilterButton.module.css"
+    status: observed-snapshot
+    snapshot: Привязка счётчика к кнопке
+base:
+  sourceRefs: [panel-style]
+  parameters:
+    panel-radius: {type: dimension, value: 12, unit: px}
+    panel-border-color: {type: color, format: hex, value: "#E6E6E6"}
+    panel-margin-inline: {type: dimension, value: 16, unit: px}
+    panel-margin-block: {type: dimension, value: 8, unit: px}
+    visible-fixed-header-padding-top: {type: dimension, value: 8, unit: px, sourceRefs: [fixed-header-style]}
+    zone-padding: {type: dimension, value: 16, unit: px}
+    divider-width: {type: dimension, value: 1, unit: px}
+    divider-color: {type: color, format: hex, value: "#E2E4EA"}
+    disclosure-size: {type: dimension, value: 40, unit: px}
+    disclosure-icon-size: {type: dimension, value: 16, unit: px, sourceRefs: [panel-markup]}
+    field-height: {type: dimension, value: 40, unit: px}
+    field-padding-inline: {type: dimension, value: 12, unit: px}
+    field-label-gap: {type: dimension, value: 12, unit: px}
+    action-gap: {type: dimension, value: 8, unit: px}
+    field-radius: {type: dimension, value: 8, unit: px, sourceRefs: [search-field-style]}
+    field-focus-border: {type: color, format: hex, value: '#007BFC', sourceRefs: [search-field-style]}
+    action-height: {type: dimension, value: 40, unit: px, sourceRefs: [action-style]}
+variants:
+  expanded:
+    description: Поля критериев показаны в зоне под локальным запросом
+    sourceRefs: [panel-style]
+    parameters:
+      criteria-single-column-max-container-width: {type: dimension, value: 590, unit: px}
+      criteria-gap: {type: dimension, value: 12, unit: px}
+  compact:
+    description: Чипсы критериев заменяют поля, действия перемещаются к запросу
+    sourceRefs: [panel-style]
+    parameters:
+      stacked-groups-max-container-width: {type: dimension, value: 690, unit: px}
+      actions-own-row-max-container-width: {type: dimension, value: 470, unit: px}
+  hidden:
+    description: Привязка счётчика при скрытом поиске
+    sourceRefs: [count-style]
+    parameters:
+      count-block-start: {type: dimension, value: -4, unit: px}
+      count-inline-start-from-button-end: {type: dimension, value: -12, unit: px}
+dependencies:
+  - id: crm-reference-criteria-chips
+    role: child-contract
+    document: "specs/Разделы/Справочники ИС/Чипсы и редакторы CRM.md"
+

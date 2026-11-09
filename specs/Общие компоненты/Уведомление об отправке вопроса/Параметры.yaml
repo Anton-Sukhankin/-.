@@ -1,0 +1,26 @@
+schemaVersion: 1
+component:
+  id: question-sent-notice
+  title: Уведомление об отправке вопроса
+  contract: "specs/Общие компоненты/Уведомление об отправке вопроса/Контракт.md"
+  status: approved-target
+sources:
+  css:
+    kind: document
+    uri: "references/implementation/features/questions/QuestionSentNotice.module.css"
+    status: observed-snapshot
+    snapshot: 8 ноября 2026
+base:
+  sourceRefs: [css]
+  parameters:
+    radius: {type: dimension, value: 12, unit: px}
+variants:
+  confirmation:
+    description: Подтверждение в правом нижнем углу
+    sourceRefs: [css]
+    parameters:
+      right: {type: dimension, value: 24, unit: px}
+      bottom: {type: dimension, value: 24, unit: px}
+      maximum-width: {type: dimension, value: 400, unit: px}
+      padding: {type: dimension, value: 16, unit: px}
+      border: {type: color, format: hex, value: "#D6E6FB"}

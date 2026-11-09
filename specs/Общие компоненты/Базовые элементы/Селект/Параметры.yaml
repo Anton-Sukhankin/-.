@@ -2,72 +2,72 @@ schemaVersion: 1
 component:
   id: select
   title: Селект и строка выбора
-  contract: specs/Общие компоненты/Базовые элементы/Селект/Контракт.md
+  contract: "specs/Общие компоненты/Базовые элементы/Селект/Контракт.md"
   status: approved-target
 sources:
   field-values:
     kind: figma
     uri: https://www.figma.com/design/lnOcWh4ElGkhppWe6Kn5AA?node-id=1310-38277
-    nodeId: 1310:38277
+    nodeId: "1310:38277"
     status: unverified-live
-    snapshot: Параметры поля из принятого локального среза 1–2 ноября; variable113:19 сохранена как
-      происхождение resolved paint, актуальность живого узла не подтверждена
+    snapshot: Параметры поля из принятого локального среза 1–2 ноября; variable113:19 сохранена как происхождение resolved paint, актуальность живого узла не подтверждена
   list-values:
     kind: figma
     uri: https://www.figma.com/design/lnOcWh4ElGkhppWe6Kn5AA?node-id=1436-179840
-    nodeId: 1436:179840
+    nodeId: "1436:179840"
     status: unverified-live
     snapshot: Список с поиском; источник параметров, ошибочная координата y420 не принимается
   current-application:
     kind: document
-    uri: specs/Общие компоненты/Фильтрация отчётов/Контракт.md
+    uri: "specs/Общие компоненты/Фильтрация отчётов/Контракт.md"
     status: approved-decision
     snapshot: Действующие исключения и конфигурации полей после решений 3–4 ноября
   appearance-owner:
     kind: document
-    uri: context/target/Требования и границы.md
+    uri: "context/target/Требования и границы.md"
     status: approved-decision
     snapshot: Общее появление popup от 4 ноября; механизм reduced-motion у этого владельца
   fonts:
     kind: document
-    uri: specs/Ресурсы/Шрифты/README.md
+    uri: "specs/Ресурсы/Шрифты/README.md"
     status: reference-only
     snapshot: Файлы CoFo Sans Regular/Medium предоставлены пользователем
   input-parameters:
     kind: document
-    uri: specs/Общие компоненты/Базовые элементы/Поле ввода/Параметры.yaml
+    uri: "specs/Общие компоненты/Базовые элементы/Поле ввода/Параметры.yaml"
     status: approved-decision
     snapshot: П4-03 переносит внутренние параметры поиска к B02; внешняя область поиска остаётся B04
   choice-parameters:
     kind: document
-    uri: specs/Общие компоненты/Базовые элементы/Контрол выбора/Параметры.yaml
+    uri: "specs/Общие компоненты/Базовые элементы/Контрол выбора/Параметры.yaml"
     status: approved-decision
     snapshot: П4-04 переносит два размера checkbox к B06; строка и её текст/hover/selected остаются у B05
   sidebar-hover:
     kind: document
-    uri: references/implementation/components/Sidebar/Sidebar.module.css
+    uri: "references/implementation-current/components/Sidebar/Sidebar.module.css"
     status: approved-decision
-    snapshot: Решение пользователя4ноября; светлый hover dropdown совпадает с фоном самой боковой
-      панели, не активного пункта
+    snapshot: Решение пользователя4ноября; светлый hover dropdown совпадает с фоном самой боковой панели, не активного пункта
   single-check:
     kind: figma
     uri: https://www.figma.com/design/XxVV0tHNlBa7jYks6pcuCq?node-id=2525-997
-    nodeId: 2525:997
+    nodeId: "2525:997"
     status: observed-snapshot
-    snapshot: DS-03 05. System / 01. Check; live get_design_context4ноября, SVG24x24 без изменения
-      байтов; происхождение prototype/src/components/DropdownItem/check-source.json
+    snapshot: DS-03 05. System / 01. Check; live get_design_context4ноября, SVG24x24 без изменения байтов; происхождение prototype/src/components/DropdownItem/check-source.json
   standalone-select:
     kind: document
-    uri: references/implementation/components/SingleSelect/SingleSelect.tsx
+    uri: "references/implementation-current/components/SingleSelect/SingleSelect.tsx"
     status: approved-decision
-    snapshot: Решение пользователя4ноября о едином hover и единственной галочке во всех селектах
-      прототипа; установленный Radix Select без новых зависимостей
+    snapshot: Решение пользователя4ноября о едином hover и единственной галочке во всех селектах прототипа; установленный Radix Select без новых зависимостей
   multi-selection-tags:
     kind: document
-    uri: specs/Общие компоненты/Базовые элементы/Селект/Контракт.md
+    uri: "specs/Общие компоненты/Базовые элементы/Селект/Контракт.md"
     status: approved-decision
-    snapshot: Решения пользователя 4–5 ноября о тегах multiple-полей, счётчике скрытых значений, списке
-      переполнения и удалении. Локальная реализация MultiSelectTrigger
+    snapshot: Решения пользователя 4–5 ноября о тегах multiple-полей, счётчике скрытых значений, списке переполнения и удалении. Локальная реализация MultiSelectTrigger
+  select-clear-appearance:
+    kind: document
+    uri: "specs/Общие компоненты/Базовые элементы/Селект/Контракт.md"
+    status: approved-decision
+    snapshot: Уточнение 8 ноября о размере и цветах общей кнопки сброса внутри селекта
 tokens:
   single-check-width:
     type: dimension
@@ -122,608 +122,176 @@ tokens:
     sourceRef: appearance-owner
     locator: Появление выпадающих меню — easing
 base:
-  sourceRefs:
-    - field-values
-    - list-values
-    - current-application
-    - fonts
+  sourceRefs: [field-values, list-values, current-application, fonts]
   parameters:
-    trigger-owner:
-      type: string
-      value: select
-    surface-owner:
-      type: string
-      value: select
-    label-height:
-      type: dimension
-      value: 12
-      unit: px
-    label-gap:
-      type: dimension
-      value: 12
-      unit: px
-    label-font-size:
-      type: dimension
-      value: 12
-      unit: px
-    label-line-height:
-      type: dimension
-      value: 12
-      unit: px
-    label-font-weight:
-      type: font-weight
-      value: 400
-    label-color:
-      type: color
-      format: hex
-      value: "#202028"
-    field-height:
-      type: dimension
-      value: 40
-      unit: px
-    field-radius:
-      type: dimension
-      value: 10
-      unit: px
-    field-padding-inline:
-      type: dimension
-      value: 12
-      unit: px
-    field-content-gap:
-      type: dimension
-      value: 8
-      unit: px
-    field-border-width:
-      type: dimension
-      value: 1
-      unit: px
-    field-border-color:
-      type: color
-      format: hex
-      value: "#D7E6F5"
-    field-background:
-      type: color
-      format: hex
-      value: "#F3F4F9"
-    value-font-size:
-      type: dimension
-      value: 14
-      unit: px
-    value-line-height:
-      type: dimension
-      value: 14
-      unit: px
-    value-font-weight:
-      type: font-weight
-      value: 400
-    value-color:
-      type: color
-      format: srgb
-      value:
-        r: 0.12
-        g: 0.13
-        b: 0.15
-    font-family:
-      type: token
-      ref: ui-font
-      expectedType: font-family
-    glyph-size:
-      type: dimension
-      value: 16
-      unit: px
-    glyph-right-inset:
-      type: dimension
-      value: 12
-      unit: px
-    glyph-closed-angle:
-      type: angle
-      value: 0
-      unit: deg
-    glyph-open-angle:
-      type: angle
-      value: 180
-      unit: deg
-    surface-gap:
-      type: dimension
-      value: 8
-      unit: px
-    surface-anchor:
-      type: string
-      value: field-left
-    surface-radius:
-      type: dimension
-      value: 12
-      unit: px
-    surface-background:
-      type: color
-      format: hex
-      value: "#FFFFFF"
-    surface-border-width:
-      type: dimension
-      value: 0
-      unit: px
-    surface-shadow-x:
-      type: dimension
-      value: 0
-      unit: px
-    surface-shadow-y:
-      type: dimension
-      value: 8
-      unit: px
-    surface-shadow-blur:
-      type: dimension
-      value: 24
-      unit: px
-    surface-shadow-spread:
-      type: dimension
-      value: 0
-      unit: px
-    surface-shadow-color:
-      type: color
-      format: srgb
-      value:
-        r: 0
-        g: 0
-        b: 0
-        a: 0.12
-    surface-padding-inline:
-      type: dimension
-      value: 12
-      unit: px
-    surface-padding-bottom:
-      type: dimension
-      value: 12
-      unit: px
-    surface-appearance-duration-ms:
-      type: token
-      ref: popup-duration-ms
-      expectedType: integer
-    surface-appearance-easing:
-      type: token
-      ref: popup-easing
-      expectedType: string
-    search-region-height:
-      type: dimension
-      value: 56
-      unit: px
-    search-padding:
-      type: dimension
-      value: 12
-      unit: px
-    search-field-height:
-      type: token
-      ref: input-height
-      expectedType: dimension
-    search-font-size:
-      type: token
-      ref: input-font-size
-      expectedType: dimension
-    search-line-height:
-      type: token
-      ref: input-line-height
-      expectedType: dimension
-    search-font-weight:
-      type: token
-      ref: input-font-weight
-      expectedType: font-weight
-    search-placeholder-color:
-      type: token
-      ref: input-placeholder-color
-      expectedType: color
-    max-visible-options:
-      type: integer
-      value: 7
-    option-height:
-      type: dimension
-      value: 36
-      unit: px
-    option-radius:
-      type: dimension
-      value: 8
-      unit: px
-    option-transition-duration-ms:
-      type: integer
-      value: 160
-    option-hover-color:
-      type: token
-      ref: dropdown-hover
-      expectedType: color
-    option-gap:
-      type: dimension
-      value: 4
-      unit: px
-    option-content-gap:
-      type: dimension
-      value: 10
-      unit: px
-    option-padding-inline:
-      type: dimension
-      value: 0
-      unit: px
-    option-padding-block:
-      type: dimension
-      value: 0
-      unit: px
-    option-font-size:
-      type: dimension
-      value: 14
-      unit: px
-    option-line-height:
-      type: dimension
-      value: 18
-      unit: px
-    option-font-weight:
-      type: font-weight
-      value: 500
-    option-color:
-      type: color
-      format: srgb
-      value:
-        r: 0.09
-        g: 0.14
-        b: 0.22
-    option-selection-appearance:
-      type: string
-      value: checkbox
-    checkbox-size:
-      type: token
-      ref: choice-size
-      expectedType: dimension
-    checkbox-wrapper-height:
-      type: token
-      ref: choice-wrapper-height
-      expectedType: dimension
-    scrollbar-width:
-      type: dimension
-      value: 4
-      unit: px
-    multi-tag-gap:
-      type: dimension
-      value: 4
-      unit: px
-      sourceRefs:
-        - multi-selection-tags
-    multi-tag-height:
-      type: dimension
-      value: 24
-      unit: px
-      sourceRefs:
-        - multi-selection-tags
-    multi-tag-radius:
-      type: dimension
-      value: 4
-      unit: px
-      sourceRefs:
-        - multi-selection-tags
-    multi-tag-padding-inline:
-      type: dimension
-      value: 8
-      unit: px
-      sourceRefs:
-        - multi-selection-tags
-    multi-tag-padding-block:
-      type: dimension
-      value: 4
-      unit: px
-      sourceRefs:
-        - multi-selection-tags
-    multi-tag-background:
-      type: color
-      format: hex
-      value: "#60646C"
-      sourceRefs:
-        - multi-selection-tags
-    multi-tag-color:
-      type: color
-      format: hex
-      value: "#FFFFFF"
-      sourceRefs:
-        - multi-selection-tags
-    multi-tag-font-size:
-      type: dimension
-      value: 12
-      unit: px
-      sourceRefs:
-        - multi-selection-tags
-    multi-tag-line-height:
-      type: dimension
-      value: 16
-      unit: px
-      sourceRefs:
-        - multi-selection-tags
-    multi-tag-font-weight:
-      type: font-weight
-      value: 400
-      sourceRefs:
-        - multi-selection-tags
-    multi-tag-remove-size:
-      type: dimension
-      value: 12
-      unit: px
-      sourceRefs:
-        - multi-selection-tags
-    multi-tag-remove-gap:
-      type: dimension
-      value: 4
-      unit: px
-      sourceRefs:
-        - multi-selection-tags
-    multi-clear-size:
-      type: dimension
-      value: 20
-      unit: px
-      sourceRefs:
-        - multi-selection-tags
-    multi-clear-glyph-size:
-      type: dimension
-      value: 16
-      unit: px
-      sourceRefs:
-        - multi-selection-tags
-    multi-clear-right-inset:
-      type: dimension
-      value: 36
-      unit: px
-      sourceRefs:
-        - multi-selection-tags
-    multi-selected-rail-right-inset:
-      type: dimension
-      value: 64
-      unit: px
-      sourceRefs:
-        - multi-selection-tags
-    multi-search-min-options:
-      type: integer
-      value: 7
-      sourceRefs:
-        - multi-selection-tags
-    multi-counter-prefix:
-      type: string
-      value: +
-      sourceRefs:
-        - multi-selection-tags
-    multi-selected-surface-width:
-      type: dimension
-      value: 320
-      unit: px
-      sourceRefs:
-        - multi-selection-tags
-    multi-selected-surface-padding:
-      type: dimension
-      value: 8
-      unit: px
-      sourceRefs:
-        - multi-selection-tags
-    multi-selected-viewport-max-height:
-      type: dimension
-      value: 280
-      unit: px
-      sourceRefs:
-        - multi-selection-tags
-    multi-selected-row-min-height:
-      type: dimension
-      value: 36
-      unit: px
-      sourceRefs:
-        - multi-selection-tags
-    multi-selected-row-gap:
-      type: dimension
-      value: 4
-      unit: px
-      sourceRefs:
-        - multi-selection-tags
-    multi-selected-row-padding-inline:
-      type: dimension
-      value: 8
-      unit: px
-      sourceRefs:
-        - multi-selection-tags
-    multi-selected-row-padding-block:
-      type: dimension
-      value: 6
-      unit: px
-      sourceRefs:
-        - multi-selection-tags
-    multi-selected-row-content-gap:
-      type: dimension
-      value: 12
-      unit: px
-      sourceRefs:
-        - multi-selection-tags
-    multi-remove-circle-size:
-      type: dimension
-      value: 20
-      unit: px
-      sourceRefs:
-        - multi-selection-tags
-    multi-remove-glyph-size:
-      type: dimension
-      value: 12
-      unit: px
-      sourceRefs:
-        - multi-selection-tags
-    multi-preview-close-delay-ms:
-      type: integer
-      value: 160
-      sourceRefs:
-        - multi-selection-tags
+    trigger-owner: {type: string, value: select}
+    surface-owner: {type: string, value: select}
+    label-height: {type: dimension, value: 12, unit: px}
+    label-gap: {type: dimension, value: 12, unit: px}
+    label-font-size: {type: dimension, value: 12, unit: px}
+    label-line-height: {type: dimension, value: 12, unit: px}
+    label-font-weight: {type: font-weight, value: 400}
+    label-color: {type: color, format: hex, value: "#202028"}
+    field-height: {type: dimension, value: 40, unit: px}
+    field-radius: {type: dimension, value: 10, unit: px}
+    field-padding-inline: {type: dimension, value: 12, unit: px}
+    field-content-gap: {type: dimension, value: 8, unit: px}
+    field-border-width: {type: dimension, value: 1, unit: px}
+    field-border-color: {type: color, format: hex, value: "#D7E6F5"}
+    field-background: {type: color, format: hex, value: "#F3F4F9"}
+    value-font-size: {type: dimension, value: 14, unit: px}
+    value-line-height: {type: dimension, value: 14, unit: px}
+    value-font-weight: {type: font-weight, value: 400}
+    value-color: {type: color, format: srgb, value: {r: 0.12, g: 0.13, b: 0.15}}
+    font-family: {type: token, ref: ui-font, expectedType: font-family}
+    glyph-size: {type: dimension, value: 16, unit: px}
+    glyph-right-inset: {type: dimension, value: 12, unit: px}
+    glyph-closed-angle: {type: angle, value: 0, unit: deg}
+    glyph-open-angle: {type: angle, value: 180, unit: deg}
+    surface-gap: {type: dimension, value: 8, unit: px}
+    surface-anchor: {type: string, value: field-left}
+    surface-radius: {type: dimension, value: 12, unit: px}
+    surface-background: {type: color, format: hex, value: "#FFFFFF"}
+    surface-border-width: {type: dimension, value: 0, unit: px}
+    surface-shadow-x: {type: dimension, value: 0, unit: px}
+    surface-shadow-y: {type: dimension, value: 8, unit: px}
+    surface-shadow-blur: {type: dimension, value: 24, unit: px}
+    surface-shadow-spread: {type: dimension, value: 0, unit: px}
+    surface-shadow-color: {type: color, format: srgb, value: {r: 0, g: 0, b: 0, a: 0.12}}
+    surface-padding-inline: {type: dimension, value: 12, unit: px}
+    surface-padding-bottom: {type: dimension, value: 12, unit: px}
+    surface-appearance-duration-ms: {type: token, ref: popup-duration-ms, expectedType: integer}
+    surface-appearance-easing: {type: token, ref: popup-easing, expectedType: string}
+    search-region-height: {type: dimension, value: 56, unit: px}
+    search-padding: {type: dimension, value: 12, unit: px}
+    search-field-height: {type: token, ref: input-height, expectedType: dimension}
+    search-font-size: {type: token, ref: input-font-size, expectedType: dimension}
+    search-line-height: {type: token, ref: input-line-height, expectedType: dimension}
+    search-font-weight: {type: token, ref: input-font-weight, expectedType: font-weight}
+    search-placeholder-color: {type: token, ref: input-placeholder-color, expectedType: color}
+    max-visible-options: {type: integer, value: 7}
+    option-height: {type: dimension, value: 36, unit: px}
+    option-radius: {type: dimension, value: 8, unit: px}
+    option-transition-duration-ms: {type: integer, value: 160}
+    option-hover-color: {type: token, ref: dropdown-hover, expectedType: color}
+    option-gap: {type: dimension, value: 4, unit: px}
+    option-content-gap: {type: dimension, value: 10, unit: px}
+    option-padding-inline: {type: dimension, value: 0, unit: px}
+    option-padding-block: {type: dimension, value: 0, unit: px}
+    option-font-size: {type: dimension, value: 14, unit: px}
+    option-line-height: {type: dimension, value: 18, unit: px}
+    option-font-weight: {type: font-weight, value: 500}
+    option-color: {type: color, format: srgb, value: {r: 0.09, g: 0.14, b: 0.22}}
+    option-selection-appearance: {type: string, value: checkbox}
+    checkbox-size: {type: token, ref: choice-size, expectedType: dimension}
+    checkbox-wrapper-height: {type: token, ref: choice-wrapper-height, expectedType: dimension}
+    scrollbar-width: {type: dimension, value: 4, unit: px}
+    multi-tag-gap: {type: dimension, value: 4, unit: px, sourceRefs: [multi-selection-tags]}
+    multi-tag-height: {type: dimension, value: 24, unit: px, sourceRefs: [multi-selection-tags]}
+    multi-tag-radius: {type: dimension, value: 8, unit: px, sourceRefs: [multi-selection-tags]}
+    multi-tag-padding-inline: {type: dimension, value: 8, unit: px, sourceRefs: [multi-selection-tags]}
+    multi-tag-padding-block: {type: dimension, value: 4, unit: px, sourceRefs: [multi-selection-tags]}
+    multi-tag-background: {type: color, format: hex, value: "#60646C", sourceRefs: [multi-selection-tags]}
+    multi-tag-color: {type: color, format: hex, value: "#FFFFFF", sourceRefs: [multi-selection-tags]}
+    multi-tag-font-size: {type: dimension, value: 12, unit: px, sourceRefs: [multi-selection-tags]}
+    multi-tag-line-height: {type: dimension, value: 16, unit: px, sourceRefs: [multi-selection-tags]}
+    multi-tag-font-weight: {type: font-weight, value: 400, sourceRefs: [multi-selection-tags]}
+    multi-tag-remove-size: {type: dimension, value: 12, unit: px, sourceRefs: [multi-selection-tags]}
+    multi-tag-remove-gap: {type: dimension, value: 4, unit: px, sourceRefs: [multi-selection-tags]}
+    multi-clear-hit-size: {type: dimension, value: 20, unit: px, sourceRefs: [multi-selection-tags]}
+    multi-clear-size: {type: dimension, value: 18, unit: px, sourceRefs: [select-clear-appearance]}
+    multi-clear-glyph-size: {type: dimension, value: 12, unit: px, sourceRefs: [select-clear-appearance]}
+    multi-clear-glyph-color: {type: color, format: hex, value: "#FFFFFF", sourceRefs: [select-clear-appearance]}
+    multi-clear-background: {type: color, format: hex, value: "#81868E", sourceRefs: [select-clear-appearance]}
+    multi-clear-right-inset: {type: dimension, value: 36, unit: px, sourceRefs: [multi-selection-tags]}
+    multi-selected-rail-right-inset: {type: dimension, value: 64, unit: px, sourceRefs: [multi-selection-tags]}
+    multi-search-min-options: {type: integer, value: 7, sourceRefs: [multi-selection-tags]}
+    multi-counter-prefix: {type: string, value: "+", sourceRefs: [multi-selection-tags]}
+    multi-selected-surface-width: {type: dimension, value: 320, unit: px, sourceRefs: [multi-selection-tags]}
+    multi-selected-surface-padding: {type: dimension, value: 8, unit: px, sourceRefs: [multi-selection-tags]}
+    multi-selected-viewport-max-height: {type: dimension, value: 280, unit: px, sourceRefs: [multi-selection-tags]}
+    multi-selected-row-min-height: {type: dimension, value: 36, unit: px, sourceRefs: [multi-selection-tags]}
+    multi-selected-row-gap: {type: dimension, value: 4, unit: px, sourceRefs: [multi-selection-tags]}
+    multi-selected-row-padding-inline: {type: dimension, value: 8, unit: px, sourceRefs: [multi-selection-tags]}
+    multi-selected-row-padding-block: {type: dimension, value: 6, unit: px, sourceRefs: [multi-selection-tags]}
+    multi-selected-row-content-gap: {type: dimension, value: 12, unit: px, sourceRefs: [multi-selection-tags]}
+    multi-remove-circle-size: {type: dimension, value: 20, unit: px, sourceRefs: [multi-selection-tags]}
+    multi-remove-glyph-size: {type: dimension, value: 12, unit: px, sourceRefs: [multi-selection-tags]}
+    multi-preview-close-delay-ms: {type: integer, value: 160, sourceRefs: [multi-selection-tags]}
 variants:
   panel-wide:
     description: Широкое поле общей панели и собственная поверхность списка
-    sourceRefs:
-      - field-values
-      - current-application
+    sourceRefs: [field-values, current-application]
     parameters:
-      field-width:
-        type: dimension
-        value: 440
-        unit: px
-      surface-width:
-        type: dimension
-        value: 440
-        unit: px
+      field-width: {type: dimension, value: 440, unit: px}
+      surface-width: {type: dimension, value: 440, unit: px}
   panel-narrow:
     description: Узкое поле; не определяет единственность выбора
-    sourceRefs:
-      - current-application
+    sourceRefs: [current-application]
     parameters:
-      field-width:
-        type: dimension
-        value: 212
-        unit: px
-      surface-width:
-        type: dimension
-        value: 212
-        unit: px
+      field-width: {type: dimension, value: 212, unit: px}
+      surface-width: {type: dimension, value: 212, unit: px}
   panel-owner:
     description: Владелец — широкая поверхность при узком поле, расширение влево
-    sourceRefs:
-      - current-application
+    sourceRefs: [current-application]
     parameters:
-      field-width:
-        type: dimension
-        value: 212
-        unit: px
-      surface-width:
-        type: dimension
-        value: 292
-        unit: px
-      surface-anchor:
-        type: string
-        value: field-right
+      field-width: {type: dimension, value: 212, unit: px}
+      surface-width: {type: dimension, value: 292, unit: px}
+      surface-anchor: {type: string, value: field-right}
   panel-status:
     description: Единственный статус; native radio скрыт, у выбранной строки одна DS-галочка
-    sourceRefs:
-      - current-application
-      - sidebar-hover
-      - single-check
+    sourceRefs: [current-application, sidebar-hover, single-check]
     parameters:
-      field-width:
-        type: dimension
-        value: 212
-        unit: px
-      surface-width:
-        type: dimension
-        value: 212
-        unit: px
-      option-selection-appearance:
-        type: string
-        value: single-check
-      option-indicator-width:
-        type: token
-        ref: single-check-width
-        expectedType: dimension
-      option-indicator-height:
-        type: token
-        ref: single-check-height
-        expectedType: dimension
-      option-radius:
-        type: dimension
-        value: 8
-        unit: px
-      option-padding-inline:
-        type: dimension
-        value: 8
-        unit: px
-      option-padding-block:
-        type: dimension
-        value: 0
-        unit: px
-      option-transition-duration-ms:
-        type: integer
-        value: 160
+      field-width: {type: dimension, value: 212, unit: px}
+      surface-width: {type: dimension, value: 212, unit: px}
+      option-selection-appearance: {type: string, value: single-check}
+      option-indicator-width: {type: token, ref: single-check-width, expectedType: dimension}
+      option-indicator-height: {type: token, ref: single-check-height, expectedType: dimension}
+      option-radius: {type: dimension, value: 8, unit: px}
+      option-padding-inline: {type: dimension, value: 8, unit: px}
+      option-padding-block: {type: dimension, value: 0, unit: px}
+      option-transition-duration-ms: {type: integer, value: 160}
     states:
       selected:
-        sourceRefs:
-          - current-application
+        sourceRefs: [current-application]
         parameters:
-          option-color:
-            type: color
-            format: hex
-            value: "#0067DC"
+          option-color: {type: color, format: hex, value: "#0067DC"}
   embedded-list:
     description: Только внутренние значения/поиск; внешняя поверхность и trigger принадлежат меню колонки
-    sourceRefs:
-      - list-values
-      - current-application
+    sourceRefs: [list-values, current-application]
     parameters:
-      trigger-owner:
-        type: string
-        value: parent
-      surface-owner:
-        type: string
-        value: parent
+      trigger-owner: {type: string, value: parent}
+      surface-owner: {type: string, value: parent}
   single-choice-popup:
     description: Общий самостоятельный селект; ширина и применение принадлежат потребителю
-    sourceRefs:
-      - standalone-select
-      - sidebar-hover
-      - single-check
+    sourceRefs: [standalone-select, sidebar-hover, single-check]
     parameters:
-      field-height:
-        type: dimension
-        value: 40
-        unit: px
-      field-min-width:
-        type: dimension
-        value: 140
-        unit: px
-      field-radius:
-        type: dimension
-        value: 10
-        unit: px
-      field-background:
-        type: color
-        format: hex
-        value: "#F3F4F9"
-      surface-padding-inline:
-        type: dimension
-        value: 8
-        unit: px
-      surface-padding-bottom:
-        type: dimension
-        value: 8
-        unit: px
-      option-selection-appearance:
-        type: string
-        value: single-check
-      option-indicator-width:
-        type: token
-        ref: single-check-width
-        expectedType: dimension
-      option-indicator-height:
-        type: token
-        ref: single-check-height
-        expectedType: dimension
-      option-content-gap:
-        type: dimension
-        value: 8
-        unit: px
-      option-padding-inline:
-        type: dimension
-        value: 8
-        unit: px
-      option-padding-block:
-        type: dimension
-        value: 6
-        unit: px
-      option-selected-color:
-        type: color
-        format: hex
-        value: "#0067DC"
+      field-height: {type: dimension, value: 40, unit: px}
+      field-min-width: {type: dimension, value: 140, unit: px}
+      field-radius: {type: dimension, value: 10, unit: px}
+      field-background: {type: color, format: hex, value: "#F3F4F9"}
+      surface-padding-inline: {type: dimension, value: 8, unit: px}
+      surface-padding-bottom: {type: dimension, value: 8, unit: px}
+      option-selection-appearance: {type: string, value: single-check}
+      option-indicator-width: {type: token, ref: single-check-width, expectedType: dimension}
+      option-indicator-height: {type: token, ref: single-check-height, expectedType: dimension}
+      option-content-gap: {type: dimension, value: 8, unit: px}
+      option-padding-inline: {type: dimension, value: 8, unit: px}
+      option-padding-block: {type: dimension, value: 6, unit: px}
+      option-selected-color: {type: color, format: hex, value: "#0067DC"}
 dependencies:
   - id: selection-control
-    document: specs/Общие компоненты/Базовые элементы/Контрол выбора/Контракт.md
+    document: "specs/Общие компоненты/Базовые элементы/Контрол выбора/Контракт.md"
     role: child-contract
   - id: search-input
-    document: specs/Общие компоненты/Базовые элементы/Поле ввода/Контракт.md
+    document: "specs/Общие компоненты/Базовые элементы/Поле ввода/Контракт.md"
     role: child-contract
   - id: ds-dropdown
-    document: references/design-system/docs/design-system/components/generated/DS-01-445-3662.md
+    document: "references/design-system/docs/design-system/components/generated/DS-01-445-3662.md"
     role: design-source
   - id: ds-dropdown-list
-    document: references/design-system/docs/design-system/components/generated/DS-01-446-5238.md
+    document: "references/design-system/docs/design-system/components/generated/DS-01-446-5238.md"
     role: design-source
   - id: ds-dropdown-item
-    document: references/design-system/docs/design-system/components/generated/DS-01-446-5033.md
+    document: "references/design-system/docs/design-system/components/generated/DS-01-446-5033.md"
     role: design-source

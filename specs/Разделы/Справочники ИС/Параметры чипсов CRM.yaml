@@ -1,0 +1,62 @@
+schemaVersion: 1
+component:
+  id: crm-reference-criteria-chips
+  title: Чипсы условий CRM и их редакторы
+  contract: "specs/Разделы/Справочники ИС/Чипсы и редакторы CRM.md"
+  status: observed-source
+sources:
+  chips-style:
+    kind: document
+    uri: "references/implementation/features/system-references/ReferenceCriteriaChips.module.css"
+    status: observed-snapshot
+    snapshot: Геометрия чипсов и редакторов в React, 8 ноября 2026
+  panel-style:
+    kind: document
+    uri: "references/implementation/features/system-references/ReferenceSearchPanel.module.css"
+    status: observed-snapshot
+    snapshot: Общий шрифт переключателей и чипсов
+  action-style:
+    kind: document
+    uri: "references/implementation/components/FilterButton/SearchPanelToggle.module.css"
+    status: observed-snapshot
+    snapshot: Высота кнопки отмены в редакторе
+  fonts:
+    kind: document
+    uri: "specs/Ресурсы/Шрифты/README.md"
+    status: reference-only
+    snapshot: Владелец гарнитуры CoFo Sans
+tokens:
+  ui-font:
+    type: font-family
+    sourceRef: fonts
+    locator: CoFo Sans
+base:
+  sourceRefs: [chips-style]
+  parameters:
+    chip-height: {type: dimension, value: 32, unit: px}
+    chip-radius: {type: dimension, value: 16, unit: px}
+    chip-text-max-width: {type: dimension, value: 240, unit: px}
+    chip-gap: {type: dimension, value: 8, unit: px}
+    remove-target-size: {type: dimension, value: 28, unit: px}
+    remove-hover-diameter: {type: dimension, value: 20, unit: px}
+    popover-radius: {type: dimension, value: 12, unit: px}
+    popover-padding: {type: dimension, value: 16, unit: px}
+    editor-label-gap: {type: dimension, value: 12, unit: px}
+    editor-field-height: {type: dimension, value: 40, unit: px}
+    editor-action-gap: {type: dimension, value: 8, unit: px}
+    chip-font-family: {type: token, ref: ui-font, expectedType: font-family, sourceRefs: [panel-style]}
+    chip-font-weight: {type: font-weight, value: 500, sourceRefs: [panel-style]}
+    chip-font-size: {type: dimension, value: 14, unit: px, sourceRefs: [panel-style]}
+    chip-line-height: {type: dimension, value: 14, unit: px, sourceRefs: [panel-style]}
+    editor-cancel-height: {type: dimension, value: 40, unit: px, sourceRefs: [action-style]}
+variants:
+  direct-editor:
+    description: Одиночный редактор у видимого чипса
+    sourceRefs: [chips-style]
+    parameters:
+      popover-width: {type: dimension, value: 360, unit: px}
+  overflow-editor:
+    description: Редактор внутри списка скрытых условий
+    sourceRefs: [chips-style]
+    parameters:
+      popover-width: {type: dimension, value: 336, unit: px}

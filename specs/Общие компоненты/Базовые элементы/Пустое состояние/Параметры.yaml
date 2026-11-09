@@ -2,698 +2,319 @@ schemaVersion: 1
 component:
   id: empty-state
   title: Пустые и ненаполненные блоки
-  contract: specs/Общие компоненты/Базовые элементы/Пустое состояние/Контракт.md
+  contract: "specs/Общие компоненты/Базовые элементы/Пустое состояние/Контракт.md"
   status: approved-target
 sources:
   home:
-    kind: figma
-    uri: https://www.figma.com/design/lnOcWh4ElGkhppWe6Kn5AA?node-id=611-11332
-    nodeId: 611:11332
-    status: unverified-live
-    snapshot: "Home states, адресный срез3ноября: четыре разных внешних размещения, общий внутренний500;
-      consumer-resolved цвета, не raw black"
+    kind: "figma"
+    uri: "https://www.figma.com/design/lnOcWh4ElGkhppWe6Kn5AA?node-id=611-11332"
+    nodeId: "611:11332"
+    status: "unverified-live"
+    snapshot: "Home states, адресный срез3ноября: четыре разных внешних размещения, общий внутренний500; consumer-resolved цвета, не raw black"
   search:
-    kind: figma
-    uri: https://www.figma.com/design/lnOcWh4ElGkhppWe6Kn5AA/Untitled?node-id=505-8088
-    nodeId: 505:8088
-    status: unverified-live
-    snapshot: BeforeInput; внутренняя область340. NoResults505:8155 имеет ту же геометрию, другую
-      иллюстрацию/текст
+    kind: "figma"
+    uri: "https://www.figma.com/design/lnOcWh4ElGkhppWe6Kn5AA/Untitled?node-id=505-8088"
+    nodeId: "505:8088"
+    status: "unverified-live"
+    snapshot: "BeforeInput; внутренняя область340. NoResults505:8155 имеет ту же геометрию, другую иллюстрацию/текст"
   search-no-results:
-    kind: figma
-    uri: https://www.figma.com/design/lnOcWh4ElGkhppWe6Kn5AA/Untitled?node-id=505-8155
-    nodeId: 505:8155
-    status: unverified-live
-    snapshot: NoResults, не ошибка и не доказательство выполненного запроса
+    kind: "figma"
+    uri: "https://www.figma.com/design/lnOcWh4ElGkhppWe6Kn5AA/Untitled?node-id=505-8155"
+    nodeId: "505:8155"
+    status: "unverified-live"
+    snapshot: "NoResults, не ошибка и не доказательство выполненного запроса"
   report-bench:
-    kind: figma
-    uri: https://www.figma.com/design/lnOcWh4ElGkhppWe6Kn5AA?node-id=923-18059
-    nodeId: 923:18059
-    status: unverified-live
-    snapshot: Стенд четырёх пустых блоков1440×564, не самостоятельный экран и не runtime-условие
-      отсутствия данных
+    kind: "figma"
+    uri: "https://www.figma.com/design/lnOcWh4ElGkhppWe6Kn5AA?node-id=923-18059"
+    nodeId: "923:18059"
+    status: "unverified-live"
+    snapshot: "Стенд четырёх пустых блоков1440×564, не самостоятельный экран и не runtime-условие отсутствия данных"
   favorites-css:
-    kind: document
-    uri: references/implementation/app/EmptyFavorites.module.css
-    status: observed-snapshot
-    snapshot: Внутренний fixed500, текущий tracking; внешняя surface остаётся у Главной
+    kind: "document"
+    uri: "references/implementation-current/app/EmptyFavorites.module.css"
+    status: "observed-snapshot"
+    snapshot: "Внутренний fixed500, текущий tracking; внешняя surface остаётся у Главной"
   news-css:
-    kind: document
-    uri: references/implementation/features/news/News.module.css
-    status: observed-snapshot
-    snapshot: fixed500, current-news tracking и image flex-basis
+    kind: "document"
+    uri: "references/implementation-current/features/news/News.module.css"
+    status: "observed-snapshot"
+    snapshot: "fixed500, current-news tracking и image flex-basis"
   subscription-css:
-    kind: document
-    uri: references/implementation/features/subscriptions/SubscriptionsContent.module.css
-    status: observed-snapshot
-    snapshot: Текущий min-height500, не новая утверждённая замена высоты Figma
+    kind: "document"
+    uri: "references/implementation-current/features/subscriptions/SubscriptionsContent.module.css"
+    status: "observed-snapshot"
+    snapshot: "Текущий min-height500, не новая утверждённая замена высоты Figma"
   contribution-css:
-    kind: document
-    uri: references/implementation/features/contributors/ContributionContent.module.css
-    status: observed-snapshot
-    snapshot: Та же текущая min-height композиция, данные/текст остаются у вкладчиков
+    kind: "document"
+    uri: "references/implementation-current/features/contributors/ContributionContent.module.css"
+    status: "observed-snapshot"
+    snapshot: "Та же текущая min-height композиция, данные/текст остаются у вкладчиков"
   search-css:
-    kind: document
-    uri: references/implementation/components/Search/CatalogSearch.module.css
-    status: observed-snapshot
-    snapshot: Дополнительный padding-inline24 и верхняя рамка/radius; не состояние API
+    kind: "document"
+    uri: "references/implementation-current/components/Search/CatalogSearch.module.css"
+    status: "observed-snapshot"
+    snapshot: "Дополнительный padding-inline24 и верхняя рамка/radius; не состояние API"
   report-css:
+    kind: "document"
+    uri: "references/implementation-current/features/report-detail/Detail.module.css"
+    status: "observed-snapshot"
+    snapshot: "EmptyDetail grid, поздний image override144×96 заменяет прежние100×80"
+  workspace-css:
     kind: document
-    uri: references/implementation/features/report-detail/Detail.module.css
+    uri: "references/implementation/components/EmptyState/EmptyState.module.css"
     status: observed-snapshot
-    snapshot: EmptyDetail grid, поздний image override144×96 заменяет прежние100×80
+    snapshot: 8 ноября 2026
+  workspace-folder:
+    kind: asset
+    uri: "assets/images/report-detail/empty.png"
+    status: observed-snapshot
+    snapshot: 8 ноября 2026
   inline-css:
-    kind: document
-    uri: references/implementation/features/report-detail/sources/Sources.module.css
-    status: observed-snapshot
-    snapshot: Компактный горизонтальный Paper07-блок с полным ресурсом в crop viewport
+    kind: "document"
+    uri: "references/implementation-current/features/report-detail/sources/Sources.module.css"
+    status: "observed-snapshot"
+    snapshot: "Компактный горизонтальный Paper07-блок с полным ресурсом в crop viewport"
   source-panel-css:
-    kind: document
-    uri: references/implementation/features/sources/detail/SourceDetail.module.css
-    status: observed-snapshot
-    snapshot: Вертикальный блок связанных отчётов при достоверном reports===0
+    kind: "document"
+    uri: "references/implementation-current/features/sources/detail/SourceDetail.module.css"
+    status: "observed-snapshot"
+    snapshot: "Вертикальный блок связанных отчётов при достоверном reports===0"
   paper07:
-    kind: document
-    uri: specs/Общие компоненты/Базовые элементы/Пустое состояние/assets/manifest.json
-    status: reference-only
-    snapshot: Согласованный основной Paper07, локальная byte-identical копия JPG; источник URI и SHA в
-      манифесте
+    kind: "document"
+    uri: "specs/Общие компоненты/Базовые элементы/Пустое состояние/assets/manifest.json"
+    status: "reference-only"
+    snapshot: "Согласованный основной Paper07, локальная byte-identical копия JPG; источник URI и SHA в манифесте"
   source-related-empty:
-    kind: document
-    uri: specs/Разделы/Источники/Детальная карточка/Изображения/source-detail-reports-1440.png
-    status: reference-only
-    snapshot: Согласованный Paper-срез4ноября, пустая вкладка связанных отчётов; не неизвестный count
+    kind: "document"
+    uri: "specs/Разделы/Источники/Детальная карточка/Изображения/source-detail-reports-1440.png"
+    status: "reference-only"
+    snapshot: "Согласованный Paper-срез4ноября, пустая вкладка связанных отчётов; не неизвестный count"
   fonts:
-    kind: document
-    uri: specs/Ресурсы/Шрифты/README.md
-    status: reference-only
-    snapshot: CoFo Sans Regular/Medium, общий владелец предоставленных файлов
+    kind: "document"
+    uri: "specs/Ресурсы/Шрифты/README.md"
+    status: "reference-only"
+    snapshot: "CoFo Sans Regular/Medium, общий владелец предоставленных файлов"
 tokens:
   ui-font:
     type: font-family
     sourceRef: fonts
     locator: CoFo Sans
 base:
-  sourceRefs:
-    - fonts
+  sourceRefs: [fonts]
   parameters:
-    font-family:
-      type: token
-      ref: ui-font
-      expectedType: font-family
+    font-family: {type: token, ref: ui-font, expectedType: font-family}
 variants:
   home500:
-    description: Утверждённый внутренний блок четырёх empty-кадров Главной; внешние поверхности различаются
-    sourceRefs:
-      - home
+    description: "Утверждённый внутренний блок четырёх empty-кадров Главной; внешние поверхности различаются"
+    sourceRefs: ["home"]
     parameters:
-      display:
-        type: string
-        value: flex
-      direction:
-        type: string
-        value: column
-      align-items:
-        type: string
-        value: center
-      justify-content:
-        type: string
-        value: center
-      content-gap:
-        type: dimension
-        value: 12
-        unit: px
-      padding-block:
-        type: dimension
-        value: 8
-        unit: px
-      padding-inline:
-        type: dimension
-        value: 0
-        unit: px
-      image-width:
-        type: dimension
-        value: 190
-        unit: px
-      image-height:
-        type: dimension
-        value: 142
-        unit: px
-      heading-size:
-        type: dimension
-        value: 18
-        unit: px
-      heading-line-height:
-        type: dimension
-        value: 18
-        unit: px
-      heading-weight:
-        type: font-weight
-        value: 500
-      heading-color:
-        type: color
-        format: hex
-        value: "#101D3B"
-      heading-margin:
-        type: dimension
-        value: 0
-        unit: px
-      description-margin:
-        type: dimension
-        value: 0
-        unit: px
-      description-size:
-        type: dimension
-        value: 14
-        unit: px
-      description-line-height:
-        type: dimension
-        value: 20
-        unit: px
-      description-weight:
-        type: font-weight
-        value: 400
-      description-color:
-        type: color
-        format: hex
-        value: "#52698C"
-      height:
-        type: dimension
-        value: 500
-        unit: px
-      reference-width-1440:
-        type: dimension
-        value: 1096
-        unit: px
-      content-clipped:
-        type: boolean
-        value: true
+      display: {"type": "string", "value": "flex"}
+      direction: {"type": "string", "value": "column"}
+      align-items: {"type": "string", "value": "center"}
+      justify-content: {"type": "string", "value": "center"}
+      content-gap: {"type": "dimension", "value": 12, "unit": "px"}
+      padding-block: {"type": "dimension", "value": 8, "unit": "px"}
+      padding-inline: {"type": "dimension", "value": 0, "unit": "px"}
+      image-width: {"type": "dimension", "value": 190, "unit": "px"}
+      image-height: {"type": "dimension", "value": 142, "unit": "px"}
+      heading-size: {"type": "dimension", "value": 18, "unit": "px"}
+      heading-line-height: {"type": "dimension", "value": 18, "unit": "px"}
+      heading-weight: {"type": "font-weight", "value": 500}
+      heading-color: {"type": "color", "format": "hex", "value": "#101D3B"}
+      heading-margin: {"type": "dimension", "value": 0, "unit": "px"}
+      description-margin: {"type": "dimension", "value": 0, "unit": "px"}
+      description-size: {"type": "dimension", "value": 14, "unit": "px"}
+      description-line-height: {"type": "dimension", "value": 20, "unit": "px"}
+      description-weight: {"type": "font-weight", "value": 400}
+      description-color: {"type": "color", "format": "hex", "value": "#52698C"}
+      height: {"type": "dimension", "value": 500, "unit": "px"}
+      reference-width-1440: {"type": "dimension", "value": 1096, "unit": "px"}
+      content-clipped: {"type": "boolean", "value": true}
     states:
       current-favorites:
-        sourceRefs:
-          - favorites-css
+        sourceRefs: ["favorites-css"]
         parameters:
-          heading-tracking:
-            type: dimension
-            value: -0.12
-            unit: px
-          description-tracking:
-            type: dimension
-            value: -0.12
-            unit: px
+          heading-tracking: {"type": "dimension", "value": -0.12, "unit": "px"}
+          description-tracking: {"type": "dimension", "value": -0.12, "unit": "px"}
       current-news:
-        sourceRefs:
-          - news-css
+        sourceRefs: ["news-css"]
         parameters:
-          heading-tracking:
-            type: dimension
-            value: -0.12
-            unit: px
-          description-tracking:
-            type: dimension
-            value: -0.12
-            unit: px
-          image-flex-basis:
-            type: dimension
-            value: 142
-            unit: px
+          heading-tracking: {"type": "dimension", "value": -0.12, "unit": "px"}
+          description-tracking: {"type": "dimension", "value": -0.12, "unit": "px"}
+          image-flex-basis: {"type": "dimension", "value": 142, "unit": "px"}
   home-min500:
-    description: "Только наблюдаемая реализация подписок/вклада: min-height, не замена исходного
-      fixed500 как утверждённой цели"
-    sourceRefs:
-      - subscription-css
-      - contribution-css
+    description: "Только наблюдаемая реализация подписок/вклада: min-height, не замена исходного fixed500 как утверждённой цели"
+    sourceRefs: ["subscription-css", "contribution-css"]
     parameters:
-      display:
-        type: string
-        value: flex
-      direction:
-        type: string
-        value: column
-      align-items:
-        type: string
-        value: center
-      justify-content:
-        type: string
-        value: center
-      content-gap:
-        type: dimension
-        value: 12
-        unit: px
-      padding-block:
-        type: dimension
-        value: 8
-        unit: px
-      padding-inline:
-        type: dimension
-        value: 0
-        unit: px
-      image-width:
-        type: dimension
-        value: 190
-        unit: px
-      image-height:
-        type: dimension
-        value: 142
-        unit: px
-      heading-size:
-        type: dimension
-        value: 18
-        unit: px
-      heading-line-height:
-        type: dimension
-        value: 18
-        unit: px
-      heading-weight:
-        type: font-weight
-        value: 500
-      heading-color:
-        type: color
-        format: hex
-        value: "#101D3B"
-      heading-margin:
-        type: dimension
-        value: 0
-        unit: px
-      description-margin:
-        type: dimension
-        value: 0
-        unit: px
-      description-size:
-        type: dimension
-        value: 14
-        unit: px
-      description-line-height:
-        type: dimension
-        value: 20
-        unit: px
-      description-weight:
-        type: font-weight
-        value: 400
-      description-color:
-        type: color
-        format: hex
-        value: "#52698C"
-      min-height:
-        type: dimension
-        value: 500
-        unit: px
-      width:
-        type: dimension
-        value: 100
-        unit: "%"
-      flex-mode:
-        type: string
-        value: none
-      image-fit:
-        type: string
-        value: contain
+      display: {"type": "string", "value": "flex"}
+      direction: {"type": "string", "value": "column"}
+      align-items: {"type": "string", "value": "center"}
+      justify-content: {"type": "string", "value": "center"}
+      content-gap: {"type": "dimension", "value": 12, "unit": "px"}
+      padding-block: {"type": "dimension", "value": 8, "unit": "px"}
+      padding-inline: {"type": "dimension", "value": 0, "unit": "px"}
+      image-width: {"type": "dimension", "value": 190, "unit": "px"}
+      image-height: {"type": "dimension", "value": 142, "unit": "px"}
+      heading-size: {"type": "dimension", "value": 18, "unit": "px"}
+      heading-line-height: {"type": "dimension", "value": 18, "unit": "px"}
+      heading-weight: {"type": "font-weight", "value": 500}
+      heading-color: {"type": "color", "format": "hex", "value": "#101D3B"}
+      heading-margin: {"type": "dimension", "value": 0, "unit": "px"}
+      description-margin: {"type": "dimension", "value": 0, "unit": "px"}
+      description-size: {"type": "dimension", "value": 14, "unit": "px"}
+      description-line-height: {"type": "dimension", "value": 20, "unit": "px"}
+      description-weight: {"type": "font-weight", "value": 400}
+      description-color: {"type": "color", "format": "hex", "value": "#52698C"}
+      min-height: {"type": "dimension", "value": 500, "unit": "px"}
+      width: {"type": "dimension", "value": 100, "unit": "%"}
+      flex-mode: {"type": "string", "value": "none"}
+      image-fit: {"type": "string", "value": "contain"}
   search340:
     description: "BeforeInput/NoResults: одна внутренняя геометрия, разные данные/ресурсы"
-    sourceRefs:
-      - search
-      - search-no-results
+    sourceRefs: ["search", "search-no-results"]
     parameters:
-      display:
-        type: string
-        value: flex
-      direction:
-        type: string
-        value: column
-      align-items:
-        type: string
-        value: center
-      justify-content:
-        type: string
-        value: center
-      content-gap:
-        type: dimension
-        value: 12
-        unit: px
-      padding-block:
-        type: dimension
-        value: 8
-        unit: px
-      padding-inline:
-        type: dimension
-        value: 0
-        unit: px
-      image-width:
-        type: dimension
-        value: 190
-        unit: px
-      image-height:
-        type: dimension
-        value: 142
-        unit: px
-      heading-size:
-        type: dimension
-        value: 18
-        unit: px
-      heading-line-height:
-        type: dimension
-        value: 18
-        unit: px
-      heading-weight:
-        type: font-weight
-        value: 500
-      heading-color:
-        type: color
-        format: hex
-        value: "#101D3B"
-      heading-margin:
-        type: dimension
-        value: 0
-        unit: px
-      description-margin:
-        type: dimension
-        value: 0
-        unit: px
-      description-size:
-        type: dimension
-        value: 14
-        unit: px
-      description-line-height:
-        type: dimension
-        value: 20
-        unit: px
-      description-weight:
-        type: font-weight
-        value: 400
-      description-color:
-        type: color
-        format: hex
-        value: "#52698C"
-      height:
-        type: dimension
-        value: 340
-        unit: px
-      image-fit:
-        type: string
-        value: contain
+      display: {"type": "string", "value": "flex"}
+      direction: {"type": "string", "value": "column"}
+      align-items: {"type": "string", "value": "center"}
+      justify-content: {"type": "string", "value": "center"}
+      content-gap: {"type": "dimension", "value": 12, "unit": "px"}
+      padding-block: {"type": "dimension", "value": 8, "unit": "px"}
+      padding-inline: {"type": "dimension", "value": 0, "unit": "px"}
+      image-width: {"type": "dimension", "value": 190, "unit": "px"}
+      image-height: {"type": "dimension", "value": 142, "unit": "px"}
+      heading-size: {"type": "dimension", "value": 18, "unit": "px"}
+      heading-line-height: {"type": "dimension", "value": 18, "unit": "px"}
+      heading-weight: {"type": "font-weight", "value": 500}
+      heading-color: {"type": "color", "format": "hex", "value": "#101D3B"}
+      heading-margin: {"type": "dimension", "value": 0, "unit": "px"}
+      description-margin: {"type": "dimension", "value": 0, "unit": "px"}
+      description-size: {"type": "dimension", "value": 14, "unit": "px"}
+      description-line-height: {"type": "dimension", "value": 20, "unit": "px"}
+      description-weight: {"type": "font-weight", "value": 400}
+      description-color: {"type": "color", "format": "hex", "value": "#52698C"}
+      height: {"type": "dimension", "value": 340, "unit": "px"}
+      image-fit: {"type": "string", "value": "contain"}
     states:
       observed-css:
-        sourceRefs:
-          - search-css
+        sourceRefs: ["search-css"]
         parameters:
-          padding-inline:
-            type: dimension
-            value: 24
-            unit: px
-          border-top-width:
-            type: dimension
-            value: 1
-            unit: px
-          border-top-color:
-            type: color
-            format: hex
-            value: "#D7E6F5"
-          radius-top:
-            type: dimension
-            value: 20
-            unit: px
+          padding-inline: {"type": "dimension", "value": 24, "unit": "px"}
+          border-top-width: {"type": "dimension", "value": 1, "unit": "px"}
+          border-top-color: {"type": "color", "format": "hex", "value": "#D7E6F5"}
+          radius-top: {"type": "dimension", "value": 20, "unit": "px"}
   report-grid:
     description: "EmptyDetail: переданные title/description, без условия данных внутри шаблона"
-    sourceRefs:
-      - report-bench
-      - report-css
+    sourceRefs: ["report-bench", "report-css"]
     parameters:
-      display:
-        type: string
-        value: grid
-      justify-items:
-        type: string
-        value: center
-      text-align:
-        type: string
-        value: center
-      content-gap:
-        type: dimension
-        value: 8
-        unit: px
-      padding:
-        type: dimension
-        value: 8
-        unit: px
-      image-width:
-        type: dimension
-        value: 144
-        unit: px
-      image-height:
-        type: dimension
-        value: 96
-        unit: px
-      image-fit:
-        type: string
-        value: contain
-      heading-weight:
-        type: font-weight
-        value: 500
-      text-geometry-mode:
-        type: string
-        value: inherit-from-parent
+      display: {"type": "string", "value": "grid"}
+      justify-items: {"type": "string", "value": "center"}
+      text-align: {"type": "string", "value": "center"}
+      content-gap: {"type": "dimension", "value": 8, "unit": "px"}
+      padding: {"type": "dimension", "value": 16, "unit": "px"}
+      image-width: {"type": "dimension", "value": 144, "unit": "px"}
+      image-height: {"type": "dimension", "value": 96, "unit": "px"}
+      image-fit: {"type": "string", "value": "contain"}
+      heading-weight: {"type": "font-weight", "value": 500}
+      heading-size: {"type": "dimension", "value": 14, "unit": "px"}
+      heading-line-height: {"type": "dimension", "value": 20, "unit": "px"}
+      description-size: {"type": "dimension", "value": 14, "unit": "px"}
+      description-line-height: {"type": "dimension", "value": 20, "unit": "px"}
+      description-color: {"type": "color", "format": "hex", "value": "#52698C"}
+    states:
+      viewport:
+        sourceRefs: ["report-css"]
+        parameters:
+          padding-block: {"type": "dimension", "value": 24, "unit": "px"}
+          heading-size: {"type": "dimension", "value": 16, "unit": "px"}
+          heading-line-height: {"type": "dimension", "value": 24, "unit": "px"}
+  workspace-list:
+    description: Пустая выдача рабочего списка с действием по необходимости
+    sourceRefs: [workspace-css, workspace-folder]
+    parameters:
+      padding-block: {type: dimension, value: 24, unit: px}
+      padding-inline: {type: dimension, value: 16, unit: px}
+      content-gap: {type: dimension, value: 8, unit: px}
+      image-width: {type: dimension, value: 144, unit: px}
+      image-height: {type: dimension, value: 96, unit: px}
+      image-fit: {type: string, value: contain}
+      image-blend: {type: string, value: multiply}
+      heading-size: {type: dimension, value: 16, unit: px}
+      heading-line-height: {type: dimension, value: 24, unit: px}
+      description-size: {type: dimension, value: 14, unit: px}
+      description-line-height: {type: dimension, value: 20, unit: px}
+      description-color: {type: color, format: hex, value: "#52698C"}
+      action-min-height: {type: dimension, value: 32, unit: px}
+      action-margin-top: {type: dimension, value: 4, unit: px}
   folder-inline:
-    description: Статичный компактный блок альтернативных источников по согласованному Paper07
-    sourceRefs:
-      - paper07
-      - inline-css
+    description: "Статичный компактный блок альтернативных источников по согласованному Paper07"
+    sourceRefs: ["paper07", "inline-css"]
     parameters:
-      folder-width:
-        type: dimension
-        value: 50
-        unit: px
-      folder-height:
-        type: dimension
-        value: 40
-        unit: px
-      folder-overflow:
-        type: string
-        value: hidden
-      folder-position:
-        type: string
-        value: relative
-      image-width:
-        type: dimension
-        value: 90
-        unit: px
-      image-height:
-        type: dimension
-        value: 60
-        unit: px
-      image-position:
-        type: string
-        value: absolute
-      image-left:
-        type: dimension
-        value: -21
-        unit: px
-      image-top:
-        type: dimension
-        value: -10
-        unit: px
-      display:
-        type: string
-        value: flex
-      align-items:
-        type: string
-        value: center
-      content-gap:
-        type: dimension
-        value: 16
-        unit: px
-      padding-block:
-        type: dimension
-        value: 20
-        unit: px
-      padding-inline:
-        type: dimension
-        value: 24
-        unit: px
-      background:
-        type: color
-        format: hex
-        value: "#FFFFFF"
-      border-width:
-        type: dimension
-        value: 1
-        unit: px
-      border-color:
-        type: color
-        format: hex
-        value: "#D8E3F1"
-      radius:
-        type: dimension
-        value: 12
-        unit: px
-      heading-size:
-        type: dimension
-        value: 14
-        unit: px
-      heading-line-height:
-        type: dimension
-        value: 20
-        unit: px
-      heading-weight:
-        type: font-weight
-        value: 500
-      heading-color:
-        type: color
-        format: hex
-        value: "#101D3B"
-      heading-margin:
-        type: dimension
-        value: 0
-        unit: px
-      description-margin:
-        type: dimension
-        value: 0
-        unit: px
-      text-stack-gap:
-        type: dimension
-        value: 0
-        unit: px
-      description-size:
-        type: dimension
-        value: 13
-        unit: px
-      description-line-height:
-        type: dimension
-        value: 18
-        unit: px
-      description-color:
-        type: color
-        format: hex
-        value: "#64738B"
+      folder-width: {"type": "dimension", "value": 50, "unit": "px"}
+      folder-height: {"type": "dimension", "value": 40, "unit": "px"}
+      folder-overflow: {"type": "string", "value": "hidden"}
+      folder-position: {"type": "string", "value": "relative"}
+      image-width: {"type": "dimension", "value": 90, "unit": "px"}
+      image-height: {"type": "dimension", "value": 60, "unit": "px"}
+      image-position: {"type": "string", "value": "absolute"}
+      image-left: {"type": "dimension", "value": -21, "unit": "px"}
+      image-top: {"type": "dimension", "value": -10, "unit": "px"}
+      display: {"type": "string", "value": "flex"}
+      align-items: {"type": "string", "value": "center"}
+      content-gap: {"type": "dimension", "value": 16, "unit": "px"}
+      padding-block: {"type": "dimension", "value": 20, "unit": "px"}
+      padding-inline: {"type": "dimension", "value": 24, "unit": "px"}
+      background: {"type": "color", "format": "hex", "value": "#FFFFFF"}
+      border-width: {"type": "dimension", "value": 1, "unit": "px"}
+      border-color: {"type": "color", "format": "hex", "value": "#D8E3F1"}
+      radius: {"type": "dimension", "value": 12, "unit": "px"}
+      heading-size: {"type": "dimension", "value": 14, "unit": "px"}
+      heading-line-height: {"type": "dimension", "value": 20, "unit": "px"}
+      heading-weight: {"type": "font-weight", "value": 500}
+      heading-color: {"type": "color", "format": "hex", "value": "#101D3B"}
+      heading-margin: {"type": "dimension", "value": 0, "unit": "px"}
+      description-margin: {"type": "dimension", "value": 0, "unit": "px"}
+      text-stack-gap: {"type": "dimension", "value": 0, "unit": "px"}
+      description-size: {"type": "dimension", "value": 13, "unit": "px"}
+      description-line-height: {"type": "dimension", "value": 18, "unit": "px"}
+      description-color: {"type": "color", "format": "hex", "value": "#64738B"}
     states:
       narrow-container:
-        sourceRefs:
-          - inline-css
+        sourceRefs: ["inline-css"]
         parameters:
-          container-max-width:
-            type: dimension
-            value: 640
-            unit: px
-          padding-block:
-            type: dimension
-            value: 16
-            unit: px
-          padding-inline:
-            type: dimension
-            value: 16
-            unit: px
+          container-max-width: {"type": "dimension", "value": 640, "unit": "px"}
+          padding-block: {"type": "dimension", "value": 16, "unit": "px"}
+          padding-inline: {"type": "dimension", "value": 16, "unit": "px"}
   folder-panel:
-    description: Связанные отчёты Источника при подтверждённом нулевом count; не неизвестный набор
-    sourceRefs:
-      - source-related-empty
-      - source-panel-css
+    description: "Связанные отчёты Источника при подтверждённом нулевом count; не неизвестный набор"
+    sourceRefs: ["source-related-empty", "source-panel-css"]
     parameters:
-      folder-width:
-        type: dimension
-        value: 50
-        unit: px
-      folder-height:
-        type: dimension
-        value: 40
-        unit: px
-      folder-overflow:
-        type: string
-        value: hidden
-      folder-position:
-        type: string
-        value: relative
-      image-width:
-        type: dimension
-        value: 90
-        unit: px
-      image-height:
-        type: dimension
-        value: 60
-        unit: px
-      image-position:
-        type: string
-        value: absolute
-      image-left:
-        type: dimension
-        value: -21
-        unit: px
-      image-top:
-        type: dimension
-        value: -10
-        unit: px
-      display:
-        type: string
-        value: flex
-      direction:
-        type: string
-        value: column
-      align-items:
-        type: string
-        value: center
-      justify-content:
-        type: string
-        value: center
-      text-align:
-        type: string
-        value: center
-      content-gap:
-        type: dimension
-        value: 12
-        unit: px
-      padding-block:
-        type: dimension
-        value: 40
-        unit: px
-      padding-inline:
-        type: dimension
-        value: 24
-        unit: px
-      background:
-        type: color
-        format: hex
-        value: "#FFFFFF"
-      border-width:
-        type: dimension
-        value: 1
-        unit: px
-      border-color:
-        type: color
-        format: hex
-        value: "#D6E6FB"
-      radius:
-        type: dimension
-        value: 12
-        unit: px
-      heading-size:
-        type: dimension
-        value: 16
-        unit: px
-      heading-line-height:
-        type: dimension
-        value: 20
-        unit: px
-      heading-weight:
-        type: font-weight
-        value: 500
-      heading-color-mode:
-        type: string
-        value: inherit
-      heading-margin:
-        type: dimension
-        value: 0
-        unit: px
-      description-margin:
-        type: dimension
-        value: 0
-        unit: px
-      description-size:
-        type: dimension
-        value: 14
-        unit: px
-      description-line-height:
-        type: dimension
-        value: 20
-        unit: px
-      description-color:
-        type: color
-        format: hex
-        value: "#515A68"
+      folder-width: {"type": "dimension", "value": 50, "unit": "px"}
+      folder-height: {"type": "dimension", "value": 40, "unit": "px"}
+      folder-overflow: {"type": "string", "value": "hidden"}
+      folder-position: {"type": "string", "value": "relative"}
+      image-width: {"type": "dimension", "value": 90, "unit": "px"}
+      image-height: {"type": "dimension", "value": 60, "unit": "px"}
+      image-position: {"type": "string", "value": "absolute"}
+      image-left: {"type": "dimension", "value": -21, "unit": "px"}
+      image-top: {"type": "dimension", "value": -10, "unit": "px"}
+      display: {"type": "string", "value": "flex"}
+      direction: {"type": "string", "value": "column"}
+      align-items: {"type": "string", "value": "center"}
+      justify-content: {"type": "string", "value": "center"}
+      text-align: {"type": "string", "value": "center"}
+      content-gap: {"type": "dimension", "value": 12, "unit": "px"}
+      padding-block: {"type": "dimension", "value": 40, "unit": "px"}
+      padding-inline: {"type": "dimension", "value": 24, "unit": "px"}
+      background: {"type": "color", "format": "hex", "value": "#FFFFFF"}
+      border-width: {"type": "dimension", "value": 1, "unit": "px"}
+      border-color: {"type": "color", "format": "hex", "value": "#D6E6FB"}
+      radius: {"type": "dimension", "value": 12, "unit": "px"}
+      heading-size: {"type": "dimension", "value": 16, "unit": "px"}
+      heading-line-height: {"type": "dimension", "value": 20, "unit": "px"}
+      heading-weight: {"type": "font-weight", "value": 500}
+      heading-color-mode: {"type": "string", "value": "inherit"}
+      heading-margin: {"type": "dimension", "value": 0, "unit": "px"}
+      description-margin: {"type": "dimension", "value": 0, "unit": "px"}
+      description-size: {"type": "dimension", "value": 14, "unit": "px"}
+      description-line-height: {"type": "dimension", "value": 20, "unit": "px"}
+      description-color: {"type": "color", "format": "hex", "value": "#515A68"}

@@ -1,0 +1,73 @@
+.workspace { display:flex; flex-direction:column; min-width:0; height:100%; min-height:0; color:#202028; font-family:'CoFo Sans',sans-serif; font-weight:400; font-synthesis:none; }
+.chrome { display:flex; flex:none; flex-direction:column; gap:16px; min-width:0; padding-block-end:16px; }
+.header { display:flex; flex:none; flex-direction:column; margin-block-end:calc(var(--section-heading-gap) - 16px); }
+.titleRow { display:flex; align-items:center; gap:8px; min-height:28px; }
+.titleRow h1 { color:#202028; letter-spacing:-.02em; }
+.total { display:inline-flex; align-items:center; justify-content:center; min-width:28px; height:24px; padding:0 6px; border-radius:8px; background:#f0f1f4; color:#202028; font-size:12px; line-height:16px; font-weight:500; }
+.header p { margin:4px 0 0; color:#52698c; font-size:14px; line-height:20px; }
+.filters { display:flex; flex:none; flex-wrap:wrap; align-items:flex-end; gap:8px 12px; container:dictionary-filters / inline-size; }
+/* Keep 80% of each previous column width and add the new 8px gaps. */
+.filterFields { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); flex:0 0 calc((100% - 48px) * .8 + 24px); min-width:0; gap:8px; }
+@container dictionary-filters (max-width:500px) {
+  .filterReset { margin-inline-start:auto; }
+}
+.filter { min-width:0; }
+.filter .select { width:100%; min-width:0; color:#000; }
+.multiFilter .select { justify-content:flex-end; }
+.filter .select[aria-expanded='true'] > img { transform:rotate(180deg); }
+.filterPopup { z-index:150; width:var(--radix-popover-trigger-width); max-height:var(--radix-popover-content-available-height); overflow:auto; border-radius:12px; background:#fff; box-shadow:0 8px 24px rgb(0 0 0 / 12%); }
+.filterPopup > div { max-width:100%; box-shadow:none; }
+.resultsFrame {
+  --results-inset:16px;
+  --results-surface:#f3f4f9;
+  position:relative; display:flex; flex:1; flex-direction:column; min-height:0; min-width:0;
+  padding-block-start:var(--results-inset); border-radius:16px 16px 0 0;
+  background:linear-gradient(var(--results-surface) var(--results-inset), transparent var(--results-inset));
+}
+.workspace[data-dictionary-view='all'] .resultsFrame { border-radius:16px; background:var(--results-surface); }
+.searchNotice { margin:0; padding:0 var(--results-inset) var(--results-inset); background:var(--results-surface); color:#52698c; font-size:14px; line-height:20px; }
+.scroll { display:flex; flex:1; flex-direction:column; min-height:0; overflow:auto; overflow-anchor:none; }
+.scroll[data-paginated='true'] { padding-bottom:80px; scroll-padding-bottom:80px; }
+.results { display:flex; flex:none; flex-direction:column; gap:16px; min-width:0; padding:0 var(--results-inset) var(--results-inset); background:var(--results-surface); }
+.workspace[data-dictionary-view='all'] .results { background:transparent; }
+.results[data-fill='true'] { flex:1 0 auto; }
+.emptyState { flex:1; }
+/* Keep the scroll position when a short list fits after the description collapses. */
+.workspace[data-detail-compact='true'] .results { min-block-size:calc(100% + 1px); }
+.group { display:flex; flex-direction:column; gap:8px; min-width:0; }
+.group[data-collapsed='true']:not(:last-child) { border-bottom:1px solid #e2e4ea; }
+.groupTitle { margin:0; }
+.group .groupHeading { height:24px; padding:0; border:0; background:transparent; cursor:pointer; }
+.groupHeading:focus-visible { outline:2px solid #007bfc; outline-offset:2px; }
+.groupHeading[aria-expanded='false'] .groupCount { background:#007bfc; color:#fff; }
+.domainList, .termList { display:flex; flex-direction:column; gap:8px; min-width:0; margin:0; padding:0; list-style:none; }
+.domain { display:flex; align-items:center; flex:none; gap:8px; height:40px; padding:0 8px; border:1px solid #d7e6f5; border-radius:12px; background:#fff; color:#243247; font-size:14px; line-height:20px; }
+.domainIcon { display:flex; flex:none; align-items:center; justify-content:center; width:16px; height:32px; }
+.domainIcon img { display:block; flex:none; }
+.domain > span:last-child { min-width:0; overflow-wrap:anywhere; }
+.term { min-width:0; overflow:clip; border:1px solid #d7e6f5; border-radius:12px; background:#fff; }
+.termHeader { display:flex; align-items:center; justify-content:space-between; gap:16px; padding:12px 16px; border-bottom:1px solid #d7e6f5; }
+.termHeader h3 { flex:1; min-width:0; margin:0; color:#101d3b; font-size:16px; line-height:20px; font-weight:500; overflow-wrap:anywhere; }
+.termTools { display:flex; flex:none; align-items:center; gap:8px; }
+.tag { display:inline-flex; align-items:center; padding:2px 8px; border-radius:4px; font-size:12px; line-height:16px; white-space:nowrap; }
+.typeTag { background:#ebf4ff; color:#006bdb; }
+.statusTag { background:#f0f1f4; color:#52698c; }
+.statusTag[data-approved='true'] { background:#e8f6ed; color:#16834c; }
+.attributes { display:flex; margin:0; }
+.attributes > div { display:flex; flex:0 0 calc(25% - 40px); flex-direction:column; align-items:flex-start; gap:4px; min-width:0; padding:16px; border-left:1px solid #d7e6f5; }
+.attributes > .description { flex-basis:calc(50% + 80px); border-left:0; }
+.attributes dt { color:#6d84a6; font-size:12px; line-height:16px; }
+.attributes dd { margin:0; color:#202028; font-size:14px; line-height:20px; overflow-wrap:anywhere; }
+.notice { position:fixed; z-index:60; right:24px; bottom:24px; display:flex; align-items:center; gap:16px; max-width:min(520px,calc(100vw - 48px)); padding:16px; border:1px solid #d7e6f5; border-radius:12px; background:#fff; color:#101d3b; font-size:14px; line-height:20px; box-shadow:0 4px 16px #101d3b1f; }
+.notice p { margin:0; }
+.notice button { flex:none; padding:0; border:0; background:transparent; color:#007bfc; font:inherit; cursor:pointer; }
+.notice button:focus-visible { outline:2px solid #007bfc; outline-offset:4px; }
+@media (max-width:800px) {
+  .filterFields { grid-template-columns:repeat(2,minmax(0,1fr)); flex-basis:calc((100% - 16px) * .8 + 8px); }
+  .termHeader { flex-wrap:wrap; }
+  .termHeader h3 { flex-basis:100%; }
+  .attributes { flex-wrap:wrap; }
+  .attributes > .description { flex-basis:100%; }
+  .attributes > div:not(.description) { flex-basis:50%; border-top:1px solid #d7e6f5; }
+  .attributes > div:nth-child(2) { border-left:0; }
+}

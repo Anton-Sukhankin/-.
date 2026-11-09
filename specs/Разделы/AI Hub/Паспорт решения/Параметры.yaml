@@ -1,0 +1,46 @@
+schemaVersion: 1
+component:
+  id: ai-hub-solution-passport
+  title: "Паспорт решения AI Hub"
+  contract: "specs/Разделы/AI Hub/Паспорт решения/Контракт.md"
+  status: observed-source
+sources:
+  detail-style:
+    kind: document
+    uri: "references/implementation/features/ai-hub/AiSolutionDetail.module.css"
+    status: observed-snapshot
+    snapshot: "Сетка атрибутов, строки ответственных и адаптация"
+base:
+  sourceRefs: [detail-style]
+  parameters:
+    heading-padding-top: {"type":"dimension","value":16,"unit":"px"}
+    heading-padding-inline: {"type":"dimension","value":16,"unit":"px"}
+    fields-gap: {"type":"dimension","value":16,"unit":"px"}
+    fields-padding-top: {"type":"dimension","value":24,"unit":"px"}
+    fields-padding-inline: {"type":"dimension","value":16,"unit":"px"}
+    fields-padding-bottom: {"type":"dimension","value":16,"unit":"px"}
+    field-value-gap: {"type":"dimension","value":4,"unit":"px"}
+    person-padding: {"type":"dimension","value":16,"unit":"px"}
+    person-gap: {"type":"dimension","value":12,"unit":"px"}
+    avatar-size: {"type":"dimension","value":32,"unit":"px"}
+    role-wrap-max: {"type":"dimension","value":360,"unit":"px"}
+    label-font-size: {"type":"dimension","value":12,"unit":"px"}
+    label-line-height: {"type":"dimension","value":16,"unit":"px"}
+    value-font-size: {"type":"dimension","value":14,"unit":"px"}
+    value-line-height: {"type":"dimension","value":20,"unit":"px"}
+    field-columns: {"type":"integer","value":2}
+variants:
+  wide:
+    description: "Вертикальный разделитель между паспортом и обзором"
+    sourceRefs: [detail-style]
+    parameters:
+      divider-edge: {"type":"string","value":"inline-start"}
+      divider-width: {"type":"dimension","value":1,"unit":"px"}
+      divider-color: {"type":"color","format":"hex","value":"#E0E6EF"}
+  stacked:
+    description: "Верхний разделитель над паспортом под обзором"
+    sourceRefs: [detail-style]
+    parameters:
+      divider-edge: {"type":"string","value":"block-start"}
+      divider-width: {"type":"dimension","value":1,"unit":"px"}
+      divider-color: {"type":"color","format":"hex","value":"#E0E6EF"}

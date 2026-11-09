@@ -1,0 +1,16 @@
+.neutral {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  min-width: 16px;
+  height: 16px;
+  padding: 3.5px 3px 2.5px;
+  border-radius: 14px;
+  background: #e2e4ea;
+  color: #202028;
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 10px;
+  letter-spacing: -.05px;
+}

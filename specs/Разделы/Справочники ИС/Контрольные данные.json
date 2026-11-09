@@ -1,0 +1,484 @@
+{
+  "references": [
+    {
+      "id": "crm",
+      "title": "Справочник CRM",
+      "label": "CRM",
+      "system": {
+        "name": "CRM (CRM Dynamics)",
+        "code": "TZ-22328"
+      }
+    },
+    {
+      "id": "demo-finance",
+      "title": "Справочник финансов",
+      "label": "Справочник финансов",
+      "system": {
+        "name": "Управление финансами"
+      }
+    },
+    {
+      "id": "demo-hr",
+      "title": "Справочник кадров",
+      "label": "Справочник кадров",
+      "system": {
+        "name": "Кадровая система"
+      }
+    },
+    {
+      "id": "demo-documents",
+      "title": "Справочник документов",
+      "label": "Справочник документов",
+      "system": {
+        "name": "Электронный документооборот"
+      }
+    },
+    {
+      "id": "demo-contracts",
+      "title": "Справочник договоров",
+      "label": "Справочник договоров",
+      "system": {
+        "name": "Корпоративная система управления инвестиционными программами, долгосрочными договорами и обязательствами подрядчиков"
+      }
+    },
+    {
+      "id": "demo-procurement",
+      "title": "Справочник закупок",
+      "label": "Справочник закупок",
+      "system": {
+        "name": "Управление закупками"
+      }
+    },
+    {
+      "id": "demo-projects",
+      "title": "Справочник проектов",
+      "label": "Справочник проектов",
+      "system": {
+        "name": "Управление проектами"
+      }
+    },
+    {
+      "id": "demo-warehouse",
+      "title": "Складской справочник",
+      "label": "Складской справочник",
+      "system": {
+        "name": "Складская система"
+      }
+    },
+    {
+      "id": "demo-service-desk",
+      "title": "Справочник обращений",
+      "label": "Справочник обращений",
+      "system": {
+        "name": "Service Desk"
+      }
+    },
+    {
+      "id": "demo-properties",
+      "title": "Справочник объектов",
+      "label": "Справочник объектов",
+      "system": {
+        "name": "Управление недвижимостью"
+      }
+    },
+    {
+      "id": "demo-services",
+      "title": "Справочник услуг",
+      "label": "Справочник услуг",
+      "system": {
+        "name": "Каталог услуг"
+      }
+    },
+    {
+      "id": "demo-equipment",
+      "title": "Справочник оборудования",
+      "label": "Справочник оборудования",
+      "system": {
+        "name": "Учёт оборудования"
+      }
+    },
+    {
+      "id": "demo-suppliers",
+      "title": "Справочник поставщиков",
+      "label": "Справочник поставщиков",
+      "system": {
+        "name": "Управление поставщиками"
+      }
+    },
+    {
+      "id": "demo-requests",
+      "title": "Справочник заявок",
+      "label": "Справочник заявок",
+      "system": {
+        "name": "Управление заявками"
+      }
+    },
+    {
+      "id": "demo-units",
+      "title": "Справочник подразделений",
+      "label": "Справочник подразделений",
+      "system": {
+        "name": "Организационная структура"
+      }
+    }
+  ],
+  "crmRows": [
+    {
+      "id": "Account.accountcategorycode",
+      "entity": {
+        "name": "Организация",
+        "logicalName": "Account"
+      },
+      "attribute": {
+        "name": "Категория",
+        "logicalName": "accountcategorycode"
+      },
+      "relationships": [],
+      "options": [
+        {
+          "code": "1",
+          "label": "Продавец"
+        },
+        {
+          "code": "2",
+          "label": "Стандартный"
+        },
+        {
+          "code": "3",
+          "label": "Банк"
+        },
+        {
+          "code": "4",
+          "label": "Агент"
+        },
+        {
+          "code": "5",
+          "label": "Регистратор"
+        },
+        {
+          "code": "6",
+          "label": "СК"
+        },
+        {
+          "code": "100000000",
+          "label": "Лидген"
+        },
+        {
+          "code": "100000001",
+          "label": "ЗПИФ застройщик"
+        }
+      ]
+    },
+    {
+      "id": "Account.accountclassificationcode",
+      "entity": {
+        "name": "Организация",
+        "logicalName": "Account"
+      },
+      "attribute": {
+        "name": "Классификация",
+        "logicalName": "accountclassificationcode"
+      },
+      "relationships": [],
+      "options": [
+        {
+          "code": "1",
+          "label": "Значение по умолчанию"
+        }
+      ]
+    },
+    {
+      "id": "Account.statecode",
+      "entity": {
+        "name": "Организация",
+        "logicalName": "Account"
+      },
+      "attribute": {
+        "name": "Статус",
+        "logicalName": "statecode"
+      },
+      "relationships": [],
+      "options": [
+        {
+          "code": "0",
+          "label": "Активная"
+        },
+        {
+          "code": "1",
+          "label": "Неактивная"
+        }
+      ]
+    },
+    {
+      "id": "Account.statuscode",
+      "entity": {
+        "name": "Организация",
+        "logicalName": "Account"
+      },
+      "attribute": {
+        "name": "Состояние",
+        "logicalName": "statuscode"
+      },
+      "relationships": [],
+      "options": [
+        {
+          "code": "1",
+          "label": "Действующая"
+        }
+      ]
+    },
+    {
+      "id": "Account.preferredcontactmethodcode",
+      "entity": {
+        "name": "Организация",
+        "logicalName": "Account"
+      },
+      "attribute": {
+        "name": "Способ связи",
+        "logicalName": "preferredcontactmethodcode"
+      },
+      "relationships": [],
+      "options": [
+        {
+          "code": "1",
+          "label": "Любой"
+        },
+        {
+          "code": "2",
+          "label": "Электронная почта"
+        },
+        {
+          "code": "3",
+          "label": "Телефон"
+        },
+        {
+          "code": "4",
+          "label": "Факс"
+        },
+        {
+          "code": "5",
+          "label": "Почта"
+        }
+      ]
+    },
+    {
+      "id": "Account.industrycode",
+      "entity": {
+        "name": "Организация",
+        "logicalName": "Account"
+      },
+      "attribute": {
+        "name": "Отрасль",
+        "logicalName": "industrycode"
+      },
+      "relationships": [],
+      "options": [
+        {
+          "code": "1",
+          "label": "Бухгалтерские услуги"
+        },
+        {
+          "code": "2",
+          "label": "Строительство"
+        },
+        {
+          "code": "3",
+          "label": "Финансы"
+        },
+        {
+          "code": "4",
+          "label": "Розничная торговля"
+        },
+        {
+          "code": "5",
+          "label": "Образование"
+        },
+        {
+          "code": "6",
+          "label": "Транспорт"
+        }
+      ]
+    },
+    {
+      "id": "Account.accountid",
+      "entity": {
+        "name": "Организация",
+        "logicalName": "Account"
+      },
+      "attribute": {
+        "name": "Идентификатор организации",
+        "logicalName": "accountid"
+      },
+      "relationships": [],
+      "options": [],
+      "isPrimaryKey": true
+    },
+    {
+      "id": "Account.name",
+      "entity": {
+        "name": "Организация",
+        "logicalName": "Account"
+      },
+      "attribute": {
+        "name": "Название",
+        "logicalName": "name"
+      },
+      "relationships": [],
+      "options": [],
+      "isPrimaryKey": false
+    },
+    {
+      "id": "Account.primarycontactid",
+      "entity": {
+        "name": "Организация",
+        "logicalName": "Account"
+      },
+      "attribute": {
+        "name": "Основной контакт",
+        "logicalName": "primarycontactid"
+      },
+      "relationships": [
+        "Контакт · contactid"
+      ],
+      "options": [],
+      "isPrimaryKey": false
+    },
+    {
+      "id": "Account.parentaccountid",
+      "entity": {
+        "name": "Организация",
+        "logicalName": "Account"
+      },
+      "attribute": {
+        "name": "Родительская организация",
+        "logicalName": "parentaccountid"
+      },
+      "relationships": [
+        "Организация · accountid"
+      ],
+      "options": []
+    },
+    {
+      "id": "Account.accountnumber",
+      "entity": {
+        "name": "Организация",
+        "logicalName": "Account"
+      },
+      "attribute": {
+        "name": "Номер организации",
+        "logicalName": "accountnumber"
+      },
+      "relationships": [],
+      "options": []
+    },
+    {
+      "id": "Account.createdon",
+      "entity": {
+        "name": "Организация",
+        "logicalName": "Account"
+      },
+      "attribute": {
+        "name": "Дата создания",
+        "logicalName": "createdon"
+      },
+      "relationships": [],
+      "options": []
+    },
+    {
+      "id": "Contact.contactid",
+      "entity": {
+        "name": "Контакт",
+        "logicalName": "Contact"
+      },
+      "attribute": {
+        "name": "Идентификатор контакта",
+        "logicalName": "contactid"
+      },
+      "relationships": [],
+      "options": [],
+      "isPrimaryKey": true
+    },
+    {
+      "id": "Contact.firstname",
+      "entity": {
+        "name": "Контакт",
+        "logicalName": "Contact"
+      },
+      "attribute": {
+        "name": "Имя",
+        "logicalName": "firstname"
+      },
+      "relationships": [],
+      "options": [],
+      "isPrimaryKey": false
+    },
+    {
+      "id": "Contact.lastname",
+      "entity": {
+        "name": "Контакт",
+        "logicalName": "Contact"
+      },
+      "attribute": {
+        "name": "Фамилия",
+        "logicalName": "lastname"
+      },
+      "relationships": [],
+      "options": [],
+      "isPrimaryKey": false
+    },
+    {
+      "id": "Contact.parentcustomerid",
+      "entity": {
+        "name": "Контакт",
+        "logicalName": "Contact"
+      },
+      "attribute": {
+        "name": "Организация",
+        "logicalName": "parentcustomerid"
+      },
+      "relationships": [
+        "Организация · accountid"
+      ],
+      "options": []
+    },
+    {
+      "id": "Contact.preferredcontactmethodcode",
+      "entity": {
+        "name": "Контакт",
+        "logicalName": "Contact"
+      },
+      "attribute": {
+        "name": "Способ связи",
+        "logicalName": "preferredcontactmethodcode"
+      },
+      "relationships": [],
+      "options": [
+        {
+          "code": "1",
+          "label": "Любой"
+        },
+        {
+          "code": "2",
+          "label": "Электронная почта"
+        },
+        {
+          "code": "3",
+          "label": "Телефон"
+        }
+      ]
+    },
+    {
+      "id": "Contact.emailaddress1",
+      "entity": {
+        "name": "Контакт",
+        "logicalName": "Contact"
+      },
+      "attribute": {
+        "name": "Электронная почта",
+        "logicalName": "emailaddress1"
+      },
+      "relationships": [],
+      "options": []
+    }
+  ]
+}

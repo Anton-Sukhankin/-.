@@ -1,0 +1,136 @@
+{
+  "schemaVersion": 1,
+  "capturedOn": "2026-11-08",
+  "prototype": {
+    "sha256": "c1b0194a5b69f15aa3b3052178cb4f9eeae09f6f7f05cc1ce9fbba210c407ce7",
+    "basis": "src, public, tests, scripts and project entry/config of the checked local slice",
+    "mode": "Vite production build loaded into Chromium via local Playwright file fixtures"
+  },
+  "conditions": {
+    "browser": "Chrome Chromium",
+    "deviceScaleFactor": 1,
+    "reducedMotion": "reduce",
+    "font": "CoFo Sans"
+  },
+  "frames": [
+    {
+      "path": "contribution-cards.png",
+      "width": 1440,
+      "height": 900,
+      "bytes": 111484,
+      "sha256": "e7582e010f865b7e6654e5f18d96906e041e8650b8d8cb6df91f3500db37ea6b"
+    },
+    {
+      "path": "contribution-table.png",
+      "width": 1440,
+      "height": 900,
+      "bytes": 128284,
+      "sha256": "4c90c2aa099ad5a40a1f484b83fb03586997e4a8ed95ca0b37d6a57060faad2d"
+    },
+    {
+      "path": "empty-contribution.png",
+      "width": 1440,
+      "height": 900,
+      "bytes": 66461,
+      "sha256": "615eb2d2c04398cad87d6f697c30f3b377b4db2c56ea83bb0aace0649e003765"
+    },
+    {
+      "path": "empty-favorites.png",
+      "width": 1440,
+      "height": 900,
+      "bytes": 62561,
+      "sha256": "1a25ce869e505ea502225258edbd47fa14b08849af83fd5bd0c7935c6f1f632a"
+    },
+    {
+      "path": "empty-news.png",
+      "width": 1440,
+      "height": 900,
+      "bytes": 60586,
+      "sha256": "c292ee8eca6233bb412f45aa9e9f67450fa80110f4cbb65eecc9698d80112a39"
+    },
+    {
+      "path": "empty-subscriptions.png",
+      "width": 1440,
+      "height": 900,
+      "bytes": 63715,
+      "sha256": "f25a8e3a37d293e21c3c2304cf67ee2698174f70d856efc577544d608c1bb8fa"
+    },
+    {
+      "path": "favorites-cards.png",
+      "width": 1440,
+      "height": 900,
+      "bytes": 95862,
+      "sha256": "49a5840d2ad255ba0bbe5f569d40c36da7ef0bedc47d11fd62e7acec9420e8d6"
+    },
+    {
+      "path": "favorites-filtered.png",
+      "width": 1440,
+      "height": 900,
+      "bytes": 64376,
+      "sha256": "8cfdf6b55436a6ecd75bac3f0f44991e9419bfd32cd5c576e1475bac82c69c02"
+    },
+    {
+      "path": "favorites-last-page.png",
+      "width": 1440,
+      "height": 900,
+      "bytes": 86090,
+      "sha256": "b1eb1fb6fcf859899829a5835a4bc12a12804319b7d1cb1e70fa5879358a6768"
+    },
+    {
+      "path": "favorites-table.png",
+      "width": 1440,
+      "height": 900,
+      "bytes": 146988,
+      "sha256": "e539a1d70b0ba677e2ca224b12d35c16edeb09b501677d0b0aec4ff1d85f92de"
+    },
+    {
+      "path": "news-list.png",
+      "width": 1440,
+      "height": 900,
+      "bytes": 628767,
+      "sha256": "43855ede159db79fdf27ebd0399137c2800d54e64a61af7592b8a53c80f2822f"
+    },
+    {
+      "path": "news-paginated.png",
+      "width": 1440,
+      "height": 900,
+      "bytes": 405788,
+      "sha256": "5c16652d5dbfb34d956c7e94a86097fcfd4be90ebd494399851ac120bd0eaf32"
+    },
+    {
+      "path": "news-reading-footer.png",
+      "width": 1440,
+      "height": 900,
+      "bytes": 316430,
+      "sha256": "dad0b50e80d488590292df1c00378f58629c94f96417037840acc5514ebc5e34"
+    },
+    {
+      "path": "news-reading.png",
+      "width": 1440,
+      "height": 900,
+      "bytes": 426355,
+      "sha256": "9130b2b69ada28ce7a4d3d4e0cccb12523df4f9036e1419a56b3b08477127ea5"
+    },
+    {
+      "path": "news-title-overflow.png",
+      "width": 980,
+      "height": 900,
+      "bytes": 307612,
+      "sha256": "1fd53e0ceb85dc861354aef91eb2924dffd1bc05b79e9c1c5a3efe45bf799685"
+    },
+    {
+      "path": "subscriptions-cards.png",
+      "width": 1440,
+      "height": 900,
+      "bytes": 107060,
+      "sha256": "3e78b5e9d8d40e87f08d5fbbb5de01b075db3fd204b983efa344ca8001771b6e"
+    },
+    {
+      "path": "subscriptions-table.png",
+      "width": 1440,
+      "height": 900,
+      "bytes": 139230,
+      "sha256": "d1447703fc8d2c0b00dd57f13cc614fb884da73340d7b7954e1a8b80f3e36af2"
+    }
+  ]
+}

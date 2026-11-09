@@ -25,7 +25,6 @@
 | report-mailings | `/preview/navigation?section=reports&report=demo-report-summary&reportTab=mailings` | [PNG](<frames/report-mailings.png>) |
 | report-technical | `/preview/navigation?section=reports&report=demo-report-summary&reportTab=technical` | [PNG](<frames/report-technical.png>) |
 | metrics | `/preview/navigation?section=metrics` | [PNG](<frames/metrics.png>) |
-| metric-detail | `/preview/navigation?section=metrics&metric=4` | [PNG](<frames/metric-detail.png>) |
 | sources | `/preview/navigation?section=sources` | [PNG](<frames/sources.png>) |
 | source-detail | `/preview/navigation?section=sources&source=source-reportcrm-date` | [PNG](<frames/source-detail.png>) |
 | reports-filter-open | `/preview/navigation?section=reports` | [PNG](<frames/reports-filter-open.png>) |
@@ -42,7 +41,7 @@
 
 - [Отчёты и избранное](<data/reports.json>): catalog_rows, favorite_rows, summaries.
 - [Детальный отчёт](<data/report-detail.json>): подтверждённый summary-пример, содержимое вкладок и связанные наборы; не обобщает неизвестные метаданные других объектов.
-- [Метрики](<data/metrics.json>): каталог и адресные профили.
+- [Метрики](<data/metrics.json>): каталог и адресные профили. Контакты исторического профиля 4 опущены. Для воспроизведения паспорта используйте кадры [действующего контракта](<../../Разделы/Метрики и показатели/Детальная карточка/Контракт.md>).
 - [Источники](<data/sources.json>): строки, профили и ID rewedo.
 - [Главная](<data/home.json>): подписки, вклад и новости с demo-происхождением.
 
@@ -56,7 +55,9 @@
 
 Дополнительные кадры меню отчётной таблицы, статуса панели, матрицы источника, native Fullscreen, технических empty/paginated-входов Главной, уведомления подписки и нижнего действия новости сняты с того же неизменённого среза. Точные входы/действия и hashes находятся в manifest.json. Технические pageSize/empty-входы показывают условия проверки, а не новую production-настройку.
 
-В report-usage.png дополнительно отмечен противоположный порядок значений и подписей классификации. Утверждённое расположение ведёт владелец Usage; снимок фактического дефекта не заменяет его правило.
+На кадре `report-usage.png` подписи классификации стоят над значениями, пояснение отсутствует. Ожидаемое состояние и проверку ведёт [«Использование»](<../../Разделы/Отчёты/Паспорт/Использование.md#текущий-срез-и-отклонения>).
+
+Кадр `source-detail.png` показывает общую композицию паспорта до уточнения списка полей. Для выравнивания тегов, счётчиков и раскрытия строки используйте [кадры полей от 5 ноября](<../../Разделы/Источники/Детальная карточка/Описание полей.md#эталоны-и-проверка-строки-поля>).
 
 ## Векторные ресурсы графа
 

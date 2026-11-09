@@ -1,0 +1,51 @@
+schemaVersion: 1
+component:
+  id: dictionary-term-card
+  title: Карточка термина
+  contract: "specs/Разделы/Бизнес-словарь/Карточка термина.md"
+  status: approved-target
+sources:
+  css:
+    kind: document
+    uri: "references/implementation/features/dictionary/Dictionary.module.css"
+    status: observed-snapshot
+    snapshot: 8 ноября 2026
+base:
+  sourceRefs: [css]
+  parameters:
+    radius: {type: dimension, value: 12, unit: px}
+variants:
+  standard:
+    description: Три колонки атрибутов
+    sourceRefs: [css]
+    parameters:
+      surface: {type: color, format: hex, value: "#FFFFFF"}
+      border-color: {type: color, format: hex, value: "#D7E6F5"}
+      border-width: {type: dimension, value: 1, unit: px}
+      divider-width: {type: dimension, value: 1, unit: px}
+      divider-color: {type: color, format: hex, value: "#D7E6F5"}
+      header-padding-block: {type: dimension, value: 12, unit: px}
+      header-padding-inline: {type: dimension, value: 16, unit: px}
+      header-gap: {type: dimension, value: 16, unit: px}
+      tools-gap: {type: dimension, value: 8, unit: px}
+      title-size: {type: dimension, value: 16, unit: px}
+      title-line-height: {type: dimension, value: 20, unit: px}
+      title-weight: {type: integer, value: 500}
+      title-color: {type: color, format: hex, value: "#101D3B"}
+      description-column: {type: string, value: "calc(50% + 80px)"}
+      attribute-column: {type: string, value: "calc(25% - 40px)"}
+      attribute-padding: {type: dimension, value: 16, unit: px}
+      attribute-gap: {type: dimension, value: 4, unit: px}
+      label-size: {type: dimension, value: 12, unit: px}
+      label-line-height: {type: dimension, value: 16, unit: px}
+      label-color: {type: color, format: hex, value: "#6D84A6"}
+      value-size: {type: dimension, value: 14, unit: px}
+      value-line-height: {type: dimension, value: 20, unit: px}
+      value-color: {type: color, format: hex, value: "#202028"}
+  narrow:
+    description: Описание над доменом и владельцем
+    sourceRefs: [css]
+    parameters:
+      maximum-viewport-width: {type: dimension, value: 800, unit: px}
+      description-column: {type: string, value: "100%"}
+      attribute-column: {type: string, value: "50%"}

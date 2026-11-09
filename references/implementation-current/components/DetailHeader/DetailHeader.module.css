@@ -1,0 +1,36 @@
+.breadcrumbRow { display:flex; align-items:center; gap:8px; min-height:24px; margin-block-end:8px; }
+.breadcrumbs { display:flex; flex-wrap:wrap; align-items:center; gap:0 4px; min-height:20px; margin:0; color:#101d3b; font-size:12px; line-height:20px; }
+.breadcrumbs :is(button, a) { max-width:100%; overflow-wrap:anywhere; text-align:start; padding:0; border:0; background:none; color:#7a808a; font:inherit; text-decoration:none; cursor:pointer; }
+.breadcrumbs img { display:block; flex:none; }
+.headingBlock { display:flex; flex-direction:column; min-width:0; }
+.title { min-height:32px; margin:0; color:#101d3b; font-family:'CoFo Sans',sans-serif; font-size:20px; font-weight:500; line-height:28px; letter-spacing:normal; }
+.description { display:flex; flex-wrap:wrap; align-items:center; gap:12px var(--detail-description-gap, var(--description-separator-gap)); min-height:20px; margin:0; color:#52698c; font-size:12px; font-weight:400; line-height:20px; }
+
+.frame { display:flex; flex-direction:column; height:100%; min-height:0; min-width:0; }
+.chrome { flex:none; position:relative; z-index:2; }
+.tabStrip {
+  --detail-tabs-gap:8px;
+  column-gap:var(--horizontal-tab-gap);
+  margin-block-start:var(--detail-tabs-gap);
+  transition:margin-block-start var(--navigation-duration) var(--navigation-easing);
+}
+.frame[data-detail-compact='true'] > .chrome .tabStrip {
+  margin-block-start:calc(var(--detail-tabs-gap) - 8px);
+}
+.scroll { flex:1; min-height:0; min-width:0; overflow:auto; overflow-anchor:none; overscroll-behavior-y:none; }
+.scroll:has(.pinnedInformation) { container-type:size; }
+.pinnedInformation {
+  position:sticky;
+  inset-block-start:var(--detail-content-gap, 0px);
+  max-block-size:calc(100cqh - var(--detail-content-gap, 0px) - var(--detail-content-end-gap, 0px));
+  overflow:auto;
+}
+.scrollContent {
+  padding-block-start:var(--detail-content-gap, 0px);
+  transition:padding-block-start var(--navigation-duration) var(--navigation-easing);
+}
+.frame[data-detail-compact='true'] .scrollContent { padding-block-start:0; }
+.frame[data-detail-compact='true'] :is(.scroll, [data-detail-scroll-source]) > .scrollContent {
+  /* Preserve a scroll position when a short body nearly fits after the header shrinks. */
+  min-block-size:calc(100% + 1px);
+}

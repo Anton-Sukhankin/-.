@@ -1,0 +1,74 @@
+schemaVersion: 1
+component:
+  id: ai-hub-solution-card
+  title: "Карточка решения AI Hub"
+  contract: "specs/Разделы/AI Hub/Карточка решения/Контракт.md"
+  status: observed-source
+sources:
+  catalog-style:
+    kind: document
+    uri: "references/implementation/features/ai-hub/AiHubCatalog.module.css"
+    status: observed-snapshot
+    snapshot: "Геометрия и локальная типографика карточки решения"
+  round-button-style:
+    kind: document
+    uri: "references/implementation/components/RoundIconButton/RoundIconButton.module.css"
+    status: observed-snapshot
+    snapshot: "Круглая кнопка закладки"
+base:
+  sourceRefs: [catalog-style, round-button-style]
+  parameters:
+    section-padding-inline: {"type":"dimension","value":20,"unit":"px"}
+    header-footer-padding-block: {"type":"dimension","value":12,"unit":"px"}
+    layout-gap: {"type":"dimension","value":8,"unit":"px"}
+    body-min-height: {"type":"dimension","value":108,"unit":"px"}
+    body-padding-top: {"type":"dimension","value":10,"unit":"px"}
+    body-padding-bottom: {"type":"dimension","value":12,"unit":"px"}
+    title-font-size: {"type":"dimension","value":16,"unit":"px"}
+    title-line-height: {"type":"dimension","value":20,"unit":"px"}
+    description-font-size: {"type":"dimension","value":12,"unit":"px"}
+    description-line-height: {"type":"dimension","value":18,"unit":"px"}
+    domain-gap-before: {"type":"dimension","value":6,"unit":"px"}
+    domain-gap-after: {"type":"dimension","value":4,"unit":"px"}
+    metrics-gap: {"type":"dimension","value":10,"unit":"px"}
+    metric-icon-gap: {"type":"dimension","value":4,"unit":"px"}
+    views-icon-size: {"type":"dimension","value":16,"unit":"px"}
+    likes-icon-size: {"type":"dimension","value":14,"unit":"px"}
+    title-font-weight: {"type":"font-weight","value":500}
+    description-line-limit: {"type":"integer","value":2}
+    section-divider-color: {"type":"color","format":"hex","value":"#E0E6EF"}
+variants:
+  footer-action:
+    description: "Действие со значком внешнего перехода"
+    sourceRefs: [catalog-style]
+    parameters:
+      control-min-height: {"type":"dimension","value":32,"unit":"px"}
+      control-padding-inline: {"type":"dimension","value":8,"unit":"px"}
+      label-icon-gap: {"type":"dimension","value":6,"unit":"px"}
+      icon-size: {"type":"dimension","value":14,"unit":"px"}
+      label-font-size: {"type":"dimension","value":12,"unit":"px"}
+      label-line-height: {"type":"dimension","value":16,"unit":"px"}
+      label-font-weight: {"type":"font-weight","value":500}
+  bookmark:
+    description: "Круглая кнопка закладки"
+    sourceRefs: [round-button-style]
+    parameters:
+      control-size: {"type":"dimension","value":32,"unit":"px"}
+  blue-tag:
+    description: Основной тон тега типа
+    sourceRefs: [catalog-style]
+    parameters:
+      color: {type: color, format: hex, value: "#006BDB"}
+      background: {type: color, format: hex, value: "#EBF4FF"}
+  purple-tag:
+    description: Тег «ИИ-помощник функций»
+    sourceRefs: [catalog-style]
+    parameters:
+      color: {type: color, format: hex, value: "#5932A9"}
+      background: {type: color, format: hex, value: "#F0EBFA"}
+  green-tag:
+    description: Тег статуса и признак переиспользования
+    sourceRefs: [catalog-style]
+    parameters:
+      color: {type: color, format: hex, value: "#176448"}
+      background: {type: color, format: hex, value: "#E8F6ED"}

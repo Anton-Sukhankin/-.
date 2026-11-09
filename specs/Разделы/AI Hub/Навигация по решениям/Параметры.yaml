@@ -1,0 +1,41 @@
+schemaVersion: 1
+component:
+  id: ai-hub-solution-navigation
+  title: "Навигация по решениям AI Hub"
+  contract: "specs/Разделы/AI Hub/Навигация по решениям/Контракт.md"
+  status: observed-source
+sources:
+  detail-style:
+    kind: document
+    uri: "references/implementation/features/ai-hub/AiSolutionDetail.module.css"
+    status: observed-snapshot
+    snapshot: "Правая колонка, узкая компоновка и состояние текущего пункта"
+base:
+  sourceRefs: [detail-style]
+  parameters:
+    item-gap: {"type":"dimension","value":8,"unit":"px"}
+    item-padding: {"type":"dimension","value":16,"unit":"px"}
+    item-text-gap: {"type":"dimension","value":4,"unit":"px"}
+    title-font-size: {"type":"dimension","value":14,"unit":"px"}
+    title-line-height: {"type":"dimension","value":20,"unit":"px"}
+    summary-font-size: {"type":"dimension","value":12,"unit":"px"}
+    summary-line-height: {"type":"dimension","value":16,"unit":"px"}
+    title-font-weight: {"type":"font-weight","value":500}
+    summary-font-weight: {"type":"font-weight","value":400}
+variants:
+  wide:
+    description: "Отдельная правая колонка"
+    sourceRefs: [detail-style]
+    parameters:
+      column-width: {"type":"string","value":"clamp(200px, 32cqi, 350px)"}
+  stacked:
+    description: "Список под карточкой"
+    sourceRefs: [detail-style]
+    parameters:
+      column-row-height: {"type":"string","value":"min(180px, 30%)"}
+  selected:
+    description: "Пункт открытого решения"
+    sourceRefs: [detail-style]
+    parameters:
+      border-color: {"type":"color","format":"hex","value":"#0067DC"}
+      background-color: {"type":"color","format":"hex","value":"#EBF4FF"}

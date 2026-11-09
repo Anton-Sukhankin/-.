@@ -1,0 +1,30 @@
+schemaVersion: 1
+component:
+  id: list-scroll-indicator
+  title: Индикатор вертикальной прокрутки списка
+  contract: "specs/Общие компоненты/Индикатор прокрутки/Контракт.md"
+  status: approved-target
+sources:
+  geometry:
+    kind: document
+    uri: "references/implementation/components/ListScrollIndicator/ListScrollIndicator.tsx"
+    status: observed-snapshot
+    snapshot: 8 ноября 2026
+  css:
+    kind: document
+    uri: "references/implementation/components/ListScrollIndicator/ListScrollIndicator.module.css"
+    status: observed-snapshot
+    snapshot: 8 ноября 2026
+base:
+  sourceRefs: [css]
+  parameters:
+    width: {type: dimension, value: 3, unit: px}
+variants:
+  line:
+    description: Линия индикатора переполненного списка
+    sourceRefs: [geometry, css]
+    parameters:
+      minimum-length: {type: dimension, value: 20, unit: px}
+      color: {type: color, format: hex, value: "#A5ACB6"}
+      idle-delay-ms: {type: number, value: 500}
+      opacity-transition-ms: {type: number, value: 160}

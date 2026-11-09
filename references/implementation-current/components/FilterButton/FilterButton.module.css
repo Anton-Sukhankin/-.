@@ -1,0 +1,9 @@
+.trigger { position: relative; flex: 0 0 40px; width: 40px; height: 40px; }
+.open { display: grid; place-items: center; width: 40px; height: 40px; padding: 0; border: 1px solid #d7e6f5; border-radius: 20px; background: #fff; cursor: pointer; backdrop-filter: blur(20px); }
+.open img { display: block; }
+.count { position: absolute; inset-inline-start: calc(100% - 12px); inset-block-start: -4px; display: grid; place-items: center; min-width: 16px; max-width: 20px; height: 16px; padding: 3.5px 3px 2.5px; border: 0; border-radius: 999px; outline: 2px solid #fff; background: #007bfc; color: #fff; font: inherit; font-size: 10px; font-weight: 500; line-height: 10px; letter-spacing: -.05px; cursor: pointer; }
+.count .reset { position:absolute; top:50%; left:50%; translate:-50% -50%; display:none; }
+.count:is(:hover,:focus-visible) { background:transparent; padding:0; outline-color:transparent; }
+.count:is(:hover,:focus-visible) .value { display:none; }
+.count:is(:hover,:focus-visible) .reset { display:grid; }
+.open:focus-visible, .count:focus-visible { outline: 2px solid #007bfc; outline-offset: 2px; }

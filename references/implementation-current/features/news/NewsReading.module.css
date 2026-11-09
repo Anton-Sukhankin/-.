@@ -1,0 +1,49 @@
+.content, .content * { box-sizing:border-box; }
+.content { width:100%; min-width:0; font-family:'CoFo Sans',sans-serif; font-synthesis:none; }
+.listSurface { position:relative; padding:16px 16px 0; overflow:hidden; border-radius:16px 16px 0 0; background:#f3f4f9; }
+.emptyListSurface { border-radius:16px; }
+.listScroll { height:100%; padding-bottom:16px; overflow-y:auto; scrollbar-width:none; }
+.listScroll[data-paginated='true'] { padding-bottom:80px; }
+.listScroll::-webkit-scrollbar, .article::-webkit-scrollbar, .sidebar::-webkit-scrollbar { display:none; }
+.reading { container-type:inline-size; display:flex; flex-direction:column; min-height:0; overflow:hidden; background:#fff; }
+.columns { display:flex; flex:1; align-items:flex-start; gap:24px; min-height:0; padding-inline:8px; overflow:hidden; }
+.article { container-type:inline-size; flex:0 1 770px; min-width:0; height:100%; overflow:auto; scrollbar-width:none; overscroll-behavior-y:contain; }
+.fullArticle { display:flex; flex-direction:column; gap:20px; width:100%; padding-bottom:24px; }
+.hero { display:block; width:100%; aspect-ratio:620 / 315; height:auto; object-fit:cover; border-radius:12px; }
+.articleHeader { display:flex; flex-direction:column; gap:12px; }
+.articleHeader h2 { margin:6px 0 0; color:#101d3b; font-size:clamp(24px, 5.5cqi, 34px); font-weight:500; line-height:1.12; letter-spacing:-.025em; }
+.articleMeta { display:flex; flex-wrap:wrap; align-items:center; gap:8px; }
+.articleMeta [data-round-action='chevron'] > span { transform:rotate(90deg); }
+.articleMeta time { color:#52698c; font-size:12px; line-height:16px; }
+.articleBody { display:flex; flex-direction:column; gap:8px; }
+.articleBody h3 { margin:12px 0 0; color:#101d3b; font-size:22px; font-weight:500; line-height:28px; }
+.articleBody h3:first-child { margin-top:0; }
+.article p { margin:0; color:#25334c; font-size:16px; line-height:25px; white-space:pre-line; }
+.articleFooter { padding-top:16px; }
+.articleFooter button { padding:0; border:0; background:transparent; color:#006bdb; font-family:inherit; font-size:14px; font-weight:500; line-height:20px; cursor:pointer; }
+.sidebar { flex:0 0 min(380px, 40%); min-width:0; max-height:100%; padding-left:16px; border-left:1px solid #e0e6ef; overflow:auto; scrollbar-width:none; overscroll-behavior-y:contain; }
+.navCard { position:relative; display:flex; align-items:center; justify-content:space-between; gap:12px; width:100%; min-height:82px; padding:12px; border:0; border-bottom:1px solid #e0e6ef; border-radius:8px; background:#fff; font-family:inherit; text-align:left; cursor:pointer; }
+.navCard:hover:not([aria-current='page']) { background:#f3f7fc; }
+.navCard[aria-current='page'] { cursor:default; }
+.navCard[aria-current='page']::after { position:absolute; inset:0; border:1px solid var(--item-hover-border); border-radius:inherit; content:''; pointer-events:none; }
+.navCard img { display:block; flex:none; width:64px; height:60px; object-fit:cover; border-radius:8px; }
+.navText { display:flex; flex-direction:column; gap:5px; min-width:0; }
+.navMeta { display:flex; flex-wrap:wrap; align-items:center; gap:4px 8px; }
+.navTag { flex:none; padding:2px 5px; border-radius:4px; font-size:10px; font-weight:500; line-height:14px; white-space:nowrap; }
+.navTag[data-tone='Новое'] { color:#176448; background:#e8f6ed; }
+.navTag[data-tone='Важно'] { color:#805500; background:#fff9e5; }
+.navTag[data-tone='Изменение'] { color:#006bdb; background:#ebf4ff; }
+.articleTag { margin-inline-start:auto; padding:3px 6px; font-size:12px; line-height:16px; }
+.navMeta time { color:#52698c; font-size:11px; line-height:16px; white-space:nowrap; }
+.navTitle { display:-webkit-box; -webkit-box-orient:vertical; -webkit-line-clamp:2; overflow:hidden; color:#101d3b; font-size:15px; font-weight:500; line-height:20px; overflow-wrap:anywhere; transition:color var(--navigation-hover-duration) ease; }
+.navCard:hover:not([aria-current='page']) .navTitle { color:var(--item-hover-ink); }
+.content button:not([data-round-action]):focus-visible, .article:focus-visible { outline:2px solid #007bfc; outline-offset:-2px; }
+@container (max-width:1149px) {
+  .columns { gap:18px; padding-inline:0; }
+}
+@container (max-width:650px) {
+  .columns { flex-direction:column; gap:24px; padding-inline:8px; overflow-y:auto; overscroll-behavior-y:contain; }
+  .article, .sidebar { flex:none; width:100%; height:auto; }
+  .article { overflow:visible; }
+  .sidebar { max-height:280px; padding:0 0 16px; border-left:0; }
+}

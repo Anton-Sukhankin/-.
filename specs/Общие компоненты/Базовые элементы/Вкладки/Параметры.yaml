@@ -1,303 +1,202 @@
 schemaVersion: 1
 component:
   id: tabs
-  title: Вкладки Главной и паспорта отчёта
-  contract: specs/Общие компоненты/Базовые элементы/Вкладки/Контракт.md
+  title: Вкладки Главной, паспорта отчёта и бизнес-словаря
+  contract: "specs/Общие компоненты/Базовые элементы/Вкладки/Контракт.md"
   status: approved-target
 sources:
   home-source:
     kind: figma
     uri: https://www.figma.com/design/lnOcWh4ElGkhppWe6Kn5AA?node-id=611-11893
-    nodeId: 611:11893
+    nodeId: "611:11893"
     status: unverified-live
     snapshot: Срез Главной2 ноября; размеры и стили consumer, не новое live чтение
   report-source:
     kind: figma
     uri: https://www.figma.com/design/lnOcWh4ElGkhppWe6Kn5AA?node-id=893-19328
-    nodeId: 893:19328
+    nodeId: "893:19328"
     status: unverified-live
     snapshot: Повторная сверка панели3 ноября; текущий состав семи вкладок ведёт родитель
   home-view:
     kind: document
-    uri: specs/Разделы/Главная/Виды.md
+    uri: "specs/Разделы/Главная/Виды.md"
     status: observed-snapshot
-    snapshot: Происхождение переданных внутренних значений; текущие параметры теперь у B10, композиция у
-      раздела
+    snapshot: Происхождение переданных внутренних значений; текущие параметры теперь у B10, композиция у раздела
   report-contract:
     kind: document
-    uri: specs/Разделы/Отчёты/Паспорт/Контракт.md
+    uri: "specs/Разделы/Отчёты/Паспорт/Контракт.md"
     status: approved-decision
     snapshot: Состав/данные, reportTab и локальная полоса; не backend DTO
   report-geometry:
     kind: document
-    uri: references/visual-data/report-detail-chrome-2026-11-03/source-geometry.json
+    uri: "references/visual-data/report-detail-chrome-2026-11-03/source-geometry.json"
     status: observed-snapshot
     snapshot: Native Figma-срез панели, strip46 с padding-top12, tab34/content16/indicator2
   home-css:
     kind: document
-    uri: references/implementation/components/HomeControls/HomeControls.module.css
+    uri: "references/implementation-current/components/HomeControls/HomeControls.module.css"
     status: observed-snapshot
     snapshot: Дополнительные tracking/radii/focus; не новая пользовательская визуальная приёмка
   home-native:
     kind: document
-    uri: references/implementation/components/HomeControls/HomeControls.tsx
+    uri: "references/implementation-current/components/HomeControls/HomeControls.tsx"
     status: observed-snapshot
     snapshot: Controlled Choices kind tabs, roving Tab/стрелки/Home/End; собственной tabpanel нет
   report-css:
     kind: document
-    uri: references/implementation/features/report-detail/Detail.module.css
+    uri: "references/implementation-current/features/report-detail/Detail.module.css"
     status: observed-snapshot
-    snapshot: Реализация линий/локального overflow, padding-bottom18 укладывается в высоту tab34
+    snapshot: Линии и локальная прокрутка. Нижний внутренний отступ 16 px входит в высоту вкладки 34 px
   report-native:
     kind: document
-    uri: references/implementation/features/report-detail/ReportDetail.tsx
+    uri: "references/implementation-current/features/report-detail/ReportDetail.tsx"
     status: observed-snapshot
     snapshot: Семь опций, parent fallback overview, tabpanel, reveal выбранной вкладки при смене/resize
   fonts:
     kind: document
-    uri: specs/Ресурсы/Шрифты/README.md
+    uri: "specs/Ресурсы/Шрифты/README.md"
     status: reference-only
     snapshot: Предоставленные CoFo Sans Regular/Medium, без замены на Inter
+  dictionary-contract:
+    kind: document
+    uri: "specs/Разделы/Бизнес-словарь/Контракт.md"
+    status: approved-decision
+    snapshot: "Три согласованных состояния словаря и ограниченная вкладка процессов; IDs/default/URL у раздела"
+  dictionary-css:
+    kind: document
+    uri: "references/implementation-current/components/HomeControls/HomeControls.module.css"
+    status: observed-snapshot
+    snapshot: "prototype-2026-11-04-c1; tabs[data-appearance=registry], TabControl на прежнем Choices; не live-версия"
+  dictionary-render:
+    kind: document
+    uri: "specs/Ресурсы/Срез прототипа/frames/dictionary-terms.png"
+    status: observed-snapshot
+    snapshot: "prototype-2026-11-04-c1; terms,1440×900,CoFo400/500 loaded; условия и SHA256 у манифеста среза"
+  shared-tab-styles:
+    kind: document
+    uri: "references/implementation-current/styles/base.css"
+    status: observed-snapshot
+    snapshot: Общий горизонтальный интервал и высота линии активной вкладки
 tokens:
   ui-font:
     type: font-family
     sourceRef: fonts
-    locator: CoFo Sans Medium
+    locator: CoFo Sans Regular
 base:
-  sourceRefs:
-    - home-source
-    - home-view
-    - report-source
-    - report-contract
-    - fonts
+  sourceRefs: [home-source, home-view, report-source, report-contract, fonts]
   parameters:
-    width-mode:
-      type: string
-      value: fill-container
-    item-width-mode:
-      type: string
-      value: hug-content
-    item-height:
-      type: dimension
-      value: 34
-      unit: px
-    content-height:
-      type: dimension
-      value: 16
-      unit: px
-    label-to-indicator-gap:
-      type: dimension
-      value: 16
-      unit: px
-    indicator-height:
-      type: dimension
-      value: 2
-      unit: px
-    item-background:
-      type: color
-      format: hex
-      value: "#00000000"
-    item-border-width:
-      type: dimension
-      value: 0
-      unit: px
-    item-radius:
-      type: dimension
-      value: 0
-      unit: px
-    foreground:
-      type: color
-      format: hex
-      value: "#202028"
-    indicator-background:
-      type: color
-      format: hex
-      value: "#00000000"
-    font-family:
-      type: token
-      ref: ui-font
-      expectedType: font-family
-    font-size:
-      type: dimension
-      value: 16
-      unit: px
-    line-height:
-      type: dimension
-      value: 16
-      unit: px
-    font-weight:
-      type: font-weight
-      value: 500
+    width-mode: {type: string, value: fill-container}
+    item-width-mode: {type: string, value: hug-content}
+    strip-gap: {type: dimension, value: 24, unit: px, sourceRefs: [shared-tab-styles, dictionary-render]}
+    item-height: {type: dimension, value: 34, unit: px}
+    content-height: {type: dimension, value: 16, unit: px}
+    indicator-height: {type: dimension, value: 4, unit: px, sourceRefs: [shared-tab-styles]}
+    item-background: {type: color, format: hex, value: "#00000000"}
+    item-border-width: {type: dimension, value: 0, unit: px}
+    item-radius: {type: dimension, value: 0, unit: px}
+    foreground: {type: color, format: hex, value: "#202028"}
+    indicator-background: {type: color, format: hex, value: "#00000000"}
+    font-family: {type: token, ref: ui-font, expectedType: font-family}
+    font-size: {type: dimension, value: 16, unit: px}
+    line-height: {type: dimension, value: 16, unit: px}
+    font-weight: {type: font-weight, value: 400}
 variants:
   home34:
     description: Текстовая полоса Главной; иконки не добавляются, счётчик опционален
-    sourceRefs:
-      - home-source
-      - home-view
+    sourceRefs: [home-source, home-view]
     parameters:
-      strip-height:
-        type: dimension
-        value: 34
-        unit: px
-      strip-padding-top:
-        type: dimension
-        value: 0
-        unit: px
-      strip-gap:
-        type: dimension
-        value: 24
-        unit: px
-      content-gap:
-        type: dimension
-        value: 4
-        unit: px
-      baseline-height:
-        type: dimension
-        value: 2
-        unit: px
-      baseline-color:
-        type: color
-        format: hex
-        value: "#E2E4EA"
-      icons-visible:
-        type: boolean
-        value: false
-      item-padding:
-        type: dimension
-        value: 0
-        unit: px
+      strip-height: {type: dimension, value: 34, unit: px}
+      strip-padding-top: {type: dimension, value: 0, unit: px}
+      content-gap: {type: dimension, value: 4, unit: px}
+      baseline-height: {type: dimension, value: 2, unit: px}
+      baseline-color: {type: color, format: hex, value: "#E2E4EA"}
+      icons-visible: {type: boolean, value: false}
+      item-padding: {type: dimension, value: 0, unit: px}
     states:
       selected:
-        sourceRefs:
-          - home-source
-          - home-view
+        sourceRefs: [home-source, home-view]
         parameters:
-          foreground:
-            type: color
-            format: hex
-            value: "#007BFC"
-          indicator-background:
-            type: color
-            format: hex
-            value: "#007BFC"
+          foreground: {type: color, format: hex, value: "#007BFC"}
+          indicator-background: {type: color, format: hex, value: "#007BFC"}
       layout-implementation:
-        sourceRefs:
-          - home-css
+        sourceRefs: [home-css]
         parameters:
-          letter-spacing:
-            type: dimension
-            value: -0.24
-            unit: px
-          baseline-top-radius:
-            type: dimension
-            value: 2
-            unit: px
-          indicator-top-radius:
-            type: dimension
-            value: 4
-            unit: px
+          letter-spacing: {type: dimension, value: -0.24, unit: px}
+          baseline-top-radius: {type: dimension, value: 2, unit: px}
+          indicator-top-radius: {type: dimension, value: 4, unit: px}
       focus-implementation:
-        sourceRefs:
-          - home-css
+        sourceRefs: [home-css]
         parameters:
-          outline-width:
-            type: dimension
-            value: 2
-            unit: px
-          outline-offset:
-            type: dimension
-            value: 2
-            unit: px
-          outline-color:
-            type: color
-            format: hex
-            value: "#007BFC"
+          outline-width: {type: dimension, value: 2, unit: px}
+          outline-offset: {type: dimension, value: 2, unit: px}
+          outline-color: {type: color, format: hex, value: "#007BFC"}
   report46:
-    description: Иконка/подпись/необязательный счётчик, локальный горизонтальный scroll
-    sourceRefs:
-      - report-source
-      - report-contract
-      - report-geometry
+    description: Подпись и необязательный счётчик, локальная горизонтальная прокрутка
+    sourceRefs: [report-source, report-contract, report-geometry]
     parameters:
-      strip-height:
-        type: dimension
-        value: 46
-        unit: px
-      strip-padding-top:
-        type: dimension
-        value: 12
-        unit: px
-      strip-gap:
-        type: dimension
-        value: 16
-        unit: px
-      content-gap:
-        type: dimension
-        value: 8
-        unit: px
-      baseline-height:
-        type: dimension
-        value: 1
-        unit: px
-      baseline-color:
-        type: color
-        format: hex
-        value: "#D7E6F5"
-      icons-visible:
-        type: boolean
-        value: true
-      icon-size:
-        type: dimension
-        value: 16
-        unit: px
+      strip-height: {type: dimension, value: 46, unit: px}
+      strip-padding-top: {type: dimension, value: 12, unit: px}
+      content-gap: {type: dimension, value: 8, unit: px}
+      baseline-height: {type: dimension, value: 1, unit: px}
+      baseline-color: {type: color, format: hex, value: "#D7E6F5"}
+      icons-visible: {type: boolean, value: false}
     states:
       selected:
-        sourceRefs:
-          - report-contract
-          - report-css
+        sourceRefs: [report-contract, report-css]
         parameters:
-          foreground:
-            type: color
-            format: hex
-            value: "#007BFC"
-          indicator-background:
-            type: color
-            format: hex
-            value: "#007BFC"
+          foreground: {type: color, format: hex, value: "#007BFC"}
+          indicator-background: {type: color, format: hex, value: "#007BFC"}
       layout-implementation:
-        sourceRefs:
-          - report-css
+        sourceRefs: [report-css]
         parameters:
-          letter-spacing:
-            type: dimension
-            value: -0.24
-            unit: px
-          content-padding-bottom:
-            type: dimension
-            value: 18
-            unit: px
-          item-flex-shrink:
-            type: number
-            value: 0
-          white-space:
-            type: string
-            value: nowrap
-          overflow-x:
-            type: string
-            value: auto
-          overflow-y:
-            type: string
-            value: hidden
-          scrollbar-width:
-            type: string
-            value: thin
+          letter-spacing: {type: dimension, value: -0.24, unit: px}
+          content-padding-bottom: {type: dimension, value: 16, unit: px}
+          item-flex-shrink: {type: number, value: 0}
+          white-space: {type: string, value: nowrap}
+          overflow-x: {type: string, value: auto}
+          overflow-y: {type: string, value: hidden}
+          scrollbar-width: {type: string, value: thin}
+  registry40:
+    description: Текстовая полоса бизнес-словаря со счётчиками из данных вкладок; controlled Choices
+    sourceRefs: [dictionary-contract, dictionary-css, dictionary-render]
+    parameters:
+      strip-height: {type: dimension, value: 40, unit: px}
+      strip-padding-top: {type: dimension, value: 0, unit: px}
+      item-height: {type: dimension, value: 40, unit: px}
+      content-height: {type: dimension, value: 20, unit: px}
+      content-gap: {type: dimension, value: 4, unit: px}
+      baseline-height: {type: dimension, value: 1, unit: px}
+      baseline-color: {type: color, format: hex, value: "#E0E6EF"}
+      icons-visible: {type: boolean, value: false}
+      item-padding: {type: dimension, value: 0, unit: px}
+      line-height: {type: dimension, value: 20, unit: px}
+      letter-spacing: {type: dimension, value: 0, unit: px}
+    states:
+      selected:
+        sourceRefs: [dictionary-contract, dictionary-css, dictionary-render]
+        parameters:
+          foreground: {type: color, format: hex, value: "#007BFC"}
+          indicator-background: {type: color, format: hex, value: "#007BFC"}
+      layout-implementation:
+        sourceRefs: [dictionary-css]
+        parameters:
+          baseline-top-radius: {type: dimension, value: 2, unit: px}
+          indicator-top-radius: {type: dimension, value: 4, unit: px}
+          overflow-x: {type: string, value: "auto"}
+          scrollbar-width: {type: string, value: "thin"}
+      focus-implementation:
+        sourceRefs: [dictionary-css]
+        parameters:
+          outline-width: {type: dimension, value: 2, unit: px}
+          outline-offset: {type: dimension, value: -3, unit: px}
+          outline-color: {type: color, format: hex, value: "#007BFC"}
 dependencies:
   - id: source-tab-group
-    document: references/design-system/docs/design-system/components/generated/DS-01-703-6721.md
+    document: "references/design-system/docs/design-system/components/generated/DS-01-703-6721.md"
     role: design-source
   - id: source-tab-item
-    document: references/design-system/docs/design-system/components/generated/DS-01-279-2075.md
+    document: "references/design-system/docs/design-system/components/generated/DS-01-279-2075.md"
     role: design-source
   - id: current-counter-owner
-    document: specs/Общие компоненты/Базовые элементы/Счётчик/Контракт.md
+    document: "specs/Общие компоненты/Базовые элементы/Счётчик/Контракт.md"
     role: child-contract

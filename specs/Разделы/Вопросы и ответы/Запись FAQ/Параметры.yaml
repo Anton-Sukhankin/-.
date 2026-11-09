@@ -1,0 +1,23 @@
+schemaVersion: 1
+component:
+  id: questions-faq-entry
+  title: Запись FAQ
+  contract: "specs/Разделы/Вопросы и ответы/Запись FAQ/Контракт.md"
+  status: observed-source
+sources:
+  css:
+    kind: document
+    uri: "references/implementation/features/questions/QuestionsWorkspace.module.css"
+    status: observed-snapshot
+    snapshot: 8 ноября 2026
+base:
+  sourceRefs: [css]
+  parameters:
+    list-gap: {type: dimension, value: 4, unit: px}
+variants:
+  faq-entry:
+    description: Локальные параметры применения общего аккордеона
+    sourceRefs: [css]
+    parameters:
+      body-padding-inline: {type: dimension, value: 20, unit: px}
+      answer-max-width: {type: dimension, value: 720, unit: px}

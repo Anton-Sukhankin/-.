@@ -1,0 +1,34 @@
+schemaVersion: 1
+component:
+  id: dictionary-domain-row
+  title: Строка домена
+  contract: "specs/Разделы/Бизнес-словарь/Строка домена.md"
+  status: approved-target
+sources:
+  css:
+    kind: document
+    uri: "references/implementation/features/dictionary/Dictionary.module.css"
+    status: observed-snapshot
+    snapshot: 8 ноября 2026
+base:
+  sourceRefs: [css]
+  parameters:
+    height: {type: dimension, value: 40, unit: px}
+variants:
+  passive:
+    description: Строка домена в списке
+    sourceRefs: [css]
+    parameters:
+      padding-inline: {type: dimension, value: 8, unit: px}
+      icon-gap: {type: dimension, value: 8, unit: px}
+      surface: {type: color, format: hex, value: "#FFFFFF"}
+      border-color: {type: color, format: hex, value: "#D7E6F5"}
+      border-width: {type: dimension, value: 1, unit: px}
+      radius: {type: dimension, value: 12, unit: px}
+      icon-size: {type: dimension, value: 16, unit: px}
+      icon-slot-width: {type: dimension, value: 16, unit: px}
+      icon-slot-height: {type: dimension, value: 32, unit: px}
+      title-size: {type: dimension, value: 14, unit: px}
+      title-line-height: {type: dimension, value: 20, unit: px}
+      title-weight: {type: integer, value: 400}
+      title-color: {type: color, format: hex, value: "#243247"}

@@ -1,0 +1,85 @@
+.panelReveal { flex:none; }
+.panel {
+  --reference-chip-font:500 14px/14px 'CoFo Sans',sans-serif;
+  container-type:inline-size;
+  margin:8px 16px;
+  border:1px solid #e6e6e6;
+  border-radius:12px;
+  background:#fff;
+}
+.top { display:flex; align-items:center; row-gap:12px; padding:16px; }
+.search { flex:1; min-width:0; margin-inline-start:12px; }
+.search > div { --search-idle-border:#d7e6f5; height:40px; padding-inline:12px; background:#f3f4f9; }
+.topActions {
+  display:grid; flex:none; grid-template-columns:minmax(0,0fr); opacity:0;
+  transition:grid-template-columns var(--navigation-duration) var(--navigation-easing), opacity var(--navigation-hover-duration) ease;
+}
+.topActions[data-visible='true'] { grid-template-columns:minmax(0,1fr); opacity:1; transition-delay:0s,var(--navigation-hover-duration); }
+.topActionsClip { min-width:0; overflow:clip; overflow-clip-margin:4px; }
+.topActions .actions { width:max-content; padding-inline-start:12px; }
+.field input::placeholder { color:#a5a7af; opacity:1; }
+.disclosure { display:grid; flex:none; place-items:center; width:40px; height:40px; padding:0; border:0; border-radius:50%; background:#f0f1f4; cursor:pointer; }
+.disclosure:hover { background:#e2e6ec; }
+
+.criteria {
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:12px;
+  padding:16px;
+  border-top:1px solid #e2e4ea;
+}
+.field {
+  composes:surface from '../../components/Search/SearchField.module.css';
+  display:flex;
+  align-items:center;
+  gap:12px;
+  height:40px;
+  padding:0 12px;
+  border:1px solid #d7e6f5;
+  background:#f3f4f9;
+}
+.field input { flex:1; width:0; min-width:0; padding:0; border:0; outline:0; background:transparent; color:#101d3b; font:inherit; font-size:14px; line-height:20px; }
+.field span { flex:none; color:#52698c; font-size:12px; line-height:16px; }
+
+.footer, .compactRow { display:flex; justify-content:space-between; align-items:center; border-top:1px solid #e2e4ea; }
+.footer { gap:12px; padding:16px; }
+.actions, .switches { display:flex; flex:none; flex-wrap:wrap; align-items:center; gap:8px; }
+.action {
+  composes:button from '../../components/FilterButton/SearchPanelToggle.module.css';
+}
+.action:not(.reset) { font:inherit; font-size:13px; line-height:18px; font-weight:500; }
+.reset { composes:typography from '../../components/ResetFiltersButton/ResetFiltersButton.module.css'; }
+.apply { border-color:#0067dc; background:#0067dc; color:#fff; }
+.apply:hover { border-color:#005cbf; background:#005cbf; }
+.toggleChip { composes:chip from '../../components/Search/CatalogSearch.module.css'; display:inline-flex; align-items:center; gap:6px; border-color:#d2d3d7; }
+.panel .toggleChip { font:var(--reference-chip-font); }
+.toggleChip > span { flex-basis:16px; width:16px; height:16px; }
+.toggleChip > span img { width:16px; height:16px; }
+.toggleChip:focus-visible, .disclosure:focus-visible { outline:2px solid #007bfc; outline-offset:2px; }
+
+.compactRow { justify-content:flex-start; align-items:stretch; }
+.compactRow .switches { padding:16px; }
+.chipArea { position:relative; display:grid; flex:1; align-content:center; min-width:0; min-height:64px; padding:16px; border-left:1px solid #e2e4ea; }
+
+@container (max-width:690px) {
+  .compactRow { flex-direction:column; }
+  .chipArea:has([data-crm-criteria-empty='true']) { display:none; }
+  .chipArea { border-left:0; border-top:1px solid #e2e4ea; }
+}
+@container (max-width:590px) {
+  .criteria { grid-template-columns:minmax(0,1fr); }
+  .top, .footer { flex-wrap:wrap; }
+  .search { min-width:min(180px,100%); }
+  .actions, .topActions { margin-inline-start:auto; }
+}
+@container (max-width:470px) {
+  .top { row-gap:0; }
+  .topActions {
+    flex:0 0 100%; grid-template-columns:minmax(0,1fr); grid-template-rows:0fr;
+    transition-property:grid-template-rows,opacity;
+  }
+  .topActions[data-visible='true'] { grid-template-rows:1fr; }
+  .topActionsClip { min-height:0; }
+  .topActions .actions { max-width:100%; padding:12px 0 0; }
+}
+@media (prefers-reduced-motion:reduce) { .topActions { transition:none; } }

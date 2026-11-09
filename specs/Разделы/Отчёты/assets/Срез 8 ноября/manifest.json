@@ -1,0 +1,207 @@
+{
+  "prototype": "c1b0194a5b69f15aa3b3052178cb4f9eeae09f6f7f05cc1ce9fbba210c407ce7",
+  "browser": "Chromium 156.0.8078.4",
+  "reducedMotion": true,
+  "frames": [
+    {
+      "file": "catalog-table.png",
+      "url": "/preview/navigation?section=reports",
+      "state": "Таблица, первая страница, 35 демозаписей",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "135d2909142d3d8fb110a669f88c9c639403ba264f015ac06c8bb76fd9179d31"
+    },
+    {
+      "file": "catalog-table-scrolled-narrow.png",
+      "url": "/preview/navigation?section=reports",
+      "state": "1024 × 620, вертикальная и горизонтальная прокрутка, нижний бордер шапки остаётся на всю ширину",
+      "viewport": {
+        "width": 1024,
+        "height": 620
+      },
+      "sha256": "b1696b5371a8cb4e364d8cbe4f4b4eb9eeae79657c8ac38e11350cbd14d970fe"
+    },
+    {
+      "file": "catalog-filter-panel.png",
+      "url": "/preview/navigation?section=reports",
+      "state": "Общая панель фильтров открыта, применённые условия отсутствуют",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "ef1bb24cd9b32ebc7fec6c4775c48525da64e2beb0c0529872ccf6d88d60b2c1"
+    },
+    {
+      "file": "catalog-group-collapsed.png",
+      "url": "/preview/navigation?section=reports",
+      "state": "Свёрнута первая группа, счётчик синий, нижний разделитель",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "0265beaf61b5c5757b703b8ab0729bcd93a0ff8da69683131b1566095802d53c"
+    },
+    {
+      "file": "catalog-cards-page-two.png",
+      "url": "/preview/navigation?section=reports",
+      "state": "Карточки, сохранена вторая страница и её 15 отчётов",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "bb573c621dd33ac9fbc6506dbce0f93dfbd6d97470e20135b6e2bc4cdcf98e71"
+    },
+    {
+      "file": "catalog-domain-draft.png",
+      "url": "/preview/navigation?section=reports",
+      "state": "Третья страница, открыто меню колонки и выбран домен в черновике",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "7fb996e2f3379392408d12aa9f9c8216448f6b019b6fe75089e3a82c8155e8b2"
+    },
+    {
+      "file": "catalog-filter-applied.png",
+      "url": "/preview/navigation?section=reports",
+      "state": "Применён домен Финансы, пагинация скрыта",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "be15529866c554f8b00f109f59edddbfb4ce236dc33065a87e6d63ae34fe48e0"
+    },
+    {
+      "file": "report-overview.png",
+      "url": "/preview/navigation?section=reports&report=demo-report-summary",
+      "state": "Обзор сводного отчёта, полная шапка",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "cc9a35ef26ccc146056b1d8f04735d1ae3684c6abf4aa583426f2c42c0ce3399"
+    },
+    {
+      "file": "report-overview-compact.png",
+      "url": "/preview/navigation?section=reports&report=demo-report-summary",
+      "state": "Обзор после прокрутки, компактная шапка",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "1823cfbcfafba008077b977cff2946378c44630cecfdb350d6d7e474979e84d7"
+    },
+    {
+      "file": "report-sources.png",
+      "url": "/preview/navigation?section=reports&report=demo-report-summary&reportTab=sources",
+      "state": "Источники данных сводного отчёта, раскрыт первый источник",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "5f16f05851a3896c74ec43578d5e40b5020fa99d9814de12eb05b65c952961f1"
+    },
+    {
+      "file": "report-source-matrix.png",
+      "url": "/preview/navigation?section=reports&report=demo-report-summary&reportTab=sources",
+      "state": "Матрица demo.requests, остальные четыре источника закрыты",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "f864482b5b79214f8b5db6b41cb392fa535a1bd1595070a264d83264fa007f8f"
+    },
+    {
+      "file": "report-linked-source.png",
+      "url": "/preview/navigation?section=reports&source=events&sourceReport=demo-report-summary&sourceTab=fields&detailVia=section%3Dreports%26report%3Ddemo-report-summary%26reportTab%3Dsources",
+      "state": "Карточка источника demo.events, открытая из паспорта отчёта",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "dfbe0716bfa57f7f0690690f327a8e67c76c4f3cdbce186247d267b707d76f0c"
+    },
+    {
+      "file": "report-metrics.png",
+      "url": "/preview/navigation?section=reports&report=demo-report-summary&reportTab=metrics",
+      "state": "Связанные показатели сводного отчёта, табличный вид",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "358df948a8f3c882b233c3967d3dcc06bf3e42843340b5596acb1cc78b997c35"
+    },
+    {
+      "file": "report-linked-metric.png",
+      "url": "/preview/navigation?section=reports&metric=sales-volume-no-certificates&detailVia=section%3Dreports%26report%3Ddemo-report-summary%26reportTab%3Dmetrics%26relatedMetricQuery%3D%25D0%25B1%25D0%25B5%25D0%25B7%2B%25D1%2581%25D0%25B5%25D1%2580%25D1%2582%25D0%25B8%25D1%2584%25D0%25B8%25D0%25BA%25D0%25B0%25D1%2582%25D0%25BE%25D0%25B2",
+      "state": "Паспорт показателя из отчёта, активны Отчёты, крошка содержит исходный отчёт",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "bc05d8701a89b4809e6b22dcc3c3fed769dc27e26b9d5320ada39a4586611902"
+    },
+    {
+      "file": "report-mailings.png",
+      "url": "/preview/navigation?section=reports&report=demo-report-summary&reportTab=mailings&relatedMetricQuery=%D0%B1%D0%B5%D0%B7+%D1%81%D0%B5%D1%80%D1%82%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%82%D0%BE%D0%B2",
+      "state": "Рассылки сводного отчёта, две записи",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "dd96d3ce4be109a63aa40966ec27aeb479003acf2d6c5eb8cad11b3a9e0c2c32"
+    },
+    {
+      "file": "report-usage.png",
+      "url": "/preview/navigation?section=reports&report=demo-report-summary&reportTab=usage&relatedMetricQuery=%D0%B1%D0%B5%D0%B7+%D1%81%D0%B5%D1%80%D1%82%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%82%D0%BE%D0%B2",
+      "state": "Использование сводного отчёта, начало вкладки",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "3debb4cbff37a5a25dbb1a1a9834e382ffa66eff219b29797d2740313a59a8f7"
+    },
+    {
+      "file": "report-usage-guide.png",
+      "url": "/preview/navigation?section=reports&report=demo-report-summary&reportTab=usage&relatedMetricQuery=%D0%B1%D0%B5%D0%B7+%D1%81%D0%B5%D1%80%D1%82%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%82%D0%BE%D0%B2",
+      "state": "Динамика MAU, указатель на февраль и подсказка 110",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "fee958866253ccfe1ca0d46c33bd06932250d5d77fe9c86ae5a7d58c9fd9d2ec"
+    },
+    {
+      "file": "report-slides.png",
+      "url": "/preview/navigation?section=reports&report=demo-report-summary&reportTab=slides&relatedMetricQuery=%D0%B1%D0%B5%D0%B7+%D1%81%D0%B5%D1%80%D1%82%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%82%D0%BE%D0%B2",
+      "state": "Слайды сводного отчёта, аккордеоны закрыты",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "bccaa2738b543e7e8bfe98bec8741e8adfa3c02d000872152ced5168a5f0835e"
+    },
+    {
+      "file": "report-technical.png",
+      "url": "/preview/navigation?section=reports&report=demo-report-summary&reportTab=technical&relatedMetricQuery=%D0%B1%D0%B5%D0%B7+%D1%81%D0%B5%D1%80%D1%82%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%82%D0%BE%D0%B2",
+      "state": "Техническая информация сводного отчёта",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "3cd015aeff4239d7c4708a9d27ad8bc33691f046f93314be1d90bf71655aa692"
+    },
+    {
+      "file": "catalog-cards-page-three.png",
+      "url": "/preview/navigation?section=reports",
+      "state": "Карточки, третья страница, 5 записей и неактивная стрелка вперёд",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "f8ec6eced94f394942d925286fbb1c4211caa5d8549057df933ec756947ff8e2"
+    }
+  ]
+}

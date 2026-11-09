@@ -1,0 +1,59 @@
+{
+  "snapshot_id": "prototype-2026-11-06-report-passports",
+  "captured_date": "2026-11-06",
+  "build": {
+    "mode": "Vite production",
+    "entry_asset": "assets/main-r45mRd0q.js",
+    "entry_sha256": "8a60c7ed39680abdc885435de6cd332cb040b4e1ad06d43182616aa4cc0ad00b"
+  },
+  "browser": {
+    "name": "Chromium",
+    "version": "156.0.8078.4",
+    "dpr": 1,
+    "color_scheme": "light",
+    "reduced_motion": "reduce",
+    "fonts": "CoFo Sans 400/500"
+  },
+  "frames": [
+    {
+      "path": "debt-slides-1440.png",
+      "route": "/preview/navigation?section=reports&report=demo-report-debt&reportTab=slides",
+      "state": "Первый слайд раскрыт, второй свёрнут.",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "43519a4212c8a11c47d9d6e6a67a71e2dd321b100a0e42126a21e9f489f80846"
+    },
+    {
+      "path": "debt-mailings-1440.png",
+      "route": "/preview/navigation?section=reports&report=demo-report-debt&reportTab=mailings",
+      "state": "Доступные рассылки, один пример с подпиской и один без неё.",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "163ee54f6a81f9d09e8fed0c1a0679aa47528dae089c7cf42aafb5371e66066e"
+    },
+    {
+      "path": "debt-technical-1440.png",
+      "route": "/preview/navigation?section=reports&report=demo-report-debt&reportTab=technical",
+      "state": "Карточка каталога и дашборд в исходном состоянии.",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "507774cb20c89050f16ba4e769edca8b98f3c264e1bc18119351d6e17a9cb145"
+    },
+    {
+      "path": "debt-technical-1024.png",
+      "route": "/preview/navigation?section=reports&report=demo-report-debt&reportTab=technical",
+      "state": "Тот же паспорт при узком окне, поля перенесены.",
+      "viewport": {
+        "width": 1024,
+        "height": 768
+      },
+      "sha256": "deff17969461273afd1c757c97a5f89b7b31d93ebcce19c9d40aa718a4316165"
+    }
+  ]
+}

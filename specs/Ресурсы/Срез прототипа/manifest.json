@@ -197,19 +197,6 @@
       "setup_actions": []
     },
     {
-      "id": "metric-detail",
-      "path": "frames/metric-detail.png",
-      "route": "/preview/navigation?section=metrics&metric=4",
-      "viewport": {
-        "width": 1440,
-        "height": 900
-      },
-      "sha256": "5dc50f1f4b7110edecc168751e92fa5160d4145eec5b59f0e58cd3fa85ca71e3",
-      "role": "observed-reference",
-      "known_deviations": [],
-      "setup_actions": []
-    },
-    {
       "id": "sources",
       "path": "frames/sources.png",
       "route": "/preview/navigation?section=sources",
@@ -841,7 +828,7 @@
     },
     {
       "path": "data/metrics.json",
-      "sha256": "2fe44c23da1eda12b881d1263280665ba8f426c583263e5409bafda4499b757e"
+      "sha256": "061fbc0b1ea8a3b2b5a6e6e4430a4e1cb0d93496c0e33eaac880357e14c8d3c9"
     },
     {
       "path": "data/report-detail.json",

@@ -1,0 +1,65 @@
+schemaVersion: 1
+component:
+  id: questions-toolbar
+  title: Панель управления раздела «Вопросы и ответы»
+  contract: "specs/Разделы/Вопросы и ответы/Панель управления/Контракт.md"
+  status: observed-source
+sources:
+  css:
+    kind: document
+    uri: "references/implementation/features/questions/QuestionsWorkspace.module.css"
+    status: observed-snapshot
+    snapshot: 8 ноября 2026
+  sticky-shadow-css:
+    kind: document
+    uri: "references/implementation/styles/sticky-panel-shadow.module.css"
+    status: observed-snapshot
+    snapshot: 8 ноября 2026
+  search-css:
+    kind: document
+    uri: "references/implementation-current/components/Search/SearchField.module.css"
+    status: observed-snapshot
+    snapshot: 8 ноября 2026
+base:
+  sourceRefs: [css]
+  parameters:
+    panel-radius: {type: dimension, value: 12, unit: px}
+variants:
+  toolbar:
+    description: Геометрия панели и локальных чипов
+    sourceRefs: [css, sticky-shadow-css]
+    parameters:
+      panel-border-width: {type: dimension, value: 1, unit: px}
+      panel-border-color: {type: color, format: hex, value: "#E2E4EA"}
+      toolbar-padding: {type: dimension, value: 16, unit: px}
+      toolbar-gap: {type: dimension, value: 12, unit: px}
+      compact-toolbar-gap: {type: dimension, value: 8, unit: px}
+      compact-container-width: {type: dimension, value: 740, unit: px}
+      stacked-container-width: {type: dimension, value: 620, unit: px}
+      status-padding-block: {type: dimension, value: 12, unit: px}
+      status-padding-inline: {type: dimension, value: 16, unit: px}
+      status-chip-gap: {type: dimension, value: 8, unit: px}
+      status-chip-count-gap: {type: dimension, value: 4, unit: px}
+      status-reveal-duration-ms: {type: number, value: 200}
+      sticky-shadow-offset-y: {type: dimension, value: 10, unit: px}
+      sticky-shadow-blur: {type: dimension, value: 20, unit: px}
+      sticky-shadow-spread: {type: dimension, value: -7, unit: px}
+      sticky-shadow-color: {type: color, format: hex, value: "#101D3B"}
+      sticky-shadow-color-opacity: {type: opacity, value: 0.24}
+  local-search40:
+    description: Поле локального поиска в обоих сегментах
+    sourceRefs: [search-css]
+    parameters:
+      height: {type: dimension, value: 40, unit: px}
+      radius: {type: dimension, value: 8, unit: px}
+      padding-block: {type: dimension, value: 4, unit: px}
+      padding-inline: {type: dimension, value: 12, unit: px}
+      content-gap: {type: dimension, value: 10, unit: px}
+      glyph-size: {type: dimension, value: 16, unit: px}
+      border-width: {type: dimension, value: 1, unit: px}
+      background: {type: color, format: hex, value: "#F3F4F9"}
+      border-color: {type: color, format: hex, value: "#D7E6F5"}
+      value-color: {type: color, format: hex, value: "#101D3B"}
+      placeholder-color: {type: color, format: hex, value: "#52698C"}
+      font-size: {type: dimension, value: 14, unit: px}
+      line-height: {type: dimension, value: 20, unit: px}

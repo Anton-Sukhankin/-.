@@ -1,0 +1,5 @@
+.surface { height: calc(100vh - 210px - var(--section-heading-gap, 16px)); padding: 16px 16px 0; overflow: hidden; border-radius: 16px; background: #f3f4f9; }
+.empty { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; height: 500px; padding: 8px 0; text-align: center; }
+.empty img { display: block; flex: 0 0 auto; }
+.empty h2 { margin: 0; color: #101d3b; font-size: 18px; font-weight: 500; line-height: 18px; letter-spacing: -.12px; }
+.empty p { margin: 0; color: #52698c; font-size: 14px; font-weight: 400; line-height: 20px; letter-spacing: -.12px; }

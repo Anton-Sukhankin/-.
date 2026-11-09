@@ -1,0 +1,147 @@
+{
+  "prototype": "c1b0194a5b69f15aa3b3052178cb4f9eeae09f6f7f05cc1ce9fbba210c407ce7",
+  "browser": "Chromium 156.0.8078.4",
+  "reducedMotion": true,
+  "frames": [
+    {
+      "file": "sources-table.png",
+      "url": "/preview/navigation?section=sources",
+      "state": "Табличный вид, девять источников, пагинация скрыта",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "e49a97ab485b846b2af523dceffd3f529a70eee724ea1b371267900333aad7ca"
+    },
+    {
+      "file": "sources-panel-draft.png",
+      "url": "/preview/navigation?section=sources",
+      "state": "В общей панели выбран домен в черновике",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "e5c695f9917f08c26fe5773324d8f1b2a16304dae985ddd8867dbe7a1324c18c"
+    },
+    {
+      "file": "sources-column-reset-hover.png",
+      "url": "/preview/navigation?section=sources&source.platform=SQL+Server&source.domain=%D0%93%D0%BE%D1%81%D1%82%D0%B5%D0%BF%D1%80%D0%B8%D0%B8%D0%BC%D1%81%D1%82%D0%B2%D0%BE",
+      "state": "Крестик сброса только на индикаторе колонки «Источник»",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "eabd0cc37fb4adcde5fbea717e181a36c2836f45b733e444d7dd29847a085bdc"
+    },
+    {
+      "file": "sources-empty-filtered.png",
+      "url": "/preview/navigation?section=sources&source.analytics=yes&source.description=no",
+      "state": "Нулевая выдача по несовместимым условиям",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "016decd1afcf15abc9ff3746b5ca40dadf56552a58df8bb3925bdf2acf26e5fc"
+    },
+    {
+      "file": "sources-cards-page-two.png",
+      "url": "/preview/navigation?section=sources&paginationDemo=1&sourcePage=1&sourceView=cards",
+      "state": "Вторая страница карточек; те же 15 источников, что в таблице",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "170c1232b24ffe650b826c8be43bb56e837b28f099beb6f57811ca3f082eb604"
+    },
+    {
+      "file": "sources-scroll-list.png",
+      "url": "/preview/navigation?section=sources&sourceView=list",
+      "state": "Тонкий индикатор в правом поле за пределами подложки",
+      "viewport": {
+        "width": 1440,
+        "height": 650
+      },
+      "sha256": "7ff97e2913cccce38c6f58726fb7f937e28d9e81a678012dce58b4021eef2484"
+    },
+    {
+      "file": "sources-scroll-cards.png",
+      "url": "/preview/navigation?section=sources&sourceView=cards",
+      "state": "Тонкий индикатор в правом поле за пределами подложки",
+      "viewport": {
+        "width": 1440,
+        "height": 650
+      },
+      "sha256": "2cf6acbc52958df2bbb2c0f83a0f50a1311bbebdc5367b0a8e1004e91247b749"
+    },
+    {
+      "file": "sources-search-expanded-row.png",
+      "url": "/preview/navigation?section=sources&source.domain=%D0%93%D0%BE%D1%81%D1%82%D0%B5%D0%BF%D1%80%D0%B8%D0%B8%D0%BC%D1%81%D1%82%D0%B2%D0%BE",
+      "state": "Навигатор раскрыл совпадение ниже двух строк описания",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "0284fdec90410a999872a072c50fafea6fbaa0238ef186df1f2fc777f1b02ad1"
+    },
+    {
+      "file": "sources-search-card-clamp.png",
+      "url": "/preview/navigation?section=sources&sourceView=cards",
+      "state": "Совпадение на карточке, высота описания остаётся пять строк",
+      "viewport": {
+        "width": 1024,
+        "height": 768
+      },
+      "sha256": "a34a2599ef4fd997e1c6307ce3baee379846d5433e148965892f1f3308ca3c2a"
+    },
+    {
+      "file": "sources-search-card-fallback.png",
+      "url": "/preview/navigation?section=sources&sourceView=cards&source=source-reportcrm-date&sourceTab=fields",
+      "state": "Обрезанное совпадение карточки показано в описании паспорта",
+      "viewport": {
+        "width": 1024,
+        "height": 768
+      },
+      "sha256": "883dd49183458f2af29f50a1d918732dbc7b6e230804133422d5da0517630a38"
+    },
+    {
+      "file": "source-rewedo-fields.png",
+      "url": "/preview/navigation?section=sources&sourceView=cards&source.platform=PostgreSQL&sourcePage=0&source=source-demo-rewedo-versions&sourceTab=fields",
+      "state": "Паспорт rewedo, описание полей",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "ee3cc4b476838739efea1dd95e78b56c446b1505ef964f8232a42a988fa245ae"
+    },
+    {
+      "file": "source-rewedo-field-expanded.png",
+      "url": "/preview/navigation?section=sources&sourceView=cards&source.platform=PostgreSQL&sourcePage=0&source=source-demo-rewedo-versions&sourceTab=fields",
+      "state": "Первое поле раскрыто клавишей Enter, связанным метрикам соответствует известный пустой список",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "72f49d0040fb132c8ded51b85b8fdc19c35262d1f82d4f483f542748815b4090"
+    },
+    {
+      "file": "source-rewedo-reports.png",
+      "url": "/preview/navigation?section=sources&sourceView=cards&source.platform=PostgreSQL&sourcePage=0&source=source-demo-rewedo-versions&sourceTab=reports",
+      "state": "Известный пустой список связанных отчётов rewedo",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "8b4b9ca83d90b02312e1f43f54d025ec3a0a27e1372e53fe1fe8d3d08ad12694"
+    },
+    {
+      "file": "source-from-report.png",
+      "url": "/preview/navigation?section=reports&source=events&sourceReport=demo-report-summary&sourceTab=fields&detailVia=section%3Dreports%26report%3Ddemo-report-summary%26reportTab%3Dsources",
+      "state": "Источник demo.events открыт из отчёта, крошка ведёт на исходную вкладку",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "dfbe0716bfa57f7f0690690f327a8e67c76c4f3cdbce186247d267b707d76f0c"
+    }
+  ]
+}

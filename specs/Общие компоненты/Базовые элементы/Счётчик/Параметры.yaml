@@ -2,501 +2,258 @@ schemaVersion: 1
 component:
   id: counter
   title: Счётчик и числовая метка
-  contract: specs/Общие компоненты/Базовые элементы/Счётчик/Контракт.md
+  contract: "specs/Общие компоненты/Базовые элементы/Счётчик/Контракт.md"
   status: approved-target
 sources:
   navigation-source:
     kind: figma
     uri: https://www.figma.com/design/lnOcWh4ElGkhppWe6Kn5AA?node-id=1555-167070
-    nodeId: 1555:167070
+    nodeId: "1555:167070"
     status: unverified-live
     snapshot: Срез C01/B11, CoFo Sans Medium14/16 и Gray500; не новое live чтение
   tabs-source:
     kind: figma
     uri: https://www.figma.com/design/lnOcWh4ElGkhppWe6Kn5AA?node-id=611-11893
-    nodeId: 611:11893
+    nodeId: "611:11893"
     status: unverified-live
     snapshot: Исходные badge вкладок/сегментов из Главной; selected не вычисляет число
   filter-source:
     kind: figma
     uri: https://www.figma.com/design/lnOcWh4ElGkhppWe6Kn5AA?node-id=1397-44483
-    nodeId: 1397:44483
+    nodeId: "1397:44483"
     status: unverified-live
     snapshot: Принятая основа headline; смысл DRAFT определяется FL, не картинкой
   tabs-css:
     kind: document
-    uri: references/implementation/components/HomeControls/HomeControls.module.css
+    uri: "references/implementation-current/components/HomeControls/HomeControls.module.css"
     status: observed-snapshot
     snapshot: Текущие max-width/tracking и выбранность; не бизнес-ограничение числа
   report-css:
     kind: document
-    uri: references/implementation/features/report-detail/Detail.module.css
+    uri: "references/implementation-current/features/report-detail/Detail.module.css"
     status: observed-snapshot
-    snapshot: Совпадающие текущие tabCount-стили, без переноса значений счётчиков
+    snapshot: Ограничение ширины и выбранное состояние счётчика табов отчёта
+  neutral-count-css:
+    kind: document
+    uri: "references/implementation/components/CountBadge/CountBadge.module.css"
+    status: observed-snapshot
+    snapshot: Базовый стиль счётчика неактивного таба отчёта и заголовков контентных блоков
   filter-header-css:
     kind: document
-    uri: references/implementation/components/ReportFilterPanel/ReportFilterPanel.module.css
+    uri: "references/implementation-current/components/ReportFilterPanel/ReportFilterPanel.module.css"
     status: observed-snapshot
     snapshot: Эффективные параметры headline16 с белым outline; без max-width кнопки
   filter-reset-css:
     kind: document
-    uri: references/implementation/components/FilterButton/FilterButton.module.css
+    uri: "references/implementation-current/components/FilterButton/FilterButton.module.css"
     status: observed-snapshot
     snapshot: Кнопка count, hover замена цифр на glyph; внешний anchor остаётся у потребителя
   filter-reset-native:
     kind: document
-    uri: references/implementation/components/FilterButton/FilterButton.tsx
+    uri: "references/implementation-current/components/FilterButton/FilterButton.tsx"
     status: observed-snapshot
-    snapshot: Count>0, native button и parent onClear, glyph14; не общий reset всех badge
+    snapshot: Count>0, native button и parent onClear; hover использует общий ResetBadge
+  reset-badge-css:
+    kind: document
+    uri: "references/implementation/components/ResetBadge/ResetBadge.module.css"
+    status: observed-snapshot
+    snapshot: Общий круг сброса в стандартном размере
+  select-reset-parameters:
+    kind: document
+    uri: "specs/Общие компоненты/Базовые элементы/Селект/Параметры.yaml"
+    status: approved-decision
+    snapshot: Общие цвета круга сброса
   accordion-css:
     kind: document
-    uri: references/implementation/components/Accordion/Accordion.module.css
+    uri: "references/implementation-current/components/Accordion/Accordion.module.css"
     status: observed-snapshot
-    snapshot: Поздняя декларация переопределяет padding на0x3 и line-height16; font-weight не назначен
+    snapshot: Числовая метка использует общий базовый стиль счётчика
   accordion-native:
     kind: document
-    uri: references/implementation/components/Accordion/Accordion.tsx
+    uri: "references/implementation-current/components/Accordion/Accordion.tsx"
     status: observed-snapshot
     snapshot: Число и строка различаются; action переносит count в trailing, не удаляет
   search-css:
     kind: document
-    uri: references/implementation/components/Search/CatalogSearch.module.css
+    uri: "references/implementation-current/components/Search/CatalogSearch.module.css"
     status: observed-snapshot
     snapshot: Отдельные фон/текст/radius8 и line-height12 группы поиска
   domain-table-css:
     kind: document
-    uri: references/implementation/components/ReportTable/ReportTable.module.css
+    uri: "references/implementation-current/components/ReportTable/ReportTable.module.css"
     status: observed-snapshot
     snapshot: Числовая метка показанной доменной группы, не footer total
   domain-card-css:
     kind: document
-    uri: references/implementation/components/ReportCard/ReportCardGroups.module.css
+    uri: "references/implementation-current/components/ReportCard/ReportCardGroups.module.css"
     status: observed-snapshot
-    snapshot: Та же геометрия доменной метки; letter-spacing отдельно подтверждён для карточной группы
+    snapshot: Метка карточной группы и групп словаря использует общий базовый стиль
   fonts:
     kind: document
-    uri: specs/Ресурсы/Шрифты/README.md
+    uri: "specs/Ресурсы/Шрифты/README.md"
     status: reference-only
     snapshot: Эталонный CoFo Sans, предоставленные файлы
+  dictionary-css:
+    kind: document
+    uri: "references/implementation/features/dictionary/Dictionary.module.css"
+    status: observed-snapshot
+    snapshot: "Пассивная метка у заголовка без ограничения ширины"
+  dictionary-native:
+    kind: document
+    uri: "references/implementation/features/dictionary/DictionaryWorkspace.tsx"
+    status: observed-snapshot
+    snapshot: "DictionaryGroup использует общий стиль и получает размер группы после фильтров"
+  dictionary-contract:
+    kind: document
+    uri: "specs/Разделы/Бизнес-словарь/Контракт.md"
+    status: approved-decision
+    snapshot: "Числа исторического источника498/330/63 отделены от локального количества объектов"
+  dictionary-render:
+    kind: document
+    uri: "specs/Разделы/Бизнес-словарь/Изображения/dictionary-all-current.png"
+    status: observed-snapshot
+    snapshot: "prototype-2026-11-04-c1; all,1440×900; заголовок498 и две group-метки63/330"
 tokens:
+  reset-background:
+    type: color
+    sourceRef: select-reset-parameters
+    locator: base.parameters.multi-clear-background
+  reset-foreground:
+    type: color
+    sourceRef: select-reset-parameters
+    locator: base.parameters.multi-clear-glyph-color
   ui-font:
     type: font-family
     sourceRef: fonts
     locator: CoFo Sans
 base:
-  sourceRefs:
-    - fonts
+  sourceRefs: [fonts]
   parameters:
-    font-family:
-      type: token
-      ref: ui-font
-      expectedType: font-family
+    font-family: {type: token, ref: ui-font, expectedType: font-family}
 variants:
   navigation-text14:
     description: Обычный текст без подложки внутри раскрытого пункта
-    sourceRefs:
-      - navigation-source
+    sourceRefs: [navigation-source]
     parameters:
-      font-size:
-        type: dimension
-        value: 14
-        unit: px
-      line-height:
-        type: dimension
-        value: 16
-        unit: px
-      font-weight:
-        type: font-weight
-        value: 500
-      foreground:
-        type: color
-        format: hex
-        value: "#8E919A"
-      background:
-        type: color
-        format: hex
-        value: "#00000000"
+      font-size: {type: dimension, value: 14, unit: px}
+      line-height: {type: dimension, value: 16, unit: px}
+      font-weight: {type: font-weight, value: 500}
+      foreground: {type: color, format: hex, value: "#8E919A"}
+      background: {type: color, format: hex, value: "#00000000"}
   tab-count16:
-    description: Счётчик вкладки/сегмента; selected передаёт родитель
-    sourceRefs:
-      - tabs-source
-      - tabs-css
-      - report-css
+    description: Счётчик вкладки, сегмента или контентного блока. У заголовков блоков применяется базовое состояние
+    sourceRefs: [tabs-source, neutral-count-css, accordion-css, accordion-native, domain-table-css, domain-card-css, dictionary-native]
     parameters:
-      height:
-        type: dimension
-        value: 16
-        unit: px
-      min-width:
-        type: dimension
-        value: 16
-        unit: px
-      max-width:
-        type: dimension
-        value: 20
-        unit: px
-      radius:
-        type: dimension
-        value: 14
-        unit: px
-      padding-top:
-        type: dimension
-        value: 3.5
-        unit: px
-      padding-inline:
-        type: dimension
-        value: 3
-        unit: px
-      padding-bottom:
-        type: dimension
-        value: 2.5
-        unit: px
-      font-size:
-        type: dimension
-        value: 10
-        unit: px
-      line-height:
-        type: dimension
-        value: 10
-        unit: px
-      font-weight:
-        type: font-weight
-        value: 500
-      letter-spacing:
-        type: dimension
-        value: -0.05
-        unit: px
-      background:
-        type: color
-        format: hex
-        value: "#E2E4EA"
-      foreground:
-        type: color
-        format: hex
-        value: "#202028"
+      height: {type: dimension, value: 16, unit: px}
+      min-width: {type: dimension, value: 16, unit: px}
+      radius: {type: dimension, value: 14, unit: px}
+      padding-top: {type: dimension, value: 3.5, unit: px}
+      padding-inline: {type: dimension, value: 3, unit: px}
+      padding-bottom: {type: dimension, value: 2.5, unit: px}
+      font-size: {type: dimension, value: 10, unit: px}
+      line-height: {type: dimension, value: 10, unit: px}
+      font-weight: {type: font-weight, value: 500}
+      letter-spacing: {type: dimension, value: -0.05, unit: px}
+      background: {type: color, format: hex, value: "#E2E4EA"}
+      foreground: {type: color, format: hex, value: "#202028"}
     states:
-      selected:
-        sourceRefs:
-          - tabs-source
-          - tabs-css
-          - report-css
+      bounded-width:
+        sourceRefs: [tabs-css, report-css]
         parameters:
-          background:
-            type: color
-            format: hex
-            value: "#007BFC"
-          foreground:
-            type: color
-            format: hex
-            value: "#FFFFFF"
+          max-width: {type: dimension, value: 20, unit: px}
+      selected:
+        sourceRefs: [tabs-source, tabs-css, report-css]
+        parameters:
+          background: {type: color, format: hex, value: "#007BFC"}
+          foreground: {type: color, format: hex, value: "#FFFFFF"}
   filter-header16:
     description: DRAFT headline панели; только отображение числа
-    sourceRefs:
-      - filter-source
-      - filter-header-css
+    sourceRefs: [filter-source, filter-header-css]
     parameters:
-      height:
-        type: dimension
-        value: 16
-        unit: px
-      min-width:
-        type: dimension
-        value: 16
-        unit: px
-      radius:
-        type: dimension
-        value: 999
-        unit: px
-      padding-top:
-        type: dimension
-        value: 3.5
-        unit: px
-      padding-inline:
-        type: dimension
-        value: 3
-        unit: px
-      padding-bottom:
-        type: dimension
-        value: 2.5
-        unit: px
-      font-size:
-        type: dimension
-        value: 10
-        unit: px
-      line-height:
-        type: dimension
-        value: 10
-        unit: px
-      font-weight:
-        type: font-weight
-        value: 500
-      letter-spacing:
-        type: dimension
-        value: -0.05
-        unit: px
-      outline-width:
-        type: dimension
-        value: 2
-        unit: px
-      outline-color:
-        type: color
-        format: hex
-        value: "#FFFFFF"
-      background:
-        type: color
-        format: hex
-        value: "#007BFC"
-      foreground:
-        type: color
-        format: hex
-        value: "#FFFFFF"
+      height: {type: dimension, value: 16, unit: px}
+      min-width: {type: dimension, value: 16, unit: px}
+      radius: {type: dimension, value: 999, unit: px}
+      padding-top: {type: dimension, value: 3.5, unit: px}
+      padding-inline: {type: dimension, value: 3, unit: px}
+      padding-bottom: {type: dimension, value: 2.5, unit: px}
+      font-size: {type: dimension, value: 10, unit: px}
+      line-height: {type: dimension, value: 10, unit: px}
+      font-weight: {type: font-weight, value: 500}
+      letter-spacing: {type: dimension, value: -0.05, unit: px}
+      outline-width: {type: dimension, value: 2, unit: px}
+      outline-color: {type: color, format: hex, value: "#FFFFFF"}
+      background: {type: color, format: hex, value: "#007BFC"}
+      foreground: {type: color, format: hex, value: "#FFFFFF"}
   filter-reset16:
     description: APPLIED индикатор с отдельным hover/reset, действие задаётся C05
-    sourceRefs:
-      - filter-reset-css
-      - filter-reset-native
+    sourceRefs: [filter-reset-css, filter-reset-native]
     parameters:
-      height:
-        type: dimension
-        value: 16
-        unit: px
-      min-width:
-        type: dimension
-        value: 16
-        unit: px
-      max-width:
-        type: dimension
-        value: 20
-        unit: px
-      radius:
-        type: dimension
-        value: 999
-        unit: px
-      padding-top:
-        type: dimension
-        value: 3.5
-        unit: px
-      padding-inline:
-        type: dimension
-        value: 3
-        unit: px
-      padding-bottom:
-        type: dimension
-        value: 2.5
-        unit: px
-      font-size:
-        type: dimension
-        value: 10
-        unit: px
-      line-height:
-        type: dimension
-        value: 10
-        unit: px
-      font-weight:
-        type: font-weight
-        value: 500
-      letter-spacing:
-        type: dimension
-        value: -0.05
-        unit: px
-      outline-width:
-        type: dimension
-        value: 2
-        unit: px
-      outline-color:
-        type: color
-        format: hex
-        value: "#FFFFFF"
-      background:
-        type: color
-        format: hex
-        value: "#007BFC"
-      foreground:
-        type: color
-        format: hex
-        value: "#FFFFFF"
-      glyph-size:
-        type: dimension
-        value: 14
-        unit: px
-      value-visible:
-        type: boolean
-        value: true
-      glyph-visible:
-        type: boolean
-        value: false
+      height: {type: dimension, value: 16, unit: px}
+      min-width: {type: dimension, value: 16, unit: px}
+      max-width: {type: dimension, value: 20, unit: px}
+      radius: {type: dimension, value: 999, unit: px}
+      padding-top: {type: dimension, value: 3.5, unit: px}
+      padding-inline: {type: dimension, value: 3, unit: px}
+      padding-bottom: {type: dimension, value: 2.5, unit: px}
+      font-size: {type: dimension, value: 10, unit: px}
+      line-height: {type: dimension, value: 10, unit: px}
+      font-weight: {type: font-weight, value: 500}
+      letter-spacing: {type: dimension, value: -0.05, unit: px}
+      outline-width: {type: dimension, value: 2, unit: px}
+      outline-color: {type: color, format: hex, value: "#FFFFFF"}
+      background: {type: color, format: hex, value: "#007BFC"}
+      foreground: {type: color, format: hex, value: "#FFFFFF"}
+      glyph-size: {type: dimension, value: 14, unit: px, sourceRefs: [filter-reset-native]}
+      value-visible: {type: boolean, value: true}
+      glyph-visible: {type: boolean, value: false}
     states:
       reset-hover:
-        sourceRefs:
-          - filter-reset-css
-          - filter-reset-native
+        sourceRefs: [filter-reset-css, filter-reset-native, reset-badge-css]
         parameters:
-          background:
-            type: color
-            format: hex
-            value: "#E2E4EA"
-          padding-top:
-            type: dimension
-            value: 0
-            unit: px
-          padding-inline:
-            type: dimension
-            value: 0
-            unit: px
-          padding-bottom:
-            type: dimension
-            value: 0
-            unit: px
-          value-visible:
-            type: boolean
-            value: false
-          glyph-visible:
-            type: boolean
-            value: true
-  accordion-count16:
-    description: Числовой badge C09; строковый count остаётся muted-подписью
-    sourceRefs:
-      - accordion-css
-      - accordion-native
-    parameters:
-      height:
-        type: dimension
-        value: 16
-        unit: px
-      min-width:
-        type: dimension
-        value: 16
-        unit: px
-      radius:
-        type: dimension
-        value: 12
-        unit: px
-      padding-block:
-        type: dimension
-        value: 0
-        unit: px
-      padding-inline:
-        type: dimension
-        value: 3
-        unit: px
-      font-size:
-        type: dimension
-        value: 10
-        unit: px
-      line-height:
-        type: dimension
-        value: 16
-        unit: px
-      background:
-        type: color
-        format: hex
-        value: "#007BFC"
-      foreground:
-        type: color
-        format: hex
-        value: "#FFFFFF"
+          background: {type: token, ref: reset-background, expectedType: color}
+          foreground: {type: token, ref: reset-foreground, expectedType: color}
+          glyph-container-size: {type: dimension, value: 20, unit: px}
+          outline-width: {type: dimension, value: 0, unit: px}
+          padding-top: {type: dimension, value: 0, unit: px}
+          padding-inline: {type: dimension, value: 0, unit: px}
+          padding-bottom: {type: dimension, value: 0, unit: px}
+          value-visible: {type: boolean, value: false}
+          glyph-visible: {type: boolean, value: true}
   search-count16:
     description: Число группы глобальной выдачи, отдельный светлый срез
-    sourceRefs:
-      - search-css
+    sourceRefs: [search-css]
     parameters:
-      height:
-        type: dimension
-        value: 16
-        unit: px
-      min-width:
-        type: dimension
-        value: 16
-        unit: px
-      radius:
-        type: dimension
-        value: 8
-        unit: px
-      padding-block:
-        type: dimension
-        value: 0
-        unit: px
-      padding-inline:
-        type: dimension
-        value: 4
-        unit: px
-      font-size:
-        type: dimension
-        value: 10
-        unit: px
-      line-height:
-        type: dimension
-        value: 12
-        unit: px
-      font-weight:
-        type: font-weight
-        value: 500
-      background:
-        type: color
-        format: hex
-        value: "#E2E6EC"
-      foreground:
-        type: color
-        format: hex
-        value: "#343A4A"
-  domain-count16:
-    description: Числовая метка группы, значение и смысл задаёт владелец каталога
-    sourceRefs:
-      - domain-table-css
-      - domain-card-css
+      height: {type: dimension, value: 16, unit: px}
+      min-width: {type: dimension, value: 16, unit: px}
+      radius: {type: dimension, value: 8, unit: px}
+      padding-block: {type: dimension, value: 0, unit: px}
+      padding-inline: {type: dimension, value: 4, unit: px}
+      font-size: {type: dimension, value: 10, unit: px}
+      line-height: {type: dimension, value: 12, unit: px}
+      font-weight: {type: font-weight, value: 500}
+      background: {type: color, format: hex, value: "#E2E6EC"}
+      foreground: {type: color, format: hex, value: "#343A4A"}
+  dictionary-title24:
+    description: Пассивное общее число рядом с заголовком бизнес-словаря; не размер локального среза
+    sourceRefs: [dictionary-css, dictionary-contract, dictionary-render]
     parameters:
-      height:
-        type: dimension
-        value: 16
-        unit: px
-      min-width:
-        type: dimension
-        value: 16
-        unit: px
-      radius:
-        type: dimension
-        value: 14
-        unit: px
-      padding-block:
-        type: dimension
-        value: 0
-        unit: px
-      padding-inline:
-        type: dimension
-        value: 3
-        unit: px
-      font-size:
-        type: dimension
-        value: 10
-        unit: px
-      line-height:
-        type: dimension
-        value: 10
-        unit: px
-      font-weight:
-        type: font-weight
-        value: 500
-      background:
-        type: color
-        format: hex
-        value: "#E2E4EA"
-      foreground:
-        type: color
-        format: hex
-        value: "#202028"
-    states:
-      card-implementation:
-        sourceRefs:
-          - domain-card-css
-        parameters:
-          letter-spacing:
-            type: dimension
-            value: -0.05
-            unit: px
+      display: {type: string, value: "inline-flex"}
+      align-items: {type: string, value: "center"}
+      justify-content: {type: string, value: "center"}
+      height: {type: dimension, value: 24, unit: px}
+      min-width: {type: dimension, value: 28, unit: px}
+      radius: {type: dimension, value: 8, unit: px}
+      padding-block: {type: dimension, value: 0, unit: px}
+      padding-inline: {type: dimension, value: 6, unit: px}
+      font-size: {type: dimension, value: 12, unit: px}
+      line-height: {type: dimension, value: 16, unit: px}
+      font-weight: {type: font-weight, value: 500}
+      background: {type: color, format: hex, value: "#F0F1F4"}
+      foreground: {type: color, format: hex, value: "#202028"}
 dependencies:
   - id: source-counter
-    document: references/design-system/docs/design-system/components/generated/DS-01-5667-17429.md
+    document: "references/design-system/docs/design-system/components/generated/DS-01-5667-17429.md"
     role: design-source
   - id: source-counter-button
-    document: references/design-system/docs/design-system/components/generated/DS-01-2925-13071.md
+    document: "references/design-system/docs/design-system/components/generated/DS-01-2925-13071.md"
     role: design-source

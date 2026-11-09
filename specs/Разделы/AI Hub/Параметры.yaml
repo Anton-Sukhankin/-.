@@ -1,0 +1,65 @@
+schemaVersion: 1
+component:
+  id: ai-hub-screen
+  title: "Сборка экранов AI Hub"
+  contract: "specs/Разделы/AI Hub/Каталог.md"
+  status: observed-source
+sources:
+  catalog-style:
+    kind: document
+    uri: "references/implementation/features/ai-hub/AiHubCatalog.module.css"
+    status: observed-snapshot
+    snapshot: "Сетка и счётчик каталога"
+  detail-style:
+    kind: document
+    uri: "references/implementation/features/ai-hub/AiSolutionDetail.module.css"
+    status: observed-snapshot
+    snapshot: "Корпус, шапка и содержимое детального экрана"
+base:
+  sourceRefs: [catalog-style, detail-style]
+  parameters:
+    summary-gap-before: {"type":"dimension","value":16,"unit":"px"}
+    summary-gap-after: {"type":"dimension","value":12,"unit":"px"}
+    summary-font-size: {"type":"dimension","value":14,"unit":"px"}
+    summary-line-height: {"type":"dimension","value":20,"unit":"px"}
+variants:
+  catalog-grid:
+    description: "Сетка карточек в контейнере каталога"
+    sourceRefs: [catalog-style]
+    parameters:
+      column-gap: {"type":"dimension","value":16,"unit":"px"}
+      row-gap: {"type":"dimension","value":12,"unit":"px"}
+      two-column-min: {"type":"dimension","value":1056,"unit":"px"}
+      three-column-min: {"type":"dimension","value":1592,"unit":"px"}
+  solution-detail:
+    description: "Композиция карточки, обзора и паспорта"
+    sourceRefs: [detail-style]
+    parameters:
+      surface-radius: {"type":"dimension","value":12,"unit":"px"}
+      surface-border-width: {"type":"dimension","value":1,"unit":"px"}
+      content-gap-after-filters: {"type":"dimension","value":16,"unit":"px"}
+      navigation-gap: {"type":"dimension","value":16,"unit":"px"}
+      header-padding: {"type":"dimension","value":16,"unit":"px"}
+      header-gap: {"type":"dimension","value":12,"unit":"px"}
+      header-title-gap: {"type":"dimension","value":8,"unit":"px"}
+      header-action-gap: {"type":"dimension","value":8,"unit":"px"}
+      header-title-size: {"type":"dimension","value":20,"unit":"px"}
+      header-title-line-height: {"type":"dimension","value":28,"unit":"px"}
+      overview-padding: {"type":"dimension","value":16,"unit":"px"}
+      overview-block-gap: {"type":"dimension","value":32,"unit":"px"}
+      overview-content-gap: {"type":"dimension","value":8,"unit":"px"}
+      overview-list-indent: {"type":"dimension","value":16,"unit":"px"}
+      overview-list-item-gap: {"type":"dimension","value":4,"unit":"px"}
+      overview-font-size: {"type":"dimension","value":14,"unit":"px"}
+      overview-line-height: {"type":"dimension","value":20,"unit":"px"}
+      overview-title-size: {"type":"dimension","value":16,"unit":"px"}
+      overview-title-line-height: {"type":"dimension","value":20,"unit":"px"}
+      stack-passport-max: {"type":"dimension","value":1080,"unit":"px"}
+      stack-navigation-max: {"type":"dimension","value":650,"unit":"px"}
+      narrow-header-padding: {"type":"dimension","value":12,"unit":"px"}
+      narrow-header-gap: {"type":"dimension","value":8,"unit":"px"}
+      narrow-navigation-gap: {"type":"dimension","value":12,"unit":"px"}
+      overview-columns: {"type":"string","value":"minmax(0, 1.16fr) minmax(0, 1fr)"}
+      header-actions-max-width: {"type":"dimension","value":56,"unit":"%"}
+      surface-border-color: {"type":"color","format":"hex","value":"#D7E6F5"}
+      separator-color: {"type":"color","format":"hex","value":"#E0E6EF"}

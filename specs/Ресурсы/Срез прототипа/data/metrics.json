@@ -1,6 +1,6 @@
 {
   "snapshot_id": "prototype-2026-11-04-c1",
-  "role": "generated local UI fixtures, not a production API or full database",
+  "role": "generated local UI fixtures, not a production API or full database В копии поставки контактные записи исторического профиля 4 опущены.",
   "data": {
     "catalog": [
       {
@@ -1162,24 +1162,7 @@
             }
           }
         ],
-        "people": [
-          {
-            "name": "Лапова Юлия Владимировна",
-            "role": "Проверил",
-            "description": "11.08.2026 · Бизнес-аналитик"
-          },
-          {
-            "name": "Горбунь Анастасия Юрьевна",
-            "role": "Бизнес-владелец",
-            "description": "Управляющий директор · a.gorbun@samolet.ru"
-          },
-          {
-            "name": "Лапова Юлия Владимировна",
-            "role": "Аналитик",
-            "description": "Бизнес-аналитик · yu.lapova@samolet.ru",
-            "placeholder": true
-          }
-        ]
+        "people": []
       },
       {
         "metricId": "indicator-conversion-demo",

@@ -1,0 +1,47 @@
+schemaVersion: 1
+component:
+  id: questions-workspace
+  title: Раздел «Вопросы и ответы»
+  contract: "specs/Разделы/Вопросы и ответы/Контракт.md"
+  status: observed-source
+sources:
+  css:
+    kind: document
+    uri: "references/implementation/features/questions/QuestionsWorkspace.module.css"
+    status: observed-snapshot
+    snapshot: 8 ноября 2026
+  layout-css:
+    kind: document
+    uri: "references/implementation/app/NavigationPreview.module.css"
+    status: observed-snapshot
+    snapshot: 8 ноября 2026
+base:
+  sourceRefs: [css]
+  parameters:
+    heading-description-gap: {type: dimension, value: 4, unit: px}
+variants:
+  workspace:
+    description: Геометрия области раздела
+    sourceRefs: [css, layout-css]
+    parameters:
+      heading-workspace-gap: {type: dimension, value: 16, unit: px}
+      surround-radius: {type: dimension, value: 12, unit: px}
+      surround-inset: {type: dimension, value: 16, unit: px}
+      surround-background: {type: color, format: hex, value: "#F3F4F9"}
+      toolbar-list-gap: {type: dimension, value: 8, unit: px}
+  submission-notice:
+    description: Подтверждение локального добавления обращения
+    sourceRefs: [css, layout-css]
+    parameters:
+      viewport-inline-end: {type: dimension, value: 24, unit: px}
+      viewport-block-end: {type: dimension, value: 24, unit: px}
+      max-width: {type: dimension, value: 520, unit: px}
+      padding: {type: dimension, value: 16, unit: px}
+      gap: {type: dimension, value: 16, unit: px}
+      radius: {type: dimension, value: 12, unit: px}
+      border-width: {type: dimension, value: 1, unit: px}
+      border-color: {type: color, format: hex, value: "#D7E6F5"}
+      background: {type: color, format: hex, value: "#FFFFFF"}
+      text-color: {type: color, format: hex, value: "#101D3B"}
+      text-size: {type: dimension, value: 14, unit: px}
+      shadow: {type: string, value: "0 4px 16px #101D3B1F"}
