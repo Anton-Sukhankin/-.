@@ -9,10 +9,17 @@ type OverflowTextProps<Tag extends TextTag> = {
   fullText: string | undefined;
   /** An existing keyboard target for descriptions inside or beside a link. */
   focusTarget?: RefObject<HTMLElement | null>;
+  tooltipContainer?: HTMLElement | null;
 } & Omit<ComponentPropsWithoutRef<Tag>, 'title'>;
 
+export function TextTooltipSurface({text,container,side}:{text:string;container?:HTMLElement|null;side?:'top'|'right'|'bottom'|'left'}) {
+  return <Tooltip.Portal container={container}>
+    <Tooltip.Content className={styles.tooltip} side={side} sideOffset={6} collisionPadding={8}>{text}</Tooltip.Content>
+  </Tooltip.Portal>;
+}
+
 /** Shows the shared tooltip only while the rendered text is actually clipped. */
-export function OverflowText<Tag extends TextTag = 'span'>({ as, fullText, focusTarget, ...props }: OverflowTextProps<Tag>) {
+export function OverflowText<Tag extends TextTag = 'span'>({ as, fullText, focusTarget, tooltipContainer, ...props }: OverflowTextProps<Tag>) {
   const ref = useRef<HTMLElement>(null);
   const [clipped, setClipped] = useState(false);
   const [open, setOpen] = useState(false);
@@ -60,9 +67,7 @@ export function OverflowText<Tag extends TextTag = 'span'>({ as, fullText, focus
       <Tooltip.Trigger asChild>
         {createElement(as ?? 'span', {...props,ref,'data-overflow-text':'','data-overflow-clipped':enabled || undefined})}
       </Tooltip.Trigger>
-      {enabled && <Tooltip.Portal>
-        <Tooltip.Content className={styles.tooltip} sideOffset={6} collisionPadding={8}>{fullText}</Tooltip.Content>
-      </Tooltip.Portal>}
+      {enabled && fullText && <TextTooltipSurface text={fullText} container={tooltipContainer} />}
     </Tooltip.Root>
   </Tooltip.Provider>;
 }

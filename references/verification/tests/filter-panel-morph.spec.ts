@@ -99,7 +99,7 @@ test('reduced motion opens and closes the filter panel directly', async ({ page 
   await page.goto('/preview/navigation?section=reports');
   const trigger = page.getByRole('button', { name: 'Открыть фильтры отчётов', exact: true });
   await trigger.press('Enter');
-  const dialog = page.getByRole('dialog', { name: 'Фильтры отчётов', exact: true });
+  const dialog = page.getByRole('dialog', { name: 'Фильтры', exact: true });
   await expect(dialog).toBeVisible();
   await expect(page.locator('[data-filter-panel-morph]')).toHaveCSS('clip-path', 'none');
   await expect(dialog).toHaveCSS('opacity', '1');
@@ -108,4 +108,32 @@ test('reduced motion opens and closes the filter panel directly', async ({ page 
   await expect(page.locator('[data-filter-panel-morph]')).toHaveCount(0);
   await expect(dialog).toHaveCount(0);
   await expect(trigger).toBeFocused();
+});
+
+test('sources tree applies the filter and unlocks when the exit animation stalls', async ({ page }) => {
+  await page.addInitScript(() => {
+    const reverse = Animation.prototype.reverse;
+    Animation.prototype.reverse = function () {
+      reverse.call(this);
+      if ((this.effect as KeyframeEffect).target?.hasAttribute('data-filter-panel-morph')) {
+        void this.ready.then(() => this.pause());
+      }
+    };
+  });
+  await page.goto('/preview/navigation?section=sources&sourceView=tree');
+  const trigger = page.getByRole('button', { name: 'Открыть фильтры источников', exact: true });
+  await trigger.click();
+  const dialog = page.getByRole('dialog', { name: 'Фильтры', exact: true });
+  const surface = page.locator('[data-filter-panel-morph]');
+  await expect(surface).toHaveCSS('clip-path', 'none');
+  await dialog.getByRole('button', { name: 'Домен Все', exact: true }).click();
+  await dialog.getByRole('checkbox', { name: 'Гостеприимство', exact: true }).check();
+  await dialog.getByRole('button', { name: 'Применить', exact: true }).click();
+  await expect(surface).toHaveAttribute('data-closing', 'true');
+  await expect(surface).toHaveCount(0, { timeout: 3000 });
+  await expect(trigger).toBeFocused();
+  const tree = page.getByRole('region', { name: 'Дерево источников' });
+  await expect(tree.locator('[data-source-id]')).toHaveCount(2);
+  await expect(page.getByRole('button', { name: 'Дерево', exact: true })).toHaveAttribute('aria-pressed', 'true');
+  expect(new URL(page.url()).searchParams.get('source.domain')).toBe('Гостеприимство');
 });

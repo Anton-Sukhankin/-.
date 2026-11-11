@@ -1,5 +1,7 @@
 import { useId, useState } from 'react';
 import { EmptyDetail } from '../EmptyDetail';
+import { ManualDelivery } from './ManualDelivery';
+import type { ManualDeliveryDraft } from './deliveryModel';
 import s from './MailingsTab.module.css';
 import { demoMailingsSource } from './source';
 import type { MailingsSource, ReportMailing } from './source';
@@ -13,6 +15,7 @@ interface MailingForm {
   time: string;
   profileQueries: Record<string, string>;
   latest: string[];
+  manual?: ManualDeliveryDraft;
 }
 const segments: readonly { id: Segment; label: string }[] = [
   { id: 'list', label: 'Доступные рассылки' },
@@ -42,6 +45,7 @@ export function MailingsTab({ reportId, source = demoMailingsSource }: { reportI
   const providedMailings = source.list(reportId);
   const mailings = providedMailings ?? [];
   const current = byReport[reportId] ?? initialForm(mailings);
+  const manualData = current.segment === 'manual' ? source.manual?.(reportId) : undefined;
   function update(change: (previous: MailingForm) => MailingForm) {
     setByReport(previous => ({ ...previous, [reportId]: change(previous[reportId] ?? initialForm(mailings)) }));
   }
@@ -50,20 +54,19 @@ export function MailingsTab({ reportId, source = demoMailingsSource }: { reportI
     setNotice(undefined);
     update(previous => ({ ...previous, segment }));
   }
-  return <section className={s.root} aria-label="Рассылки отчёта" data-mailings-report={reportId}>
-    <div className={s.panel}>
-      <div className={s.segmentBar}>
-        <div className={s.segments} role="group" aria-label="Раздел рассылок">
-          {segments.map(item => <button type="button" key={item.id} aria-pressed={current.segment === item.id}
-            onClick={() => selectSegment(item.id)}>{item.label}</button>)}
-        </div>
+  return <section className={s.root} aria-label="Рассылки отчёта" data-mailings-report={reportId} data-mailings-segment={current.segment}>
+    <div className={`${s.panel} ${s.segmentBar}`} data-mailings-segment-bar>
+      <div className={s.segments} role="group" aria-label="Раздел рассылок">
+        {segments.map(item => <button type="button" key={item.id} aria-pressed={current.segment === item.id}
+          onClick={() => selectSegment(item.id)}>{item.label}</button>)}
       </div>
-      {current.segment === 'create' && <>
-        <div className={s.introduction}>
+    </div>
+    {current.segment === 'create' && <div className={s.createSections}>
+        <div className={`${s.panel} ${s.introduction}`}>
           <div><h2>Новая рассылка</h2><p>Если нужной рассылки нет, оставьте заявку. Укажите дни, время и способ получения.</p></div>
           <button type="button" className={s.primary} onClick={() => limit('Заявка не отправлена: адрес и обработчик Service Desk пока не определены.')}>Отправить заявку в SD</button>
         </div>
-        <section className={s.schedule} aria-labelledby={`${controlId}-schedule`}>
+        <section className={`${s.panel} ${s.schedule}`} aria-labelledby={`${controlId}-schedule`}>
           <h2 id={`${controlId}-schedule`}>Расписание</h2>
           <p>Выберите дни и время регулярной отправки отчёта.</p>
           <div className={s.scheduleFields}>
@@ -81,7 +84,7 @@ export function MailingsTab({ reportId, source = demoMailingsSource }: { reportI
             </label>
           </div>
         </section>
-        <section className={s.profile} aria-labelledby={`${controlId}-profile`}>
+        <section className={`${s.panel} ${s.profile}`} aria-labelledby={`${controlId}-profile`}>
           <div className={s.profileHeading}>
             <div><h2 id={`${controlId}-profile`}>Профиль РГП</h2><p>Задайте параметры данных, которые нужно включить в отчёт при отправке.</p></div>
             <button type="button" className={s.profileButton} onClick={() => limit('Профиль не применён: варианты значений и обработчик применения пока не определены.')}>Применять профиль</button>
@@ -102,8 +105,7 @@ export function MailingsTab({ reportId, source = demoMailingsSource }: { reportI
           <p className={s.hint}>«Последнее значение» подставляет актуальное значение перед каждой отправкой.</p>
           <span className={s.screenReader} id={`${controlId}-profile-limit`}>В прототипе сохраняется только введённый текст. Списки значений и серверное вычисление ещё не определены.</span>
         </section>
-      </>}
-    </div>
+    </div>}
     {current.segment === 'list' && (mailings.length === 0
       ? <EmptyDetail viewport title={providedMailings ? 'Нет доступных рассылок' : 'Список рассылок недоступен'} description="Здесь отображаются рассылки, на которые можно подписаться для этого отчёта." />
       : <div className={s.list}>
@@ -122,9 +124,11 @@ export function MailingsTab({ reportId, source = demoMailingsSource }: { reportI
         </article>;
       })}
     </div>)}
-    {current.segment === 'manual' && <section className={s.limited}>
-      <h2>Ручная отправка</h2><p>Экран ручной отправки ещё не определён. Отправка отчёта из прототипа недоступна.</p>
-    </section>}
+    {current.segment === 'manual' && (manualData
+      ? <ManualDelivery key={reportId} data={manualData} draft={current.manual}
+        onChange={manual => update(previous => ({ ...previous, manual }))}
+        onSend={() => limit('Отчёт не отправлен. В прототипе доступна настройка ручной отправки.')} />
+      : <EmptyDetail viewport title="Ручная отправка недоступна" description="Для этого отчёта не предоставлены данные для настройки отправки." />)}
     {notice?.reportId === reportId && <div className={s.notice} role="status">
       <span>{notice.message}</span><button type="button" aria-label="Закрыть уведомление рассылок" onClick={() => setNotice(undefined)}>×</button>
     </div>}

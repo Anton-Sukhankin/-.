@@ -8,16 +8,25 @@ export interface SourceSummary {
   usedInAnalytics?: boolean; masterSystem?: string; personalData?: boolean; similarSources?: boolean;
   reports: number; metrics: number; lineage?: number; mcp: number; views?: number;
   provenance: 'reference' | 'demo';
+  /** Explicit ancestor labels below the platform in the catalog tree. */
+  treePath?: readonly string[];
   /** Authored additions to an otherwise historical metadata example. */
   demoAttributes?:readonly ('description'|'masterSystem'|'analyst')[];
 }
 export interface SourcesGateway { list(): readonly SourceSummary[] }
 
+export type SourceCatalogView = 'list' | 'cards' | 'tree';
+
+export function readSourceCatalogView(value: string | null): SourceCatalogView {
+  return value === 'cards' || value === 'tree' ? value : 'list';
+}
+
 export function sourceCatalogPage(records: readonly SourceSummary[], params: URLSearchParams, searchTarget?: string) {
   const applied = readSourceFilters(params, records);
   const requested = Number(params.get('sourcePage') ?? 0);
   const pageSize = listPageSize;
-  return { ...catalogSearchPage(filterSources(records, applied), records, Number.isSafeInteger(requested) ? requested : 0, pageSize, searchTarget), applied };
+  const filteredRows = filterSources(records, applied);
+  return { ...catalogSearchPage(filteredRows, records, Number.isSafeInteger(requested) ? requested : 0, pageSize, searchTarget), applied, filteredRows };
 }
 export const sourceAttributes = ['platform', 'domain', 'masterSystem', 'layer', 'personalData', 'description', 'analytics', 'similar'] as const;
 export type SourceAttribute = typeof sourceAttributes[number];

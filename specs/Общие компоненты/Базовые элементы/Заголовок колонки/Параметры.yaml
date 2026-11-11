@@ -297,6 +297,7 @@ variants:
       current-foreground: {type: color, format: hex, value: "#687D96", sourceRefs: [metric-css]}
       current-background: {type: color, format: hex, value: "#F3F4F9", sourceRefs: [metric-css]}
       current-border-width: {type: dimension, value: 0, unit: px, sourceRefs: [metric-css]}
+      bottom-divider: {type: string, value: none, sourceRefs: [metric-decision, metric-css]}
       current-text-align: {type: string, value: left, sourceRefs: [metric-css]}
   usage-static48:
     description: "Неинтерактивная история по месяцам: однострочность — принятое уточнение; численные CSS-параметры — наблюдаемый срез"

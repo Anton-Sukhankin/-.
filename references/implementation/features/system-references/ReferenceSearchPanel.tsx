@@ -2,7 +2,7 @@ import { useId, useRef } from 'react';
 import motion from '../../components/Accordion/Accordion.module.css';
 import { SelectionCheck } from '../../components/DropdownItem/SelectionCheck';
 import { SearchField } from '../../components/Search/SearchField';
-import type { ReferenceFilters } from '../../data/systemReferences';
+import { referenceFilterCount, type ReferenceFilters } from '../../data/systemReferences';
 import { ReferenceCriteriaChips } from './ReferenceCriteriaChips';
 import { referenceChevron, referenceCriteria } from './referenceCriteria';
 import s from './ReferenceSearchPanel.module.css';
@@ -19,9 +19,10 @@ export function ReferenceSearchPanel({ id, visible, expanded, draft, onChange, o
 }) {
   const criteriaId = useId();
   const disclosure = useRef<HTMLButtonElement>(null);
+  const canApply = referenceFilterCount(draft) > 0;
   const actions = <div className={s.actions}>
     <button type="button" className={`${s.action} ${s.reset}`} onClick={onReset}>Сбросить</button>
-    <button type="button" className={`${s.action} ${s.apply}`} onClick={onApply}>Применить</button>
+    <button type="button" className={`${s.action} ${s.apply}`} disabled={!canApply} onClick={onApply}>Применить</button>
   </div>;
   const switches = <div className={s.switches} role="group" aria-label="Условия поиска">
     <button type="button" className={s.toggleChip} aria-pressed={draft.exactEntity}

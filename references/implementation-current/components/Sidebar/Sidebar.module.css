@@ -1,4 +1,7 @@
 .sidebar {
+  --sidebar-edge-color: #dce2ea;
+  --sidebar-toggle-ink: #687384;
+  --sidebar-item-highlight: #e2e6ec;
   position: relative;
   flex: 0 0 var(--sidebar-expanded-width);
   width: var(--sidebar-expanded-width);
@@ -34,45 +37,44 @@
   overflow: hidden;
   transition: background-color var(--navigation-hover-duration) ease, color var(--navigation-hover-duration) ease;
 }
-.item[aria-current='page'] { background: #e2e6ec; }
-.item:hover { background: #f4f4f5; }
-.item[aria-current='page']:hover { background: #cce5fe; }
+.item:is([aria-current='page'], :hover) { background: var(--sidebar-item-highlight); }
 .item:focus-visible { outline: 2px solid #007aff; outline-offset: -2px; }
 .icon { position:relative; width:20px; height:20px; }
 .text { display:flex; position:relative; align-items:center; justify-content:space-between; gap:12px; min-width:0; opacity:1; visibility:visible; overflow:hidden; transition:opacity var(--navigation-hover-duration) ease 80ms, visibility 0s; }
 .label { white-space: nowrap; overflow:hidden; text-overflow:ellipsis; }
 .count { flex:none; color: #8e919a; line-height: 16px; }
-.sidebar::after { content:''; position:absolute; top:0; right:0; bottom:0; width:1px; background:#007aff; opacity:0; pointer-events:none; transition:opacity var(--navigation-hover-duration) ease; }
+.sidebar::after { content:''; position:absolute; top:0; right:0; bottom:0; width:1px; background:var(--sidebar-edge-color); pointer-events:none; transition:background-color var(--navigation-hover-duration) ease; }
+.sidebar:is(:hover, [data-resizing='true'], :has(.boundary :focus-visible)) { --sidebar-edge-color:#007aff; --sidebar-toggle-ink:#007aff; }
 .boundary { position: absolute; z-index: 2; right: -12px; top: 0; width: 24px; height: 100%; }
 .resizeHandle { position:absolute; inset:0; cursor:col-resize; touch-action:none; }
 .resizeHandle:focus-visible { outline:2px solid #007aff; outline-offset:-2px; }
 .sidebar[data-resizing='true'] { transition:none; user-select:none; }
 .toggle {
   position: absolute;
-  top: 24px;
+  top: 32px;
   left: 0;
   display: grid;
   place-items: center;
   width: 24px;
   height: 24px;
   padding: 0;
-  border: 1px solid #007aff;
+  border: 1px solid var(--sidebar-edge-color);
   border-radius: 12px;
   background: white;
+  color: var(--sidebar-toggle-ink);
   cursor: pointer;
-  opacity: 0;
-  transition: opacity var(--navigation-hover-duration) ease, background-color var(--navigation-hover-duration) ease;
+  transition: border-color var(--navigation-hover-duration) ease, color var(--navigation-hover-duration) ease, background-color var(--navigation-hover-duration) ease;
 }
 .toggle:hover { background:#e5f1ff; }
-.toggle:focus-visible { outline: 2px solid #007aff; outline-offset: 2px; opacity: 1; }
-.sidebar:is([data-boundary='true'], :has(.boundary:focus-within))::after { opacity:1; }
-.sidebar:is([data-boundary='true'], :has(.boundary:focus-within)) .toggle { opacity:1; }
+.toggle:focus-visible { outline: 2px solid #007aff; outline-offset: 2px; }
+.toggleIcon { width:12px; height:12px; background:currentColor; mask:url('/icons/sidebar/collapse.svg') center / contain no-repeat; }
+.toggle[aria-expanded='false'] .toggleIcon { mask-image:url('/icons/sidebar/expand.svg'); }
 .sidebar[data-collapsed='true'] { flex-basis: 64px; width: 64px; }
 .sidebar[data-collapsed='true'] .item {
   background: transparent;
 }
 .sidebar[data-collapsed='true'] .item::before { content:''; position:absolute; left:6px; top:2px; width:32px; height:32px; border-radius:50%; background:transparent; transition:background-color var(--navigation-hover-duration) ease; }
-.sidebar[data-collapsed='true'] .item:hover::before { background:#e2e6ec; }
+.sidebar[data-collapsed='true'] .item:hover::before { background:var(--sidebar-item-highlight); }
 .sidebar[data-collapsed='true'] .text { opacity:0; visibility:hidden; transition:opacity 100ms ease, visibility 0s linear 100ms; }
 @media (prefers-reduced-motion: reduce) {
   .sidebar, .sidebar::after, .item, .item::before, .text, .toggle, .sidebar[data-collapsed='true'] .text { transition:none; }

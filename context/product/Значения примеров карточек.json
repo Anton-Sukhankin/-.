@@ -16,7 +16,7 @@
     {
       "name": "Сводный отчёт Гостеприимства",
       "source": {
-        "path": "Справочный источник в рабочем проекте",
+        "path": "../work/catalog-screen-analysis-2026-10-19/frames/t0040.png",
         "time": "00:40",
         "rowFromTop": 1
       },
@@ -56,7 +56,7 @@
     {
       "name": "Мотивация сотрудников",
       "source": {
-        "path": "Справочный источник в рабочем проекте",
+        "path": "../work/catalog-screen-analysis-2026-10-19/frames/t0040.png",
         "time": "00:40",
         "rowFromTop": 3
       },
@@ -97,7 +97,7 @@
     {
       "name": "Отчет по дебиторской задолженности",
       "source": {
-        "path": "Справочный источник в рабочем проекте",
+        "path": "../work/catalog-screen-analysis-2026-10-19/frames/t0040.png",
         "time": "00:40",
         "rowFromTop": 9
       },
@@ -139,7 +139,7 @@
     {
       "name": "УК Москва/СПБ",
       "source": {
-        "path": "Справочный источник в рабочем проекте",
+        "path": "../work/catalog-screen-analysis-2026-10-19/frames/t0040.png",
         "time": "00:40",
         "rowFromTop": 10
       },
@@ -181,7 +181,7 @@
     {
       "name": "План-Факт продажи",
       "source": {
-        "path": "Справочный источник в рабочем проекте",
+        "path": "../work/catalog-screen-analysis-2026-10-19/frames/t0040.png",
         "time": "00:40",
         "rowFromTop": 2
       },
@@ -228,7 +228,7 @@
   "metric": {
     "name": "CSAT менеджер",
     "source": {
-      "path": "Справочный источник в рабочем проекте",
+      "path": "../work/catalog-screen-analysis-2026-10-19/frames/t0044.png",
       "time": "00:44",
       "rowFromTop": 2
     },
@@ -251,7 +251,7 @@
     "name": "reportcrm20.dbo.dimdate",
     "variant": "S01",
     "source": {
-      "path": "Справочный источник в рабочем проекте",
+      "path": "../work/catalog-screen-analysis-2026-10-19/frames/t0052.png",
       "time": "00:52",
       "rowFromTop": 1
     },
@@ -284,10 +284,10 @@
   "reportPassport": {
     "name": "Сводный отчёт Гостеприимства",
     "source": {
-      "path": "Справочный источник в рабочем проекте",
+      "path": "../work/catalog-screen-analysis-2026-10-19/frames/t0672.png",
       "time": "11:12",
-      "continuation": "Справочный источник в рабочем проекте",
-      "descriptionInspectionCrop": "Справочный источник в рабочем проекте"
+      "continuation": "../work/catalog-screen-analysis-2026-10-19/frames/t0674.png",
+      "descriptionInspectionCrop": "../work/figma-registry-audit-2026-10-19/source-media/report-description-text.png"
     },
     "depth": "Ф: UI-05",
     "values": {
@@ -354,9 +354,9 @@
   "sourcePassport": {
     "name": "rewedo_crm_production.public.versions",
     "source": {
-      "path": "Справочный источник в рабочем проекте",
+      "path": "../work/catalog-screen-analysis-2026-10-19/frames/t0683.png",
       "time": "11:23",
-      "continuation": "Справочный источник в рабочем проекте"
+      "continuation": "../work/catalog-screen-analysis-2026-10-19/frames/t0685.png"
     },
     "depth": "Ф: UI-06 / S06; другой объект, не sourceCard S01",
     "values": {
@@ -480,8 +480,8 @@
   "revision": "card-examples-2026-10-22-r5",
   "mailingExample": {
     "source": {
-      "list": "Справочный источник в рабочем проекте",
-      "schedule": "Справочный источник в рабочем проекте"
+      "list": "../knowledge/evidence/attachments/SRC-06-03.png",
+      "schedule": "../knowledge/evidence/attachments/SRC-06-04.png"
     },
     "depth": "Ф/рассылки; отдельный пример инструкции, не отчёт ID562",
     "reportIdentity": null,
@@ -578,7 +578,6 @@
     ]
   },
   "homeSubscriptionExample": {
-    "source": "Справочный источник в рабочем проекте",
     "depth": "Главная/подписка; заполненный пример инструкции",
     "values": {
       "name": "Мои продажи сегодня",
@@ -596,9 +595,9 @@
     "source": {
       "id": "SRC-09",
       "frames": [
-        "Справочный источник в рабочем проекте",
-        "Справочный источник в рабочем проекте",
-        "Справочный источник в рабочем проекте"
+        "../knowledge/evidence/video/SRC-09/frames/t0025.png",
+        "../knowledge/evidence/video/SRC-09/frames/t0155.png",
+        "../knowledge/evidence/video/SRC-09/frames/t0180.png"
       ]
     },
     "values": {
@@ -644,9 +643,9 @@
     "source": {
       "id": "SRC-09",
       "frames": [
-        "Справочный источник в рабочем проекте",
-        "Справочный источник в рабочем проекте",
-        "Справочный источник в рабочем проекте"
+        "../knowledge/evidence/video/SRC-09/frames/t0105.png",
+        "../knowledge/evidence/video/SRC-09/frames/t0115.png",
+        "../knowledge/evidence/video/SRC-09/frames/t0125.png"
       ]
     },
     "values": {
@@ -672,5 +671,835 @@
       "Права редактирования/отвязки и отправка вопроса не проверены",
       "Адреса контактов не дублируются без необходимости"
     ]
+  },
+  "sourcesTreeSrc15": {
+    "status": "Н: выбранный режим на одном кадре",
+    "values": {
+      "selectedTabLabel": "Источники (27 611)",
+      "otherTabLabel": "Мастер-системы",
+      "selectedView": "Дерево",
+      "platformFilterLabel": "SQL Server (40)",
+      "domainFilterLabel": "Все домены",
+      "masterSystemFilterLabel": "Все мастер-системы",
+      "backLabel": "bim_family_manager",
+      "breadcrumbs": [
+        "Источники",
+        "mssql",
+        "bim_family_manager",
+        "FamilyManager-stage"
+      ],
+      "branch": [
+        {
+          "label": "SQL Server",
+          "countLabel": "9 431",
+          "expanded": true
+        },
+        {
+          "label": "Bim Family Manager",
+          "countLabel": "40",
+          "expanded": true
+        },
+        {
+          "label": "FamilyManager-stage",
+          "countLabel": "40",
+          "expanded": true
+        },
+        {
+          "label": "dbo",
+          "countLabel": "40",
+          "expanded": false
+        }
+      ],
+      "visibleSiblingNodesOfBimFamilyManager": [
+        {
+          "label": "Crm",
+          "countLabel": "2 842"
+        },
+        {
+          "label": "Crm P",
+          "countLabel": "2 276"
+        },
+        {
+          "label": "Dwh2Crm",
+          "countLabel": "654"
+        },
+        {
+          "label": "Reportcrm20",
+          "countLabel": "782"
+        },
+        {
+          "label": "Sd Intmap",
+          "countLabel": "93"
+        },
+        {
+          "label": "Sd-Sql-Alti",
+          "countLabel": "652"
+        },
+        {
+          "label": "Без системы",
+          "countLabel": "2 092"
+        }
+      ]
+    },
+    "unknowns": [
+      "Область подсчёта чисел в фильтре и у узлов",
+      "Типы всех уровней и содержимое листовых записей",
+      "Результаты переключения режима, хлебных крошек и ссылки возврата"
+    ]
+  },
+  "reportSlidesSrc16": {
+    "status": "Н: вкладка Слайды в одном состоянии карточки",
+    "values": {
+      "selectedTab": "Слайды",
+      "slideCount": 5,
+      "metricsAndIndicatorsCount": 23,
+      "dataSourcesCount": 7,
+      "reportNameMentionedInDescription": "Навес свод и детализация",
+      "visibleSlides": [
+        {
+          "number": 1,
+          "name": "Сводный",
+          "expanded": true,
+          "descriptionVisible": true,
+          "previewMessage": "Вам необходимо получить доступ к отчету"
+        },
+        {
+          "number": 2,
+          "name": "Детализация",
+          "expanded": true,
+          "descriptionVisible": true,
+          "previewMessage": "Вам необходимо получить доступ к отчету"
+        },
+        {
+          "number": 3,
+          "name": "Реестр квартир",
+          "expanded": false
+        },
+        {
+          "number": 4,
+          "name": "Выгрузка",
+          "expanded": false
+        }
+      ]
+    },
+    "unknowns": [
+      "Заголовок паспорта, ID отчёта и название пятого слайда",
+      "Порядок выдачи прав и результат нажатия на область предпросмотра"
+    ]
+  },
+  "dictionaryTermBcrFull": {
+    "sources": [
+      "../knowledge/evidence/attachments/SRC-13.png",
+      "../knowledge/evidence/attachments/SRC-14.png"
+    ],
+    "status": "Н: одна наблюдаемая запись на присланных кадрах",
+    "values": {
+      "name": "Business Client Response (BCR)",
+      "type": "бизнес-термин",
+      "termStatus": "утвержден",
+      "shortDescription": "Внутренний термин ГК «Самолет», обозначающий отклик или обратную связь клиента на продукт, услугу или этап взаимодействия с компанией.",
+      "fullDescription": "Внутренний термин ГК «Самолет», обозначающий отклик или обратную связь клиента на продукт, услугу или этап взаимодействия с компанией.\n\nВ рамках процессов девелопмента и продаж недвижимости BCR используется для сбора и анализа данных о восприятии клиентом предлагаемых решений (например, планировочных решений, условий сделки, качества обслуживания). Методология сбора BCR часто включает проведение целевых опросов (в том числе после личных встреч с клиентами) для оценки удовлетворенности, выявления потребностей и уточнения портрета целевой аудитории. Результаты BCR применяются для корректировки маркетинговых стратегий, улучшения клиентского опыта и оптимизации продуктовой линейки девелопера.",
+      "domainLabel": "Без домена",
+      "ownerLabel": "Не указано",
+      "responsibleLabel": "Не указано",
+      "createdLabel": "03.09.2026, 00:31:32",
+      "synonymsLabel": "BCR",
+      "relationGroups": [
+        "Связанные бизнес-процессы",
+        "Связанные термины",
+        "Связанные отчёты",
+        "Источники",
+        "Поля",
+        "Бизнес-метрики",
+        "Бизнес-показатели"
+      ],
+      "relationGroupLabel": "Связи не добавлены",
+      "updatedLabel": "03.09.2026, 00:31:32",
+      "changeAuthorLabel": "import:glossary-terms"
+    },
+    "unknowns": [
+      "Среда и дата съёмки",
+      "Часовой пояс отображаемых отметок времени",
+      "Маршрут входа, результат действия «К списку» и поведение заполненных связей"
+    ]
+  },
+  "source11Examples": {
+    "source": "SRC-11",
+    "meetingDate": "2026-10-30",
+    "status": "Н: исторические значения stage, не seed/API",
+    "dictionary": {
+      "allCount": 498,
+      "termCount": 330,
+      "domainCount": 63,
+      "term": {
+        "name": "Business Client Response (BCR)",
+        "type": "бизнес-термин",
+        "status": "утвержден",
+        "domain": "Без домена",
+        "owner": "Не указан"
+      }
+    },
+    "crm": {
+      "count": 20855,
+      "entity": "Организация",
+      "logicalEntity": "Account",
+      "attribute": "Категория",
+      "logicalAttribute": "accountcategorycode",
+      "optionPreview": "1 — Продавец",
+      "additionalOptions": 7
+    },
+    "question": {
+      "title": "Вопрос по отчёту: «План-Факт продажи»",
+      "status": "Новый",
+      "lastMessage": "28.10.2026, 00:00:47"
+    },
+    "manual": {
+      "reportId": 193,
+      "channels": [
+        "Почта",
+        "Контур.Толк"
+      ],
+      "format": "PNG",
+      "orientation": "Landscape",
+      "pageType": "original",
+      "recipientsSelected": false
+    }
+  },
+  "sourcePassportDimdateSrc17to33": {
+    "name": "reportcrm20.dbo.dimdate",
+    "platform": "SQL Server",
+    "layer": "Без слоя",
+    "systemContextLabel": "Reportcrm20",
+    "description": "Описание отсутствует",
+    "type": "Table",
+    "status": "Active",
+    "columnCount": 34,
+    "usedInAnalytics": true,
+    "domain": "Продажи и маркетинг",
+    "masterSystemDisplay": "—",
+    "technicalOwnerDisplay": "—",
+    "synchronizationDisplay": "Синхронизация с DataHub: вчера, 00:00",
+    "countByEyeIcon": [
+      {
+        "value": 38
+      },
+      {
+        "value": 40
+      },
+      {
+        "value": 41
+      },
+      {
+        "value": 43
+      }
+    ],
+    "tabs": [
+      {
+        "label": "Описание полей",
+        "count": 34
+      },
+      {
+        "label": "Связанные отчёты",
+        "count": 85
+      },
+      {
+        "label": "Метрики",
+        "count": 16
+      },
+      {
+        "label": "Lineage"
+      },
+      {
+        "label": "MCP-инструменты",
+        "count": 0
+      },
+      {
+        "label": "Похожие источники",
+        "count": 10
+      }
+    ],
+    "fields": {
+      "expandedSources": [
+        "../knowledge/evidence/attachments/SRC-17.png",
+        "../knowledge/evidence/attachments/SRC-18.png"
+      ],
+      "collapsedSource": "../knowledge/evidence/attachments/SRC-28.png",
+      "visibleRows": [
+        {
+          "name": "DateKey",
+          "physicalType": "INTEGER",
+          "logicalType": "NumberType",
+          "nullabilityLabel": "Required",
+          "keyLabel": "Key",
+          "metricCount": 0,
+          "emptyMetricText": "Поле пока не используется в метриках."
+        },
+        {
+          "name": "Date",
+          "physicalType": "DATE",
+          "logicalType": "DateType",
+          "nullabilityLabel": "Nullable",
+          "keyLabel": "Not key",
+          "metricCount": 12,
+          "visibleMetricNames": [
+            "Количество задач оформления и регистрации",
+            "Кол-во онлайн сделок, шт",
+            "Доля онлайн сделок, %",
+            "Срок подачи на регистрацию",
+            "Выполнение плана дополнительных доходов, %",
+            "Сборы страховок по рассрочке",
+            "Устная бронь",
+            "Устная бронь, перешедшая в платную",
+            "Устных броней снято",
+            "Платный резерв, перешедший в продажу",
+            "Платных броней снято",
+            "Площадь онлайн-продаж, м²"
+          ]
+        },
+        {
+          "name": "FullDate",
+          "physicalType": "VARCHAR(100) COLLATE Cyrillic_General_CI_AS",
+          "logicalType": "StringType",
+          "nullabilityLabel": "Nullable",
+          "keyLabel": "Not key",
+          "metricCount": 0
+        },
+        {
+          "name": "FullDateUSA",
+          "physicalType": "VARCHAR(100) COLLATE Cyrillic_General_CI_AS",
+          "logicalType": "StringType",
+          "nullabilityLabel": "Nullable",
+          "keyLabel": "Not key",
+          "metricCount": 0
+        }
+      ]
+    },
+    "linkedReports": {
+      "bodyCount": 88,
+      "visibleTitleExamples": [
+        "00. Агентское вознаграждение в реестре продаж",
+        "00. Отчет ЦК v3"
+      ],
+      "sources": [
+        "../knowledge/evidence/attachments/SRC-29.png",
+        "../knowledge/evidence/attachments/SRC-30.png"
+      ]
+    },
+    "sourceMetrics": {
+      "bodyCount": 16,
+      "visibleTitleExamples": [
+        "Выполнение плана дополнительных доходов, %",
+        "Доля онлайн-продаж по площади, %",
+        "Доля онлайн сделок, %",
+        "Кол-во онлайн сделок, шт",
+        "Количество задач оформления и регистрации"
+      ],
+      "visibleRowsSrc34": {
+        "visibleRows": [
+          {
+            "name": "Выполнение плана дополнительных доходов, %",
+            "description": "Накопленный с начала года дополнительный доход относительно годовой цели"
+          },
+          {
+            "name": "Доля онлайн-продаж по площади, %",
+            "description": "Доля площади онлайн-продаж в общей площади продаж за период"
+          },
+          {
+            "name": "Доля онлайн сделок, %",
+            "description": "Показывает долю онлайн-сделок от общего количества фактических сделок"
+          },
+          {
+            "name": "Кол-во онлайн сделок, шт",
+            "description": "Показывает количество онлайн-сделок за выбранный период"
+          },
+          {
+            "name": "Количество задач оформления и регистрации",
+            "description": "Объем задач по оформлению документов, передаче на регистрацию и подготовке полного пакета"
+          },
+          {
+            "name": "Платный резерв, перешедший в продажу",
+            "description": "Объем платного резерва, перешедшего в продажу"
+          }
+        ]
+      }
+    },
+    "lineage": {
+      "visibleNodeType": "REPORT",
+      "visibleNodeExamples": [
+        "Ипотечные заявки",
+        "Итоги месяца"
+      ]
+    },
+    "similarSources": {
+      "bodyCount": 10,
+      "visibleRowExamples": [
+        {
+          "name": "dwh2crm.visiology.онлайн_продажи",
+          "businessMetricCount": 4
+        },
+        {
+          "name": "dwh2crm.tableau.договор",
+          "businessMetricCount": 2
+        },
+        {
+          "name": "reportcrm20.model.продажи",
+          "businessMetricCount": 2
+        },
+        {
+          "name": "reportcrm20.calculate.deadlines_rpt",
+          "businessMetricCount": 1
+        }
+      ]
+    }
+  },
+  "reportPassportSrc19to24": {
+    "reportIdConfirmed": false,
+    "dataSourcesTab": {
+      "tabCount": 7,
+      "dataHubCount": 6,
+      "catalogCount": 1,
+      "alternativeSourcesDisplay": "—",
+      "expandedSource": {
+        "name": "cross_system.cdm_weekly_plan_ovp_appointments_by_section",
+        "platform": "ClickHouse",
+        "databaseDisplay": "—",
+        "schema": "cross_system",
+        "environment": "PROD",
+        "status": "active",
+        "fieldCount": 9,
+        "urnShown": true,
+        "sqlShown": true
+      },
+      "otherVisibleSources": [
+        "sroomer.reports_canopy_plan",
+        "cross_system.cdm_ovp_app_daily_statistics"
+      ]
+    },
+    "usageTab": {
+      "segments": {
+        "status": "Ключевой регулярный отчет",
+        "lifecycle": "Растущий отчет",
+        "currentAudience": "Массовый отчет",
+        "historicalAudience": "Массовый отчет"
+      },
+      "last30Days": {
+        "users": 149,
+        "events": 710,
+        "regularity": "16%",
+        "significanceIndex": 0.8,
+        "lastActivityDisplay": "1 дн. назад",
+        "activeDays": 29,
+        "averageDau": 23.7,
+        "eventGrowth": "+10%"
+      },
+      "lifecycle": {
+        "peakMau": 156,
+        "uniqueUsers": 211,
+        "mauGrowthLast3Months": "+348%",
+        "averageMau": 109.5,
+        "firstActiveMonthDisplay": "авг. 2026 г.",
+        "lastActiveMonthDisplay": "нояб. 2026 г.",
+        "months": 4,
+        "activeMonths": 4,
+        "activeMonthShare": "100%"
+      },
+      "summarySource": "../knowledge/evidence/attachments/SRC-20.png",
+      "monthlyHistory": {
+        "selectedSeries": "MAU",
+        "series": [
+          "MAU",
+          "События",
+          "Средний DAU",
+          "Регулярность",
+          "Индекс значимости"
+        ],
+        "visibleRows": [
+          {
+            "month": "2026-08",
+            "mau": 80,
+            "events": 150,
+            "activeDays": 13,
+            "averageDau": 4.8,
+            "peakDau": 32,
+            "regularity": "6%",
+            "mauDeltaDisplay": "—",
+            "eventsDeltaDisplay": "—"
+          },
+          {
+            "month": "2026-09",
+            "mau": 127,
+            "events": 520,
+            "activeDays": 30,
+            "averageDau": 17.3,
+            "peakDau": 46,
+            "regularity": "14%",
+            "mauDeltaDisplay": "+59%",
+            "eventsDeltaDisplay": "+247%",
+            "audience": "Массовый отчет"
+          },
+          {
+            "month": "2026-10",
+            "mau": 156,
+            "events": 841,
+            "activeDays": 31,
+            "averageDau": 27.1,
+            "peakDau": 55,
+            "regularity": "17%",
+            "mauDeltaDisplay": "+23%",
+            "eventsDeltaDisplay": "+62%",
+            "audience": "Массовый отчет"
+          }
+        ]
+      },
+      "emailStatisticsWithinUsage": {
+        "dataUpdatedDisplay": "09.11.2026, 12:00:01",
+        "days": 90,
+        "name": "Актуализировать статус прошедшей встречи подписания АПП",
+        "subscribersCurrent": 1,
+        "subscribersAtWindowStart": 1,
+        "subscriberChange": 0,
+        "emails": 1,
+        "views": 0,
+        "viewShare": "0%",
+        "viewRankingEmptyText": "Просмотров пока нет"
+      }
+    },
+    "technicalTab": {
+      "catalogCard": {
+        "creationDisplay": "07.09.2026, 11:37:29",
+        "creationMethod": "Автоматически из Visiology",
+        "status": "Проверена",
+        "reviewStatusReason": "Автоматически создано из Visiology",
+        "managedBySynchronization": "Да",
+        "synchronizationSource": "visiology",
+        "lastSynchronizedDisplay": "09.11.2026, 12:01:24",
+        "modifiedDisplay": "09.11.2026, 12:01:24",
+        "dashboardChanges": 44
+      },
+      "dashboard": {
+        "name": "Навес свод и детализация",
+        "reportCreationDisplay": "Не указано",
+        "modifiedDisplay": "30.10.2026, 16:54:29",
+        "portalDashboard": "Да",
+        "publicLink": "Нет"
+      },
+      "workspace": {
+        "name": "Строительство"
+      },
+      "datasetsAndSources": {
+        "datasetNamesDisplay": "Не указано",
+        "sourceTypes": [
+          "db"
+        ],
+        "visibleTableNames": [
+          "cdm_live_house_accepted_status",
+          "cdm_ovp_app_daily_statistics",
+          "cdm_placement_agg_current",
+          "cdm_section_overhang_daily",
+          "cdm_weekly_plan_ovp_appointments_by_section",
+          "reports_canopy_plan",
+          "zrds_dz"
+        ]
+      },
+      "sources": [
+        "../knowledge/evidence/attachments/SRC-23.png",
+        "../knowledge/evidence/attachments/SRC-24.png"
+      ]
+    }
+  },
+  "questionsInlineFormSrc25": {
+    "segment": "Мои вопросы",
+    "recipientNote": "Вопрос уйдёт администратору каталога.",
+    "emptyFields": [
+      "Тема",
+      "Текст вопроса"
+    ],
+    "attachmentsLabel": "Вложения (необязательно)",
+    "attachmentButton": "Выбрать файлы",
+    "emptyFileSelectionLabel": "Файл не выбран",
+    "submitButton": "Отправить",
+    "visibleStatusFilters": [
+      "Все",
+      "Новый",
+      "В работе",
+      "Решён",
+      "Закрыт"
+    ]
+  },
+  "aiHubSdAssistantSrc26to27": {
+    "catalog": {
+      "visibleTotal": 60,
+      "neighboringTitles": [
+        "fAIлик (Файловый ассистент)",
+        "S.Assist"
+      ]
+    },
+    "selectedSolution": {
+      "title": "чат виджет SD-ассистент в s.team",
+      "type": "n8n-автоматизация",
+      "status": "Используется",
+      "domain": "Корпоративные сервисы и сопровождение",
+      "platforms": [
+        "S.Team",
+        "S.Assist"
+      ],
+      "tags": [
+        "ИИ-пятница"
+      ],
+      "createdDisplay": "8 июл. 2026 г., 11:54",
+      "updatedDisplay": "7 сент. 2026 г., 13:38",
+      "externalLinkLabels": [
+        "Запись ИИ-пятницы",
+        "UI",
+        "Confluence"
+      ],
+      "visibleTasks": [
+        "получать инструкции по Jira и оформлению заявок в IT-поддержку",
+        "решать вопросы по программному обеспечению рабочих мест",
+        "находить инструкции по продуктам 10D",
+        "находить в Wiki и Confluence, куда обратиться по вопросам 1С и НСИ"
+      ],
+      "visibleDependencies": [
+        {
+          "type": "ИИ-помощник функций",
+          "name": "1С-Ассистент"
+        },
+        {
+          "type": "n8n-автоматизация",
+          "name": "Эскалация v 3.2"
+        },
+        {
+          "type": "n8n-автоматизация",
+          "name": "Статус заявок v3.2.1"
+        },
+        {
+          "type": "n8n-автоматизация",
+          "name": "Регистрация (sub-workflow)+ llm v3.2.1"
+        },
+        {
+          "type": "n8n-автоматизация",
+          "name": "Отправить ответ в KTalk v 3.2"
+        },
+        {
+          "type": "n8n-автоматизация",
+          "name": "Консультант v 3.2"
+        }
+      ],
+      "sources": [
+        "../knowledge/evidence/attachments/SRC-26.png",
+        "../knowledge/evidence/attachments/SRC-27.png"
+      ]
+    }
+  },
+  "sourcesListSrc35": {
+    "view": "Список",
+    "sectionTabLabel": "Источники (27 611)",
+    "resultTotal": 27611,
+    "visibleRange": {
+      "first": 1,
+      "last": 20
+    },
+    "sortLabel": "Сортировка: по числу связей",
+    "visibleCards": [
+      {
+        "name": "reportcrm20.dbo.dimdate",
+        "context": [
+          "SQL Server",
+          "Без слоя",
+          "Reportcrm20"
+        ],
+        "descriptionDisplay": "Описание отсутствует",
+        "type": "Table",
+        "columns": 34,
+        "usedInAnalytics": true,
+        "similarSources": 10,
+        "domain": "Продажи и маркетинг",
+        "analystRoleShown": true,
+        "linkedCounts": {
+          "reports": 85,
+          "metrics": 16,
+          "lineage": 0,
+          "mcp": 0
+        },
+        "countByEyeIcon": 44
+      },
+      {
+        "name": "dwh2crm.ref.dimdate",
+        "context": [
+          "SQL Server",
+          "Без слоя",
+          "Dwh2Crm"
+        ],
+        "descriptionDisplay": "Описание отсутствует",
+        "type": "Table",
+        "columns": 33,
+        "usedInAnalytics": true,
+        "domain": "Продажи и маркетинг",
+        "analystRoleShown": true,
+        "countByEyeIcon": 5
+      }
+    ]
+  },
+  "sourceMasterSystemsSrc36": {
+    "sectionTab": "Мастер-системы",
+    "subtitle": "Информационные системы из CMDB с привязанными источниками данных",
+    "localSearchPlaceholder": "Поиск по мастер-системам...",
+    "visibleColumns": 3,
+    "cardActionLabel": "Смотреть источники",
+    "visibleCompleteCards": [
+      {
+        "name": "1С Бит.Финанс",
+        "linkedSources": 554
+      },
+      {
+        "name": "1С ЖКХ",
+        "linkedSources": 166
+      },
+      {
+        "name": "1С ЗУП",
+        "linkedSources": 230
+      },
+      {
+        "name": "Atlassian Confluence",
+        "linkedSources": 2
+      },
+      {
+        "name": "Atlassian Jira",
+        "linkedSources": 133
+      },
+      {
+        "name": "cbr.ru",
+        "linkedSources": 9
+      },
+      {
+        "name": "CRM (CRM Dynamics)",
+        "linkedSources": 3823
+      },
+      {
+        "name": "CRM.P Закупки",
+        "linkedSources": 2322
+      },
+      {
+        "name": "Exponea",
+        "linkedSources": 1
+      },
+      {
+        "name": "Financial model (Оптимакрос)",
+        "linkedSources": 6
+      },
+      {
+        "name": "Lakehouse MCP RK",
+        "linkedSources": 14
+      },
+      {
+        "name": "Microsoft Project",
+        "linkedSources": 21
+      },
+      {
+        "name": "MindBox",
+        "linkedSources": 37
+      },
+      {
+        "name": "N8N",
+        "linkedSources": 168
+      },
+      {
+        "name": "Naumen CC",
+        "linkedSources": 158
+      }
+    ],
+    "partiallyVisibleCards": [
+      {
+        "name": "S.Accept",
+        "linkedSources": 284
+      },
+      {
+        "name": "S.AED (S.АИД)",
+        "linkedSources": 288
+      },
+      {
+        "name": "S.BIMMetrics",
+        "linkedSources": 190
+      }
+    ]
+  },
+  "sourcesTreeLeafSrc37": {
+    "view": "Дерево",
+    "platformSelectLabel": "PostgreSQL (23)",
+    "backLabel": "smetrics",
+    "breadcrumb": [
+      "Источники",
+      "postgres",
+      "bim_smetrics",
+      "smetrics",
+      "public"
+    ],
+    "visibleGroups": [
+      {
+        "name": "PostgreSQL",
+        "depth": 0,
+        "expanded": true,
+        "displayedCount": 9211
+      },
+      {
+        "name": "Amocrm Rerooms",
+        "depth": 1,
+        "expanded": false,
+        "displayedCount": 114
+      },
+      {
+        "name": "Bim Smetrics",
+        "depth": 1,
+        "expanded": true,
+        "displayedCount": 23
+      },
+      {
+        "name": "smetrics",
+        "depth": 2,
+        "expanded": true,
+        "displayedCount": 23
+      },
+      {
+        "name": "public",
+        "depth": 3,
+        "expanded": true,
+        "displayedCount": 23
+      }
+    ],
+    "visibleLeaves": [
+      {
+        "technicalName": "smetrics.public.ExternalUsers",
+        "columns": 6
+      },
+      {
+        "technicalName": "smetrics.public.ExternalUserSources",
+        "columns": 2
+      },
+      {
+        "technicalName": "smetrics.public.ExternalCommands",
+        "columns": 9
+      },
+      {
+        "technicalName": "smetrics.public.ExternalCommandTypes",
+        "columns": 3
+      },
+      {
+        "technicalName": "smetrics.public.ExternalCommandStatuses",
+        "columns": 2
+      },
+      {
+        "technicalName": "smetrics.public.__EFMigrationsHistory",
+        "columns": 2
+      },
+      {
+        "technicalName": "smetrics.public.Users",
+        "columns": 2
+      },
+      {
+        "technicalName": "smetrics.public.UserPc",
+        "columns": 2
+      }
+    ],
+    "bookmarkControlShown": true
   }
 }

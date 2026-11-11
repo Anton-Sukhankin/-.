@@ -43,7 +43,7 @@ export function referenceFiltersEqual(first: ReferenceFilters, second: Reference
   return referenceFilterKeys.every(key => first[key] === second[key]);
 }
 
-export function referenceFilterCount(draft: ReferenceFilters, applied: ReferenceFilters) {
+export function referenceFilterCount(draft: ReferenceFilters, applied: ReferenceFilters = emptyReferenceFilters) {
   const isActive = (value: string | boolean) => typeof value === 'string' ? value.trim() !== '' : value;
   return referenceFilterKeys.filter(key => isActive(draft[key]) || isActive(applied[key])).length;
 }

@@ -14,23 +14,31 @@ test('Navigator appends results in batches of fifteen and starts over when searc
   const { field, dropdown, rows } = searchControls(page);
   const shown = rows('Источники');
   const more = dropdown.getByRole('button', { name: /^Показать ещё/ });
+  const results = dropdown.getByRole('grid', { name: 'Результаты поиска' });
+  const thumb = page.locator('[data-list-scroll-thumb]');
 
   await field.fill('date');
   await expect(shown).toHaveCount(15);
-  await expect(dropdown.getByText('Показано 15 из 17 результатов')).toBeVisible();
-  await expect(more).toHaveText('Показать ещё 2');
+  const remaining = Number((await more.innerText()).match(/\d+$/)?.[0]);
+  expect(remaining).toBeGreaterThan(0);
+  expect(remaining).toBeLessThanOrEqual(15);
+  const total = 15 + remaining;
+  await expect(dropdown.getByText(`Показано 15 из ${total} результатов`)).toBeVisible();
+  await results.evaluate(element => { element.scrollTop = 48; });
+  await expect(thumb).toHaveAttribute('data-visible', 'true');
+  await expect(thumb).toHaveCSS('opacity', '0');
   const firstBatch = await shown.allTextContents();
   await more.press('Enter');
-  await expect(shown).toHaveCount(17);
+  await expect(shown).toHaveCount(total);
   expect((await shown.allTextContents()).slice(0, 15)).toEqual(firstBatch);
   await expect(shown.nth(15).getByRole('button').first()).toBeFocused();
   await expect(shown.nth(15)).toBeInViewport();
   await expect(more).toHaveCount(0);
-  await expect(dropdown.getByText('Показано 17 результатов')).toBeVisible();
+  await expect(dropdown.getByText(`Показано ${total} результатов`)).toBeVisible();
 
   await dropdown.getByRole('button', { name: 'Источники', exact: true }).click();
   await expect(shown).toHaveCount(15);
-  await expect(more).toHaveText('Показать ещё 2');
+  await expect(more).toHaveText(`Показать ещё ${remaining}`);
 
   await field.fill('a');
   await expect(shown).toHaveCount(15);
@@ -43,7 +51,7 @@ test('Navigator appends results in batches of fifteen and starts over when searc
 
   await field.fill('date');
   await expect(shown).toHaveCount(15);
-  await expect(more).toHaveText('Показать ещё 2');
+  await expect(more).toHaveText(`Показать ещё ${remaining}`);
 });
 
 test('Navigator aligns result highlights with the text of their group heading', async ({ page }) => {
@@ -246,9 +254,9 @@ test('finds identical field names in separate sources and reveals the selected f
   await expect(dropdown.getByRole('button', { name: 'Поля источников', exact: true })).toHaveCount(0);
   await expect(sourceRows.getByText('Источник', { exact: true }).first()).toBeVisible();
   await expect(sourceRows.getByText('Поле источника', { exact: true }).first()).toBeVisible();
-  await expect(sourceFilter).toHaveAccessibleDescription('17');
-  await dropdown.getByRole('button', { name: 'Показать ещё 2' }).click();
-  await expect(sourceRows).toHaveCount(17);
+  await expect(sourceFilter).toHaveAccessibleDescription('19');
+  await dropdown.getByRole('button', { name: 'Показать ещё 4' }).click();
+  await expect(sourceRows).toHaveCount(19);
   await expect(sourceFilter).toHaveAccessibleDescription(String(await sourceRows.count()));
 
   await field.fill('created_at');

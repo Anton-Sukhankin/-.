@@ -2,6 +2,77 @@ import { expect, test } from '@playwright/test';
 import { demoReportsGateway } from '../src/demo/reports';
 const entry = '/preview/navigation?section=reports&report=demo-report-summary';
 
+test('the technical reference passport shows sourced rows and independent related counts', async ({ page }) => {
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.goto('/preview/navigation?section=reports&report=demo-report-canopy&reportTab=technical');
+
+  const report = page.locator('article[data-report-id="demo-report-canopy"]');
+  await expect(report.getByRole('heading', { level: 1 })).toHaveText('Навес свод и детализация');
+  const tabs = report.getByRole('tablist');
+  const technicalTab = tabs.getByRole('tab', { name: 'Техническая информация', exact: true });
+  await expect(technicalTab).toHaveAttribute('aria-selected', 'true');
+  await expect(tabs.getByRole('tab', { name: 'Слайды 5', exact: true })).toHaveCount(1);
+  await expect(tabs.getByRole('tab', { name: 'Метрики и показатели 23', exact: true })).toHaveCount(1);
+  const sourcesTab = tabs.getByRole('tab', { name: 'Источники данных 7', exact: true });
+  const panel = report.getByRole('tabpanel');
+  const groups = panel.locator('[data-report-technical]');
+  await expect(groups.getByRole('button').locator('strong')).toHaveText([
+    'Карточка каталога', 'Дашборд Visiology', 'Рабочая область', 'Датасеты и источники',
+  ]);
+  await expect(groups.getByRole('button', { expanded: true })).toHaveCount(4);
+  const [catalog, dashboard, workspace, datasets] = await groups.locator(':scope > section').all();
+  await expect(catalog.locator('dd')).toHaveText([
+    '07.09.2026, 11:37:29', '09.11.2026, 12:01:24', '09.11.2026, 12:01:24',
+    'Проверена', 'Автоматически создано из Visiology', '44', 'Автоматически из Visiology', 'Да', 'visiology',
+  ]);
+
+  const dashboardToggle = groups.getByRole('button', { name: /^Дашборд Visiology/ });
+  await expect(dashboard.locator('dt')).toHaveText([
+    'GUID дашборда', 'Название дашборда в Visiology', 'Последний редактор дашборда',
+    'Дата создания отчёта', 'Дата изменения дашборда', 'Портальный дашборд', 'Дашборд с публичной ссылкой',
+  ]);
+  await expect(dashboard.locator('dd')).toHaveText([
+    '9609591d4baf423a8f048655b3744d83', 'Навес свод и детализация', 'admin',
+    '—', '30.10.2026, 16:54:29', 'Да', 'Нет',
+  ]);
+  await expect(workspace.locator('dd')).toHaveText(['2716a879-958a-4552-8742-b1f8a5222852', 'Строительство']);
+  await expect(datasets.locator('dd:not(:has(ul))')).toHaveText([
+    '062e9c29-b0dc-4d7f-9345-58910bc8e552', '—', '64a17810-33b0-4800-a437-6d3fd7103d72', 'db',
+  ]);
+  expect(await groups.locator('dt').evaluateAll(elements => [...new Set(elements.map(el => getComputedStyle(el).fontSize))])).toEqual(['12px']);
+  expect(await groups.locator('dd, dd span, dd li').evaluateAll(elements => [...new Set(elements.map(el => getComputedStyle(el).fontSize))])).toEqual(['16px']);
+  const emptyValues = groups.locator('dd > span');
+  await expect(emptyValues).toHaveText(['—', '—']);
+  for (const value of await emptyValues.all()) await expect(value).toHaveCSS('color', 'rgb(82, 98, 124)');
+  const information = panel.getByRole('complementary', { name: 'Сведения об отчёте' });
+  await expect(information.locator('dt').first()).toHaveCSS('font-size', '12px');
+  await expect(information.locator('dd').first()).toHaveCSS('font-size', '16px');
+  await expect(information.locator('dd')).toHaveText(['—', 'Visiology', '—', '7']);
+
+  await dashboardToggle.focus();
+  await dashboardToggle.press('Enter');
+  await expect(dashboardToggle).toHaveAttribute('aria-expanded', 'false');
+  await expect(dashboard.getByText('admin', { exact: true })).toBeHidden();
+  await dashboardToggle.press('Space');
+  await expect(dashboardToggle).toHaveAttribute('aria-expanded', 'true');
+  await expect(dashboard.getByText('admin', { exact: true })).toBeVisible();
+
+  await page.setViewportSize({ width: 1024, height: 768 });
+  const tables = groups.getByRole('listitem');
+  await expect(tables).toHaveText([
+    'cdm_live_house_accepted_status', 'cdm_ovp_app_daily_statistics', 'cdm_placement_agg_current',
+    'cdm_section_overhang_daily', 'cdm_weekly_plan_ovp_appointments_by_section', 'reports_canopy_plan', 'zrds_dz',
+  ]);
+  await tables.last().scrollIntoViewIfNeeded();
+  await expect(tables.last()).toBeInViewport();
+  expect(await groups.evaluate((element) => element.scrollWidth)).toBeLessThanOrEqual(await groups.evaluate((element) => element.clientWidth));
+
+  await sourcesTab.click();
+  await expect(panel.getByText('Сведения об источниках недоступны', { exact: true })).toBeVisible();
+  await technicalTab.click();
+  await expect(groups.getByRole('button', { expanded: true })).toHaveCount(4);
+});
+
 test('opening a report starts on Overview even when the list URL retains another report tab', async ({ page }) => {
   await page.goto('/preview/navigation?section=reports&reportTab=slides');
   await page.getByRole('combobox', { name: 'Поиск по каталогу' }).fill('Сводный');
@@ -31,6 +102,50 @@ test('report tabs keep the selected object, keyboard selection and return to the
   await page.getByRole('navigation',{name:'Хлебные крошки',exact:true}).getByRole('button',{name:'Отчёты',exact:true}).click();
   await expect(card).toHaveCount(0);
   await expect(page).toHaveURL(/section=reports$/);
+});
+
+test('all report tabs share the pinned information panel', async ({ page }) => {
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.goto('/preview/navigation?section=reports');
+  await page.getByRole('button', { name: 'Открыть отчёт «Сводный отчёт Гостеприимства»', exact: true }).click();
+  const report = page.locator('article[data-report-id]');
+  const tabs = report.getByRole('tablist', { name: 'Вкладки паспорта отчёта', exact: true });
+  const content = report.locator('[data-detail-tab-content]');
+  const information = report.getByRole('complementary', { name: 'Сведения об отчёте' });
+  await expect(information).toHaveCount(1);
+  const initialPanel = await information.elementHandle();
+  const initialText = await information.innerText();
+  for (const tab of await tabs.getByRole('tab').all()) {
+    await tab.click();
+    await expect(tab).toHaveAttribute('aria-selected', 'true');
+    await expect(information).toHaveCount(1);
+    await expect(information).toHaveText(initialText, { useInnerText: true });
+    await expect(information).toHaveCSS('position', 'sticky');
+    expect(await initialPanel!.evaluate(panel => panel.isConnected)).toBe(true);
+    const main = (await content.boundingBox())!;
+    const side = (await information.boundingBox())!;
+    expect(side.x - main.x - main.width).toBeCloseTo(8, 0);
+    expect(side.width).toBe(380);
+  }
+  const technical = content.locator('[data-report-technical]');
+  await expect(technical.getByRole('button', { expanded: true }).locator('strong')).toHaveText([
+    'Карточка каталога', 'Дашборд Visiology', 'Рабочая область', 'Датасеты и источники',
+  ]);
+  const guid = technical.getByText('GUID дашборда', { exact: true }).locator('..').locator('dd');
+  await expect(guid).toHaveText('—');
+  await expect(guid).toHaveCSS('font-size', '16px');
+  await expect(technical.getByText('Таблицы', { exact: true }).locator('..').locator('dd')).toHaveText('—');
+  await expect(technical.getByText('Название отчёта', { exact: true }).locator('..').locator('dd')).toHaveText('Сводный отчёт Гостеприимства');
+
+  await page.setViewportSize({ width: 1024, height: 768 });
+  await tabs.getByRole('tab', { name: /^Метрики и показатели/ }).click();
+  await expect(information).toHaveCSS('position', 'static');
+  await information.scrollIntoViewIfNeeded();
+  await expect(information.getByRole('heading', { name: /^Сведения/ })).toBeInViewport();
+  await expect.poll(async () => {
+    const [main, side] = await Promise.all([content.boundingBox(), information.boundingBox()]);
+    return [Math.round(side!.x - main!.x), Math.round(side!.y - main!.y - main!.height)];
+  }).toEqual([0, 8]);
 });
 
 test('overview accordions, question form and responsive content work without server claims', async ({ page }) => {
@@ -109,6 +224,60 @@ test('metrics filter and presentation, source list and mailings form have visibl
   await expect(page.getByRole('status')).toContainText('Заявка не отправлена');
 });
 
+test('mailing modes stay below the tabs and gain a shadow only after vertical scrolling', async ({ page }) => {
+  await page.emulateMedia({ reducedMotion: 'reduce' });
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.goto(entry + '&reportTab=mailings');
+  const scroll = page.getByRole('tabpanel');
+  const tabs = page.getByRole('tablist', { name: 'Вкладки паспорта отчёта' });
+  const segment = page.getByRole('group', { name: 'Раздел рассылок' }).locator('..');
+  const information = page.getByRole('complementary', { name: 'Сведения об отчёте' });
+  const create = page.getByRole('button', { name: 'Создать рассылку', exact: true });
+  const available = page.getByRole('button', { name: 'Доступные рассылки', exact: true });
+  const manual = page.getByRole('button', { name: 'Ручная отправка', exact: true });
+  const shadowOpacity = () => segment.evaluate(element => getComputedStyle(element, '::after').opacity);
+  const topGap = async () => {
+    const [segmentBox, tabsBox] = await Promise.all([segment.boundingBox(), tabs.boundingBox()]);
+    return Math.round(segmentBox!.y - tabsBox!.y - tabsBox!.height);
+  };
+  const scrollToEnd = () => scroll.evaluate(element => { element.scrollTop = element.scrollHeight; });
+  const scrollRange = () => scroll.evaluate(element => element.scrollHeight - element.clientHeight);
+
+  await expect.poll(scrollRange).toBe(0);
+  await expect.poll(shadowOpacity).toBe('0');
+  await expect(segment).toHaveCSS('padding', '16px');
+  await create.click();
+  await expect(segment).toHaveCSS('padding', '16px');
+  await expect.poll(topGap).toBe(16);
+  await expect.poll(shadowOpacity).toBe('0');
+
+  await scrollToEnd();
+  await expect.poll(shadowOpacity).toBe('1');
+  await expect.poll(topGap).toBe(16);
+  const [wideSegment, wideInformation] = await Promise.all([segment.boundingBox(), information.boundingBox()]);
+  expect(wideSegment!.y).toBeCloseTo(wideInformation!.y, 0);
+
+  await available.click();
+  await expect.poll(scrollRange).toBe(0);
+  await expect.poll(shadowOpacity).toBe('0');
+
+  await page.setViewportSize({ width: 1024, height: 620 });
+  await create.click();
+  const profile = page.getByRole('region', { name: 'Профиль РГП' });
+  const [narrowSegment, narrowInformation, narrowProfile] = await Promise.all([
+    segment.boundingBox(), information.boundingBox(), profile.boundingBox(),
+  ]);
+  expect(narrowSegment!.x).toBeCloseTo(narrowInformation!.x, 0);
+  expect(narrowInformation!.y - narrowProfile!.y - narrowProfile!.height).toBeCloseTo(8, 0);
+  await scrollToEnd();
+  await expect.poll(topGap).toBe(16);
+  await expect.poll(shadowOpacity).toBe('1');
+  await scroll.evaluate(element => { element.scrollTop = 0; });
+  await expect.poll(shadowOpacity).toBe('0');
+  await manual.click();
+  await expect(segment).toHaveCSS('padding', '16px');
+});
+
 test('every demo report has content in all seven passport tabs', async ({ page }) => {
   test.setTimeout(75_000);
   const reports = await demoReportsGateway.list();
@@ -172,8 +341,10 @@ test('every demo report has content in all seven passport tabs', async ({ page }
       }
 
       await tabs.getByRole('tab', { name: 'Техническая информация', exact: true }).click();
-      await expect(panel.getByRole('region', { name: 'Карточка каталога', exact: true })).toContainText(report.domainGroup ?? report.domain);
-      await expect(panel.getByRole('region', { name: 'Дашборд', exact: true })).toContainText(report.title);
+      const technical = panel.locator('[data-report-technical]');
+      await expect(technical.getByRole('button', { expanded: true })).toHaveCount(4);
+      await expect(technical.getByText('Домен', { exact: true }).locator('..').locator('dd')).toHaveText(report.domainGroup ?? report.domain);
+      await expect(technical.getByText('Название отчёта', { exact: true }).locator('..').locator('dd')).toHaveText(report.title);
       await expect(card).toHaveAttribute('data-report-id', report.id);
     });
   }

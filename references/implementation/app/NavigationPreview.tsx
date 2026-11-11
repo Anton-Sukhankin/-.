@@ -14,12 +14,15 @@ import { SearchLandingContext } from '../components/Search/SearchMatch';
 import { isDescriptionMatchClipped } from '../components/Search/descriptionVisibility';
 import { catalogSearchPage, findPageMatches, hasSearchDetail, isSearchGroup, normalizeSearch, searchId, type SearchDestination, type SearchEntry, type SearchHit } from '../data/catalogSearch';
 import { metricCatalogPage, readMetricCatalogState } from '../data/metrics';
-import { sourceCatalogPage } from '../data/sources';
+import { readSourceCatalogView, sourceCatalogPage } from '../data/sources';
+import { readSourceDetailTab } from '../data/sourceDetails';
 import { demoMetricsGateway } from '../demo/metrics';
 import { demoSourcesGateway } from '../demo/sources';
+import { readRelatedSourceReportSummary } from '../demo/relatedSourceReports';
 import { demoAdditionalSearchEntries, demoAiSearchEntries, demoQuestionSearchEntries, demoReferenceSearchEntries, demoReportSearchEntries } from '../demo/catalogSearch';
 import type { ReportSummary } from '../data/reports';
 import { demoReportsGateway } from '../demo/reports';
+import { technicalReportSummary } from '../demo/technicalReport';
 import { ReportCardGroups } from '../components/ReportCard/ReportCardGroups';
 import { ReportTable } from '../components/ReportTable/ReportTable';
 import { readDemoReportRows } from '../demo/reportTable';
@@ -33,7 +36,6 @@ import { DEFAULT_VIEW_MODE, HomeControls, ViewPicker, type HomeViewMode } from '
 import { FilterButton } from '../components/FilterButton/FilterButton';
 import { ListPagination } from '../components/ListPagination/ListPagination';
 import { listPageSize } from '../data/pagination';
-import { ListScrollIndicator } from '../components/ListScrollIndicator/ListScrollIndicator';
 import { readDemoFavoriteRows } from '../demo/favorites';
 import { homeTabs, homeReportSegments, homeContributionTypes, homeNewsCategories } from '../demo/homeNavigation';
 import { isReportNumericAttribute, reportRangeScale, reportFilterCount } from '../data/reportFilters';
@@ -136,6 +138,7 @@ function entriesOnSearchPage(entries: readonly SearchEntry[], destination: Searc
 export function NavigationPreview({ tablePageSize = listPageSize, favoritePageSize = listPageSize, homePageSize = listPageSize, emptyHome }: { tablePageSize?: number; favoritePageSize?: number; homePageSize?: number; emptyHome?: string }) {
   const [collapsed, setCollapsed] = useState(false);
   const [sourcePanelOpen, setSourcePanelOpen] = useState(false);
+  const [aiPanelOpen, setAiPanelOpen] = useState(false);
   const [sidebarEntry, setSidebarEntry] = useState(0);
   const [params, setParams] = useSearchParams();
   const paginationMode = params.get(paginationDemoParam);
@@ -154,7 +157,8 @@ export function NavigationPreview({ tablePageSize = listPageSize, favoritePageSi
   // Dismiss old marks across history entries while retaining their landing targets.
   const [highlightToken, setHighlightToken] = useState(createHighlightToken);
   const highlightDismissed = searchSelection?.highlightToken !== highlightToken;
-  const onDifferentSourceTab = searchSelection?.hit.entry.kind === 'field' && params.get('sourceTab') === 'reports';
+  const sourceTab = readSourceDetailTab(params.get('sourceTab'));
+  const onDifferentSourceTab = searchSelection?.hit.entry.kind === 'field' && sourceTab !== 'fields';
   const initialSearchHit = searchSelection?.action === 'location' && !onDifferentSourceTab ? searchSelection.hit : undefined;
   const searchDestination = initialSearchHit?.entry.destination;
   const reportDestination = searchDestination?.kind === 'report' ? searchDestination : undefined;
@@ -163,6 +167,7 @@ export function NavigationPreview({ tablePageSize = listPageSize, favoritePageSi
   const [searchStep, setSearchStep] = useState<{ selection: SearchSelection; index: number }>();
   const main = useRef<HTMLElement>(null);
   const aiScrollPosition = useRef(0);
+  const sourceDetailScroll = useRef(new Map<string, number>());
   const [aiBookmarks, setAiBookmarks] = useState<ReadonlySet<string>>(() => new Set());
   const [submittedAppeals, setSubmittedAppeals] = useState<readonly QuestionAppeal[]>([]);
   const activeId = navigationFixture.some(item => item.id === params.get('section')) ? params.get('section')! : 'home';
@@ -218,6 +223,8 @@ export function NavigationPreview({ tablePageSize = listPageSize, favoritePageSi
     ?? reportRows?.find(row => row.id === selectedReportId)?.report ?? favoriteRows?.find(row => row.id === selectedReportId)?.report
     ?? (expandedReports && summaries.data ? readPaginationReport(selectedReportId, summaries.data) : undefined)
     ?? summaries.data?.find(report => report.id === selectedReportId)
+    ?? (selectedReportId === technicalReportSummary.id ? technicalReportSummary : undefined)
+    ?? readRelatedSourceReportSummary(selectedReportId)
     ?? (subscriptionReport ? { ...subscriptionReport.report, type: 'report' as const, domain: subscriptionReport.domain } : undefined) : undefined;
   const catalogRows = reportRows && sortReportRows(filterReportRows(reportRows, filters.applied), filters.sort);
   const filteredFavorites = favoriteRows && sortReportRows(filterReportRows(favoriteRows, favoriteFilters.applied), favoriteFilters.sort);
@@ -236,6 +243,7 @@ export function NavigationPreview({ tablePageSize = listPageSize, favoritePageSi
   const cards = favoritePage?.rows.map(row => row.report).filter((report): report is ReportCardData => report.verification !== undefined) ?? [];
   const homeContext = activeId === 'home';
   const activeFilters = homeContext ? favoriteFilters : filters;
+  const reportColumnMenu = activeFilters.visibleMenu;
   const activeRows = homeContext ? favoriteRows : reportRows;
   const panel = useReportFilterPanel({ context: homeContext ? 'favorites' : 'catalog', rows: activeRows ?? [],
     applied: activeFilters.applied, onApply: activeFilters.replaceApplied, onOpen: activeFilters.close });
@@ -340,24 +348,29 @@ export function NavigationPreview({ tablePageSize = listPageSize, favoritePageSi
       source: undefined, sourceReport: undefined, sourceTab: undefined, [detailTrailParam]: undefined },
     { state: { report, returnTo: location.pathname + location.search, searchSelection: selection } });
   }
-  function chooseSearch(hit: SearchHit, action: SearchSelection['action']) {
+  function chooseSearch(hit: SearchHit, requestedAction: SearchSelection['action']) {
     const destination = hit.entry.destination;
     if (!destination) return false;
     const origin = location.pathname + location.search;
+    const treeSource = requestedAction === 'location' && destination.kind === 'source' &&
+      destination.hasDetail && readSourceCatalogView(params.get('sourceView')) === 'tree';
+    const action = treeSource ? 'detail' : requestedAction;
     const checkDescription = action === 'location' && hit.value.field === 'description' &&
       (destination.kind === 'metric' || destination.kind === 'source' && params.get('sourceView') === 'cards') && destination.hasDetail;
-    const selection: SearchSelection = { hit, action, highlightToken, descriptionOrigin: checkDescription ? origin : undefined };
+    const selection: SearchSelection = { hit, action, highlightToken, descriptionOrigin: checkDescription ? origin : undefined,
+      highlightDescription: treeSource && hit.value.field === 'description' || undefined };
     if (action === 'detail' && !hasSearchDetail(destination)) return false;
     if (action === 'detail' && destination.kind === 'report') {
       openReport(destination.report, selection);
       return true;
     }
-    const values: Record<string, string | undefined> = { report: undefined, metric: undefined, news: undefined, source: undefined, sourceReport: undefined, [detailTrailParam]: undefined };
+    const values: Record<string, string | undefined> = { report: undefined, metric: undefined, news: undefined, source: undefined, sourceReport: undefined, dictionaryTerm: undefined, [detailTrailParam]: undefined };
     if (destination.kind === 'report') {
       if (destination.section === 'home' && emptyHome === 'favorites') return false;
       Object.assign(values, { section: destination.section, tab: 'reports', segment: 'favorites' });
     } else if (destination.kind === 'source') {
-      Object.assign(values, { section: 'sources', source: action === 'detail' ? destination.id : undefined, sourceTab: action === 'detail' ? 'fields' : undefined });
+      Object.assign(values, { section: 'sources', sourceSection: undefined, sourceMaster: undefined,
+        source: action === 'detail' ? destination.id : undefined, sourceTab: action === 'detail' ? 'fields' : undefined });
     } else if (destination.kind === 'metric') {
       Object.assign(values, { section: 'metrics', metric: action === 'detail' ? destination.id : undefined });
     } else if (destination.kind === 'field') {
@@ -388,24 +401,34 @@ export function NavigationPreview({ tablePageSize = listPageSize, favoritePageSi
     if (returnTo) transitionCatalog(() => navigate(returnTo, { replace: true, state: searchSelection ? { restoreCatalogSearch: true } : undefined }));
     else updateLocation({ report: undefined, section: 'reports' }, { replace: true });
   }
-  function openRelatedDetail(kind: DetailKind, id: string) {
-    if (!detail || (detail.kind === kind && detail.id === id)) return;
-    closeOverlays();
+  function relatedDetailDestination(kind: DetailKind, id: string) {
     const step = new URLSearchParams(params);
     step.delete(detailTrailParam);
     step.set('section', activeId);
     const next = withoutDetail(step);
     next.set(kind, id);
-    if (kind === 'report') next.set('reportTab', 'overview');
-    if (kind === 'source' && detail.kind === 'report') {
+    if (kind === 'report') next.set('reportTab', detail?.kind === 'source' ? 'sources' : 'overview');
+    if (kind === 'source' && detail?.kind === 'report') {
       next.set('sourceReport', detail.id);
       next.set('sourceTab', 'fields');
     }
     for (const ancestor of [...detailTrail, step]) next.append(detailTrailParam, ancestor.toString());
-    transitionCatalog(() => setParams(next, { state: {
+    const state: NavigationState = {
       detailHistoryDepth: (navigationState?.detailHistoryDepth ?? 0) + 1,
       detailOrigin: detailTrail.length ? navigationState?.detailOrigin : navigationState,
-    } satisfies NavigationState }));
+    };
+    return { to: { search: next.toString() }, state };
+  }
+  function openRelatedDetail(kind: DetailKind, id: string) {
+    if (!detail || (detail.kind === kind && detail.id === id)) return;
+    closeOverlays();
+    const parent = detailTrail.at(-1);
+    if (kind === 'source' && parent?.get('source') === id) {
+      openDetailAncestor(detailTrail.length - 1);
+      return;
+    }
+    const { to, state } = relatedDetailDestination(kind, id);
+    transitionCatalog(() => navigate(to, { state }));
   }
   function openDetailAncestor(index: number) {
     const distance = detailTrail.length - index;
@@ -420,16 +443,18 @@ export function NavigationPreview({ tablePageSize = listPageSize, favoritePageSi
   }
   function detailLabel(step: URLSearchParams) {
     const ancestor = readDetail(step)!;
-    if (ancestor.kind === 'metric') return metricsGateway.read(ancestor.id)?.title ?? 'Паспорт показателя';
+    if (ancestor.kind === 'metric') return metricsGateway.read(ancestor.id)?.title
+      ?? metricsGateway.readDetail(ancestor.id)?.identity?.title ?? 'Паспорт показателя';
     if (ancestor.kind === 'report') {
       const originReport = navigationState?.detailOrigin?.report;
       return (originReport?.id === ancestor.id ? originReport.title : undefined)
         ?? summaries.data?.find(report => report.id === ancestor.id)?.title
         ?? reportRows?.find(row => row.id === ancestor.id)?.title ?? favoriteRows?.find(row => row.id === ancestor.id)?.title
-        ?? (expandedReports && summaries.data ? readPaginationReport(ancestor.id, summaries.data)?.title : undefined) ?? 'Паспорт отчёта';
+        ?? (expandedReports && summaries.data ? readPaginationReport(ancestor.id, summaries.data)?.title : undefined)
+        ?? readRelatedSourceReportSummary(ancestor.id)?.title ?? 'Паспорт отчёта';
     }
     const reportId = step.get('sourceReport');
-    return (reportId ? reportDetails.read(reportId)?.sources.find(source => source.id === ancestor.id)?.name : undefined)
+    return (reportId ? reportDetails.read(reportId)?.sources?.find(source => source.id === ancestor.id)?.name : undefined)
       ?? sourcesGateway.list().find(source => source.id === ancestor.id)?.technicalName ?? 'Карточка источника';
   }
   const detailBreadcrumbs: DetailCrumb[] | undefined = detailTrail.length ? [
@@ -466,7 +491,7 @@ export function NavigationPreview({ tablePageSize = listPageSize, favoritePageSi
   const homeView = reportDestination?.section === 'home' ? 'list' : homeViews[homeSegment] ?? DEFAULT_VIEW_MODE;
   const reportsView = reportDestination?.section === 'reports' ? 'list' : catalogView;
   const contentTab = selectedReportId ? params.get('reportTab') || 'overview'
-    : isSourceDetail ? params.get('sourceTab') === 'reports' ? 'reports' : 'fields'
+    : isSourceDetail ? sourceTab
     : activeId === 'questions' ? params.get('questions.tab') === 'mine' ? 'mine' : 'faq'
     : activeId === 'dictionary' ? params.get('dictionaryTab') ?? 'all'
     : activeId === 'ai' ? params.get('ai.solution')
@@ -480,7 +505,7 @@ export function NavigationPreview({ tablePageSize = listPageSize, favoritePageSi
       home: homeTab === 'reports' ? homeView : null,
       reports: reportsView,
       metrics: params.get('metricView') === 'cards' ? 'cards' : 'list',
-      sources: params.get('sourceView') === 'cards' ? 'cards' : 'list',
+      sources: readSourceCatalogView(params.get('sourceView')),
       systems: params.get('systems.view') === 'list' ? 'list' : 'cards',
     } as Record<string, string | null>)[activeId] ?? null;
   useCatalogTransition(main, JSON.stringify(screen), view, contentTab);
@@ -502,7 +527,7 @@ export function NavigationPreview({ tablePageSize = listPageSize, favoritePageSi
     });
   }
   return (
-    <div className={styles.preview} inert={panel.isOpen || sourcePanelOpen}>
+    <div className={styles.preview} inert={panel.isOpen || sourcePanelOpen || aiPanelOpen}>
       <Header productName="AI&Data Hub" brandMarkSrc="/images/header/brand-mark.svg"
         avatarSrc="/images/header/profile-avatar.png"
         search={<CatalogSearch entries={searchEntries} sections={searchSections} loading={summaries.isPending} error={summaries.isError}
@@ -531,6 +556,7 @@ export function NavigationPreview({ tablePageSize = listPageSize, favoritePageSi
           {outsideReportFilters && <p className={styles.searchContextNote} role="status">Найденный отчёт показан вне текущих фильтров списка.</p>}
           {selectedReport && <ReportDetail source={reportDetails} key={selectedReport.id} report={selectedReport} tab={params.get('reportTab') ?? 'overview'} empty={params.get('detailEmpty')==='true'}
             onTabChange={id=>updateLocation({reportTab:id},{replace:detailTrail.length > 0,state:location.state},'tab')}
+            currentBreadcrumb={detailTrail.at(-1)?.has('source') ? selectedReport.title : undefined}
             breadcrumbs={detailBreadcrumbs} onBack={returnFromReport} onOpenSource={id=>openRelatedDetail('source',id)} onOpenMetric={id=>openRelatedDetail('metric',id)} />}
           {(isMetricDetail || activeId === 'metrics' && !hasDetail) && <MetricWorkspace gateway={metricsGateway} breadcrumbs={detailBreadcrumbs} onSubmitQuestion={submitQuestion}
             searchTarget={searchDestination?.kind === 'metric' ? searchDestination.id : undefined}
@@ -606,9 +632,14 @@ export function NavigationPreview({ tablePageSize = listPageSize, favoritePageSi
           </div>}
           {editNotice && <div className={styles.notice}><p role="status">{editNotice}</p><button type="button" onClick={() => setEditNotice(undefined)} aria-label="Закрыть уведомление">×</button></div>}
           {(isSourceDetail || activeId === 'sources' && !hasDetail) && <SourcesWorkspace gateway={sourcesGateway} detailsGateway={paginationDemo ? paginationSourceDetailsGateway : undefined}
-            breadcrumbs={detailBreadcrumbs} reportDetails={reportDetails} onModalChange={setSourcePanelOpen} searchTarget={searchDestination?.kind === 'source' ? searchDestination.id : undefined} />}
+            breadcrumbs={detailBreadcrumbs} reportDetails={reportDetails} onModalChange={setSourcePanelOpen} searchTarget={searchDestination?.kind === 'source' ? searchDestination.id : undefined}
+            relatedNavigation={{
+              link: relatedDetailDestination,
+              saveScroll: top => { sourceDetailScroll.current.set(location.key, top); },
+              scrollTop: sourceDetailScroll.current.get(location.key),
+            }} />}
           {activeId === 'dictionary' && !selectedReportId && <DictionaryWorkspace gateway={paginationDemo ? paginationDictionaryGateway : demoDictionaryGateway} />}
-          {isAiCatalog && <AiHubCatalog items={paginationDemo ? paginatedAi : demoAiSolutions} scrollPosition={aiScrollPosition} bookmarks={aiBookmarks} onBookmark={toggleAiBookmark}/>}
+          {isAiCatalog && <AiHubCatalog items={paginationDemo ? paginatedAi : demoAiSolutions} scrollPosition={aiScrollPosition} bookmarks={aiBookmarks} onBookmark={toggleAiBookmark} onModalChange={setAiPanelOpen}/>}
           {isSystemReferences && <SystemReferencesWorkspace gateway={paginationDemo ? paginationReferencesGateway : demoSystemReferencesGateway} />}
           {isQuestions && <QuestionsWorkspace key={sidebarEntry} faq={faq} appeals={appeals} onSubmitQuestion={submitQuestion}
             onClearSearch={clearSearchSelection} />}
@@ -631,18 +662,18 @@ export function NavigationPreview({ tablePageSize = listPageSize, favoritePageSi
               } : undefined} />}
           </SearchLandingContext.Provider>
         </main>
-        <ListScrollIndicator key={location.search} area={main} />
       </div>
-      {activeFilters.menu && createPortal(<div ref={activeFilters.popup} className={styles.filterPopup}
-        style={{ left: activeFilters.menu.left, top: activeFilters.menu.top }} data-report-column-filter={activeFilters.menu.column}>
-        <ColumnFilterMenu label={reportFilterLabels[activeFilters.menu.column]}
-          range={isReportNumericAttribute(activeFilters.menu.column) ? { attribute:activeFilters.menu.column,value:activeFilters.menu.range,scaleMax:reportRangeScale(activeRows ?? [],activeFilters.menu.column,activeFilters.menu.range),onChange:activeFilters.changeRange } : undefined}
-          options={searchReportFilterOptions(reportFilterOptions(activeRows ?? [], activeFilters.menu.column), activeFilters.menu.search)}
-          totalOptionsCount={reportFilterOptions(activeRows ?? [], activeFilters.menu.column).length}
-          selectedValues={activeFilters.menu.values} searchValue={activeFilters.menu.search}
+      {reportColumnMenu && createPortal(<div key={reportColumnMenu.column} ref={activeFilters.popup} className={styles.filterPopup}
+        style={{ left: reportColumnMenu.left, top: reportColumnMenu.top }} data-report-column-filter={reportColumnMenu.column}
+        data-column-dropdown-motion data-state={activeFilters.menu ? 'open' : 'closed'} inert={!activeFilters.menu} onAnimationEnd={activeFilters.onExitAnimationEnd}>
+        <ColumnFilterMenu label={reportFilterLabels[reportColumnMenu.column]}
+          range={isReportNumericAttribute(reportColumnMenu.column) ? { attribute:reportColumnMenu.column,value:reportColumnMenu.range,scaleMax:reportRangeScale(activeRows ?? [],reportColumnMenu.column,reportColumnMenu.range),onChange:activeFilters.changeRange } : undefined}
+          options={searchReportFilterOptions(reportFilterOptions(activeRows ?? [], reportColumnMenu.column), reportColumnMenu.search)}
+          totalOptionsCount={reportFilterOptions(activeRows ?? [], reportColumnMenu.column).length}
+          selectedValues={reportColumnMenu.values} searchValue={reportColumnMenu.search}
           onSearchChange={activeFilters.search} onToggleValue={activeFilters.toggle}
           onReset={activeFilters.resetColumn} onApply={activeFilters.apply}
-          sortDirection={activeFilters.menu.sort?.column === activeFilters.menu.column ? activeFilters.menu.sort.direction : undefined}
+          sortDirection={reportColumnMenu.sort?.column === reportColumnMenu.column ? reportColumnMenu.sort.direction : undefined}
           onSortChange={activeFilters.changeSort} />
       </div>, document.body)}
       <ReportFilterOverlay controller={panel} context={homeContext ? 'favorites' : 'catalog'} />

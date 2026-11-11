@@ -18,6 +18,10 @@
 .header h2 { flex:1; min-width:0; margin:0; font-size:20px; font-weight:500; line-height:28px; overflow-wrap:anywhere; }
 .header h2:focus { outline:none; }
 .toolbar { display:flex; align-items:center; justify-content:flex-end; flex-wrap:wrap; gap:8px; min-width:0; max-inline-size:56%; }
+.action { display:inline-flex; align-items:center; justify-content:center; gap:6px; min-height:32px; padding:0 8px; border:1px solid #d7e6f5; border-radius:999px; background:#fff; color:#101d3b; font-size:12px; line-height:16px; font-weight:500; text-decoration:none; cursor:pointer; }
+.action svg { flex:none; color:#52698c; }
+.action:hover { background:#f3f4f9; }
+.action:focus-visible { outline:2px solid #007bfc; outline-offset:2px; }
 .columns { display:grid; flex:1; grid-template-columns:minmax(0,1.16fr) minmax(0,1fr); }
 .overview { display:flex; flex-direction:column; gap:32px; min-width:0; padding:16px; color:#52698c; font-size:14px; line-height:20px; overflow-wrap:anywhere; }
 .overview h3, .passport h3 { margin:0; color:#101d3b; font-size:16px; line-height:20px; font-weight:500; }
@@ -27,6 +31,7 @@
 .passport { min-width:0; border-inline-start:1px solid #e0e6ef; }
 .passport h3 { padding:16px 16px 0; }
 .attributes { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; margin:0; padding:24px 16px 16px; }
+.fullWidthAttribute { grid-column:1 / -1; }
 .attributes dt, .personText small { color:#52698c; font-size:12px; line-height:16px; }
 .attributes dd, .personText > span { margin:4px 0 0; font-size:14px; line-height:20px; overflow-wrap:anywhere; }
 .person { display:flex; align-items:center; gap:12px; padding:16px; border-top:1px solid #e0e6ef; }

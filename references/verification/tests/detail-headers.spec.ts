@@ -8,6 +8,7 @@ test('wheel input at the detail scroll boundaries keeps the shell and detail hea
     ['section=reports&report=demo-report-summary&reportTab=sources', '[data-report-id]', '[data-detail-scroll]'],
     ['section=reports&report=demo-report-summary&reportTab=metrics', '[data-report-id]', '[data-detail-scroll-source]'],
     ['section=sources&source=source-reportcrm-date', '[data-source-detail-id]', '[data-detail-scroll]'],
+    ['section=dictionary&dictionaryTerm=term-bcr', '[data-dictionary-term-detail]', '[data-detail-scroll]'],
   ]) {
     await page.goto('/preview/navigation?' + query);
     const card = page.locator(cardSelector);
@@ -328,24 +329,118 @@ test('metric detail keeps information below the header while its sections scroll
   await expect(information.getByText('Аналитик', { exact: true })).toBeInViewport();
 });
 
+test('information role dividers span the same width and match the header divider', async ({ page }) => {
+  const entries = [
+    ['section=reports&report=demo-report-summary&reportTab=overview', 'Сведения об отчёте', ':scope > div:has(> img)'],
+    ['section=sources&source=source-reportcrm-date', 'Сведения об источнике', ':scope > div > div:has(> img)'],
+    ['section=metrics&metric=4', 'Сведения о показателе', ':scope > div:has(> div > img)'],
+  ] as const;
+
+  for (const width of [1440, 1024]) {
+    await page.setViewportSize({ width, height: 900 });
+    for (const [query, name, rowSelector] of entries) {
+      await page.goto(`/preview/navigation?${query}`);
+      const information = page.getByRole('complementary', { name, exact: true });
+      await expect(information).toBeVisible();
+      const { header, roles, lastBottom } = await information.evaluate((block, rowSelector) => {
+        const heading = block.querySelector(':scope > :is(h2, header)')!;
+        const readDivider = (element: Element, edge: 'top' | 'bottom') => {
+          const { left, right } = element.getBoundingClientRect();
+          const style = getComputedStyle(element);
+          return {
+            left, right,
+            width: style.getPropertyValue(`border-${edge}-width`),
+            style: style.getPropertyValue(`border-${edge}-style`),
+            color: style.getPropertyValue(`border-${edge}-color`),
+          };
+        };
+        const rows = [...block.querySelectorAll(rowSelector)];
+        return {
+          header: readDivider(heading, 'bottom'),
+          roles: rows.map(row => readDivider(row, 'top')),
+          lastBottom: readDivider(rows.at(-1)!, 'bottom').width,
+        };
+      }, rowSelector);
+      expect(header).toMatchObject({ width: '1px', style: 'solid' });
+      expect(roles.length).toBeGreaterThan(1);
+      for (const divider of roles.slice(1)) expect(divider).toEqual(header);
+      expect(lastBottom).toBe('0px');
+    }
+  }
+});
+
 test('scrolling report metrics collapses the report chrome and keeps the results fitted', async ({ page }) => {
   await page.setViewportSize({ width: 1440, height: 900 });
   await page.goto('/preview/navigation?section=reports&report=demo-report-summary&reportTab=metrics');
   const card = page.locator('[data-report-id]');
   const results = page.getByRole('region', { name: 'Результаты поиска метрик отчёта' });
-  await results.evaluate(el => { el.scrollTop = 120; });
-  await expect(card).toHaveAttribute('data-detail-compact', 'true');
   const tabs = card.getByRole('tablist', { name: 'Вкладки паспорта отчёта' });
   const toolbar = card.locator('[data-report-metrics] > :first-child');
-  await expect.poll(async () => {
+  const topGap = async () => {
     const tabsBox = (await tabs.boundingBox())!;
     return (await toolbar.boundingBox())!.y - tabsBox.y - tabsBox.height;
-  }).toBeCloseTo(0, 0);
+  };
+  await expect.poll(topGap).toBeCloseTo(8, 0);
+  await results.evaluate(el => { el.scrollTop = 120; });
+  await expect(card).toHaveAttribute('data-detail-compact', 'true');
+  await expect.poll(topGap).toBeCloseTo(8, 0);
   const box = (await results.boundingBox())!;
   expect(box.y + box.height).toBe(892);
   await card.getByRole('tab', { name: 'Использование', exact: true }).click();
   await expect(card).toHaveAttribute('data-detail-compact', 'false');
   await expect(card.getByRole('navigation', { name: 'Хлебные крошки' })).toBeVisible();
+
+  await page.setViewportSize({ width: 1024, height: 768 });
+  await page.goto('/preview/navigation?section=reports&report=demo-report-summary&reportTab=metrics&relatedMetricView=cards');
+  const panel = card.getByRole('tabpanel');
+  await expect.poll(topGap).toBeCloseTo(8, 0);
+  await panel.evaluate(el => { el.scrollTop = 80; });
+  await expect.poll(() => panel.evaluate(el => el.scrollTop)).toBeGreaterThan(0);
+  await expect(card).toHaveAttribute('data-detail-compact', 'true');
+  await expect.poll(topGap).toBeCloseTo(8, 0);
+});
+
+test('the report metrics toolbar casts the AI Hub shadow over table headers, rows and cards', async ({ page }) => {
+  await page.emulateMedia({ reducedMotion: 'reduce' });
+  await page.setViewportSize({ width: 1440, height: 650 });
+  await page.goto('/preview/navigation?section=ai');
+  const shadow = (element: Element) => getComputedStyle(element, '::after').boxShadow;
+  const reference = await page.getByRole('group', { name: 'Фильтры AI Hub' }).evaluate(shadow);
+  expect(reference).not.toBe('none');
+
+  for (const view of ['list', 'cards']) {
+    await page.goto('/preview/navigation?section=reports&report=demo-report-summary&reportTab=metrics&relatedMetricView=' + view);
+    const toolbar = page.locator('[data-report-metrics] > :first-child');
+    const tabs = page.getByRole('tablist', { name: 'Вкладки паспорта отчёта' });
+    const results = page.getByRole('region', { name: 'Результаты поиска метрик отчёта' });
+    const row = results.locator('[data-metric-id]').first();
+    const columnHeader = results.getByRole('columnheader', { name: 'Наименование' });
+    const aside = page.getByRole('complementary', { name: 'Сведения об отчёте' });
+    const opacity = () => toolbar.evaluate(element => getComputedStyle(element, '::after').opacity);
+    expect(await toolbar.evaluate(shadow)).toBe(reference);
+    expect(await opacity()).toBe('0');
+    const original = (await row.boundingBox())!.y;
+    await row.hover();
+    await page.mouse.wheel(0, 140);
+    await expect(toolbar).toHaveAttribute('data-scrolled', 'true');
+    await expect.poll(opacity).toBe('1');
+    const pinned = (await toolbar.boundingBox())!;
+    const tabsBox = (await tabs.boundingBox())!;
+    expect(pinned.y - tabsBox.y - tabsBox.height).toBeCloseTo(8, 0);
+    expect((await results.boundingBox())!.y).toBeCloseTo(pinned.y + pinned.height, 0);
+    expect((await row.boundingBox())!.y).toBeLessThan(original);
+    if (view === 'list') expect((await columnHeader.boundingBox())!.y).toBeLessThan(pinned.y);
+    const informationY = (await aside.boundingBox())!.y;
+    await results.evaluate(element => { element.scrollTop += 80; });
+    expect((await toolbar.boundingBox())!.y).toBe(pinned.y);
+    expect((await aside.boundingBox())!.y).toBe(informationY);
+    await page.getByRole('combobox', { name: 'Тип метрики', exact: true }).click();
+    await expect(page.getByRole('listbox')).toBeVisible();
+    await page.keyboard.press('Escape');
+    await results.evaluate(element => { element.scrollTop = 0; });
+    await expect(toolbar).toHaveAttribute('data-scrolled', 'false');
+    await expect.poll(opacity).toBe('0');
+  }
 });
 
 test('AI Hub pins both headers and isolates body and side navigation scrolling', async ({ page }) => {

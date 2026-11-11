@@ -37,18 +37,22 @@ function MetricsView({ items, onOpenMetric }: { items: readonly RelatedMetric[] 
   const setStatus = (value: string) => update({ Status: value, Page: '' });
   const setPageIndex = (value: number) => update({ Page: String(value) });
   const [notice, setNotice] = useState<string>();
+  const [scrolled, setScrolled] = useState(false);
   const scroll = useRef<HTMLDivElement>(null);
   const types = [...new Set(items?.map(item => item.type) ?? [])];
   const statuses = [...new Set(items?.map(item => item.status) ?? [])];
   const page = metricPage(filterMetrics(items ?? [], { query, type, status }), pageIndex);
   const hasPages = page.total > page.pageSize;
-  useLayoutEffect(() => { if (scroll.current) scroll.current.scrollTop = 0; }, [page.pageIndex, query, type, status, view]);
+  useLayoutEffect(() => {
+    if (scroll.current) scroll.current.scrollTop = 0;
+    setScrolled(false);
+  }, [page.pageIndex, query, type, status, view]);
 
   const actions = (item: RelatedMetric) => <MetricActions title={item.title} onNotice={setNotice} />;
   const title = (item: RelatedMetric) => <MetricTitle title={item.title} onOpen={() => onOpenMetric?.(item.metricId)} />;
 
   return <section className={styles.metrics} aria-label="Метрики и показатели отчёта" data-report-metrics>
-    {Boolean(items?.length) && <div className={styles.toolbar}>
+    {Boolean(items?.length) && <div className={styles.toolbar} data-scrolled={scrolled}>
       <label className={styles.search}><img src="/icons/search/search.svg" width="16" height="16" alt="" />
         <input aria-label="Поиск метрик по названию, домену или формуле" placeholder="Поиск по названию, домену или формуле" value={query}
           onChange={event => { setQuery(event.target.value); }} />
@@ -60,6 +64,7 @@ function MetricsView({ items, onOpenMetric }: { items: readonly RelatedMetric[] 
     </div>}
     <div className={styles.results} data-catalog-view-results>
       <div ref={scroll} className={styles.scroll} data-has-pages={hasPages} data-detail-scroll-source data-list-scroll
+        onScroll={event => setScrolled(event.currentTarget.scrollTop > 0)}
         tabIndex={0} role="region" aria-label="Результаты поиска метрик отчёта">
         <div className={chrome.scrollContent}>
         {items === undefined ? <EmptyDetail viewport announce title="Сведения о показателях недоступны" description="Здесь отображаются метрики и показатели, связанные с отчётом." />

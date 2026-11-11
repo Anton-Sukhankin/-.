@@ -1,10 +1,10 @@
-.overlay { position:absolute; inset:0; z-index:3; pointer-events:none; }
-.thumb { position:absolute; width:3px; border-radius:999px; background:#a5acb6; opacity:0; transition:opacity 160ms ease; }
+.thumb { position:fixed; z-index:190; pointer-events:none; width:3px; border-radius:999px; background:#a5acb6; opacity:0; transition:opacity 160ms ease; }
 .thumb[data-visible='true'] { opacity:1; }
 @media (prefers-reduced-motion:reduce) { .thumb { transition:none; } }
 
-:global([data-list-scroll]::-webkit-scrollbar) { width:0; }
-:global([data-list-scroll]::-webkit-scrollbar-button:vertical) { display:none; }
+:global(html:has([data-list-scroll-thumb]) ::-webkit-scrollbar),
+:global(html:has([data-list-scroll-thumb])::-webkit-scrollbar) { width:0; }
 @supports not selector(::-webkit-scrollbar) {
-  :global([data-list-scroll]) { scrollbar-width:none; }
+  :global(html:has([data-list-scroll-thumb])),
+  :global(html:has([data-list-scroll-thumb]) *) { scrollbar-width:none; }
 }

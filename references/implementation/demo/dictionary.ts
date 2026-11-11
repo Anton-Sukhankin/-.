@@ -4,11 +4,20 @@ function exampleTerm(id: string, name: string, description: string): DictionaryT
   return { id, name, description, type: 'Бизнес-термин', status: 'Демонстрационный', descriptionComplete: true };
 }
 
-/** SRC-11 (03:15/03:20/03:25) plus labeled examples for the dictionary views. */
+const bcrDescription = 'Внутренний термин ГК «Самолет», обозначающий отклик или обратную связь клиента на продукт, услугу или этап взаимодействия с компанией.';
+
+/** SRC-11 (03:15/03:20/03:25), BCR details from SRC-13/14, and labeled catalog examples. */
 const dictionary: DictionaryCatalog = {
   terms: [
     { id: 'term-bcr', name: 'Business Client Response (BCR)', type: 'Бизнес-термин', status: 'Утверждён',
-      description: 'Внутренний термин ГК «Самолет», обозначающий отклик или обратную связь клиента на продукт, услугу или этап взаимодействия с компанией.', descriptionComplete: true },
+      description: bcrDescription, descriptionComplete: true, details: {
+        fullDescription: `${bcrDescription}\n\nВ рамках процессов девелопмента и продаж недвижимости BCR используется для сбора и анализа данных о восприятии клиентом предлагаемых решений (например, планировочных решений, условий сделки, качества обслуживания). Методология сбора BCR часто включает проведение целевых опросов (в том числе после личных встреч с клиентами) для оценки удовлетворенности, выявления потребностей и уточнения портрета целевой аудитории. Результаты BCR применяются для корректировки маркетинговых стратегий, улучшения клиентского опыта и оптимизации продуктовой линейки девелопера.`,
+        responsible: null, synonyms: ['BCR'], relations: [], created: '03.09.2026, 00:31:32', updated: '03.09.2026, 00:31:32', changeAuthor: 'import:glossary-terms',
+        demoPeople: {
+          owner: { name: 'Зорин Андрей Павлович', position: 'Руководитель клиентского сервиса', avatar: '/images/ai-hub/owner.jpg' },
+          responsible: { name: 'Миронова Дарья Алексеевна', position: 'Бизнес-аналитик' },
+        },
+      } },
     { id: 'term-cf', name: 'Cash Flow (Денежный поток) (CF)', type: 'Бизнес-термин', status: 'Утверждён',
       description: 'Финансовый показатель, отражающий движение денежных средств (поступления и выплаты) компании или конкретного инвестиционного проекта за определённый период времени.', descriptionComplete: true },
     { id: 'term-hr', name: 'Human Resources (HR)', type: 'Бизнес-термин', status: 'Утверждён',
@@ -34,7 +43,23 @@ const dictionary: DictionaryCatalog = {
     { id: 'domain-dev-bi', name: 'DEV_BI' },
     { id: 'domain-esg', name: 'ESG' },
   ],
-  provenance: { kind: 'demo', reference: 'SRC-11 03:15/03:20/03:25; Paper 3P0-0, 3VM-0, 42R-0 (2026-11-04)' },
+  // SRC-38 shows only these collapsed groups. Totals describe the original catalog.
+  businessProcesses: {
+    reportedProcessCount: 47,
+    reportedGroupCount: 13,
+    groups: [
+      { id: 'partner-sales', name: 'Агентские и партнерские продажи', processCount: 5 },
+      { id: 'market-analysis', name: 'Анализ рынка и клиентских потребностей', processCount: 3 },
+      { id: 'mortgage-sales', name: 'Ипотечные продажи', processCount: 3 },
+      { id: 'quality-and-trends', name: 'Обеспечение качества и анализ трендов', processCount: 1 },
+      { id: 'deal-support', name: 'Оформление и сопровождение сделок', processCount: 3 },
+      { id: 'additional-services', name: 'Продажа дополнительных опций и услуг', processCount: 1 },
+      { id: 'trade-in', name: 'Продажи по программам трейд-ин', processCount: 1 },
+      { id: 'market-sales', name: 'Рыночные продажи', processCount: 11 },
+      { id: 'sales-management', name: 'Управление воронкой продаж и эффективностью сотрудников', processCount: 4 },
+    ],
+  },
+  provenance: { kind: 'demo', reference: 'SRC-11 03:15/03:20/03:25; SRC-13/14; Paper 3P0-0, 3VM-0, 42R-0 (2026-11-04); SRC-38' },
 };
 
 export const demoDictionaryGateway: DictionaryGateway = { read: () => dictionary };

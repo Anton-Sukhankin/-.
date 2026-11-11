@@ -27,6 +27,9 @@
 .segment[data-unselected-surface='neutral'] { background: #f0f1f4; }
 .segment[aria-selected='true'], .viewButton[aria-pressed='true'] { background: #fff; }
 .view { width: 102px; }
+.view[data-include-tree] { width:152px; }
+.viewButton[data-control-id='tree'] { color:#202028; }
+.viewButton[data-control-id='tree'][aria-pressed='true'] { color:#007bfc; }
 .viewButton { display: flex; flex: 0 0 48px; align-items: center; justify-content: center; width: 48px; height: 36px; padding: 10px 16px; border: 0; border-radius: 44px; background: #f3f4f9; }
 .viewButton[data-inactive-surface='neutral']:not([aria-pressed='true']) { background: #f0f1f4; }
 .viewButton img { display: block; flex: 0 0 auto; }

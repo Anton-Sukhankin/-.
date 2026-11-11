@@ -1,62 +1,76 @@
 schemaVersion: 1
 component:
   id: selection-chip
-  title: Чипс выбора — тип поиска и пресет MAU
-  contract: specs/Общие компоненты/Базовые элементы/Чипс/Контракт.md
+  title: Чипс выбора
+  contract: "specs/Общие компоненты/Базовые элементы/Чипс/Контракт.md"
   status: approved-target
 sources:
   search-geometry:
     kind: figma
     uri: https://www.figma.com/design/lnOcWh4ElGkhppWe6Kn5AA/Untitled?node-id=505-6609
-    nodeId: 505:6609
+    nodeId: "505:6609"
     status: unverified-live
     snapshot: Срез C03 от2 ноября2026; экземпляры505:6610/505:6612, не повторное чтение живой Figma
   search-view:
     kind: document
-    uri: specs/Общие компоненты/Поиск и навигатор/Вид.md
+    uri: "specs/Общие компоненты/Поиск и навигатор/Вид.md"
     status: observed-snapshot
-    snapshot: Происхождение параметров поиска; при переносе внутренние параметры переданы B08, внешняя
-      зона осталась C03
+    snapshot: Происхождение параметров поиска; при переносе внутренние параметры переданы B08, внешняя зона осталась C03
   search-css:
     kind: document
-    uri: references/implementation/components/Search/CatalogSearch.module.css
+    uri: "references/implementation-current/components/Search/CatalogSearch.module.css"
     status: observed-snapshot
-    snapshot: Прозрачный резерв рамки и focus текущего demo; не новая визуальная приёмка
-  search-native:
-    kind: document
-    uri: references/implementation/components/Search/CatalogSearch.tsx
-    status: observed-snapshot
-    snapshot: Только тип Отчёты реализован как button aria-pressed; неизвестные комбинации не дополняются
+    snapshot: Резерв рамки и фокус чипса в работающей выдаче Навигатора
   preset-enabled:
     kind: figma
     uri: https://www.figma.com/design/Hwq9fTAws3U2qjKK9mYZty?node-id=20223-17745
-    nodeId: 20223:17745
+    nodeId: "20223:17745"
     status: unverified-live
     snapshot: Основа XS item из C05/B07; без необязательных значков и tooltip
   preset-active:
     kind: figma
     uri: https://www.figma.com/design/Hwq9fTAws3U2qjKK9mYZty?node-id=20223-17764
-    nodeId: 20223:17764
+    nodeId: "20223:17764"
     status: unverified-live
     snapshot: Происхождение active; локальные цвета белой панели проверяются по существующему CSS
   preset-css:
     kind: document
-    uri: references/implementation/components/ReportRangeField/ReportRangeField.module.css
+    uri: "references/implementation/components/ReportRangeField/ReportRangeField.module.css"
     status: observed-snapshot
     snapshot: Текущие стили пресетов, active/hover/focus и reduced-motion; код не меняется
   preset-native:
     kind: document
-    uri: references/implementation/components/ReportRangeField/ReportRangeField.tsx
+    uri: "references/implementation/components/ReportRangeField/ReportRangeField.tsx"
     status: observed-snapshot
     snapshot: Активация и aria-pressed вычисленного пресета; пороги не принадлежат стилевому контракту
   table-hover:
     kind: document
-    uri: specs/Общие компоненты/Таблица отчётов/Контракт.md
+    uri: "specs/Общие компоненты/Таблица отчётов/Контракт.md"
     status: approved-decision
     snapshot: Единственный владелец значения --table-heading-hover
+  mailing-css:
+    kind: document
+    uri: "references/implementation-current/features/report-detail/mailings/MailingsTab.module.css"
+    status: observed-snapshot
+    snapshot: Корпус, состояния и фокус чипсов расписания
+  ai-css:
+    kind: document
+    uri: "references/implementation/features/ai-hub/AiHubCatalog.module.css"
+    status: observed-snapshot
+    snapshot: Применение общего корпуса и внешний контур фокуса
+  crm-css:
+    kind: document
+    uri: "references/implementation/features/system-references/ReferenceSearchPanel.module.css"
+    status: observed-snapshot
+    snapshot: Галочка и фокус логических условий CRM
+  questions-css:
+    kind: document
+    uri: "references/implementation/features/questions/QuestionsWorkspace.module.css"
+    status: observed-snapshot
+    snapshot: Общий корпус, счётчик и внешний контур фокуса
   fonts:
     kind: document
-    uri: specs/Ресурсы/Шрифты/README.md
+    uri: "specs/Ресурсы/Шрифты/README.md"
     status: reference-only
     snapshot: Эталонное семейство CoFo Sans и предоставленные файлы
 tokens:
@@ -69,219 +83,155 @@ tokens:
     sourceRef: table-hover
     locator: --table-heading-hover
 base:
-  sourceRefs:
-    - search-geometry
-    - preset-enabled
-    - search-css
-    - preset-css
-    - fonts
+  sourceRefs: [search-geometry, preset-enabled, search-css, preset-css, fonts]
   parameters:
-    font-family:
-      type: token
-      ref: ui-font
-      expectedType: font-family
-    font-weight:
-      type: font-weight
-      value: 500
-    width-mode:
-      type: string
-      value: hug-label
+    font-family: {type: token, ref: ui-font, expectedType: font-family}
+    font-weight: {type: font-weight, value: 500}
+    width-mode: {type: string, value: hug-label}
 variants:
   search-type32:
     description: Текстовый чипс типа; состав и выбранность передаются C03
-    sourceRefs:
-      - search-geometry
-      - search-view
+    sourceRefs: [search-geometry, search-view]
     parameters:
-      height:
-        type: dimension
-        value: 32
-        unit: px
-      radius:
-        type: dimension
-        value: 16
-        unit: px
-      padding-block:
-        type: dimension
-        value: 0
-        unit: px
-      padding-inline:
-        type: dimension
-        value: 12
-        unit: px
-      content-gap:
-        type: dimension
-        value: 4
-        unit: px
-      font-size:
-        type: dimension
-        value: 14
-        unit: px
-      line-height:
-        type: dimension
-        value: 14
-        unit: px
-      background:
-        type: color
-        format: hex
-        value: "#F0F1F4"
-      foreground:
-        type: color
-        format: hex
-        value: "#202028"
-      visible-border-width:
-        type: dimension
-        value: 0
-        unit: px
+      height: {type: dimension, value: 32, unit: px}
+      radius: {type: dimension, value: 16, unit: px}
+      padding-block: {type: dimension, value: 0, unit: px}
+      padding-inline: {type: dimension, value: 12, unit: px}
+      content-gap: {type: dimension, value: 4, unit: px}
+      font-size: {type: dimension, value: 14, unit: px}
+      line-height: {type: dimension, value: 14, unit: px}
+      background: {type: color, format: hex, value: "#F0F1F4"}
+      foreground: {type: color, format: hex, value: "#202028"}
+      visible-border-width: {type: dimension, value: 0, unit: px}
     states:
       active:
-        sourceRefs:
-          - search-geometry
-          - search-view
+        sourceRefs: [search-geometry, search-view]
         parameters:
-          background:
-            type: color
-            format: hex
-            value: "#007BFC"
-          background-opacity:
-            type: number
-            value: 0.1
-          border-color:
-            type: color
-            format: hex
-            value: "#60ADFF"
-          foreground:
-            type: color
-            format: hex
-            value: "#007BFC"
+          background: {type: color, format: hex, value: "#007BFC"}
+          background-opacity: {type: number, value: 0.1}
+          border-color: {type: color, format: hex, value: "#60ADFF"}
+          foreground: {type: color, format: hex, value: "#007BFC"}
       border-implementation:
-        sourceRefs:
-          - search-css
+        sourceRefs: [search-css]
         parameters:
-          reserved-border-width:
-            type: dimension
-            value: 1
-            unit: px
-          enabled-border-color:
-            type: string
-            value: transparent
+          reserved-border-width: {type: dimension, value: 1, unit: px}
+          enabled-border-color: {type: string, value: transparent}
       focus-implementation:
-        sourceRefs:
-          - search-css
+        sourceRefs: [search-css]
         parameters:
-          outline-width:
-            type: dimension
-            value: 2
-            unit: px
-          outline-offset:
-            type: dimension
-            value: -2
-            unit: px
-          outline-color:
-            type: color
-            format: hex
-            value: "#007AFF"
+          outline-width: {type: dimension, value: 2, unit: px}
+          outline-offset: {type: dimension, value: -2, unit: px}
+          outline-color: {type: color, format: hex, value: "#007AFF"}
+      focus-external:
+        sourceRefs: [ai-css, questions-css, crm-css]
+        parameters:
+          outline-width: {type: dimension, value: 2, unit: px}
+          outline-offset: {type: dimension, value: 2, unit: px}
+          outline-color: {type: color, format: hex, value: "#007BFC"}
+      crm-check:
+        sourceRefs: [crm-css]
+        parameters:
+          content-gap: {type: dimension, value: 6, unit: px}
+          icon-size: {type: dimension, value: 16, unit: px}
   mau-preset28:
     description: Нижний порог MAU; геометрия одного чипса, без пороговых значений и внешнего ряда
-    sourceRefs:
-      - preset-enabled
-      - preset-active
-      - preset-css
+    sourceRefs: [preset-enabled, preset-active, preset-css]
     parameters:
-      height:
-        type: dimension
-        value: 28
-        unit: px
-      padding-block:
-        type: dimension
-        value: 6
-        unit: px
-      padding-inline:
-        type: dimension
-        value: 12
-        unit: px
-      radius:
-        type: dimension
-        value: 44
-        unit: px
-      font-size:
-        type: dimension
-        value: 12
-        unit: px
-      line-height:
-        type: dimension
-        value: 16
-        unit: px
-      letter-spacing:
-        type: dimension
-        value: -0.12
-        unit: px
-      background:
-        type: color
-        format: hex
-        value: "#F0F1F4"
-      foreground:
-        type: color
-        format: hex
-        value: "#202028"
-      transition-ms:
-        type: integer
-        value: 160
+      height: {type: dimension, value: 28, unit: px}
+      padding-block: {type: dimension, value: 6, unit: px}
+      padding-inline: {type: dimension, value: 12, unit: px}
+      radius: {type: dimension, value: 44, unit: px}
+      font-size: {type: dimension, value: 12, unit: px}
+      line-height: {type: dimension, value: 16, unit: px}
+      letter-spacing: {type: dimension, value: -0.12, unit: px}
+      background: {type: color, format: hex, value: "#F0F1F4"}
+      foreground: {type: color, format: hex, value: "#202028"}
+      transition-ms: {type: integer, value: 160}
     states:
       hover:
-        sourceRefs:
-          - table-hover
-          - preset-css
+        sourceRefs: [table-hover, preset-css]
         parameters:
-          background:
-            type: token
-            ref: preset-hover
-            expectedType: color
+          background: {type: token, ref: preset-hover, expectedType: color}
       active:
-        sourceRefs:
-          - preset-css
-          - preset-active
+        sourceRefs: [preset-css, preset-active]
         parameters:
-          background:
-            type: color
-            format: hex
-            value: "#FFFFFF"
-          foreground:
-            type: color
-            format: hex
-            value: "#0067DC"
-          inset-border-width:
-            type: dimension
-            value: 1
-            unit: px
-          inset-border-color:
-            type: color
-            format: hex
-            value: "#007BFC"
+          background: {type: color, format: hex, value: "#FFFFFF"}
+          foreground: {type: color, format: hex, value: "#0067DC"}
+          inset-border-width: {type: dimension, value: 1, unit: px}
+          inset-border-color: {type: color, format: hex, value: "#007BFC"}
       focus-implementation:
-        sourceRefs:
-          - preset-css
+        sourceRefs: [preset-css]
         parameters:
-          outline-width:
-            type: dimension
-            value: 2
-            unit: px
-          outline-offset:
-            type: dimension
-            value: 2
-            unit: px
-          outline-color:
-            type: color
-            format: hex
-            value: "#007BFC"
+          outline-width: {type: dimension, value: 2, unit: px}
+          outline-offset: {type: dimension, value: 2, unit: px}
+          outline-color: {type: color, format: hex, value: "#007BFC"}
       reduced-motion-implementation:
-        sourceRefs:
-          - preset-css
+        sourceRefs: [preset-css]
         parameters:
-          transition-ms:
-            type: integer
-            value: 0
+          transition-ms: {type: integer, value: 0}
+  mailing-channel42:
+    description: Способ получения рассылки
+    sourceRefs: [mailing-css]
+    parameters:
+      height: {type: dimension, value: 42, unit: px}
+      radius: {type: dimension, value: 24, unit: px}
+      padding-block: {type: dimension, value: 10, unit: px}
+      padding-inline: {type: dimension, value: 16, unit: px}
+      font-size: {type: dimension, value: 14, unit: px}
+      font-weight: {type: font-weight, value: 400}
+      line-height: {type: dimension, value: 20, unit: px}
+      background: {type: color, format: hex, value: "#F0F1F4"}
+      foreground: {type: color, format: hex, value: "#202028"}
+      reserved-border-width: {type: dimension, value: 1, unit: px}
+      border-color: {type: color, format: hex, value: "#00000000"}
+    states:
+      active:
+        sourceRefs: [mailing-css]
+        parameters:
+          background: {type: color, format: hex, value: "#E5F1FF"}
+          foreground: {type: color, format: hex, value: "#007BFC"}
+          border-color: {type: color, format: hex, value: "#62ADFF"}
+      focus:
+        sourceRefs: [mailing-css]
+        parameters:
+          outline-width: {type: dimension, value: 2, unit: px}
+          outline-offset: {type: dimension, value: 3, unit: px}
+          outline-color: {type: color, format: hex, value: "#007BFC"}
+  mailing-weekday42:
+    description: День недели
+    sourceRefs: [mailing-css]
+    parameters:
+      height: {type: dimension, value: 42, unit: px}
+      radius: {type: dimension, value: 24, unit: px}
+      padding-block: {type: dimension, value: 10, unit: px}
+      padding-inline: {type: dimension, value: 12, unit: px}
+      font-size: {type: dimension, value: 14, unit: px}
+      font-weight: {type: font-weight, value: 400}
+      line-height: {type: dimension, value: 20, unit: px}
+      background: {type: color, format: hex, value: "#F0F1F4"}
+      foreground: {type: color, format: hex, value: "#202028"}
+      reserved-border-width: {type: dimension, value: 1, unit: px}
+      border-color: {type: color, format: hex, value: "#00000000"}
+      min-width: {type: dimension, value: 51, unit: px}
+    states:
+      active:
+        sourceRefs: [mailing-css]
+        parameters:
+          background: {type: color, format: hex, value: "#E5F1FF"}
+          foreground: {type: color, format: hex, value: "#007BFC"}
+          border-color: {type: color, format: hex, value: "#62ADFF"}
+      focus:
+        sourceRefs: [mailing-css]
+        parameters:
+          outline-width: {type: dimension, value: 2, unit: px}
+          outline-offset: {type: dimension, value: 3, unit: px}
+          outline-color: {type: color, format: hex, value: "#007BFC"}
+      compact-width:
+        sourceRefs: [mailing-css]
+        parameters:
+          min-width: {type: dimension, value: 40, unit: px}
+          padding-inline: {type: dimension, value: 10, unit: px}
 dependencies:
   - id: generic-chip-source
-    document: references/design-system/docs/design-system/components/generated/DS-01-288-3551.md
+    document: "references/design-system/docs/design-system/components/generated/DS-01-288-3551.md"
     role: design-source

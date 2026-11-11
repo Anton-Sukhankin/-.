@@ -1,0 +1,58 @@
+{
+  "date": "2026-11-10",
+  "browser": "157.0.8103.40",
+  "deviceScaleFactor": 1,
+  "reducedMotion": "reduce",
+  "frames": [
+    {
+      "file": "report-mailings-create.png",
+      "route": "/preview/navigation?section=reports&report=demo-report-summary&reportTab=mailings",
+      "state": "Исходный черновик, оба способа, Пн–Пт, 09:00",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "4ce56777c3ba3e3618ca7b7f2892ef7adcf9f3d3bb5ad3a0e442ce8af81c84c6"
+    },
+    {
+      "file": "report-mailings-create-edited.png",
+      "route": "/preview/navigation?section=reports&report=demo-report-summary&reportTab=mailings",
+      "state": "Отдельное переключение способа и дня, черновик сохранён после смены режима",
+      "viewport": {
+        "width": 1024,
+        "height": 900
+      },
+      "sha256": "58c9b6fd1101cb262191b825d979bd53409b8dfd5063380ca6beff725157d672"
+    },
+    {
+      "file": "sources-master.png",
+      "route": "/preview/navigation?section=sources&sourceSection=master",
+      "state": "Алфавитные группы, число систем и число источников, локальный поиск",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "db1f2eb7741164747df7ff9cf2bbead5e0b77a94a8692b150328dd390c31b6a5"
+    },
+    {
+      "file": "sources-master-filter.png",
+      "route": "/preview/navigation?section=sources&sourceSection=master",
+      "state": "Поиск CRM, первая видимая группа и только совпадения",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "04989206c895fb3bf6aeb20c369b1bf629189a2044dd8088ae765c8b97f26a3e"
+    },
+    {
+      "file": "systems-crm-compact.png",
+      "route": "/preview/navigation?section=systems&systems.reference=crm",
+      "state": "Компактная панель CRM, один выбранный чипс и один невыбранный",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "a93b00c0f61994278aeab54a5ba30c673ca447b1ac74137c759c1cb17b0bd7dc"
+    }
+  ]
+}

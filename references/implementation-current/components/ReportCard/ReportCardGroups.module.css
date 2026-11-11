@@ -2,11 +2,17 @@
 .scroll { display: flex; flex: 1; flex-direction: column; gap: 8px; min-height: 0; overflow-y: auto; scrollbar-width: none; }
 .scroll::-webkit-scrollbar { display: none; }
 .surface[data-layout='catalog'] { padding-top: 0; padding-inline: 0; border-radius: 0; background: transparent; }
-.group { display: flex; flex-direction: column; flex: 0 0 auto; gap: 8px; min-width: 0; }
+.catalogSurface { padding-block-start: 16px; padding-inline: 16px; border-radius: 16px 16px 0 0; background: var(--sidebar-surface); }
+.group { display: flex; flex-direction: column; flex: 0 0 auto; min-width: 0; }
+.group[data-collapsed='true']:not(:last-child) { border-bottom:1px solid #e2e4ea; }
 .heading { display: flex; align-items: center; gap: 8px; height: 20px; margin: 0; color: #52698c; font-size: 14px; line-height: 20px; font-weight: 500; }
 .group + .group .heading { padding-top: 8px; height: 28px; }
 .count { composes: neutral from '../CountBadge/CountBadge.module.css'; }
-.grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--catalog-card-gap); }
+.groupToggle { display:flex; align-items:center; gap:8px; width:100%; height:100%; padding:0; border:0; background:transparent; color:inherit; font:inherit; text-align:start; cursor:pointer; }
+.groupToggle:focus-visible { outline:2px solid #007bfc; outline-offset:-2px; }
+.groupToggle[aria-expanded='false'] .count { background:#007bfc; color:#fff; }
+.group .groupClip { overflow:clip; overflow-clip-margin:4px; }
+.grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--catalog-card-gap); padding-block-start:8px; }
 @media (min-width: 1800px) { .grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
 @media (max-width: 1000px) { .grid { grid-template-columns: minmax(0, 1fr); } }
 .grid[data-layout='catalog'] { grid-template-columns: repeat(2, minmax(0, 1fr)); }

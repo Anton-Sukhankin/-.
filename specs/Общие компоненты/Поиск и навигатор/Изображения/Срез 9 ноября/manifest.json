@@ -1,0 +1,47 @@
+{
+  "role": "Проверенный рендер локального прототипа с демонстрационными данными",
+  "capturedOn": "2026-11-09",
+  "browser": "157.0.8103.38",
+  "locale": "ru-RU",
+  "scale": 1,
+  "reducedMotionForCapture": true,
+  "build": {
+    "js": {
+      "file": "main-BwQwVOVy.js",
+      "sha256": "60e171b194722d1a84c956920e1d15099a3541550c4cede25f0484e6382a82b2"
+    },
+    "css": {
+      "file": "main-6tTF2ACF.css",
+      "sha256": "862773a739b30c1dda91c0338cb43068cc6a9a6657402dff5d81348df987a09e"
+    }
+  },
+  "frames": [
+    {
+      "id": "navigator-source-page",
+      "file": "navigator-source-page.png",
+      "entry": "/preview/navigation",
+      "route": "/preview/navigation",
+      "state": "Запрос date, активен чип «Источники», показаны первые 15 из 19; подсвечена первая строка.",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "role": "reference",
+      "sha256": "23c0eb52b5ce5a1f85b756587af47d35f01789cad4d7867a0953e70d00e5a5f3"
+    },
+    {
+      "id": "navigator-source-complete",
+      "file": "navigator-source-complete.png",
+      "entry": "/preview/navigation",
+      "route": "/preview/navigation",
+      "state": "После клавиатурной догрузки, показаны все 19 совпадений; фокус на первой добавленной строке.",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "role": "reference",
+      "sha256": "098fcbf99e608f0ae0c82f8b9e9993ab7e3ef90aebe92e694999c4e34c8f6466"
+    }
+  ],
+  "data_files": []
+}

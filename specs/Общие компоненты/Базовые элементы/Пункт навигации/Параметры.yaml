@@ -2,60 +2,61 @@ schemaVersion: 1
 component:
   id: navigation-item
   title: Пункт боковой навигации
-  contract: specs/Общие компоненты/Базовые элементы/Пункт навигации/Контракт.md
+  contract: "specs/Общие компоненты/Базовые элементы/Пункт навигации/Контракт.md"
   status: approved-target
 sources:
   item-family:
     kind: figma
     uri: https://www.figma.com/design/lnOcWh4ElGkhppWe6Kn5AA?node-id=1555-167070
-    nodeId: 1555:167070
+    nodeId: "1555:167070"
     status: unverified-live
-    snapshot: Локальное семейство и настроенные overrides C01, срез 2 ноября; сырые controls не входят в
-      продукт
+    snapshot: Локальное семейство и настроенные overrides C01, срез 2 ноября; сырые controls не входят в продукт
   selected:
     kind: figma
     uri: https://www.figma.com/design/lnOcWh4ElGkhppWe6Kn5AA?node-id=1555-167083
-    nodeId: 1555:167083
+    nodeId: "1555:167083"
     status: unverified-live
     snapshot: Подложка выбранного раскрытого пункта
   hover:
     kind: figma
     uri: https://www.figma.com/design/lnOcWh4ElGkhppWe6Kn5AA?node-id=1555-167089
-    nodeId: 1555:167089
+    nodeId: "1555:167089"
     status: unverified-live
     snapshot: Сохранённый цвет первого режима Gray/50; другие темы не утверждены
   selected-hover:
     kind: figma
     uri: https://www.figma.com/design/lnOcWh4ElGkhppWe6Kn5AA?node-id=1555-167094
-    nodeId: 1555:167094
+    nodeId: "1555:167094"
     status: unverified-live
     snapshot: Сохранённый цвет Blue/200 выбранного раскрытого пункта под указателем
   panel-decision:
     kind: document
-    uri: specs/Общие компоненты/Боковая навигация/Контракт.md
+    uri: "specs/Общие компоненты/Боковая навигация/Контракт.md"
     status: approved-decision
-    snapshot: Позднее уточнение 3 ноября сохраняет сетку и SVG в обоих режимах; заменяет историческое
-      уменьшение glyph
+    snapshot: Позднее уточнение 3 ноября сохраняет сетку и SVG в обоих режимах; заменяет историческое уменьшение glyph
   implementation:
     kind: document
-    uri: references/implementation/components/Sidebar/Sidebar.module.css
+    uri: "references/implementation-current/components/Sidebar/Sidebar.module.css"
     status: observed-snapshot
-    snapshot: Наблюдаемые стили hover, в том числе collapsed; код только прочитан, отдельная визуальная
-      приёмка поздней корректировки не заявлена
+    snapshot: Реализация единой подложки наведения и выбранного пункта в раскрытой панели и подложки круга при наведении в свёрнутой
+  hover-decision:
+    kind: document
+    uri: "specs/Общие компоненты/Базовые элементы/Пункт навигации/Контракт.md"
+    status: approved-decision
+    snapshot: По уточнению от 10 ноября подложка наведения совпадает с подложкой выбранного пункта
   anchor-evidence:
     kind: document
-    uri: specs/Общие компоненты/Боковая навигация/Контракт.md
+    uri: "references/verification/tests/navigation.spec.ts"
     status: reference-only
-    snapshot: Действующий контракт неподвижной внутренней сетки боковой навигации
+    snapshot: Браузерная проверка положения иконок при сворачивании и размеров боковой панели
   counter-parameters:
     kind: document
-    uri: specs/Общие компоненты/Базовые элементы/Счётчик/Параметры.yaml
+    uri: "specs/Общие компоненты/Базовые элементы/Счётчик/Параметры.yaml"
     status: approved-decision
-    snapshot: Четыре внутренних значения переданы B12 navigation-text14; C01/B11 сохраняют размещение и
-      видимость
+    snapshot: Четыре внутренних значения переданы B12 navigation-text14; C01/B11 сохраняют размещение и видимость
   fonts:
     kind: document
-    uri: specs/Ресурсы/Шрифты/README.md
+    uri: "specs/Ресурсы/Шрифты/README.md"
     status: reference-only
     snapshot: Эталонный CoFo Sans и предоставленные файлы Regular/Medium
 tokens:
@@ -80,195 +81,71 @@ tokens:
     sourceRef: counter-parameters
     locator: variants.navigation-text14.parameters.foreground
 base:
-  sourceRefs:
-    - item-family
-    - panel-decision
-    - fonts
-    - anchor-evidence
+  sourceRefs: [item-family, panel-decision, fonts, anchor-evidence]
   parameters:
-    row-height:
-      type: dimension
-      value: 36
-      unit: px
-    row-outer-inset-inline:
-      type: dimension
-      value: 8
-      unit: px
-    item-padding-inline:
-      type: dimension
-      value: 12
-      unit: px
-    glyph-size:
-      type: dimension
-      value: 20
-      unit: px
-    glyph-page-x:
-      type: dimension
-      value: 20
-      unit: px
-    label-page-x:
-      type: dimension
-      value: 48
-      unit: px
-    glyph-label-gap:
-      type: dimension
-      value: 8
-      unit: px
-    text-area-width:
-      type: dimension
-      value: 212
-      unit: px
-    label-counter-gap:
-      type: dimension
-      value: 12
-      unit: px
-    font-family:
-      type: token
-      ref: ui-font
-      expectedType: font-family
-    label-font-size:
-      type: dimension
-      value: 14
-      unit: px
-    label-line-height:
-      type: dimension
-      value: 20
-      unit: px
-    label-font-weight:
-      type: font-weight
-      value: 500
-    label-color:
-      type: color
-      format: hex
-      value: "#343A4A"
-    counter-font-size:
-      type: token
-      ref: nav-counter-font-size
-      expectedType: dimension
-    counter-line-height:
-      type: token
-      ref: nav-counter-line-height
-      expectedType: dimension
-    counter-font-weight:
-      type: token
-      ref: nav-counter-font-weight
-      expectedType: font-weight
-    counter-color:
-      type: token
-      ref: nav-counter-color
-      expectedType: color
-    glyph-color:
-      type: color
-      format: hex
-      value: "#101D3B"
-    background:
-      type: color
-      format: srgb
-      value:
-        r: 0
-        g: 0
-        b: 0
-        a: 0
-    hover-duration-ms:
-      type: integer
-      value: 160
-    text-close-duration-ms:
-      type: integer
-      value: 100
-    text-open-duration-ms:
-      type: integer
-      value: 160
-    text-open-delay-ms:
-      type: integer
-      value: 80
-    same-svg-across-modes:
-      type: boolean
-      value: true
-    keep-text-in-dom:
-      type: boolean
-      value: true
+    row-height: {type: dimension, value: 36, unit: px}
+    row-outer-inset-inline: {type: dimension, value: 8, unit: px}
+    item-padding-inline: {type: dimension, value: 12, unit: px}
+    glyph-size: {type: dimension, value: 20, unit: px}
+    glyph-page-x: {type: dimension, value: 20, unit: px}
+    label-page-x: {type: dimension, value: 48, unit: px}
+    glyph-label-gap: {type: dimension, value: 8, unit: px}
+    text-area-width: {type: dimension, value: 212, unit: px}
+    label-counter-gap: {type: dimension, value: 12, unit: px}
+    font-family: {type: token, ref: ui-font, expectedType: font-family}
+    label-font-size: {type: dimension, value: 14, unit: px}
+    label-line-height: {type: dimension, value: 20, unit: px}
+    label-font-weight: {type: font-weight, value: 500}
+    label-color: {type: color, format: hex, value: "#343A4A"}
+    counter-font-size: {type: token, ref: nav-counter-font-size, expectedType: dimension}
+    counter-line-height: {type: token, ref: nav-counter-line-height, expectedType: dimension}
+    counter-font-weight: {type: token, ref: nav-counter-font-weight, expectedType: font-weight}
+    counter-color: {type: token, ref: nav-counter-color, expectedType: color}
+    glyph-color: {type: color, format: hex, value: "#101D3B"}
+    background: {type: color, format: srgb, value: {r: 0, g: 0, b: 0, a: 0}}
+    hover-duration-ms: {type: integer, value: 160}
+    text-close-duration-ms: {type: integer, value: 100}
+    text-open-duration-ms: {type: integer, value: 160}
+    text-open-delay-ms: {type: integer, value: 80}
+    same-svg-across-modes: {type: boolean, value: true}
+    keep-text-in-dom: {type: boolean, value: true}
 variants:
   expanded:
     description: Подписанный пункт; высота и постоянная сетка наследуются из base
-    sourceRefs:
-      - item-family
-      - panel-decision
+    sourceRefs: [item-family, panel-decision]
     parameters:
-      item-radius:
-        type: dimension
-        value: 4
-        unit: px
-      item-padding-block:
-        type: dimension
-        value: 8
-        unit: px
-      text-visible:
-        type: boolean
-        value: true
+      item-radius: {type: dimension, value: 4, unit: px}
+      item-padding-block: {type: dimension, value: 8, unit: px}
+      text-visible: {type: boolean, value: true}
     states:
       selected:
-        sourceRefs:
-          - selected
+        sourceRefs: [selected]
         parameters:
-          background:
-            type: color
-            format: hex
-            value: "#E2E6EC"
+          background: {type: color, format: hex, value: "#E2E6EC"}
       hover:
-        sourceRefs:
-          - hover
-          - implementation
+        sourceRefs: [hover-decision, implementation]
         parameters:
-          background:
-            type: color
-            format: hex
-            value: "#F4F4F5"
+          background: {type: color, format: hex, value: "#E2E6EC"}
       selected-hover:
-        sourceRefs:
-          - selected-hover
-          - implementation
+        sourceRefs: [hover-decision, implementation]
         parameters:
-          background:
-            type: color
-            format: hex
-            value: "#CCE5FE"
+          background: {type: color, format: hex, value: "#E2E6EC"}
   collapsed:
     description: Тот же пункт без видимого текста; не историческая кнопка32 с glyph16
-    sourceRefs:
-      - panel-decision
-      - anchor-evidence
+    sourceRefs: [panel-decision, anchor-evidence]
     parameters:
-      hit-width:
-        type: dimension
-        value: 48
-        unit: px
-      hit-height:
-        type: dimension
-        value: 36
-        unit: px
-      hover-circle-size:
-        type: dimension
-        value: 32
-        unit: px
-      text-visible:
-        type: boolean
-        value: false
-      text-aria-hidden:
-        type: boolean
-        value: true
-      persistent-selected-background:
-        type: boolean
-        value: false
+      hit-width: {type: dimension, value: 48, unit: px}
+      hit-height: {type: dimension, value: 36, unit: px}
+      hover-circle-size: {type: dimension, value: 32, unit: px}
+      text-visible: {type: boolean, value: false}
+      text-aria-hidden: {type: boolean, value: true}
+      persistent-selected-background: {type: boolean, value: false}
     states:
       hover:
-        sourceRefs:
-          - implementation
+        sourceRefs: [implementation]
         parameters:
-          hover-circle-color:
-            type: color
-            format: hex
-            value: "#E2E6EC"
+          hover-circle-color: {type: color, format: hex, value: "#E2E6EC"}
 dependencies:
   - id: panel-configuration
-    document: specs/Общие компоненты/Боковая навигация/Контракт.md
+    document: "specs/Общие компоненты/Боковая навигация/Контракт.md"
     role: external-owner

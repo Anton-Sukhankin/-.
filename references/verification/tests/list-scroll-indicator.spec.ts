@@ -24,12 +24,16 @@ test('list thumb appears after a vertical wheel scroll and follows the position'
   await expect(thumb).toHaveCSS('opacity', '0');
 
   await page.mouse.move(box.x + box.width + 8, box.y + 30);
-  await expect(thumb).toHaveCSS('opacity', '1');
+  await expect(thumb).toHaveCSS('opacity', '0');
   await list.evaluate(element => { element.scrollTop = 0; });
-  await expect.poll(async () => (await thumb.boundingBox())!.y).toBeCloseTo(box.y, 0);
-  await page.mouse.move(box.x + 80, box.y + 30);
+  await expect(thumb).toHaveAttribute('data-visible', 'true');
+  await expect.poll(async () => {
+    const [line, viewport] = await Promise.all([thumb.boundingBox(), list.boundingBox()]);
+    return Math.abs(line!.y - viewport!.y);
+  }).toBeLessThan(1);
   await expect(thumb).toHaveCSS('opacity', '0');
   await list.evaluate(element => { element.scrollTop = 120; });
+  await expect(thumb).toHaveAttribute('data-visible', 'true');
   await expect(thumb).toHaveCSS('opacity', '0');
 });
 
@@ -62,10 +66,12 @@ test('report detail keeps only the thin indicator and can still scroll its pinne
   }
   await info.evaluate(element => { element.scrollTop = 20; });
   expect(await info.evaluate(element => element.scrollTop)).toBeGreaterThan(0);
+  await expect(thumb).toHaveAttribute('data-visible', 'true');
+  const infoBox = (await info.boundingBox())!;
+  expect((await thumb.boundingBox())!.x).toBeLessThan(infoBox.x + infoBox.width);
   const box = (await body.boundingBox())!;
-  await page.mouse.move(1428, box.y + 50);
-  await expect(thumb).toHaveCSS('opacity', '1');
-  expect((await thumb.boundingBox())!.x).toBeGreaterThan(box.x + box.width);
+  await body.evaluate(element => { element.scrollTop = 120; });
+  await expect.poll(async () => (await thumb.boundingBox())!.x).toBeGreaterThan(box.x + box.width);
 });
 
 for (const view of ['table', 'cards']) {
@@ -83,7 +89,9 @@ for (const view of ['table', 'cards']) {
     const listBox = (await list.boundingBox())!;
     expect(listBox.x + listBox.width).toBeLessThan(box.x + box.width);
     await page.mouse.move(box.x + box.width + 8, listBox.y + 50);
-    await expect(thumb).toHaveCSS('opacity', '1');
+    await expect(thumb).toHaveCSS('opacity', '0');
+    await list.evaluate(element => { element.scrollTop = 120; });
+    await expect(thumb).toHaveAttribute('data-visible', 'true');
     const line = (await thumb.boundingBox())!;
     expect(line.x).toBeGreaterThanOrEqual(box.x + box.width);
     expect(line.x + line.width).toBeLessThan(1440);
@@ -99,10 +107,54 @@ for (const view of ['table', 'cards']) {
       const resultsBox = (await results.boundingBox())!;
       const scrollBox = (await scroll.boundingBox())!;
       await page.mouse.move(resultsBox.x + resultsBox.width + 8, scrollBox.y + 50);
-      await expect(thumb).toHaveCSS('opacity', '1');
+      await expect(thumb).toHaveCSS('opacity', '0');
+      await scroll.evaluate(element => { element.scrollTop = 120; });
+      await expect(thumb).toHaveAttribute('data-visible', 'true');
       expect((await thumb.boundingBox())!.x).toBeCloseTo(line.x, 1);
       await page.mouse.move(resultsBox.x + resultsBox.width - 8, scrollBox.y + 50);
       await expect(thumb).toHaveCSS('opacity', '0');
     }
   });
 }
+
+test('a scrollable column dropdown uses the same thin overlay without a layout gutter', async ({ page }) => {
+  await page.goto('/preview/navigation?section=reports');
+  await page.getByRole('button', { name: 'Фильтр «Отчёт»', exact: true }).click();
+  const popup = page.getByRole('dialog', { name: 'Фильтр: Отчёт' });
+  const options = popup.locator('[data-filter-viewport]');
+  const thumb = page.locator('[data-list-scroll-thumb]');
+  await expect(options).toBeVisible();
+  const dimensions = await options.evaluate(element => ({
+    overflow: element.scrollHeight - element.clientHeight,
+    gutter: Math.round(element.getBoundingClientRect().width) - element.clientWidth,
+  }));
+  expect(dimensions.overflow).toBeGreaterThan(0);
+  expect(dimensions.gutter).toBe(0);
+  await expect(thumb).toHaveCSS('opacity', '0');
+  const box = (await options.boundingBox())!;
+  await page.mouse.move(box.x + 40, box.y + 48);
+  await page.mouse.wheel(0, 170);
+  await expect.poll(() => options.evaluate(element => element.scrollTop)).toBeGreaterThan(0);
+  await expect(thumb).toHaveAttribute('data-visible', 'true');
+  const line = (await thumb.boundingBox())!;
+  expect(line.width).toBe(3);
+  expect(line.x).toBeGreaterThanOrEqual(box.x + box.width);
+  expect(line.x + line.width).toBeLessThanOrEqual((await popup.boundingBox())!.x + (await popup.boundingBox())!.width);
+  await expect(thumb).toHaveCSS('opacity', '0');
+});
+
+test('keyboard scrolling shows the vertical indicator and horizontal scrolling alone leaves it hidden', async ({ page }) => {
+  await page.setViewportSize({ width: 1024, height: 768 });
+  await page.goto('/preview/navigation?section=reports&report=demo-report-summary&reportTab=usage');
+  const history = page.getByRole('region', { name: 'Прокрутка истории по месяцам' });
+  const thumb = page.locator('[data-list-scroll-thumb]');
+  await history.scrollIntoViewIfNeeded();
+  await expect(thumb).toHaveCSS('opacity', '0');
+  await history.evaluate(element => { element.scrollLeft = 80; });
+  expect(await history.evaluate(element => element.scrollLeft)).toBeGreaterThan(0);
+  await expect(thumb).toHaveCSS('opacity', '0');
+  await history.press('End');
+  await expect.poll(() => history.evaluate(element => element.scrollTop)).toBeGreaterThan(0);
+  await expect(thumb).toHaveAttribute('data-visible', 'true');
+  await expect(thumb).toHaveCSS('opacity', '0');
+});

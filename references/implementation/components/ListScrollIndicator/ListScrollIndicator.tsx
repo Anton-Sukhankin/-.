@@ -1,136 +1,114 @@
 import { useEffect, useRef, type RefObject } from 'react';
 import styles from './ListScrollIndicator.module.css';
 
-const listSelector = '[data-list-scroll]';
 const idleDelay = 500;
+const thumbWidth = 3;
 
-function scrollGeometry(viewport: HTMLElement, area: HTMLElement) {
+function scrollGeometry(viewport: HTMLElement) {
   const { clientHeight, scrollHeight, scrollTop } = viewport;
   if (!clientHeight || scrollHeight <= clientHeight) return;
+
+  const documentViewport = viewport === document.scrollingElement;
   const box = viewport.getBoundingClientRect();
-  const bounds = area.getBoundingClientRect();
-  const top = Math.max(box.top, bounds.top);
-  const bottom = Math.min(box.bottom, bounds.bottom, window.innerHeight);
+  let top = documentViewport ? 0 : Math.max(0, box.top);
+  let bottom = documentViewport ? window.innerHeight : Math.min(window.innerHeight, box.bottom);
+
+  for (let parent = viewport.parentElement; !documentViewport && parent && parent !== document.body; parent = parent.parentElement) {
+    if (getComputedStyle(parent).overflowY !== 'visible') {
+      const clip = parent.getBoundingClientRect();
+      top = Math.max(top, clip.top);
+      bottom = Math.min(bottom, clip.bottom);
+    }
+    if (parent === document.fullscreenElement || parent.matches('dialog[open]')) break;
+  }
   if (bottom <= top) return;
 
-  const edge = Math.min(bounds.right, window.innerWidth);
-  const surface = viewport.closest('[data-list-scroll-boundary]');
-  const contentRight = viewport === area
-    ? box.right - parseFloat(getComputedStyle(area).paddingRight)
-    : surface?.getBoundingClientRect().right ?? box.right;
-  const gutter = Math.min(edge - contentRight, viewport.dataset.listScroll === 'local' ? 16 : 24);
-  const left = gutter >= 4 ? contentRight : edge - 12;
-  const right = gutter >= 4 ? contentRight + gutter : edge;
+  const workspace = viewport.closest<HTMLElement>('[data-catalog-screen]');
+  const popup = viewport.closest('[data-dropdown-surface="true"], [data-single-select-popup], dialog');
+  const edge = Math.min(window.innerWidth, documentViewport ? window.innerWidth : box.right);
+  let left = edge - 8;
+  if (popup) {
+    const gap = Math.min(window.innerWidth, popup.getBoundingClientRect().right) - edge;
+    if (gap >= thumbWidth + 4) left = edge + (gap - thumbWidth) / 2;
+  } else if (workspace && viewport.hasAttribute('data-list-scroll')) {
+    const workspaceRight = Math.min(workspace.getBoundingClientRect().right, window.innerWidth);
+    const surface = viewport.closest('[data-list-scroll-boundary]');
+    const contentRight = viewport === workspace
+      ? box.right - parseFloat(getComputedStyle(workspace).paddingRight)
+      : surface?.getBoundingClientRect().right ?? box.right;
+    const gutter = Math.min(workspaceRight - contentRight, viewport.dataset.listScroll === 'local' ? 16 : 24);
+    left = gutter >= 4 ? contentRight + (gutter - thumbWidth) / 2 : workspaceRight - (12 + thumbWidth) / 2;
+  }
+
   const length = bottom - top;
   const height = Math.min(length, Math.max(20, length * clientHeight / scrollHeight));
   const progress = Math.max(0, Math.min(1, scrollTop / (scrollHeight - clientHeight)));
-  return { top, bottom, left, right, height, thumbTop: top + progress * (length - height) };
+  return { left, height, top: top + progress * (length - height) };
 }
 
-export function ListScrollIndicator({ area }: { area: RefObject<HTMLElement | null> }) {
-  const layer = useRef<HTMLDivElement>(null);
+export function ListScrollIndicator({ scope }: { scope?: RefObject<HTMLElement | null> }) {
   const thumb = useRef<HTMLSpanElement>(null);
 
   useEffect(() => {
-    const root = area.current;
-    const overlay = layer.current;
+    const root = scope ? scope.current : document;
     const line = thumb.current;
-    if (!root || !overlay || !line) return;
+    if (!root || !line) return;
 
-    let pointer: { x: number; y: number } | undefined;
-    let scrolling: HTMLElement | undefined;
-    const wheelTargets = new Set<HTMLElement>();
-    const scrollPositions = new WeakMap<HTMLElement, number>();
-    let wheelTime = 0;
+    let viewport: HTMLElement | undefined;
     let timer: ReturnType<typeof setTimeout> | undefined;
     let frame = 0;
-    let observed: HTMLElement | undefined;
+    const positions = new WeakMap<HTMLElement, number>();
 
     const update = () => {
       if (frame) return;
       frame = requestAnimationFrame(() => {
         frame = 0;
-        let viewport = scrolling && root.contains(scrolling) ? scrolling : undefined;
-        let geometry = viewport && scrollGeometry(viewport, root);
-        if (!geometry && pointer) {
-          const { x, y } = pointer;
-          const lists = Array.from(root.querySelectorAll<HTMLElement>(listSelector));
-          if (root.matches(listSelector)) lists.push(root);
-          for (const list of lists) {
-            const track = scrollGeometry(list, root);
-            if (track && x >= track.left && x < track.right && y >= track.top && y < track.bottom) {
-              viewport = list;
-              geometry = track;
-              break;
-            }
-          }
-        }
+        const geometry = viewport?.isConnected && scrollGeometry(viewport);
         if (geometry) {
-          const bounds = overlay.getBoundingClientRect();
-          line.style.left = `${(geometry.left + geometry.right - 3) / 2 - bounds.left}px`;
-          line.style.top = `${geometry.thumbTop - bounds.top}px`;
+          line.style.left = `${geometry.left}px`;
+          line.style.top = `${geometry.top}px`;
           line.style.height = `${geometry.height}px`;
         }
         line.dataset.visible = String(Boolean(geometry));
-        const nextObserved = geometry ? viewport : undefined;
-        if (observed !== nextObserved) {
-          resize.disconnect();
-          if (nextObserved) resize.observe(nextObserved);
-          observed = nextObserved;
-        }
       });
     };
     const resize = new ResizeObserver(update);
 
-    const onWheel = (event: WheelEvent) => {
-      if (event.ctrlKey || !event.deltaY || Math.abs(event.deltaY) < Math.abs(event.deltaX)) return;
-      wheelTime = performance.now();
-      wheelTargets.clear();
-      for (let node = event.target instanceof Element ? event.target.closest<HTMLElement>(listSelector) : null;
-        node && root.contains(node); node = node.parentElement?.closest<HTMLElement>(listSelector) ?? null) {
-        wheelTargets.add(node);
-      }
-    };
-
     function onScroll(event: Event) {
-      if (pointer) update();
-      const viewport = event.target;
-      if (!(viewport instanceof HTMLElement) || !viewport.matches(listSelector)) return;
-      const previous = scrollPositions.get(viewport) ?? 0;
-      scrollPositions.set(viewport, viewport.scrollTop);
-      if (previous === viewport.scrollTop || !wheelTargets.has(viewport) || performance.now() - wheelTime > idleDelay) return;
-      scrolling = viewport;
+      const element = event.target === document ? document.scrollingElement : event.target;
+      if (!(element instanceof HTMLElement)) return;
+      const previous = positions.get(element) ?? 0;
+      positions.set(element, element.scrollTop);
+      if (previous === element.scrollTop) return;
+      // Top-layer surfaces paint their own indicator.
+      if (!scope && (element.closest('dialog[open]') || document.fullscreenElement?.contains(element))) return;
+      if (element !== document.scrollingElement && !/^(auto|scroll|overlay)$/.test(getComputedStyle(element).overflowY)) return;
+      if (element.scrollHeight <= element.clientHeight) return;
+
+      if (viewport !== element) {
+        viewport = element;
+        resize.disconnect();
+        resize.observe(element);
+      }
       clearTimeout(timer);
-      timer = setTimeout(() => { scrolling = undefined; update(); }, idleDelay);
+      timer = setTimeout(() => {
+        viewport = undefined;
+        resize.disconnect();
+        update();
+      }, idleDelay);
       update();
     }
 
-    function onPointerMove(event: PointerEvent) {
-      pointer = event.pointerType === 'mouse' ? { x: event.clientX, y: event.clientY } : undefined;
-      update();
-    }
-
-    function onPointerLeave() {
-      pointer = undefined;
-      update();
-    }
-
-    root.addEventListener('wheel', onWheel, { passive: true });
     root.addEventListener('scroll', onScroll, { capture: true, passive: true });
-    root.addEventListener('pointermove', onPointerMove);
-    root.addEventListener('pointerleave', onPointerLeave);
     window.addEventListener('resize', update);
     return () => {
-      root.removeEventListener('wheel', onWheel);
       root.removeEventListener('scroll', onScroll, true);
-      root.removeEventListener('pointermove', onPointerMove);
-      root.removeEventListener('pointerleave', onPointerLeave);
       window.removeEventListener('resize', update);
       resize.disconnect();
       clearTimeout(timer);
       cancelAnimationFrame(frame);
     };
-  }, [area]);
+  }, [scope]);
 
-  return <div ref={layer} className={styles.overlay} aria-hidden="true"><span ref={thumb} className={styles.thumb} data-list-scroll-thumb /></div>;
+  return <span ref={thumb} className={styles.thumb} aria-hidden="true" data-list-scroll-thumb />;
 }

@@ -227,7 +227,7 @@ test('column filters keep draft changes separate, combine conditions, and preser
   await expect(page.getByRole('heading', { name: 'Отчёты не найдены', exact: true })).toBeVisible();
   await expect(table).toHaveCount(0);
   await page.getByRole('button', { name: 'Открыть фильтры отчётов', exact: true }).click();
-  const panel = page.getByRole('dialog', { name: 'Фильтры отчётов', exact: true });
+  const panel = page.getByRole('dialog', { name: 'Фильтры', exact: true });
   await panel.locator('[data-multi-select="masterSystem"] [data-multi-select-clear]').click();
   await panel.getByRole('button', { name: 'Применить', exact: true }).click();
   await expect(rows).toHaveCount(5);
@@ -265,7 +265,7 @@ test('column filters keep draft changes separate, combine conditions, and preser
 
 test('column menus follow horizontal scrolling and stay within the right viewport edge', async ({ page }) => {
   await page.setViewportSize({ width: 1440, height: 900 });
-  await page.goto('/preview/navigation');
+  await page.goto('/preview/navigation?tableCase=single-page');
   await page.getByRole('navigation', { name: 'Разделы каталога' }).getByRole('button', { name: 'Отчёты', exact: true }).click();
   const table = page.getByRole('region', { name: 'Таблица отчётов', exact: true });
   const body = table.getByLabel('Прокрутка таблицы отчётов', { exact: true });

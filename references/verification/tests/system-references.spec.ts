@@ -263,14 +263,23 @@ test('shows four aligned metadata columns and reaches the last row above paginat
   const shadowOpacity = () => fixedHeader.evaluate(element => getComputedStyle(element, '::after').opacity);
   const resultBar = fixedHeader.getByRole('status').locator('..');
   const fixedBox = (await fixedHeader.boundingBox())!;
-  const detailHeading = section.getByRole('heading', { name:'Справочник CRM', exact:true }).locator('xpath=ancestor::header');
+  const title = section.getByRole('heading', { name:'Справочник CRM', exact:true });
+  const detailHeading = title.locator('xpath=ancestor::header');
   const detailHeadingBox = (await detailHeading.boundingBox())!;
   const breadcrumbs = detailHeading.getByRole('navigation', { name:'Хлебные крошки' });
+  const description = detailHeading.getByText('Сущности, атрибуты, связи и наборы опций CRM.', { exact: true });
+  const systemLabel = detailHeading.getByText(/^Информационная система/);
+  const systemValue = detailHeading.getByText('CRM (CRM Dynamics) · TZ-22328', { exact: true });
+  const back = detailHeading.getByRole('link', { name:'К справочникам' });
   const breadcrumbRow = (await breadcrumbs.locator('..').boundingBox())!;
   expect(breadcrumbRow.y - (await page.getByRole('main').boundingBox())!.y).toBe(16);
-  expect((await detailHeading.getByRole('heading').boundingBox())!.y - breadcrumbRow.y - breadcrumbRow.height).toBe(8);
+  const titleBox = (await title.boundingBox())!;
+  expect(titleBox.y - breadcrumbRow.y - breadcrumbRow.height).toBe(8);
   await expect(breadcrumbs.getByText('Карточка справочника')).toHaveAttribute('aria-current', 'page');
-  await expect(detailHeading.getByRole('link', { name:'К справочникам' })).toBeVisible();
+  await expect(description).toBeVisible();
+  await expect(systemLabel).toBeVisible();
+  await expect(back).toBeVisible();
+  const compactHeadingHeight = Math.max(titleBox.height, (await back.boundingBox())!.height);
   expect(fixedBox.y - detailHeadingBox.y - detailHeadingBox.height).toBe(16);
   const resultBox = (await resultBar.boundingBox())!;
   const scrollBox = (await scroll.boundingBox())!;
@@ -287,6 +296,17 @@ test('shows four aligned metadata columns and reaches the last row above paginat
   ]);
   const rows = table.locator('tbody tr');
   await expect(rows).toHaveCount(15);
+  const entityCell = rows.first().getByRole('cell').first();
+  const entityIcon = entityCell.locator('[aria-hidden="true"]').filter({ has: page.locator('svg') });
+  const entityName = entityCell.getByText('Организация', { exact: true });
+  await expect(entityIcon).toHaveCSS('background-color', 'rgb(238, 242, 246)');
+  await expect(entityIcon).toHaveCSS('color', 'rgb(113, 134, 165)');
+  const iconBox = (await entityIcon.boundingBox())!;
+  expect([iconBox.width, iconBox.height, (await entityName.boundingBox())!.x - iconBox.x - iconBox.width]).toEqual([40, 40, 12]);
+  await page.mouse.move(iconBox.x + iconBox.width / 2, iconBox.y + iconBox.height / 2);
+  await expect.poll(() => entityCell.evaluate(node => node.matches(':hover'))).toBe(true);
+  await expect(entityIcon).toHaveCSS('background-color', 'rgb(238, 242, 246)');
+  await expect(entityIcon).toHaveCSS('color', 'rgb(113, 134, 165)');
   const header = table.getByRole('columnheader', { name: 'Опции' });
   await expect(table.locator('thead')).toHaveCSS('position', 'static');
   await expect(header).toHaveCSS('box-shadow', 'none');
@@ -309,7 +329,12 @@ test('shows four aligned metadata columns and reaches the last row above paginat
   const scrollOffset = await scroll.evaluate(node => node.scrollTop);
   expect(scrollOffset).toBeGreaterThan(0);
   await expect(breadcrumbs).toBeHidden();
-  await expect.poll(() => fixedHeader.boundingBox()).toEqual({ ...fixedBox, y:fixedBox.y - 32 });
+  await expect(description).toBeHidden();
+  await expect(systemLabel).toBeHidden();
+  await expect(systemValue).toBeHidden();
+  await expect(title).toBeVisible();
+  await expect(back).toBeVisible();
+  await expect.poll(() => fixedHeader.boundingBox()).toEqual({ ...fixedBox, y:detailHeadingBox.y + compactHeadingHeight + 16 });
   await expect(fixedHeader).toHaveCSS('border-bottom-left-radius', '16px');
   await expect(fixedHeader).toHaveCSS('border-bottom-right-radius', '16px');
   const rowBorder = await rows.first().getByRole('cell').first().evaluate(element => getComputedStyle(element).borderTop);
@@ -346,7 +371,10 @@ test('shows four aligned metadata columns and reaches the last row above paginat
   await expect.poll(frameBorder).toMatch(/^0px/);
   await expect(fixedHeader).toHaveCSS('border-bottom-left-radius', '0px');
   await expect(breadcrumbs).toBeVisible();
-  await section.getByRole('link', { name: 'К справочникам' }).click();
+  await expect(description).toBeVisible();
+  await expect(systemLabel).toBeVisible();
+  await expect(systemValue).toBeVisible();
+  await back.click();
   await expect(page).toHaveURL(catalog);
 });
 
@@ -394,8 +422,21 @@ test('applies each CRM criterion with an empty local query and combines nonempty
     ['Поиск по опциям', '100000001', 1],
   ] as const;
 
+  await expect(apply).toBeDisabled();
+  await apply.hover();
+  await expect(apply).toHaveCSS('background-color', 'rgb(240, 241, 244)');
+  await query.fill('   ');
+  await expect(apply).toBeDisabled();
+  await query.fill('Продавец');
+  await expect(apply).toBeEnabled();
+  await query.hover();
+  await expect(apply).toHaveCSS('background-color', 'rgb(0, 103, 220)');
+  await query.fill('');
+  await expect(apply).toBeDisabled();
+
   for (const [name, value, count] of criteria) {
     await panel.getByRole('textbox', { name, exact: true }).fill(value);
+    await expect(apply).toBeEnabled();
     await expect(query).toHaveValue('');
     await expect(rows).toHaveCount(18);
     await expect(status).toHaveText('Найдено 18 записей · до применения изменений');
@@ -403,6 +444,7 @@ test('applies each CRM criterion with an empty local query and combines nonempty
     await expect(rows).toHaveCount(count);
     await expect(status).not.toContainText('до применения изменений');
     await reset.click();
+    await expect(apply).toBeDisabled();
     await expect(rows).toHaveCount(18);
   }
 
@@ -422,6 +464,7 @@ test('applies each CRM criterion with an empty local query and combines nonempty
   const empty = workspace.getByText('По выбранным условиям ничего не найдено.');
   await expect(empty).toBeVisible();
   await reset.click();
+  await expect(apply).toBeDisabled();
   await expect(empty).toHaveCount(0);
   await expect(query).toHaveValue('');
   await expect(status).toHaveText('Найдено 18 записей · демо');
@@ -440,7 +483,13 @@ test('keeps the exact-code and PK switches independent and resets draft and appl
   const pk = panel.getByRole('button', { name: 'Только PK', exact: true });
   const logicalName = panel.getByRole('textbox', { name: 'Логическое имя сущности', exact: true });
 
+  await expect(apply).toBeDisabled();
+  await pk.click();
+  await expect(apply).toBeEnabled();
+  await pk.click();
+  await expect(apply).toBeDisabled();
   await exact.click();
+  await expect(apply).toBeEnabled();
   await pk.click();
   await expect(exact).toHaveAttribute('aria-pressed', 'true');
   await expect(pk).toHaveAttribute('aria-pressed', 'true');

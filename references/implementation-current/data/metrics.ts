@@ -12,6 +12,7 @@ export interface MetricSummary {
   unit: string;
   updated: string;
 }
+export type MetricDetailIdentity = Pick<MetricSummary, 'id' | 'title' | 'description'>;
 export interface MetricPerson {
   name: string;
   role: string;
@@ -36,6 +37,8 @@ export interface MetricDetailSection {
 }
 export interface MetricDetailProfile {
   metricId: string;
+  /** A detail-only entry when the source provides too little metadata for a catalog summary. */
+  identity?: MetricDetailIdentity;
   /** Visible identity from the content source; never substitute the routing key. */
   displayId?: string;
   provenance: { kind: 'figma' | 'demo'; reference: string };

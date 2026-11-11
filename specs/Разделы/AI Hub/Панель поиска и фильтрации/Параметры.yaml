@@ -29,11 +29,9 @@ base:
     search-height: {"type":"dimension","value":40,"unit":"px"}
     search-padding-inline: {"type":"dimension","value":12,"unit":"px"}
     search-to-toggle-gap: {"type":"dimension","value":12,"unit":"px"}
-    controls-gap: {"type":"dimension","value":12,"unit":"px"}
     chip-gap: {"type":"dimension","value":8,"unit":"px"}
-    two-select-columns-max: {"type":"dimension","value":720,"unit":"px"}
-    one-select-column-max: {"type":"dimension","value":350,"unit":"px"}
-    narrow-detail-select-gap: {"type":"dimension","value":8,"unit":"px"}
+    modal-chip-row-gap: {"type":"dimension","value":12,"unit":"px"}
+    view-to-filter-button-gap: {"type":"dimension","value":8,"unit":"px"}
     surface-border-color: {"type":"color","format":"hex","value":"#D7E6F5"}
     search-background: {"type":"color","format":"hex","value":"#F3F4F9"}
 variants:

@@ -38,17 +38,18 @@ base:
     description-line-limit: {"type":"integer","value":2}
     section-divider-color: {"type":"color","format":"hex","value":"#E0E6EF"}
 variants:
-  footer-action:
-    description: "Действие со значком внешнего перехода"
+  compact:
+    description: "Боковые поля секций при внутренней ширине карточки до 520 px"
     sourceRefs: [catalog-style]
     parameters:
-      control-min-height: {"type":"dimension","value":32,"unit":"px"}
-      control-padding-inline: {"type":"dimension","value":8,"unit":"px"}
-      label-icon-gap: {"type":"dimension","value":6,"unit":"px"}
-      icon-size: {"type":"dimension","value":14,"unit":"px"}
-      label-font-size: {"type":"dimension","value":12,"unit":"px"}
-      label-line-height: {"type":"dimension","value":16,"unit":"px"}
-      label-font-weight: {"type":"font-weight","value":500}
+      max-content-width: {"type":"dimension","value":520,"unit":"px"}
+      section-padding-inline: {"type":"dimension","value":16,"unit":"px"}
+  footer-menu:
+    description: "Круглая кнопка общего меню ссылок каталога"
+    sourceRefs: [round-button-style]
+    parameters:
+      control-size: {"type":"dimension","value":32,"unit":"px"}
+      icon-size: {"type":"dimension","value":16,"unit":"px"}
   bookmark:
     description: "Круглая кнопка закладки"
     sourceRefs: [round-button-style]

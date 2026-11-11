@@ -8,7 +8,7 @@
 .listSection>h2 { display:flex; align-items:center; gap:8px; margin:8px 0 16px; font-size:16px; line-height:22px; font-weight:500; }
 .total { composes:neutral from '../../../components/CountBadge/CountBadge.module.css'; }
 .list { display:grid; grid-template-columns:minmax(0,1fr); gap:8px; }
-.list>section { --accordion-title-line:22px; --accordion-description-line:18px; --accordion-header-padding:12px; --accordion-muted:#64738b; border-color:#d8e3f1; }
+.list>section,.tab [data-lineage]>section { --accordion-title-line:22px; --accordion-description-line:18px; --accordion-header-padding:12px; --accordion-muted:#64738b; border-color:#d8e3f1; }
 .trailing { display:flex; flex-wrap:wrap; justify-content:flex-end; align-items:center; gap:12px; }
 .platform { display:inline-flex; align-items:center; flex:none; padding:1px 6px; border-radius:4px; background:#eef0f4; color:#64738b; font-size:11px; line-height:16px; }
 .sourceLink { display:inline-flex; align-items:center; flex:none; border:0; padding:0; height:16px; background:none; color:#007bfc; font:inherit; font-size:14px; font-weight:500; line-height:14px; letter-spacing:-.01em; cursor:pointer; white-space:nowrap; }
@@ -30,6 +30,9 @@
   .attributes>div:nth-child(n) { border-width:1px 0 0 1px; }
   .attributes>div:nth-child(-n+2) { border-top:0; }
   .attributes>div:nth-child(2n+1), .attributes>div[data-wide] { border-left:0; }
+  .empty { padding:16px; }
+}
+@container (max-width:540px) {
   .trailing { flex-direction:column; align-items:flex-end; gap:6px; }
-  .sourceLink { font-size:12px; }.empty { padding:16px; }
+  .sourceLink { font-size:12px; }
 }

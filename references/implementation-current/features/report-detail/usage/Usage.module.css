@@ -6,11 +6,9 @@
 .period h3 { margin:0; font-size:14px; font-weight:500; line-height:20px; color:#101d3b; }
 .period p { margin:4px 0 0; font-size:12px; line-height:18px; color:#52627c; }
 .statistics { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); min-width:0; margin:0; border-left:1px solid var(--accordion-border); }
-.statistics > div { display:flex; flex-direction:column; gap:4px; min-width:0; padding:12px 20px; border:solid var(--accordion-border); border-width:1px 0 0 1px; }
+.statistics > div { border:solid var(--accordion-border); border-width:1px 0 0 1px; }
 .statistics > div:nth-child(-n+4) { border-top:0; }
 .statistics > div:nth-child(4n+1) { border-left:0; }
-.statistics dt { font-size:13px; line-height:18px; color:#52627c; }
-.statistics dd { min-width:0; margin:0; overflow-wrap:anywhere; font-size:18px; line-height:24px; font-weight:500; color:#34445d; }
 .chart { display:grid; grid-template-columns:28px minmax(0,1fr); column-gap:12px; padding-top:8px; }
 .axis { height:328px; display:flex; flex-direction:column; justify-content:space-between; padding:7px 0 3px; color:#6d84a6; text-align:right; font-size:12px; line-height:18px; }
 .plot { position:relative; min-width:0; }
@@ -28,15 +26,45 @@
 .months span { position:absolute; top:10px; transform:translateX(-50%); white-space:nowrap; }
 .chartDescription { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip-path:inset(50%); white-space:nowrap; }
 .chartEmpty { min-height:388px; display:grid; place-items:center; }
-.historyScroll { max-block-size:60vh; overflow:auto; border-radius:16px 16px 0 0; outline-offset:2px; }
-.historySurface { height:auto; min-height:0; min-width:1066px; overflow:visible; }
+.historyFrame {
+  --history-inset:16px;
+  padding-inline:var(--history-inset);
+  padding-block-end:var(--history-inset);
+  border-radius:16px;
+  background:#f3f4f9;
+}
+.historyScroll {
+  --history-scrollbar-height:0px;
+  /* Keep the horizontal track within the gray inset. */
+  max-block-size:calc(60vh - var(--history-inset) + var(--history-scrollbar-height));
+  margin-block-end:calc(0px - var(--history-scrollbar-height));
+  overflow:auto;
+  background:inherit;
+  outline-offset:-2px;
+}
+.historyScroll::-webkit-scrollbar:horizontal { height:16px; }
+.historyScroll::-webkit-scrollbar-thumb:horizontal {
+  border-block:6px solid transparent;
+  border-radius:999px;
+  background-color:transparent;
+  background-clip:padding-box;
+}
+.historyScroll:is(:hover,:focus-visible)::-webkit-scrollbar-thumb:horizontal { background-color:#c5ccd9; }
+.historyScroll > .historySurface {
+  --table-inset:0px;
+  height:auto;
+  min-height:0;
+  min-width:1034px;
+  overflow:visible;
+  background:inherit;
+}
 .historySurface > :first-child { position:sticky; inset-block-start:0; z-index:3; background:inherit; }
-.historyGrid { grid-template-columns:minmax(126px,1.2fr) minmax(64px,.6fr) minmax(88px,.85fr) minmax(110px,1fr) minmax(104px,1fr) minmax(104px,1fr) minmax(110px,1.05fr) minmax(76px,.75fr) minmax(92px,.9fr) minmax(160px,1.5fr); }
+.historySurface .historyGrid { grid-template-columns:minmax(126px,1.2fr) minmax(64px,.6fr) minmax(88px,.85fr) minmax(110px,1fr) minmax(104px,1fr) minmax(104px,1fr) minmax(110px,1.05fr) minmax(76px,.75fr) minmax(92px,.9fr) minmax(160px,1.5fr); }
 .columnHeading { display:flex; align-items:center; padding:0 12px; font-size:12px; line-height:18px; font-weight:500; color:#687d96; white-space:nowrap; }
 .columnHeading:first-child, .historyCell:first-child { padding-left:20px; }
-.historyBody { padding-block:8px 16px; }
-.historyRow { cursor:default; }
-.historyRow:hover::after { border-color:#d7e6f5; }
+.historyBody { padding-block-start:8px; }
+.historyRows .historyRow { height:56px; cursor:default; }
+.historyRows .historyRow:hover::after { border-color:#d7e6f5; }
 .historyCell { white-space:nowrap; }
 .historyCell[data-trend='up'] { color:#36765d; }
 .historyCell[data-trend='down'] { color:#b24759; }

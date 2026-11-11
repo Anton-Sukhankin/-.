@@ -17,7 +17,7 @@ for (const context of ['reports', 'favorites'] as const) {
     await page.goto(`/preview/navigation?section=${context === 'reports' ? 'reports' : 'home'}`);
     const openPanel = page.getByRole('button', { name: 'Открыть фильтры отчётов', exact: true });
     await openPanel.click();
-    const panel = page.getByRole('dialog', { name: context === 'reports' ? 'Фильтры отчётов' : 'Фильтры избранных отчётов', exact: true });
+    const panel = page.getByRole('dialog', { name: 'Фильтры', exact: true });
     const field = panel.locator('[data-multi-select="owner"]');
     const trigger = field.locator('[data-panel-field]');
     await trigger.press('Enter');
@@ -91,7 +91,7 @@ for (const context of ['reports', 'favorites'] as const) {
 test('source multi-selects and all single-select fields keep their selection modes', async ({ page }) => {
   await page.goto('/preview/navigation?section=sources');
   await page.getByRole('button', { name: 'Открыть фильтры источников', exact: true }).click();
-  const panel = page.getByRole('dialog', { name: 'Фильтры источников', exact: true });
+  const panel = page.getByRole('dialog', { name: 'Фильтры', exact: true });
   await expect(panel.locator('[data-multi-select]')).toHaveCount(4);
   await panel.locator('[data-panel-field="platform"]').click();
   const values = page.locator('[data-source-values="platform"]');
@@ -102,7 +102,7 @@ test('source multi-selects and all single-select fields keep their selection mod
     names.push(await choices.nth(index).inputValue());
     await choices.nth(index).check();
   }
-  await panel.getByRole('heading', { name: 'Фильтры источников', exact: true }).click();
+  await panel.getByRole('heading', { name: 'Фильтры', exact: true }).click();
   const field = panel.locator('[data-multi-select="platform"]');
   await expect(field.locator('[data-selected-tag]')).not.toHaveCount(0);
   await field.evaluate(element => { element.style.width = '160px'; });
@@ -123,7 +123,7 @@ test('source multi-selects and all single-select fields keep their selection mod
 
 test('wide tags repack on resize and long values do not overflow the field or page', async ({ page }) => {
   await page.goto('/previews/filter-panel.html?context=catalog&case=default');
-  const panel = page.getByRole('dialog', { name: 'Фильтры отчётов', exact: true });
+  const panel = page.getByRole('dialog', { name: 'Фильтры', exact: true });
   await panel.locator('[data-panel-field="domain"]').click();
   const choices = page.locator('[data-panel-popup]').getByRole('checkbox');
   const names: string[] = [];
@@ -148,7 +148,7 @@ for (const context of ['reports', 'sources'] as const) {
   test(`${context}: tag deletion and clear all affect only the selected field and keep its list open`, async ({ page }, testInfo) => {
     await page.goto(`/preview/navigation?section=${context}`);
     await page.getByRole('button', { name: context === 'reports' ? 'Открыть фильтры отчётов' : 'Открыть фильтры источников', exact: true }).click();
-    const panel = page.getByRole('dialog', { name: context === 'reports' ? 'Фильтры отчётов' : 'Фильтры источников', exact: true });
+    const panel = page.getByRole('dialog', { name: 'Фильтры', exact: true });
     const fieldId = context === 'reports' ? 'owner' : 'platform';
     const field = panel.locator(`[data-multi-select="${fieldId}"]`);
     const trigger = field.locator('[data-panel-field]');

@@ -1,0 +1,178 @@
+{
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "scale": 1,
+  "reducedMotion": true,
+  "browser": "157.0.8103.38",
+  "frames": [
+    {
+      "id": "report",
+      "route": "/preview/navigation?section=reports&report=demo-report-summary&reportTab=overview",
+      "file": "report.png",
+      "sha256": "df7780b91844026fba19a6866f260fd8e413258dc82f555098daf32a2f305d97",
+      "header": {
+        "left": 1037,
+        "right": 1415,
+        "border": [
+          "1px",
+          "solid",
+          "rgb(214, 230, 251)"
+        ]
+      },
+      "roles": [
+        {
+          "left": 1037,
+          "right": 1415,
+          "border": [
+            "0px",
+            "none",
+            "rgb(16, 29, 59)"
+          ],
+          "bottom": [
+            "0px",
+            "none",
+            "rgb(16, 29, 59)"
+          ]
+        },
+        {
+          "left": 1037,
+          "right": 1415,
+          "border": [
+            "1px",
+            "solid",
+            "rgb(214, 230, 251)"
+          ],
+          "bottom": [
+            "0px",
+            "none",
+            "rgb(16, 29, 59)"
+          ]
+        },
+        {
+          "left": 1037,
+          "right": 1415,
+          "border": [
+            "1px",
+            "solid",
+            "rgb(214, 230, 251)"
+          ],
+          "bottom": [
+            "0px",
+            "none",
+            "rgb(16, 29, 59)"
+          ]
+        }
+      ],
+      "image": {
+        "width": 380,
+        "height": 417
+      }
+    },
+    {
+      "id": "source",
+      "route": "/preview/navigation?section=sources&source=source-reportcrm-date&sourceTab=fields",
+      "file": "source.png",
+      "sha256": "25d7eef4d6caa6f5404a46d1263f7ebec578ae3e6a9bb547189b56cb4747c705",
+      "header": {
+        "left": 1041,
+        "right": 1419,
+        "border": [
+          "1px",
+          "solid",
+          "rgb(214, 230, 251)"
+        ]
+      },
+      "roles": [
+        {
+          "left": 1041,
+          "right": 1419,
+          "border": [
+            "1px",
+            "solid",
+            "rgb(214, 230, 251)"
+          ],
+          "bottom": [
+            "0px",
+            "none",
+            "rgb(16, 29, 59)"
+          ]
+        },
+        {
+          "left": 1041,
+          "right": 1419,
+          "border": [
+            "1px",
+            "solid",
+            "rgb(214, 230, 251)"
+          ],
+          "bottom": [
+            "0px",
+            "none",
+            "rgb(16, 29, 59)"
+          ]
+        }
+      ],
+      "image": {
+        "width": 380,
+        "height": 341
+      }
+    },
+    {
+      "id": "metric",
+      "route": "/preview/navigation?section=metrics&metric=metric-ebitda",
+      "file": "metric.png",
+      "sha256": "d1ef8a8832afdc84d262e9ab9a42e7bdd515ee606719f10f95cc246e09adb2db",
+      "header": {
+        "left": 1025,
+        "right": 1423,
+        "border": [
+          "1px",
+          "solid",
+          "rgb(215, 230, 245)"
+        ]
+      },
+      "roles": [
+        {
+          "left": 1025,
+          "right": 1423,
+          "border": [
+            "0px",
+            "none",
+            "rgb(16, 29, 59)"
+          ],
+          "bottom": [
+            "0px",
+            "none",
+            "rgb(16, 29, 59)"
+          ]
+        },
+        {
+          "left": 1025,
+          "right": 1423,
+          "border": [
+            "1px",
+            "solid",
+            "rgb(215, 230, 245)"
+          ],
+          "bottom": [
+            "0px",
+            "none",
+            "rgb(16, 29, 59)"
+          ]
+        }
+      ],
+      "image": {
+        "width": 400,
+        "height": 349
+      }
+    }
+  ],
+  "build": {
+    "js": "a92ab3c5839fdec46bc54946e53ecdd3d1ec48730024740c1905806addab3bfe",
+    "css": "f9e7ee97566fcb857393d317c9fc042ff222ca8bb27d226e9a6240a844473546"
+  },
+  "role": "Визуальные фрагменты блока «Сведения» из рендера прототипа",
+  "capturedOn": "2026-11-09"
+}

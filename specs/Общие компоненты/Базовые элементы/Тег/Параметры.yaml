@@ -5,6 +5,11 @@ component:
   contract: "specs/Общие компоненты/Базовые элементы/Тег/Контракт.md"
   status: approved-target
 sources:
+  report-mailing-css:
+    kind: document
+    uri: "references/implementation-current/features/report-detail/mailings/MailingsTab.module.css"
+    status: observed-snapshot
+    snapshot: Метки статуса строки доступной рассылки отчёта
   subscription-source:
     kind: figma
     uri: https://www.figma.com/design/lnOcWh4ElGkhppWe6Kn5AA?node-id=389-13531
@@ -94,6 +99,26 @@ base:
     font-family: {type: token, ref: ui-font, expectedType: font-family}
     font-weight: {type: font-weight, value: 500}
 variants:
+  report-mailing-status24:
+    description: Пассивная метка подписки на рассылку отчёта
+    sourceRefs: [report-mailing-css]
+    parameters:
+      height: {type: dimension, value: 24, unit: px}
+      radius: {type: dimension, value: 6, unit: px}
+      padding-block: {type: dimension, value: 4, unit: px}
+      padding-inline: {type: dimension, value: 8, unit: px}
+      font-size: {type: dimension, value: 12, unit: px}
+      line-height: {type: dimension, value: 16, unit: px}
+      font-weight: {type: font-weight, value: 400}
+      white-space: {type: string, value: nowrap}
+      background: {type: color, format: hex, value: "#F0F1F4"}
+      foreground: {type: color, format: hex, value: "#202028"}
+    states:
+      subscribed:
+        sourceRefs: [report-mailing-css]
+        parameters:
+          background: {type: color, format: hex, value: "#E5F1FF"}
+          foreground: {type: color, format: hex, value: "#007BFC"}
   subscription18:
     description: Показанный статус подписки; другие бизнес-состояния не выводятся из цвета
     sourceRefs: [subscription-source, subscription-css]

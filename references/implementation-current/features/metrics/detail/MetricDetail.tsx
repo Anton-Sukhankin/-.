@@ -3,7 +3,7 @@ import { DescriptionText } from '../../../components/DescriptionText/Description
 import { useContext, useEffect, useId, useLayoutEffect, useRef, useState, type FormEvent } from 'react';
 import { Send } from 'lucide-react';
 import { useLocation } from 'react-router';
-import type { MetricSummary, MetricDetailProfile, MetricDetailSection, MetricPerson } from '../../../data/metrics';
+import type { MetricSummary, MetricDetailIdentity, MetricDetailProfile, MetricDetailSection, MetricPerson } from '../../../data/metrics';
 import { Accordion } from '../../../components/Accordion/Accordion';
 import { EmptyState } from '../../../components/EmptyState/EmptyState';
 import { DetailSecondary } from '../../../components/DetailHeader/DetailSecondary';
@@ -17,7 +17,7 @@ import { QuestionSentNotice } from '../../questions/QuestionSentNotice';
 import s from './MetricDetail.module.css';
 
 export interface MetricDetailProps {
-  metric: MetricSummary;
+  metric: MetricSummary | MetricDetailIdentity;
   profile: MetricDetailProfile;
   onOpenMetric?: (id: string) => void;
   onBack: () => void;
@@ -54,12 +54,12 @@ function DefinitionTooltip({ text }: { text: string }) {
 
 function Passport({ profile }: { profile: MetricDetailProfile }) {
   return <aside className={s.passport} aria-label="Сведения о показателе">
-    <header><strong>Сведения</strong><small>Параметры, проверка и ответственные за показатель</small></header>
+    <header><strong>Сведения</strong><small>{profile.identity ? 'Полные сведения о метрике не предоставлены' : 'Параметры, проверка и ответственные за показатель'}</small></header>
     <div className={s.fields}>
       <div><small>Единица измерения</small><span>{profile.unitLabel}</span></div>
       <div className={s.dates}><div><small>Создана</small><span>{profile.created}</span></div><div><small>Изменена</small><span>{profile.updated}</span></div></div>
     </div>
-    {profile.people.map(person => <div key={person.role} className={person.role === 'Проверил' ? s.checker : s.person}><Person {...person} /></div>)}
+    {profile.people.map(person => <div key={person.role} className={s.person}><Person {...person} /></div>)}
   </aside>;
 }
 
@@ -137,12 +137,12 @@ export function MetricDetail({ metric, profile, onBack, breadcrumbs, onOpenRepor
   return <article className={`${chrome.frame} ${s.detail}`} data-metric-detail-id={metric.id} data-detail-compact={compact}>
     <header className={`${chrome.chrome} ${s.header}`}>
       <DetailSecondary compact={compact}>
-      <div className={chrome.breadcrumbRow}><DetailBreadcrumbs ancestors={breadcrumbs ?? [{label:'Метрики и показатели',onSelect:onBack}]} current="Паспорт показателя" /></div>
+      <div className={chrome.breadcrumbRow}><DetailBreadcrumbs ancestors={breadcrumbs ?? [{label:'Метрики и показатели',onSelect:onBack}]} current={profile.identity ? 'Карточка метрики' : 'Паспорт показателя'} /></div>
       </DetailSecondary>
       <div className={s.heading}><h1 className={s.title}>{metric.title}</h1><DefinitionTooltip key={metric.id} text={metric.description} />
         <div className={s.actions}><RoundIconButton icon="edit" aria-label="Редактировать показатель" aria-disabled="true" title={unavailable}></RoundIconButton><RoundIconButton icon="bookmark" aria-label="Добавить показатель в избранное" aria-disabled="true" title={unavailable}></RoundIconButton></div>
       </div>
-      <div className={s.attributes}><span>{metric.status === 'Проверена' && <img src={asset('verified.svg')} alt="" />}{metric.status === 'Проверена' ? 'Карточка проверена' : metric.status}</span><img className={s.dot} src={asset('dot.svg')} alt="" /><span>{metric.type}</span><img className={s.dot} src={asset('dot.svg')} alt="" /><span>{metric.domain}</span>{profile.displayId && <><img className={s.dot} src={asset('dot.svg')} alt="" /><span>ID {profile.displayId}</span></>}</div>
+      {'status' in metric && <div className={s.attributes}><span>{metric.status === 'Проверена' && <img src={asset('verified.svg')} alt="" />}{metric.status === 'Проверена' ? 'Карточка проверена' : metric.status}</span><img className={s.dot} src={asset('dot.svg')} alt="" /><span>{metric.type}</span><img className={s.dot} src={asset('dot.svg')} alt="" /><span>{metric.domain}</span>{profile.displayId && <><img className={s.dot} src={asset('dot.svg')} alt="" /><span>ID {profile.displayId}</span></>}</div>}
     </header>
     <div ref={scroll} className={`${chrome.scroll} ${s.scroll}`} data-detail-scroll data-metric-detail-scroll data-list-scroll
       onScrollCapture={onScroll} tabIndex={0} role="region" aria-label="Содержимое паспорта показателя">

@@ -11,6 +11,8 @@ export interface AccordionProps {
   inlineMetadata?: ReactNode;
   count?: number | string;
   icon?: ReactNode;
+  /** Interactive control before, and independent from, the disclosure button. */
+  leadingAction?: ReactNode;
   action?: ReactNode;
   wrapAction?: boolean;
   children: ReactNode;
@@ -28,7 +30,7 @@ export interface AccordionProps {
 }
 
 /** The panel can own its state or receive open/onOpenChange from its parent. */
-export function Accordion({ title, description, metadata, inlineMetadata, count, icon, children, open: controlledOpen, defaultOpen = true, onOpenChange, action, wrapAction = false, variant = 'report', chevronSize = 32, chevronIcon, collapsible = true, leadingIcon, bodyInset = 'default' }: AccordionProps) {
+export function Accordion({ title, description, metadata, inlineMetadata, count, icon, children, open: controlledOpen, defaultOpen = true, onOpenChange, leadingAction, action, wrapAction = false, variant = 'report', chevronSize = 32, chevronIcon, collapsible = true, leadingIcon, bodyInset = 'default' }: AccordionProps) {
   const [localOpen, setLocalOpen] = useState(defaultOpen);
   const open = controlledOpen ?? localOpen;
   const id = useId();
@@ -41,6 +43,7 @@ export function Accordion({ title, description, metadata, inlineMetadata, count,
   return <section className={s.accordion} data-variant={variant} data-chevron-size={chevronSize} data-collapsible={collapsible}
     data-wrap-action={wrapAction && action ? true : undefined}>
     <div className={s.top}>
+      {leadingAction && <div className={s.leadingAction}>{leadingAction}</div>}
       {collapsible ? <button type="button" className={s.header} aria-expanded={open} aria-controls={id} onClick={toggle}>
         <span className={s.chevron} aria-hidden="true"><span className={s.chevronIcon} data-open={open}>{chevronIcon ?? <span className={s.dsChevron} />}</span></span>
         {heading}{inlineMetadata}{trailing}

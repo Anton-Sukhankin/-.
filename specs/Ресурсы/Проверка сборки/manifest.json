@@ -1,0 +1,108 @@
+{
+  "date": "2026-11-10",
+  "browser": "157.0.8103.40",
+  "deviceScaleFactor": 1,
+  "reducedMotion": "reduce",
+  "frames": [
+    {
+      "file": "source-metrics.png",
+      "route": "/preview/navigation?section=sources&source=source-reportcrm-date&sourceTab=metrics",
+      "state": "Шесть карточек при счётчике 16, первая под курсором",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "9f6b44c0dcf6019a6ad08735895ad99323acb7ebcfa74952e9f13e52fe2a3fdd"
+    },
+    {
+      "file": "source-metrics-narrow.png",
+      "route": "/preview/navigation?section=sources&source=source-reportcrm-date&sourceTab=metrics",
+      "state": "Сведения под карточками при узкой рабочей области",
+      "viewport": {
+        "width": 1024,
+        "height": 900
+      },
+      "sha256": "8b907c21356657ad9c1aad71c0878aea5688d0c24985724d6617c0a84a8bf4c1"
+    },
+    {
+      "file": "dictionary-term-missing.png",
+      "route": "/preview/navigation?section=dictionary&dictionaryTab=terms&dictionaryTerm=missing",
+      "state": "Неизвестный термин и возврат к списку",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "652d479cbeefa7fbd7894a6af3cf6c83325ab30162ab65feee08e4cec67ee72c"
+    },
+    {
+      "file": "report-slides.png",
+      "route": "/preview/navigation?section=reports&report=demo-report-summary&reportTab=slides",
+      "state": "Первый слайд открыт, Сведения справа",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "9babf55a062f2983d397c65e6d8836449f525c09b40984d76168591067d65501"
+    },
+    {
+      "file": "report-mailings.png",
+      "route": "/preview/navigation?section=reports&report=demo-report-summary&reportTab=mailings",
+      "state": "Рассылки сводного отчёта и Сведения справа",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "3f4140adf1ad2389a5e65bcc8e68f3dc2f623128230957655690d25e1a24a2e0"
+    },
+    {
+      "file": "report-overview.png",
+      "route": "/preview/navigation?section=reports&report=demo-report-summary&reportTab=overview",
+      "state": "Обзор, шапка и Сведения справа",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "450a790a568a99dab6595a95f8002d3a4af200ea6d1a692efb4761eeaed7208e"
+    },
+    {
+      "file": "report-technical-canopy.png",
+      "route": "/preview/navigation?section=reports&report=demo-report-canopy&reportTab=technical",
+      "state": "Расширенные технические данные отчёта Навес свод и детализация",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "5813af5c15332dd5f96249bad580159b2a1c2a57c9d97da27b98266a573c032f"
+    },
+    {
+      "file": "report-manual-delivery.png",
+      "route": "/preview/navigation?section=reports&report=demo-report-summary&reportTab=mailings",
+      "state": "Ручная отправка на всю ширину, без панели Сведения",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "2d9e3be6c1c5e734ab1aa7fb8cf0cc6f73d96e6002661a4fff2b1e796dde56b9"
+    },
+    {
+      "file": "navigator-empty.png",
+      "route": "/preview/navigation?",
+      "state": "Семь разделов до ввода, счётчики скрыты",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "d5a5a1712d4d841a8cb3e78779e6fdbe50d8086bc9aedac3a2939d5efcd2cc48"
+    },
+    {
+      "file": "navigator-selected.png",
+      "route": "/preview/navigation?",
+      "state": "Два выбранных раздела, счётчики 19 и 0",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "20f1ffd46b0a13e4eb420f33686c8c3c6aa9d05bee2058046274b2a04b445c40"
+    }
+  ]
+}

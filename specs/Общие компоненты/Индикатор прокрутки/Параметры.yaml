@@ -1,7 +1,7 @@
 schemaVersion: 1
 component:
   id: list-scroll-indicator
-  title: Индикатор вертикальной прокрутки списка
+  title: Индикатор вертикальной прокрутки
   contract: "specs/Общие компоненты/Индикатор прокрутки/Контракт.md"
   status: approved-target
 sources:

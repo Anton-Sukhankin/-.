@@ -50,7 +50,8 @@
 .action:not(.reset) { font:inherit; font-size:13px; line-height:18px; font-weight:500; }
 .reset { composes:typography from '../../components/ResetFiltersButton/ResetFiltersButton.module.css'; }
 .apply { border-color:#0067dc; background:#0067dc; color:#fff; }
-.apply:hover { border-color:#005cbf; background:#005cbf; }
+.apply:enabled:hover { border-color:#005cbf; background:#005cbf; }
+.action.apply:disabled { border-color:#f0f1f4; background:#f0f1f4; color:#b4b6c5; cursor:default; }
 .toggleChip { composes:chip from '../../components/Search/CatalogSearch.module.css'; display:inline-flex; align-items:center; gap:6px; border-color:#d2d3d7; }
 .panel .toggleChip { font:var(--reference-chip-font); }
 .toggleChip > span { flex-basis:16px; width:16px; height:16px; }

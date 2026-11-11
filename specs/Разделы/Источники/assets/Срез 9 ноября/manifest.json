@@ -1,0 +1,173 @@
+{
+  "role": "Проверенный рендер локального прототипа с демонстрационными данными",
+  "capturedOn": "2026-11-09",
+  "browser": "157.0.8103.38",
+  "locale": "ru-RU",
+  "scale": 1,
+  "reducedMotionForCapture": true,
+  "build": {
+    "js": {
+      "file": "main-BwQwVOVy.js",
+      "sha256": "60e171b194722d1a84c956920e1d15099a3541550c4cede25f0484e6382a82b2"
+    },
+    "css": {
+      "file": "main-6tTF2ACF.css",
+      "sha256": "862773a739b30c1dda91c0338cb43068cc6a9a6657402dff5d81348df987a09e"
+    }
+  },
+  "frames": [
+    {
+      "id": "sources-table",
+      "file": "sources-table.png",
+      "entry": "/preview/navigation?section=sources",
+      "route": "/preview/navigation?section=sources",
+      "state": "Табличный вид; девять записей; первая страница.",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "role": "reference",
+      "sha256": "a5100a0e66faf4673eca65e4e131757d3fb3304c38f75f07e7d2dec61a440325"
+    },
+    {
+      "id": "sources-cards",
+      "file": "sources-cards.png",
+      "entry": "/preview/navigation?section=sources&sourceView=cards",
+      "route": "/preview/navigation?section=sources&sourceView=cards",
+      "state": "Карточный вид того же набора.",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "role": "reference",
+      "sha256": "f009eea160579adec54f813501c1f2e4351a83a70a4c54645c45efcb26cfa41d"
+    },
+    {
+      "id": "sources-tree-filtered",
+      "file": "sources-tree-filtered.png",
+      "entry": "/preview/navigation?section=sources&sourceView=tree&source.domain=%D0%93%D0%BE%D1%81%D1%82%D0%B5%D0%BF%D1%80%D0%B8%D0%B8%D0%BC%D1%81%D1%82%D0%B2%D0%BE",
+      "route": "/preview/navigation?section=sources&sourceView=tree&source.domain=%D0%93%D0%BE%D1%81%D1%82%D0%B5%D0%BF%D1%80%D0%B8%D0%B8%D0%BC%D1%81%D1%82%D0%B2%D0%BE",
+      "state": "Домен «Гостеприимство», две записи и только соответствующие ветви.",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "role": "reference",
+      "sha256": "a7e8a9372e70d8bff74274324cd3ccb1631fdca0f480c0788c53086fd1ce8c9d"
+    },
+    {
+      "id": "sources-filter-panel",
+      "file": "sources-filter-panel.png",
+      "entry": "/preview/navigation?section=sources&sourceView=tree",
+      "route": "/preview/navigation?section=sources&sourceView=tree",
+      "state": "Панель фильтров, открытая из режима «Дерево».",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "role": "reference",
+      "sha256": "0e557ec8aee7974d600f2c429ebfee7a44fbccc316993f67535e48bfbcaecdc6"
+    },
+    {
+      "id": "source-fields",
+      "file": "source-fields.png",
+      "entry": "/preview/navigation?section=sources&source=source-reportcrm-date&sourceTab=fields",
+      "route": "/preview/navigation?section=sources&source=source-reportcrm-date&sourceTab=fields",
+      "state": "Паспорт dimdate, раскрыто поле Date.",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "role": "reference",
+      "sha256": "11f13b33f6223b842e04ccbbc01c2d3c2db13f6976b13d8da31deb6cf7662658"
+    },
+    {
+      "id": "source-narrow",
+      "file": "source-narrow.png",
+      "entry": "/preview/navigation?section=sources&source=source-reportcrm-date&sourceTab=fields",
+      "route": "/preview/navigation?section=sources&source=source-reportcrm-date&sourceTab=fields",
+      "state": "Паспорт dimdate при 1024×768, начальное состояние.",
+      "viewport": {
+        "width": 1024,
+        "height": 768
+      },
+      "role": "reference",
+      "sha256": "524d13205faaff6b9cdc04268a380249fc8e0ee9ce6e7346200662fc989c444c"
+    },
+    {
+      "id": "source-reports",
+      "file": "source-reports.png",
+      "entry": "/preview/navigation?section=sources&source=source-reportcrm-date&sourceTab=reports",
+      "route": "/preview/navigation?section=sources&source=source-reportcrm-date&sourceTab=reports",
+      "state": "Связанные отчёты dimdate; пять доступных демоссылок, отдельный счётчик 84.",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "role": "reference",
+      "sha256": "c742a06b4cf89dedcb01b69f147f090715a768d3def937dabc5df17ae9c02830"
+    },
+    {
+      "id": "source-lineage",
+      "file": "source-lineage.png",
+      "entry": "/preview/navigation?section=sources&source=source-reportcrm-date&sourceTab=lineage",
+      "route": "/preview/navigation?section=sources&source=source-reportcrm-date&sourceTab=lineage",
+      "state": "Lineage источника dimdate; пять узлов отчётов.",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "role": "reference",
+      "sha256": "8eba20c30088c42051a79c6661afc9c32012848d6e0ca9636ed751bb0775298f"
+    },
+    {
+      "id": "source-similar",
+      "file": "source-similar.png",
+      "entry": "/preview/navigation?section=sources&source=source-reportcrm-date&sourceTab=similar",
+      "route": "/preview/navigation?section=sources&source=source-reportcrm-date&sourceTab=similar",
+      "state": "Похожие источники dimdate; восемь видимых примеров в данных и счётчик вкладки 10.",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "role": "reference",
+      "sha256": "47dfa725756b82405469bb9a4662664ff8db9133f14a63c578e150cf74306583"
+    },
+    {
+      "id": "sources-tree",
+      "file": "sources-tree.png",
+      "entry": "/preview/navigation?section=sources&sourceView=tree",
+      "route": "/preview/navigation?section=sources&sourceView=tree",
+      "state": "Вид дерева; исходный набор, ветви раскрыты.",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "role": "reference",
+      "sha256": "c9cb3f3db18a31d0af79e67d1ef1269a55d562701cae865d9f3d204cb4e37ddf"
+    },
+    {
+      "id": "sources-tree-sales-return",
+      "file": "sources-tree-sales-return.png",
+      "entry": "/preview/navigation?section=sources&sourceView=tree&source.domain=%D0%9F%D1%80%D0%BE%D0%B4%D0%B0%D0%B6%D0%B8+%D0%B8+%D0%BC%D0%B0%D1%80%D0%BA%D0%B5%D1%82%D0%B8%D0%BD%D0%B3",
+      "route": "/preview/navigation?section=sources&sourceView=tree&source.domain=%D0%9F%D1%80%D0%BE%D0%B4%D0%B0%D0%B6%D0%B8+%D0%B8+%D0%BC%D0%B0%D1%80%D0%BA%D0%B5%D1%82%D0%B8%D0%BD%D0%B3&sourceTreeGroup=%5B%22SQL+Server%22%2C%22Reportcrm20%22%2C%22dbo%22%5D&sourceTreeClosed=%5B%22SQL+Server%22%2C%22Dwh2Crm%22%5D",
+      "state": "Дерево с фильтром «Продажи и маркетинг» после сквозного возврата через отчёт и паспорт dimdate. Сохранились режим, фильтр и закрытая ветвь Dwh2Crm.",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "role": "reference",
+      "sha256": "90368194833f67e915d31101533f2946a9acc543939190f84234a2cbdc6d458d"
+    }
+  ],
+  "data_files": [
+    {
+      "path": "sources-example.json",
+      "sha256": "544a17a62a8e87e412aae0e5b3db3007d7bec15f6faf8d4062963eabaecca0e2"
+    },
+    {
+      "path": "source-tree-view-icon.svg",
+      "sha256": "0f857c68312d1c3e8477534974b37e6c4375752a5cf751b3ed6b27cd0c554bc5"
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "date": "2026-11-09",
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "browser": "157.0.8103.38",
+  "frames": [
+    {
+      "file": "overview.png",
+      "route": "/preview/navigation?section=reports&report=demo-report-summary&reportTab=overview",
+      "sha256": "8aef5f2c2af3a4ddd58ff9ab52d2bcc91896688f2ae1012b5ab6ed73cb40e31c"
+    },
+    {
+      "file": "slides.png",
+      "route": "/preview/navigation?section=reports&report=demo-report-summary&reportTab=slides",
+      "sha256": "af41e3d1b3cd5d97bc387862df7973b5a711d182e791c1f0c6be838b26ce7c27"
+    },
+    {
+      "file": "metrics.png",
+      "route": "/preview/navigation?section=reports&report=demo-report-summary&reportTab=metrics",
+      "sha256": "373d4345a4ad4c4cd233417933bb782f7d26c9fa1b7f64b577fdd96c0f4c7326"
+    },
+    {
+      "file": "sources.png",
+      "route": "/preview/navigation?section=reports&report=demo-report-summary&reportTab=sources",
+      "sha256": "0fd9e1959be2a8d290d4d9ef529a3ddd443383308ef715748ee90c8266503ba2"
+    },
+    {
+      "file": "usage.png",
+      "route": "/preview/navigation?section=reports&report=demo-report-summary&reportTab=usage",
+      "sha256": "a0afc197833479ecc58cdc0e9fa7e292ebe6495be82bab671163661d46951771"
+    },
+    {
+      "file": "mailings.png",
+      "route": "/preview/navigation?section=reports&report=demo-report-summary&reportTab=mailings",
+      "sha256": "867ccbd5cdaccc3b7ed027c741e988789590ea8fe31cff1bce8052fb42774b4a"
+    },
+    {
+      "file": "technical.png",
+      "route": "/preview/navigation?section=reports&report=demo-report-summary&reportTab=technical",
+      "sha256": "e233065efbc503b64b3229d9d26f295bf545aa90e60e3e79824c94d9c1e1170c"
+    }
+  ]
+}

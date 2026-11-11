@@ -120,7 +120,7 @@ export function ReportTable({ rows, total, pageIndex, pageSize, onPageChange, on
       <div className={`${styles.headerButton} ${first ? styles.firstHeading : ''}`} data-open={active} data-sort={direction}>
         <button type="button" className={styles.openHeading} aria-label={`Фильтр «${label}»`}
           aria-haspopup="dialog" aria-expanded={active} onClick={(event) => onColumnIntent(label, event.currentTarget)}><span className={styles.headingText}>{label}</span></button>
-        {applied ? <ColumnReset label={`Сбросить фильтр «${label}»`} onReset={() => onClearColumn?.(label)}>
+        {applied && !active ? <ColumnReset label={`Сбросить фильтр «${label}»`} onReset={() => onClearColumn?.(label)}>
           <img src={asset('filter-active.svg')} width="16" height="16" alt="" />
         </ColumnReset>
           : <img src={asset(active ? 'filter-active.svg' : 'filter.svg')} width="16" height="16" alt="" aria-hidden="true" />}
@@ -157,6 +157,7 @@ export function ReportTable({ rows, total, pageIndex, pageSize, onPageChange, on
                       <button type="button" className={styles.groupHeading} aria-expanded={!collapsed} aria-controls={contentId} onClick={() => toggleDomain(domain)}>
                         <img src="/icons/reports/domain-group.svg" width="16" height="16" alt="" aria-hidden="true" />
                         <span>{domain}</span><span className={styles.count}>{items.length}</span>
+                        <span className={motion.groupChevron} data-group-chevron aria-hidden="true" />
                       </button>
                     </div></div>
                     <div id={contentId} className={`${motion.reveal} ${styles.groupReveal}`} data-open={!collapsed}

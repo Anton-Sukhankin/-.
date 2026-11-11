@@ -17,7 +17,7 @@ test('DataHub sources stay in a vertical list and disclose the bordered attribut
   // The dl keeps the label/value relationship without inventing a table schema.
   const attributes = rows.first().locator('dl');
   await expect(attributes.locator('dt')).toHaveText(['Платформа', 'База данных', 'Схема', 'Окружение', 'Статус', 'Поля', 'URN']);
-  await expect(attributes.locator('dd')).toHaveText(['Демо SQL', 'demo_catalog', 'demo', 'DEV', 'Активен', '24', 'urn:li:dataset:(urn:li:dataPlatform:mssql,demo_catalog.demo.requests,DEV)']);
+  await expect(attributes.locator('dd')).toHaveText(['SQL Server', 'demo_catalog', 'demo', 'DEV', 'Активен', '24', 'urn:li:dataset:(urn:li:dataPlatform:mssql,demo_catalog.demo.requests,DEV)']);
   await expect(second).toHaveAttribute('aria-expanded', 'false');
   for (const [width, height] of [[1280, 900], [1440, 900], [1920, 1080], [1024, 768], [1440, 700]]) {
     await page.setViewportSize({ width, height });

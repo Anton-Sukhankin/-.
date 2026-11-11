@@ -1,0 +1,38 @@
+schemaVersion: 1
+component:
+  id: detail-heading
+  title: Заголовок детальной карточки
+  contract: "specs/Общие компоненты/Базовые элементы/Заголовок детальной карточки/Контракт.md"
+  status: observed-source
+sources:
+  shared-css:
+    kind: document
+    uri: "references/implementation-current/components/DetailHeader/DetailHeader.module.css"
+    status: observed-snapshot
+    snapshot: Общая типографика заголовка и строки метаданных
+  base-css:
+    kind: document
+    uri: "references/implementation-current/styles/base.css"
+    status: observed-snapshot
+    snapshot: Базовый интервал вокруг точки в метаданных
+base:
+  sourceRefs: [shared-css, base-css]
+  parameters:
+    title-font-family: {type: string, value: CoFo Sans}
+    title-min-height: {type: dimension, value: 32, unit: px}
+    title-font-size: {type: dimension, value: 20, unit: px}
+    title-line-height: {type: dimension, value: 28, unit: px}
+    title-font-weight: {type: number, value: 500}
+    title-ink: {type: color, format: hex, value: '#101D3B'}
+    description-font-size: {type: dimension, value: 12, unit: px}
+    description-line-height: {type: dimension, value: 20, unit: px}
+    description-font-weight: {type: number, value: 400}
+    description-ink: {type: color, format: hex, value: '#52698C'}
+    separator-gap: {type: dimension, value: 5, unit: px}
+
+variants:
+  standard:
+    description: Заголовок и строка описания в шапке паспорта
+    sourceRefs: [shared-css, base-css]
+    parameters:
+      separator-gap: {type: dimension, value: 5, unit: px}

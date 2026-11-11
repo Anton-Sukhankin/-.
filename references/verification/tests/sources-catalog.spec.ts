@@ -40,7 +40,7 @@ test('source modal drafts apply once and synchronize table headers, count, view 
   await page.getByRole('heading', { name: 'Источники', exact: true }).hover();
   await expect(icon).toHaveCSS('background-color', 'rgb(238, 242, 246)');
   await page.getByRole('button',{name:'Открыть фильтры источников',exact:true}).click();
-  const panel = page.getByRole('dialog',{name:'Фильтры источников',exact:true});
+  const panel = page.getByRole('dialog',{name:'Фильтры',exact:true});
   await panel.getByRole('button',{name:'Домен Все',exact:true}).click();
   await panel.getByRole('checkbox',{name:'Гостеприимство',exact:true}).check();
   expect(new URL(page.url()).searchParams.has('source.domain')).toBe(false);
@@ -83,7 +83,7 @@ test('header conditions synchronize back to the modal and clearing one group pre
   await menu.getByRole('button',{name:'Применить',exact:true}).click();
   await expect(page.locator('[data-source-id]')).toHaveCount(8);
   await page.getByRole('button',{name:'Открыть фильтры источников',exact:true}).click();
-  const panel = page.getByRole('dialog',{name:'Фильтры источников',exact:true});
+  const panel = page.getByRole('dialog',{name:'Фильтры',exact:true});
   await expect(panel.getByRole('button',{name:'Платформа SQL Server',exact:true})).toBeVisible();
   await expect(panel.getByRole('button',{name:'Слой данных Без слоя',exact:true})).toBeVisible();
   await expect(panel.getByRole('button',{name:'Описание С описанием',exact:true})).toBeVisible();
@@ -113,7 +113,7 @@ test('modal cancel, backdrop and nested Escape preserve applied conditions and f
   await page.goto(entry);
   const open = page.getByRole('button',{name:'Открыть фильтры источников',exact:true});
   await open.click();
-  const panel = page.getByRole('dialog',{name:'Фильтры источников',exact:true});
+  const panel = page.getByRole('dialog',{name:'Фильтры',exact:true});
   await panel.getByRole('button',{name:'ПДн Все',exact:true}).click();
   await panel.getByRole('radio',{name:'Без ПДн',exact:true}).check();
   await page.keyboard.press('Escape');
@@ -160,7 +160,7 @@ test('source table keeps reference text insets, centered headers and aligned col
   expect((await headingText.boundingBox())!.x-cellBox.x).toBe(20);
   const descriptionCell=(await firstRow.locator('td').nth(1).boundingBox())!;
   expect((await description.boundingBox())!.x-descriptionCell.x).toBe(12);
-  const headerCenterOffsets=await table.locator('th').evaluateAll(cells=>cells.map(cell=>{
+  const headerCenterOffsets=await table.locator('th[data-source-heading]').evaluateAll(cells=>cells.map(cell=>{
     const content=cell.querySelector('button > span') ?? cell.firstElementChild!;
     const rect=content.getBoundingClientRect();
     return rect.y+rect.height/2-cell.getBoundingClientRect().y;
@@ -207,7 +207,7 @@ test('standalone source controls retain Home typography and single-page results 
   const headingBox = (await title.boundingBox())!;
   expect(headingBox.height).toBe(28);
   expect((await page.locator('[data-source-toolbar]').boundingBox())!.y - headingBox.y - headingBox.height).toBe(16);
-  await expect(page.locator('[data-control-group="view"]')).toHaveCSS('width','102px');
+  await expect(page.locator('[data-control-group="view"]')).toHaveCSS('width','152px');
   await expect(page.locator('[data-source-pagination]')).toHaveCount(0);
   await page.getByRole('button',{name:'Карточный вид',exact:true}).click();
   await expect(page.locator('article[data-source-id]')).toHaveCount(9);

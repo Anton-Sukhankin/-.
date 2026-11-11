@@ -1,0 +1,255 @@
+{
+  "date": "2026-11-11",
+  "buildSha256": "7f73efdedaad405be8a84be5838e28482c321e8b687e7c1c1a5baca7fcc7bfc8",
+  "browser": "157.0.8103.40",
+  "deviceScaleFactor": 1,
+  "reducedMotion": "reduce",
+  "frames": [
+    {
+      "file": "sidebar-collapsed-hover.png",
+      "route": "/preview/navigation?section=ai",
+      "state": "Свёрнутая панель, выбран AI Hub, наведение на «Отчёты»",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "clip": {
+        "x": 0,
+        "y": 48,
+        "width": 95,
+        "height": 372
+      },
+      "sha256": "02fbde9f6d63adaafac0ef15f9872a53a9bdc57845f2cbfc4db33758408e9efa"
+    },
+    {
+      "file": "sidebar-boundary-focus.png",
+      "route": "/preview/navigation?section=ai",
+      "state": "Клавиатурный фокус переключателя раскрытой боковой панели",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "clip": {
+        "x": 242,
+        "y": 48,
+        "width": 148,
+        "height": 125
+      },
+      "sha256": "8e590059c988a0122f13b7d6db5c8638cc4f3058278c5e5b4b4e7a812f586b52"
+    },
+    {
+      "file": "range-panel-mau.png",
+      "route": "/preview/navigation?section=reports",
+      "state": "Выбран пресет «От 100», поле и шкала MAU в панели",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "clip": {
+        "x": 948,
+        "y": 504,
+        "width": 456,
+        "height": 128
+      },
+      "sha256": "6c56a9e6d073e8eefaa710ea4701e23927f9ca49c9356cf552ef805dadd3f3d1"
+    },
+    {
+      "file": "range-menu-mau.png",
+      "route": "/preview/navigation?section=reports",
+      "state": "Порог «От 100» в меню MAU, один ряд действий под полем",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "clip": {
+        "x": 662,
+        "y": 166,
+        "width": 340,
+        "height": 296
+      },
+      "sha256": "75da7d5b070674208e9ca70d7f90270cba6d8333c4a086dcb3e2bb04e93cd034"
+    },
+    {
+      "file": "option-list-states.png",
+      "route": "/preview/navigation?section=reports",
+      "state": "Меню «Домен», отмеченный «Гостеприимство» и hover «Клиентский сервис»",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "clip": {
+        "x": 934,
+        "y": 166,
+        "width": 340,
+        "height": 320
+      },
+      "sha256": "939eb79f6fafc5786b1304ad534c72930d859bde6187aed9c23545136eef39ba"
+    },
+    {
+      "file": "mailings-profile-checkbox.png",
+      "route": "/preview/navigation?section=reports&report=demo-report-summary&reportTab=mailings",
+      "state": "Профиль РГП, выбран и сфокусирован первый флаг «Последнее значение»",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "clip": {
+        "x": 288,
+        "y": 450,
+        "width": 748,
+        "height": 434
+      },
+      "sha256": "70e42dfbda7e2c55469c23b56906e39fb0f03b3c987451da6f729c4d06e58db5"
+    },
+    {
+      "file": "source-mcp-notice.png",
+      "route": "/preview/navigation?section=sources&source=source-demo-rewedo-versions",
+      "state": "Попытка открыть MCP-инструменты, поля остаются активны",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "3c9da1b56c9aa99dc6611f25616ebb090cd720a3605289145ab5708f78bbddfe"
+    },
+    {
+      "file": "accordion-metric.png",
+      "route": "/preview/navigation?section=metrics&metric=metric-ebitda",
+      "state": "Аккордеон «Методика расчёта», раскрытие и наведение на заголовок",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "clip": {
+        "x": 288,
+        "y": 332,
+        "width": 736,
+        "height": 323
+      },
+      "sha256": "f68676fa4f93886326103d586284a00eb8c73b7ecd27d2ff18663dd274c4152e"
+    },
+    {
+      "file": "ai-detail-1440.png",
+      "route": "/preview/navigation?section=ai",
+      "state": "fAIлик после входа из каталога, окно 1440 × 900",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "8110e1127e47c5cc35ae980e10b00356fbaf3b4326c930341fd3e318fccb7707"
+    },
+    {
+      "file": "ai-detail-1920.png",
+      "route": "/preview/navigation?section=ai",
+      "state": "fAIлик после входа из каталога, окно 1920 × 900",
+      "viewport": {
+        "width": 1920,
+        "height": 900
+      },
+      "sha256": "e9ab07c07b9b2995642c010b96068eee4de9b4865b0aef72fe21ab9763ef93e5"
+    },
+    {
+      "file": "ai-detail-900.png",
+      "route": "/preview/navigation?section=ai",
+      "state": "fAIлик после входа из каталога, окно 900 × 900",
+      "viewport": {
+        "width": 900,
+        "height": 900
+      },
+      "sha256": "a97678d27f98a423820fd4d024acead82351ac509839af3a495f2d4cf3ad40a6"
+    },
+    {
+      "file": "ai-detail-600.png",
+      "route": "/preview/navigation?section=ai",
+      "state": "fAIлик после входа из каталога, окно 600 × 900",
+      "viewport": {
+        "width": 600,
+        "height": 900
+      },
+      "clip": {
+        "x": 288,
+        "y": 56,
+        "width": 304,
+        "height": 832
+      },
+      "sha256": "fcae2c992265cdfc00dbb3340c2483a18d0a562632303b1225a36de1062f0c8c"
+    },
+    {
+      "file": "ai-passport-stacked.png",
+      "route": "/preview/navigation?section=ai&ai.solution=failik",
+      "state": "Узкая карточка, тело прокручено до начала паспорта",
+      "viewport": {
+        "width": 900,
+        "height": 900
+      },
+      "clip": {
+        "x": 288,
+        "y": 296,
+        "width": 596,
+        "height": 412
+      },
+      "sha256": "38cfb730d31cd7b2de16b1f2e9c2ef1a1fa82b350244cd2f0dcfca583991cb64"
+    },
+    {
+      "file": "ai-panel-collapsed.png",
+      "route": "/preview/navigation?section=ai&ai.solution=failik&ai.query=%D1%84%D0%B0%D0%B9%D0%BB%D0%BE%D0%B2%D1%8B%D0%B9&ai.type=%D0%98%D0%98-%D1%83%D1%82%D0%B8%D0%BB%D0%B8%D1%82%D0%B0&ai.ui=1",
+      "state": "Свёрнутая панель, запрос и два применённых условия",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "clip": {
+        "x": 288,
+        "y": 127,
+        "width": 1136,
+        "height": 84
+      },
+      "sha256": "a0b4b51ef2e0f5e381c4802516076bb6d880457d696437f9cc68e55099568dc8"
+    },
+    {
+      "file": "ai-filters.png",
+      "route": "/preview/navigation?section=ai",
+      "state": "Открыто окно фильтров с отдельными селектами «Тип», «Домен», «Статус», «Платформа»",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "0e7f7993656155df43f1b2c31fcca0d84703b4545b5e53acb391300610a78568"
+    },
+    {
+      "file": "ai-card-hover.png",
+      "route": "/preview/navigation?section=ai",
+      "state": "Наведение на свободную часть футера карточки fAIлик",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "clip": {
+        "x": 304,
+        "y": 274,
+        "width": 552,
+        "height": 232
+      },
+      "sha256": "ca0e46f6e8ce14ed9be65ff85bfa47801cff7977c4c00f2c948ccd0336a212d6"
+    },
+    {
+      "file": "report-column-platform.png",
+      "route": "/preview/navigation?section=reports",
+      "state": "Меню «Платформа» с фокусом поля, привязкой к колонке и футером",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "1b160cfb08059b25f70356eada3b971d970040fe4fd58bcdbc77dcad2f97e67e"
+    },
+    {
+      "file": "source-column-open.png",
+      "route": "/preview/navigation?section=sources",
+      "state": "Меню «Источник», группы «Платформа» и «Слой данных» над общим футером",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "aa91d177dc6b18d0453fc22bc4a9366e7e366343b3588e12d25ece1f42fce4db"
+    }
+  ]
+}

@@ -12,6 +12,13 @@ interface ReportPassportExample {
   monthlyUsers: readonly [number, number, number, number, number, number];
 }
 
+export const summaryReportSlides: readonly ReportSlide[] = [
+    { title: 'План-Факт. Проекты накопительно', description: 'План и факт по проектам с начала периода.', example: [['Накопленный план', '120 сделок'], ['Накопленный факт', '112 сделок']] },
+    { title: 'План-Факт. Без наценки', description: 'Сравнение продаж без учёта наценки.', example: [['План без наценки', '18 млн ₽'], ['Факт без наценки', '17,2 млн ₽']] },
+    { title: 'План-Факт. Без сертификатов', description: 'План и факт продаж без учёта сертификатов.', example: [['План', '105 сделок'], ['Факт', '99 сделок']] },
+    { title: 'План-Факт. Проекты/Очереди/Этапы накопительно', description: 'Фактические продажи по очередям и этапам с начала периода.', example: [['Первая очередь', '64 сделки'], ['Вторая очередь', '48 сделок']] },
+];
+
 // Authored examples keyed by report identity. Relationships and usage are local demo data.
 export const reportPassportExamples: ReadonlyMap<string, ReportPassportExample> = new Map<string, ReportPassportExample>([
   ['demo-report-motivation', {

@@ -1,19 +1,28 @@
 import { expect, test } from '@playwright/test';
 
-for (const section of ['reports', 'home']) {
-  test(`${section}: domain groups toggle independently and draw a full-width divider`, async ({ page }) => {
+for (const { section, view } of [
+  { section: 'reports', view: 'table' }, { section: 'home', view: 'table' },
+  { section: 'reports', view: 'cards' }, { section: 'home', view: 'cards' },
+]) {
+  test(`${section} ${view}: domain groups toggle independently and draw a full-width divider`, async ({ page }) => {
     await page.setViewportSize({ width: 1440, height: 900 });
     await page.goto(`/preview/navigation?section=${section}`);
-    const table = page.getByRole('table', { name: 'Список отчётов' });
-    const groups = table.locator('[data-collapsed]');
+    if (view === 'cards') await page.getByRole('button', { name: 'Карточный вид', exact: true }).click();
+    const surface = view === 'table' ? page.getByRole('table', { name: 'Список отчётов' })
+      : page.getByRole('region', { name: 'Примеры карточек отчётов' });
+    const row = view === 'table' ? '[data-table-report-id]' : '[data-card-report-id]';
+    const groups = surface.locator('[data-collapsed]');
     const group = groups.first();
     const toggle = group.getByRole('button', { expanded: true }).first();
     const id = await toggle.getAttribute('aria-controls');
     const content = group.locator(`[id="${id}"]`);
-    const badge = toggle.locator('span').last();
+    const badge = toggle.locator('span:not([data-group-chevron])').last();
+    const chevron = group.locator('[data-group-chevron]');
     const neighbor = groups.nth(1);
     const initialCount = await badge.innerText();
-    await expect(content.locator('[data-table-report-id]').first()).toBeVisible();
+    await expect(content.locator(row).first()).toBeVisible();
+    await expect(chevron).toHaveCSS('width', '12px');
+    await expect(chevron).toHaveCSS('transform', 'matrix(-1, 0, 0, -1, 0, 0)');
     await expect(badge).toHaveCSS('background-color', 'rgb(226, 228, 234)');
     await toggle.click();
 
@@ -21,18 +30,21 @@ for (const section of ['reports', 'home']) {
     await expect(collapsedToggle).toBeFocused();
     await expect(content).toHaveAttribute('inert', '');
     await expect(content).toBeHidden();
-    await expect(collapsedToggle.locator('span').last()).toHaveText(initialCount);
-    await expect(collapsedToggle.locator('span').last()).toHaveCSS('background-color', 'rgb(0, 123, 252)');
+    await expect(collapsedToggle.locator('span:not([data-group-chevron])').last()).toHaveText(initialCount);
+    await expect(collapsedToggle.locator('span:not([data-group-chevron])').last()).toHaveCSS('background-color', 'rgb(0, 123, 252)');
+    await expect(chevron).toHaveCSS('transform', 'none');
     await expect(group).toHaveCSS('border-bottom', '1px solid rgb(226, 228, 234)');
-    await expect(neighbor.locator('[data-table-report-id]').first()).toBeVisible();
+    await expect(neighbor.locator(row).first()).toBeVisible();
     const divider = (await group.boundingBox())!;
-    const scroll = (await table.getByLabel('Прокрутка таблицы отчётов').boundingBox())!;
+    const scrollArea = view === 'table' ? surface.getByLabel('Прокрутка таблицы отчётов') : surface.locator('[data-report-card-scroll]');
+    const scroll = (await scrollArea.boundingBox())!;
     expect(divider.x).toBe(scroll.x);
     expect(divider.width).toBe(scroll.width);
 
     await collapsedToggle.press('Enter');
     await expect(toggle).toBeFocused();
-    await expect(content.locator('[data-table-report-id]').first()).toBeVisible();
+    await expect(content.locator(row).first()).toBeVisible();
+    await expect(chevron).toHaveCSS('transform', 'matrix(-1, 0, 0, -1, 0, 0)');
     await expect(badge).toHaveCSS('background-color', 'rgb(226, 228, 234)');
     await expect(group).toHaveCSS('border-bottom-width', '0px');
   });

@@ -1,0 +1,128 @@
+{
+  "role": "Локальные демонстрационные данные для состояний отчёта. Пропущенные поля остаются неизвестными.",
+  "reportId": "demo-report-summary",
+  "sources": [
+    {
+      "id": "requests",
+      "name": "demo.requests",
+      "category": "datahub",
+      "platform": "SQL Server",
+      "database": "demo_catalog",
+      "schema": "demo",
+      "environment": "DEV",
+      "status": "Активен",
+      "fieldCount": 24,
+      "urn": "urn:li:dataset:(urn:li:dataPlatform:mssql,demo_catalog.demo.requests,DEV)"
+    },
+    {
+      "id": "events",
+      "name": "demo.events",
+      "category": "datahub",
+      "platform": "PostgreSQL",
+      "database": "demo_catalog",
+      "schema": "demo",
+      "environment": "TEST",
+      "status": "Активен",
+      "fieldCount": 18,
+      "urn": "urn:li:dataset:(urn:li:dataPlatform:postgres,demo_catalog.demo.events,TEST)"
+    },
+    {
+      "id": "teams",
+      "name": "demo.teams",
+      "category": "datahub",
+      "platform": "SQL Server",
+      "database": "demo_reference",
+      "schema": "demo",
+      "environment": "DEV",
+      "status": "Активен",
+      "fieldCount": 9,
+      "urn": "urn:li:dataset:(urn:li:dataPlatform:mssql,demo_reference.demo.teams,DEV)"
+    },
+    {
+      "id": "services",
+      "name": "demo.services",
+      "category": "catalog",
+      "platform": "SQL Server",
+      "database": "demo_reference",
+      "schema": "demo",
+      "environment": "DEV",
+      "status": "Активен",
+      "fieldCount": 12,
+      "urn": "urn:demo:catalog:demo_reference.demo.services"
+    },
+    {
+      "id": "locations",
+      "name": "demo.locations",
+      "category": "catalog",
+      "platform": "PostgreSQL",
+      "database": "demo_geo",
+      "schema": "demo",
+      "environment": "TEST",
+      "status": "Активен",
+      "fieldCount": 15,
+      "urn": "urn:demo:catalog:demo_geo.demo.locations"
+    }
+  ],
+  "lineage": {
+    "nodes": [
+      {
+        "sourceId": "requests",
+        "x": -227,
+        "y": 272
+      },
+      {
+        "sourceId": "events",
+        "x": 29,
+        "y": 272
+      },
+      {
+        "sourceId": "teams",
+        "x": 285,
+        "y": 272
+      },
+      {
+        "sourceId": "services",
+        "x": 541,
+        "y": 272
+      },
+      {
+        "sourceId": "locations",
+        "x": 797,
+        "y": 272
+      }
+    ],
+    "edges": [
+      {
+        "sourceId": "requests"
+      },
+      {
+        "sourceId": "events"
+      },
+      {
+        "sourceId": "teams"
+      },
+      {
+        "sourceId": "services"
+      },
+      {
+        "sourceId": "locations"
+      }
+    ]
+  },
+  "relatedExample": {
+    "reportId": "agent-rewards",
+    "sources": [
+      {
+        "id": "source-reportcrm-date",
+        "name": "reportcrm20.dbo.dimdate",
+        "category": "catalog",
+        "platform": "SQL Server",
+        "database": "Reportcrm20",
+        "fieldCount": 34
+      }
+    ],
+    "overview": {
+      "description": "Проверка и расчёт выплат агентам за отчётный период. Отдельно показаны активные и неактивные вознаграждения по данным CRM."
+    }
+  }
+}

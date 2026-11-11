@@ -1,0 +1,104 @@
+{
+  "role": "Проверенный рендер локального прототипа с демонстрационными данными",
+  "capturedOn": "2026-11-09",
+  "browser": "157.0.8103.38",
+  "locale": "ru-RU",
+  "scale": 1,
+  "reducedMotionForCapture": true,
+  "build": {
+    "js": {
+      "file": "main-BwQwVOVy.js",
+      "sha256": "60e171b194722d1a84c956920e1d15099a3541550c4cede25f0484e6382a82b2"
+    },
+    "css": {
+      "file": "main-6tTF2ACF.css",
+      "sha256": "862773a739b30c1dda91c0338cb43068cc6a9a6657402dff5d81348df987a09e"
+    }
+  },
+  "frames": [
+    {
+      "id": "report-sources",
+      "file": "report-sources.png",
+      "entry": "/preview/navigation?section=reports&report=demo-report-summary&reportTab=sources",
+      "route": "/preview/navigation?section=reports&report=demo-report-summary&reportTab=sources",
+      "state": "Демонстрационный сводный отчёт, начальный вид вкладки «Источники данных».",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "role": "reference",
+      "sha256": "d57fa4d474da4bef9664e2940c58186bd3c409a3a02c8d6f246ad87966ac47ef"
+    },
+    {
+      "id": "report-lineage",
+      "file": "report-lineage.png",
+      "entry": "/preview/navigation?section=reports&report=demo-report-summary&reportTab=sources",
+      "route": "/preview/navigation?section=reports&report=demo-report-summary&reportTab=sources",
+      "state": "Холст отчёта прокручен в видимую область.",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "role": "reference",
+      "sha256": "1ebfcefa43ccd40d36a92879d072900659d7f9edf343c269dd23a52fd148ca4a"
+    },
+    {
+      "id": "report-source-matrix",
+      "file": "report-source-matrix.png",
+      "entry": "/preview/navigation?section=reports&report=demo-report-summary&reportTab=sources",
+      "route": "/preview/navigation?section=reports&report=demo-report-summary&reportTab=sources",
+      "state": "Прокрутка к матрице первого раскрытого источника.",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "role": "reference",
+      "sha256": "265831e9fdb8a430d3c832e8adada9081144c817cdd352b19bc54796ae4bea1c"
+    },
+    {
+      "id": "report-overview",
+      "file": "report-overview.png",
+      "entry": "/preview/navigation?section=sources&source=source-reportcrm-date&sourceTab=reports",
+      "route": "/preview/navigation?section=sources&report=agent-rewards&reportTab=overview&detailVia=section%3Dsources%26source%3Dsource-reportcrm-date%26sourceTab%3Dreports",
+      "state": "Из паспорта источника открыт связанный отчёт agent-rewards, затем «Обзор».",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "role": "reference",
+      "sha256": "ad5d182d152fd81897343996eef8a631c02681059511460c6f89f1fc39019c05"
+    },
+    {
+      "id": "report-technical",
+      "file": "report-technical.png",
+      "entry": "/preview/navigation?section=sources&source=source-reportcrm-date&sourceTab=reports",
+      "route": "/preview/navigation?section=sources&report=agent-rewards&reportTab=technical&detailVia=section%3Dsources%26source%3Dsource-reportcrm-date%26sourceTab%3Dreports",
+      "state": "Тот же связанный отчёт на вкладке «Техническая информация».",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "role": "reference",
+      "sha256": "5f21e098fd7cc7f365e7cc6f6366a67ed030ece4e42b1faffd6c64015d66c20d"
+    },
+    {
+      "id": "report-lineage-fullscreen-tooltip",
+      "file": "report-lineage-fullscreen-tooltip.png",
+      "entry": "/preview/navigation?section=reports&report=demo-report-summary&reportTab=sources",
+      "route": "/preview/navigation?section=reports&report=demo-report-summary&reportTab=sources",
+      "state": "Полноэкранный Lineage отчёта, подсказка «Увеличить граф».",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "role": "reference",
+      "sha256": "f165d2963e04c7dadf870b190b21e41d123ef686b0c1365d856c88d0e1a1a06c"
+    }
+  ],
+  "data_files": [
+    {
+      "path": "report-linked-sources.json",
+      "sha256": "48993c4535dd961b74d6a890ddc6374b48479f17c2523384f7aebfbe0f8a65ff"
+    }
+  ]
+}

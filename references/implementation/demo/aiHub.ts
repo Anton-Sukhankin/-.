@@ -21,7 +21,7 @@ export const demoAiSolutions: readonly AiSolution[] = [
       example:'«Добавь в таблицу столбец с итогом по каждой строке и пришли ссылку на готовый файл».',
       audience:'Сотрудники, которые работают с таблицами и документами',
       output:'Готовый файл со ссылкой для скачивания',
-      created:'8 июля 2026', hasEditAction:true,
+      created:'08.07.2026', hasEditAction:true,
       // Positions are illustrative labels from Paper.
       people:[
         {role:'Владелец',name:'Зяблов Сергей Александрович',position:'Руководитель продукта',avatar:'/images/ai-hub/owner.jpg'},

@@ -1,5 +1,5 @@
 {
-  "release": "frontend-eight-sections-candidate",
+  "release": "frontend-eight-sections-2026-11-11-visual",
   "sections": [
     "Главная",
     "Отчёты",
@@ -24,8 +24,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 2453,
-      "sha256": "394274a06e1e6fe80e46fc820d5faeac3af213e7c7f1cdb6dcab8eb276b16692"
+      "bytes": 4480,
+      "sha256": "cf2df2211f72175d5a62c934f082f388a1780b448e78c7a3d007fa1607f105bf"
     },
     {
       "path": "assets/icons/reports/domain-group.svg",
@@ -188,6 +188,46 @@
       "sha256": "e9ba769cce22e4d8f45c096e97956367a8965b6af16c29fdb09f7030b8b9f80b"
     },
     {
+      "path": "assets/prototype/public/icons/sidebar/ai-hub.svg",
+      "bytes": 317,
+      "sha256": "6e8db067d3647177bd57624f41642831de2ba92f4cf8696545dca9eafbf5928d"
+    },
+    {
+      "path": "assets/prototype/public/icons/sidebar/dictionary.svg",
+      "bytes": 405,
+      "sha256": "2a322cd0f5c67b7a7ae81eb59cf3aa83aed7cf7166c938d19e185644e5e11be3"
+    },
+    {
+      "path": "assets/prototype/public/icons/sidebar/home.svg",
+      "bytes": 420,
+      "sha256": "a16afca97a8b37d2f7110704601230ec92898903e55f5eaba5ba8ee26741e306"
+    },
+    {
+      "path": "assets/prototype/public/icons/sidebar/metrics.svg",
+      "bytes": 265,
+      "sha256": "b992fc2a9b6eb83cccc33559cca1cae2d8776a9fd0a285b0e987b745cea9c344"
+    },
+    {
+      "path": "assets/prototype/public/icons/sidebar/questions.svg",
+      "bytes": 1022,
+      "sha256": "e38dcb21ba5549f75020fcf016058d77a8ec99d2ae5131e6d1b743fbedc7b525"
+    },
+    {
+      "path": "assets/prototype/public/icons/sidebar/sources.svg",
+      "bytes": 540,
+      "sha256": "3c37d20ab5236f115111cdc4d6ce8ca1afad6a4074677342816e4f72e2fe9543"
+    },
+    {
+      "path": "assets/prototype/public/icons/sidebar/systems.svg",
+      "bytes": 1151,
+      "sha256": "bfab0ab731d6b12096fbb793d3707104a67ecb06df417798daaf7dacf65544e8"
+    },
+    {
+      "path": "assets/prototype/public/icons/sidebar/tasks.svg",
+      "bytes": 482,
+      "sha256": "df125baab56b3b6a2a11339f5302a7035d77047be170d945f3c282948caa7ba6"
+    },
+    {
       "path": "assets/prototype/public/images/ai-hub/developer.jpg",
       "bytes": 1115,
       "sha256": "1e0ed467381fa2ba78fece8d4a34160b138465daf8bc3f701ec6340d69af598d"
@@ -199,8 +239,8 @@
     },
     {
       "path": "context/product/Значения примеров карточек.json",
-      "bytes": 30912,
-      "sha256": "520513ebeccfdd658799ce1f203b45f0ee8a295f47f26e61db86ef4ab387150c"
+      "bytes": 57707,
+      "sha256": "1d23f0e042262bfbb25c7a4ffee726e7b7fb87d9154df85a1e6d3d7ca8afa486"
     },
     {
       "path": "context/product/Состав карточек.md",
@@ -209,13 +249,13 @@
     },
     {
       "path": "context/product/Состав карточек/Главная и дополнительные поверхности.md",
-      "bytes": 16396,
-      "sha256": "06ddd49c42e6099426bf5f95ce4a60f9ddbfde05972c402aa5bb9cb2a0ce9a41"
+      "bytes": 24551,
+      "sha256": "286bd373d93c235beeaece1a63191266cfd76ccbd457278022a374c30f6f0066"
     },
     {
       "path": "context/product/Состав карточек/Наблюдаемые каталоги и паспорта.md",
-      "bytes": 33699,
-      "sha256": "f9c109df186c87760364c15e75f52886c23cfdfd261040c1c7205ecc308b279f"
+      "bytes": 49441,
+      "sha256": "5ec1153a85186ac11f16c8d9ed74223484a76b226f3452d7125cb97aa434c45f"
     },
     {
       "path": "context/product/Состав карточек/Примеры и сверка.md",
@@ -264,8 +304,8 @@
     },
     {
       "path": "context/target/Требования и границы.md",
-      "bytes": 34243,
-      "sha256": "5ddca9ae0017b338bc4c0d00e56ad1be6fcbfd76b64a74ae96bd5e8717b7201e"
+      "bytes": 34936,
+      "sha256": "88ef591135cf861cb0d92828d1b976fc8515d5b1791eaf134b0c0f84f8e4aad7"
     },
     {
       "path": "context/target/Требования/Главная.md",
@@ -403,14 +443,14 @@
       "sha256": "34acc4fe269da58f6c7265fa73f784db20126875f3ff8f31090010b3d8d12d42"
     },
     {
+      "path": "references/design/report-detail/assets/mailings-create.png",
+      "bytes": 118604,
+      "sha256": "5b6217992762b60c712cb1d2b45db9b53439cbb64ab137c597859cf6f9d8b7a4"
+    },
+    {
       "path": "references/design/report-detail/assets/metrics-cards.png",
       "bytes": 131827,
       "sha256": "73db5cc585491a26f3538e24998050d0ac40c3e6f3ac8fc6d3f5a8360d75b517"
-    },
-    {
-      "path": "references/design/report-detail/assets/metrics-table.png",
-      "bytes": 151920,
-      "sha256": "db60dcf59c1a9a4febef677beab89caaa20c761b1650002f28a7070e2b19828c"
     },
     {
       "path": "references/design/report-detail/assets/overview-empty.png",
@@ -434,18 +474,18 @@
     },
     {
       "path": "references/implementation-current/components/Accordion/Accordion.module.css",
-      "bytes": 4619,
-      "sha256": "f89aebbb71f2f49a9071247be64afed876e9d71d4e1d3f15e7e5b45734089415"
+      "bytes": 5297,
+      "sha256": "467f33130bb230f135ea88256b00c1b0a9a8830821271c20623c0ac03790bc71"
     },
     {
       "path": "references/implementation-current/components/Accordion/Accordion.tsx",
-      "bytes": 3510,
-      "sha256": "8f846d5855ce9261ab8749042444bc76323f6a4bed03c55a48adc5b7214508b1"
+      "bytes": 3716,
+      "sha256": "0b3f65dd8e209bed1f25a29f62eadca808a199ed629111388ad772ce28bd3b3a"
     },
     {
       "path": "references/implementation-current/components/DetailHeader/DetailHeader.module.css",
-      "bytes": 2270,
-      "sha256": "9110fbe1baa0ecb73812b46d965f5262f797e9cf15b0f1dbc64249fedf431c06"
+      "bytes": 2304,
+      "sha256": "b83f194dd982bca1e1bd98ee30d89ff45c658ec90a52446a1f5cdc9a52bca3ba"
     },
     {
       "path": "references/implementation-current/components/FilterButton/FilterButton.module.css",
@@ -459,23 +499,23 @@
     },
     {
       "path": "references/implementation-current/components/FilterValueList/FilterValueList.module.css",
-      "bytes": 2745,
-      "sha256": "a22bc2e95d0cd1746b7e1dcaae21438ff968a64d44229890b922e46f220924dd"
+      "bytes": 2422,
+      "sha256": "233ef0c8e442fb99f0fe155658dbc1b2756aaa53807dac8437a06748f41686d6"
     },
     {
       "path": "references/implementation-current/components/FilterValueList/FilterValueList.tsx",
-      "bytes": 5494,
-      "sha256": "6806357c4fd618a6ec3b89a76888f3d0cd4a02bf11a180298fba0d61e410bc4a"
+      "bytes": 3871,
+      "sha256": "da27058b80bd45ea0ee52665ad65734fdd8eea0953289b99e16817e8c76bfbaf"
     },
     {
       "path": "references/implementation-current/components/HomeControls/HomeControls.module.css",
-      "bytes": 5073,
-      "sha256": "94aff96c5a54400cb3f457497e645dcd36cd4a85c8940292e95f53ded5b10533"
+      "bytes": 5246,
+      "sha256": "4c1d1bce2e6a164e28f2a556598602b57f432f221323baea7ac876cce8b80279"
     },
     {
       "path": "references/implementation-current/components/HomeControls/HomeControls.tsx",
-      "bytes": 6357,
-      "sha256": "4f3ba7b2235c8f97b7302acfc58d34cc591f612c9923009037987ebf85ec3c53"
+      "bytes": 7104,
+      "sha256": "49460c7500ce55ac718929532d9fefe19d20a47fd171c666437676564e69e81f"
     },
     {
       "path": "references/implementation-current/components/ListPagination/ListPagination.tsx",
@@ -499,13 +539,13 @@
     },
     {
       "path": "references/implementation-current/components/OverflowText/OverflowText.tsx",
-      "bytes": 3262,
-      "sha256": "9a5e64825f31f1dfa3d1ceef2421cc00c8988999bee6fd6cbc7fdfd5ab540313"
+      "bytes": 3574,
+      "sha256": "6af353af7b7c19e4b00320f68e004f3d1a1d62cfe8b427c5d4f496bbc5058e9a"
     },
     {
       "path": "references/implementation-current/components/ReportCard/ReportCardGroups.module.css",
-      "bytes": 1196,
-      "sha256": "2031dc701a4765ea71c6047d86d0d38f0a6f408898b2335b2e629937c9394ac9"
+      "bytes": 1844,
+      "sha256": "c41370638b39ff7f9b00a413a2b15fff58b5b74ea04edca3f4d3d293fde69b69"
     },
     {
       "path": "references/implementation-current/components/ReportFilterPanel/ReportFilterPanel.module.css",
@@ -519,8 +559,8 @@
     },
     {
       "path": "references/implementation-current/components/ReportTable/ReportTable.tsx",
-      "bytes": 14904,
-      "sha256": "d1a5606b31e74b72f27b0faa02b535cf3be75091df71fe5ff400277cf705de5c"
+      "bytes": 15018,
+      "sha256": "a64a7acd31f5d2159169b20d274a571bd7eee44dfb9facf5956137132df462c3"
     },
     {
       "path": "references/implementation-current/components/RoundIconButton/RoundIconButton.tsx",
@@ -539,8 +579,8 @@
     },
     {
       "path": "references/implementation-current/components/Sidebar/Sidebar.module.css",
-      "bytes": 3742,
-      "sha256": "9508b9525131a11954d6fcc2ecdfa756f5e12a2c1c06c66e00d3da3436328707"
+      "bytes": 4090,
+      "sha256": "ad03b9c8c6b387773fc8c9213847bb4079f4fe38d2d6f65b7eee5f5db2c5f821"
     },
     {
       "path": "references/implementation-current/components/SingleSelect/SingleSelect.tsx",
@@ -549,13 +589,13 @@
     },
     {
       "path": "references/implementation-current/data/metrics.ts",
-      "bytes": 3066,
-      "sha256": "682b888e148d9c08495f84c3fa6817bc9d4091b1cd65b0384dae46631ed9323b"
+      "bytes": 3286,
+      "sha256": "afa0be660d2132f6043d24e43afb9ace24327e596d3fd7bbe4a2f4a579af90b0"
     },
     {
       "path": "references/implementation-current/data/sources.ts",
-      "bytes": 5953,
-      "sha256": "5e0f339ef91a3e9de8a0c36e5a505432428fdc09afebfa7764e781ec8da39d8f"
+      "bytes": 6319,
+      "sha256": "b16f7556de78794b79300a95a278916c389654cdbfa2343523cfb819365ded84"
     },
     {
       "path": "references/implementation-current/demo/metricDetails.ts",
@@ -563,9 +603,14 @@
       "sha256": "13eb1a1ace960e23debb256ad58e9fda80b41e33d0634cc94d5daba213caf82f"
     },
     {
-      "path": "references/implementation-current/demo/sourceFields.ts",
-      "bytes": 5507,
-      "sha256": "89be15781e898e1a6f0287e2a81b350bac6ecfb1ed76262112f143945d5d97d6"
+      "path": "references/implementation-current/demo/sourceDetails.ts",
+      "bytes": 5053,
+      "sha256": "58c7db4b1f0eb16d231073fab44c6dc7242d315d6a44cdf82115027f056b6ece"
+    },
+    {
+      "path": "references/implementation-current/demo/sources.ts",
+      "bytes": 5099,
+      "sha256": "8ff006ec80dec0574ade75ba18fb453ac9f9ed519bc3d3a8697c96225c35fc58"
     },
     {
       "path": "references/implementation-current/features/contributors/ContributionContent.module.css",
@@ -594,13 +639,13 @@
     },
     {
       "path": "references/implementation-current/features/metrics/detail/MetricDetail.module.css",
-      "bytes": 5780,
-      "sha256": "121fc3df32f7a7ecfd41b53179a582f5923edd1f8c645f87705efe85ae3adfe3"
+      "bytes": 5842,
+      "sha256": "f932bcd58e93197686d93398a00729d7ae6149272d6341f6223815815d8c1d92"
     },
     {
       "path": "references/implementation-current/features/metrics/detail/MetricDetail.tsx",
-      "bytes": 11352,
-      "sha256": "3605bffe87c849062c5663bb8c6a7339f3f8d13230bd0254b132853c75a50ce0"
+      "bytes": 11536,
+      "sha256": "2ccebae5df33122a193c77b3f24d60821b53fa29ac42d8a31235527bde5cd382"
     },
     {
       "path": "references/implementation-current/features/news/News.module.css",
@@ -624,73 +669,73 @@
     },
     {
       "path": "references/implementation-current/features/report-detail/Detail.module.css",
-      "bytes": 6453,
-      "sha256": "87af85281ec373c85caf41994cc2c9bd4d584467f39b35352b77bb78b8939bc8"
+      "bytes": 7460,
+      "sha256": "ed0763c609b31b283b50e356638122e09c2dfac7b9feba588b90982ae717118a"
     },
     {
       "path": "references/implementation-current/features/report-detail/ReportDetail.tsx",
-      "bytes": 8556,
-      "sha256": "6b8fb251f1d5d94b00313b5578e761d318fc8f46a34569ea5fc573c7b7fffdc8"
+      "bytes": 9096,
+      "sha256": "9ec026e48c8eec08aa4a9fa418e512db941cb518988ada062ca0c9fa2321e5b4"
+    },
+    {
+      "path": "references/implementation-current/features/report-detail/mailings/MailingsTab.module.css",
+      "bytes": 8211,
+      "sha256": "f3cb163d9fc066c8c9752824dc4c43040b13cadd7eaaca10976c1bed243655ee"
     },
     {
       "path": "references/implementation-current/features/report-detail/mailings/MailingsTab.tsx",
-      "bytes": 9615,
-      "sha256": "cc1a4a052fae50f1a8f0aaf8bbd7fd09e7902d2cdea492fcf3e11c36fd014e62"
+      "bytes": 10264,
+      "sha256": "5b915868ddec9daa7e2fd8e377e55b84b84c8b668c6baa68b8344e5b2e992bce"
     },
     {
       "path": "references/implementation-current/features/report-detail/metrics/MetricsTab.module.css",
-      "bytes": 4967,
-      "sha256": "0fe4fc4dbfa11a8a8d1dc902e28d4d67e65106f3a6b09cb4d668b37aa19dbe02"
+      "bytes": 5109,
+      "sha256": "8ba06eaa5514444be29dd65fa3c5788e166c46a9343e1f4205bdd9795f13fc72"
     },
     {
       "path": "references/implementation-current/features/report-detail/metrics/MetricsTab.tsx",
-      "bytes": 8684,
-      "sha256": "4cf91063dbb1de2bb80940b73631db23c2233f8ff5107ad01817f20acb483e85"
+      "bytes": 8865,
+      "sha256": "8505e9a12545324283f1c2d8b4734cfbe91c22652562320a3d26d87ce2b3a816"
     },
     {
       "path": "references/implementation-current/features/report-detail/overview/OverviewTab.tsx",
-      "bytes": 7164,
-      "sha256": "3265f3e52d2c9ff0e7015c7a130f17cbbe3937c20321dd48ed180c98837c4663"
+      "bytes": 5748,
+      "sha256": "c85e3d5ac31f84bbb4aafbf87314f3fce023f77a605c836323b9bcb5e41f8db6"
     },
     {
       "path": "references/implementation-current/features/report-detail/source.ts",
-      "bytes": 1199,
-      "sha256": "8127f24364e56a1c42ea70a1146175e7be4e4ce04309d230e3b38bd233aeaa5a"
+      "bytes": 1461,
+      "sha256": "10a65e623e1d25acbcd07ebc08836e7842c78dce9bf2f2b35bcb674f375f7319"
     },
     {
       "path": "references/implementation-current/features/report-detail/sources/Sources.module.css",
-      "bytes": 3277,
-      "sha256": "190259e77ef14b0f940921c1d8a2fcbe69548d754c08d1768b754bf5a55ae609"
+      "bytes": 3341,
+      "sha256": "9d9414663e4df992473b7bacf42d7ca99a2606da43c6a57516dee688a4ac1987"
     },
     {
       "path": "references/implementation-current/features/report-detail/usage/Usage.module.css",
-      "bytes": 4608,
-      "sha256": "85db400c720e194f78adf08b37a2064ffa330eb35d566e9eb7f6ee6a6ee3f1f9"
+      "bytes": 5187,
+      "sha256": "3037bf6bd656c7fd00e365473d0e6156e0c9d34ee777bd2e298fe5c288d57dcd"
     },
     {
       "path": "references/implementation-current/features/report-detail/usage/UsageHistoryTable.tsx",
-      "bytes": 2379,
-      "sha256": "6620cff614fa936b28ba68fd048fba1042eb575e643b1021ea3239bacdf36f1c"
+      "bytes": 2919,
+      "sha256": "d4d44c6d337b314dd1325d44e6c174236b8a0f75fc53a1630ef5aa65b228cc45"
     },
     {
       "path": "references/implementation-current/features/sources/SourceCatalog.tsx",
-      "bytes": 8086,
-      "sha256": "ec5746d1ad3013e263203f4ac9f01f0373fb0ee1046344de6f189de273241143"
+      "bytes": 9222,
+      "sha256": "c2961efcf19bb8f2f8bd9afcdd804ef2d001ab05b6f6d9566c12846edb274b71"
     },
     {
       "path": "references/implementation-current/features/sources/Sources.module.css",
-      "bytes": 10578,
-      "sha256": "0f501d0120f57321a0513680d23680c27cee3dc1f24a8398083baed1d3c37f16"
+      "bytes": 14878,
+      "sha256": "1dfb11c2e6c8a3db851e8c754f2d788301b4495a86b7325d1fca5ec69017949f"
     },
     {
       "path": "references/implementation-current/features/sources/detail/SourceDetail.module.css",
-      "bytes": 6702,
-      "sha256": "e16b4c4c1d2ebfd96b29a82f8c5597131f39471a4dcc589d4c484361f8583863"
-    },
-    {
-      "path": "references/implementation-current/features/sources/detail/SourceDetail.tsx",
-      "bytes": 12520,
-      "sha256": "4fc547e54e3b3d2cf4226434bff243308ba92c7c42fc1201672b2c60152f6f22"
+      "bytes": 9532,
+      "sha256": "0c2c0fed8aaabf627968d27ba92dbb253ba913be225868be2aea8bfe8986f2d2"
     },
     {
       "path": "references/implementation-current/features/subscriptions/SubscriptionsContent.module.css",
@@ -704,13 +749,13 @@
     },
     {
       "path": "references/implementation/app/NavigationPreview.module.css",
-      "bytes": 4069,
-      "sha256": "22a99b8212e4326f0979d2a78aa7eb4309862723f5d9a599aacd2ad88288deb5"
+      "bytes": 4139,
+      "sha256": "819e082f864e3fb7fdcd639ed50284701ddaddcad9f401cbff9a667df9587c27"
     },
     {
       "path": "references/implementation/app/NavigationPreview.tsx",
-      "bytes": 53825,
-      "sha256": "d85cce2b50c152f14997e4f30d87331d20f0b7f6a6d9ead51c1419999f4a7cf3"
+      "bytes": 55732,
+      "sha256": "0ce0f64906de533fb99594c4af3bb5162c1c45b2d3a83c3311468476caac03fc"
     },
     {
       "path": "references/implementation/app/useReportFilterPanel.ts",
@@ -729,8 +774,8 @@
     },
     {
       "path": "references/implementation/components/CountBadge/CountBadge.module.css",
-      "bytes": 314,
-      "sha256": "107a16319b08673814d39d9d53882ab8624d95b82ba4ea1f35819d9c4c87301b"
+      "bytes": 575,
+      "sha256": "52d247009521839bac3fc656da8f9f167a9d928e971f689e8cc01c994f7228e9"
     },
     {
       "path": "references/implementation/components/DetailHeader/useDetailScroll.ts",
@@ -746,6 +791,11 @@
       "path": "references/implementation/components/DropdownItem/SelectionCheck.tsx",
       "bytes": 382,
       "sha256": "753e8ef22ffedb8609f41ffb433974cebbe327ef6a1c8e9345de3c1acadb619f"
+    },
+    {
+      "path": "references/implementation/components/DropdownItem/check-source.json",
+      "bytes": 520,
+      "sha256": "dd474313531c49c99b53cdd224b716afd087a9cf5fbc13ce77a5ab8bb609c836"
     },
     {
       "path": "references/implementation/components/EmptyState/EmptyState.module.css",
@@ -773,16 +823,6 @@
       "sha256": "8395090656b05d1edc40258a8e0323f326afc637efb9f8e40a5c42a72a1e1e1f"
     },
     {
-      "path": "references/implementation/components/HomeControls/HomeControls.module.css",
-      "bytes": 4401,
-      "sha256": "b3e82f02fb0fd343f2ac7a3ca90b2e50bf5dc9be711c9f50827b61a1882f9632"
-    },
-    {
-      "path": "references/implementation/components/HomeControls/HomeControls.tsx",
-      "bytes": 5630,
-      "sha256": "4e87e79240805e859051789185c1ffaedc18c8122ef502b1087be34e9c3f0b4d"
-    },
-    {
       "path": "references/implementation/components/ListPagination/ListPagination.module.css",
       "bytes": 804,
       "sha256": "1afbd3fa954dcf4aaae6b3fecadb84d0bd75c8fef11cf48f555169df8e8feb11"
@@ -794,13 +834,13 @@
     },
     {
       "path": "references/implementation/components/ListScrollIndicator/ListScrollIndicator.module.css",
-      "bytes": 557,
-      "sha256": "2898a5f265a300d59ebc315afe6a1e2a7078ea4b9ccff87baaaaed5a41e881c8"
+      "bytes": 580,
+      "sha256": "d9debf3cc553f8cf399b01a1883e5a1cdeb795c62fefdab9248c9a4d7f263b10"
     },
     {
       "path": "references/implementation/components/ListScrollIndicator/ListScrollIndicator.tsx",
-      "bytes": 5793,
-      "sha256": "ececa2fc2f0ab2d523806e84299b26681aa465b49ce023638ab83318c02237cc"
+      "bytes": 4882,
+      "sha256": "35b25479030650103b4c19ccdefa1b568e0a4acefe9e84af2725b712569ff563"
     },
     {
       "path": "references/implementation/components/ReportRangeField/ReportRangeField.module.css",
@@ -843,44 +883,29 @@
       "sha256": "13ab6b0f47a5c109a4810f6fd8f5e765cc1a43e512d5da92658d66be20bb45b1"
     },
     {
-      "path": "references/implementation/components/Search/CatalogSearch.module.css",
-      "bytes": 4592,
-      "sha256": "f110dd815ae628972a52e1a05eb04be86507e9c9a1fcd80920aedd3e4f8348cf"
-    },
-    {
-      "path": "references/implementation/components/Search/CatalogSearch.tsx",
-      "bytes": 13826,
-      "sha256": "500007dc007a4216231dcdfb7f2862b87933ad2955b188fff5b784c304424517"
-    },
-    {
-      "path": "references/implementation/components/Sidebar/Sidebar.module.css",
-      "bytes": 3367,
-      "sha256": "6d2dbecae14f2cfbc8d17e1469a0aeb7e57203e4920ccb8ec54f592f452df359"
-    },
-    {
-      "path": "references/implementation/components/Sidebar/Sidebar.tsx",
-      "bytes": 2397,
-      "sha256": "f58e804d27bc7b1df321d27e9f40bfe76b39ab70cdd051454ac5f229b84694cd"
-    },
-    {
       "path": "references/implementation/data/reportFilters.ts",
       "bytes": 5913,
       "sha256": "902288e58a34d3bac7d5d3dd12d5722ba86ce760a714e2d3108cf8ee454418de"
     },
     {
       "path": "references/implementation/data/systemReferences.ts",
-      "bytes": 3064,
-      "sha256": "c0bcf76936de97b2d99eba98a00c6f5e0adff1efd688db4a76c86c914c80c1d7"
+      "bytes": 3088,
+      "sha256": "5a5814d3f56abf1e4a54590789840b99748341c9f1a07d13f9bd95c5a53bdd3a"
     },
     {
       "path": "references/implementation/demo/aiHub.ts",
-      "bytes": 23781,
-      "sha256": "0bed4a15a8e02474f969c68f9e4f2ce794807687a4d98d69466f52ad22094e63"
+      "bytes": 23776,
+      "sha256": "1ff5775ecee861ec689cfcd7e21e9ecf6c6656dd9b475521df1a4692b1da6b88"
     },
     {
       "path": "references/implementation/demo/dictionary.ts",
-      "bytes": 4979,
-      "sha256": "7374cd74f16cec287f3eeb00ad9dc452e1bc4ac58c562b2c6a43e2f1bd4641ef"
+      "bytes": 7946,
+      "sha256": "f93ce0c9205f267bbb80de33bf36a2bd6d44e8b01500e97c4880111561b87fae"
+    },
+    {
+      "path": "references/implementation/demo/relatedSourceReports.ts",
+      "bytes": 2346,
+      "sha256": "fa73d51deb8f3e19bed91897341e72fd2c5ddadede9f6a3e3ce697a94b324a85"
     },
     {
       "path": "references/implementation/demo/reportDiversity.ts",
@@ -889,8 +914,8 @@
     },
     {
       "path": "references/implementation/demo/reportPassports.ts",
-      "bytes": 21880,
-      "sha256": "625251e71119aa383d88f5bb151f2012f06e44250a8aa88a53555aa0fe807d44"
+      "bytes": 23081,
+      "sha256": "cd72bccd574d38cfdd0d7465ab0ef317dd45599cc95dcde1d9667f9bc8eb1e6b"
     },
     {
       "path": "references/implementation/demo/sourceContent.ts",
@@ -898,14 +923,9 @@
       "sha256": "4bd4d184e0b20937ccccc5f5b7b9a3e6c1ff65f9a8bc5bf3409f12ac4b2ddcf9"
     },
     {
-      "path": "references/implementation/demo/sourceDetails.ts",
-      "bytes": 2639,
-      "sha256": "53b6a3974267447d853281dc607886ee7fa452b41b6dc21756df1052889a2238"
-    },
-    {
-      "path": "references/implementation/demo/sources.ts",
-      "bytes": 4349,
-      "sha256": "d8561bedbc3b5fbbf8b04078a427ecb325a67db851719837d1e530d1b31a58a8"
+      "path": "references/implementation/demo/sourceMetrics.ts",
+      "bytes": 2498,
+      "sha256": "9fb00087400255048e92a704cbfdc4233bb238dcd60a030f9a93162865dcc018"
     },
     {
       "path": "references/implementation/demo/systemReferences.ts",
@@ -914,23 +934,23 @@
     },
     {
       "path": "references/implementation/features/ai-hub/AiHubCatalog.module.css",
-      "bytes": 5444,
-      "sha256": "21e976ee8bd086be88dd67d6ebf4c6544468335a34fbf555c7ac71d6adbe0e85"
+      "bytes": 11628,
+      "sha256": "81f728df56727d6c679e10e6299af52be9532ea953a1345277bbd3fd32b03cd8"
     },
     {
       "path": "references/implementation/features/ai-hub/AiSolutionDetail.module.css",
-      "bytes": 3998,
-      "sha256": "12d8fa85652646bc5e189b71ce7cdb2f141ea04d51c9eb89acb84d7e702bffd9"
+      "bytes": 4481,
+      "sha256": "8b015a32cd133d24a898698ed300fceb1d28a53fa06b5296ffe6e310c42d9835"
     },
     {
       "path": "references/implementation/features/dictionary/Dictionary.module.css",
-      "bytes": 6263,
-      "sha256": "93d17a25397ba911ff5216e6446c216c19f3ed8c8fc93d6eaeccdd3e0942b7ae"
+      "bytes": 7723,
+      "sha256": "4355c747b6360671923badeade466df373cb9a9e54b3f788d6fb60c88e6bff18"
     },
     {
       "path": "references/implementation/features/dictionary/DictionaryWorkspace.tsx",
-      "bytes": 11944,
-      "sha256": "4d1624064dece4b07b4060cd35ea4f05c5fe0aa1409c1cdf98633a778d77e3a7"
+      "bytes": 14615,
+      "sha256": "a13e4eb095dc387f64c5a38c9c915cf18156437a35604023cfa0c14bf965e3f6"
     },
     {
       "path": "references/implementation/features/dictionary/DomainRow.tsx",
@@ -939,8 +959,13 @@
     },
     {
       "path": "references/implementation/features/dictionary/TermCard.tsx",
-      "bytes": 1603,
-      "sha256": "ce9178e74c06b5a91e330e3df323159b2b8fa9e37d18222e20d605fa717cdb73"
+      "bytes": 2045,
+      "sha256": "81092e1cbda084fbcf01f3149ae1cfafe09baed8bbb4c700c4ff464edbd48c02"
+    },
+    {
+      "path": "references/implementation/features/dictionary/TermDetail.tsx",
+      "bytes": 5719,
+      "sha256": "2a5f644c0d70822238fa24ea2b937289ab659b476747d7d79c3a20e875714a88"
     },
     {
       "path": "references/implementation/features/metrics/detail/MetricDetail.module.css",
@@ -984,8 +1009,8 @@
     },
     {
       "path": "references/implementation/features/questions/AskQuestionDialog.module.css",
-      "bytes": 2378,
-      "sha256": "ec4b09cac901d9957f1dc53de1f5403ff867c5d5dde31b887001f82ef021fe50"
+      "bytes": 3813,
+      "sha256": "b7753bcc602123ace169a4126636f3a706326064797e4e0280ab722ef598c5a7"
     },
     {
       "path": "references/implementation/features/questions/QuestionSentNotice.module.css",
@@ -1003,19 +1028,14 @@
       "sha256": "001cc82a460b719d4a6e733ffed3c4349f15087de95a60007b56761d4fcfc79e"
     },
     {
+      "path": "references/implementation/features/report-detail/ReportInformation.tsx",
+      "bytes": 1407,
+      "sha256": "fabd65137efc179235860990f80f853d3083cfae4c8e6588e9ae202980dfde30"
+    },
+    {
       "path": "references/implementation/features/report-detail/mailings/MailingsTab.module.css",
       "bytes": 6430,
       "sha256": "fd66ada74ff80cfb574ac5c23c5f0ff922f40b1a3c1e83786ab5fbd5273dc568"
-    },
-    {
-      "path": "references/implementation/features/report-detail/mailings/MailingsTab.tsx",
-      "bytes": 9357,
-      "sha256": "7ccf52c1c7abda7cf62f47bca83ad2e3e6194c63511b144cccc493231bd4013b"
-    },
-    {
-      "path": "references/implementation/features/report-detail/sources/Sources.module.css",
-      "bytes": 3406,
-      "sha256": "33f568c6619c07169b119ca6bcfebb9120c00abb863a874cd3f7bdd6f286ccd2"
     },
     {
       "path": "references/implementation/features/sources/Sources.module.css",
@@ -1054,18 +1074,18 @@
     },
     {
       "path": "references/implementation/features/system-references/ReferenceSearchPanel.module.css",
-      "bytes": 4045,
-      "sha256": "1139b3045620bcbe60c733f06d7fe5cc0ee20f22f8ac2a026c59cefd1085fcc9"
+      "bytes": 4153,
+      "sha256": "565e6630a2ae43fc40d320dea4d1742f83d7c81a73e6219d13e4496af242c758"
     },
     {
       "path": "references/implementation/features/system-references/ReferenceSearchPanel.tsx",
-      "bytes": 4269,
-      "sha256": "7c3bf11df764f05ff7b9f469f61f8c067478c6d9efd07cf14cc29414c4f5d5b5"
+      "bytes": 4364,
+      "sha256": "6641d566f0263ca66902d5fda4a35a35880f1d27145a1744e29b8c248ac51c7d"
     },
     {
       "path": "references/implementation/features/system-references/SystemReferencesWorkspace.module.css",
-      "bytes": 11534,
-      "sha256": "db81cbf19f2ab8094b3a5b5fd53e7c94534c56b0dcb28e085560be9d1f552cde"
+      "bytes": 11749,
+      "sha256": "667a8b38a01bad9ae112aebcec820c7cdbff2fa1783c8d3c85ba14de4c910c98"
     },
     {
       "path": "references/implementation/styles/base.css",
@@ -1076,11 +1096,6 @@
       "path": "references/implementation/styles/sticky-panel-shadow.module.css",
       "bytes": 274,
       "sha256": "9c8c8a208b0c58d0cb8c3252bea526da57afa259f06e670acec09cd4a991c898"
-    },
-    {
-      "path": "references/navigator/Изображения/d6-more-open.png",
-      "bytes": 175047,
-      "sha256": "635f62fcdd9c1d679234a66cc91968763b9b8d228aa6cffe9382d4400a7ef542"
     },
     {
       "path": "references/verification/metrics-responsive/hover/indicator-cards-hover.png",
@@ -1101,6 +1116,16 @@
       "path": "references/verification/owner-alignment-2026-11-04/reports-1440.png",
       "bytes": 18249,
       "sha256": "98ed6d6dbc8bf7cd7c6dd2b65417f7998b7c679031cc38338a0a06c61b1b81d2"
+    },
+    {
+      "path": "references/verification/range-copy-2026-11-04/home-column-mau.png",
+      "bytes": 18559,
+      "sha256": "8e26dffbec548e517fca5f33ab18953cc9b10fbc399f6e1e8ed47eb60df87a47"
+    },
+    {
+      "path": "references/verification/range-copy-2026-11-04/home-column-viewed.png",
+      "bytes": 11773,
+      "sha256": "daee336fe17a463a57e64e852e9387f6d1a0e64a0b724fe188c082826852077d"
     },
     {
       "path": "references/verification/range-copy-2026-11-04/home-panel.png",
@@ -1138,11 +1163,6 @@
       "sha256": "acc738aaaa4cd266d12b30edc50cd5631f732ccece602d32af2d42f4a1d1fe47"
     },
     {
-      "path": "references/verification/report-detail/screenshots/overview-information-gap-1440.png",
-      "bytes": 165197,
-      "sha256": "fb5272b6e07df8bc713d2aa903c90e7c104228ce40aca2dfad29dfb3e852de53"
-    },
-    {
       "path": "references/verification/sidebar-anchor-2026-11-03/after-collapsed.png",
       "bytes": 4747,
       "sha256": "fa0d832df8aa64d6a0a49d9d6b796961b36e7ebdab95bdcfff6b46f38bc4ee6b"
@@ -1158,24 +1178,29 @@
       "sha256": "6f972eaf7fd7ad05a4c6b5f3bc1a293aff0cb1dc58e59769ed4d5a3b8be1020a"
     },
     {
+      "path": "references/verification/status-single-2026-11-04/favorites-status-hover.png",
+      "bytes": 32944,
+      "sha256": "1cd584edcde905e3c26733cc2f6b1cf8da87a96dee812ff49729c8f42f38ad0f"
+    },
+    {
       "path": "references/verification/tests/ai-hub.spec.ts",
-      "bytes": 19943,
-      "sha256": "536e7219a2ee9fd6af69116f7a835c9c3bad6c25ef9ba519e531111ee8a6b73c"
+      "bytes": 37227,
+      "sha256": "60a82cb8398c1620a5c949371b0488413772aa466528d45bc575432561f74097"
     },
     {
       "path": "references/verification/tests/detail-headers.spec.ts",
-      "bytes": 24038,
-      "sha256": "dd7d0822ff2ab445085b6a81a9129b35fb0c762ac585f1e42a5021912c083499"
+      "bytes": 29478,
+      "sha256": "997168badd0aad6df586b628a5a090e51acd41dd394f15070c35e8a012d5bc0e"
     },
     {
       "path": "references/verification/tests/dictionary.spec.ts",
-      "bytes": 27775,
-      "sha256": "f9552351d1802c9e31edb0d0482181312a8e2e5f82318248903deac94aeb2332"
+      "bytes": 41680,
+      "sha256": "47a7b310adc7c96925ed589174f252ee12b58bc17eacdf34746696db931cb95f"
     },
     {
       "path": "references/verification/tests/filter-panel-morph.spec.ts",
-      "bytes": 5593,
-      "sha256": "35be448c5c15e12e432d5f8309c737a1030551890ec11b1745cfe19bd176d452"
+      "bytes": 7248,
+      "sha256": "c38397964d0750b68c231233b7881d071903845129244b5f9dd53aae5f689521"
     },
     {
       "path": "references/verification/tests/home-sections.spec.ts",
@@ -1184,8 +1209,13 @@
     },
     {
       "path": "references/verification/tests/list-scroll-indicator.spec.ts",
-      "bytes": 5873,
-      "sha256": "edf3ce02359f1976a30c44f390671ff31c941433ad754f9506d6600b3479124a"
+      "bytes": 8937,
+      "sha256": "12734f050a6b406fd0484dde21f04d5c3865f19f13f5a93da7eb76a42106c360"
+    },
+    {
+      "path": "references/verification/tests/master-systems.spec.ts",
+      "bytes": 9469,
+      "sha256": "642346582651c87dc1983a4cdef4b94fc23dcdf04f1ba5b2625954dcd527a081"
     },
     {
       "path": "references/verification/tests/metrics.spec.ts",
@@ -1194,13 +1224,13 @@
     },
     {
       "path": "references/verification/tests/multiselect-tags.spec.ts",
-      "bytes": 13321,
-      "sha256": "b02add1cbfbf092ab0eed49babe30b3b212daf50158339286784064a2ff73b40"
+      "bytes": 13093,
+      "sha256": "1c63ca4011148d77f98978e26cb3a2760cd69d986152198a0aaa40cc5bd11da7"
     },
     {
       "path": "references/verification/tests/navigation.spec.ts",
-      "bytes": 23540,
-      "sha256": "fe5522a277929c572e2e57a854ccab475891bc29f7e1bb4eb55bc0a5b59110a8"
+      "bytes": 26392,
+      "sha256": "2d2d69885a42f2d13e92566e22937d19d71617b965c45260ee4bc58e7b239b3b"
     },
     {
       "path": "references/verification/tests/pagination.spec.ts",
@@ -1214,28 +1244,28 @@
     },
     {
       "path": "references/verification/tests/report-detail.spec.ts",
-      "bytes": 12918,
-      "sha256": "ec01de99025dd3b794e55d22a52fa74084f4830dd5eec441b5f12ef727e6ab43"
+      "bytes": 23875,
+      "sha256": "38f20f8b8241142471edebf5ffe3bc790c47444afc51bdd6c60ede32e93ab245"
     },
     {
       "path": "references/verification/tests/report-domain-groups.spec.ts",
-      "bytes": 3222,
-      "sha256": "06e627ff585d19f39d03962e26ae7fc79134787441b60545084ae90ace2abe32"
+      "bytes": 4148,
+      "sha256": "e7753e0360cc8e495c5ac127df94199a006a5470d584497e39e1392977c551f9"
     },
     {
       "path": "references/verification/tests/report-filters.spec.ts",
-      "bytes": 18377,
-      "sha256": "f8254f90aafeba593d9243ba49dba62f100c2a16e325c7baab9c7bb4cd8631eb"
+      "bytes": 18384,
+      "sha256": "0f094939ec314a978af48a9287bb3409fd1d63284681f30df3a8bdc92b12eb8b"
     },
     {
       "path": "references/verification/tests/report-lineage.spec.ts",
-      "bytes": 15602,
-      "sha256": "81b74ad06e86cf9a23daf966ecb25649717d28b7012455f800b3414ba528dfe5"
+      "bytes": 22322,
+      "sha256": "8c0d6f1962406f659df7de944bb7d01563e99c5abb77d9ffba6b25e90fa32f62"
     },
     {
       "path": "references/verification/tests/report-sources.spec.ts",
-      "bytes": 5084,
-      "sha256": "1a3e62f6dede586b2e6098a6334494ab690a6e0b501bef56f0cb37daa14ec5d6"
+      "bytes": 5082,
+      "sha256": "fac71f21f0b9e448ad87eef756d45ab4721f5124639cdb1a5c6cf1584ca44566"
     },
     {
       "path": "references/verification/tests/report-table.spec.ts",
@@ -1244,28 +1274,43 @@
     },
     {
       "path": "references/verification/tests/report-usage.spec.ts",
-      "bytes": 13037,
-      "sha256": "b3d334a8bd2abcc97205aff23007bc735a55b1ec1372d091177ab77a1e9edc50"
+      "bytes": 15894,
+      "sha256": "adc3a269f55c4d70364539ba83cf90b7a8fa8b45de8b1e981e46a6c11baddf95"
     },
     {
       "path": "references/verification/tests/search.spec.ts",
-      "bytes": 32189,
-      "sha256": "15471f34e33146802e4f633448e7bf4301b16f9ace49400adb4cec817416bb2c"
+      "bytes": 32683,
+      "sha256": "0ec2a163d72b91aefe5b4a6b35fb7ba150ae242d00304aeee1ebae677f0f55c2"
+    },
+    {
+      "path": "references/verification/tests/source-detail.spec.ts",
+      "bytes": 43020,
+      "sha256": "b8296f9b95f2f2f7328d6bf1762ebacf925d6b7122a2ae5a32d6821dec9f5d90"
+    },
+    {
+      "path": "references/verification/tests/source-metrics.spec.ts",
+      "bytes": 7499,
+      "sha256": "01856d2771b0d5c28ad479cf34793de0a6791f02f2fa7a452ee1ac1d6c0870ca"
     },
     {
       "path": "references/verification/tests/sources-catalog.spec.ts",
-      "bytes": 17980,
-      "sha256": "9bffd6199134ee9b0456483f48b2388bd196b9004e6f05ce12d03bfa69db7d9b"
+      "bytes": 17938,
+      "sha256": "0ce4586e57a03020ec59f7d4d2f5c10c1d85c55d4e25aeb023a8aa9a41fac232"
+    },
+    {
+      "path": "references/verification/tests/sources-tree.spec.ts",
+      "bytes": 11423,
+      "sha256": "0794ee5b26ae142cf13b33f7a0227a3ffa59ad7f876a303e908656278fc68f70"
     },
     {
       "path": "references/verification/tests/system-references.spec.ts",
-      "bytes": 56897,
-      "sha256": "83c0a4a23ba01615fe1cc38673fb82cab34e8f0c9f73331ab3cea0854a95d372"
+      "bytes": 59410,
+      "sha256": "bccc5d7185bc0ac8ff0aaec1590f8fda2777bbc534d1d0bf46693cf338b5f683"
     },
     {
       "path": "references/verification/tests/unified-selects.spec.ts",
-      "bytes": 13636,
-      "sha256": "3d4bf958f8b2dd95416d946d0af3ccf89e013e5f98644e92831494dc8089bac9"
+      "bytes": 13658,
+      "sha256": "b1840099f523a30b501d9c39846d1e8bc306ef4374fa18bd8163c7c32bc624b2"
     },
     {
       "path": "references/visual-data/assets/overview.png",
@@ -1334,13 +1379,13 @@
     },
     {
       "path": "specs/Обзор.md",
-      "bytes": 14978,
-      "sha256": "946277c6ec175681a8e31da03a276e93b9de47deebb6326d59a7da5b696947b0"
+      "bytes": 17745,
+      "sha256": "24290238a696a64a0148b98bb81a7cabded1b84c2103261f09d46725a0d5997a"
     },
     {
       "path": "specs/Общие компоненты/Аккордеон/Контракт.md",
-      "bytes": 17478,
-      "sha256": "48ef5b3b57bcaefc4a8e61e03c948283a7c9c15e7aa01ca53d98300231b3a776"
+      "bytes": 18528,
+      "sha256": "e4311dda7c1f542cbe9ae70688500d0c78e89d9ddcb728b1af721ded6320d9a9"
     },
     {
       "path": "specs/Общие компоненты/Базовые элементы/Аватар/Контракт.md",
@@ -1354,8 +1399,8 @@
     },
     {
       "path": "specs/Общие компоненты/Базовые элементы/Вкладки/Контракт.md",
-      "bytes": 17734,
-      "sha256": "6da5ec034ec4fec774de4adde018fdc54b5e30886876f6b163ef32d8eb4bc6f8"
+      "bytes": 18300,
+      "sha256": "99743ba6a20e89275fb50682510f5c93c53161fb3f8d5fdc3001e805eb0c903d"
     },
     {
       "path": "specs/Общие компоненты/Базовые элементы/Вкладки/Параметры.yaml",
@@ -1364,8 +1409,8 @@
     },
     {
       "path": "specs/Общие компоненты/Базовые элементы/Диапазон/Контракт.md",
-      "bytes": 18201,
-      "sha256": "e5ab7ad35355eedbccb504241647365fb7114e098b078e6bc724752b21c93ffc"
+      "bytes": 19317,
+      "sha256": "0d3d08149fe4f97e3acfd81413690b83a3e27a6fc5c166d57a21334c7106129a"
     },
     {
       "path": "specs/Общие компоненты/Базовые элементы/Диапазон/Параметры.yaml",
@@ -1373,14 +1418,24 @@
       "sha256": "65bac6682668417df88e70735c5f8111bfe7fc83976924368b1c61d2fb8b5e51"
     },
     {
+      "path": "specs/Общие компоненты/Базовые элементы/Заголовок детальной карточки/Контракт.md",
+      "bytes": 1485,
+      "sha256": "f12a6f53f7bfeba236eda5d78ef1ad2a03565df2b9fa154758dfd87691504bb8"
+    },
+    {
+      "path": "specs/Общие компоненты/Базовые элементы/Заголовок детальной карточки/Параметры.yaml",
+      "bytes": 1739,
+      "sha256": "73610ca0e947c80bb691489fd14424ac877fd2143cca1c6bbbff210d109a9436"
+    },
+    {
       "path": "specs/Общие компоненты/Базовые элементы/Заголовок колонки/Контракт.md",
-      "bytes": 27936,
-      "sha256": "04bb64970f733ff79663eb952742fbd4578b5583f9f43d8c3c0ad49236c3e504"
+      "bytes": 27435,
+      "sha256": "a091e40660f8391a91e1a114fe82b7a28d905703be06108ded0c4a84e2661b32"
     },
     {
       "path": "specs/Общие компоненты/Базовые элементы/Заголовок колонки/Параметры.yaml",
-      "bytes": 18213,
-      "sha256": "130dfe07244228aabdb19d1dc6b741f5a40312d07c6f1c4618a41b9d35d38070"
+      "bytes": 18306,
+      "sha256": "cf0093cc39b2a4c8045e685d1f1ebdf6432b3ae1a8eb17ef5089ff58e3a71bde"
     },
     {
       "path": "specs/Общие компоненты/Базовые элементы/Кнопка/Контракт.md",
@@ -1394,8 +1449,8 @@
     },
     {
       "path": "specs/Общие компоненты/Базовые элементы/Контрол выбора/Контракт.md",
-      "bytes": 15894,
-      "sha256": "cb6777912b47a3e3854396e4fb0104f754f319f5a47558610dd18f50aec7e707"
+      "bytes": 16628,
+      "sha256": "502d047e1603c57eae15f994b7764588b4c9c601cf8b7d293296f772b7f7743e"
     },
     {
       "path": "specs/Общие компоненты/Базовые элементы/Контрол выбора/Параметры.yaml",
@@ -1404,8 +1459,8 @@
     },
     {
       "path": "specs/Общие компоненты/Базовые элементы/Пагинация/Контракт.md",
-      "bytes": 17189,
-      "sha256": "869b48edfcea71a75440d55cffc0674deb4c08d92a4e8dba82bfe5d87ebead61"
+      "bytes": 18759,
+      "sha256": "4c7c00bf50e5243a448358ab3436ff6664ea1dc9c26c04fb26a8db818f395f4e"
     },
     {
       "path": "specs/Общие компоненты/Базовые элементы/Пагинация/Параметры.yaml",
@@ -1444,13 +1499,13 @@
     },
     {
       "path": "specs/Общие компоненты/Базовые элементы/Пункт навигации/Контракт.md",
-      "bytes": 15621,
-      "sha256": "2c49375f1a63c142288855a9091bf557b8882b46d5418c1262cf05d9480779c1"
+      "bytes": 15426,
+      "sha256": "4064186964e5b52a0768a99f67f4cc77ed7df60471dccf9ab4db0073fdef5202"
     },
     {
       "path": "specs/Общие компоненты/Базовые элементы/Пункт навигации/Параметры.yaml",
-      "bytes": 8068,
-      "sha256": "27c23cf2208c63e5efbd15c4875a1a4df9d63a8a93b55caaf8d482eb55b28699"
+      "bytes": 7677,
+      "sha256": "bbc9fe9b50e8bac3f3e28a0c87d933f2b1ea40e9c072f6dc71d983f262f6d386"
     },
     {
       "path": "specs/Общие компоненты/Базовые элементы/Пустое состояние/assets/manifest.json",
@@ -1474,13 +1529,13 @@
     },
     {
       "path": "specs/Общие компоненты/Базовые элементы/Сегмент-контрол/Контракт.md",
-      "bytes": 17031,
-      "sha256": "aa683ce1beb9eec2a34fc30ad56361311cff2cf556e62a66ca88fc0ec79268f4"
+      "bytes": 18614,
+      "sha256": "dbf21435181ace4b880dc22de213c45d7d7cb25335273f9e79c22a4db5443d83"
     },
     {
       "path": "specs/Общие компоненты/Базовые элементы/Сегмент-контрол/Параметры.yaml",
-      "bytes": 7908,
-      "sha256": "4720eb36465c943c183a697660271d662482b386c242d79580621481478db355"
+      "bytes": 9831,
+      "sha256": "b096dafaf6e09b410cf8ea4651c378dbb20fb6c8f92b48355026021ab22c38b3"
     },
     {
       "path": "specs/Общие компоненты/Базовые элементы/Селект/Изображения/hidden-tags-2026-11-05.png",
@@ -1514,8 +1569,8 @@
     },
     {
       "path": "specs/Общие компоненты/Базовые элементы/Строка списка/Контракт.md",
-      "bytes": 5295,
-      "sha256": "c51b1a200559518263ce28a07e9431df9857c255da1864f78e11b61578f4f5ba"
+      "bytes": 5752,
+      "sha256": "2a144a3df3f22dec2ea3d37d4a53d0c275e591c382e52fa97c8bbbb2dbb76e01"
     },
     {
       "path": "specs/Общие компоненты/Базовые элементы/Счётчик/Контракт.md",
@@ -1529,18 +1584,18 @@
     },
     {
       "path": "specs/Общие компоненты/Базовые элементы/Тег/Контракт.md",
-      "bytes": 15271,
-      "sha256": "86d548279e6c7c25accb45678b9df118e3fe59ef820d409ddd8063fe6d5759ab"
+      "bytes": 15587,
+      "sha256": "5dde01da5b17977901ba7dacbdea5dd2665602f04c9e17886b404e63d64bde09"
     },
     {
       "path": "specs/Общие компоненты/Базовые элементы/Тег/Параметры.yaml",
-      "bytes": 16780,
-      "sha256": "6e624e1addeda0372de78ccb34c9f7eefead910768a92923be20b6c9d707e277"
+      "bytes": 18021,
+      "sha256": "9d33ca8b92da3c4b8e056e20434b7512725a8bf0ca878ea02ffdc6eab0ed7c52"
     },
     {
       "path": "specs/Общие компоненты/Базовые элементы/Хлебные крошки/Контракт.md",
-      "bytes": 14141,
-      "sha256": "b30b696398636ff7637d1341fa151c2947ba27c2ca9ae1424814e94fb7a0c89e"
+      "bytes": 13822,
+      "sha256": "be092c2b0b33755a7394078888215cc0cefbac2539eb72ee26261c58a3cf7449"
     },
     {
       "path": "specs/Общие компоненты/Базовые элементы/Хлебные крошки/Параметры.yaml",
@@ -1549,13 +1604,13 @@
     },
     {
       "path": "specs/Общие компоненты/Базовые элементы/Чипс/Контракт.md",
-      "bytes": 12210,
-      "sha256": "769e1be6a5672a41ea49ab1d11cf1200841d1b34b635f4d7f8bfc6dff7a5c641"
+      "bytes": 14009,
+      "sha256": "08da34a8cfe7596344225f1741c7852a82127f8264a3953bc5fe12dfcb0d0b92"
     },
     {
       "path": "specs/Общие компоненты/Базовые элементы/Чипс/Параметры.yaml",
-      "bytes": 8432,
-      "sha256": "579773decc62d8a5610335f1ad5d575029c47031b8a6fecfa1bc49917ab633bb"
+      "bytes": 11321,
+      "sha256": "a09b002862e6e089f8b269853c860b7db91725e013818573eccc41f64ce908d1"
     },
     {
       "path": "specs/Общие компоненты/Боковая навигация/assets-manifest.json",
@@ -1643,14 +1698,9 @@
       "sha256": "5fbbf541c297c38a6c02df0acf6231817f67073ff90666d60901271a1b497402"
     },
     {
-      "path": "specs/Общие компоненты/Боковая навигация/Источники.md",
-      "bytes": 11688,
-      "sha256": "d46bccc9080d8c82b776e465189c0b53d8b3bb4ea3e731263c72ac2ddddbdfda"
-    },
-    {
       "path": "specs/Общие компоненты/Боковая навигация/Контракт.md",
-      "bytes": 48820,
-      "sha256": "b42fa7e7bf38da59cd4aa7ee49e5e60aac50821f7540aa9b703e700153e7fc57"
+      "bytes": 8513,
+      "sha256": "d23703b6af39d88387bb7ecf315e8e83ec1b8a9da2d297bd2234e5377ab26fa7"
     },
     {
       "path": "specs/Общие компоненты/Индикатор прокрутки/assets/reports-gutter.png",
@@ -1659,13 +1709,13 @@
     },
     {
       "path": "specs/Общие компоненты/Индикатор прокрутки/Контракт.md",
-      "bytes": 2920,
-      "sha256": "fbeeb1d40836533298dcf0b1c208a4786ffb8e8ffac6fbf5af170061e0eb2e0f"
+      "bytes": 2512,
+      "sha256": "2e0c15d56c03932a241bd6d1615ed718ad329543d84914f9ac30607b407cea51"
     },
     {
       "path": "specs/Общие компоненты/Индикатор прокрутки/Параметры.yaml",
-      "bytes": 1131,
-      "sha256": "1851d93803269b71a995602784a5843938b74d66c1eaa110911172602c1cf65c"
+      "bytes": 1118,
+      "sha256": "6eb5b557ab4afaa1ff33328023e913e4451a57de405d5034fa7dba7c7c784d89"
     },
     {
       "path": "specs/Общие компоненты/Карточка подписки/assets-manifest.json",
@@ -1764,8 +1814,8 @@
     },
     {
       "path": "specs/Общие компоненты/Поиск и навигатор/Вид.md",
-      "bytes": 32358,
-      "sha256": "31e1f03c0fa31d91243a2a2baba02987d89c5d77977284e54887be6780ae933a"
+      "bytes": 8781,
+      "sha256": "8810c722179024f6e7ccfc6155915c4f67bda3ae1e36aea7dbf0bf381e206370"
     },
     {
       "path": "specs/Общие компоненты/Поиск и навигатор/Изображения/actual-before-input.png",
@@ -1948,11 +1998,6 @@
       "sha256": "07191d6774127586e9a201776ece1100f0b2f6a702fece487844b5b548cd1911"
     },
     {
-      "path": "specs/Общие компоненты/Поиск и навигатор/Изображения/Принятая реализация/navigator-seven-chips-first-batch.png",
-      "bytes": 66048,
-      "sha256": "720dc1c3db5915d84ca54ec3a15547b548b8740957812aafbd3f6013d842e39c"
-    },
-    {
       "path": "specs/Общие компоненты/Поиск и навигатор/Изображения/Принятая реализация/no-results.png",
       "bytes": 137779,
       "sha256": "21b1a5b6009edc60045067121295b0aa67379acf8d42e4a0bb8354c8b453976e"
@@ -1998,9 +2043,34 @@
       "sha256": "8dfab1485a4f44cbad7162816653d75911ddb3b4a10417ae822fbf8b095d4b19"
     },
     {
+      "path": "specs/Общие компоненты/Поиск и навигатор/Изображения/Срез 9 ноября/manifest.json",
+      "bytes": 1725,
+      "sha256": "b0660636c5644b445a32b2d09d4610c9966eb85a19f18c3d3bc985875fff82ba"
+    },
+    {
+      "path": "specs/Общие компоненты/Поиск и навигатор/Изображения/Срез 9 ноября/navigator-source-complete.png",
+      "bytes": 153466,
+      "sha256": "098fcbf99e608f0ae0c82f8b9e9993ab7e3ef90aebe92e694999c4e34c8f6466"
+    },
+    {
+      "path": "specs/Общие компоненты/Поиск и навигатор/Изображения/Срез 9 ноября/navigator-source-page.png",
+      "bytes": 162123,
+      "sha256": "23c0eb52b5ce5a1f85b756587af47d35f01789cad4d7867a0953e70d00e5a5f3"
+    },
+    {
+      "path": "specs/Общие компоненты/Поиск и навигатор/Изображения/Срез 9 ноября/Проверка.md",
+      "bytes": 1795,
+      "sha256": "280cdd9ed25e9c4286b3d5c7bbd883f5d0bdfd2d5ec8cc10241ecc2112492162"
+    },
+    {
+      "path": "specs/Общие компоненты/Поиск и навигатор/Изображения/Срез 9 ноября/Эталоны.md",
+      "bytes": 1055,
+      "sha256": "dd90944c74b43b7f4123c81a27a3e0569da3af53dd21590c3b9d41bc4343d6e7"
+    },
+    {
       "path": "specs/Общие компоненты/Поиск и навигатор/Источники вида.md",
-      "bytes": 13273,
-      "sha256": "d76dd16e421f493715e3ab5908b5ca6e8f16e0febc011a8eac3b81fdffc5ede0"
+      "bytes": 14112,
+      "sha256": "892c8edfce270590002a32cb1e898b2cf351cd2845c307219cd8f84990c279b6"
     },
     {
       "path": "specs/Общие компоненты/Поиск и навигатор/Контракт.md",
@@ -2034,8 +2104,8 @@
     },
     {
       "path": "specs/Общие компоненты/Поиск и навигатор/Состояния.md",
-      "bytes": 36379,
-      "sha256": "38d3a8d772868673d2327f7c20bf191cd7b7873c5e35e44b43c9f0a6210eb480"
+      "bytes": 22152,
+      "sha256": "a1dd737c2a9950c360d2a6603fe1dc2aacb3e00374bba92654b523fac2b31ca0"
     },
     {
       "path": "specs/Общие компоненты/Таблица отчётов/assets/adaptive/catalogue-1440-end-domain-applied.png",
@@ -2199,8 +2269,8 @@
     },
     {
       "path": "specs/Общие компоненты/Таблица отчётов/Контракт.md",
-      "bytes": 60898,
-      "sha256": "7ba7603b278c1026b7ec000c9012c1bc57237bd92143c50bbc60101c18214063"
+      "bytes": 62201,
+      "sha256": "c5e542ee5372b4d1d48654ca5acbc9baca3de7caf19e08d31fd69d67c816b78a"
     },
     {
       "path": "specs/Общие компоненты/Таблица отчётов/Строка.md",
@@ -2209,8 +2279,8 @@
     },
     {
       "path": "specs/Общие компоненты/Текстовые подсказки/Контракт.md",
-      "bytes": 6141,
-      "sha256": "0523d256706011ccd9be44a0c1b317f876f9081354827d70652c3e2433d6be56"
+      "bytes": 7754,
+      "sha256": "0a5bd76f8ce09713fa5965254d400f6c66784179828d643f86cf12ba87176732"
     },
     {
       "path": "specs/Общие компоненты/Уведомление об отправке вопроса/assets/sent.png",
@@ -2344,13 +2414,13 @@
     },
     {
       "path": "specs/Общие компоненты/Фильтрация отчётов/Меню колонки.md",
-      "bytes": 27010,
-      "sha256": "fbc980a9e68edb749e11fc25aaf5925330245304bcd79e3c6a28f98cf643b39f"
+      "bytes": 27800,
+      "sha256": "746295e23ad691cb0e374b61cffee7e2d84ee0f8d097fa53bf3993055435d445"
     },
     {
       "path": "specs/Общие компоненты/Фильтрация отчётов/Панель.md",
-      "bytes": 32734,
-      "sha256": "427d57c0e906bd1e7fd2afe6bcc0240287434180ca8975bd0b6b233d69e891f6"
+      "bytes": 33915,
+      "sha256": "dea04816534564d267ef9cc86d23bf70cfcb7d90c583a111bc4585a83ef4fa7f"
     },
     {
       "path": "specs/Общие компоненты/Форма вопроса/assets/initial.png",
@@ -2364,8 +2434,8 @@
     },
     {
       "path": "specs/Общие компоненты/Форма вопроса/Контракт.md",
-      "bytes": 3984,
-      "sha256": "d971817a4e247fc8e7e8d251d56107bbee8f6760948140114a47de729f03d7c8"
+      "bytes": 5452,
+      "sha256": "46ea3fcf759b37b944f8bc4d301e9a686c1b31b3eadd65bc5065ace1ab69d017"
     },
     {
       "path": "specs/Общие компоненты/Форма вопроса/Параметры.yaml",
@@ -2403,9 +2473,14 @@
       "sha256": "78dba082ce2b55e51af435be66b1f63a017a5f060a10d447d8caee43a6053250"
     },
     {
+      "path": "specs/Общие компоненты/Шапка детальной карточки.md",
+      "bytes": 1980,
+      "sha256": "00fc0071f1d20342001d6879f883510076efabd4d90f3b6ac518519dcdf2043a"
+    },
+    {
       "path": "specs/Разделы/AI Hub/Детальная карточка.md",
-      "bytes": 7254,
-      "sha256": "993c5fbca45f1d1f8a042a0232a83d3f448b47ca0497ba48e8cb9ca754ca51f2"
+      "bytes": 7775,
+      "sha256": "146303bda2b709cd36641624d16ec8d2b4c8d32a3a8382fd14becfe23d262ec8"
     },
     {
       "path": "specs/Разделы/AI Hub/Изображения/ai-catalog-empty-1440.png",
@@ -2423,39 +2498,9 @@
       "sha256": "036983b90b775279fabc081ea18838c9ee5fa1a68447f5f80dd0575382a4be7a"
     },
     {
-      "path": "specs/Разделы/AI Hub/Изображения/ai-detail-1440.png",
-      "bytes": 196787,
-      "sha256": "ff7c0c272736023597fc2b98c8946629f885a95b7e3e7d01ec81492fba38f2ff"
-    },
-    {
-      "path": "specs/Разделы/AI Hub/Изображения/ai-detail-1920.png",
-      "bytes": 203384,
-      "sha256": "875c8205ce112786116834f9470a82ec4bd7d449373d31933095d6d2ec4b1615"
-    },
-    {
-      "path": "specs/Разделы/AI Hub/Изображения/ai-detail-600.png",
-      "bytes": 79432,
-      "sha256": "4e0e4d263b7e8064f05eff75e9e38f428165bb75e5d43d01396c18abe4040921"
-    },
-    {
-      "path": "specs/Разделы/AI Hub/Изображения/ai-detail-900.png",
-      "bytes": 112587,
-      "sha256": "af4cc3dc226c49082c331be7b4ed94e0eaca83129456970a02b7f4a3e663c94e"
-    },
-    {
-      "path": "specs/Разделы/AI Hub/Изображения/ai-detail-collapsed-1440.png",
-      "bytes": 165316,
-      "sha256": "0870847fdb921a86fe093a2caf6272e462110a3ff57eae3f768f466ff720803b"
-    },
-    {
       "path": "specs/Разделы/AI Hub/Изображения/ai-detail-navigator-1440.png",
       "bytes": 198439,
       "sha256": "bd92d8ffea6f8f0973547ce66d55ac7fe2631b9908f1c909a083bbd584ac9996"
-    },
-    {
-      "path": "specs/Разделы/AI Hub/Изображения/ai-hub-1440.png",
-      "bytes": 131910,
-      "sha256": "94b1737a9ad54f020f65c97fd94a3a30381057e5d959d9949102a4fa9f46c4f3"
     },
     {
       "path": "specs/Разделы/AI Hub/Изображения/ai-hub-1920.png",
@@ -2463,24 +2508,19 @@
       "sha256": "1e8350a9c6707af202134b8931765795e793a77b1eb2897c27aac349f6547858"
     },
     {
-      "path": "specs/Разделы/AI Hub/Изображения/solution-card-hover.png",
-      "bytes": 132970,
-      "sha256": "a94b971b75abcb13616bc9309f870b376e16a7ea03fd6b71634bcbe828c5a781"
-    },
-    {
       "path": "specs/Разделы/AI Hub/Карточка решения/Контракт.md",
-      "bytes": 3653,
-      "sha256": "97c50dab0c2bb0f633c6d6f96e5b3378be5e2f6d4054deb7d7ddd157f62846a9"
+      "bytes": 3298,
+      "sha256": "df3782d499030956036c8833ee8b032dd4d22a80e22fbfd7246735e275d94a72"
     },
     {
       "path": "specs/Разделы/AI Hub/Карточка решения/Параметры.yaml",
-      "bytes": 3630,
-      "sha256": "c4be02a8ed7fb2e4fd33fa6750e9b7f51ccf61ba1dca6b007d7f6f6a4272cc8f"
+      "bytes": 3631,
+      "sha256": "0c7b566e05c593760b9c00d7917113201b28e39f63e630ec45b34f1147c9ff87"
     },
     {
       "path": "specs/Разделы/AI Hub/Каталог.md",
-      "bytes": 5713,
-      "sha256": "c2d0deaca88cdb97a5f774a751d35f885242366074f6da76a03c57f1d8fd5f07"
+      "bytes": 10776,
+      "sha256": "2a61b52bb3c98e6c1b3d70985cb99ddd5d1ad0c7a1134c70711bf373054de527"
     },
     {
       "path": "specs/Разделы/AI Hub/Контрольные данные.json",
@@ -2489,8 +2529,8 @@
     },
     {
       "path": "specs/Разделы/AI Hub/Навигация по решениям/Контракт.md",
-      "bytes": 2039,
-      "sha256": "901ee7b74a42211d246f6f5c9be7d6d3cd6edaa50e7e60e6af5cd74a3e5b6306"
+      "bytes": 2228,
+      "sha256": "f7a2dafe7eff909565eeb7b1c3437fb33566e5a76dc3a68b18f07dc86a2f14f7"
     },
     {
       "path": "specs/Разделы/AI Hub/Навигация по решениям/Параметры.yaml",
@@ -2499,13 +2539,13 @@
     },
     {
       "path": "specs/Разделы/AI Hub/Панель поиска и фильтрации/Контракт.md",
-      "bytes": 6488,
-      "sha256": "f1051f95a33a517747dccab494e9600ed08d6786ae6d99ba8d038a9fec314e9e"
+      "bytes": 7416,
+      "sha256": "ee61fcc043b7740886e2b7b661c02b3d6201f09b8565282ec7bf16e9c7625e73"
     },
     {
       "path": "specs/Разделы/AI Hub/Панель поиска и фильтрации/Параметры.yaml",
-      "bytes": 3008,
-      "sha256": "8e3e82a507895357e26dc67bf8e659cef18213c404450f08c7a48c75d4053b78"
+      "bytes": 2870,
+      "sha256": "c88e38ad5c7502c602c6e1595a28bf7b395aab042ada9118429364b346d6fccd"
     },
     {
       "path": "specs/Разделы/AI Hub/Параметры.yaml",
@@ -2514,8 +2554,8 @@
     },
     {
       "path": "specs/Разделы/AI Hub/Паспорт решения/Контракт.md",
-      "bytes": 2091,
-      "sha256": "fae0fa8e7ca7ff019b4f545984e3be317cc6eaa2ac880ccd7349f72fb95162a0"
+      "bytes": 2753,
+      "sha256": "adde3473b0e8b9e0c2f5f64b634a495bf68e281ef4d55b282a6a86c0b2e90ca0"
     },
     {
       "path": "specs/Разделы/AI Hub/Паспорт решения/Параметры.yaml",
@@ -2524,13 +2564,18 @@
     },
     {
       "path": "specs/Разделы/AI Hub/Сценарии и эталоны.md",
-      "bytes": 8128,
-      "sha256": "b1d55f9fc4a908506d18f9475c416d3d55d25f4920186f3f164b01389a71eff1"
+      "bytes": 11196,
+      "sha256": "b3ca08ee16177839a9dbda2006323f015d974b092e3ddc883054fff343632e7c"
     },
     {
       "path": "specs/Разделы/Бизнес-словарь/Группа результатов.md",
-      "bytes": 2181,
-      "sha256": "b652660cd64186d8e66687aab49a1aef99e728cf5b51f740ab344c24359fb354"
+      "bytes": 2229,
+      "sha256": "d45409d0bbbdd2461c2654f4837a704c306687781a9fb52b2a7d3caf2be29ee6"
+    },
+    {
+      "path": "specs/Разделы/Бизнес-словарь/Детальная карточка термина.md",
+      "bytes": 5575,
+      "sha256": "a7423ac0ab9041aec9e13e27da9261bdbcab1d52f2dab635ff926a118d2112cd"
     },
     {
       "path": "specs/Разделы/Бизнес-словарь/Изображения/dictionary-all-current.png",
@@ -2559,18 +2604,18 @@
     },
     {
       "path": "specs/Разделы/Бизнес-словарь/Карточка термина.md",
-      "bytes": 2934,
-      "sha256": "641d695074cf23ca24201d0f4b38cc27d452c8d27350b61f5a18e69f335b7722"
+      "bytes": 3369,
+      "sha256": "dfed60a4924669034d3ea314c8be21226f42a742396fbf9233645e24fa0e5736"
     },
     {
       "path": "specs/Разделы/Бизнес-словарь/Контракт.md",
-      "bytes": 21893,
-      "sha256": "b3f7c2cdb0133ca6c7b8e6e762a5469697e912b8dafb5093d6f44bac32982dba"
+      "bytes": 21107,
+      "sha256": "07670376421b62c39b0f79e0f704734672b9bc1a8a9993de0cfef9aec7994189"
     },
     {
       "path": "specs/Разделы/Бизнес-словарь/Контрольные данные.json",
-      "bytes": 6182,
-      "sha256": "9220d35d6df76cbec23498423f3568cf223e5dc1d3830586c876b8cefb9ff2ae"
+      "bytes": 8109,
+      "sha256": "510e6682ffa880b1a8ff607e440dce25f3f65f64241e00f2dadfc98bc545b10a"
     },
     {
       "path": "specs/Разделы/Бизнес-словарь/Параметры карточки термина.yaml",
@@ -2589,8 +2634,8 @@
     },
     {
       "path": "specs/Разделы/Бизнес-словарь/Фильтры.md",
-      "bytes": 7227,
-      "sha256": "f20e51e53fa9cbb26bd4e21bece0d9dd87d1f2c6853dc1b17b78f1e01b373fc0"
+      "bytes": 7050,
+      "sha256": "39c23871144982451a1a0ddf4dfc29586e6ffe44d8016755402872a7484f2978"
     },
     {
       "path": "specs/Разделы/Вопросы и ответы/assets/ask-accepted-1440.png",
@@ -2606,6 +2651,16 @@
       "path": "specs/Разделы/Вопросы и ответы/assets/faq-closed-1440.png",
       "bytes": 71778,
       "sha256": "9ad25d41e6fc6cdad2e5f217ff756ce1a442e9c5c456bd748505f8bef7a729e7"
+    },
+    {
+      "path": "specs/Разделы/Вопросы и ответы/assets/faq-empty-1440.png",
+      "bytes": 64497,
+      "sha256": "4462c416b0ffd4a37c3ea092d2d2ac69363fc54a6cd1d28149224238feee39e9"
+    },
+    {
+      "path": "specs/Разделы/Вопросы и ответы/assets/faq-long-open-820.png",
+      "bytes": 72121,
+      "sha256": "eb48a98395aa61999d4d1a0056aecefd870080b2765a4aa6fbbc9ce4452c0b44"
     },
     {
       "path": "specs/Разделы/Вопросы и ответы/assets/faq-no-results-1440.png",
@@ -2664,8 +2719,8 @@
     },
     {
       "path": "specs/Разделы/Вопросы и ответы/Запись FAQ/Контракт.md",
-      "bytes": 3281,
-      "sha256": "f2c755be36f03a6138c3e813a2a6be1670eab3d350d0c1ce976cf60d120e732c"
+      "bytes": 3723,
+      "sha256": "3dc1985142c5ae2f93a358a0d9654bca1bb83b24a1f0d24da060bb88b43e46c3"
     },
     {
       "path": "specs/Разделы/Вопросы и ответы/Запись FAQ/Параметры.yaml",
@@ -2694,8 +2749,8 @@
     },
     {
       "path": "specs/Разделы/Вопросы и ответы/Панель управления/Контракт.md",
-      "bytes": 4199,
-      "sha256": "085b6245a27117714f6ddebd8e78333e2f4ef5541a6a2029b615a514a29d4463"
+      "bytes": 4387,
+      "sha256": "63f19c18607a46806631be90d193635a5a64888d73e9a0495fa13114c6017fdf"
     },
     {
       "path": "specs/Разделы/Вопросы и ответы/Панель управления/Параметры.yaml",
@@ -2709,8 +2764,8 @@
     },
     {
       "path": "specs/Разделы/Вопросы и ответы/Сценарии.md",
-      "bytes": 5206,
-      "sha256": "35500e433bdbbda910c73d4fcf94e92116b029b7d3b858344b2b119c5a2e4e4b"
+      "bytes": 6854,
+      "sha256": "36db459c5693cdc20b62ce366863b082c632d8c83f4e4f7d229f8edd540ffff8"
     },
     {
       "path": "specs/Разделы/Главная/assets-manifest.json",
@@ -3119,8 +3174,8 @@
     },
     {
       "path": "specs/Разделы/Главная/Виды.md",
-      "bytes": 37044,
-      "sha256": "ed25e33109e1a71dcf9fea3d9947f34cb96059bc6c4b856eaee669cfb1334867"
+      "bytes": 37498,
+      "sha256": "6f4575f524bf97b1322208d37816b0dde4ed15ccd02e175f09d292012c184cda"
     },
     {
       "path": "specs/Разделы/Главная/Исходные состояния.md",
@@ -3161,6 +3216,11 @@
       "path": "specs/Разделы/Главная/Чтение новости.md",
       "bytes": 6631,
       "sha256": "f30800537ee0770a93ca73f2a752e96f3466015dc20a77c3a2ed33eb5c87e349"
+    },
+    {
+      "path": "specs/Разделы/Источники/assets/source-lineage-information.png",
+      "bytes": 178951,
+      "sha256": "8509cc693c634a87b1e3e2b6341323f5140e97e41c27bafc5ba36d83c1581ebc"
     },
     {
       "path": "specs/Разделы/Источники/assets/Срез 8 ноября/manifest.json",
@@ -3253,14 +3313,89 @@
       "sha256": "e49a97ab485b846b2af523dceffd3f529a70eee724ea1b371267900333aad7ca"
     },
     {
+      "path": "specs/Разделы/Источники/assets/Срез 9 ноября/manifest.json",
+      "bytes": 7722,
+      "sha256": "51a2e86a20bff16fbbcc2faf79b60d0e2220bae6e874d5c54c1eab39badae724"
+    },
+    {
+      "path": "specs/Разделы/Источники/assets/Срез 9 ноября/source-fields.png",
+      "bytes": 153852,
+      "sha256": "11f13b33f6223b842e04ccbbc01c2d3c2db13f6976b13d8da31deb6cf7662658"
+    },
+    {
+      "path": "specs/Разделы/Источники/assets/Срез 9 ноября/source-lineage.png",
+      "bytes": 143740,
+      "sha256": "8eba20c30088c42051a79c6661afc9c32012848d6e0ca9636ed751bb0775298f"
+    },
+    {
+      "path": "specs/Разделы/Источники/assets/Срез 9 ноября/source-narrow.png",
+      "bytes": 117005,
+      "sha256": "524d13205faaff6b9cdc04268a380249fc8e0ee9ce6e7346200662fc989c444c"
+    },
+    {
+      "path": "specs/Разделы/Источники/assets/Срез 9 ноября/source-reports.png",
+      "bytes": 145740,
+      "sha256": "c742a06b4cf89dedcb01b69f147f090715a768d3def937dabc5df17ae9c02830"
+    },
+    {
+      "path": "specs/Разделы/Источники/assets/Срез 9 ноября/source-similar.png",
+      "bytes": 138108,
+      "sha256": "47dfa725756b82405469bb9a4662664ff8db9133f14a63c578e150cf74306583"
+    },
+    {
+      "path": "specs/Разделы/Источники/assets/Срез 9 ноября/source-tree-view-icon.svg",
+      "bytes": 356,
+      "sha256": "0f857c68312d1c3e8477534974b37e6c4375752a5cf751b3ed6b27cd0c554bc5"
+    },
+    {
+      "path": "specs/Разделы/Источники/assets/Срез 9 ноября/sources-cards.png",
+      "bytes": 166251,
+      "sha256": "f009eea160579adec54f813501c1f2e4351a83a70a4c54645c45efcb26cfa41d"
+    },
+    {
+      "path": "specs/Разделы/Источники/assets/Срез 9 ноября/sources-example.json",
+      "bytes": 66024,
+      "sha256": "544a17a62a8e87e412aae0e5b3db3007d7bec15f6faf8d4062963eabaecca0e2"
+    },
+    {
+      "path": "specs/Разделы/Источники/assets/Срез 9 ноября/sources-filter-panel.png",
+      "bytes": 92802,
+      "sha256": "0e557ec8aee7974d600f2c429ebfee7a44fbccc316993f67535e48bfbcaecdc6"
+    },
+    {
+      "path": "specs/Разделы/Источники/assets/Срез 9 ноября/sources-table.png",
+      "bytes": 188772,
+      "sha256": "a5100a0e66faf4673eca65e4e131757d3fb3304c38f75f07e7d2dec61a440325"
+    },
+    {
+      "path": "specs/Разделы/Источники/assets/Срез 9 ноября/sources-tree-filtered.png",
+      "bytes": 54634,
+      "sha256": "a7e8a9372e70d8bff74274324cd3ccb1631fdca0f480c0788c53086fd1ce8c9d"
+    },
+    {
+      "path": "specs/Разделы/Источники/assets/Срез 9 ноября/sources-tree-sales-return.png",
+      "bytes": 80943,
+      "sha256": "90368194833f67e915d31101533f2946a9acc543939190f84234a2cbdc6d458d"
+    },
+    {
+      "path": "specs/Разделы/Источники/assets/Срез 9 ноября/sources-tree.png",
+      "bytes": 82149,
+      "sha256": "c9cb3f3db18a31d0af79e67d1ef1269a55d562701cae865d9f3d204cb4e37ddf"
+    },
+    {
+      "path": "specs/Разделы/Источники/assets/Срез 9 ноября/Эталоны.md",
+      "bytes": 2663,
+      "sha256": "9f061e692f382c471ca0693f3e52c0f54ae76cdfa5eeee2bb90cc3d756c904bc"
+    },
+    {
+      "path": "specs/Разделы/Источники/Детальная карточка/Lineage.md",
+      "bytes": 2787,
+      "sha256": "7d0b0975ebd064389371963a9390fb23ed7f99f31a6e304a44bd6f89f7f040ad"
+    },
+    {
       "path": "specs/Разделы/Источники/Детальная карточка/Изображения/manifest.json",
       "bytes": 969,
       "sha256": "f9d9864522338642edd57e177d94843687b171ec6321d60bcf09c823f678eff9"
-    },
-    {
-      "path": "specs/Разделы/Источники/Детальная карточка/Изображения/paper-computed-styles.json",
-      "bytes": 5164,
-      "sha256": "73c18577dfae88dc185519cf351f0ede57bc893cb73cff7878ec853c45c267e7"
     },
     {
       "path": "specs/Разделы/Источники/Детальная карточка/Изображения/source-detail-fields-1440.png",
@@ -3294,18 +3429,43 @@
     },
     {
       "path": "specs/Разделы/Источники/Детальная карточка/Контракт.md",
-      "bytes": 47192,
-      "sha256": "9a6669a66495969434db584c37671b50e12598fad299bb2422055290f614637d"
+      "bytes": 44422,
+      "sha256": "909ed7e3f6c73c3f55ba71dfddc0e77fa2ff461429248cc84cdfebedf2fe0d35"
+    },
+    {
+      "path": "specs/Разделы/Источники/Детальная карточка/Метрики dimdate.json",
+      "bytes": 1842,
+      "sha256": "53b228cb014bea24613de90f87ed2779424de0b396d39572e726de09a238f231"
+    },
+    {
+      "path": "specs/Разделы/Источники/Детальная карточка/Метрики.md",
+      "bytes": 3576,
+      "sha256": "85346c3f01ab1b4299da77ea20bda62d45aa53fa070bf5642162ac45d831d292"
     },
     {
       "path": "specs/Разделы/Источники/Детальная карточка/Описание полей.md",
-      "bytes": 13207,
-      "sha256": "83e8d98ca606530b11927c21d6a1956de49f07ac182fa762efb97ac53973911b"
+      "bytes": 13507,
+      "sha256": "9ea6cb3c1fe39a123887c3f5d65233ce8c9a7213e1795287a1ca826fd6d8eec7"
+    },
+    {
+      "path": "specs/Разделы/Источники/Детальная карточка/Похожие источники.md",
+      "bytes": 1858,
+      "sha256": "e604cc413b0fc56e8bd815ccce2b92cbf156cdafc2ec9f4f312e6f19cd696c06"
+    },
+    {
+      "path": "specs/Разделы/Источники/Детальная карточка/Связанные отчёты.md",
+      "bytes": 4869,
+      "sha256": "89e56c1c1b3bc3cd62bb904f42aa4c1412492a616c4d2c1852438e20a6d1e838"
     },
     {
       "path": "specs/Разделы/Источники/Контракт.md",
-      "bytes": 48351,
-      "sha256": "aa99762b4bf19f847bf89602cc0ca8cb1629de4cf7ee69034e2b225e47f0a8d5"
+      "bytes": 55693,
+      "sha256": "ab9cc4231636352229cada7f27182e8ba3fafeebfb21fd662be3c4b0d1df24f9"
+    },
+    {
+      "path": "specs/Разделы/Источники/Мастер-системы.md",
+      "bytes": 4141,
+      "sha256": "112e52ea9e22738a7d01db5068467ea5045eef8526a03736474a5d4c80494713"
     },
     {
       "path": "specs/Разделы/Метрики и показатели/assets/audit-2026-11-08/catalog-cards-icons-1440.png",
@@ -3359,13 +3519,13 @@
     },
     {
       "path": "specs/Разделы/Метрики и показатели/Детальная карточка/Контракт.md",
-      "bytes": 24982,
-      "sha256": "abeaf34523b4140d52e2ccd4a2a824aaa51474047c481450ae951e4c66273dcf"
+      "bytes": 26668,
+      "sha256": "fcf9fc3e282bb4e855bf75174a5286a38d359767c05cfb7e150d4dc81b02e2bf"
     },
     {
       "path": "specs/Разделы/Метрики и показатели/Контракт.md",
-      "bytes": 43326,
-      "sha256": "f6a51e090efbebc8173a40fcb81ba0b7bd9976b3d5c42482ed7478f73cf36728"
+      "bytes": 43201,
+      "sha256": "f2e1d6a4057d1ca7bce9fa75e590dfb528140c8db03c2f4bc95109887ec433b1"
     },
     {
       "path": "specs/Разделы/Отчёты/assets/manifest.json",
@@ -3463,6 +3623,56 @@
       "sha256": "c51f803778027b89a302bc62bd060626cb2dfb5928a9ef733ac268c36a0f7de0"
     },
     {
+      "path": "specs/Разделы/Отчёты/assets/Прокрутка метрик/cards-scrolled.png",
+      "bytes": 141979,
+      "sha256": "481c75ae52e2d1de7a255a59178c9c5fbd9ac45e395a5c79a2f1877dfaf498f8"
+    },
+    {
+      "path": "specs/Разделы/Отчёты/assets/Прокрутка метрик/list-scrolled.png",
+      "bytes": 147015,
+      "sha256": "8bb47bba2a84ba6348b7265a7ac34d53995fd1bc22a940a4c006435a9482a3dd"
+    },
+    {
+      "path": "specs/Разделы/Отчёты/assets/Сведения на вкладках/mailings.png",
+      "bytes": 121239,
+      "sha256": "867ccbd5cdaccc3b7ed027c741e988789590ea8fe31cff1bce8052fb42774b4a"
+    },
+    {
+      "path": "specs/Разделы/Отчёты/assets/Сведения на вкладках/manifest.json",
+      "bytes": 1703,
+      "sha256": "5b1624fabbf444bc5952c40025a8b73cba0c92c89896e3e084e70c42a7518791"
+    },
+    {
+      "path": "specs/Разделы/Отчёты/assets/Сведения на вкладках/metrics.png",
+      "bytes": 171948,
+      "sha256": "373d4345a4ad4c4cd233417933bb782f7d26c9fa1b7f64b577fdd96c0f4c7326"
+    },
+    {
+      "path": "specs/Разделы/Отчёты/assets/Сведения на вкладках/overview.png",
+      "bytes": 195449,
+      "sha256": "8aef5f2c2af3a4ddd58ff9ab52d2bcc91896688f2ae1012b5ab6ed73cb40e31c"
+    },
+    {
+      "path": "specs/Разделы/Отчёты/assets/Сведения на вкладках/slides.png",
+      "bytes": 121945,
+      "sha256": "af41e3d1b3cd5d97bc387862df7973b5a711d182e791c1f0c6be838b26ce7c27"
+    },
+    {
+      "path": "specs/Разделы/Отчёты/assets/Сведения на вкладках/sources.png",
+      "bytes": 200892,
+      "sha256": "0fd9e1959be2a8d290d4d9ef529a3ddd443383308ef715748ee90c8266503ba2"
+    },
+    {
+      "path": "specs/Разделы/Отчёты/assets/Сведения на вкладках/technical.png",
+      "bytes": 121334,
+      "sha256": "e233065efbc503b64b3229d9d26f295bf545aa90e60e3e79824c94d9c1e1170c"
+    },
+    {
+      "path": "specs/Разделы/Отчёты/assets/Сведения на вкладках/usage.png",
+      "bytes": 157021,
+      "sha256": "a0afc197833479ecc58cdc0e9fa7e292ebe6495be82bab671163661d46951771"
+    },
+    {
       "path": "specs/Разделы/Отчёты/assets/Срез 8 ноября/catalog-cards-page-three.png",
       "bytes": 81545,
       "sha256": "f8ec6eced94f394942d925286fbb1c4211caa5d8549057df933ec756947ff8e2"
@@ -3521,11 +3731,6 @@
       "path": "specs/Разделы/Отчёты/assets/Срез 8 ноября/report-linked-source.png",
       "bytes": 103574,
       "sha256": "dfbe0716bfa57f7f0690690f327a8e67c76c4f3cdbce186247d267b707d76f0c"
-    },
-    {
-      "path": "specs/Разделы/Отчёты/assets/Срез 8 ноября/report-linked-sources.json",
-      "bytes": 2639,
-      "sha256": "078dcce1773a32223582f55406de17e42a1a787fa5f38d70ff36af8c4a60a2b7"
     },
     {
       "path": "specs/Разделы/Отчёты/assets/Срез 8 ноября/report-mailings.png",
@@ -3593,9 +3798,54 @@
       "sha256": "3debb4cbff37a5a25dbb1a1a9834e382ffa66eff219b29797d2740313a59a8f7"
     },
     {
+      "path": "specs/Разделы/Отчёты/assets/Срез 9 ноября/manifest.json",
+      "bytes": 4587,
+      "sha256": "cbfd28df3700b33d95386b4232b018fe9153e54619ba25ffbbd054e6fb99cabd"
+    },
+    {
+      "path": "specs/Разделы/Отчёты/assets/Срез 9 ноября/report-lineage-fullscreen-tooltip.png",
+      "bytes": 67612,
+      "sha256": "f165d2963e04c7dadf870b190b21e41d123ef686b0c1365d856c88d0e1a1a06c"
+    },
+    {
+      "path": "specs/Разделы/Отчёты/assets/Срез 9 ноября/report-lineage.png",
+      "bytes": 141193,
+      "sha256": "1ebfcefa43ccd40d36a92879d072900659d7f9edf343c269dd23a52fd148ca4a"
+    },
+    {
+      "path": "specs/Разделы/Отчёты/assets/Срез 9 ноября/report-linked-sources.json",
+      "bytes": 3286,
+      "sha256": "48993c4535dd961b74d6a890ddc6374b48479f17c2523384f7aebfbe0f8a65ff"
+    },
+    {
+      "path": "specs/Разделы/Отчёты/assets/Срез 9 ноября/report-overview.png",
+      "bytes": 130187,
+      "sha256": "ad5d182d152fd81897343996eef8a631c02681059511460c6f89f1fc39019c05"
+    },
+    {
+      "path": "specs/Разделы/Отчёты/assets/Срез 9 ноября/report-source-matrix.png",
+      "bytes": 125695,
+      "sha256": "265831e9fdb8a430d3c832e8adada9081144c817cdd352b19bc54796ae4bea1c"
+    },
+    {
+      "path": "specs/Разделы/Отчёты/assets/Срез 9 ноября/report-sources.png",
+      "bytes": 152654,
+      "sha256": "d57fa4d474da4bef9664e2940c58186bd3c409a3a02c8d6f246ad87966ac47ef"
+    },
+    {
+      "path": "specs/Разделы/Отчёты/assets/Срез 9 ноября/report-technical.png",
+      "bytes": 92448,
+      "sha256": "5f21e098fd7cc7f365e7cc6f6366a67ed030ece4e42b1faffd6c64015d66c20d"
+    },
+    {
+      "path": "specs/Разделы/Отчёты/assets/Срез 9 ноября/Эталоны.md",
+      "bytes": 1687,
+      "sha256": "6388244d11cdcb57d48be19e4cd2d24b79ce27b0a8838b5a3e9e3bf545303f55"
+    },
+    {
       "path": "specs/Разделы/Отчёты/Визуальные эталоны.md",
-      "bytes": 9682,
-      "sha256": "0c05338d87b1f72f9f27b91a2ce7b38de78d8278fc00465a8ed533adb690b3b8"
+      "bytes": 9723,
+      "sha256": "e73922e9fa281648da763c7c149329b2ac3155b745fb96d4166b0a6e24f7508b"
     },
     {
       "path": "specs/Разделы/Отчёты/Изображения/sort-1.png",
@@ -3634,13 +3884,13 @@
     },
     {
       "path": "specs/Разделы/Отчёты/Контракт.md",
-      "bytes": 41892,
-      "sha256": "b8454f91f2ff816949a8ccbe59d35bc04c86d18ee4f8efea0a7598e29fd328fa"
+      "bytes": 42203,
+      "sha256": "29766f0ea56efa9c106b3913cf9c71b75b0351064a00fc55ccf85e3de173807b"
     },
     {
       "path": "specs/Разделы/Отчёты/Паспорт/Граф происхождения данных.md",
-      "bytes": 14102,
-      "sha256": "72b2fe6d7ac3a8545c523e80a14c9dbab87a596a63c23a75b28430f683721c30"
+      "bytes": 15729,
+      "sha256": "df1498064e501eeeeae326cc04ea2dcaf20a3eed51a8b3b1d9791f3ad024ed6f"
     },
     {
       "path": "specs/Разделы/Отчёты/Паспорт/Изображения/usage-full-1440.png",
@@ -3674,18 +3924,48 @@
     },
     {
       "path": "specs/Разделы/Отчёты/Паспорт/Использование.md",
-      "bytes": 19837,
-      "sha256": "5675aa585b76a70562c963eee82500751d696b6218f95e8da816b5cd5c1035b1"
+      "bytes": 20376,
+      "sha256": "84fdd18869c9bcfa1f06e49ba00135640f880b795ee56cc3cabcfe3a8caecabf"
     },
     {
       "path": "specs/Разделы/Отчёты/Паспорт/Источники данных.md",
-      "bytes": 16088,
-      "sha256": "14cf19699ce7d9a80fc80f7f931b183f23927395b44dbc52b21ff0dd5ea7cebf"
+      "bytes": 15354,
+      "sha256": "cd7a13592fa3fb857cce624574510cffe26da8b1d04062a6afab7625513cf34c"
     },
     {
       "path": "specs/Разделы/Отчёты/Паспорт/Контракт.md",
-      "bytes": 53211,
-      "sha256": "bcd1cbe659eca68df34e2edf4ab8552dd054d38a78d35cc77370cbe211ff75c8"
+      "bytes": 39002,
+      "sha256": "ffc17b67a3af2ce0945f6a2d8967177d17092dabd756446d9f3272464e31ff89"
+    },
+    {
+      "path": "specs/Разделы/Отчёты/Паспорт/Метрики и показатели.md",
+      "bytes": 10527,
+      "sha256": "1f7e00cfa1c87b0c7b501180f203e16b331aa59d755abbbd7d801cea45fb0017"
+    },
+    {
+      "path": "specs/Разделы/Отчёты/Паспорт/Обзор.md",
+      "bytes": 4778,
+      "sha256": "144e28b896ff831bf5b196076869849ae520c5a61c3452d326e2277c1f78bad2"
+    },
+    {
+      "path": "specs/Разделы/Отчёты/Паспорт/Рассылки.md",
+      "bytes": 13284,
+      "sha256": "00191549d3689c85b35df812d72360c8f657741ab0c7ff90888fc605dd02d87d"
+    },
+    {
+      "path": "specs/Разделы/Отчёты/Паспорт/Сведения.md",
+      "bytes": 3519,
+      "sha256": "ef82328d37d2973c1de7b94be43c209d51036e8bc3bda675be314be48b51cc43"
+    },
+    {
+      "path": "specs/Разделы/Отчёты/Паспорт/Слайды.md",
+      "bytes": 2311,
+      "sha256": "7032ef3a875018961a0110c5bae59bfc6b3c07d69a15f9ddc623a3066b3b7de6"
+    },
+    {
+      "path": "specs/Разделы/Отчёты/Паспорт/Техническая информация.md",
+      "bytes": 3843,
+      "sha256": "2a97ccfafea393a123e62c798ff7632c864681420efc35bdcddf5f5b4468eb58"
     },
     {
       "path": "specs/Разделы/Справочники ИС/Запись каталога.md",
@@ -3754,8 +4034,8 @@
     },
     {
       "path": "specs/Разделы/Справочники ИС/Карточка CRM.md",
-      "bytes": 10031,
-      "sha256": "c659fa00cee7b7dcf439eb9c89af3030d6f4372e5cff45a4ec49ae2977a0e990"
+      "bytes": 11165,
+      "sha256": "ca7840324c4c65bf92fbb6d94f88317a01ddf0232cb3c1732fd7381317470f4b"
     },
     {
       "path": "specs/Разделы/Справочники ИС/Контракт.md",
@@ -3774,8 +4054,8 @@
     },
     {
       "path": "specs/Разделы/Справочники ИС/Панель поиска CRM.md",
-      "bytes": 9314,
-      "sha256": "d8aa33bcfbe89863c1db4c28186ad02bcd592e141b23df971409d2550da4e989"
+      "bytes": 10036,
+      "sha256": "98d92bc44ea21fa7e22317e7e692bdb3c311b0585eb95d42a50b61c5b8da67d3"
     },
     {
       "path": "specs/Разделы/Справочники ИС/Параметры CRM.yaml",
@@ -3826,6 +4106,316 @@
       "path": "specs/Ресурсы/Параметры компонентов/schemas/component-parameters.schema.json",
       "bytes": 17188,
       "sha256": "2d7f5529fe196e96f530ec5c5ad19245eb2b8640f3dc54885ce74a77f3dd19dc"
+    },
+    {
+      "path": "specs/Ресурсы/Приёмка готовых экранов.md",
+      "bytes": 6725,
+      "sha256": "7c599da124a691c9402a4a84fa1b7ee58b0a851fb3dfefdcf76b87c3d35ab567"
+    },
+    {
+      "path": "specs/Ресурсы/Проверка 10 ноября/ai-cards.png",
+      "bytes": 130913,
+      "sha256": "5fd72f6ba693741b16967e3a12a9d30134baa938f2b28b971489dad930970e67"
+    },
+    {
+      "path": "specs/Ресурсы/Проверка 10 ноября/ai-table-menu.png",
+      "bytes": 160545,
+      "sha256": "6f755a03681f9b5cf5d0e233aa645a17f2d79e326eb24fef836a86464982107c"
+    },
+    {
+      "path": "specs/Ресурсы/Проверка 10 ноября/ai-table-right.png",
+      "bytes": 132763,
+      "sha256": "a0bb00eeb2ff34467469927b6b0c2af9643ee2e206f6f0e7e72ce4b6f8e84de3"
+    },
+    {
+      "path": "specs/Ресурсы/Проверка 10 ноября/ai-table.png",
+      "bytes": 151391,
+      "sha256": "eb86bb516f14f55390ea30d57b46925c6c7e32a3fd38cd6e17801e8ae8b896ef"
+    },
+    {
+      "path": "specs/Ресурсы/Проверка 10 ноября/crm-hidden.png",
+      "bytes": 73263,
+      "sha256": "3aaa28c5ecff965bdbf44508024124296347110d01deb2d9de6a0be8169f68fd"
+    },
+    {
+      "path": "specs/Ресурсы/Проверка 10 ноября/dictionary-term.png",
+      "bytes": 160583,
+      "sha256": "cfc3d1da98bb2cb7fe0f94628ad251c066b8b648d0bdf2169186e5194a0a39cc"
+    },
+    {
+      "path": "specs/Ресурсы/Проверка 10 ноября/home-news.png",
+      "bytes": 440165,
+      "sha256": "416b8dc9700e61c3e65e6a01263dfb8101c967af67e233cb5d42ccf688e1950a"
+    },
+    {
+      "path": "specs/Ресурсы/Проверка 10 ноября/manifest.json",
+      "bytes": 6393,
+      "sha256": "483defd583e2fb031e73e853a7572a2afdd4d24a7f6957a9cef33a4f6c9bc190"
+    },
+    {
+      "path": "specs/Ресурсы/Проверка 10 ноября/metrics-catalog.png",
+      "bytes": 157717,
+      "sha256": "e00ff87be892d67048ad67e18c9d77a7d8e7ff1658ea1eb9b867b696bae80f2d"
+    },
+    {
+      "path": "specs/Ресурсы/Проверка 10 ноября/navigator-first.png",
+      "bytes": 160343,
+      "sha256": "3389c50d34834b7829f9b5d640fc02f72cf02261e17f2fe21873ad1ebe800571"
+    },
+    {
+      "path": "specs/Ресурсы/Проверка 10 ноября/questions-my.png",
+      "bytes": 118065,
+      "sha256": "ffec1615f54ecdcb49b9d7b7b1a448deb27c016ec26affce937391789736377d"
+    },
+    {
+      "path": "specs/Ресурсы/Проверка 10 ноября/report-metrics-scrolled.png",
+      "bytes": 148381,
+      "sha256": "14ea1b10f3d6f6195e907c0c6f7fcd8d77a9874701880e7bd3a79f3014ed395d"
+    },
+    {
+      "path": "specs/Ресурсы/Проверка 10 ноября/report-metrics.png",
+      "bytes": 173353,
+      "sha256": "34440099560f5e9a3c11ff9f670939a54b244406e862d273ea2ff2f1dae4d269"
+    },
+    {
+      "path": "specs/Ресурсы/Проверка 10 ноября/report-technical.png",
+      "bytes": 149156,
+      "sha256": "ffe7d206efdaf26bc6fb67699151e137eee0bb36d9645ee9deffb701f9375499"
+    },
+    {
+      "path": "specs/Ресурсы/Проверка 10 ноября/sidebar-hover.png",
+      "bytes": 130910,
+      "sha256": "6bcea3705ae91cc46d870c161c345224bdf89faaafabd24bca17807553f807a5"
+    },
+    {
+      "path": "specs/Ресурсы/Проверка 10 ноября/source-lineage.png",
+      "bytes": 179996,
+      "sha256": "a9d6751a8c5007ac6fd5695a19e9aff21d72e75dd77bb8e3c026fd5db540e7a7"
+    },
+    {
+      "path": "specs/Ресурсы/Проверка 10 ноября/source-tree-path.png",
+      "bytes": 85685,
+      "sha256": "359516752468081b3a1fe7c5f6980c0f27bcff74a599a5a54a81a9dea98cd222"
+    },
+    {
+      "path": "specs/Ресурсы/Проверка 10 ноября/Эталоны.md",
+      "bytes": 4327,
+      "sha256": "3c8fa031d8eba4d34971f9acbc7a4d274cb0e786b7f167dee1a1f43eb0e8bf6b"
+    },
+    {
+      "path": "specs/Ресурсы/Проверка покрытия/manifest.json",
+      "bytes": 2257,
+      "sha256": "00aa718a69e3bed94dc3026aadfb8c146566c269db0c29ccfe156c4387cd38e3"
+    },
+    {
+      "path": "specs/Ресурсы/Проверка покрытия/report-mailings-create-edited.png",
+      "bytes": 103945,
+      "sha256": "58c9b6fd1101cb262191b825d979bd53409b8dfd5063380ca6beff725157d672"
+    },
+    {
+      "path": "specs/Ресурсы/Проверка покрытия/report-mailings-create.png",
+      "bytes": 150378,
+      "sha256": "4ce56777c3ba3e3618ca7b7f2892ef7adcf9f3d3bb5ad3a0e442ce8af81c84c6"
+    },
+    {
+      "path": "specs/Ресурсы/Проверка покрытия/sources-master-filter.png",
+      "bytes": 56523,
+      "sha256": "04989206c895fb3bf6aeb20c369b1bf629189a2044dd8088ae765c8b97f26a3e"
+    },
+    {
+      "path": "specs/Ресурсы/Проверка покрытия/sources-master.png",
+      "bytes": 103743,
+      "sha256": "db1f2eb7741164747df7ff9cf2bbead5e0b77a94a8692b150328dd390c31b6a5"
+    },
+    {
+      "path": "specs/Ресурсы/Проверка покрытия/systems-crm-compact.png",
+      "bytes": 125088,
+      "sha256": "a93b00c0f61994278aeab54a5ba30c673ca447b1ac74137c759c1cb17b0bd7dc"
+    },
+    {
+      "path": "specs/Ресурсы/Проверка покрытия/Эталоны.md",
+      "bytes": 947,
+      "sha256": "cbd26742da9ec9622490c97d5f8c36c4e9dabab25497ca772ff8b7f6de10d6a6"
+    },
+    {
+      "path": "specs/Ресурсы/Проверка сборки/dictionary-term-missing.png",
+      "bytes": 56973,
+      "sha256": "652d479cbeefa7fbd7894a6af3cf6c83325ab30162ab65feee08e4cec67ee72c"
+    },
+    {
+      "path": "specs/Ресурсы/Проверка сборки/manifest.json",
+      "bytes": 4098,
+      "sha256": "5cab22f3437ca8b135b43eb000f4b104dda725d227428f4e8aad64c07c609907"
+    },
+    {
+      "path": "specs/Ресурсы/Проверка сборки/navigator-empty.png",
+      "bytes": 153358,
+      "sha256": "d5a5a1712d4d841a8cb3e78779e6fdbe50d8086bc9aedac3a2939d5efcd2cc48"
+    },
+    {
+      "path": "specs/Ресурсы/Проверка сборки/navigator-selected.png",
+      "bytes": 162598,
+      "sha256": "20f1ffd46b0a13e4eb420f33686c8c3c6aa9d05bee2058046274b2a04b445c40"
+    },
+    {
+      "path": "specs/Ресурсы/Проверка сборки/report-mailings.png",
+      "bytes": 122874,
+      "sha256": "3f4140adf1ad2389a5e65bcc8e68f3dc2f623128230957655690d25e1a24a2e0"
+    },
+    {
+      "path": "specs/Ресурсы/Проверка сборки/report-manual-delivery.png",
+      "bytes": 118095,
+      "sha256": "2d9e3be6c1c5e734ab1aa7fb8cf0cc6f73d96e6002661a4fff2b1e796dde56b9"
+    },
+    {
+      "path": "specs/Ресурсы/Проверка сборки/report-overview.png",
+      "bytes": 196557,
+      "sha256": "450a790a568a99dab6595a95f8002d3a4af200ea6d1a692efb4761eeaed7208e"
+    },
+    {
+      "path": "specs/Ресурсы/Проверка сборки/report-slides.png",
+      "bytes": 133554,
+      "sha256": "9babf55a062f2983d397c65e6d8836449f525c09b40984d76168591067d65501"
+    },
+    {
+      "path": "specs/Ресурсы/Проверка сборки/report-technical-canopy.png",
+      "bytes": 139524,
+      "sha256": "5813af5c15332dd5f96249bad580159b2a1c2a57c9d97da27b98266a573c032f"
+    },
+    {
+      "path": "specs/Ресурсы/Проверка сборки/source-metrics-narrow.png",
+      "bytes": 124599,
+      "sha256": "8b907c21356657ad9c1aad71c0878aea5688d0c24985724d6617c0a84a8bf4c1"
+    },
+    {
+      "path": "specs/Ресурсы/Проверка сборки/source-metrics.png",
+      "bytes": 141027,
+      "sha256": "9f6b44c0dcf6019a6ad08735895ad99323acb7ebcfa74952e9f13e52fe2a3fdd"
+    },
+    {
+      "path": "specs/Ресурсы/Проверка сборки/Эталоны.md",
+      "bytes": 1298,
+      "sha256": "d7088fefe79cdb3ec3eef835fa38a401d0f9e903e77dd1230279992dce50bef0"
+    },
+    {
+      "path": "specs/Ресурсы/Сведения детальных карточек/manifest.json",
+      "bytes": 4118,
+      "sha256": "2d9ddc0da64a3d0301634f8361b43f0a0235491c6c81919d43ccb1cb3a0aedb7"
+    },
+    {
+      "path": "specs/Ресурсы/Сведения детальных карточек/metric.png",
+      "bytes": 24071,
+      "sha256": "d1ef8a8832afdc84d262e9ab9a42e7bdd515ee606719f10f95cc246e09adb2db"
+    },
+    {
+      "path": "specs/Ресурсы/Сведения детальных карточек/report.png",
+      "bytes": 37406,
+      "sha256": "df7780b91844026fba19a6866f260fd8e413258dc82f555098daf32a2f305d97"
+    },
+    {
+      "path": "specs/Ресурсы/Сведения детальных карточек/source.png",
+      "bytes": 22306,
+      "sha256": "25d7eef4d6caa6f5404a46d1263f7ebec578ae3e6a9bb547189b56cb4747c705"
+    },
+    {
+      "path": "specs/Ресурсы/Сверка визуальных эталонов/accordion-metric.png",
+      "bytes": 26797,
+      "sha256": "f68676fa4f93886326103d586284a00eb8c73b7ecd27d2ff18663dd274c4152e"
+    },
+    {
+      "path": "specs/Ресурсы/Сверка визуальных эталонов/ai-card-hover.png",
+      "bytes": 21070,
+      "sha256": "ca0e46f6e8ce14ed9be65ff85bfa47801cff7977c4c00f2c948ccd0336a212d6"
+    },
+    {
+      "path": "specs/Ресурсы/Сверка визуальных эталонов/ai-detail-1440.png",
+      "bytes": 205324,
+      "sha256": "8110e1127e47c5cc35ae980e10b00356fbaf3b4326c930341fd3e318fccb7707"
+    },
+    {
+      "path": "specs/Ресурсы/Сверка визуальных эталонов/ai-detail-1920.png",
+      "bytes": 205961,
+      "sha256": "e9ab07c07b9b2995642c010b96068eee4de9b4865b0aef72fe21ab9763ef93e5"
+    },
+    {
+      "path": "specs/Ресурсы/Сверка визуальных эталонов/ai-detail-600.png",
+      "bytes": 55259,
+      "sha256": "fcae2c992265cdfc00dbb3340c2483a18d0a562632303b1225a36de1062f0c8c"
+    },
+    {
+      "path": "specs/Ресурсы/Сверка визуальных эталонов/ai-detail-900.png",
+      "bytes": 114040,
+      "sha256": "a97678d27f98a423820fd4d024acead82351ac509839af3a495f2d4cf3ad40a6"
+    },
+    {
+      "path": "specs/Ресурсы/Сверка визуальных эталонов/ai-filters.png",
+      "bytes": 112083,
+      "sha256": "0e7f7993656155df43f1b2c31fcca0d84703b4545b5e53acb391300610a78568"
+    },
+    {
+      "path": "specs/Ресурсы/Сверка визуальных эталонов/ai-panel-collapsed.png",
+      "bytes": 5964,
+      "sha256": "a0b4b51ef2e0f5e381c4802516076bb6d880457d696437f9cc68e55099568dc8"
+    },
+    {
+      "path": "specs/Ресурсы/Сверка визуальных эталонов/ai-passport-stacked.png",
+      "bytes": 29534,
+      "sha256": "38cfb730d31cd7b2de16b1f2e9c2ef1a1fa82b350244cd2f0dcfca583991cb64"
+    },
+    {
+      "path": "specs/Ресурсы/Сверка визуальных эталонов/mailings-profile-checkbox.png",
+      "bytes": 33230,
+      "sha256": "70e42dfbda7e2c55469c23b56906e39fb0f03b3c987451da6f729c4d06e58db5"
+    },
+    {
+      "path": "specs/Ресурсы/Сверка визуальных эталонов/manifest.json",
+      "bytes": 8725,
+      "sha256": "c98c163c3cc9b6085f78fd4e12dba74707ef3145a693084a002fb62e47a7367d"
+    },
+    {
+      "path": "specs/Ресурсы/Сверка визуальных эталонов/option-list-states.png",
+      "bytes": 14390,
+      "sha256": "939eb79f6fafc5786b1304ad534c72930d859bde6187aed9c23545136eef39ba"
+    },
+    {
+      "path": "specs/Ресурсы/Сверка визуальных эталонов/range-menu-mau.png",
+      "bytes": 20438,
+      "sha256": "75da7d5b070674208e9ca70d7f90270cba6d8333c4a086dcb3e2bb04e93cd034"
+    },
+    {
+      "path": "specs/Ресурсы/Сверка визуальных эталонов/range-panel-mau.png",
+      "bytes": 11957,
+      "sha256": "6c56a9e6d073e8eefaa710ea4701e23927f9ca49c9356cf552ef805dadd3f3d1"
+    },
+    {
+      "path": "specs/Ресурсы/Сверка визуальных эталонов/report-column-platform.png",
+      "bytes": 172856,
+      "sha256": "1b160cfb08059b25f70356eada3b971d970040fe4fd58bcdbc77dcad2f97e67e"
+    },
+    {
+      "path": "specs/Ресурсы/Сверка визуальных эталонов/sidebar-boundary-focus.png",
+      "bytes": 6244,
+      "sha256": "8e590059c988a0122f13b7d6db5c8638cc4f3058278c5e5b4b4e7a812f586b52"
+    },
+    {
+      "path": "specs/Ресурсы/Сверка визуальных эталонов/sidebar-collapsed-hover.png",
+      "bytes": 6934,
+      "sha256": "02fbde9f6d63adaafac0ef15f9872a53a9bdc57845f2cbfc4db33758408e9efa"
+    },
+    {
+      "path": "specs/Ресурсы/Сверка визуальных эталонов/source-column-open.png",
+      "bytes": 183593,
+      "sha256": "aa91d177dc6b18d0453fc22bc4a9366e7e366343b3588e12d25ece1f42fce4db"
+    },
+    {
+      "path": "specs/Ресурсы/Сверка визуальных эталонов/source-mcp-notice.png",
+      "bytes": 163258,
+      "sha256": "3c9da1b56c9aa99dc6611f25616ebb090cd720a3605289145ab5708f78bbddfe"
+    },
+    {
+      "path": "specs/Ресурсы/Сверка визуальных эталонов/Эталоны.md",
+      "bytes": 4309,
+      "sha256": "44ba8a5815e20551c03317f816d33d06b011611bfc47becc56f2560f9e26f8c2"
     },
     {
       "path": "specs/Ресурсы/Срез прототипа/README.md",
@@ -4223,5 +4813,6 @@
       "sha256": "763068e8ced05ff25e2ccc20f0d6caa645cf76db31e83a9dee6e31b27fd7e101"
     }
   ],
-  "prototype_build_sha256": "bff4ea6c4353bf78243fe63f308d9dbbea984c496b04d1ef15bd00795adc9e1d"
+  "prototype_build_sha256": "7f73efdedaad405be8a84be5838e28482c321e8b687e7c1c1a5baca7fcc7bfc8",
+  "prototype_style_sha256": "bad7d4e18b70e2ce52e4fb5f7fc7fb4c06be7541c70b5ee18c475d6d39d2a521"
 }

@@ -1,5 +1,6 @@
 import { useRef } from 'react';
 import type { KeyboardEvent } from 'react';
+import { Workflow } from 'lucide-react';
 import styles from './HomeControls.module.css';
 import { FilterButton } from '../FilterButton/FilterButton';
 import { transitionCatalog } from '../catalogTransition';
@@ -96,11 +97,18 @@ export function TabControl({ selection, appearance }: { selection: HomeSelection
 
 const textViewLabels = { cards: 'Карточки', list: 'Список' } as const;
 
-export function ViewPicker({ selection, appearance = 'icons' }: { selection: HomeViewSelection; appearance?: 'icons' | 'text' }) {
+type ViewPickerProps =
+  | { selection: HomeViewSelection; appearance?: 'icons' | 'text'; includeTree?: false }
+  | { selection: Omit<HomeViewSelection, 'value' | 'onChange'> & {
+      value: HomeViewMode | 'tree';
+      onChange: (value: HomeViewMode | 'tree') => void;
+    }; appearance?: 'icons'; includeTree: true };
+
+export function ViewPicker({ selection, appearance = 'icons', includeTree }: ViewPickerProps) {
   const text = appearance === 'text';
   const views: readonly HomeViewMode[] = text ? ['cards', 'list'] : ['list', 'cards'];
   return (
-    <div className={styles.view} role="group" aria-label={selection.ariaLabel ?? 'Вид представления'} data-control-group="view" data-view-appearance={appearance}>
+    <div className={styles.view} role="group" aria-label={selection.ariaLabel ?? 'Вид представления'} data-control-group="view" data-view-appearance={appearance} data-include-tree={includeTree || undefined}>
       {views.map(value => (
         <button type="button" key={value} className={styles.viewButton} data-control-id={value}
           data-inactive-surface={selection.inactiveSurface}
@@ -109,6 +117,11 @@ export function ViewPicker({ selection, appearance = 'icons' }: { selection: Hom
           {text ? textViewLabels[value] : <img src={`/images/home-controls/${value}-${selection.value === value ? 'active' : 'inactive'}.svg`} width="16" height="16" alt="" aria-hidden="true" />}
         </button>
       ))}
+      {includeTree && <button type="button" className={styles.viewButton} data-control-id="tree"
+        aria-label="Дерево" title="Дерево" aria-pressed={selection.value === 'tree'}
+        onClick={() => transitionCatalog(() => selection.onChange('tree'), 'view', selection.value !== 'tree')}>
+        <Workflow size={16} aria-hidden="true" />
+      </button>}
     </div>
   );
 }

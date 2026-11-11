@@ -109,6 +109,60 @@ test('usage has no cross-report fixture leakage', async ({ page }) => {
   await expect(usage.getByText('258', { exact: true })).toHaveCount(0);
 });
 
+test('monthly history keeps ten distinct columns and a sticky header during local scrolling', async ({ page }) => {
+  await page.setViewportSize({ width: 1024, height: 768 });
+  await page.goto(entry);
+  const scroll = page.getByRole('region', { name: 'Прокрутка истории по месяцам' });
+  const history = scroll.getByRole('table');
+  const rows = history.getByRole('row');
+  const header = history.getByRole('rowgroup').first();
+  const frameEdges = () => scroll.evaluate(el => {
+    const frame = el.parentElement!;
+    const surface = frame.getBoundingClientRect();
+    const viewport = el.getBoundingClientRect();
+    return {
+      left: viewport.left - surface.left,
+      right: surface.right - viewport.right,
+      bottom: Math.round(surface.bottom - viewport.top - el.clientHeight),
+      color: getComputedStyle(frame).backgroundColor,
+      corners: [getComputedStyle(frame).borderBottomLeftRadius, getComputedStyle(frame).borderBottomRightRadius],
+    };
+  });
+
+  await expect(history.getByRole('columnheader')).toHaveCount(10);
+  await expect(header).toHaveCSS('height', '48px');
+  await expect(rows.nth(1)).toHaveCSS('height', '56px');
+  const rowBounds = await rows.evaluateAll(([heading, first, second]) => {
+    const row = first.getBoundingClientRect();
+    return {
+      headings: Array.from(heading.children, cell => cell.getBoundingClientRect().left),
+      cells: Array.from(first.children, cell => cell.getBoundingClientRect().left),
+      gap: second.getBoundingClientRect().top - row.bottom,
+      left: row.left,
+    };
+  });
+  expect(new Set(rowBounds.headings).size).toBe(10);
+  expect(rowBounds.headings).toEqual(rowBounds.cells);
+  expect(rowBounds.gap).toBe(4);
+  expect(rowBounds.left).toBe(await scroll.evaluate(el => el.getBoundingClientRect().left));
+  const grayInsets = { left: 16, right: 16, bottom: 16, color: 'rgb(243, 244, 249)', corners: ['16px', '16px'] };
+  expect(await frameEdges()).toEqual(grayInsets);
+
+  await scroll.press('End');
+  await expect.poll(() => scroll.evaluate(el => el.scrollHeight - el.clientHeight - el.scrollTop)).toBeLessThan(1);
+  await expect.poll(() => header.evaluate(el => el.getBoundingClientRect().top - el.closest('[data-list-scroll]')!.getBoundingClientRect().top)).toBe(0);
+  await expect(rows.last().getByText('Октябрь 2026')).toBeInViewport();
+  await expect(scroll).toBeFocused();
+  await scroll.press('ArrowRight');
+  await expect.poll(() => scroll.evaluate(el => el.scrollLeft)).toBeGreaterThan(0);
+  expect(await frameEdges()).toEqual(grayInsets);
+  expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBe(1024);
+
+  await page.setViewportSize({ width: 1920, height: 1080 });
+  await expect.poll(() => scroll.evaluate(el => el.scrollWidth - el.clientWidth)).toBe(0);
+  expect(await frameEdges()).toEqual(grayInsets);
+});
+
 test('usage summary includes classifications in its grid and keeps local table scroll', async ({ page }) => {
   await page.goto(entry);
   await expect(page.locator('[data-report-usage]')).toBeVisible();
@@ -119,7 +173,7 @@ test('usage summary includes classifications in its grid and keeps local table s
     await expect(page.getByRole('tab', { name: 'Использование', exact: true })).toBeInViewport({ ratio: 1 });
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
     const history = page.getByRole('table', { name: 'История по месяцам', exact: true });
-    await expect(history.getByRole('row').nth(1)).toHaveCSS('height', '80px');
+    await expect(history.getByRole('row').nth(1)).toHaveCSS('height', '56px');
     const dimensions = await page.locator('[data-report-usage]').evaluate(root => {
       const classifications = Array.from(root.querySelectorAll('[data-summary-classifications] > div')).map(cell => ({ width: cell.getBoundingClientRect().width, height: cell.getBoundingClientRect().height, clipped: cell.scrollWidth > cell.clientWidth }));
       const chart = root.querySelector('[data-usage-chart] svg')!.getBoundingClientRect();

@@ -1,0 +1,168 @@
+{
+  "date": "2026-11-10",
+  "browser": "157.0.8103.40",
+  "deviceScaleFactor": 1,
+  "reducedMotion": "reduce",
+  "frames": [
+    {
+      "file": "home-news.png",
+      "route": "/preview/navigation?tab=news&news=demo-news-3",
+      "state": "Детальная новость и текущая карточка справа",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "416b8dc9700e61c3e65e6a01263dfb8101c967af67e233cb5d42ccf688e1950a"
+    },
+    {
+      "file": "report-technical.png",
+      "route": "/preview/navigation?section=reports&report=demo-report-summary&reportTab=technical",
+      "state": "Техническая информация и общие Сведения справа",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "ffe7d206efdaf26bc6fb67699151e137eee0bb36d9645ee9deffb701f9375499"
+    },
+    {
+      "file": "report-metrics.png",
+      "route": "/preview/navigation?section=reports&report=demo-report-summary&reportTab=metrics",
+      "state": "Связанные показатели в начале, заголовки без нижней линии",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "34440099560f5e9a3c11ff9f670939a54b244406e862d273ea2ff2f1dae4d269"
+    },
+    {
+      "file": "report-metrics-scrolled.png",
+      "route": "/preview/navigation?section=reports&report=demo-report-summary&reportTab=metrics",
+      "state": "Фиксированная панель с тенью, таблица прокручена на 126 px",
+      "viewport": {
+        "width": 1440,
+        "height": 650
+      },
+      "sha256": "14ea1b10f3d6f6195e907c0c6f7fcd8d77a9874701880e7bd3a79f3014ed395d"
+    },
+    {
+      "file": "metrics-catalog.png",
+      "route": "/preview/navigation?section=metrics",
+      "state": "Самостоятельный каталог, стандартная таблица с фильтрами",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "e00ff87be892d67048ad67e18c9d77a7d8e7ff1658ea1eb9b867b696bae80f2d"
+    },
+    {
+      "file": "source-tree-path.png",
+      "route": "/preview/navigation?section=sources&sourceView=tree&sourceTreeGroup=%5B%22SQL+Server%22%2C%22Dwh2Crm%22%2C%22ref%22%5D",
+      "state": "Текстовый путь к ветке ref",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "359516752468081b3a1fe7c5f6980c0f27bcff74a599a5a54a81a9dea98cd222"
+    },
+    {
+      "file": "source-lineage.png",
+      "route": "/preview/navigation?section=sources&source=source-reportcrm-date&sourceTab=lineage",
+      "state": "Компактная легенда и закреплённые Сведения рядом с холстом",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "a9d6751a8c5007ac6fd5695a19e9aff21d72e75dd77bb8e3c026fd5db540e7a7"
+    },
+    {
+      "file": "ai-cards.png",
+      "route": "/preview/navigation?section=ai",
+      "state": "Карточный каталог, общий счётчик и подложка",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "5fd72f6ba693741b16967e3a12a9d30134baa938f2b28b971489dad930970e67"
+    },
+    {
+      "file": "ai-table.png",
+      "route": "/preview/navigation?section=ai&ai.view=list",
+      "state": "Таблица AI Hub в начале горизонтальной прокрутки",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "eb86bb516f14f55390ea30d57b46925c6c7e32a3fd38cd6e17801e8ae8b896ef"
+    },
+    {
+      "file": "ai-table-right.png",
+      "route": "/preview/navigation?section=ai&ai.view=list",
+      "state": "Таблица AI Hub у правого края, крайние колонки закреплены",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "a0bb00eeb2ff34467469927b6b0c2af9643ee2e206f6f0e7e72ce4b6f8e84de3"
+    },
+    {
+      "file": "ai-table-menu.png",
+      "route": "/preview/navigation?section=ai&ai.view=list",
+      "state": "Раскрыто меню действий строки «Помощник Комблок»",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "6f755a03681f9b5cf5d0e233aa645a17f2d79e326eb24fef836a86464982107c"
+    },
+    {
+      "file": "crm-hidden.png",
+      "route": "/preview/navigation?section=systems&systems.reference=crm",
+      "state": "Свёрнутый поиск после применения запроса, счётчик одного условия",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "3aaa28c5ecff965bdbf44508024124296347110d01deb2d9de6a0be8169f68fd"
+    },
+    {
+      "file": "dictionary-term.png",
+      "route": "/preview/navigation?section=dictionary&dictionaryTab=terms&dictionaryTerm=term-bcr",
+      "state": "Паспорт BCR с двумя описаниями и демонстрационными Сведениями",
+      "viewport": {
+        "width": 1440,
+        "height": 940
+      },
+      "sha256": "cfc3d1da98bb2cb7fe0f94628ad251c066b8b648d0bdf2169186e5194a0a39cc"
+    },
+    {
+      "file": "questions-my.png",
+      "route": "/preview/navigation?section=questions",
+      "state": "Мои вопросы и счётчики статусов",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "ffec1615f54ecdcb49b9d7b7b1a448deb27c016ec26affce937391789736377d"
+    },
+    {
+      "file": "navigator-first.png",
+      "route": "/preview/navigation?",
+      "state": "Запрос date, первая порция из 15 результатов",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "3389c50d34834b7829f9b5d640fc02f72cf02261e17f2fe21873ad1ebe800571"
+    },
+    {
+      "file": "sidebar-hover.png",
+      "route": "/preview/navigation?section=ai",
+      "state": "Развёрнутая навигация. Выбран AI Hub, наведение на «Отчёты»",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "6bcea3705ae91cc46d870c161c345224bdf89faaafabd24bca17807553f807a5"
+    }
+  ]
+}

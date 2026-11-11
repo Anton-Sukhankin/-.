@@ -1,0 +1,2151 @@
+{
+  "role": "Демонстрационный набор прототипа для сверки интерфейса. Идентификаторы и поля служат локальным примерам.",
+  "rows": [
+    {
+      "platform": "SQL Server",
+      "layer": "Без слоя",
+      "objectType": "Table",
+      "domain": "Продажи и маркетинг",
+      "metrics": 0,
+      "mcp": 0,
+      "id": "source-reportcrm-date",
+      "technicalName": "reportcrm20.dbo.dimdate",
+      "storageContext": "Reportcrm20",
+      "columns": 34,
+      "analyst": "Лапова Юлия Владимировна",
+      "usedInAnalytics": true,
+      "reports": 84,
+      "lineage": 0,
+      "views": 22,
+      "provenance": "reference",
+      "description": "Календарный справочник для отчётности CRM. Содержит даты, недели, месяцы, кварталы и финансовые периоды, а также признаки рабочих, выходных и праздничных дней. Используется для группировки продаж и сравнения результатов за разные периоды.",
+      "masterSystem": "ReportCRM",
+      "demoAttributes": [
+        "description",
+        "masterSystem"
+      ],
+      "treePath": [
+        "Reportcrm20",
+        "dbo"
+      ]
+    },
+    {
+      "platform": "SQL Server",
+      "layer": "Без слоя",
+      "objectType": "Table",
+      "domain": "Продажи и маркетинг",
+      "metrics": 0,
+      "mcp": 0,
+      "id": "source-dwh-date",
+      "technicalName": "dwh2crm.ref.dimdate",
+      "storageContext": "Dwh2Crm",
+      "columns": 33,
+      "analyst": "Лапова Юлия Владимировна",
+      "usedInAnalytics": true,
+      "reports": 47,
+      "lineage": 8,
+      "views": 3,
+      "provenance": "reference",
+      "description": "Единый календарь хранилища данных CRM. Связывает календарные даты с отчётными и финансовыми периодами, хранит признаки закрытия месяца и квартала и время загрузки данных. Помогает согласованно рассчитывать показатели в отчётах хранилища.",
+      "masterSystem": "Хранилище данных DWH CRM",
+      "demoAttributes": [
+        "description",
+        "masterSystem"
+      ],
+      "treePath": [
+        "Dwh2Crm",
+        "ref"
+      ]
+    },
+    {
+      "platform": "SQL Server",
+      "layer": "Без слоя",
+      "objectType": "Table",
+      "domain": "Продажи и маркетинг",
+      "metrics": 0,
+      "mcp": 0,
+      "id": "source-dwh-project",
+      "technicalName": "dwh2crm.tableau.проект",
+      "storageContext": "Dwh2Crm",
+      "columns": 20,
+      "analyst": "Лапова Юлия Владимировна",
+      "usedInAnalytics": true,
+      "reports": 36,
+      "lineage": 53,
+      "views": 6,
+      "provenance": "reference",
+      "description": "Реестр проектов для аналитики портфеля. Объединяет сведения о заказчиках, руководителях, статусах и сроках проектов, плановом бюджете, фактических затратах и степени готовности. Используется для контроля исполнения и сопоставления плановых и фактических результатов.",
+      "masterSystem": "Управление проектами",
+      "demoAttributes": [
+        "description",
+        "masterSystem"
+      ],
+      "treePath": [
+        "Dwh2Crm",
+        "tableau"
+      ]
+    },
+    {
+      "platform": "SQL Server",
+      "layer": "Без слоя",
+      "objectType": "Table",
+      "domain": "Продажи и маркетинг",
+      "metrics": 0,
+      "mcp": 0,
+      "id": "source-demo-clients",
+      "technicalName": "demo.crm.clients",
+      "storageContext": "Demo",
+      "description": "Справочник клиентов CRM для анализа клиентской базы. Содержит идентификаторы, типы и сегменты клиентов, контактные сведения, дату регистрации, географию и признаки активности. Поле согласия на обработку персональных данных показано в демонстрационной схеме.",
+      "columns": 12,
+      "reports": 0,
+      "lineage": 0,
+      "views": 0,
+      "usedInAnalytics": false,
+      "masterSystem": "Демо CRM",
+      "personalData": true,
+      "similarSources": true,
+      "provenance": "demo",
+      "analyst": "Соколова Анна Сергеевна",
+      "demoAttributes": [
+        "description",
+        "analyst"
+      ],
+      "treePath": [
+        "Demo",
+        "crm"
+      ]
+    },
+    {
+      "platform": "SQL Server",
+      "layer": "Без слоя",
+      "objectType": "Table",
+      "domain": "Продажи и маркетинг",
+      "metrics": 0,
+      "mcp": 0,
+      "id": "source-demo-contracts",
+      "technicalName": "demo.crm.contracts",
+      "storageContext": "Demo",
+      "description": "Реестр договоров с клиентами. Содержит номера, виды и статусы договоров, сроки действия, суммы, валюты, условия оплаты и связи с ответственными менеджерами. Позволяет анализировать действующие договоры, продления и прекращение обязательств.",
+      "columns": 18,
+      "reports": 0,
+      "lineage": 0,
+      "views": 0,
+      "usedInAnalytics": false,
+      "masterSystem": "Демо CRM",
+      "personalData": true,
+      "similarSources": false,
+      "provenance": "demo",
+      "analyst": "Морозова Елена Игоревна",
+      "demoAttributes": [
+        "description",
+        "analyst"
+      ],
+      "treePath": [
+        "Demo",
+        "crm"
+      ]
+    },
+    {
+      "platform": "SQL Server",
+      "layer": "Без слоя",
+      "objectType": "Table",
+      "domain": "Продажи и маркетинг",
+      "metrics": 0,
+      "mcp": 0,
+      "id": "source-demo-sales",
+      "technicalName": "demo.crm.sales",
+      "storageContext": "Demo",
+      "description": "Детализированные операции продаж по заказам и товарам. Для каждой операции представлены клиент, договор, количество, цена, скидка, налог, итоговая сумма и валюта, а также канал продаж и регион. Возвраты выделены отдельным признаком для расчёта выручки и анализа структуры продаж.",
+      "columns": 24,
+      "reports": 0,
+      "lineage": 0,
+      "views": 0,
+      "usedInAnalytics": false,
+      "masterSystem": "Демо CRM",
+      "personalData": false,
+      "similarSources": true,
+      "provenance": "demo",
+      "analyst": "Волков Дмитрий Андреевич",
+      "demoAttributes": [
+        "description",
+        "analyst"
+      ],
+      "treePath": [
+        "Demo",
+        "crm"
+      ]
+    },
+    {
+      "platform": "SQL Server",
+      "layer": "Без слоя",
+      "objectType": "Table",
+      "domain": "Гостеприимство",
+      "metrics": 0,
+      "mcp": 0,
+      "id": "source-demo-requests",
+      "technicalName": "demo.service.requests",
+      "storageContext": "Demo",
+      "description": "Журнал обращений в службу сервиса. Содержит тему и описание обращения, категорию, приоритет, статус, заявителя и исполнителя, сроки создания и решения. Используется для оценки нагрузки, времени обработки и соблюдения согласованных сроков обслуживания.",
+      "columns": 15,
+      "reports": 0,
+      "lineage": 0,
+      "views": 0,
+      "usedInAnalytics": false,
+      "masterSystem": "Демо сервис",
+      "personalData": true,
+      "similarSources": false,
+      "provenance": "demo",
+      "analyst": "Орлова Мария Павловна",
+      "demoAttributes": [
+        "description",
+        "analyst"
+      ],
+      "treePath": [
+        "Demo",
+        "service"
+      ]
+    },
+    {
+      "platform": "SQL Server",
+      "layer": "Без слоя",
+      "objectType": "Table",
+      "domain": "Гостеприимство",
+      "metrics": 0,
+      "mcp": 0,
+      "id": "source-demo-feedback",
+      "technicalName": "demo.service.feedback",
+      "storageContext": "Demo",
+      "description": "Обратная связь по обработанным обращениям. Объединяет оценки, комментарии, канал и дату получения отзыва, связь с обращением и признак анонимности. Предназначена для анализа удовлетворённости, выявления повторяющихся замечаний и оценки качества сервиса.",
+      "columns": 10,
+      "reports": 0,
+      "lineage": 0,
+      "views": 0,
+      "usedInAnalytics": false,
+      "masterSystem": "Демо сервис",
+      "personalData": false,
+      "similarSources": false,
+      "provenance": "demo",
+      "analyst": "Зайцева Ирина Олеговна",
+      "demoAttributes": [
+        "description",
+        "analyst"
+      ],
+      "treePath": [
+        "Demo",
+        "service"
+      ]
+    },
+    {
+      "id": "source-demo-rewedo-versions",
+      "technicalName": "rewedo_crm_production.public.versions",
+      "platform": "PostgreSQL",
+      "layer": "Без слоя",
+      "storageContext": "Amocrm Rerooms",
+      "objectType": "Table",
+      "columns": 8,
+      "domain": "Продажи и маркетинг",
+      "masterSystem": "CRM (CRM Dynamics)",
+      "analyst": "Лапова Юлия Владимировна",
+      "reports": 0,
+      "metrics": 0,
+      "mcp": 0,
+      "similarSources": false,
+      "provenance": "demo",
+      "description": "Журнал версий объектов CRM. Фиксирует тип и идентификатор объекта, событие изменения, инициатора, время создания версии и сохранённые данные объекта. Используется для просмотра истории изменений и сопоставления последовательных версий записей.",
+      "demoAttributes": [
+        "description"
+      ],
+      "treePath": [
+        "Amocrm Rerooms",
+        "rewedo_crm_production",
+        "public"
+      ]
+    }
+  ],
+  "profiles": [
+    {
+      "sourceId": "source-reportcrm-date",
+      "domain": "Продажи и маркетинг",
+      "masterSystem": "ReportCRM",
+      "analyst": "Лапова Юлия Владимировна",
+      "technicalOwner": "Кузнецов Алексей Викторович",
+      "aboutMetadata": {
+        "technicalStatus": "Active"
+      },
+      "synchronizedLabel": "вчера, 00:00",
+      "fields": [
+        {
+          "name": "DateKey",
+          "sqlType": "INTEGER",
+          "nullable": false,
+          "key": true,
+          "relatedMetrics": [],
+          "genericType": "NumberType"
+        },
+        {
+          "name": "Date",
+          "sqlType": "DATE",
+          "nullable": true,
+          "key": false,
+          "relatedMetrics": [
+            "Количество задач оформления и регистрации",
+            "Кол-во онлайн сделок, шт",
+            "Доля онлайн сделок, %",
+            "Срок подачи на регистрацию",
+            "Выполнение плана дополнительных доходов, %",
+            "Сборы страховок по рассрочке",
+            "Устная бронь",
+            "Устная бронь, перешедшая в платную",
+            "Устных броней снято",
+            "Платный резерв, перешедший в продажу",
+            "Платных броней снято",
+            "Площадь онлайн-продаж, м²"
+          ],
+          "genericType": "DateType"
+        },
+        {
+          "name": "FullDate",
+          "sqlType": "VARCHAR(100) COLLATE Cyrillic_General_CI_AS",
+          "nullable": true,
+          "key": false,
+          "relatedMetrics": [],
+          "genericType": "StringType"
+        },
+        {
+          "name": "FullDateUSA",
+          "sqlType": "VARCHAR(100) COLLATE Cyrillic_General_CI_AS",
+          "nullable": true,
+          "key": false,
+          "relatedMetrics": [
+            "Сделки за день",
+            "Заявки за день",
+            "Продажи за день",
+            "Среднее число сделок в день",
+            "Доля продаж за день"
+          ],
+          "genericType": "StringType"
+        },
+        {
+          "name": "calendar_year",
+          "sqlType": "SMALLINT",
+          "nullable": false,
+          "key": false,
+          "relatedMetrics": [
+            "Количество дней в году",
+            "Рабочие дни с начала года",
+            "Доля прошедшего года",
+            "Выполнение годового плана"
+          ],
+          "genericType": "NumberType"
+        },
+        {
+          "name": "calendar_quarter",
+          "sqlType": "TINYINT",
+          "nullable": false,
+          "key": false,
+          "relatedMetrics": [
+            "Количество дней в квартале",
+            "Рабочие дни с начала квартала",
+            "Выполнение квартального плана",
+            "Продажи за квартал"
+          ],
+          "genericType": "NumberType"
+        },
+        {
+          "name": "quarter_name",
+          "sqlType": "NVARCHAR",
+          "nullable": false,
+          "key": false,
+          "relatedMetrics": [
+            "Количество дней в квартале",
+            "Рабочие дни с начала квартала",
+            "Выполнение квартального плана",
+            "Продажи за квартал"
+          ],
+          "genericType": "StringType"
+        },
+        {
+          "name": "month_number",
+          "sqlType": "TINYINT",
+          "nullable": false,
+          "key": false,
+          "relatedMetrics": [
+            "Количество дней в месяце",
+            "Рабочие дни с начала месяца",
+            "Доля прошедшего месяца",
+            "Выполнение месячного плана",
+            "Продажи за месяц"
+          ],
+          "genericType": "NumberType"
+        },
+        {
+          "name": "month_name",
+          "sqlType": "NVARCHAR",
+          "nullable": false,
+          "key": false,
+          "relatedMetrics": [
+            "Количество дней в месяце",
+            "Рабочие дни с начала месяца",
+            "Доля прошедшего месяца",
+            "Выполнение месячного плана",
+            "Продажи за месяц"
+          ],
+          "genericType": "StringType"
+        },
+        {
+          "name": "month_short_name",
+          "sqlType": "NVARCHAR",
+          "nullable": false,
+          "key": false,
+          "relatedMetrics": [
+            "Количество дней в месяце",
+            "Рабочие дни с начала месяца",
+            "Доля прошедшего месяца",
+            "Выполнение месячного плана",
+            "Продажи за месяц"
+          ],
+          "genericType": "StringType"
+        },
+        {
+          "name": "day_of_month",
+          "sqlType": "TINYINT",
+          "nullable": false,
+          "key": false,
+          "relatedMetrics": [
+            "Сделки за день",
+            "Заявки за день",
+            "Продажи за день",
+            "Среднее число сделок в день",
+            "Доля продаж за день"
+          ],
+          "genericType": "NumberType"
+        },
+        {
+          "name": "day_of_year",
+          "sqlType": "SMALLINT",
+          "nullable": false,
+          "key": false,
+          "relatedMetrics": [
+            "Количество дней в году",
+            "Рабочие дни с начала года",
+            "Доля прошедшего года",
+            "Выполнение годового плана"
+          ],
+          "genericType": "NumberType"
+        },
+        {
+          "name": "day_of_week",
+          "sqlType": "TINYINT",
+          "nullable": false,
+          "key": false,
+          "relatedMetrics": [
+            "Сделки за день",
+            "Заявки за день",
+            "Продажи за день",
+            "Среднее число сделок в день",
+            "Доля продаж за день"
+          ],
+          "genericType": "NumberType"
+        },
+        {
+          "name": "day_name",
+          "sqlType": "NVARCHAR",
+          "nullable": false,
+          "key": false,
+          "relatedMetrics": [
+            "Сделки за день",
+            "Заявки за день",
+            "Продажи за день",
+            "Среднее число сделок в день",
+            "Доля продаж за день"
+          ],
+          "genericType": "StringType"
+        },
+        {
+          "name": "week_of_year",
+          "sqlType": "TINYINT",
+          "nullable": false,
+          "key": false,
+          "relatedMetrics": [
+            "Сделки за неделю",
+            "Продажи за неделю",
+            "Количество рабочих дней недели",
+            "Среднее число сделок за неделю"
+          ],
+          "genericType": "NumberType"
+        },
+        {
+          "name": "iso_week",
+          "sqlType": "TINYINT",
+          "nullable": false,
+          "key": false,
+          "relatedMetrics": [
+            "Сделки за неделю",
+            "Продажи за неделю",
+            "Количество рабочих дней недели",
+            "Среднее число сделок за неделю"
+          ],
+          "genericType": "NumberType"
+        },
+        {
+          "name": "iso_year",
+          "sqlType": "SMALLINT",
+          "nullable": false,
+          "key": false,
+          "relatedMetrics": [
+            "Количество дней в году",
+            "Рабочие дни с начала года",
+            "Доля прошедшего года",
+            "Выполнение годового плана"
+          ],
+          "genericType": "NumberType"
+        },
+        {
+          "name": "is_weekend",
+          "sqlType": "BIT",
+          "nullable": false,
+          "key": false,
+          "relatedMetrics": [
+            "Количество выходных дней",
+            "Заявки в выходные дни",
+            "Доля заявок в выходные дни"
+          ],
+          "genericType": "BooleanType"
+        },
+        {
+          "name": "is_holiday",
+          "sqlType": "BIT",
+          "nullable": false,
+          "key": false,
+          "relatedMetrics": [
+            "Количество праздничных дней",
+            "Заявки в праздничные дни",
+            "Доля заявок в праздничные дни"
+          ],
+          "genericType": "BooleanType"
+        },
+        {
+          "name": "holiday_name",
+          "sqlType": "NVARCHAR",
+          "nullable": true,
+          "key": false,
+          "relatedMetrics": [
+            "Количество праздничных дней",
+            "Заявки в праздничные дни",
+            "Доля заявок в праздничные дни"
+          ],
+          "genericType": "StringType"
+        },
+        {
+          "name": "is_working_day",
+          "sqlType": "BIT",
+          "nullable": false,
+          "key": false,
+          "relatedMetrics": [
+            "Количество рабочих дней",
+            "Продажи в рабочие дни",
+            "Среднее число заявок в рабочий день"
+          ],
+          "genericType": "BooleanType"
+        },
+        {
+          "name": "month_start",
+          "sqlType": "DATE",
+          "nullable": false,
+          "key": false,
+          "relatedMetrics": [
+            "Количество дней в месяце",
+            "Рабочие дни с начала месяца",
+            "Доля прошедшего месяца",
+            "Выполнение месячного плана",
+            "Продажи за месяц"
+          ],
+          "genericType": "DateType"
+        },
+        {
+          "name": "month_end",
+          "sqlType": "DATE",
+          "nullable": false,
+          "key": false,
+          "relatedMetrics": [
+            "Количество дней в месяце",
+            "Рабочие дни с начала месяца",
+            "Доля прошедшего месяца",
+            "Выполнение месячного плана",
+            "Продажи за месяц"
+          ],
+          "genericType": "DateType"
+        },
+        {
+          "name": "quarter_start",
+          "sqlType": "DATE",
+          "nullable": false,
+          "key": false,
+          "relatedMetrics": [
+            "Количество дней в квартале",
+            "Рабочие дни с начала квартала",
+            "Выполнение квартального плана",
+            "Продажи за квартал"
+          ],
+          "genericType": "DateType"
+        },
+        {
+          "name": "quarter_end",
+          "sqlType": "DATE",
+          "nullable": false,
+          "key": false,
+          "relatedMetrics": [
+            "Количество дней в квартале",
+            "Рабочие дни с начала квартала",
+            "Выполнение квартального плана",
+            "Продажи за квартал"
+          ],
+          "genericType": "DateType"
+        },
+        {
+          "name": "year_start",
+          "sqlType": "DATE",
+          "nullable": false,
+          "key": false,
+          "relatedMetrics": [
+            "Количество дней в году",
+            "Рабочие дни с начала года",
+            "Доля прошедшего года",
+            "Выполнение годового плана"
+          ],
+          "genericType": "DateType"
+        },
+        {
+          "name": "year_end",
+          "sqlType": "DATE",
+          "nullable": false,
+          "key": false,
+          "relatedMetrics": [
+            "Количество дней в году",
+            "Рабочие дни с начала года",
+            "Доля прошедшего года",
+            "Выполнение годового плана"
+          ],
+          "genericType": "DateType"
+        },
+        {
+          "name": "fiscal_year",
+          "sqlType": "SMALLINT",
+          "nullable": false,
+          "key": false,
+          "relatedMetrics": [
+            "Продажи за финансовый год",
+            "Выполнение плана финансового года",
+            "Выручка с начала финансового года"
+          ],
+          "genericType": "NumberType"
+        },
+        {
+          "name": "fiscal_quarter",
+          "sqlType": "TINYINT",
+          "nullable": false,
+          "key": false,
+          "relatedMetrics": [
+            "Продажи за финансовый квартал",
+            "Выручка за финансовый квартал",
+            "Выполнение плана финансового квартала"
+          ],
+          "genericType": "NumberType"
+        },
+        {
+          "name": "fiscal_month",
+          "sqlType": "TINYINT",
+          "nullable": false,
+          "key": false,
+          "relatedMetrics": [
+            "Продажи за финансовый месяц",
+            "Выручка за финансовый месяц",
+            "Выполнение плана финансового месяца"
+          ],
+          "genericType": "NumberType"
+        },
+        {
+          "name": "week_start",
+          "sqlType": "DATE",
+          "nullable": false,
+          "key": false,
+          "relatedMetrics": [
+            "Сделки за неделю",
+            "Продажи за неделю",
+            "Количество рабочих дней недели",
+            "Среднее число сделок за неделю"
+          ],
+          "genericType": "DateType"
+        },
+        {
+          "name": "week_end",
+          "sqlType": "DATE",
+          "nullable": false,
+          "key": false,
+          "relatedMetrics": [
+            "Сделки за неделю",
+            "Продажи за неделю",
+            "Количество рабочих дней недели",
+            "Среднее число сделок за неделю"
+          ],
+          "genericType": "DateType"
+        },
+        {
+          "name": "previous_year_date",
+          "sqlType": "DATE",
+          "nullable": true,
+          "key": false,
+          "relatedMetrics": [
+            "Продажи за аналогичный день прошлого года",
+            "Изменение продаж год к году",
+            "Изменение числа сделок год к году"
+          ],
+          "genericType": "DateType"
+        },
+        {
+          "name": "created_at",
+          "sqlType": "DATETIME2",
+          "nullable": false,
+          "key": false,
+          "relatedMetrics": [
+            "Добавленные записи календаря",
+            "Последняя дата добавления записи календаря",
+            "Дни с новыми записями календаря"
+          ],
+          "genericType": "DateTimeType"
+        }
+      ],
+      "counts": {
+        "reports": 84,
+        "metrics": 0,
+        "mcp": 0,
+        "similar": 10
+      },
+      "relatedReports": [
+        {
+          "id": "agent-rewards",
+          "title": "00. Агентское вознаграждение в реестре продаж",
+          "description": "Проверка и расчёт выплат агентам за отчётный период. Отдельно показаны активные и неактивные вознаграждения по данным CRM."
+        },
+        {
+          "id": "pricing-committee-v3",
+          "title": "00. Отчет ЦК v3",
+          "description": "Подготовка к заседанию Ценового комитета. Контроль плановых показателей и расчёт приведённых цен с учётом отделки."
+        },
+        {
+          "id": "pricing-committee-mm-v3",
+          "title": "00. Отчет ЦК v3 для ММ и кладовых (Тест)",
+          "description": "Контроль плана для Ценового комитета, анализ структуры вымываемости и прогноз плановых показателей на следующий месяц."
+        },
+        {
+          "id": "pricing-committee-mm-v8",
+          "title": "00. Отчет ЦК v8 для ММ и кладовых (Тест)",
+          "description": "Подготовка к Ценовому комитету. Автоматический сбор данных, контроль плановых показателей и прогноз на следующий месяц."
+        },
+        {
+          "id": "agency-availability",
+          "title": "00. ПР-01-Шахматка- для Агентств",
+          "descriptionUnavailable": "Описание целиком не видно в источнике."
+        }
+      ],
+      "lineageReports": [
+        {
+          "id": "mortgage-applications",
+          "title": "Ипотечные заявки"
+        },
+        {
+          "id": "month-results",
+          "title": "Итоги месяца"
+        },
+        {
+          "id": "ric-motivation",
+          "title": "Калькулятор мотивации РИЦ"
+        },
+        {
+          "id": "contact-center-metrics",
+          "title": "Ключевые метрики КЦ"
+        },
+        {
+          "id": "contact-center-indicators",
+          "title": "Ключевые показатели КЦ"
+        }
+      ],
+      "similarSources": [
+        {
+          "technicalName": "dwh2crm.material.visiology_инструменты_оценщика_показатели",
+          "businessMetricCount": 5
+        },
+        {
+          "technicalName": "dwh2crm.visiology.онлайн_продажи",
+          "businessMetricCount": 4
+        },
+        {
+          "technicalName": "dwh2crm.dbo.отчет_планфакт_долякорпусов_vi_до_этапа",
+          "businessMetricCount": 2
+        },
+        {
+          "technicalName": "dwh2crm.tableau.договор",
+          "businessMetricCount": 2
+        },
+        {
+          "technicalName": "reportcrm20.model.продажи",
+          "businessMetricCount": 2
+        },
+        {
+          "technicalName": "dwh2crm.tableau.v_task",
+          "businessMetricCount": 1
+        },
+        {
+          "technicalName": "dwh2crm.tableau.объект недвижимости",
+          "businessMetricCount": 1
+        },
+        {
+          "technicalName": "reportcrm20.calculate.deadlines_rpt",
+          "businessMetricCount": 1
+        }
+      ],
+      "provenance": {
+        "kind": "demo",
+        "reference": "SRC-17, SRC-18 and SRC-28; remaining fields are prototype examples",
+        "fieldsPartial": false,
+        "demoFieldNames": [
+          "calendar_year",
+          "calendar_quarter",
+          "quarter_name",
+          "month_number",
+          "month_name",
+          "month_short_name",
+          "day_of_month",
+          "day_of_year",
+          "day_of_week",
+          "day_name",
+          "week_of_year",
+          "iso_week",
+          "iso_year",
+          "is_weekend",
+          "is_holiday",
+          "holiday_name",
+          "is_working_day",
+          "month_start",
+          "month_end",
+          "quarter_start",
+          "quarter_end",
+          "year_start",
+          "year_end",
+          "fiscal_year",
+          "fiscal_quarter",
+          "fiscal_month",
+          "week_start",
+          "week_end",
+          "previous_year_date",
+          "created_at"
+        ]
+      }
+    },
+    {
+      "sourceId": "source-dwh-date",
+      "domain": "Продажи и маркетинг",
+      "masterSystem": "Хранилище данных DWH CRM",
+      "analyst": "Лапова Юлия Владимировна",
+      "technicalOwner": "Смирнов Павел Олегович",
+      "fields": [
+        {
+          "name": "date_key",
+          "sqlType": "INT",
+          "nullable": false,
+          "key": true,
+          "relatedMetrics": [
+            "Количество рабочих дней",
+            "Количество выходных дней",
+            "Количество праздничных дней"
+          ],
+          "genericType": "NumberType"
+        },
+        {
+          "name": "full_date",
+          "sqlType": "DATE",
+          "nullable": false,
+          "key": false,
+          "genericType": "DateType"
+        },
+        {
+          "name": "calendar_year",
+          "sqlType": "SMALLINT",
+          "nullable": false,
+          "key": false,
+          "relatedMetrics": [
+            "Количество дней в году"
+          ],
+          "genericType": "NumberType"
+        },
+        {
+          "name": "calendar_quarter",
+          "sqlType": "TINYINT",
+          "nullable": false,
+          "key": false,
+          "genericType": "NumberType"
+        },
+        {
+          "name": "quarter_name",
+          "sqlType": "NVARCHAR",
+          "nullable": false,
+          "key": false,
+          "genericType": "StringType"
+        },
+        {
+          "name": "month_number",
+          "sqlType": "TINYINT",
+          "nullable": false,
+          "key": false,
+          "genericType": "NumberType"
+        },
+        {
+          "name": "month_name",
+          "sqlType": "NVARCHAR",
+          "nullable": false,
+          "key": false,
+          "genericType": "StringType"
+        },
+        {
+          "name": "month_short_name",
+          "sqlType": "NVARCHAR",
+          "nullable": false,
+          "key": false,
+          "genericType": "StringType"
+        },
+        {
+          "name": "day_of_month",
+          "sqlType": "TINYINT",
+          "nullable": false,
+          "key": false,
+          "genericType": "NumberType"
+        },
+        {
+          "name": "day_of_year",
+          "sqlType": "SMALLINT",
+          "nullable": false,
+          "key": false,
+          "genericType": "NumberType"
+        },
+        {
+          "name": "day_of_week",
+          "sqlType": "TINYINT",
+          "nullable": false,
+          "key": false,
+          "genericType": "NumberType"
+        },
+        {
+          "name": "day_name",
+          "sqlType": "NVARCHAR",
+          "nullable": false,
+          "key": false,
+          "genericType": "StringType"
+        },
+        {
+          "name": "week_of_year",
+          "sqlType": "TINYINT",
+          "nullable": false,
+          "key": false,
+          "genericType": "NumberType"
+        },
+        {
+          "name": "iso_week",
+          "sqlType": "TINYINT",
+          "nullable": false,
+          "key": false,
+          "genericType": "NumberType"
+        },
+        {
+          "name": "iso_year",
+          "sqlType": "SMALLINT",
+          "nullable": false,
+          "key": false,
+          "genericType": "NumberType"
+        },
+        {
+          "name": "is_weekend",
+          "sqlType": "BIT",
+          "nullable": false,
+          "key": false,
+          "genericType": "BooleanType"
+        },
+        {
+          "name": "is_holiday",
+          "sqlType": "BIT",
+          "nullable": false,
+          "key": false,
+          "genericType": "BooleanType"
+        },
+        {
+          "name": "holiday_name",
+          "sqlType": "NVARCHAR",
+          "nullable": true,
+          "key": false,
+          "genericType": "StringType"
+        },
+        {
+          "name": "is_working_day",
+          "sqlType": "BIT",
+          "nullable": false,
+          "key": false,
+          "genericType": "BooleanType"
+        },
+        {
+          "name": "month_start",
+          "sqlType": "DATE",
+          "nullable": false,
+          "key": false,
+          "genericType": "DateType"
+        },
+        {
+          "name": "month_end",
+          "sqlType": "DATE",
+          "nullable": false,
+          "key": false,
+          "genericType": "DateType"
+        },
+        {
+          "name": "quarter_start",
+          "sqlType": "DATE",
+          "nullable": false,
+          "key": false,
+          "genericType": "DateType"
+        },
+        {
+          "name": "quarter_end",
+          "sqlType": "DATE",
+          "nullable": false,
+          "key": false,
+          "genericType": "DateType"
+        },
+        {
+          "name": "year_start",
+          "sqlType": "DATE",
+          "nullable": false,
+          "key": false,
+          "genericType": "DateType"
+        },
+        {
+          "name": "year_end",
+          "sqlType": "DATE",
+          "nullable": false,
+          "key": false,
+          "genericType": "DateType"
+        },
+        {
+          "name": "reporting_period",
+          "sqlType": "CHAR",
+          "nullable": false,
+          "key": false,
+          "genericType": "StringType"
+        },
+        {
+          "name": "financial_year",
+          "sqlType": "SMALLINT",
+          "nullable": false,
+          "key": false,
+          "genericType": "NumberType"
+        },
+        {
+          "name": "financial_period",
+          "sqlType": "TINYINT",
+          "nullable": false,
+          "key": false,
+          "genericType": "NumberType"
+        },
+        {
+          "name": "is_month_closed",
+          "sqlType": "BIT",
+          "nullable": false,
+          "key": false,
+          "genericType": "BooleanType"
+        },
+        {
+          "name": "is_quarter_closed",
+          "sqlType": "BIT",
+          "nullable": false,
+          "key": false,
+          "genericType": "BooleanType"
+        },
+        {
+          "name": "working_day_number",
+          "sqlType": "SMALLINT",
+          "nullable": true,
+          "key": false,
+          "genericType": "NumberType"
+        },
+        {
+          "name": "etl_loaded_at",
+          "sqlType": "DATETIME2",
+          "nullable": false,
+          "key": false,
+          "genericType": "DateTimeType"
+        },
+        {
+          "name": "source_system",
+          "sqlType": "NVARCHAR",
+          "nullable": false,
+          "key": false,
+          "genericType": "StringType"
+        }
+      ],
+      "counts": {
+        "reports": 47,
+        "metrics": 0,
+        "mcp": 0
+      },
+      "provenance": {
+        "kind": "demo",
+        "reference": "Source-specific demonstration schema approved for prototype 2026-11-04",
+        "fieldsPartial": false,
+        "demoFieldNames": [
+          "date_key",
+          "full_date",
+          "calendar_year",
+          "calendar_quarter",
+          "quarter_name",
+          "month_number",
+          "month_name",
+          "month_short_name",
+          "day_of_month",
+          "day_of_year",
+          "day_of_week",
+          "day_name",
+          "week_of_year",
+          "iso_week",
+          "iso_year",
+          "is_weekend",
+          "is_holiday",
+          "holiday_name",
+          "is_working_day",
+          "month_start",
+          "month_end",
+          "quarter_start",
+          "quarter_end",
+          "year_start",
+          "year_end",
+          "reporting_period",
+          "financial_year",
+          "financial_period",
+          "is_month_closed",
+          "is_quarter_closed",
+          "working_day_number",
+          "etl_loaded_at",
+          "source_system"
+        ]
+      }
+    },
+    {
+      "sourceId": "source-dwh-project",
+      "domain": "Продажи и маркетинг",
+      "masterSystem": "Управление проектами",
+      "analyst": "Лапова Юлия Владимировна",
+      "technicalOwner": "Никитин Андрей Сергеевич",
+      "fields": [
+        {
+          "name": "project_id",
+          "sqlType": "BIGINT",
+          "nullable": false,
+          "key": true,
+          "genericType": "NumberType"
+        },
+        {
+          "name": "project_code",
+          "sqlType": "NVARCHAR",
+          "nullable": false,
+          "key": false,
+          "genericType": "StringType"
+        },
+        {
+          "name": "project_name",
+          "sqlType": "NVARCHAR",
+          "nullable": false,
+          "key": false,
+          "genericType": "StringType"
+        },
+        {
+          "name": "project_description",
+          "sqlType": "NVARCHAR",
+          "nullable": true,
+          "key": false,
+          "genericType": "StringType"
+        },
+        {
+          "name": "status",
+          "sqlType": "NVARCHAR",
+          "nullable": false,
+          "key": false,
+          "genericType": "StringType"
+        },
+        {
+          "name": "portfolio_id",
+          "sqlType": "BIGINT",
+          "nullable": true,
+          "key": false,
+          "genericType": "NumberType"
+        },
+        {
+          "name": "customer_id",
+          "sqlType": "BIGINT",
+          "nullable": false,
+          "key": false,
+          "genericType": "NumberType"
+        },
+        {
+          "name": "manager_id",
+          "sqlType": "BIGINT",
+          "nullable": true,
+          "key": false,
+          "genericType": "NumberType"
+        },
+        {
+          "name": "department_code",
+          "sqlType": "NVARCHAR",
+          "nullable": false,
+          "key": false,
+          "genericType": "StringType"
+        },
+        {
+          "name": "start_date",
+          "sqlType": "DATE",
+          "nullable": false,
+          "key": false,
+          "genericType": "DateType"
+        },
+        {
+          "name": "planned_end_date",
+          "sqlType": "DATE",
+          "nullable": true,
+          "key": false,
+          "genericType": "DateType"
+        },
+        {
+          "name": "actual_end_date",
+          "sqlType": "DATE",
+          "nullable": true,
+          "key": false,
+          "genericType": "DateType"
+        },
+        {
+          "name": "budget_amount",
+          "sqlType": "DECIMAL",
+          "nullable": true,
+          "key": false,
+          "genericType": "NumberType"
+        },
+        {
+          "name": "actual_cost",
+          "sqlType": "DECIMAL",
+          "nullable": true,
+          "key": false,
+          "genericType": "NumberType"
+        },
+        {
+          "name": "currency_code",
+          "sqlType": "CHAR",
+          "nullable": false,
+          "key": false,
+          "genericType": "StringType"
+        },
+        {
+          "name": "completion_percent",
+          "sqlType": "DECIMAL",
+          "nullable": false,
+          "key": false,
+          "genericType": "NumberType"
+        },
+        {
+          "name": "is_archived",
+          "sqlType": "BIT",
+          "nullable": false,
+          "key": false,
+          "genericType": "BooleanType"
+        },
+        {
+          "name": "created_at",
+          "sqlType": "DATETIME2",
+          "nullable": false,
+          "key": false,
+          "genericType": "DateTimeType"
+        },
+        {
+          "name": "updated_at",
+          "sqlType": "DATETIME2",
+          "nullable": false,
+          "key": false,
+          "genericType": "DateTimeType"
+        },
+        {
+          "name": "etl_loaded_at",
+          "sqlType": "DATETIME2",
+          "nullable": false,
+          "key": false,
+          "genericType": "DateTimeType"
+        }
+      ],
+      "counts": {
+        "reports": 36,
+        "metrics": 0,
+        "mcp": 0
+      },
+      "provenance": {
+        "kind": "demo",
+        "reference": "Source-specific demonstration schema approved for prototype 2026-11-04",
+        "fieldsPartial": false,
+        "demoFieldNames": [
+          "project_id",
+          "project_code",
+          "project_name",
+          "project_description",
+          "status",
+          "portfolio_id",
+          "customer_id",
+          "manager_id",
+          "department_code",
+          "start_date",
+          "planned_end_date",
+          "actual_end_date",
+          "budget_amount",
+          "actual_cost",
+          "currency_code",
+          "completion_percent",
+          "is_archived",
+          "created_at",
+          "updated_at",
+          "etl_loaded_at"
+        ]
+      }
+    },
+    {
+      "sourceId": "source-demo-clients",
+      "domain": "Продажи и маркетинг",
+      "masterSystem": "Демо CRM",
+      "analyst": "Соколова Анна Сергеевна",
+      "technicalOwner": "Белов Максим Ильич",
+      "fields": [
+        {
+          "name": "client_id",
+          "sqlType": "BIGINT",
+          "nullable": false,
+          "key": true,
+          "genericType": "NumberType"
+        },
+        {
+          "name": "full_name",
+          "sqlType": "NVARCHAR",
+          "nullable": false,
+          "key": false,
+          "genericType": "StringType"
+        },
+        {
+          "name": "email",
+          "sqlType": "NVARCHAR",
+          "nullable": true,
+          "key": false,
+          "genericType": "StringType"
+        },
+        {
+          "name": "phone",
+          "sqlType": "NVARCHAR",
+          "nullable": true,
+          "key": false,
+          "genericType": "StringType"
+        },
+        {
+          "name": "client_type",
+          "sqlType": "NVARCHAR",
+          "nullable": false,
+          "key": false,
+          "genericType": "StringType"
+        },
+        {
+          "name": "segment",
+          "sqlType": "NVARCHAR",
+          "nullable": true,
+          "key": false,
+          "genericType": "StringType"
+        },
+        {
+          "name": "registration_date",
+          "sqlType": "DATE",
+          "nullable": false,
+          "key": false,
+          "genericType": "DateType"
+        },
+        {
+          "name": "city",
+          "sqlType": "NVARCHAR",
+          "nullable": true,
+          "key": false,
+          "genericType": "StringType"
+        },
+        {
+          "name": "country_code",
+          "sqlType": "CHAR",
+          "nullable": false,
+          "key": false,
+          "genericType": "StringType"
+        },
+        {
+          "name": "consent_personal_data",
+          "sqlType": "BIT",
+          "nullable": false,
+          "key": false,
+          "genericType": "BooleanType"
+        },
+        {
+          "name": "is_active",
+          "sqlType": "BIT",
+          "nullable": false,
+          "key": false,
+          "genericType": "BooleanType"
+        },
+        {
+          "name": "updated_at",
+          "sqlType": "DATETIME2",
+          "nullable": false,
+          "key": false,
+          "genericType": "DateTimeType"
+        }
+      ],
+      "counts": {
+        "reports": 0,
+        "metrics": 0,
+        "mcp": 0
+      },
+      "relatedReports": [],
+      "provenance": {
+        "kind": "demo",
+        "reference": "Source-specific demonstration schema approved for prototype 2026-11-04",
+        "fieldsPartial": false,
+        "demoFieldNames": [
+          "client_id",
+          "full_name",
+          "email",
+          "phone",
+          "client_type",
+          "segment",
+          "registration_date",
+          "city",
+          "country_code",
+          "consent_personal_data",
+          "is_active",
+          "updated_at"
+        ]
+      }
+    },
+    {
+      "sourceId": "source-demo-contracts",
+      "domain": "Продажи и маркетинг",
+      "masterSystem": "Демо CRM",
+      "analyst": "Морозова Елена Игоревна",
+      "technicalOwner": "Романов Кирилл Олегович",
+      "fields": [
+        {
+          "name": "contract_id",
+          "sqlType": "BIGINT",
+          "nullable": false,
+          "key": true,
+          "genericType": "NumberType"
+        },
+        {
+          "name": "contract_number",
+          "sqlType": "NVARCHAR",
+          "nullable": false,
+          "key": false,
+          "genericType": "StringType"
+        },
+        {
+          "name": "client_id",
+          "sqlType": "BIGINT",
+          "nullable": false,
+          "key": false,
+          "genericType": "NumberType"
+        },
+        {
+          "name": "contract_type",
+          "sqlType": "NVARCHAR",
+          "nullable": false,
+          "key": false,
+          "genericType": "StringType"
+        },
+        {
+          "name": "status",
+          "sqlType": "NVARCHAR",
+          "nullable": false,
+          "key": false,
+          "genericType": "StringType"
+        },
+        {
+          "name": "signed_at",
+          "sqlType": "DATE",
+          "nullable": true,
+          "key": false,
+          "genericType": "DateType"
+        },
+        {
+          "name": "valid_from",
+          "sqlType": "DATE",
+          "nullable": false,
+          "key": false,
+          "genericType": "DateType"
+        },
+        {
+          "name": "valid_to",
+          "sqlType": "DATE",
+          "nullable": true,
+          "key": false,
+          "genericType": "DateType"
+        },
+        {
+          "name": "amount",
+          "sqlType": "DECIMAL",
+          "nullable": false,
+          "key": false,
+          "genericType": "NumberType"
+        },
+        {
+          "name": "currency_code",
+          "sqlType": "CHAR",
+          "nullable": false,
+          "key": false,
+          "genericType": "StringType"
+        },
+        {
+          "name": "payment_terms",
+          "sqlType": "NVARCHAR",
+          "nullable": true,
+          "key": false,
+          "genericType": "StringType"
+        },
+        {
+          "name": "manager_id",
+          "sqlType": "BIGINT",
+          "nullable": true,
+          "key": false,
+          "genericType": "NumberType"
+        },
+        {
+          "name": "department_code",
+          "sqlType": "NVARCHAR",
+          "nullable": false,
+          "key": false,
+          "genericType": "StringType"
+        },
+        {
+          "name": "subject",
+          "sqlType": "NVARCHAR",
+          "nullable": false,
+          "key": false,
+          "genericType": "StringType"
+        },
+        {
+          "name": "termination_date",
+          "sqlType": "DATE",
+          "nullable": true,
+          "key": false,
+          "genericType": "DateType"
+        },
+        {
+          "name": "is_renewable",
+          "sqlType": "BIT",
+          "nullable": false,
+          "key": false,
+          "genericType": "BooleanType"
+        },
+        {
+          "name": "created_at",
+          "sqlType": "DATETIME2",
+          "nullable": false,
+          "key": false,
+          "genericType": "DateTimeType"
+        },
+        {
+          "name": "updated_at",
+          "sqlType": "DATETIME2",
+          "nullable": false,
+          "key": false,
+          "genericType": "DateTimeType"
+        }
+      ],
+      "counts": {
+        "reports": 0,
+        "metrics": 0,
+        "mcp": 0,
+        "similar": 0
+      },
+      "relatedReports": [],
+      "provenance": {
+        "kind": "demo",
+        "reference": "Source-specific demonstration schema approved for prototype 2026-11-04",
+        "fieldsPartial": false,
+        "demoFieldNames": [
+          "contract_id",
+          "contract_number",
+          "client_id",
+          "contract_type",
+          "status",
+          "signed_at",
+          "valid_from",
+          "valid_to",
+          "amount",
+          "currency_code",
+          "payment_terms",
+          "manager_id",
+          "department_code",
+          "subject",
+          "termination_date",
+          "is_renewable",
+          "created_at",
+          "updated_at"
+        ]
+      }
+    },
+    {
+      "sourceId": "source-demo-sales",
+      "domain": "Продажи и маркетинг",
+      "masterSystem": "Демо CRM",
+      "analyst": "Волков Дмитрий Андреевич",
+      "technicalOwner": "Фёдоров Илья Максимович",
+      "fields": [
+        {
+          "name": "sale_id",
+          "sqlType": "BIGINT",
+          "nullable": false,
+          "key": true,
+          "genericType": "NumberType"
+        },
+        {
+          "name": "sale_date",
+          "sqlType": "DATE",
+          "nullable": false,
+          "key": false,
+          "genericType": "DateType"
+        },
+        {
+          "name": "order_id",
+          "sqlType": "BIGINT",
+          "nullable": false,
+          "key": false,
+          "genericType": "NumberType"
+        },
+        {
+          "name": "order_number",
+          "sqlType": "NVARCHAR",
+          "nullable": false,
+          "key": false,
+          "genericType": "StringType"
+        },
+        {
+          "name": "client_id",
+          "sqlType": "BIGINT",
+          "nullable": false,
+          "key": false,
+          "genericType": "NumberType"
+        },
+        {
+          "name": "contract_id",
+          "sqlType": "BIGINT",
+          "nullable": true,
+          "key": false,
+          "genericType": "NumberType"
+        },
+        {
+          "name": "product_id",
+          "sqlType": "BIGINT",
+          "nullable": false,
+          "key": false,
+          "genericType": "NumberType"
+        },
+        {
+          "name": "product_name",
+          "sqlType": "NVARCHAR",
+          "nullable": false,
+          "key": false,
+          "genericType": "StringType"
+        },
+        {
+          "name": "product_category",
+          "sqlType": "NVARCHAR",
+          "nullable": false,
+          "key": false,
+          "genericType": "StringType"
+        },
+        {
+          "name": "quantity",
+          "sqlType": "DECIMAL",
+          "nullable": false,
+          "key": false,
+          "genericType": "NumberType"
+        },
+        {
+          "name": "unit_price",
+          "sqlType": "DECIMAL",
+          "nullable": false,
+          "key": false,
+          "genericType": "NumberType"
+        },
+        {
+          "name": "discount_amount",
+          "sqlType": "DECIMAL",
+          "nullable": false,
+          "key": false,
+          "genericType": "NumberType"
+        },
+        {
+          "name": "net_amount",
+          "sqlType": "DECIMAL",
+          "nullable": false,
+          "key": false,
+          "genericType": "NumberType"
+        },
+        {
+          "name": "tax_amount",
+          "sqlType": "DECIMAL",
+          "nullable": false,
+          "key": false,
+          "genericType": "NumberType"
+        },
+        {
+          "name": "gross_amount",
+          "sqlType": "DECIMAL",
+          "nullable": false,
+          "key": false,
+          "genericType": "NumberType"
+        },
+        {
+          "name": "currency_code",
+          "sqlType": "CHAR",
+          "nullable": false,
+          "key": false,
+          "genericType": "StringType"
+        },
+        {
+          "name": "payment_status",
+          "sqlType": "NVARCHAR",
+          "nullable": false,
+          "key": false,
+          "genericType": "StringType"
+        },
+        {
+          "name": "sales_channel",
+          "sqlType": "NVARCHAR",
+          "nullable": false,
+          "key": false,
+          "genericType": "StringType"
+        },
+        {
+          "name": "region_code",
+          "sqlType": "NVARCHAR",
+          "nullable": false,
+          "key": false,
+          "genericType": "StringType"
+        },
+        {
+          "name": "manager_id",
+          "sqlType": "BIGINT",
+          "nullable": true,
+          "key": false,
+          "genericType": "NumberType"
+        },
+        {
+          "name": "is_return",
+          "sqlType": "BIT",
+          "nullable": false,
+          "key": false,
+          "genericType": "BooleanType"
+        },
+        {
+          "name": "return_reason",
+          "sqlType": "NVARCHAR",
+          "nullable": true,
+          "key": false,
+          "genericType": "StringType"
+        },
+        {
+          "name": "created_at",
+          "sqlType": "DATETIME2",
+          "nullable": false,
+          "key": false,
+          "genericType": "DateTimeType"
+        },
+        {
+          "name": "updated_at",
+          "sqlType": "DATETIME2",
+          "nullable": false,
+          "key": false,
+          "genericType": "DateTimeType"
+        }
+      ],
+      "counts": {
+        "reports": 0,
+        "metrics": 0,
+        "mcp": 0
+      },
+      "relatedReports": [],
+      "provenance": {
+        "kind": "demo",
+        "reference": "Source-specific demonstration schema approved for prototype 2026-11-04",
+        "fieldsPartial": false,
+        "demoFieldNames": [
+          "sale_id",
+          "sale_date",
+          "order_id",
+          "order_number",
+          "client_id",
+          "contract_id",
+          "product_id",
+          "product_name",
+          "product_category",
+          "quantity",
+          "unit_price",
+          "discount_amount",
+          "net_amount",
+          "tax_amount",
+          "gross_amount",
+          "currency_code",
+          "payment_status",
+          "sales_channel",
+          "region_code",
+          "manager_id",
+          "is_return",
+          "return_reason",
+          "created_at",
+          "updated_at"
+        ]
+      }
+    },
+    {
+      "sourceId": "source-demo-requests",
+      "domain": "Гостеприимство",
+      "masterSystem": "Демо сервис",
+      "analyst": "Орлова Мария Павловна",
+      "technicalOwner": "Титов Сергей Александрович",
+      "fields": [
+        {
+          "name": "request_id",
+          "sqlType": "BIGINT",
+          "nullable": false,
+          "key": true,
+          "genericType": "NumberType"
+        },
+        {
+          "name": "request_number",
+          "sqlType": "NVARCHAR",
+          "nullable": false,
+          "key": false,
+          "genericType": "StringType"
+        },
+        {
+          "name": "request_type",
+          "sqlType": "NVARCHAR",
+          "nullable": false,
+          "key": false,
+          "genericType": "StringType"
+        },
+        {
+          "name": "subject",
+          "sqlType": "NVARCHAR",
+          "nullable": false,
+          "key": false,
+          "genericType": "StringType"
+        },
+        {
+          "name": "description",
+          "sqlType": "NVARCHAR",
+          "nullable": true,
+          "key": false,
+          "genericType": "StringType"
+        },
+        {
+          "name": "status",
+          "sqlType": "NVARCHAR",
+          "nullable": false,
+          "key": false,
+          "genericType": "StringType"
+        },
+        {
+          "name": "priority",
+          "sqlType": "NVARCHAR",
+          "nullable": false,
+          "key": false,
+          "genericType": "StringType"
+        },
+        {
+          "name": "requester_id",
+          "sqlType": "BIGINT",
+          "nullable": false,
+          "key": false,
+          "genericType": "NumberType"
+        },
+        {
+          "name": "assignee_id",
+          "sqlType": "BIGINT",
+          "nullable": true,
+          "key": false,
+          "genericType": "NumberType"
+        },
+        {
+          "name": "service_code",
+          "sqlType": "NVARCHAR",
+          "nullable": false,
+          "key": false,
+          "genericType": "StringType"
+        },
+        {
+          "name": "created_at",
+          "sqlType": "DATETIME2",
+          "nullable": false,
+          "key": false,
+          "genericType": "DateTimeType"
+        },
+        {
+          "name": "due_at",
+          "sqlType": "DATETIME2",
+          "nullable": true,
+          "key": false,
+          "genericType": "DateTimeType"
+        },
+        {
+          "name": "resolved_at",
+          "sqlType": "DATETIME2",
+          "nullable": true,
+          "key": false,
+          "genericType": "DateTimeType"
+        },
+        {
+          "name": "resolution",
+          "sqlType": "NVARCHAR",
+          "nullable": true,
+          "key": false,
+          "genericType": "StringType"
+        },
+        {
+          "name": "sla_breached",
+          "sqlType": "BIT",
+          "nullable": false,
+          "key": false,
+          "genericType": "BooleanType"
+        }
+      ],
+      "counts": {
+        "reports": 0,
+        "metrics": 0,
+        "mcp": 0,
+        "similar": 0
+      },
+      "relatedReports": [],
+      "provenance": {
+        "kind": "demo",
+        "reference": "Source-specific demonstration schema approved for prototype 2026-11-04",
+        "fieldsPartial": false,
+        "demoFieldNames": [
+          "request_id",
+          "request_number",
+          "request_type",
+          "subject",
+          "description",
+          "status",
+          "priority",
+          "requester_id",
+          "assignee_id",
+          "service_code",
+          "created_at",
+          "due_at",
+          "resolved_at",
+          "resolution",
+          "sla_breached"
+        ]
+      }
+    },
+    {
+      "sourceId": "source-demo-feedback",
+      "domain": "Гостеприимство",
+      "masterSystem": "Демо сервис",
+      "analyst": "Зайцева Ирина Олеговна",
+      "technicalOwner": "Егоров Денис Алексеевич",
+      "fields": [
+        {
+          "name": "feedback_id",
+          "sqlType": "BIGINT",
+          "nullable": false,
+          "key": true,
+          "genericType": "NumberType"
+        },
+        {
+          "name": "request_id",
+          "sqlType": "BIGINT",
+          "nullable": false,
+          "key": false,
+          "genericType": "NumberType"
+        },
+        {
+          "name": "rating",
+          "sqlType": "TINYINT",
+          "nullable": false,
+          "key": false,
+          "genericType": "NumberType"
+        },
+        {
+          "name": "comment",
+          "sqlType": "NVARCHAR",
+          "nullable": true,
+          "key": false,
+          "genericType": "StringType"
+        },
+        {
+          "name": "channel",
+          "sqlType": "NVARCHAR",
+          "nullable": false,
+          "key": false,
+          "genericType": "StringType"
+        },
+        {
+          "name": "submitted_at",
+          "sqlType": "DATETIME2",
+          "nullable": false,
+          "key": false,
+          "genericType": "DateTimeType"
+        },
+        {
+          "name": "is_anonymous",
+          "sqlType": "BIT",
+          "nullable": false,
+          "key": false,
+          "genericType": "BooleanType"
+        },
+        {
+          "name": "service_code",
+          "sqlType": "NVARCHAR",
+          "nullable": false,
+          "key": false,
+          "genericType": "StringType"
+        },
+        {
+          "name": "sentiment",
+          "sqlType": "NVARCHAR",
+          "nullable": true,
+          "key": false,
+          "genericType": "StringType"
+        },
+        {
+          "name": "processed_at",
+          "sqlType": "DATETIME2",
+          "nullable": true,
+          "key": false,
+          "genericType": "DateTimeType"
+        }
+      ],
+      "counts": {
+        "reports": 0,
+        "metrics": 0,
+        "mcp": 0,
+        "similar": 0
+      },
+      "relatedReports": [],
+      "provenance": {
+        "kind": "demo",
+        "reference": "Source-specific demonstration schema approved for prototype 2026-11-04",
+        "fieldsPartial": false,
+        "demoFieldNames": [
+          "feedback_id",
+          "request_id",
+          "rating",
+          "comment",
+          "channel",
+          "submitted_at",
+          "is_anonymous",
+          "service_code",
+          "sentiment",
+          "processed_at"
+        ]
+      }
+    },
+    {
+      "sourceId": "source-demo-rewedo-versions",
+      "technicalStatus": "Active",
+      "synchronizedLabel": "вчера, 23:48",
+      "domain": "Продажи и маркетинг",
+      "masterSystem": "CRM (CRM Dynamics)",
+      "analyst": "Лапова Юлия Владимировна",
+      "technicalOwner": "Ручнов Константин Михайлович",
+      "counts": {
+        "reports": 0,
+        "metrics": 0,
+        "mcp": 0,
+        "similar": 0
+      },
+      "relatedReports": [],
+      "fields": [
+        {
+          "name": "id",
+          "sqlType": "INTEGER",
+          "genericType": "NumberType",
+          "nullable": false,
+          "key": true,
+          "metricCount": 0
+        },
+        {
+          "name": "item_type",
+          "sqlType": "VARCHAR",
+          "genericType": "StringType",
+          "nullable": false,
+          "key": false,
+          "metricCount": 0
+        },
+        {
+          "name": "item_id",
+          "sqlType": "BIGINT",
+          "genericType": "NumberType",
+          "nullable": false,
+          "key": false,
+          "metricCount": 0
+        },
+        {
+          "name": "event",
+          "sqlType": "VARCHAR",
+          "genericType": "StringType",
+          "nullable": false,
+          "key": false
+        },
+        {
+          "name": "whodunnit",
+          "sqlType": "VARCHAR",
+          "genericType": "StringType",
+          "nullable": true,
+          "key": false
+        },
+        {
+          "name": "object",
+          "sqlType": "TEXT",
+          "genericType": "StringType",
+          "nullable": true,
+          "key": false
+        },
+        {
+          "name": "created_at",
+          "sqlType": "TIMESTAMP",
+          "genericType": "DateTimeType",
+          "nullable": false,
+          "key": false
+        },
+        {
+          "name": "object_changes",
+          "sqlType": "TEXT",
+          "genericType": "StringType",
+          "nullable": true,
+          "key": false
+        }
+      ],
+      "provenance": {
+        "kind": "demo",
+        "reference": "Paper source detail approved 2026-11-04; completed demo schema by user request",
+        "fieldsPartial": false,
+        "demoFieldNames": [
+          "created_at",
+          "object_changes"
+        ]
+      }
+    }
+  ]
+}

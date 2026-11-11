@@ -150,6 +150,9 @@
 .table td:first-child { border-left:var(--crm-row-border); border-radius:12px 0 0 12px; }
 .table td:last-child { border-right:var(--crm-row-border); border-radius:0 12px 12px 0; }
 .table td strong { font-weight:500; }
+.entityCell { display:flex; align-items:center; gap:12px; }
+.entityIcon { composes:badge from '../../components/CatalogEntityIcon/CatalogEntityIcon.module.css'; color:#7186a5; }
+.entityText { flex:1; min-width:0; }
 .secondary, .value { display:block; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
 .secondary { margin-top:4px; color:#52698c; font-size:12px; line-height:16px; }
 .optionsHeading { display:flex; align-items:center; gap:12px; }

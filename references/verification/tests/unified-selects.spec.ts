@@ -123,21 +123,21 @@ test('dictionary resets a selected missing value without clearing another filter
   await expect(page).not.toHaveURL(/dictionary\.all\.owner=/);
 });
 
-for (const { section, title, fieldId, label, option, defaultLabel } of [
-  { section: 'reports', title: 'Фильтры отчётов', fieldId: 'status', label: 'Статус проверки', option: 'Проверено', defaultLabel: 'Все' },
-  { section: 'sources', title: 'Фильтры источников', fieldId: 'analytics', label: 'В аналитике', option: 'Используется в аналитике', defaultLabel: 'Не важно' },
+for (const { section, opener, fieldId, label, option, defaultLabel } of [
+  { section: 'reports', opener: 'Открыть фильтры отчётов', fieldId: 'status', label: 'Статус проверки', option: 'Проверено', defaultLabel: 'Все' },
+  { section: 'sources', opener: 'Открыть фильтры источников', fieldId: 'analytics', label: 'В аналитике', option: 'Используется в аналитике', defaultLabel: 'Не важно' },
 ]) {
   test(`${section}: single select reset changes only its draft value`, async ({ page }) => {
     await page.goto(`/preview/navigation?section=${section}`);
-    await page.getByRole('button', { name: `Открыть ${title.toLowerCase()}`, exact: true }).click();
-    const panel = page.getByRole('dialog', { name: title, exact: true });
+    await page.getByRole('button', { name: opener, exact: true }).click();
+    const panel = page.getByRole('dialog', { name: 'Фильтры', exact: true });
     const field = panel.locator(`[data-panel-field="${fieldId}"]`);
     const domain = panel.locator('[data-panel-field="domain"]');
     await domain.click();
     await page.getByRole('checkbox', { name: 'Гостеприимство', exact: true }).check();
     await field.click();
     await page.getByRole('radio', { name: option, exact: true }).check();
-    await panel.getByRole('heading', { name: title, exact: true }).click();
+    await panel.getByRole('heading', { name: 'Фильтры', exact: true }).click();
     await expect(panel.locator('[data-panel-count]')).toHaveText('2');
     await panel.getByRole('button', { name: `Очистить выбор: ${label}`, exact: true }).click();
     await expect(field).toHaveAccessibleName(`${label} ${defaultLabel}`);
