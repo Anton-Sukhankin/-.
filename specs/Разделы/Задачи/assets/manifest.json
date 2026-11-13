@@ -1,0 +1,47 @@
+{
+  "date": "2026-11-12",
+  "browser": "Chromium",
+  "prototype_commit": "91cfb91b3904ce810bbf9e49b862d4828769fd94",
+  "frames": [
+    {
+      "file": "queue-1440.png",
+      "route": "/preview/navigation?section=tasks",
+      "state": "Очередь из шести демонстрационных заявок",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "c3da9fc209eed590eb48b864613c33c9203b6632b91eb26482f3956461d49c9e"
+    },
+    {
+      "file": "queue-1440-hover.png",
+      "route": "/preview/navigation?section=tasks",
+      "state": "Наведение на третью заявку",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "a7b05900039c353f8d7b7b70172e0aba630d432d5aa108c3c52af579d869abb1"
+    },
+    {
+      "file": "queue-narrow.png",
+      "route": "/preview/navigation?section=tasks",
+      "state": "Последняя заявка в узком окне, список прокручен",
+      "viewport": {
+        "width": 620,
+        "height": 700
+      },
+      "sha256": "acebf40186bfd18f720af85fbc5ac66f306debeb63fae2cb1bdd065ca3aa472e"
+    },
+    {
+      "file": "queue-report.png",
+      "route": "/preview/navigation?section=reports&report=demo-report-sales-plan&reportTab=overview",
+      "state": "Паспорт открыт кликом по первой задаче, сохранён исходный маршрут",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "4ee4645424853403d78393adb553367f57a30ba184deeea566099262887a04e9"
+    }
+  ]
+}

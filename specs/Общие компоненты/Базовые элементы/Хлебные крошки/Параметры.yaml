@@ -2,206 +2,115 @@ schemaVersion: 1
 component:
   id: breadcrumb
   title: Хлебные крошки
-  contract: specs/Общие компоненты/Базовые элементы/Хлебные крошки/Контракт.md
+  contract: "specs/Общие компоненты/Базовые элементы/Хлебные крошки/Контракт.md"
   status: approved-target
 sources:
   report-figma:
-    kind: figma
-    uri: https://www.figma.com/design/lnOcWh4ElGkhppWe6Kn5AA?node-id=893-19328
-    nodeId: 893:19328
-    status: unverified-live
-    snapshot: Сохранённая панель паспорта отчёта; исходная строка20, поздняя круглая кнопка снаружи
+    kind: "figma"
+    uri: "https://www.figma.com/design/lnOcWh4ElGkhppWe6Kn5AA?node-id=893-19328"
+    nodeId: "893:19328"
+    status: "unverified-live"
+    snapshot: "Сохранённая панель паспорта отчёта; исходная строка20, поздняя круглая кнопка снаружи"
   metric-figma:
-    kind: figma
-    uri: https://www.figma.com/design/lnOcWh4ElGkhppWe6Kn5AA?node-id=1172-28656
-    nodeId: 1172:28656
-    status: unverified-live
-    snapshot: Шапка паспорта метрики; исходные тексты подтверждены локальным figma-inventory
+    kind: "figma"
+    uri: "https://www.figma.com/design/lnOcWh4ElGkhppWe6Kn5AA?node-id=1172-28656"
+    nodeId: "1172:28656"
+    status: "unverified-live"
+    snapshot: "Шапка паспорта метрики; исходные тексты подтверждены локальным figma-inventory"
   report-css:
-    kind: document
-    uri: references/implementation/features/report-detail/Detail.module.css
-    status: observed-snapshot
-    snapshot: crumbs/crumbs button/img; breadcrumbRow принадлежит внешней композиции
+    kind: "document"
+    uri: "references/implementation-current/features/report-detail/Detail.module.css"
+    status: "observed-snapshot"
+    snapshot: "crumbs/crumbs button/img; breadcrumbRow принадлежит внешней композиции"
   metric-css:
-    kind: document
-    uri: references/implementation/features/metrics/detail/MetricDetail.module.css
-    status: observed-snapshot
-    snapshot: header nav/button/img; цвет унаследован от detail, внешняя строка24 после уточнения
-      пользователя не высота nav
+    kind: "document"
+    uri: "references/implementation-current/features/metrics/detail/MetricDetail.module.css"
+    status: "observed-snapshot"
+    snapshot: "header nav/button/img; цвет унаследован от detail, внешняя строка24 после уточнения пользователя не высота nav"
   source-css:
-    kind: document
-    uri: references/implementation/features/sources/detail/SourceDetail.module.css
-    status: observed-snapshot
-    snapshot: "SD01 уточнение пользователя4ноября: crumbs height20/gap4, собственный transparent вместо
-      none; внешний ряд без круглой кнопки возврата принадлежит паспорту"
+    kind: "document"
+    uri: "references/implementation-current/features/sources/detail/SourceDetail.module.css"
+    status: "observed-snapshot"
+    snapshot: "SD01 уточнение пользователя4ноября: crumbs height20/gap4, собственный transparent вместо none; внешний ряд без круглой кнопки возврата принадлежит паспорту"
   source-contract:
-    kind: document
-    uri: specs/Разделы/Источники/Детальная карточка/Контракт.md
-    status: reference-only
+    kind: "document"
+    uri: "specs/Разделы/Источники/Детальная карточка/Контракт.md"
+    status: "reference-only"
     snapshot: "Paper-срез4 ноября: крошки12/20 и свой маршрут возврата; весь паспорт не принимается B15"
   fonts:
-    kind: document
-    uri: specs/Ресурсы/Шрифты/README.md
-    status: reference-only
-    snapshot: CoFo Sans; файлы/начертания у единого ресурса шрифтов
+    kind: "document"
+    uri: "specs/Ресурсы/Шрифты/README.md"
+    status: "reference-only"
+    snapshot: "CoFo Sans; файлы/начертания у единого ресурса шрифтов"
   base-css:
-    kind: document
-    uri: references/implementation/styles/base.css
-    status: observed-snapshot
-    snapshot: CoFo Sans у root; button font:inherit, не отдельный шрифт системного button
+    kind: "document"
+    uri: "references/implementation-current/styles/base.css"
+    status: "observed-snapshot"
+    snapshot: "CoFo Sans у root; button font:inherit, не отдельный шрифт системного button"
+  shared-breadcrumb-css:
+    kind: "document"
+    uri: "references/implementation-current/components/DetailHeader/DetailHeader.module.css"
+    status: "observed-snapshot"
+    snapshot: "Общий размер текста крошек 14/20 по уточнению от 11 ноября 2026"
   report-chevron:
-    kind: document
-    uri: assets/images/report-detail/chrome/breadcrumb-chevron.svg
-    status: reference-only
-    snapshot: Полный SVG16×16/viewBox0 0 16 16; собственный path/цвет ресурса
+    kind: "document"
+    uri: "assets/images/report-detail/chrome/breadcrumb-chevron.svg"
+    status: "reference-only"
+    snapshot: "Полный SVG16×16/viewBox0 0 16 16; собственный path/цвет ресурса"
   metric-chevron:
-    kind: document
-    uri: assets/images/metrics/detail/chevron-right.svg
-    status: reference-only
-    snapshot: Отдельный файл того же SVG; не путать с chevron.svg аккордеона
+    kind: "document"
+    uri: "assets/images/metrics/detail/chevron-right.svg"
+    status: "reference-only"
+    snapshot: "Отдельный файл того же SVG; не путать с chevron.svg аккордеона"
 tokens:
   ui-font:
     type: font-family
     sourceRef: fonts
     locator: CoFo Sans
 base:
-  sourceRefs:
-    - report-css
-    - metric-css
-    - source-css
-    - base-css
-    - fonts
+  sourceRefs: [report-css, metric-css, source-css, base-css, fonts, shared-breadcrumb-css]
   parameters:
-    display:
-      type: string
-      value: flex
-    align-items:
-      type: string
-      value: center
-    font-family:
-      type: token
-      ref: ui-font
-      expectedType: font-family
-    font-size:
-      type: dimension
-      value: 12
-      unit: px
-    line-height:
-      type: dimension
-      value: 20
-      unit: px
-    ancestor-color:
-      type: color
-      format: hex
-      value: "#7A808A"
-    ancestor-padding:
-      type: dimension
-      value: 0
-      unit: px
-    ancestor-border-width:
-      type: dimension
-      value: 0
-      unit: px
-    ancestor-cursor:
-      type: string
-      value: pointer
-    separator-width:
-      type: dimension
-      value: 16
-      unit: px
-    separator-height:
-      type: dimension
-      value: 16
-      unit: px
+    display: {"type": "string", "value": "flex"}
+    align-items: {"type": "string", "value": "center"}
+    font-family: {"type": "token", "ref": "ui-font", "expectedType": "font-family"}
+    font-size: {"type": "dimension", "value": 14, "unit": "px"}
+    line-height: {"type": "dimension", "value": 20, "unit": "px"}
+    ancestor-color: {"type": "color", "format": "hex", "value": "#7A808A"}
+    ancestor-padding: {"type": "dimension", "value": 0, "unit": "px"}
+    ancestor-border-width: {"type": "dimension", "value": 0, "unit": "px"}
+    ancestor-cursor: {"type": "string", "value": "pointer"}
+    separator-width: {"type": "dimension", "value": 16, "unit": "px"}
+    separator-height: {"type": "dimension", "value": 16, "unit": "px"}
 variants:
   report20:
-    description: Внутренняя nav Обзора и остальных вкладок паспорта отчёта
-    sourceRefs:
-      - report-figma
-      - report-css
-      - report-chevron
+    description: "Внутренняя nav Обзора и остальных вкладок паспорта отчёта"
+    sourceRefs: ["report-figma", "report-css", "report-chevron"]
     parameters:
-      height:
-        type: dimension
-        value: 20
-        unit: px
-      content-gap:
-        type: dimension
-        value: 4
-        unit: px
-      font-weight-mode:
-        type: string
-        value: inherit
-      margin:
-        type: dimension
-        value: 0
-        unit: px
-      foreground:
-        type: color
-        format: hex
-        value: "#101D3B"
-      ancestor-background:
-        type: string
-        value: none
-      separator-display:
-        type: string
-        value: block
-      separator-flex-grow:
-        type: number
-        value: 0
-      separator-flex-shrink:
-        type: number
-        value: 0
-      separator-flex-basis:
-        type: string
-        value: auto
+      height: {"type": "dimension", "value": 20, "unit": "px"}
+      content-gap: {"type": "dimension", "value": 4, "unit": "px"}
+      font-weight-mode: {type: string, value: inherit}
+      margin: {"type": "dimension", "value": 0, "unit": "px"}
+      foreground: {"type": "color", "format": "hex", "value": "#101D3B"}
+      ancestor-background: {"type": "string", "value": "none"}
+      separator-display: {"type": "string", "value": "block"}
+      separator-flex-grow: {"type": "number", "value": 0}
+      separator-flex-shrink: {"type": "number", "value": 0}
+      separator-flex-basis: {"type": "string", "value": "auto"}
   metric20:
-    description: Внутренняя nav паспорта метрики/показателя
-    sourceRefs:
-      - metric-figma
-      - metric-css
-      - metric-chevron
+    description: "Внутренняя nav паспорта метрики/показателя"
+    sourceRefs: ["metric-figma", "metric-css", "metric-chevron"]
     parameters:
-      height:
-        type: dimension
-        value: 20
-        unit: px
-      content-gap:
-        type: dimension
-        value: 4
-        unit: px
-      font-weight-mode:
-        type: string
-        value: inherit
-      foreground-mode:
-        type: string
-        value: inherit-from-detail
-      ancestor-background:
-        type: string
-        value: none
+      height: {"type": "dimension", "value": 20, "unit": "px"}
+      content-gap: {"type": "dimension", "value": 4, "unit": "px"}
+      font-weight-mode: {type: string, value: inherit}
+      foreground-mode: {"type": "string", "value": "inherit-from-detail"}
+      ancestor-background: {"type": "string", "value": "none"}
   source20:
-    description: "Внутренняя nav паспорта Источника по Paper с уточнением пользователя SD01: геометрия
-      как у отчёта"
-    sourceRefs:
-      - source-contract
-      - source-css
-      - report-chevron
+    description: "Внутренняя nav паспорта Источника по Paper с уточнением пользователя SD01: геометрия как у отчёта"
+    sourceRefs: ["source-contract", "source-css", "report-chevron"]
     parameters:
-      height:
-        type: dimension
-        value: 20
-        unit: px
-      content-gap:
-        type: dimension
-        value: 4
-        unit: px
-      font-weight:
-        type: font-weight
-        value: 400
-      foreground:
-        type: color
-        format: hex
-        value: "#101D3B"
-      ancestor-background:
-        type: string
-        value: transparent
+      height: {"type": "dimension", "value": 20, "unit": "px"}
+      content-gap: {"type": "dimension", "value": 4, "unit": "px"}
+      font-weight: {type: font-weight, value: 400}
+      foreground: {"type": "color", "format": "hex", "value": "#101D3B"}
+      ancestor-background: {"type": "string", "value": "transparent"}

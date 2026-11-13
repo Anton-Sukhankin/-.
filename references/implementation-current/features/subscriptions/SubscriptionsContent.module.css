@@ -9,10 +9,11 @@
 .groups { display:flex; flex-direction:column; gap:8px; min-width:1096px; }
 .surface[data-view='list'] .groups { padding-block-start:8px; }
 .domainGroup { display:flex; flex-direction:column; gap:8px; min-width:0; }
-.groupHeading { display:flex; flex:none; align-items:center; gap:8px; height:20px; color:#52698c; font-size:14px; font-weight:500; line-height:20px; }
+.domainGroup[data-collapsed='true']:not(:last-child) { border-bottom:1px solid #e2e4ea; }
+.groupHeading { composes:groupHeading from '../../components/ReportTable/ReportTable.module.css'; margin-bottom:0; }
 .domainGroup + .domainGroup .groupHeading { height:28px; padding-top:8px; }
 .groupHeading img { display:block; flex:none; }
-.count { composes:neutral from '../../components/CountBadge/CountBadge.module.css'; }
+.count { composes:count from '../../components/ReportTable/ReportTable.module.css'; }
 .grid { display:grid; grid-template-columns:minmax(228px,1fr) 120px minmax(228px,1fr) 210px 144px 164px; min-width:1094px; }
 .tableHeader { position:relative; flex:0 0 48px; height:48px; min-width:1096px; padding:0 1px; }
 .tableHeader::after { position:absolute; inset:auto -16px 0; border-block-end:1px solid var(--table-header-line); content:''; pointer-events:none; }

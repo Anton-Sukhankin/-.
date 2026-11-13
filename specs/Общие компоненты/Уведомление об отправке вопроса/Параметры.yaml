@@ -7,9 +7,9 @@ component:
 sources:
   css:
     kind: document
-    uri: "references/implementation/features/questions/QuestionSentNotice.module.css"
+    uri: "references/implementation-current/features/questions/QuestionSentNotice.module.css"
     status: observed-snapshot
-    snapshot: 8 ноября 2026
+    snapshot: 12 ноября 2026
 base:
   sourceRefs: [css]
   parameters:
@@ -19,7 +19,8 @@ variants:
     description: Подтверждение в правом нижнем углу
     sourceRefs: [css]
     parameters:
-      right: {type: dimension, value: 24, unit: px}
+      right: {type: dimension, value: 88, unit: px}
+      minimum-left: {type: dimension, value: 16, unit: px}
       bottom: {type: dimension, value: 24, unit: px}
       maximum-width: {type: dimension, value: 400, unit: px}
       padding: {type: dimension, value: 16, unit: px}

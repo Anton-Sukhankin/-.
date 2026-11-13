@@ -1,0 +1,35 @@
+{
+  "date": "2026-11-12",
+  "browser": "157.0.8103.51",
+  "deviceScaleFactor": 1,
+  "reducedMotion": "reduce",
+  "frames": [
+    {
+      "file": "assistant-modes-frame.png",
+      "route": "/preview/navigation?section=reports",
+      "state": "Открыть AI-ассистента и меню «Ассистент». Два варианта, одна галочка, привязка над кнопкой с зазором 8 px.",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "de6ee4b3253295ebaf951a91578fd510ece43c760ac364d353ca3a5ab3db52fe"
+    },
+    {
+      "file": "assistant-modes-crop.png",
+      "route": "/preview/navigation?section=reports",
+      "state": "Открыть AI-ассистента и меню «Ассистент». Два варианта, одна галочка, привязка над кнопкой с зазором 8 px.",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "clip": {
+        "x": 1098,
+        "y": 671,
+        "width": 254,
+        "height": 182
+      },
+      "parent": "assistant-modes-frame.png",
+      "sha256": "be9eba1f7be18318a746c521d82c9e457d155eeaed4df0c801d88576c87888d3"
+    }
+  ]
+}

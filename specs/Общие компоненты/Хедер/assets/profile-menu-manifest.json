@@ -1,0 +1,18 @@
+{
+  "date": "2026-11-12",
+  "browser": "Chromium",
+  "prototype_commit": "91cfb91b3904ce810bbf9e49b862d4828769fd94",
+  "frames": [
+    {
+      "file": "profile-menu.png",
+      "route": "/preview/navigation?section=reports",
+      "state": "Открыто меню, наведение на «Профиль»",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "3fa27f706f1765cb3b129e7f603ed4fef6d2a2aa7215b6adacef918694497070"
+    }
+  ],
+  "local_variant": "Меню профиля локального прототипа"
+}

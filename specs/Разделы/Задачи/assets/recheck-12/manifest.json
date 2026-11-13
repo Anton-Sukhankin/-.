@@ -1,0 +1,69 @@
+{
+  "date": "2026-11-12",
+  "browser": "Chrome 157.0.8103.51",
+  "deviceScaleFactor": 1,
+  "reducedMotion": "reduce",
+  "prototype_commit": "91cfb91b3904ce810bbf9e49b862d4828769fd94",
+  "frames": [
+    {
+      "file": "task-card-focus.png",
+      "route": "/preview/navigation?section=tasks",
+      "state": "Фокус первой заявки",
+      "action": "Установить фокус на «Прокрутка задач» и нажать Tab",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "a63ed849fd7c22d50a35e707da60665c628e024e9a7148ad2348c5bddb931246"
+    },
+    {
+      "file": "task-card-focus-crop.png",
+      "route": "/preview/navigation?section=tasks",
+      "state": "Фокус первой заявки",
+      "action": "Установить фокус на «Прокрутка задач» и нажать Tab",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sourceFrame": "task-card-focus.png",
+      "cropBounds": {
+        "x": 304,
+        "y": 140,
+        "width": 1104,
+        "height": 102
+      },
+      "sha256": "36e9050f55966340801654d53d1e6ff0805b0df734795f292042772585a858dc"
+    },
+    {
+      "file": "task-return-breadcrumb.png",
+      "route": "/preview/navigation?section=reports&report=demo-report-sales-plan&reportTab=overview",
+      "state": "Крошка «Задачи» на вкладке «Обзор» связанного отчёта",
+      "action": "Открыть первую заявку с клавиатуры, нажав Enter",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "startRoute": "/preview/navigation?section=tasks",
+      "sha256": "413ca1a3e8889480ab995394b6c3ce4066c73f2afc9c489ea849ac1a5d2494fd"
+    },
+    {
+      "file": "task-return-breadcrumb-crop.png",
+      "route": "/preview/navigation?section=reports&report=demo-report-sales-plan&reportTab=overview",
+      "state": "Крошка «Задачи» на вкладке «Обзор» связанного отчёта",
+      "action": "Открыть первую заявку с клавиатуры, нажав Enter",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "startRoute": "/preview/navigation?section=tasks",
+      "sourceFrame": "task-return-breadcrumb.png",
+      "cropBounds": {
+        "x": 288,
+        "y": 58,
+        "width": 186,
+        "height": 36
+      },
+      "sha256": "2d34b9494118f25065330febe4c9d1893ef75e30ce5dd044d2334c9e8f3cb165"
+    }
+  ]
+}

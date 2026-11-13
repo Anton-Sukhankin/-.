@@ -98,7 +98,10 @@ test('detail titles share report typography and compact text breadcrumbs',async(
     await page.goto('/preview/navigation?'+query);
     await page.evaluate(()=>document.fonts.ready);
     const title=page.getByRole('heading',{level:1});
-    const crumbs=page.getByRole('navigation',{name:'Хлебные крошки',exact:true}).locator('..');
+    const breadcrumb=page.getByRole('navigation',{name:'Хлебные крошки',exact:true});
+    await expect(breadcrumb.getByRole('button').first()).toHaveCSS('font-size','14px');
+    await expect(breadcrumb.locator('[aria-current="page"]')).toHaveCSS('font-size','14px');
+    const crumbs=breadcrumb.locator('..');
     const titleBox=(await title.boundingBox())!,crumbBox=(await crumbs.boundingBox())!;
     const mainBox=(await page.getByRole('main').boundingBox())!;
     expect(crumbBox.y-mainBox.y).toBe(query.startsWith('section=sources') ? 20 : 16);
@@ -380,10 +383,10 @@ test('scrolling report metrics collapses the report chrome and keeps the results
     const tabsBox = (await tabs.boundingBox())!;
     return (await toolbar.boundingBox())!.y - tabsBox.y - tabsBox.height;
   };
-  await expect.poll(topGap).toBeCloseTo(8, 0);
+  await expect.poll(topGap).toBeCloseTo(16, 0);
   await results.evaluate(el => { el.scrollTop = 120; });
   await expect(card).toHaveAttribute('data-detail-compact', 'true');
-  await expect.poll(topGap).toBeCloseTo(8, 0);
+  await expect.poll(topGap).toBeCloseTo(16, 0);
   const box = (await results.boundingBox())!;
   expect(box.y + box.height).toBe(892);
   await card.getByRole('tab', { name: 'Использование', exact: true }).click();
@@ -393,11 +396,83 @@ test('scrolling report metrics collapses the report chrome and keeps the results
   await page.setViewportSize({ width: 1024, height: 768 });
   await page.goto('/preview/navigation?section=reports&report=demo-report-summary&reportTab=metrics&relatedMetricView=cards');
   const panel = card.getByRole('tabpanel');
-  await expect.poll(topGap).toBeCloseTo(8, 0);
+  await expect.poll(topGap).toBeCloseTo(16, 0);
   await panel.evaluate(el => { el.scrollTop = 80; });
   await expect.poll(() => panel.evaluate(el => el.scrollTop)).toBeGreaterThan(0);
   await expect(card).toHaveAttribute('data-detail-compact', 'true');
-  await expect.poll(topGap).toBeCloseTo(8, 0);
+  await expect.poll(topGap).toBeCloseTo(16, 0);
+});
+
+test('switching report metric views keeps the scroll position within the new view', async ({ page }) => {
+  await page.emulateMedia({ reducedMotion: 'reduce' });
+  await page.setViewportSize({ width: 1440, height: 650 });
+  await page.goto('/preview/navigation?section=reports&report=demo-report-sales-plan&reportTab=metrics&relatedMetricView=cards');
+  const card = page.locator('[data-report-id]');
+  const results = card.getByRole('region', { name: 'Результаты поиска метрик отчёта' });
+  const view = card.getByRole('group', { name: 'Представление метрик' });
+  const table = results.getByRole('table', { name: 'Связанные показатели' });
+  const scrollTop = () => results.evaluate(element => element.scrollTop);
+  const scrollLimit = () => results.evaluate(element => element.scrollHeight - element.clientHeight);
+
+  await results.evaluate(element => { element.scrollTop = 140; });
+  await expect(card).toHaveAttribute('data-detail-compact', 'true');
+  await view.getByRole('button', { name: 'Табличный вид' }).click();
+  await expect(table).toBeVisible();
+  expect(await scrollTop()).toBe(140);
+  const tableLimit = await scrollLimit();
+  expect(tableLimit).toBeGreaterThan(140);
+
+  await view.getByRole('button', { name: 'Карточный вид' }).click();
+  await expect(table).toHaveCount(0);
+  expect(await scrollTop()).toBe(140);
+  await results.evaluate(element => { element.scrollTop = element.scrollHeight; });
+  expect(await scrollTop()).toBeGreaterThan(tableLimit);
+
+  await view.getByRole('button', { name: 'Табличный вид' }).click();
+  await expect(table).toBeVisible();
+  expect(await scrollTop()).toBe(tableLimit);
+  await expect(card).toHaveAttribute('data-detail-compact', 'true');
+});
+
+test('report metrics switch views without fading the results under a visible toolbar shadow', async ({ page }) => {
+  await page.emulateMedia({ reducedMotion: 'no-preference' });
+  await page.setViewportSize({ width: 1440, height: 650 });
+  await page.addInitScript(() => {
+    const start = document.startViewTransition.bind(document);
+    document.startViewTransition = (...args) => {
+      const { dataset } = document.documentElement;
+      if (dataset.catalogTransition === 'view') dataset.testMetricViewSnapshot = 'true';
+      return start(...args);
+    };
+    const animate = Element.prototype.animate;
+    Element.prototype.animate = function (...args) {
+      if (this.closest('[data-report-metrics]') && this.querySelector('[data-detail-scroll-source]')) {
+        document.documentElement.dataset.testMetricViewFade = 'true';
+      }
+      return animate.apply(this, args);
+    };
+  });
+  await page.goto('/preview/navigation?section=reports&report=demo-report-sales-plan&reportTab=metrics');
+  const metrics = page.getByRole('region', { name: 'Метрики и показатели отчёта' });
+  const toolbar = metrics.locator('[data-scrolled]');
+  const results = metrics.getByRole('region', { name: 'Результаты поиска метрик отчёта' });
+  const view = metrics.getByRole('group', { name: 'Представление метрик' });
+  const root = page.locator('html');
+
+  await results.evaluate(element => { element.scrollTop = 140; });
+  await expect(toolbar).toHaveAttribute('data-scrolled', 'true');
+  await view.getByRole('button', { name: 'Карточный вид' }).click();
+  await expect(results.locator('article[data-metric-id]').first()).toBeVisible();
+  await expect(root).not.toHaveAttribute('data-test-metric-view-snapshot');
+  await expect(root).not.toHaveAttribute('data-test-metric-view-fade');
+  expect(await results.evaluate(element => element.scrollTop)).toBe(140);
+  await expect(toolbar).toHaveAttribute('data-scrolled', 'true');
+
+  await results.evaluate(element => { element.scrollTop = 0; });
+  await expect(toolbar).toHaveAttribute('data-scrolled', 'false');
+  await view.getByRole('button', { name: 'Табличный вид' }).click();
+  await expect(results.getByRole('table', { name: 'Связанные показатели' })).toBeVisible();
+  await expect(root).toHaveAttribute('data-test-metric-view-snapshot', 'true');
 });
 
 test('the report metrics toolbar casts the AI Hub shadow over table headers, rows and cards', async ({ page }) => {
@@ -419,6 +494,9 @@ test('the report metrics toolbar casts the AI Hub shadow over table headers, row
     const opacity = () => toolbar.evaluate(element => getComputedStyle(element, '::after').opacity);
     expect(await toolbar.evaluate(shadow)).toBe(reference);
     expect(await opacity()).toBe('0');
+    const initialTabBox = (await tabs.boundingBox())!;
+    expect((await toolbar.boundingBox())!.y - initialTabBox.y - initialTabBox.height).toBeCloseTo(16, 0);
+    expect((await aside.boundingBox())!.y - initialTabBox.y - initialTabBox.height).toBeCloseTo(16, 0);
     const original = (await row.boundingBox())!.y;
     await row.hover();
     await page.mouse.wheel(0, 140);
@@ -426,7 +504,8 @@ test('the report metrics toolbar casts the AI Hub shadow over table headers, row
     await expect.poll(opacity).toBe('1');
     const pinned = (await toolbar.boundingBox())!;
     const tabsBox = (await tabs.boundingBox())!;
-    expect(pinned.y - tabsBox.y - tabsBox.height).toBeCloseTo(8, 0);
+    expect(pinned.y - tabsBox.y - tabsBox.height).toBeCloseTo(16, 0);
+    expect((await aside.boundingBox())!.y - tabsBox.y - tabsBox.height).toBeCloseTo(16, 0);
     expect((await results.boundingBox())!.y).toBeCloseTo(pinned.y + pinned.height, 0);
     expect((await row.boundingBox())!.y).toBeLessThan(original);
     if (view === 'list') expect((await columnHeader.boundingBox())!.y).toBeLessThan(pinned.y);

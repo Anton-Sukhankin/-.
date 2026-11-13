@@ -49,7 +49,7 @@ export function OverviewTab({ content }: { content?: ReportOverviewContent }) {
           : <EmptyDetail title={questions ? 'Опубликованных вопросов пока нет' : 'Опубликованные вопросы недоступны'} description="Здесь отображаются опубликованные вопросы об отчёте и ответы на них." />}
       </Accordion>
     </div>
-    {modal && <AskQuestionDialog onClose={() => {
+    {modal && <AskQuestionDialog opener={questionTrigger.current} onClose={() => {
       setModal(false);
       questionTrigger.current?.focus();
     }} onSubmit={() => setSent(true)} />}

@@ -1,0 +1,41 @@
+{
+  "date": "2026-11-12",
+  "browser": "Chrome",
+  "dpr": 1,
+  "motion": "reduced",
+  "crop_coordinates": "[left, top, right, bottom) в пикселях исходного кадра",
+  "frames": [
+    {
+      "file": "dictionary-processes-selector.png",
+      "route": "/preview/navigation?section=dictionary&paginationDemo=0",
+      "state": "Выбрать «Бизнес-процессы», раскрыть первую группу и открыть «Домен». Селектор сообщает, что значения не предоставлены.",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "96ba0304c817a1163bbef15fe6a5819f5c7182e5c488c3a597048c973fa3ec17"
+    },
+    {
+      "file": "dictionary-terms-scroll.png",
+      "route": "/preview/navigation?section=dictionary&dictionaryTab=terms&paginationDemo=1",
+      "state": "Первая страница из трёх, 35 терминов. Прокрутить выдачу на 180 px. Пояснение свёрнуто, над выдачей видны белый зазор и серая кромка.",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "ae16329903087f4fb77e44a55a98d137d89e1c54c78ca36add0b5d5c4c2a2667",
+      "crops": [
+        {
+          "file": "dictionary-terms-scroll-crop.png",
+          "box": [
+            280,
+            103,
+            1425,
+            315
+          ],
+          "sha256": "1bda3f5d372884c4b17e0b73e5d1d59d65314a374fb199bc6941390d253fbcc6"
+        }
+      ]
+    }
+  ]
+}

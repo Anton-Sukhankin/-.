@@ -1,0 +1,42 @@
+{
+  "date": "2026-11-13",
+  "browser": "157.0.8103.51",
+  "deviceScaleFactor": 1,
+  "reducedMotion": "reduce",
+  "prototypeReference": "Локальный React-прототип. Паспорт показателя совпадает с 91cfb91b по реализации. Использован демонстрационный профиль sales-volume-plan.",
+  "frames": [
+    {
+      "file": "detail-top-1440.png",
+      "route": "/preview/navigation?section=metrics&metric=sales-volume-plan",
+      "state": "Верх паспорта «План объёма продаж». В «Сведениях» видна линия между бизнес-владельцем и аналитиком.",
+      "action": "Открыть прямой маршрут, оставить секции раскрытыми.",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "aefb049c18f748cea5730272814fe6b605df63bc24cb608d318c9ddbbae58aeb"
+    },
+    {
+      "file": "detail-collapsed-1440.png",
+      "route": "/preview/navigation?section=metrics&metric=sales-volume-plan",
+      "state": "Свёрнуто «Полное описание», «Методика расчёта» раскрыта.",
+      "action": "Открыть прямой маршрут, свернуть «Полное описание» клавишей Enter.",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "d5be259ab4e7d60ee2546ebeb36b927fec92baa8d4577ba27df052b66e7b1d62"
+    },
+    {
+      "file": "detail-pinned-1440.png",
+      "route": "/preview/navigation?section=metrics&metric=sales-volume-plan",
+      "state": "Компактная шапка и закреплённые «Сведения» при прокрутке паспорта.",
+      "action": "Открыть прямой маршрут с раскрытыми секциями, прокрутить содержимое на 560 px.",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "ce986ad6c5951cab7245826cc1c28275428ff68be1acb8361cade6c5a769185c"
+    }
+  ]
+}

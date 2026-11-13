@@ -1,0 +1,75 @@
+{
+  "date": "2026-11-12",
+  "browser": "Chrome",
+  "dpr": 1,
+  "motion": "reduced",
+  "crop_coordinates": "[left, top, right, bottom) в пикселях исходного кадра",
+  "frames": [
+    {
+      "file": "crm-current-expanded-options.png",
+      "route": "/preview/navigation?section=systems&systems.view=list&paginationDemo=0",
+      "state": "Открыть CRM из таблицы каталога. В раскрытом поиске нажать «Ещё 7 значений» в первой строке.",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "sha256": "96ccff0977fe235e6aa5943f15a126a59186d1b0c98963be77c079c5154c5740",
+      "crops": [
+        {
+          "file": "crm-current-entity-crop.png",
+          "box": [
+            302,
+            608,
+            562,
+            726
+          ],
+          "sha256": "c2f7a55733f20ab749187d2e35421280af1215d1ddfb5801aebf9a393696c5ff"
+        }
+      ]
+    },
+    {
+      "file": "crm-current-scrolled-open.png",
+      "route": "/preview/navigation?section=systems&systems.view=list&paginationDemo=0",
+      "state": "Открыть CRM, раскрыть опции первой строки, прокрутить таблицу на 185 px. Поиск открыт, под панелью видны контур и тень.",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "sha256": "90e6791a7681a9d66ceabd0681e27fd0d29e26047b28414560b43d6288e5cacc",
+      "crops": [
+        {
+          "file": "crm-current-scrolled-open-crop.png",
+          "box": [
+            287,
+            376,
+            1425,
+            595
+          ],
+          "sha256": "7654e79bc06aa745df46fc0e26a50f442d83b96c6f228d8d971c9a56c748a057"
+        }
+      ]
+    },
+    {
+      "file": "crm-current-scrolled-hidden.png",
+      "route": "/preview/navigation?section=systems&systems.view=list&paginationDemo=0",
+      "state": "Открыть CRM, раскрыть опции первой строки, прокрутить таблицу на 185 px и скрыть поиск. Шапка колонок закреплена, нижняя линия видна.",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "sha256": "24c839ac94a6057d841aae777921f0f521ec435577c1e3895787e8cfff767162",
+      "crops": [
+        {
+          "file": "crm-current-scrolled-hidden-crop.png",
+          "box": [
+            292,
+            115,
+            1427,
+            376
+          ],
+          "sha256": "436ba2bdc9122b4ee63d0b507abc8823b9d87c89d3dab4b747697262a4965e1f"
+        }
+      ]
+    }
+  ]
+}

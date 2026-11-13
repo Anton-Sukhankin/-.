@@ -46,7 +46,7 @@ function MetricsView({ items, onOpenMetric }: { items: readonly RelatedMetric[] 
   useLayoutEffect(() => {
     if (scroll.current) scroll.current.scrollTop = 0;
     setScrolled(false);
-  }, [page.pageIndex, query, type, status, view]);
+  }, [page.pageIndex, query, type, status]);
 
   const actions = (item: RelatedMetric) => <MetricActions title={item.title} onNotice={setNotice} />;
   const title = (item: RelatedMetric) => <MetricTitle title={item.title} onOpen={() => onOpenMetric?.(item.metricId)} />;
@@ -62,7 +62,8 @@ function MetricsView({ items, onOpenMetric }: { items: readonly RelatedMetric[] 
       <SingleSelect label="Статус метрики" controlClassName={styles.select} value={status} resetValue="" onValueChange={setStatus} options={[{value:'',label:'Все статусы'},...statuses.map(value=>({value,label:value}))]}/>
       {page.total > 0 && <ViewPicker selection={{ value: view, onChange: setView, ariaLabel: 'Представление метрик' }} />}
     </div>}
-    <div className={styles.results} data-catalog-view-results>
+    {/* Keep scrolled results in the same paint order as the toolbar shadow. */}
+    <div className={styles.results} data-catalog-view-results={scrolled ? undefined : ''}>
       <div ref={scroll} className={styles.scroll} data-has-pages={hasPages} data-detail-scroll-source data-list-scroll
         onScroll={event => setScrolled(event.currentTarget.scrollTop > 0)}
         tabIndex={0} role="region" aria-label="Результаты поиска метрик отчёта">

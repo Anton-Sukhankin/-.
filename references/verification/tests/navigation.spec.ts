@@ -98,7 +98,7 @@ test('every main section uses the same spacing above and below its heading block
   const sections = [
     ['home', 'h1', '[data-home-controls]'],
     ['reports', 'h1', '[data-catalog-view-results]'],
-    ['tasks', 'h1', 'section[aria-label="Содержимое раздела"]'],
+    ['tasks', 'header p', '[aria-label="Прокрутка задач"]'],
     ['metrics', 'h1', '[data-metrics-toolbar]'],
     ['sources', 'h1', '[data-source-toolbar]'],
     ['dictionary', 'header p', '[role="tablist"]'],
@@ -119,7 +119,7 @@ test('every main section uses the same spacing above and below its heading block
       const bottom = await header.evaluate((element, useRow) =>
         (useRow ? element.parentElement! : element).getBoundingClientRect().bottom, section === 'reports');
       const top = await first.evaluate((element, useWorkspace) =>
-        (useWorkspace ? element.parentElement! : element).getBoundingClientRect().top, section === 'questions');
+        (useWorkspace ? element.parentElement! : element).getBoundingClientRect().top, section === 'questions' || section === 'tasks');
       const topInset = headingTop - (await main.boundingBox())!.y;
       expect(topInset).toBe(16);
       expect(top - bottom).toBe(topInset);
@@ -242,6 +242,10 @@ test('sidebar resizes from its edge and restores the default width', async ({ pa
   const initialUrl = page.url();
   const sidebar = page.locator('aside[data-collapsed]');
   const handle = sidebar.getByRole('separator', { name: 'Ширина боковой панели' });
+  const collapse = sidebar.getByRole('button', { name: 'Свернуть панель' });
+  await expect(handle).toHaveCSS('cursor', 'col-resize');
+  await collapse.hover();
+  await expect(collapse).toHaveCSS('cursor', 'pointer');
   const current = sidebar.getByRole('button', { name: 'Отчёты', exact: true });
   const expectWidth = (width: number) => expect.poll(async () => (await sidebar.boundingBox())?.width).toBe(width);
   const moveToEdge = async () => {
@@ -250,6 +254,7 @@ test('sidebar resizes from its edge and restores the default width', async ({ pa
   };
   await expectWidth(280);
   await moveToEdge();
+  expect(await handle.evaluate(node => node.matches(':hover'))).toBe(true);
   await page.mouse.down();
   await page.mouse.move(344, 208);
   await expectWidth(344);
@@ -275,7 +280,7 @@ test('sidebar resizes from its edge and restores the default width', async ({ pa
   await page.mouse.up();
   await expectWidth(240);
 
-  await sidebar.getByRole('button', { name: 'Свернуть панель' }).click();
+  await collapse.click();
   await expectWidth(64);
   await expect(handle).toHaveCount(0);
   await sidebar.getByRole('button', { name: 'Развернуть панель' }).click();
@@ -335,7 +340,7 @@ test('navigation matches documented geometry and keeps selected identity across 
   await expect(page.getByRole('heading', { name: 'Главная', exact: true })).toBeVisible();
   expect(await sidebar.boundingBox()).toEqual({ x: 0, y: 48, width: 280, height: 852 });
   const labels = await nav.getByRole('button').allTextContents();
-  expect(labels).toEqual(['Главная', 'Отчёты35', 'Задачи', 'Метрики и показатели9', 'Источники9', 'Бизнес-словарь20', 'AI Hub9', 'Справочники ИС15', 'Вопросы и ответы']);
+  expect(labels).toEqual(['Главная', 'Отчёты35', 'Задачи6', 'Метрики и показатели9', 'Источники9', 'Бизнес-словарь20', 'AI Hub9', 'Справочники ИС15', 'Вопросы и ответы']);
   await page.evaluate(() => document.fonts.ready);
   expect(await home.evaluate((button) => ({ family: getComputedStyle(button).fontFamily, weight: getComputedStyle(button).fontWeight })))
     .toEqual({ family: '"CoFo Sans", sans-serif', weight: '500' });
@@ -393,7 +398,7 @@ test('navigation matches documented geometry and keeps selected identity across 
   await nav.getByRole('button', { name: 'Задачи', exact: true }).click();
   await expect(nav.getByRole('button', { name: 'Задачи', exact: true })).toHaveAttribute('aria-current', 'page');
   await expect(page.getByRole('heading', { name: 'Задачи', exact: true })).toBeVisible();
-  await expect(page.getByRole('region', { name: 'Содержимое раздела' })).toContainText('Раздел «Задачи» недоступен');
+  await expect(page.getByRole('list', { name: 'Очередь заявок на рассылку' }).getByRole('listitem')).toHaveCount(6);
   for (const name of ['Главная', 'Отчёты', 'Задачи', 'Метрики и показатели', 'Источники', 'Бизнес-словарь', 'AI Hub', 'Справочники ИС', 'Вопросы и ответы']) {
     await nav.getByRole('button', { name, exact: true }).click();
     await expect(nav.locator('[aria-current="page"]')).toHaveCount(1);
@@ -421,8 +426,8 @@ test('navigation matches documented geometry and keeps selected identity across 
       await expect(catalog.getByRole('link', { name: /Открыть справочник/ })).toHaveCount(15);
     } else if (name === 'Вопросы и ответы') {
       await expect(page.getByRole('tabpanel', { name: /^FAQ/ })).toBeVisible();
-    } else {
-      await expect(page.getByRole('heading', { name: `Раздел «${name}» недоступен` })).toBeVisible();
+    } else if (name === 'Задачи') {
+      await expect(page.getByRole('list', { name: 'Очередь заявок на рассылку' }).getByRole('listitem')).toHaveCount(6);
     }
   }
   await page.mouse.move(279, 400);

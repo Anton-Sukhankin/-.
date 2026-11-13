@@ -82,7 +82,7 @@
 .tableScroll::-webkit-scrollbar-thumb:horizontal { border-radius:999px; background:#c5ccd9; }
 @supports not selector(::-webkit-scrollbar) { .tableScroll[data-list-scroll] { scrollbar-width:thin; scrollbar-color:#c5ccd9 transparent; } }
 .table {
-  --ai-start-column:330px;
+  --ai-start-column:290px;
   --ai-actions-padding:12px;
   --ai-end-column:calc(2 * 32px + var(--ai-actions-gap) + 2 * var(--ai-actions-padding));
   table-layout:fixed; width:100%;
@@ -127,7 +127,7 @@
 @container (min-width:1056px) { .grid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
 @container (min-width:1592px) { .grid { grid-template-columns:repeat(3,minmax(0,1fr)); } }
 @container (max-width:720px) {
-  .table { --ai-start-column:220px; }
+  .table { --ai-start-column:180px; }
 }
 @container (max-width:350px) {
   .catalog[data-ai-view='catalog'] .heading p { padding-inline-end:150px; }

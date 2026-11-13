@@ -1,0 +1,18 @@
+{
+  "date": "2026-11-12",
+  "browser": "157.0.8103.51",
+  "deviceScaleFactor": 1,
+  "reducedMotion": "reduce",
+  "frames": [
+    {
+      "file": "faq-accepted.png",
+      "route": "/preview/navigation?section=questions",
+      "state": "Отправить заполненную форму из FAQ. Подтверждение добавления обращения находится левее кнопки AI-ассистента.",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "1488c57a9ef836dc2d9a4b7a8a442803bc70c449534b09ad3ef3b6a5d03a16fe"
+    }
+  ]
+}

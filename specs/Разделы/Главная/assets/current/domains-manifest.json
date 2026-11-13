@@ -1,0 +1,49 @@
+{
+  "date": "2026-11-12",
+  "browser": "Chromium",
+  "prototype_commit": "91cfb91b3904ce810bbf9e49b862d4828769fd94",
+  "frames": [
+    {
+      "file": "home-domains.png",
+      "route": "/preview/navigation?section=home&segment=domains&paginationDemo=0",
+      "state": "Сетка доменов",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "e99a00f4aa7940a1c54e97f53a44eccd89c134ae6fe77d1580d98345ea146d27"
+    },
+    {
+      "file": "home-domain-table.png",
+      "route": "/preview/navigation?section=home&segment=domains&paginationDemo=0&reportDomain=Гостеприимство",
+      "state": "Таблица выбранного домена",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "f32fb5076a59955b45c1ae802d59cdaf47df86aa2b1a97f1c875faf1a16f4a00"
+    },
+    {
+      "file": "home-domain-cards.png",
+      "route": "/preview/navigation?section=home&segment=domains&paginationDemo=0&reportDomain=Гостеприимство",
+      "state": "Карточки после смены вида",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "fd0944b2c6b9fcda19b444beb713d9b352d6200e516c588806c9097b67dace54"
+    },
+    {
+      "file": "domain-empty-mau.png",
+      "route": "/preview/navigation?section=home&segment=domains&paginationDemo=0&reportDomain=%D0%93%D0%BE%D1%81%D1%82%D0%B5%D0%BF%D1%80%D0%B8%D0%B8%D0%BC%D1%81%D1%82%D0%B2%D0%BE",
+      "state": "Выбранный домен без результатов фильтра",
+      "action": "Открыть домен «Гостеприимство», в заголовке MAU задать нижнюю границу 100000 и применить",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "startRoute": "/preview/navigation?section=home&segment=domains&paginationDemo=0",
+      "sha256": "72f6705cb7aaa05b64175608f5d404cc82abf69633d2839129b75537e282c18e"
+    }
+  ]
+}

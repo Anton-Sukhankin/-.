@@ -1,0 +1,36 @@
+{
+  "date": "2026-11-12",
+  "browser": "Chromium",
+  "prototype_reference": "91cfb91b3904ce810bbf9e49b862d4828769fd94, local preview",
+  "deviceScaleFactor": 1,
+  "reducedMotion": "reduce",
+  "frames": [
+    {
+      "file": "ai-filter-draft-full.png",
+      "route": "/preview/navigation?section=ai&ai.reuse=1",
+      "state": "Модальная панель. Перед применением выбран черновик из шести условий.",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "7a18198c450160dccc0bfb1f1540cd3c916f6680d23e022622f638de6dedad48"
+    },
+    {
+      "file": "ai-filter-draft.png",
+      "route": "/preview/navigation?section=ai&ai.reuse=1",
+      "state": "Панель фильтров AI Hub, шесть выбранных условий до применения.",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "clip": {
+        "x": 932,
+        "y": 20,
+        "width": 488,
+        "height": 860
+      },
+      "parent_frame": "ai-filter-draft-full.png",
+      "sha256": "bc8e33507f57566ada713a198911f54a8d66b221e291b9346b321d79d2040e58"
+    }
+  ]
+}

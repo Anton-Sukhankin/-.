@@ -1,0 +1,55 @@
+{
+  "date": "2026-11-12",
+  "browser": "157.0.8103.51",
+  "deviceScaleFactor": 1,
+  "reducedMotion": "reduce",
+  "frames": [
+    {
+      "file": "initial.png",
+      "route": "/preview/navigation?section=reports&report=demo-report-summary&reportTab=overview",
+      "state": "Открыть «Задать вопрос» в шапке аккордеона «Вопросы пользователей». Поля пустые, фокус на теме, видны форматы и футер.",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "a1ebe47b7dadcdb06e9f251910d41d7b03cab8fa215fb64d61505d56ecb3adae"
+    },
+    {
+      "file": "required.png",
+      "route": "/preview/navigation?section=reports&report=demo-report-summary&reportTab=overview",
+      "state": "Отправить пустую форму. Видны обе ошибки и блок вложений.",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "ab240fdbcad1836c8b822df32a73963b2becf0607907b07afec00604a113a7d8"
+    },
+    {
+      "file": "attachments.png",
+      "route": "/preview/navigation?section=reports&report=demo-report-summary&reportTab=overview",
+      "state": "Заполнить тему и вопрос, выбрать PDF, PNG и ZIP. Видны два допустимых файла, сообщение об отклонённом ZIP и подсказка форматов.",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "1ac09498f073a1015fcb1c249ab0f898aa509f29feadbdbb3f73300887aede78"
+    },
+    {
+      "file": "attachments-crop.png",
+      "route": "/preview/navigation?section=reports&report=demo-report-summary&reportTab=overview",
+      "state": "Заполнить тему и вопрос, выбрать PDF, PNG и ZIP. Видны два допустимых файла, сообщение об отклонённом ZIP и подсказка форматов.",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "parent": "attachments.png",
+      "clip": {
+        "x": 456,
+        "y": 494,
+        "width": 528,
+        "height": 204
+      },
+      "sha256": "21bee4d384a8e0e83a4823f4d1ee5dbcf25ddb118c361eda6737c8b690423ce5"
+    }
+  ]
+}

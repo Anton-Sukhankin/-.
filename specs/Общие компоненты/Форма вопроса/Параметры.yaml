@@ -7,16 +7,16 @@ component:
 sources:
   css:
     kind: document
-    uri: "references/implementation/features/questions/AskQuestionDialog.module.css"
+    uri: "references/implementation-current/features/questions/AskQuestionDialog.module.css"
     status: observed-snapshot
-    snapshot: 8 ноября 2026
+    snapshot: 12 ноября 2026
 base:
   sourceRefs: [css]
   parameters:
     maximum-width: {type: dimension, value: 560, unit: px}
 variants:
   modal:
-    description: Форма двух обязательных полей
+    description: Общая форма двух обязательных полей и необязательных вложений
     sourceRefs: [css]
     parameters:
       viewport-margin: {type: dimension, value: 16, unit: px}
@@ -47,3 +47,7 @@ variants:
       field-background: {type: color, format: hex, value: "#F3F4F9"}
       field-border: {type: color, format: hex, value: "#D7E6F5"}
       error-color: {type: color, format: hex, value: "#CC260F"}
+      attachment-icon-size: {type: dimension, value: 16, unit: px}
+      attachment-icon-gap: {type: dimension, value: 8, unit: px}
+      attachment-hint-size: {type: dimension, value: 12, unit: px}
+      attachment-hint-line-height: {type: dimension, value: 16, unit: px}

@@ -1,0 +1,107 @@
+{
+  "date": "2026-11-12",
+  "browser": "Chromium",
+  "prototype_commit": "91cfb91b3904ce810bbf9e49b862d4828769fd94",
+  "frames": [
+    {
+      "file": "01-launcher.png",
+      "route": "/preview/navigation?section=home",
+      "state": "Кнопка вызова на Главной",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "5d6294276e3f2113d9bfa1b5e6908443cb487ea28f164e13b2584c1eb6493e3e"
+    },
+    {
+      "file": "02-empty.png",
+      "route": "/preview/navigation?section=home",
+      "state": "Пустая боковая панель",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "f429722774a0e7c705f76ba748a50cc85e6de4293a4e7a7202f455ebf827ed75"
+    },
+    {
+      "file": "03-dialogue.png",
+      "route": "/preview/navigation?section=home",
+      "state": "Демонстрационный диалог",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "032bd7ba37c91e573bfe009d6da0c427b2d0fed9114976a31197da198b675499"
+    },
+    {
+      "file": "04-modes.png",
+      "route": "/preview/navigation?section=reports",
+      "state": "Открыто меню режимов",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "70314d856c00d59f78a7ea7307cbf7fa43b01088eaac91f8f63283bba14cbc6f"
+    },
+    {
+      "file": "05-delete.png",
+      "route": "/preview/navigation?section=reports",
+      "state": "Модальное подтверждение удаления",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "e08af2a90da0fe94bff0678cfe22beeaf5920bda4762dfcc75fe147cbd0fedc7"
+    },
+    {
+      "file": "06-expanded.png",
+      "route": "/preview/navigation?section=reports",
+      "state": "Развёрнутая панель",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "06abf77b04f8e0d86fad1a3d96422cfc31c65791487b4c68f9833f36b8e99993"
+    },
+    {
+      "file": "07-compact.png",
+      "route": "/preview/navigation?section=reports",
+      "state": "Боковая панель в узком окне",
+      "viewport": {
+        "width": 768,
+        "height": 600
+      },
+      "sha256": "df9c76454915d224cb3063a23c559cc275dc1ff81a34fbcab80f958b2057a817"
+    },
+    {
+      "file": "assistant-thinking.png",
+      "route": "/preview/navigation?section=reports",
+      "state": "Ожидание локального ответа",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "79eb77ae47b789d80b7be7ea8e9329862261597643f216b1af3de133b9bbe1a4"
+    },
+    {
+      "file": "collapsed-chat-history.png",
+      "route": "/preview/navigation?section=reports",
+      "state": "Свёрнутый список бесед",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "a48686b95740200e5a6f576506fbb8b4c3221580c26f9987ed4c79ca84a3ef04"
+    },
+    {
+      "file": "navigator-over-assistant.png",
+      "route": "/preview/navigation?section=home",
+      "state": "Запрос «отчёт», выдача поверх панели с черновиком",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "5383f40d59fc8fca178750fdeadc640b1bbaf484e5293fe9f9442a642a5a5232"
+    }
+  ]
+}

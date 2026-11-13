@@ -1,0 +1,42 @@
+{
+  "date": "2026-11-13",
+  "browser": "157.0.8103.51",
+  "deviceScaleFactor": 1,
+  "reducedMotion": "reduce",
+  "prototypeReference": "Локальный React-прототип, карточка источника соответствует 91cfb91b по реализации.",
+  "frames": [
+    {
+      "file": "source-fields-1440.png",
+      "route": "/preview/navigation?section=sources&source=source-reportcrm-date&sourceTab=fields",
+      "state": "Паспорт dimdate с раскрытым полем Date. Справа панель «Сведения», счётчик вкладки «Метрики» 16.",
+      "action": "Открыть вкладку «Описание полей» и раскрыть Date.",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "501c6274bc9ee3a26c334c953b36ebb52e9a7db4e681bcf1a56f0b6423f1cbfc"
+    },
+    {
+      "file": "source-information-pinned-1440.png",
+      "route": "/preview/navigation?section=sources&source=source-reportcrm-date&sourceTab=fields",
+      "state": "Паспорт dimdate, компактная шапка и закреплённая панель «Сведения» с полными разделителями.",
+      "action": "Открыть вкладку «Описание полей», прокрутить содержимое на 260 px.",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "4f4548fbab439e03e4f7da217b47bb78a0ccfa939a28f40509d2a11069e7858d"
+    },
+    {
+      "file": "source-narrow-1024.png",
+      "route": "/preview/navigation?section=sources&source=source-reportcrm-date&sourceTab=fields",
+      "state": "Паспорт dimdate на узком окне. «Об источнике» раскрыто, поля свёрнуты, «Сведения» под списком.",
+      "action": "Открыть вкладку «Описание полей» в окне 1024 × 768.",
+      "viewport": {
+        "width": 1024,
+        "height": 768
+      },
+      "sha256": "dc507628caed762a73cfa06846528d8a6ce8ce18dc1fd19852121487ced861dc"
+    }
+  ]
+}

@@ -507,8 +507,9 @@ test('AI Hub tables pin the edges, keep the header aligned, and show overflow ti
   await expect(headers).toHaveCount(7);
   await expect(actions).toHaveText('');
   await page.evaluate(() => document.fonts.ready);
-  expect(Math.abs((await headers.nth(1).boundingBox())!.width - 338)).toBeLessThan(1);
+  expect(Math.abs((await headers.nth(1).boundingBox())!.width - 378)).toBeLessThan(1);
   expect(Math.abs((await headers.nth(2).boundingBox())!.width - 190)).toBeLessThan(1);
+  expect((await title.boundingBox())!.width).toBe((await table.boundingBox())!.width - 1167);
   expect((await actions.boundingBox())!.width).toBe(96);
   expect(await actionCell.evaluate(cell => {
     const buttons = cell.querySelectorAll('button');
@@ -539,6 +540,8 @@ test('AI Hub tables pin the edges, keep the header aligned, and show overflow ti
     await expect(frame).toHaveAttribute('data-ai-table-end', 'false');
     const left = (await title.boundingBox())!;
     const right = (await actions.boundingBox())!;
+    expect(left.width).toBe(width === 1440 ? 290 : 104);
+    expect((await table.getByRole('cell').first().boundingBox())!.width).toBe(left.width);
     expect(right.width).toBe(96);
     expect(right.x - left.x - left.width).toBeGreaterThan(16);
     const middle = (await headers.nth(2).boundingBox())!.x;

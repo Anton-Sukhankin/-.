@@ -1,0 +1,28 @@
+{
+  "date": "2026-11-12",
+  "browser": "157.0.8103.51",
+  "deviceScaleFactor": 1,
+  "reducedMotion": "reduce",
+  "frames": [
+    {
+      "file": "report-sent.png",
+      "route": "/preview/navigation?section=reports&report=demo-report-summary&reportTab=overview",
+      "state": "Отправить заполненную форму из «Вопросов пользователей». Подтверждение находится левее кнопки AI-ассистента.",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "c416e67b30608965b98c35fceb0947aa8341970e4806bb5c4019d469edd13816"
+    },
+    {
+      "file": "metric-sent.png",
+      "route": "/preview/navigation?section=metrics&metric=metric-ebitda",
+      "state": "Заполнить встроенное поле в паспорте EBITDA и отправить. Подтверждение находится левее кнопки AI-ассистента.",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "f597ecce08d170df08ce8b45c32dc6dcdec91978bdb3b81929c2eec0b841292d"
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "date": "2026-11-13",
+  "browser": "157.0.8103.51",
+  "deviceScaleFactor": 1,
+  "reducedMotion": "reduce",
+  "frames": [
+    {
+      "file": "summary-technical-current.png",
+      "startRoute": "/preview/navigation?section=reports&report=demo-report-summary&reportTab=technical",
+      "route": "/preview/navigation?section=reports&report=demo-report-summary&reportTab=technical",
+      "state": "Прямой вход во вкладку «Техническая информация» сводного отчёта. Все четыре группы раскрыты; справа «Сведения».",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "2fea2c4b8fd9be23cda7fd520f095c1b693fba354e9c5c76f84be1bde9115015"
+    },
+    {
+      "file": "report-sources-start-current.png",
+      "startRoute": "/preview/navigation?section=reports&report=demo-report-summary&reportTab=sources",
+      "route": "/preview/navigation?section=reports&report=demo-report-summary&reportTab=sources",
+      "state": "Прямой вход во вкладку «Источники данных» сводного отчёта. Слева пустой блок альтернатив и раскрытый Lineage, справа закреплённые «Сведения».",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "11e5ebc68fd7c52ed76af9101a1d01319af83e0c4138e3fa022e9bb601e9d91d"
+    },
+    {
+      "file": "report-source-matrix-current.png",
+      "startRoute": "/preview/navigation?section=reports&report=demo-report-summary&reportTab=sources",
+      "route": "/preview/navigation?section=reports&report=demo-report-summary&reportTab=sources",
+      "state": "В открытой вкладке прокрутить к «Составу источника» первой раскрытой записи demo.requests. Матрица содержит SQL Server и URN; «Сведения» остаются справа.",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "73442fd06020d2357f5c6d8609eb75eaa8244d9c2149bd82fb445cd3f1d44731"
+    },
+    {
+      "file": "related-technical-current.png",
+      "startRoute": "/preview/navigation?section=sources&source=source-reportcrm-date&sourceTab=reports",
+      "route": "/preview/navigation?section=sources&report=agent-rewards&reportTab=technical&detailVia=section%3Dsources%26source%3Dsource-reportcrm-date%26sourceTab%3Dreports",
+      "state": "Открыть «00. Агентское вознаграждение в реестре продаж» из связанных отчётов источника и переключиться на «Техническая информация». Четыре раскрытые группы, незаполненные поля, «Сведения» справа и цепочка возврата к источнику.",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "6206f49dff10987b5e3fc8bb3b45924436bf8a87d36a8f668760e0eebe5746c2"
+    }
+  ]
+}

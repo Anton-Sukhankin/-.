@@ -1,0 +1,27 @@
+{
+  "date": "2026-11-12",
+  "browser": "Chromium",
+  "prototype_commit": "91cfb91b3904ce810bbf9e49b862d4828769fd94",
+  "frames": [
+    {
+      "file": "processes-collapsed.png",
+      "route": "/preview/navigation?section=dictionary&dictionaryTab=processes",
+      "state": "Исходный список свёрнутых групп",
+      "viewport": {
+        "width": 1440,
+        "height": 960
+      },
+      "sha256": "d79e6ecaff584927af5ec78c5124e8365b1dabda0a845270600afb30f31961ee"
+    },
+    {
+      "file": "processes-unavailable.png",
+      "route": "/preview/navigation?section=dictionary&dictionaryTab=processes",
+      "state": "Первая группа раскрыта, список процессов недоступен",
+      "viewport": {
+        "width": 1440,
+        "height": 960
+      },
+      "sha256": "a4285ed141de1347ec9dda9fc2fa6bdee110673a742ddc580aca69da4c8e4e39"
+    }
+  ]
+}

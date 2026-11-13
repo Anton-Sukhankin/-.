@@ -1,0 +1,57 @@
+{
+  "kind": "demo",
+  "items": [
+    {
+      "id": "morning-mailing",
+      "title": "Согласовать утреннюю рассылку",
+      "reportId": "demo-report-sales-plan",
+      "reportTitle": "План-Факт продажи",
+      "requestedBy": "Марии Орловой",
+      "requestedAt": "2026-10-05T18:55:25+03:00",
+      "analyst": "Алексей Волков"
+    },
+    {
+      "id": "weekly-mailing",
+      "title": "Запустить еженедельную рассылку",
+      "reportId": "demo-report-sales-plan",
+      "reportTitle": "План-Факт продажи",
+      "requestedBy": "Дмитрия Лебедева",
+      "requestedAt": "2026-10-05T18:48:26+03:00",
+      "analyst": "Алексей Волков"
+    },
+    {
+      "id": "regional-mailing",
+      "title": "Согласовать рассылку по регионам",
+      "reportId": "demo-report-sales-plan",
+      "reportTitle": "План-Факт продажи",
+      "requestedBy": "Елены Соколовой",
+      "requestedAt": "2026-10-05T18:47:00+03:00",
+      "analyst": "Ирина Зайцева"
+    },
+    {
+      "id": "site-mailing",
+      "title": "Согласовать рассылку по стройплощадкам",
+      "reportId": "demo-report-canopy",
+      "reportTitle": "Навес свод и детализация",
+      "requestedBy": "Анны Беляевой",
+      "requestedAt": "2026-10-05T18:37:05+03:00"
+    },
+    {
+      "id": "progress-mailing",
+      "title": "Запустить рассылку по выполнению работ",
+      "reportId": "demo-report-canopy",
+      "reportTitle": "Навес свод и детализация",
+      "requestedBy": "Максима Фёдорова",
+      "requestedAt": "2026-10-05T18:25:01+03:00",
+      "analyst": "Олег Козлов"
+    },
+    {
+      "id": "management-summary",
+      "title": "Согласовать сводку для управляющих",
+      "reportId": "demo-report-summary",
+      "reportTitle": "Сводный отчёт Гостеприимства",
+      "requestedBy": "Ирины Павловой",
+      "requestedAt": "2026-10-05T18:12:40+03:00"
+    }
+  ]
+}

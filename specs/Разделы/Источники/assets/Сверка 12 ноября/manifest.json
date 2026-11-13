@@ -1,0 +1,120 @@
+{
+  "date": "2026-11-12",
+  "browser": "Chromium",
+  "prototype_reference": "91cfb91b3904ce810bbf9e49b862d4828769fd94, local preview",
+  "deviceScaleFactor": 1,
+  "reducedMotion": "reduce",
+  "frames": [
+    {
+      "file": "source-metric-focus-full.png",
+      "route": "/preview/navigation?section=sources&source=source-reportcrm-date&sourceTab=metrics",
+      "state": "Первая связь вкладки «Метрики» в клавиатурном фокусе.",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "294e6494d544eb8d03e19158fd81d41101e8083a7d26fc40c27011cad0ea606a"
+    },
+    {
+      "file": "source-metric-focus.png",
+      "route": "/preview/navigation?section=sources&source=source-reportcrm-date&sourceTab=metrics",
+      "state": "Первая связь вкладки «Метрики» в клавиатурном фокусе. Отдельный фрагмент строки.",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "clip": {
+        "x": 297,
+        "y": 219,
+        "width": 738,
+        "height": 76
+      },
+      "parent_frame": "source-metric-focus-full.png",
+      "sha256": "22aa45b4cee8e54fce0376174f7e8cd2177fc72ad495c1463db8612e0e121df2"
+    },
+    {
+      "file": "source-metric-partial.png",
+      "route": "/preview/navigation?section=sources&metric=dimdate-additional-income-plan&detailVia=section%3Dsources%26source%3Dsource-reportcrm-date%26sourceTab%3Dmetrics",
+      "state": "Частичный профиль по первой связи dimdate: описание, сведения недоступны, крошка возврата в источник.",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "783c9fa146c9aafc0e2270c8ac7f51a0b75a9ebba4f7bec2bd33c94e28f78153"
+    },
+    {
+      "file": "source-reports-current.png",
+      "route": "/preview/navigation?section=sources&source=source-reportcrm-date&sourceTab=reports",
+      "state": "Вкладка «Связанные отчёты» dimdate. Пять строк. Первая карточка наведена, однострочное описание обрезано.",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "3f9ce610a4f8c9907449c8f4d22b76dd6a1daf4f9037fc4242f28b045c327ce9"
+    },
+    {
+      "file": "source-reports-tooltip.png",
+      "route": "/preview/navigation?section=sources&source=source-reportcrm-date&sourceTab=reports",
+      "state": "Подсказка полного описания у первой карточки связанного отчёта.",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "a19f7813f66072710755a0323c70a0c2a8433adf42eb45b44d3c69cea8d9dec6"
+    },
+    {
+      "file": "source-lineage-current.png",
+      "route": "/preview/navigation?section=sources&source=source-reportcrm-date&sourceTab=lineage",
+      "state": "Широкий паспорт dimdate. Холст Lineage со сведениями справа, открытый при исходном масштабе.",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "3137bb72900e58ac442212b1021340105ced09fb6f3b0b6b4b9965b16ab3866f"
+    },
+    {
+      "file": "source-lineage-legend-current.png",
+      "route": "/preview/navigation?section=sources&source=source-reportcrm-date&sourceTab=lineage",
+      "state": "Легенда текущего прототипа на вкладке Lineage источника. Подпись «Источник (каталог)» пока отображается.",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "clip": {
+        "x": 317,
+        "y": 255,
+        "width": 586,
+        "height": 40
+      },
+      "parent_frame": "source-lineage-current.png",
+      "sha256": "ddebb3e87be681f1d53362288cfcda87d7e9d6608923bf8a12c644d22230ce33"
+    },
+    {
+      "file": "source-tree-return-current.png",
+      "route": "/preview/navigation?section=sources&sourceView=tree&sourceTreeGroup=%5B%22PostgreSQL%22%2C%22Amocrm+Rerooms%22%2C%22rewedo_crm_production%22%2C%22public%22%5D&sourceTreeClosed=%5B%22SQL+Server%22%5D",
+      "state": "Возврат из rewedo в дерево. SQL Server свёрнут, в шапке виден путь к public.",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "28aaf4572c5e9167fd9f5a6d45288d68db1be1c281b83e0295e795702e549e08"
+    },
+    {
+      "file": "source-tree-path-current.png",
+      "route": "/preview/navigation?section=sources&sourceView=tree&sourceTreeGroup=%5B%22PostgreSQL%22%2C%22Amocrm+Rerooms%22%2C%22rewedo_crm_production%22%2C%22public%22%5D&sourceTreeClosed=%5B%22SQL+Server%22%5D",
+      "state": "Текстовые звенья пути после возврата в дерево источников.",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "clip": {
+        "x": 296,
+        "y": 160,
+        "width": 1124,
+        "height": 56
+      },
+      "parent_frame": "source-tree-return-current.png",
+      "sha256": "03266a288d085af899f8d92df5a13d3ea883f9f1918281c488feffaccd2c20c8"
+    }
+  ]
+}

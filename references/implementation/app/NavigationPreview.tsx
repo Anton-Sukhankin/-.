@@ -5,7 +5,7 @@ import { useLocation, useNavigate, useSearchParams } from 'react-router';
 import { useCatalogTransition } from './useCatalogTransition';
 import { detailTrailParam, readDetail, readDetailTrail, withoutDetail, type DetailKind } from './detailTrail';
 import { transitionCatalog, type CatalogTransition } from '../components/catalogTransition';
-import type { DetailCrumb } from '../components/DetailHeader/DetailBreadcrumbs';
+import { DetailBreadcrumbs, type DetailCrumb } from '../components/DetailHeader/DetailBreadcrumbs';
 import { Sidebar } from '../components/Sidebar/Sidebar';
 import { Header } from '../components/Header/Header';
 import { EmptyState } from '../components/EmptyState/EmptyState';
@@ -24,6 +24,7 @@ import type { ReportSummary } from '../data/reports';
 import { demoReportsGateway } from '../demo/reports';
 import { technicalReportSummary } from '../demo/technicalReport';
 import { ReportCardGroups } from '../components/ReportCard/ReportCardGroups';
+import { ReportDomainCards } from '../components/ReportCard/ReportDomainCards';
 import { ReportTable } from '../components/ReportTable/ReportTable';
 import { readDemoReportRows } from '../demo/reportTable';
 import { reportTablePage, type ReportTableRow } from '../data/reportTable';
@@ -54,11 +55,14 @@ import { SourcesWorkspace } from '../features/sources/SourcesWorkspace';
 import { DictionaryWorkspace } from '../features/dictionary/DictionaryWorkspace';
 import { demoDictionaryGateway } from '../demo/dictionary';
 import { AiHubCatalog } from '../features/ai-hub/AiHubCatalog';
+import { AiAssistant } from '../features/ai-assistant/AiAssistant';
 import { SystemReferencesWorkspace } from '../features/system-references/SystemReferencesWorkspace';
 import { demoSystemReferencesGateway } from '../demo/systemReferences';
 import { QuestionsWorkspace } from '../features/questions/QuestionsWorkspace';
 import { demoAppeals, demoFaq } from '../demo/questions';
 import type { QuestionAppeal, QuestionDraft } from '../data/questions';
+import { TasksWorkspace } from '../features/tasks/TasksWorkspace';
+import { demoMailingTasks } from '../demo/tasks';
 import { demoAiSolutions } from '../demo/aiHub';
 import { dictionaryFilterOptions, dictionaryTermsPage, readDictionaryFilters } from '../data/dictionary';
 import { paginationDemoParam, paginationExampleCount, paginationExamples, paginationExampleLabel, paginationReportRows, readPaginationReport, paginationReportDetails,
@@ -71,10 +75,11 @@ type SearchSelection = {
   descriptionOrigin?: string;
   highlightDescription?: true;
 };
-type DetailOriginState = { searchSelection?: SearchSelection; restoreCatalogSearch?: boolean; report?: ReportSummary; returnTo?: string };
+type DetailOriginState = { searchSelection?: SearchSelection; restoreCatalogSearch?: boolean; report?: ReportSummary; returnTo?: string; reportOrigin?: 'tasks' | 'domains' };
 type NavigationState = DetailOriginState & { detailHistoryDepth?: number; detailOrigin?: DetailOriginState | null };
 
-const defaultHomeViews = { favorites: DEFAULT_VIEW_MODE, subscriptions: DEFAULT_VIEW_MODE, contribution: DEFAULT_VIEW_MODE };
+const defaultHomeViews = { favorites: DEFAULT_VIEW_MODE, domains: DEFAULT_VIEW_MODE, subscriptions: DEFAULT_VIEW_MODE, contribution: DEFAULT_VIEW_MODE };
+const additionalDomainReportIds = new Set(['demo-report-construction', 'demo-report-team-workload']);
 const demoCaseParams = ['tableCase', 'favoriteCase', 'homeCase', 'questionsCase', paginationDemoParam];
 const paginatedNews = paginationExamples(demoNewsArticles, (item, number) => ({ title: paginationExampleLabel(item.title, number), contentSource: 'demo' as const }));
 const paginatedSubscriptions = paginationExamples(subscriptionContentFixture, (item, number) => ({ title: paginationExampleLabel(item.title, number) }));
@@ -84,7 +89,7 @@ const paginatedAi = paginationExamples(demoAiSolutions, (item, number) => ({
 }));
 const paginatedFaq = paginationExamples(demoFaq, (item, number) => ({ question: paginationExampleLabel(item.question, number) }));
 const paginatedAppeals = paginationExamples(demoAppeals, (item, number) => ({ subject: paginationExampleLabel(item.subject, number) }));
-const paginatedNavigation = navigationFixture.map(item => item.count === undefined ? item : {
+const paginatedNavigation = navigationFixture.map(item => item.count === undefined || item.id === 'tasks' ? item : {
   ...item, count: String(item.id === 'dictionary' ? paginationExampleCount + paginationDictionaryGateway.read().domains.length : paginationExampleCount),
 });
 const reportPaginationNavigation = navigationFixture.map(item => item.id === 'reports' ? { ...item, count: String(paginationExampleCount) } : item);
@@ -186,6 +191,11 @@ export function NavigationPreview({ tablePageSize = listPageSize, favoritePageSi
   const favoriteFilters = useReportFilters(() => { setFavoritePageIndex(0); clearSearchSelection(); });
   const homeTab = homeTabs.some(item => item.id === params.get('tab')) ? params.get('tab')! : 'reports';
   const homeSegment = homeReportSegments.some(item => item.id === params.get('segment')) ? params.get('segment')! : 'favorites';
+  const isDomains = activeId === 'home' && homeTab === 'reports' && homeSegment === 'domains' && !hasDetail;
+  const homeDomain = params.get('reportDomain');
+  const domainFilters = useReportFilters(() => {
+    if (params.has('domainPage')) updateLocation({ domainPage: undefined }, { replace: true }, 'tab');
+  });
   const [homeViews, setHomeViews] = useState<Record<string, HomeViewMode>>(defaultHomeViews);
   const newsCategory: NewsCategoryId = homeNewsCategories.some(item => item.id === params.get('category')) ? params.get('category') as NewsCategoryId : 'all';
   const newsScroll = useRef<Partial<Record<NewsCategoryId, number>>>({});
@@ -205,8 +215,24 @@ export function NavigationPreview({ tablePageSize = listPageSize, favoritePageSi
     enabled: activeId === 'home' && !selectedReportId });
   const favoriteRows = emptyHome === 'favorites' ? [] : favoriteRecords.data && (expandFavorites ? paginationReportRows(favoriteRecords.data) : favoriteRecords.data);
   const tableRecords = useQuery({ queryKey: ['demo', 'report-table-records'],
-    queryFn: ({ signal }) => readDemoReportRows(signal), enabled: activeId === 'reports' });
+    queryFn: ({ signal }) => readDemoReportRows(signal), enabled: activeId === 'reports' || isDomains });
   const reportRows = tableRecords.data && (expandReportCatalog ? paginationReportRows(tableRecords.data) : tableRecords.data);
+  const domainRowsReady = reportRows !== undefined && favoriteRecords.data !== undefined;
+  const domains = new Map<string, ReportTableRow[]>();
+  if (isDomains && domainRowsReady) {
+    const catalogIds = new Set(reportRows.map(row => row.id));
+    const additions = favoriteRecords.data.filter(row => additionalDomainReportIds.has(row.id) && !catalogIds.has(row.id));
+    for (const row of [...reportRows, ...additions]) {
+      const group = domains.get(row.domain);
+      if (group) group.push(row);
+      else domains.set(row.domain, [row]);
+    }
+  }
+  const domainRows = homeDomain ? domains.get(homeDomain) : undefined;
+  const domainPage = domainRows && reportTablePage(
+    sortReportRows(filterReportRows(domainRows, domainFilters.applied), domainFilters.sort),
+    Number(params.get('domainPage') ?? '1') - 1, tablePageSize,
+  );
   const summaries = useQuery({ queryKey: ['demo', 'report-summaries'], queryFn: ({ signal }) => demoReportsGateway.list(signal), retry: false });
   const faq = paginationDemo ? paginatedFaq : demoFaq;
   const demoQuestionAppeals = params.get('questionsCase') === 'empty' ? undefined : paginationDemo ? paginatedAppeals : demoAppeals;
@@ -242,14 +268,15 @@ export function NavigationPreview({ tablePageSize = listPageSize, favoritePageSi
   const outsideReportFilters = tablePage?.outside || favoritePage?.outside;
   const cards = favoritePage?.rows.map(row => row.report).filter((report): report is ReportCardData => report.verification !== undefined) ?? [];
   const homeContext = activeId === 'home';
-  const activeFilters = homeContext ? favoriteFilters : filters;
+  const activeFilters = isDomains ? domainFilters : homeContext ? favoriteFilters : filters;
   const reportColumnMenu = activeFilters.visibleMenu;
-  const activeRows = homeContext ? favoriteRows : reportRows;
+  const activeRows = isDomains ? domainRows : homeContext ? favoriteRows : reportRows;
   const panel = useReportFilterPanel({ context: homeContext ? 'favorites' : 'catalog', rows: activeRows ?? [],
     applied: activeFilters.applied, onApply: activeFilters.replaceApplied, onOpen: activeFilters.close });
   // Browser history is also a navigation boundary: drafts must not follow it
   // into another list. Applied conditions, views and page state survive.
-  useLayoutEffect(() => { filters.close(); favoriteFilters.close(); panel.close(); setEditNotice(undefined); }, [location.key]);
+  useLayoutEffect(() => { filters.close(); favoriteFilters.close(); domainFilters.close(); panel.close(); setEditNotice(undefined); }, [location.key]);
+  useLayoutEffect(() => { domainFilters.resetForNavigation(); }, [homeDomain]);
   useLayoutEffect(() => { main.current?.scrollTo(0, 0); }, [sidebarEntry]);
   useLayoutEffect(() => {
     if (!pendingDescription) return;
@@ -302,7 +329,7 @@ export function NavigationPreview({ tablePageSize = listPageSize, favoritePageSi
     reveal();
     return () => { observer.disconnect(); cancelAnimationFrame(frame); };
   }, [location.key, searchSelection, highlightDismissed, pendingDescription, searchHit?.entry.id, searchHit?.value.field, searchHit?.occurrence, stepped]);
-  function closeOverlays() { filters.close(); favoriteFilters.close(); panel.close(); }
+  function closeOverlays() { filters.close(); favoriteFilters.close(); domainFilters.close(); panel.close(); }
   function openSectionStart(id: string) {
     const next = new URLSearchParams({ section: id });
     // Technical fixture selection changes the available data, not the user's route.
@@ -342,11 +369,13 @@ export function NavigationPreview({ tablePageSize = listPageSize, favoritePageSi
   function clearSearchSelection() {
     if (searchSelection) navigate(location.pathname + location.search, { replace: true });
   }
-  function openReport(report: ReportSummary, selection?: SearchSelection) {
+  function openReport(report: ReportSummary | string, selection?: SearchSelection) {
+    const reportId = typeof report === 'string' ? report : report.id;
     closeOverlays(); setEditNotice(undefined);
-    updateLocation({ section: 'reports', report: report.id, reportTab: 'overview', metric: undefined,
+    updateLocation({ section: 'reports', report: reportId, reportTab: 'overview', metric: undefined,
       source: undefined, sourceReport: undefined, sourceTab: undefined, [detailTrailParam]: undefined },
-    { state: { report, returnTo: location.pathname + location.search, searchSelection: selection } });
+    { state: { report: typeof report === 'string' ? undefined : report, returnTo: location.pathname + location.search,
+      searchSelection: selection, reportOrigin: activeId === 'tasks' ? 'tasks' : isDomains ? 'domains' : undefined } satisfies DetailOriginState });
   }
   function chooseSearch(hit: SearchHit, requestedAction: SearchSelection['action']) {
     const destination = hit.entry.destination;
@@ -462,7 +491,19 @@ export function NavigationPreview({ tablePageSize = listPageSize, favoritePageSi
     ...detailTrail.map((step, index) => ({ label: detailLabel(step), onSelect: () => openDetailAncestor(index) })),
   ] : undefined;
   function changeHomeTab(id: string) { closeOverlays(); updateLocation({ tab: id, news: undefined }, undefined, 'tab'); setEditNotice(undefined); }
-  function changeHomeSegment(id: string) { closeOverlays(); updateLocation({ segment: id }, undefined, 'tab'); setEditNotice(undefined); }
+  function changeHomeSegment(id: string) {
+    closeOverlays();
+    updateLocation({ segment: id, ...(id !== 'domains' ? { reportDomain: undefined, domainPage: undefined } : {}) }, undefined, 'tab');
+    setEditNotice(undefined);
+  }
+  function openHomeDomain(name?: string) {
+    closeOverlays();
+    updateLocation({ reportDomain: name, domainPage: undefined }, undefined, 'tab');
+  }
+  function changeDomainPage(index: number) {
+    closeOverlays();
+    updateLocation({ domainPage: index ? String(index + 1) : undefined }, { replace: true }, 'tab');
+  }
   function openNews(id: string) {
     updateLocation({ section: 'home', tab: 'news', news: id }, { state: { newsReturnTo: location.pathname + location.search } });
   }
@@ -485,6 +526,7 @@ export function NavigationPreview({ tablePageSize = listPageSize, favoritePageSi
   const isContribution = activeId === 'home' && homeTab === 'reports' && homeSegment === 'contribution' && contributionType === 'contributors' && !selectedReportId;
   const hasFavoriteRows = Boolean(favoriteRows?.length);
   const hasHomeResults = isFavorites && Boolean(favoritePage?.rows.length)
+    || isDomains && Boolean(domainRows)
     || isSubscriptions && subscriptions.length > 0
     || isContribution && contributors.length > 0;
   const hasReportRows = Boolean(tableRecords.data?.length);
@@ -495,7 +537,8 @@ export function NavigationPreview({ tablePageSize = listPageSize, favoritePageSi
     : activeId === 'questions' ? params.get('questions.tab') === 'mine' ? 'mine' : 'faq'
     : activeId === 'dictionary' ? params.get('dictionaryTab') ?? 'all'
     : activeId === 'ai' ? params.get('ai.solution')
-    : activeId === 'home' ? JSON.stringify([homeTab, homeTab === 'news' ? selectedNewsId ?? newsCategory : homeSegment, homeSegment === 'contribution' ? contributionType : null])
+    : activeId === 'home' ? JSON.stringify([homeTab, homeTab === 'news' ? selectedNewsId ?? newsCategory : homeSegment,
+      homeSegment === 'contribution' ? contributionType : isDomains ? homeDomain : null])
     : null;
   const screen = hasDetail ? [activeId, detail?.kind, detail?.id]
     : [activeId, activeId === 'systems' ? params.get('systems.reference') : null];
@@ -513,6 +556,7 @@ export function NavigationPreview({ tablePageSize = listPageSize, favoritePageSi
   const isAiCatalog = activeId === 'ai' && !selectedReportId;
   const isSystemReferences = activeId === 'systems' && !selectedReportId;
   const isQuestions = activeId === 'questions' && !selectedReportId;
+  const isTasks = activeId === 'tasks' && !hasDetail;
   function submitQuestion(draft: QuestionDraft) {
     const lastMessageAt = new Date().toISOString();
     setSubmittedAppeals(previous => [{
@@ -544,9 +588,9 @@ export function NavigationPreview({ tablePageSize = listPageSize, favoritePageSi
           <Sidebar items={paginationDemo ? paginatedNavigation : expandReportCatalog ? reportPaginationNavigation : navigationFixture} activeId={activeId} collapsed={collapsed}
             onSelect={openSectionStart} onCollapsedChange={setCollapsed} />
         </div>
-        <main ref={main} className={styles.review} data-catalog-screen data-list-scroll={isAiCatalog || isSystemReferences ? '' : undefined} data-ai-catalog={isAiCatalog} data-dictionary={activeId === 'dictionary' && !selectedReportId} data-source-detail={isSourceDetail} data-source-catalog={activeId === 'sources' && !hasDetail} data-report-detail={Boolean(selectedReportId)} data-metric-catalog={activeId === 'metrics' && !hasDetail} data-metric-detail={isMetricDetail} data-table-preview={activeId === 'reports' && !hasDetail} data-home-preview={activeId === 'home' && !selectedReportId} data-news-reading={isReadingNews} data-system-references={isSystemReferences ? params.has('systems.reference') ? 'detail' : 'catalog' : undefined} data-questions={isQuestions}>
+        <main ref={main} className={styles.review} data-catalog-screen data-list-scroll={isAiCatalog || isSystemReferences ? '' : undefined} data-ai-catalog={isAiCatalog} data-dictionary={activeId === 'dictionary' && !selectedReportId} data-source-detail={isSourceDetail} data-source-catalog={activeId === 'sources' && !hasDetail} data-report-detail={Boolean(selectedReportId)} data-metric-catalog={activeId === 'metrics' && !hasDetail} data-metric-detail={isMetricDetail} data-table-preview={activeId === 'reports' && !hasDetail} data-home-preview={activeId === 'home' && !selectedReportId} data-news-reading={isReadingNews} data-system-references={isSystemReferences ? params.has('systems.reference') ? 'detail' : 'catalog' : undefined} data-questions={isQuestions} data-tasks={isTasks}>
           <SearchLandingContext.Provider key={sidebarEntry} value={pendingDescription ? undefined : landingHit}>
-          {!hasDetail && activeId !== 'metrics' && activeId !== 'sources' && activeId !== 'dictionary' && !isAiCatalog && !isSystemReferences && !isQuestions && <div className={styles.pageHeader}><h1>{activeSection.label}</h1>
+          {!hasDetail && activeId !== 'metrics' && activeId !== 'sources' && activeId !== 'dictionary' && !isAiCatalog && !isSystemReferences && !isQuestions && !isTasks && <div className={styles.pageHeader}><h1>{activeSection.label}</h1>
             {activeId === 'reports' && !selectedReportId && tablePage && <span className={styles.reportTotal}>{tablePage.total}</span>}
             {activeId === 'reports' && !selectedReportId && hasReportRows && <div className={styles.catalogActions}>
               {Boolean(tablePage?.rows.length) && <ViewPicker selection={{ value: reportsView, onChange: value => { closeOverlays(); clearSearchSelection(); setCatalogView(value); }, inactiveSurface: reportsView === 'cards' ? 'neutral' : 'track' }} />}
@@ -557,7 +601,9 @@ export function NavigationPreview({ tablePageSize = listPageSize, favoritePageSi
           {selectedReport && <ReportDetail source={reportDetails} key={selectedReport.id} report={selectedReport} tab={params.get('reportTab') ?? 'overview'} empty={params.get('detailEmpty')==='true'}
             onTabChange={id=>updateLocation({reportTab:id},{replace:detailTrail.length > 0,state:location.state},'tab')}
             currentBreadcrumb={detailTrail.at(-1)?.has('source') ? selectedReport.title : undefined}
-            breadcrumbs={detailBreadcrumbs} onBack={returnFromReport} onOpenSource={id=>openRelatedDetail('source',id)} onOpenMetric={id=>openRelatedDetail('metric',id)} />}
+            breadcrumbs={detailBreadcrumbs ?? (navigationState?.reportOrigin === 'tasks' ? [{ label: 'Задачи', onSelect: returnFromReport }]
+              : navigationState?.reportOrigin === 'domains' && homeDomain ? [{ label: homeDomain, onSelect: returnFromReport }] : undefined)}
+            onBack={returnFromReport} onOpenSource={id=>openRelatedDetail('source',id)} onOpenMetric={id=>openRelatedDetail('metric',id)} />}
           {(isMetricDetail || activeId === 'metrics' && !hasDetail) && <MetricWorkspace gateway={metricsGateway} breadcrumbs={detailBreadcrumbs} onSubmitQuestion={submitQuestion}
             searchTarget={searchDestination?.kind === 'metric' ? searchDestination.id : undefined}
             onOpenRelatedMetric={id=>openRelatedDetail('metric',id)} onOpenReport={id=>openRelatedDetail('report',id)} />}
@@ -565,7 +611,7 @@ export function NavigationPreview({ tablePageSize = listPageSize, favoritePageSi
             <HomeControls tabs={{ ariaLabel: 'Тип содержимого', items: homeTabs.map(item => ({
               ...item, count: item.id === 'news' ? newsRecords.length : item.id === 'reports' ? favoriteRows?.length : undefined,
             })), selectedId: homeTab, onChange: changeHomeTab }}
-              segments={homeTab === 'reports' ? { ariaLabel: 'Раздел отчётов', items: homeReportSegments.map(item => ({...item,count:item.id === 'favorites' ? favoriteRows?.length : item.id === 'subscriptions' ? subscriptions.length : contributors.length})), selectedId: homeSegment, onChange: changeHomeSegment }
+              segments={homeTab === 'reports' ? { ariaLabel: 'Раздел отчётов', items: homeReportSegments.map(item => ({...item,count:item.id === 'favorites' ? favoriteRows?.length : item.id === 'subscriptions' ? subscriptions.length : item.id === 'contribution' ? contributors.length : undefined})), selectedId: homeSegment, onChange: changeHomeSegment }
                 : homeTab === 'news' && !isReadingNews && newsRecords.length > 0 ? { ariaLabel: 'Категории новостей', items: homeNewsCategories.map(item => ({...item,count:filterNewsByCategory(newsRecords,item.id as NewsCategoryId).length})), selectedId: newsCategory, onChange: id => updateLocation({ category: id, news: undefined, newsPage: undefined }, undefined, 'tab') } : undefined}
               contribution={homeTab === 'reports' && homeSegment === 'contribution' && contributors.length > 0 ? { ariaLabel: 'Тип вклада', items: homeContributionTypes, selectedId: contributionType, onChange: setContributionType } : undefined}
               view={hasHomeResults ? { value: homeView, onChange: value => { closeOverlays(); clearSearchSelection(); setHomeViews(previous => ({ ...previous, [homeSegment]: value })); } } : undefined}
@@ -588,6 +634,38 @@ export function NavigationPreview({ tablePageSize = listPageSize, favoritePageSi
               onChangeArticle={id => updateLocation({ news: id }, { replace: true, state: location.state }, 'tab')}
               listScrollTop={newsScroll.current[newsCategory] ?? 0} onListScroll={top => { newsScroll.current[newsCategory] = top; }}
               listViewportOffset={newsRecords.length ? 210 : 154} readingViewportOffset={162} />
+          </div>}
+          {isDomains && <div className={styles.homeResults} data-detail-tab-content>
+            {homeDomain && <div className={styles.domainBreadcrumb}>
+              <DetailBreadcrumbs ancestors={[{ label: 'Домены', onSelect: () => openHomeDomain() }]} current={homeDomain} />
+            </div>}
+            <div data-catalog-view-results>
+              {!domainRowsReady ? tableRecords.isError || favoriteRecords.isError
+                ? <EmptyState className={styles.catalogEmpty} role="alert" title="Не удалось загрузить домены" description="Попробуйте загрузить список ещё раз."
+                  action={{ label: 'Повторить', onClick: () => {
+                    if (!tableRecords.data) void tableRecords.refetch();
+                    if (!favoriteRecords.data) void favoriteRecords.refetch();
+                  } }} />
+                : <p role="status">Загрузка доменов…</p>
+              : !homeDomain ? domains.size > 0
+                ? <ReportDomainCards domains={Array.from(domains, ([name, rows]) => ({ name, count: rows.length }))} onOpen={openHomeDomain} />
+                : <EmptyState className={styles.catalogEmpty} title="В каталоге пока нет доменов" description="Здесь появятся домены опубликованных отчётов." />
+              : !domainPage ? <EmptyState className={styles.catalogEmpty} title="Домен не найден" description="Выберите другой домен из списка." />
+              : !domainPage.rows.length ? <EmptyState className={styles.catalogEmpty} role="status" title="Отчёты не найдены" description="Сбросьте фильтры, чтобы увидеть все отчёты домена."
+                action={{ label: 'Сбросить фильтры', variant: 'filter-reset', onClick: () => domainFilters.replaceApplied({}) }} />
+              : homeView === 'cards' ? <div className={styles.favoriteCards}>
+                <ReportCardGroups key={`${homeDomain}-${domainPage.pageIndex}`} groupByDomain={false}
+                  reports={domainPage.rows.map(row => row.report).filter((report): report is ReportCardData => report.verification !== undefined)}
+                  onOpen={openReport} onEdit={onEdit} viewportOffset={246} bottomReserve={domainPage.pageCount > 1 ? 80 : 16} />
+                <ListPagination {...domainPage} onPageChange={changeDomainPage} label="Страницы отчётов домена" />
+              </div> : <ReportTable key={homeDomain} {...domainPage} groupByDomain={false} viewportOffset={246} paginationLabel="Страницы отчётов домена"
+                sort={domainFilters.sort && { columnLabel: reportFilterLabels[domainFilters.sort.column], direction: domainFilters.sort.direction }}
+                onPageChange={changeDomainPage} onOpen={openReport} onEdit={onEdit}
+                activeColumn={domainFilters.menu && reportFilterLabels[domainFilters.menu.column]}
+                appliedColumns={Object.keys(domainFilters.applied).map(column => reportFilterLabels[column as keyof typeof reportFilterLabels])}
+                onClearColumn={domainFilters.clearColumn} onClearSort={domainFilters.clearSort} onHeaderLayoutChange={domainFilters.reposition}
+                onColumnIntent={(column, anchor) => { setEditNotice(undefined); domainFilters.open(column, anchor); }} />}
+            </div>
           </div>}
           {isFavorites && <div className={styles.favoriteResults} data-catalog-view-results data-detail-tab-content>
             {!favoritePage ? favoriteRecords.isError
@@ -650,9 +728,7 @@ export function NavigationPreview({ tablePageSize = listPageSize, favoritePageSi
               : <EmptyState className={styles.catalogEmpty} title="Отчёт не найден" description="Проверьте ссылку или выберите отчёт из каталога."
                 action={{ label: 'К отчётам', onClick: returnFromReport }} />}
           </section>}
-          {!selectedReportId && activeId === 'tasks' && <section aria-label="Содержимое раздела">
-            <EmptyState className={styles.catalogEmpty} title="Раздел «Задачи» недоступен" description="В прототипе пока нельзя просматривать задачи." />
-          </section>}
+          {isTasks && <TasksWorkspace tasks={demoMailingTasks} onOpenReport={openReport} />}
           {activeId === 'home' && !selectedReportId && !isFavorites && !isSubscriptions && !isContribution && !isNews &&
             <EmptyState className={styles.catalogEmpty} data-detail-tab-content title="Содержимое недоступно на главной"
               description={homeTab === 'sources' || homeTab === 'ai-hub' ? 'Откройте полный каталог в соответствующем разделе.' : 'Выберите другой раздел на главной.'}
@@ -677,6 +753,7 @@ export function NavigationPreview({ tablePageSize = listPageSize, favoritePageSi
           onSortChange={activeFilters.changeSort} />
       </div>, document.body)}
       <ReportFilterOverlay controller={panel} context={homeContext ? 'favorites' : 'catalog'} />
+      <AiAssistant suspended={panel.isOpen || sourcePanelOpen || aiPanelOpen} />
     </div>
   );
 }

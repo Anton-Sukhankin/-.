@@ -164,10 +164,20 @@ test('overview accordions, question form and responsive content work without ser
   await expect(dialog).toBeVisible();
   const subject = dialog.getByRole('textbox', { name: 'Тема', exact: true });
   await expect(subject).toBeFocused();
+  const attach = dialog.getByRole('button', { name: 'Прикрепить файл', exact: true });
+  const formats = 'Необязательно. Форматы: PDF, DOC, DOCX, XLS, XLSX, CSV, TXT, PNG, JPG, JPEG.';
+  await expect(attach).toHaveAccessibleDescription(formats);
+  await expect(dialog.getByText(formats, { exact: true })).toBeVisible();
+  const [chooser] = await Promise.all([page.waitForEvent('filechooser'), attach.click()]);
+  expect(chooser.isMultiple()).toBe(true);
+  await chooser.setFiles({ name: 'Описание.txt', mimeType: 'text/plain', buffer: Buffer.from('Тест') });
+  const attachments = dialog.getByRole('list', { name: 'Прикреплённые файлы' });
+  await expect(attachments.getByText('Описание.txt', { exact: true })).toBeVisible();
   await page.keyboard.press('Escape');
   await expect(dialog).toHaveCount(0);
   await expect(ask).toBeFocused();
   await ask.click();
+  await expect(attachments).toHaveCount(0);
   const submit = dialog.getByRole('button',{name:'Отправить вопрос',exact:true});
   await expect(submit).toBeEnabled();
   await dialog.getByRole('textbox',{name:'Ваш вопрос'}).fill('Как рассчитывается показатель?');
@@ -176,9 +186,15 @@ test('overview accordions, question form and responsive content work without ser
   await expect(subject).toBeFocused();
   await expect(dialog.getByRole('alert')).toHaveText('Поле «Тема» обязательно для заполнения.');
   await subject.fill('Расчёт показателя');
+  await dialog.locator('input[type="file"]').setInputFiles({
+    name: 'Расчёт.csv', mimeType: 'text/csv', buffer: Buffer.from('значение,10'),
+  });
+  await expect(attachments.getByText('Расчёт.csv', { exact: true })).toBeVisible();
   await submit.click();
   await expect(dialog).toHaveCount(0);
   await expect(page.getByRole('status')).toContainText('Серверная доставка не подключена');
+  await page.getByRole('button', { name: 'Закрыть уведомление', exact: true }).click();
+  await expect(page.getByText('Серверная доставка не подключена', { exact: false })).toHaveCount(0);
   const myQuestions = page.getByRole('tab', { name: 'Мои вопросы 0', exact: true });
   const count = myQuestions.locator('span');
   await expect(count).toHaveText('0');

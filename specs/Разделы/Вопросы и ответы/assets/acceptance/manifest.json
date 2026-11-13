@@ -1,0 +1,63 @@
+{
+  "date": "2026-11-12",
+  "browser": "Chrome",
+  "dpr": 1,
+  "motion": "reduced",
+  "crop_coordinates": "[left, top, right, bottom) в пикселях исходного кадра",
+  "frames": [
+    {
+      "file": "questions-form-filled.png",
+      "route": "/preview/navigation?section=questions&paginationDemo=0",
+      "state": "В FAQ нажать «Задать вопрос», заполнить тему и вопрос. В футере видна кнопка «Прикрепить файл».",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "cf16ae3265073c4b0b644142fd31ad5ffde36621d306b0ec1087849f8973350e"
+    },
+    {
+      "file": "questions-form-attachments.png",
+      "route": "/preview/navigation?section=questions&paginationDemo=0",
+      "state": "В заполненной форме выбрать два допустимых демонстрационных файла и один неподдерживаемый. Видны два файла, кнопки удаления, сообщение об отклонении и футер.",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "919497d04d7ed8b757b5a9de3122fd785542aa6eb8749b5c1956baa9d98088f4",
+      "crops": [
+        {
+          "file": "questions-form-attachments-crop.png",
+          "box": [
+            450,
+            484,
+            996,
+            713
+          ],
+          "sha256": "2574e7a29477272f1ed3e7c743c08e84675342ada0236ba33b0ee0ccbe3f0522"
+        }
+      ]
+    },
+    {
+      "file": "questions-navigator-mine.png",
+      "route": "/preview/navigation?section=questions&paginationDemo=0",
+      "state": "В Навигаторе ввести «План-Факт продажи» и выбрать совпавшее обращение. В теме первой строки выделено совпадение, локальное поле поиска пустое.",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "e50cd7c4a6437f29911c735da018b592c0d4ac0353416ada5589bd75661d8880",
+      "crops": [
+        {
+          "file": "questions-navigator-mine-crop.png",
+          "box": [
+            305,
+            277,
+            1410,
+            403
+          ],
+          "sha256": "bac7278853b28cb3767570b51989a84a51bd66c4ce924a41368d7efa7574bfcb"
+        }
+      ]
+    }
+  ]
+}

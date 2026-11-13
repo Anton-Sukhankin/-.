@@ -65,7 +65,7 @@ sources:
     snapshot: Галочка и фокус логических условий CRM
   questions-css:
     kind: document
-    uri: "references/implementation/features/questions/QuestionsWorkspace.module.css"
+    uri: "references/implementation-current/features/questions/QuestionsWorkspace.module.css"
     status: observed-snapshot
     snapshot: Общий корпус, счётчик и внешний контур фокуса
   fonts:

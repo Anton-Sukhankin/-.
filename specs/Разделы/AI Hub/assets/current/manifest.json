@@ -1,0 +1,27 @@
+{
+  "date": "2026-11-12",
+  "browser": "Chromium",
+  "prototype_commit": "91cfb91b3904ce810bbf9e49b862d4828769fd94",
+  "frames": [
+    {
+      "file": "ai-hub-1440.png",
+      "route": "/preview/navigation?section=ai",
+      "state": "Каталог из девяти решений, две колонки",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "8eabe8707088e99da3cbdba43018bc8ade3566890871ab5a4f77529280013c59"
+    },
+    {
+      "file": "ai-detail-1440.png",
+      "route": "/preview/navigation?section=ai&ai.solution=failik",
+      "state": "Паспорт решения с данными и локальной навигацией",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "5aac271dedcb3587460192fd6346f2c305bafee3548fd21c9854d1b589f26bce"
+    }
+  ]
+}

@@ -1,5 +1,63 @@
 import { expect, test } from '@playwright/test';
 
+test('Home Domains lists catalog domains and opens the same reports in both views', async ({ page }, info) => {
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.goto('/preview/navigation?section=home&paginationDemo=0');
+  const segments = page.getByRole('tablist', { name: 'Раздел отчётов' });
+  const domains = segments.getByRole('tab', { name: 'Домены', exact: true });
+  await expect(segments.getByRole('tab')).toHaveCount(4);
+  expect(await segments.getByRole('tab').evaluateAll(tabs => tabs.map(tab => tab.getAttribute('data-control-id'))))
+    .toEqual(['favorites', 'domains', 'subscriptions', 'contribution']);
+  await domains.click();
+  const grid = page.getByRole('region', { name: 'Домены отчётов' });
+  const card = grid.getByRole('button', { name: 'Гостеприимство 5 отчётов' });
+  await expect(grid.getByRole('article')).toHaveCount(6);
+  await expect(page.getByRole('group', { name: 'Вид представления' })).toHaveCount(0);
+  await expect(card).toBeVisible();
+  await page.screenshot({ path: info.outputPath('home-domains.png'), animations: 'disabled' });
+
+  await card.click();
+  const breadcrumb = page.getByRole('navigation', { name: 'Хлебные крошки' });
+  const table = page.getByRole('table', { name: 'Список отчётов' });
+  await expect(domains).toHaveAttribute('aria-selected', 'true');
+  await expect(breadcrumb.getByText('Гостеприимство')).toBeVisible();
+  await expect(table.locator('[data-table-report-id]')).toHaveCount(5);
+  await expect(table.getByRole('button', { name: 'Гостеприимство' })).toHaveCount(0);
+  const tableIds = await table.locator('[data-table-report-id]').evaluateAll(rows => rows.map(row => row.getAttribute('data-table-report-id')));
+  await page.screenshot({ path: info.outputPath('home-domain-table.png'), animations: 'disabled' });
+
+  const cardView = page.getByRole('button', { name: 'Карточный вид' });
+  await cardView.click();
+  const cards = page.locator('[data-card-report-id]');
+  await expect(cards).toHaveCount(5);
+  expect(await cards.evaluateAll(items => items.map(item => item.getAttribute('data-card-report-id')))).toEqual(tableIds);
+  await page.screenshot({ path: info.outputPath('home-domain-cards.png'), animations: 'disabled' });
+  await page.getByRole('button', { name: 'Открыть отчёт «Сводный отчёт Гостеприимства»' }).click();
+  await expect(page).toHaveURL(/report=demo-report-summary/);
+  await breadcrumb.getByRole('button', { name: 'Гостеприимство', exact: true }).click();
+  await expect(cardView).toHaveAttribute('aria-pressed', 'true');
+  await expect(cards).toHaveCount(5);
+  await breadcrumb.getByRole('button', { name: 'Домены', exact: true }).click();
+  await expect(card).toBeVisible();
+
+  for (const [domainName, reportId, reportTitle] of [
+    ['Строительство', 'demo-report-construction', 'Статус строительных проектов'],
+    ['Управление персоналом', 'demo-report-team-workload', 'Загрузка команды'],
+  ]) {
+    await grid.getByRole('button', { name: `${domainName} 1 отчёт`, exact: true }).click();
+    for (const [view, reportAttribute] of [['Табличный вид', 'data-table-report-id'], ['Карточный вид', 'data-card-report-id']]) {
+      await page.getByRole('button', { name: view, exact: true }).click();
+      const report = page.locator(`[${reportAttribute}="${reportId}"]`);
+      await expect(page.locator(`[${reportAttribute}]`)).toHaveCount(1);
+      await report.getByRole('button', { name: `Открыть отчёт «${reportTitle}»`, exact: true }).click();
+      await expect(page).toHaveURL(new RegExp(`[?&]report=${reportId}(?:&|$)`));
+      await breadcrumb.getByRole('button', { name: domainName, exact: true }).click();
+      await expect(report).toBeVisible();
+    }
+    await breadcrumb.getByRole('button', { name: 'Домены', exact: true }).click();
+  }
+});
+
 test('Home news card hover highlights the full card without opening it', async ({ page }) => {
   await page.goto('/preview/navigation?tab=news');
   const card = page.locator('[data-news-id="demo-news-1"]');
@@ -149,6 +207,40 @@ test('Home news shows a tooltip only when a sidebar title exceeds two lines', as
   await titles.nth(twoLineIndex).hover();
   await expect(page.getByRole('tooltip')).toHaveCount(0);
   await expect(titles.nth(twoLineIndex)).not.toHaveAttribute('data-overflow-clipped', 'true');
+});
+
+test('subscription domain headers toggle independently and keep their state across views', async ({ page }) => {
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.emulateMedia({ reducedMotion: 'reduce' });
+  await page.goto('/preview/navigation?segment=subscriptions&paginationDemo=0');
+  const groups = page.locator('[data-subscription-domain]');
+  const first = groups.first();
+  const toggle = first.locator('button[aria-expanded]');
+  const chevron = toggle.locator('[data-group-chevron]');
+  const contentId = await toggle.getAttribute('aria-controls');
+  const content = first.locator(`[id="${contentId}"]`);
+  const badge = toggle.locator('span').nth(1);
+  const count = await badge.innerText();
+  await expect(toggle).toHaveAttribute('aria-expanded', 'true');
+  await expect(chevron).toHaveCSS('transform', 'matrix(-1, 0, 0, -1, 0, 0)');
+  await expect(content.locator('[data-subscription-row-id]').first()).toBeVisible();
+
+  await toggle.click();
+  await expect(toggle).toHaveAttribute('aria-expanded', 'false');
+  await expect(chevron).toHaveCSS('transform', 'none');
+  await expect(badge).toHaveText(count);
+  await expect(badge).toHaveCSS('background-color', 'rgb(0, 123, 252)');
+  await expect(content).toHaveAttribute('inert', '');
+  await expect(content).toBeHidden();
+  await expect(groups.nth(1).locator('[data-subscription-row-id]').first()).toBeVisible();
+
+  await page.getByRole('button', { name: 'Карточный вид', exact: true }).click();
+  await expect(content).toBeHidden();
+  await expect(groups.nth(1).locator('[data-subscription-id]').first()).toBeVisible();
+  await toggle.press('Enter');
+  await expect(toggle).toBeFocused();
+  await expect(toggle).toHaveAttribute('aria-expanded', 'true');
+  await expect(content.locator('[data-subscription-id]').first()).toBeVisible();
 });
 
 test('subscriptions and contribution switch the same objects and route distinct report links', async ({ page }, testInfo)=>{

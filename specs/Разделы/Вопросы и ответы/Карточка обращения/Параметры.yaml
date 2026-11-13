@@ -7,7 +7,7 @@ component:
 sources:
   css:
     kind: document
-    uri: "references/implementation/features/questions/QuestionsWorkspace.module.css"
+    uri: "references/implementation-current/features/questions/QuestionsWorkspace.module.css"
     status: observed-snapshot
     snapshot: 8 ноября 2026
   status-tag-css:

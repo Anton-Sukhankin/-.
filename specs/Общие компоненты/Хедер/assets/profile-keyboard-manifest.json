@@ -1,0 +1,35 @@
+{
+  "date": "2026-11-12",
+  "browser": "157.0.8103.51",
+  "deviceScaleFactor": 1,
+  "reducedMotion": "reduce",
+  "frames": [
+    {
+      "file": "profile-keyboard-frame.png",
+      "route": "/preview/navigation?section=reports",
+      "state": "Открыть меню профиля клавишей Enter и нажать ↓. Рамка выделенной строки, правый край кнопки и зазор меню.",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "dd21edaf28ab87a96345727d6be7e2bf563f13b75aa4d7c90fd37cde93ec7906"
+    },
+    {
+      "file": "profile-keyboard-crop.png",
+      "route": "/preview/navigation?section=reports",
+      "state": "Открыть меню профиля клавишей Enter и нажать ↓. Рамка выделенной строки, правый край кнопки и зазор меню.",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "clip": {
+        "x": 1248,
+        "y": 0,
+        "width": 184,
+        "height": 190
+      },
+      "parent": "profile-keyboard-frame.png",
+      "sha256": "39e55ad58f7b1d201e28c50e542b3382e8570409688a8f4af3da137f8b720063"
+    }
+  ]
+}

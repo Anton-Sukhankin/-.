@@ -38,7 +38,7 @@ function revealInTable(target: Element, mask: Element, viewport: HTMLDivElement)
   else if (bounds.left < visible.left + 8) viewport.scrollLeft -= visible.left - bounds.left + 8;
 }
 
-export function ReportTable({ rows, total, pageIndex, pageSize, onPageChange, onOpen, onEdit, onColumnIntent, activeColumn, appliedColumns = [], onClearColumn, onClearSort, onHeaderLayoutChange, viewportOffset = 120, paginationLabel, sort, searchLandingKey }: {
+export function ReportTable({ rows, total, pageIndex, pageSize, onPageChange, onOpen, onEdit, onColumnIntent, activeColumn, appliedColumns = [], onClearColumn, onClearSort, onHeaderLayoutChange, viewportOffset = 120, paginationLabel, sort, searchLandingKey, groupByDomain = true }: {
   rows: ReportTableRow[]; total: number; pageIndex: number; pageSize: number;
   onPageChange: (page: number) => void;
   onOpen: (report: ReportSummary) => void;
@@ -53,6 +53,7 @@ export function ReportTable({ rows, total, pageIndex, pageSize, onPageChange, on
   paginationLabel?: string;
   sort?: { columnLabel: string; direction: 'asc' | 'desc' };
   searchLandingKey?: string;
+  groupByDomain?: boolean;
 }) {
   const scroll = useRef<HTMLDivElement>(null);
   const groupId = useId();
@@ -96,9 +97,10 @@ export function ReportTable({ rows, total, pageIndex, pageSize, onPageChange, on
   const table = useTable({ features, columns, data: rows, getRowId: (row) => row.id });
   const groups = new Map<string, ReportTableRow[]>();
   for (const row of table.getRowModel().rows) {
-    const current = groups.get(row.original.domain);
+    const domain = groupByDomain ? row.original.domain : '';
+    const current = groups.get(domain);
     if (current) current.push(row.original);
-    else groups.set(row.original.domain, [row.original]);
+    else groups.set(domain, [row.original]);
   }
   const pageCount = Math.max(1, Math.ceil(total / pageSize));
   const visibleRowCount = Array.from(groups).reduce((count, [domain, items]) => count + (collapsedDomains.has(domain) ? 0 : items.length), 0);
@@ -132,7 +134,7 @@ export function ReportTable({ rows, total, pageIndex, pageSize, onPageChange, on
   }
   return (
     <section className={styles.surface} data-list-scroll-boundary style={{ height: `calc(100vh - ${viewportOffset}px)` }} aria-label="Таблица отчётов" data-table-scrolled={offset > 0} data-pagination-visible={showPagination}>
-      <div role="table" aria-label="Список отчётов" aria-colcount={8} aria-rowcount={visibleRowCount + groups.size + 1} className={styles.table} style={tableStyle}>
+      <div role="table" aria-label="Список отчётов" aria-colcount={8} aria-rowcount={visibleRowCount + (groupByDomain ? groups.size : 0) + 1} className={styles.table} style={tableStyle}>
         <div role="rowgroup" className={styles.header}>
           <div role="row" className={styles.headerRow}>
             <div className={styles.fixedReport}>{heading('Отчёт', true)}</div>
@@ -153,13 +155,13 @@ export function ReportTable({ rows, total, pageIndex, pageSize, onPageChange, on
                   const collapsed = collapsedDomains.has(domain);
                   const contentId = `${groupId}-${encodeURIComponent(domain)}`;
                   return <div role="rowgroup" className={styles.group} key={domain} data-collapsed={collapsed}>
-                    <div role="row"><div role="cell" aria-colspan={8}>
+                    {groupByDomain && <div role="row"><div role="cell" aria-colspan={8}>
                       <button type="button" className={styles.groupHeading} aria-expanded={!collapsed} aria-controls={contentId} onClick={() => toggleDomain(domain)}>
                         <img src="/icons/reports/domain-group.svg" width="16" height="16" alt="" aria-hidden="true" />
                         <span>{domain}</span><span className={styles.count}>{items.length}</span>
                         <span className={motion.groupChevron} data-group-chevron aria-hidden="true" />
                       </button>
-                    </div></div>
+                    </div></div>}
                     <div id={contentId} className={`${motion.reveal} ${styles.groupReveal}`} data-open={!collapsed}
                       data-search-target={domain === searchDomain} inert={collapsed}>
                       <div className={`${motion.clip} ${styles.groupRows}`}>
