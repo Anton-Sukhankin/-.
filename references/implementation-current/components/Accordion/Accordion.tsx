@@ -39,19 +39,21 @@ export function Accordion({ title, description, metadata, inlineMetadata, count,
     onOpenChange?.(!open);
   }
   const heading = <span className={s.heading}><strong>{title}</strong>{description && <small><DescriptionText text={description} /></small>}{metadata && <span className={s.metadata}>{metadata}</span>}</span>;
-  const trailing = <>{icon && <span className={s.icon} aria-hidden="true">{icon}</span>}{!action && count !== undefined && <span className={typeof count === 'number' ? s.count : s.muted}>{count}</span>}</>;
+  const badge = count !== undefined && <span className={typeof count === 'number' ? s.count : s.muted}>{count}</span>;
+  const indicator = icon && <span className={s.icon} aria-hidden="true">{icon}</span>;
+  const trailing = <>{badge}{indicator}</>;
   return <section className={s.accordion} data-variant={variant} data-chevron-size={chevronSize} data-collapsible={collapsible}
     data-wrap-action={wrapAction && action ? true : undefined}>
     <div className={s.top}>
       {leadingAction && <div className={s.leadingAction}>{leadingAction}</div>}
       {collapsible ? <button type="button" className={s.header} aria-expanded={open} aria-controls={id} onClick={toggle}>
         <span className={s.chevron} aria-hidden="true"><span className={s.chevronIcon} data-open={open}>{chevronIcon ?? <span className={s.dsChevron} />}</span></span>
-        {heading}{inlineMetadata}{trailing}
+        {heading}{inlineMetadata}{!action && trailing}
       </button> : <div className={`${s.header} ${s.staticHeader}`}>
-        {leadingIcon && <span className={s.staticIcon} aria-hidden="true">{leadingIcon}</span>}{heading}{inlineMetadata}{trailing}
+        {leadingIcon && <span className={s.staticIcon} aria-hidden="true">{leadingIcon}</span>}{heading}{inlineMetadata}{!action && trailing}
       </div>}
       {action && <div className={s.action}>{action}</div>}
-      {action && count !== undefined && <span className={s.trailingCount}><span className={typeof count === 'number' ? s.count : s.muted}>{count}</span></span>}
+      {action && (count !== undefined || icon) && <span className={s.trailingIndicators}>{trailing}</span>}
     </div>
     {collapsible ? <div className={s.reveal} data-open={open} aria-hidden={!open} inert={!open}>
       <div className={s.clip}>

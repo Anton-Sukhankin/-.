@@ -12,7 +12,7 @@ test('the whole solution card opens its details and footer controls act independ
   await card.getByText('ИИ-утилита', { exact: true }).hover();
   await expect(card.getByRole('heading').getByRole('button')).toHaveCSS('color', 'rgb(0, 103, 220)');
   await bookmark.click();
-  await expect(bookmark).toHaveAttribute('aria-pressed', 'true');
+  await expect(bookmark).toHaveAttribute('aria-pressed', 'false');
   await expect(detail).toHaveCount(0);
   await card.getByRole('button', { name: /^Действия/ }).click();
   await page.getByRole('menuitem', { name: 'Открыть инструмент' }).click();
@@ -144,7 +144,7 @@ test('AI Hub details share filters and bookmarks and restore the catalog entry',
   await expect(open).toBeFocused();
   await expect(catalog.getByRole('searchbox')).toHaveValue('');
   await expect(catalog.getByRole('button',{name:'Есть UI',exact:true})).toHaveAttribute('aria-pressed','true');
-  await expect(catalog.locator('[data-ai-solution="failik"]').getByRole('button',{name:/^Закладка/})).toHaveAttribute('aria-pressed','true');
+  await expect(catalog.locator('[data-ai-solution="failik"]').getByRole('button',{name:/^Закладка/})).toHaveAttribute('aria-pressed','false');
   await page.goForward();
   await expect(detail).toHaveAttribute('data-ai-detail','komblok');
   await page.goBack();
@@ -293,6 +293,7 @@ test('AI Hub filters intersect, can be cleared, and preserve local catalog state
   await expect(cards).toHaveCount(2);
   const savedId = await cards.first().getAttribute('data-ai-solution');
   const favorite = cards.first().getByRole('button',{name:/^Закладка/});
+  if (await favorite.getAttribute('aria-pressed') === 'true') await favorite.click();
   await favorite.focus();
   await expect(favorite).toBeFocused();
   await favorite.press('Space');
@@ -408,7 +409,7 @@ test('AI Hub switches views without losing filters, bookmarks, or the return tar
   await expect(tableView).toHaveAttribute('aria-pressed', 'true');
   await expect(table.locator('tbody tr')).toHaveCount(filtered.length);
   expect(await table.locator('tbody tr').evaluateAll(nodes => nodes.map(node => node.getAttribute('data-ai-solution')))).toEqual(filtered);
-  await expect(bookmark).toHaveAttribute('aria-pressed', 'true');
+  await expect(bookmark).toHaveAttribute('aria-pressed', 'false');
 
   const title = solution.getByRole('button', { name:'fAIлик (Файловый ассистент)', exact:true });
   await title.click();

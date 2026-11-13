@@ -274,13 +274,13 @@ test('known synchronization appears once under Сведения and follows the 
   await expect(passportDescription).toHaveText('Домен, мастер-система и ответственные за источник');
 });
 
-test('source actions have honest boundaries and the unselected bookmark is an enabled local toggle',async({page})=>{
+test('source actions have honest boundaries and the bookmark is an enabled session toggle',async({page})=>{
   await page.goto(detail);
   const bookmark=page.getByRole('button',{name:'Закладка источника',exact:true});
-  await expect(bookmark).toHaveAttribute('aria-pressed','false');
+  await expect(bookmark).toHaveAttribute('aria-pressed','true');
   await expect(bookmark).toBeEnabled();
+  await bookmark.click();await expect(bookmark).toHaveAttribute('aria-pressed','false');
   await expect(bookmark).toHaveCSS('background-color','rgb(255, 255, 255)');
-  await bookmark.click();await expect(bookmark).toHaveAttribute('aria-pressed','true');
   await page.getByRole('button',{name:'Скачать метаданные',exact:true}).click();
   await expect(page.getByRole('status')).toContainText('Файл не создан');
   await page.getByRole('button',{name:'Получить доступ',exact:true}).click();
@@ -288,7 +288,7 @@ test('source actions have honest boundaries and the unselected bookmark is an en
   await page.getByRole('tab',{name:'MCP-инструменты 0',exact:true}).click();
   await expect(page.getByRole('status')).toContainText('Содержимое этой вкладки не предоставлено');
   await expect(page.getByRole('tab',{name:'Описание полей 8',exact:true})).toHaveAttribute('aria-selected','true');
-  await page.reload();await expect(bookmark).toHaveAttribute('aria-pressed','false');
+  await page.reload();await expect(bookmark).toHaveAttribute('aria-pressed','true');
 });
 
 test('source Lineage opens a framed canvas with grid, complete legend and fullscreen controls', async ({page}) => {

@@ -1,0 +1,67 @@
+{
+  "date": "2026-11-13",
+  "browser": "Chromium",
+  "deviceScaleFactor": 1,
+  "frames": [
+    {
+      "file": "saved-sources.png",
+      "route": "/preview/navigation?section=home&tab=sources",
+      "state": "Один сохранённый источник. Счётчик 1.",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "aabb49617d50b9a76cfd469a9f85b748833fc835151c3d957ca2b23a70cb08ac"
+    },
+    {
+      "file": "saved-sources-empty.png",
+      "route": "/preview/navigation?section=home&tab=sources&homeCase=empty-sources",
+      "state": "Пустая подборка после снятия закладки. Кнопка «К источникам».",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "b64a53ce8a97d316091afa8ddb238935dee73652568870aef4cf61ea866316f9"
+    },
+    {
+      "file": "saved-ai.png",
+      "route": "/preview/navigation?section=home&tab=ai-hub",
+      "state": "Два сохранённых решения. Счётчик 2.",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "ed549753910bf3ac25e01c50a00829d5e4f84db7ddc08c1739e987cff9a09014"
+    },
+    {
+      "file": "saved-ai-empty.png",
+      "route": "/preview/navigation?section=home&tab=ai-hub&homeCase=empty-ai-hub",
+      "state": "Пустая подборка после снятия обеих закладок. Кнопка «В AI Hub».",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "8d6316a99dd4d02d91afcaa50ff71485d51e9d6674bdbf3c58229bf6d9ceefbf"
+    },
+    {
+      "file": "saved-ai-wide.png",
+      "route": "/preview/navigation?section=home&tab=ai-hub&homeCase=paginated",
+      "state": "Первая страница из двух после добавления трёх закладок в AI Hub.",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "sha256": "7630fedab848975b1997600180549d1fd28bd9d9bc0586ffeb0d6d4fb51a2829"
+    },
+    {
+      "file": "saved-sources-compact.png",
+      "route": "/preview/navigation?section=home&tab=sources&homeCase=paginated",
+      "state": "Карточка источника на ширине 900 px.",
+      "viewport": {
+        "width": 900,
+        "height": 760
+      },
+      "sha256": "4f82b3da9b6541447bff0b8ab38f47e84d197784821f2d7b16aa57ba734fd150"
+    }
+  ]
+}

@@ -1,5 +1,5 @@
 {
-  "release": "frontend-2026-11-13",
+  "release": "frontend-2026-11-13-sync",
   "sections": [
     "Главная",
     "Отчёты",
@@ -24,8 +24,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 4354,
-      "sha256": "eb4dad45b77e27a12cf5d3bd6298659b2403ab4db4878e1560e735bd93f02334"
+      "bytes": 2536,
+      "sha256": "b93c1027386ebde591bbeb0ca7d5cc6eb95d25662b270cf6fc65c5abdc3cf1cb"
     },
     {
       "path": "assets/icons/reports/domain-group.svg",
@@ -46,6 +46,11 @@
       "path": "assets/icons/sidebar/reports.svg",
       "bytes": 594,
       "sha256": "501a7cfcf9ed1fde201809e4e955a1ed27b90d57d263789127f4bdd4f71d8e20"
+    },
+    {
+      "path": "assets/images/accordion/chevron.svg",
+      "bytes": 684,
+      "sha256": "35ae5801bfd988a27f8c63ecd694764e3b2ed0a7a388b7d69dbe59f0435d8d4b"
     },
     {
       "path": "assets/images/column-filter/checkbox-checked.svg",
@@ -474,13 +479,13 @@
     },
     {
       "path": "references/implementation-current/components/Accordion/Accordion.module.css",
-      "bytes": 5297,
-      "sha256": "467f33130bb230f135ea88256b00c1b0a9a8830821271c20623c0ac03790bc71"
+      "bytes": 5342,
+      "sha256": "901f414d687f9d539892209e18b53ad885491688ddbf66efd0efaac70223b992"
     },
     {
       "path": "references/implementation-current/components/Accordion/Accordion.tsx",
-      "bytes": 3716,
-      "sha256": "0b3f65dd8e209bed1f25a29f62eadca808a199ed629111388ad772ce28bd3b3a"
+      "bytes": 3728,
+      "sha256": "82376b86a892665801938da5b5ae337d6ee0241d23627020e0144a2da8b98408"
     },
     {
       "path": "references/implementation-current/components/DetailHeader/DetailHeader.module.css",
@@ -579,8 +584,8 @@
     },
     {
       "path": "references/implementation-current/components/Sidebar/Sidebar.module.css",
-      "bytes": 4090,
-      "sha256": "ad03b9c8c6b387773fc8c9213847bb4079f4fe38d2d6f65b7eee5f5db2c5f821"
+      "bytes": 4112,
+      "sha256": "c51cb47c5f0ab2d1fcd669e2a36e81d2ea77db5890667a5395307fafeb75925b"
     },
     {
       "path": "references/implementation-current/components/SingleSelect/SingleSelect.tsx",
@@ -774,8 +779,8 @@
     },
     {
       "path": "references/implementation/app/NavigationPreview.tsx",
-      "bytes": 62013,
-      "sha256": "cc33b86862fd67c231c4a4a2cdb53cdd652195a738058938dc4b267a99c7b517"
+      "bytes": 64941,
+      "sha256": "bb4f3ae85b75a86c7fa87b55cfca9981c5b2107eb809dde65f6c7568be4005ec"
     },
     {
       "path": "references/implementation/app/useReportFilterPanel.ts",
@@ -1173,6 +1178,11 @@
       "sha256": "20120d475e3e5635c6bc48abfde2e24513a77c73dd9aa6644ea6b36879457252"
     },
     {
+      "path": "references/verification/sidebar-boundary-hover/sidebar-hover.png",
+      "bytes": 134358,
+      "sha256": "37a439466261bb777d1a64c92520d4b3f79c9d48defc59db46245118b5c43a06"
+    },
+    {
       "path": "references/verification/status-single-2026-11-04/catalog-status-hover.png",
       "bytes": 30820,
       "sha256": "6f972eaf7fd7ad05a4c6b5f3bc1a293aff0cb1dc58e59769ed4d5a3b8be1020a"
@@ -1183,14 +1193,19 @@
       "sha256": "1cd584edcde905e3c26733cc2f6b1cf8da87a96dee812ff49729c8f42f38ad0f"
     },
     {
+      "path": "references/verification/tests/accordion-motion.spec.ts",
+      "bytes": 3091,
+      "sha256": "229bf8fe2b4a05165b47dc473ac4328b0885dfe01b41c8a156b7135edc09b426"
+    },
+    {
       "path": "references/verification/tests/ai-assistant.spec.ts",
-      "bytes": 32142,
-      "sha256": "35132b89191b107bc49791f382ca2f145d2ec9f56933fec55b2cd888ed51a082"
+      "bytes": 44398,
+      "sha256": "d3ab5874d3db1e0f2c0672c3c19e924b185319420d75ebdbdcd2f31e02999043"
     },
     {
       "path": "references/verification/tests/ai-hub.spec.ts",
-      "bytes": 37469,
-      "sha256": "0a75dd407c2f4c0ae78efadf62fda166b0df5b4a7ad4755f95c65ae44b1f4fff"
+      "bytes": 37558,
+      "sha256": "286a69eb2a0b8ed79a1bdc46706f6329e09a54e2878ff5fa910b248356cf388d"
     },
     {
       "path": "references/verification/tests/ask-question.spec.ts",
@@ -1219,8 +1234,8 @@
     },
     {
       "path": "references/verification/tests/home-sections.spec.ts",
-      "bytes": 24253,
-      "sha256": "077195271dbae2ca24ef77130683c2aa86a63bd948a066482e97c89cd25b00a8"
+      "bytes": 31859,
+      "sha256": "499c756b4173ca1be09b2345a47a4674431ea8b37c07dcf895872086f0a80ebc"
     },
     {
       "path": "references/verification/tests/list-scroll-indicator.spec.ts",
@@ -1244,8 +1259,8 @@
     },
     {
       "path": "references/verification/tests/navigation.spec.ts",
-      "bytes": 26689,
-      "sha256": "2e3ae708de56db4f2f0cc9018fa29340c68e1cdc7d00241d63f6510658587604"
+      "bytes": 28538,
+      "sha256": "42101789a2b7ce4481d2bbcfa6a740cc58598a7ed73edfa919df7e259ac73f06"
     },
     {
       "path": "references/verification/tests/pagination.spec.ts",
@@ -1259,8 +1274,8 @@
     },
     {
       "path": "references/verification/tests/report-detail.spec.ts",
-      "bytes": 25206,
-      "sha256": "199bf416216d6fdd9bb33bd41edfc497f278abb3d3437b072fa2583a8353b0bb"
+      "bytes": 26124,
+      "sha256": "88308a3af2d38af4afbe23b158039530e0803bb7e72c28ccd6019cb1bb709b09"
     },
     {
       "path": "references/verification/tests/report-domain-groups.spec.ts",
@@ -1299,8 +1314,8 @@
     },
     {
       "path": "references/verification/tests/source-detail.spec.ts",
-      "bytes": 43020,
-      "sha256": "b8296f9b95f2f2f7328d6bf1762ebacf925d6b7122a2ae5a32d6821dec9f5d90"
+      "bytes": 43010,
+      "sha256": "707ff7ed2114dbb3c3f752eb7227d4b0f532482307a5cea45b2e5c28e47a4eb0"
     },
     {
       "path": "references/verification/tests/source-metrics.spec.ts",
@@ -1314,8 +1329,8 @@
     },
     {
       "path": "references/verification/tests/sources-tree.spec.ts",
-      "bytes": 11423,
-      "sha256": "0794ee5b26ae142cf13b33f7a0227a3ffa59ad7f876a303e908656278fc68f70"
+      "bytes": 11549,
+      "sha256": "94b7c31005020396964e7fd86aa83632ad847417bbdd5c020ef90b114255bbb7"
     },
     {
       "path": "references/verification/tests/system-references.spec.ts",
@@ -1399,58 +1414,68 @@
     },
     {
       "path": "specs/Обзор.md",
-      "bytes": 19705,
-      "sha256": "b8bd0be12a8362704696b80dc246e23d5380fbd69443477536aa1b1ee5d461ae"
+      "bytes": 19672,
+      "sha256": "670e22e80113232f8ea748ef8872bbdd510f8957c32ce5b2f5652707b570310c"
     },
     {
       "path": "specs/Общие компоненты/AI-ассистент/assets/01-launcher.png",
-      "bytes": 152523,
-      "sha256": "5d6294276e3f2113d9bfa1b5e6908443cb487ea28f164e13b2584c1eb6493e3e"
+      "bytes": 151575,
+      "sha256": "eaa5c8b767f40bfc325e94712fcd306d0f684bf8f32f35172ad69bc63cc0afe9"
     },
     {
       "path": "specs/Общие компоненты/AI-ассистент/assets/02-empty.png",
-      "bytes": 114098,
-      "sha256": "f429722774a0e7c705f76ba748a50cc85e6de4293a4e7a7202f455ebf827ed75"
+      "bytes": 111479,
+      "sha256": "89c4198ef00b1e052c894337f6a417614afddc1534360737f25decb19cba3c4e"
     },
     {
       "path": "specs/Общие компоненты/AI-ассистент/assets/03-dialogue.png",
-      "bytes": 123576,
-      "sha256": "032bd7ba37c91e573bfe009d6da0c427b2d0fed9114976a31197da198b675499"
+      "bytes": 122555,
+      "sha256": "38566e68daf4374f0cbd09d6bad995a0db8c3a3f1bf0eaecd2f3530354ba3c61"
     },
     {
       "path": "specs/Общие компоненты/AI-ассистент/assets/04-modes.png",
-      "bytes": 124575,
-      "sha256": "70314d856c00d59f78a7ea7307cbf7fa43b01088eaac91f8f63283bba14cbc6f"
+      "bytes": 121224,
+      "sha256": "f157879f8da39f0d7d351bc5ee7b4ad407b156945bc79c37ad19327e0ebd6874"
     },
     {
       "path": "specs/Общие компоненты/AI-ассистент/assets/05-delete.png",
-      "bytes": 137605,
-      "sha256": "e08af2a90da0fe94bff0678cfe22beeaf5920bda4762dfcc75fe147cbd0fedc7"
+      "bytes": 136578,
+      "sha256": "b2231e1411446bc10f4976be37a71529ecc123fbaaf6b0756e402ec675465cf6"
     },
     {
       "path": "specs/Общие компоненты/AI-ассистент/assets/06-expanded.png",
-      "bytes": 46343,
-      "sha256": "06abf77b04f8e0d86fad1a3d96422cfc31c65791487b4c68f9833f36b8e99993"
+      "bytes": 44913,
+      "sha256": "bfd5e6330d614bb2cc19d7b487111dde580f5a003ba1e6d30f5b46d183f50872"
     },
     {
       "path": "specs/Общие компоненты/AI-ассистент/assets/07-compact.png",
-      "bytes": 48931,
-      "sha256": "df9c76454915d224cb3063a23c559cc275dc1ff81a34fbcab80f958b2057a817"
+      "bytes": 47123,
+      "sha256": "f597209dae959c8b13381ba3802202131e1b1156220ad32c95f8048fe84755ad"
+    },
+    {
+      "path": "specs/Общие компоненты/AI-ассистент/assets/assistant-first-chat.png",
+      "bytes": 115352,
+      "sha256": "ab08df2e471afca32a4b1f9d06e16eab83af24f3ed503698c07fb1597f974f33"
+    },
+    {
+      "path": "specs/Общие компоненты/AI-ассистент/assets/assistant-header-crop.png",
+      "bytes": 11589,
+      "sha256": "75dab934be31f33604a07bfad66dfe57ebb059c7f781a8ba57e20060d7673106"
+    },
+    {
+      "path": "specs/Общие компоненты/AI-ассистент/assets/assistant-header-manifest.json",
+      "bytes": 733,
+      "sha256": "d6e63c087aa0d4bb58afeb05a9cf99c6318df2b9c68ea6411b760606d37efb3c"
     },
     {
       "path": "specs/Общие компоненты/AI-ассистент/assets/assistant-modes-crop.png",
-      "bytes": 12317,
-      "sha256": "be9eba1f7be18318a746c521d82c9e457d155eeaed4df0c801d88576c87888d3"
-    },
-    {
-      "path": "specs/Общие компоненты/AI-ассистент/assets/assistant-modes-frame.png",
-      "bytes": 126195,
-      "sha256": "de6ee4b3253295ebaf951a91578fd510ece43c760ac364d353ca3a5ab3db52fe"
+      "bytes": 12479,
+      "sha256": "60c5b3de0c01bb038bb2a8ace3c2cda2b2a889d75b94c77ecc8e5d3f1ee5be85"
     },
     {
       "path": "specs/Общие компоненты/AI-ассистент/assets/assistant-modes-manifest.json",
-      "bytes": 1261,
-      "sha256": "3c6c4401b355a3cc5927f71ad019549639dac7b18d47883a801abfd199be2ae0"
+      "bytes": 1032,
+      "sha256": "f9520ed932dfb2c3e89d82af2fceba0d3387e47fa5c08a79388bce8ece6ff3a0"
     },
     {
       "path": "specs/Общие компоненты/AI-ассистент/assets/assistant-thinking.png",
@@ -1459,38 +1484,53 @@
     },
     {
       "path": "specs/Общие компоненты/AI-ассистент/assets/collapsed-chat-history.png",
-      "bytes": 109464,
-      "sha256": "a48686b95740200e5a6f576506fbb8b4c3221580c26f9987ed4c79ca84a3ef04"
+      "bytes": 107802,
+      "sha256": "7de57ecdee163cccf0503d3aa962940d4e12450e1f460e6434b169baa09ac4c6"
     },
     {
       "path": "specs/Общие компоненты/AI-ассистент/assets/manifest.json",
-      "bytes": 3510,
-      "sha256": "b08712beb17cfd92343aa7fd2c06fbe0dfe6123bc1e85d0c101ba5d66849f140"
+      "bytes": 4440,
+      "sha256": "7d7f74fa44534553a495e00a4a03e9f003db42149f22aa1a0e3b835979e87e51"
     },
     {
       "path": "specs/Общие компоненты/AI-ассистент/assets/navigator-over-assistant.png",
-      "bytes": 141244,
-      "sha256": "5383f40d59fc8fca178750fdeadc640b1bbaf484e5293fe9f9442a642a5a5232"
+      "bytes": 139725,
+      "sha256": "58d0fc4aab76619d527fba570056a09b4aaf696a4b171b4d95621b73083b1c76"
     },
     {
       "path": "specs/Общие компоненты/AI-ассистент/Диалог.md",
-      "bytes": 4142,
-      "sha256": "beac2095516dee3a0643a313e9df1dcc7ad54c27ecd0270a33569ffd344b4349"
+      "bytes": 4105,
+      "sha256": "8b7a794207cb9924f13b0a1069a4bc0e42806b63fa89430250c129c635a379b3"
     },
     {
       "path": "specs/Общие компоненты/AI-ассистент/Контракт.md",
-      "bytes": 6340,
-      "sha256": "9f1411eb814d8190bb7b05a23d37ae168ccf94b82de61a3eaadd964d2900e518"
+      "bytes": 7999,
+      "sha256": "02088fed41b07a61c2f4bad5d49954b0c134400b32266b39f70434275e7b514d"
     },
     {
       "path": "specs/Общие компоненты/AI-ассистент/Список бесед.md",
-      "bytes": 3824,
-      "sha256": "95ae76c2ac487ae07069fb4a7bf9440b50ba130ae8fd0d43119d206e85d18dc5"
+      "bytes": 4548,
+      "sha256": "f320caeeb86dbe8dbdd1033ee309b6b410a30be35893d5112ca0a0f693b23052"
+    },
+    {
+      "path": "specs/Общие компоненты/Аккордеон/assets/current/manifest.json",
+      "bytes": 1454,
+      "sha256": "e8610ce651473371346695242a6877fd6807c4f3e9ebc1eeae87d9559ab0c4d8"
+    },
+    {
+      "path": "specs/Общие компоненты/Аккордеон/assets/current/overview-accordion-1440.png",
+      "bytes": 196684,
+      "sha256": "01052f71504e1a770fa2d15361bbc1224594012a5f44ef06ae331b01b98a4ace"
+    },
+    {
+      "path": "specs/Общие компоненты/Аккордеон/assets/current/overview-accordion-crop.png",
+      "bytes": 73246,
+      "sha256": "6045463b7eac2176b27569faef6c60fe3fe6b41c5d90cbb147d814fa8691316d"
     },
     {
       "path": "specs/Общие компоненты/Аккордеон/Контракт.md",
-      "bytes": 18528,
-      "sha256": "e4311dda7c1f542cbe9ae70688500d0c78e89d9ddcb728b1af721ded6320d9a9"
+      "bytes": 6830,
+      "sha256": "89d2fdb3b3d4c5249a574d7efe8dcedee21e24ea605088dd4ce8ddaadcef616b"
     },
     {
       "path": "specs/Общие компоненты/Базовые элементы/Аватар/Контракт.md",
@@ -1604,8 +1644,8 @@
     },
     {
       "path": "specs/Общие компоненты/Базовые элементы/Пункт навигации/Контракт.md",
-      "bytes": 15426,
-      "sha256": "4064186964e5b52a0768a99f67f4cc77ed7df60471dccf9ab4db0073fdef5202"
+      "bytes": 15343,
+      "sha256": "ce2cbc390fc971e034c952af66b0d75fe888fc1f25c0b6e476722c89631f865d"
     },
     {
       "path": "specs/Общие компоненты/Базовые элементы/Пункт навигации/Параметры.yaml",
@@ -1738,6 +1778,36 @@
       "sha256": "b1b3aee5425e5c8452a36d60d7f84c5fa7b49f3c664f646c29c67f4d037d019e"
     },
     {
+      "path": "specs/Общие компоненты/Боковая навигация/assets/current/manifest.json",
+      "bytes": 2783,
+      "sha256": "560d3302647707a1f98587a81e9f42e41d83a2e4327dc2c7b2c8a1f492725b3a"
+    },
+    {
+      "path": "specs/Общие компоненты/Боковая навигация/assets/current/sidebar-collapsed-crop.png",
+      "bytes": 5831,
+      "sha256": "229da426f5bbb743fb2ac66db19fa82bcbc484b018cfc5c2a578b50de584d5bc"
+    },
+    {
+      "path": "specs/Общие компоненты/Боковая навигация/assets/current/sidebar-collapsed.png",
+      "bytes": 176292,
+      "sha256": "512591ba9319f86893e498fab948e2d49d6779a2e241a2120395b38671ca9109"
+    },
+    {
+      "path": "specs/Общие компоненты/Боковая навигация/assets/current/sidebar-expanded-edge-crop.png",
+      "bytes": 5821,
+      "sha256": "b7d521021ddb4a271984dc94b18653d5b8f9c5f529fbc3ac126c06799831fff3"
+    },
+    {
+      "path": "specs/Общие компоненты/Боковая навигация/assets/current/sidebar-expanded-edge.png",
+      "bytes": 134108,
+      "sha256": "14317fa56237355f76bd91aa9a4b0e30da9bb76ebad00dff2a49d4353797b041"
+    },
+    {
+      "path": "specs/Общие компоненты/Боковая навигация/assets/current/sidebar-item-hover.png",
+      "bytes": 134372,
+      "sha256": "472e3d863144c3dd9d640ffd1b594a1f7733426531587a76eb1b6f6172fa9734"
+    },
+    {
       "path": "specs/Общие компоненты/Боковая навигация/assets/expanded-boundary-hover.png",
       "bytes": 20861,
       "sha256": "0e82031beaceba9a94ee658429da4a7f6589fd8d7ddf2e1877b95323be7823ee"
@@ -1804,8 +1874,8 @@
     },
     {
       "path": "specs/Общие компоненты/Боковая навигация/Контракт.md",
-      "bytes": 8509,
-      "sha256": "f809ff3062421717c77ac37ece10046064fb9b57662ee1ba8e1698c1c912888f"
+      "bytes": 9091,
+      "sha256": "d05c9b7d28fd614e22d2e3a8607203f228a7ae33bb8398312d55886f97f7dec9"
     },
     {
       "path": "specs/Общие компоненты/Индикатор прокрутки/assets/reports-gutter.png",
@@ -2374,8 +2444,8 @@
     },
     {
       "path": "specs/Общие компоненты/Таблица отчётов/Контракт.md",
-      "bytes": 62681,
-      "sha256": "b93954b282467de20312a3022b70f486cefed31302fb75c4eb70f4b90ed0b078"
+      "bytes": 62969,
+      "sha256": "262cf5214ad29087afa8030c6dbac083bc70322f7479d63433541ebc8537200f"
     },
     {
       "path": "specs/Общие компоненты/Таблица отчётов/Строка.md",
@@ -2664,8 +2734,8 @@
     },
     {
       "path": "specs/Разделы/AI Hub/Детальная карточка.md",
-      "bytes": 7941,
-      "sha256": "ef11e809e49e5922d060c536a3f670bbafac42d97b48e46a9d9fafb70c786cae"
+      "bytes": 8099,
+      "sha256": "2cd12f9095df03a48f978ea302c110c284608cce89cf2d0ed3dac1ca0f7b6d0b"
     },
     {
       "path": "specs/Разделы/AI Hub/Изображения/ai-catalog-empty-1440.png",
@@ -2704,8 +2774,8 @@
     },
     {
       "path": "specs/Разделы/AI Hub/Каталог.md",
-      "bytes": 11386,
-      "sha256": "be0c810c12dd42c650efe6cb9c2f369c761b60051bf9a6ba1f1229655b6da789"
+      "bytes": 11516,
+      "sha256": "e1f71d11f1390b5e59dc9e388913cd5ef517584f5155a14054409f8cf7976cd1"
     },
     {
       "path": "specs/Разделы/AI Hub/Контрольные данные.json",
@@ -2893,9 +2963,14 @@
       "sha256": "e50cd7c4a6437f29911c735da018b592c0d4ac0353416ada5589bd75661d8880"
     },
     {
+      "path": "specs/Разделы/Вопросы и ответы/assets/faq-accordion-manifest.json",
+      "bytes": 825,
+      "sha256": "e7e2f7153303fdff15361e232ce2a9143d2263b76797f43026717c0c355a1660"
+    },
+    {
       "path": "specs/Разделы/Вопросы и ответы/assets/faq-closed-1440.png",
-      "bytes": 71778,
-      "sha256": "9ad25d41e6fc6cdad2e5f217ff756ce1a442e9c5c456bd748505f8bef7a729e7"
+      "bytes": 75148,
+      "sha256": "15ff74cb87c74407b9843610d3ff825881713ad8c7982368bfd9d1d14e7de170"
     },
     {
       "path": "specs/Разделы/Вопросы и ответы/assets/faq-empty-1440.png",
@@ -2914,8 +2989,8 @@
     },
     {
       "path": "specs/Разделы/Вопросы и ответы/assets/faq-open-1440.png",
-      "bytes": 85069,
-      "sha256": "55bdbfbc7f6721aade0fe0d3268cceb7eb7a88907264f7e5db6d5d2b6ee21145"
+      "bytes": 88071,
+      "sha256": "7e0551b6f6c3dc7638c37815573b54b02473c0a5a344671d0c2ada281c5823b9"
     },
     {
       "path": "specs/Разделы/Вопросы и ответы/assets/faq-search-open-1440.png",
@@ -2964,8 +3039,8 @@
     },
     {
       "path": "specs/Разделы/Вопросы и ответы/Запись FAQ/Контракт.md",
-      "bytes": 3723,
-      "sha256": "3dc1985142c5ae2f93a358a0d9654bca1bb83b24a1f0d24da060bb88b43e46c3"
+      "bytes": 3572,
+      "sha256": "020baef70156249784fd09f7b5e4d948184f071e14bbe88faf8169917da8a458"
     },
     {
       "path": "specs/Разделы/Вопросы и ответы/Запись FAQ/Параметры.yaml",
@@ -3039,13 +3114,13 @@
     },
     {
       "path": "specs/Разделы/Главная/assets/current/domain-empty-mau.png",
-      "bytes": 70268,
-      "sha256": "72f6705cb7aaa05b64175608f5d404cc82abf69633d2839129b75537e282c18e"
+      "bytes": 69832,
+      "sha256": "bef5a00a782a3e216da7b9b5e7361ce9e00da0e80e4648c00f36e8fc9a2158f0"
     },
     {
       "path": "specs/Разделы/Главная/assets/current/domains-manifest.json",
-      "bytes": 2067,
-      "sha256": "d87c14a1dfbc4573590c515af83b15116cd4088241b656efc5bf4d502b5da4d6"
+      "bytes": 2027,
+      "sha256": "33aa8c740795def882c197cf7f109bdc02df103627e7458e9485aa41139f6880"
     },
     {
       "path": "specs/Разделы/Главная/assets/current/empty-contribution.png",
@@ -3083,24 +3158,29 @@
       "sha256": "b1eb1fb6fcf859899829a5835a4bc12a12804319b7d1cb1e70fa5879358a6768"
     },
     {
+      "path": "specs/Разделы/Главная/assets/current/favorites-manifest.json",
+      "bytes": 2501,
+      "sha256": "d7091a1156b73ac4fb4432d7cf120a09fac79f7f80e257969ed16e6c5776a5b6"
+    },
+    {
       "path": "specs/Разделы/Главная/assets/current/favorites-table.png",
       "bytes": 146988,
       "sha256": "e539a1d70b0ba677e2ca224b12d35c16edeb09b501677d0b0aec4ff1d85f92de"
     },
     {
       "path": "specs/Разделы/Главная/assets/current/home-domain-cards.png",
-      "bytes": 78684,
-      "sha256": "fd0944b2c6b9fcda19b444beb713d9b352d6200e516c588806c9097b67dace54"
+      "bytes": 82789,
+      "sha256": "acb3b7b7f22bf174a1fcbd039214866e40ffb30624e7f30db309d65c5a030c5f"
     },
     {
       "path": "specs/Разделы/Главная/assets/current/home-domain-table.png",
-      "bytes": 128645,
-      "sha256": "f32fb5076a59955b45c1ae802d59cdaf47df86aa2b1a97f1c875faf1a16f4a00"
+      "bytes": 129375,
+      "sha256": "eaa668ca92de6c0dd077058e9dbb03908b9f366eca54f4c84f274ddc4dd30203"
     },
     {
       "path": "specs/Разделы/Главная/assets/current/home-domains.png",
-      "bytes": 68522,
-      "sha256": "e99a00f4aa7940a1c54e97f53a44eccd89c134ae6fe77d1580d98345ea146d27"
+      "bytes": 69258,
+      "sha256": "bbf00cb85e45ca807f7deb1c88d2b778aa0abe86ecb05cec48d6d102b80dfc25"
     },
     {
       "path": "specs/Разделы/Главная/assets/current/manifest.json",
@@ -3136,6 +3216,36 @@
       "path": "specs/Разделы/Главная/assets/current/news-title-overflow.png",
       "bytes": 307612,
       "sha256": "1fd53e0ceb85dc861354aef91eb2924dffd1bc05b79e9c1c5a3efe45bf799685"
+    },
+    {
+      "path": "specs/Разделы/Главная/assets/current/saved-ai-empty.png",
+      "bytes": 63762,
+      "sha256": "8d6316a99dd4d02d91afcaa50ff71485d51e9d6674bdbf3c58229bf6d9ceefbf"
+    },
+    {
+      "path": "specs/Разделы/Главная/assets/current/saved-ai-wide.png",
+      "bytes": 61033,
+      "sha256": "7630fedab848975b1997600180549d1fd28bd9d9bc0586ffeb0d6d4fb51a2829"
+    },
+    {
+      "path": "specs/Разделы/Главная/assets/current/saved-ai.png",
+      "bytes": 50520,
+      "sha256": "ed549753910bf3ac25e01c50a00829d5e4f84db7ddc08c1739e987cff9a09014"
+    },
+    {
+      "path": "specs/Разделы/Главная/assets/current/saved-sources-compact.png",
+      "bytes": 47165,
+      "sha256": "4f82b3da9b6541447bff0b8ab38f47e84d197784821f2d7b16aa57ba734fd150"
+    },
+    {
+      "path": "specs/Разделы/Главная/assets/current/saved-sources-empty.png",
+      "bytes": 65012,
+      "sha256": "b64a53ce8a97d316091afa8ddb238935dee73652568870aef4cf61ea866316f9"
+    },
+    {
+      "path": "specs/Разделы/Главная/assets/current/saved-sources.png",
+      "bytes": 49819,
+      "sha256": "aabb49617d50b9a76cfd469a9f85b748833fc835151c3d957ca2b23a70cb08ac"
     },
     {
       "path": "specs/Разделы/Главная/assets/current/subscriptions-cards.png",
@@ -3444,13 +3554,13 @@
     },
     {
       "path": "specs/Разделы/Главная/Виды.md",
-      "bytes": 38634,
-      "sha256": "e4fb3591d0c19639c8e63e624d8e009e170fa68f894888c06c99f8a9f9c1e557"
+      "bytes": 39631,
+      "sha256": "9c007b41e6c411e5fa5d1f36194e1347fcf8fe4193b048505c098070f206cf04"
     },
     {
       "path": "specs/Разделы/Главная/Домены отчётов.md",
-      "bytes": 6178,
-      "sha256": "4ad852acb9770a3c539e444431399a35c9f44ab71de634cbb3318e27cc5884ce"
+      "bytes": 6495,
+      "sha256": "a6c5d14f105354a00b409728e56b0e382ded296ff9ef7cad9ab6d5361b91df25"
     },
     {
       "path": "specs/Разделы/Главная/Исходные состояния.md",
@@ -3464,8 +3574,8 @@
     },
     {
       "path": "specs/Разделы/Главная/Контракт.md",
-      "bytes": 41067,
-      "sha256": "b2daf5bce51c46784670265d487e428f2f87bff0471abd55a22f0d990f73c12a"
+      "bytes": 40997,
+      "sha256": "ee8c68280e6c5fdeed5470a9f30b40155f9c4a87d366d5a07fa6a2289bf75e42"
     },
     {
       "path": "specs/Разделы/Главная/Новости.md",
@@ -3474,8 +3584,8 @@
     },
     {
       "path": "specs/Разделы/Главная/Состояния.md",
-      "bytes": 22953,
-      "sha256": "97090881b39e23c8810e85c453b2d474d3ce14af10a6ec8864674c9bbcf7dd86"
+      "bytes": 24116,
+      "sha256": "980b94f9791904ae6808bca8afb3e300523762ef7e5d0f3a3adec158858f9697"
     },
     {
       "path": "specs/Разделы/Главная/Таблица вклада.md",
@@ -3824,8 +3934,8 @@
     },
     {
       "path": "specs/Разделы/Источники/Детальная карточка/Контракт.md",
-      "bytes": 45215,
-      "sha256": "82d1a9b39c147ff1b018294c698b8e64d145df6f6b3a3ecf90996a2fadf1ff2c"
+      "bytes": 44795,
+      "sha256": "e8c4b1e05b84ee314696f5ed3dd948f783a09748d7da960a3b2506485b6b0dcc"
     },
     {
       "path": "specs/Разделы/Источники/Детальная карточка/Метрики dimdate.json",
@@ -3854,8 +3964,8 @@
     },
     {
       "path": "specs/Разделы/Источники/Контракт.md",
-      "bytes": 55984,
-      "sha256": "ee89af6577de79bd295f52154b8c0eaca8cf6ab0dc637e2b0cc5a3d679e7e8da"
+      "bytes": 56229,
+      "sha256": "5e97c80c4ad270746b83744805e33ce08deae60cfb3d6832948dcff49508909b"
     },
     {
       "path": "specs/Разделы/Источники/Мастер-системы.md",
@@ -4374,8 +4484,8 @@
     },
     {
       "path": "specs/Разделы/Отчёты/Паспорт/Обзор.md",
-      "bytes": 5064,
-      "sha256": "62211be70552e689b5c3efe42b664a96c161da87d1ace8c46814c387150ad984"
+      "bytes": 5380,
+      "sha256": "46238ad60cd8ce809707db197dd9d377e95b779eb5bd8e7af27cb59dfbdc0d70"
     },
     {
       "path": "specs/Разделы/Отчёты/Паспорт/Рассылки.md",
@@ -4558,11 +4668,6 @@
       "sha256": "2d7f5529fe196e96f530ec5c5ad19245eb2b8640f3dc54885ce74a77f3dd19dc"
     },
     {
-      "path": "specs/Ресурсы/Приёмка готовых экранов.md",
-      "bytes": 6725,
-      "sha256": "7c599da124a691c9402a4a84fa1b7ee58b0a851fb3dfefdcf76b87c3d35ab567"
-    },
-    {
       "path": "specs/Ресурсы/Проверка 10 ноября/ai-cards.png",
       "bytes": 130913,
       "sha256": "5fd72f6ba693741b16967e3a12a9d30134baa938f2b28b971489dad930970e67"
@@ -4654,8 +4759,8 @@
     },
     {
       "path": "specs/Ресурсы/Проверка 12 ноября.md",
-      "bytes": 12490,
-      "sha256": "dea860b1056dd3e6cfd9e769fa5b9e381eea788394face97d769eba2400b4a80"
+      "bytes": 15512,
+      "sha256": "3866c5a7f573c4f2cdef74e77a05910065759ece1564d401d5661a6d46c9d736"
     },
     {
       "path": "specs/Ресурсы/Проверка покрытия/manifest.json",
@@ -4856,11 +4961,6 @@
       "path": "specs/Ресурсы/Сверка визуальных эталонов/source-mcp-notice.png",
       "bytes": 163258,
       "sha256": "3c9da1b56c9aa99dc6611f25616ebb090cd720a3605289145ab5708f78bbddfe"
-    },
-    {
-      "path": "specs/Ресурсы/Сверка визуальных эталонов/Эталоны.md",
-      "bytes": 4309,
-      "sha256": "44ba8a5815e20551c03317f816d33d06b011611bfc47becc56f2560f9e26f8c2"
     },
     {
       "path": "specs/Ресурсы/Срез прототипа/README.md",
@@ -5261,13 +5361,40 @@
   "prototype_reference": {
     "published_commit": "91cfb91b3904ce810bbf9e49b862d4828769fd94",
     "local_variant": {
-      "src/components/Header/Header.tsx": "5eccd78dbe0810e42b51947881011f8f697bfe874cb552cdee4b6ab376b8f3dc",
+      "src/app/NavigationPreview.tsx": "bb4f3ae85b75a86c7fa87b55cfca9981c5b2107eb809dde65f6c7568be4005ec",
+      "src/components/Accordion/Accordion.module.css": "901f414d687f9d539892209e18b53ad885491688ddbf66efd0efaac70223b992",
+      "src/components/Accordion/Accordion.tsx": "82376b86a892665801938da5b5ae337d6ee0241d23627020e0144a2da8b98408",
+      "src/components/CatalogEntityIcon/CatalogEntityIcon.module.css": "bf94378cee129382d026bd50c3138eecc37113b87b53f9030c5066118ac4e7ee",
+      "src/components/CatalogEntityIcon/CatalogEntityIcon.tsx": "ffe582318248521d82d7403394c95d3059505ce6db4fd8039794f4b7a2303736",
       "src/components/Header/Header.module.css": "825f408098716c5203fff3fcc6c1977e8c91a0b184e0de5e77382ba6d601e367",
+      "src/components/Header/Header.tsx": "5eccd78dbe0810e42b51947881011f8f697bfe874cb552cdee4b6ab376b8f3dc",
+      "src/components/ReportCard/ReportCard.module.css": "02c8003755da331d483449c67d63c1d8dbfbce52b407fe27273af9ca5ff2e4d7",
+      "src/components/ReportCard/ReportCard.tsx": "22d04cd4d139efdf9fac78532c9c7e1148076d9672742a78d47f23cfccae792c",
+      "src/components/ReportCard/ReportDomainCards.tsx": "962dea66e3098cb8a0b0a7f6a607304fc02c594348071a92083120f76e23f115",
+      "src/components/Sidebar/Sidebar.module.css": "c51cb47c5f0ab2d1fcd669e2a36e81d2ea77db5890667a5395307fafeb75925b",
+      "src/components/useModalMorph.ts": "52dced19653ac1e68eb1dd5f752eecfd2c3103bc649791f09b5f00addcc99532",
+      "src/demo/homeNavigation.ts": "83cd0ed0c204ea38d2fd7dc74762ace85572f7635e10dc9b3d53410c3050a889",
+      "src/demo/metricDetails.ts": "6b1cd247f26a2ffcbb51709d545ef68e594ce0f7fcae6e61f7239468c6ffbd0c",
+      "src/demo/relatedSourceReports.ts": "fa73d51deb8f3e19bed91897341e72fd2c5ddadede9f6a3e3ce697a94b324a85",
+      "src/demo/technicalReport.ts": "351d835138244f2d2ffba49332b76bb6d071129cdb81ee257230a4c0c9fa8763",
+      "src/features/ai-assistant/AiAssistant.module.css": "a17433a8b304803b17bde2d447958eb93b7f3286cc9d7cc827f0d6013d985365",
+      "src/features/ai-assistant/AiAssistant.tsx": "2f0ea67aeb973ff986f88e050b496867c01acc1d0048b525f56e93892fe3a543",
+      "src/features/ai-assistant/AssistantHistory.tsx": "06682fd74d7aa5ea79c3a2e37ae946518f6b1f94e379a2bc7ae74b2f53ed906d",
+      "src/features/ai-assistant/assistantChats.ts": "284c4cffeb2450adb81082dd8c028cbbd325b664c45147b1eaafe6f253dc266f",
+      "src/features/ai-assistant/useAssistantPanelPlacement.ts": "d154397e95e9ea3f93f9e293968fac61d4acc7462d0b4d70524313cbf19af882",
+      "src/features/ai-hub/AiHubCatalog.tsx": "e0193c334254e6bc3c7b993287008c0e5f3f4f3a4d49b61c512a676c31ade839",
+      "src/features/ai-hub/AiSolutionDetail.tsx": "79ffea02ab2020ccdef4b294ce3b0df3839efb33efe021a8ecb6694f0e8a4cce",
+      "src/features/home-favorites/HomeFavoriteCards.module.css": "c8ac40b50ff2d767ae81d4f3829ed2b97c9cfda03d2c68dbe864b3c831633816",
+      "src/features/home-favorites/HomeFavoriteCards.tsx": "93764ac899968e68dc231cae484524affc4533fa97d6bc22f27bd88b59144c79",
+      "src/features/icon-catalog/README.md": "de7ea5c1c2465fc152358887511a366bd303fb6cd2bfb2374e73be7763be2f40",
       "src/features/questions/AskQuestionDialog.tsx": "e37b263e2db7971de2252128560b669d80ed0cb910eb104d12af1227e5b21b2b",
       "src/features/questions/QuestionSentNotice.module.css": "e3b875effc968a8e245f6bf307c1848ddff0d645633c18dac01d33894dc6e356",
       "src/features/questions/QuestionsWorkspace.module.css": "c4e44ee66372eedc8c271edf67b7375505de306aa75308a9a8bbea657870ab1c",
       "src/features/questions/QuestionsWorkspace.tsx": "82cd4cea7078f6cd6f3f3d30d03317cbfc09e4f1fdba03e76d9924dcb2864981",
-      "src/features/report-detail/overview/OverviewTab.tsx": "59db94c941d84efeb3569a9e29387703c183aa251458dd4b44104e8a7089770e"
+      "src/features/report-detail/overview/OverviewTab.tsx": "59db94c941d84efeb3569a9e29387703c183aa251458dd4b44104e8a7089770e",
+      "src/features/sources/SourcesWorkspace.tsx": "abb4239ab2348a73bc5d6ed9c8999be1057772fcfb3d3b402c123de6240062a4",
+      "src/features/sources/detail/SourceDetail.tsx": "39b3537ce3da2bc34bd1dedfba2ecb83ab78b3eef0f6a7607f1a10b82fae09a7",
+      "src/styles/catalog-motion.css": "5a374bb2c21c504f6c1f2a47bd58c9a5284ba6ce9e814b0d9e41088bdefe23fd"
     }
   }
 }

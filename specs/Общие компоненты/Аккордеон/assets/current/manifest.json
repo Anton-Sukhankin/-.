@@ -1,0 +1,34 @@
+{
+  "date": "2026-11-13",
+  "browser": "Chromium",
+  "deviceScaleFactor": 1,
+  "frames": [
+    {
+      "route": "/preview/navigation?section=reports&report=demo-report-summary",
+      "state": "Обзор сводного отчёта. У аккордеона «Об отчёте» видны прямой разделитель и нижняя граница. Во второй шапке счётчик 8 расположен перед звёздочками AI.",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "file": "overview-accordion-1440.png",
+      "sha256": "01052f71504e1a770fa2d15361bbc1224594012a5f44ef06ae331b01b98a4ace"
+    },
+    {
+      "route": "/preview/navigation?section=reports&report=demo-report-summary",
+      "state": "Обзор сводного отчёта. У аккордеона «Об отчёте» видны прямой разделитель и нижняя граница. Во второй шапке счётчик 8 расположен перед звёздочками AI.",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "file": "overview-accordion-crop.png",
+      "parent": "overview-accordion-1440.png",
+      "clip": {
+        "x": 288,
+        "y": 210,
+        "width": 760,
+        "height": 422
+      },
+      "sha256": "6045463b7eac2176b27569faef6c60fe3fe6b41c5d90cbb147d814fa8691316d"
+    }
+  ]
+}

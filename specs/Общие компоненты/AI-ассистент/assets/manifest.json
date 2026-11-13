@@ -1,77 +1,77 @@
 {
-  "date": "2026-11-12",
+  "date": "2026-11-13",
   "browser": "Chromium",
-  "prototype_commit": "91cfb91b3904ce810bbf9e49b862d4828769fd94",
+  "deviceScaleFactor": 1,
   "frames": [
     {
       "file": "01-launcher.png",
       "route": "/preview/navigation?section=home",
-      "state": "Кнопка вызова на Главной",
+      "state": "Кнопка вызова на «Главной». Панель закрыта.",
       "viewport": {
         "width": 1440,
         "height": 900
       },
-      "sha256": "5d6294276e3f2113d9bfa1b5e6908443cb487ea28f164e13b2584c1eb6493e3e"
+      "sha256": "eaa5c8b767f40bfc325e94712fcd306d0f684bf8f32f35172ad69bc63cc0afe9"
     },
     {
       "file": "02-empty.png",
       "route": "/preview/navigation?section=home",
-      "state": "Пустая боковая панель",
+      "state": "Первое открытие. Список бесед пуст. Заголовок «Чаты» скрыт.",
       "viewport": {
         "width": 1440,
         "height": 900
       },
-      "sha256": "f429722774a0e7c705f76ba748a50cc85e6de4293a4e7a7202f455ebf827ed75"
+      "sha256": "89c4198ef00b1e052c894337f6a417614afddc1534360737f25decb19cba3c4e"
     },
     {
       "file": "03-dialogue.png",
       "route": "/preview/navigation?section=home",
-      "state": "Демонстрационный диалог",
+      "state": "Одна беседа, локальный ответ и незавершённое сообщение.",
       "viewport": {
         "width": 1440,
         "height": 900
       },
-      "sha256": "032bd7ba37c91e573bfe009d6da0c427b2d0fed9114976a31197da198b675499"
+      "sha256": "38566e68daf4374f0cbd09d6bad995a0db8c3a3f1bf0eaecd2f3530354ba3c61"
     },
     {
       "file": "04-modes.png",
       "route": "/preview/navigation?section=reports",
-      "state": "Открыто меню режимов",
+      "state": "Два режима и одна галочка. Меню открыто на 8 px выше кнопки.",
       "viewport": {
         "width": 1440,
         "height": 900
       },
-      "sha256": "70314d856c00d59f78a7ea7307cbf7fa43b01088eaac91f8f63283bba14cbc6f"
+      "sha256": "f157879f8da39f0d7d351bc5ee7b4ad407b156945bc79c37ad19327e0ebd6874"
     },
     {
       "file": "05-delete.png",
       "route": "/preview/navigation?section=reports",
-      "state": "Модальное подтверждение удаления",
+      "state": "Подтверждение удаления переименованной беседы с сообщениями.",
       "viewport": {
         "width": 1440,
         "height": 900
       },
-      "sha256": "e08af2a90da0fe94bff0678cfe22beeaf5920bda4762dfcc75fe147cbd0fedc7"
+      "sha256": "b2231e1411446bc10f4976be37a71529ecc123fbaaf6b0756e402ec675465cf6"
     },
     {
       "file": "06-expanded.png",
       "route": "/preview/navigation?section=reports",
-      "state": "Развёрнутая панель",
+      "state": "Развёрнутая панель с сохранённым черновиком.",
       "viewport": {
         "width": 1440,
         "height": 900
       },
-      "sha256": "06abf77b04f8e0d86fad1a3d96422cfc31c65791487b4c68f9833f36b8e99993"
+      "sha256": "bfd5e6330d614bb2cc19d7b487111dde580f5a003ba1e6d30f5b46d183f50872"
     },
     {
       "file": "07-compact.png",
       "route": "/preview/navigation?section=reports",
-      "state": "Боковая панель в узком окне",
+      "state": "Боковая панель в узком окне. Кнопка закрытия доступна.",
       "viewport": {
         "width": 768,
         "height": 600
       },
-      "sha256": "df9c76454915d224cb3063a23c559cc275dc1ff81a34fbcab80f958b2057a817"
+      "sha256": "f597209dae959c8b13381ba3802202131e1b1156220ad32c95f8048fe84755ad"
     },
     {
       "file": "assistant-thinking.png",
@@ -81,27 +81,39 @@
         "width": 1440,
         "height": 900
       },
-      "sha256": "79eb77ae47b789d80b7be7ea8e9329862261597643f216b1af3de133b9bbe1a4"
+      "sha256": "79eb77ae47b789d80b7be7ea8e9329862261597643f216b1af3de133b9bbe1a4",
+      "prototype_commit": "91cfb91b3904ce810bbf9e49b862d4828769fd94",
+      "date": "2026-11-12"
     },
     {
       "file": "collapsed-chat-history.png",
       "route": "/preview/navigation?section=reports",
-      "state": "Свёрнутый список бесед",
+      "state": "Список бесед шириной 64 px, заголовок заменён разделителем.",
       "viewport": {
         "width": 1440,
         "height": 900
       },
-      "sha256": "a48686b95740200e5a6f576506fbb8b4c3221580c26f9987ed4c79ca84a3ef04"
+      "sha256": "7de57ecdee163cccf0503d3aa962940d4e12450e1f460e6434b169baa09ac4c6"
     },
     {
       "file": "navigator-over-assistant.png",
       "route": "/preview/navigation?section=home",
-      "state": "Запрос «отчёт», выдача поверх панели с черновиком",
+      "state": "Выдача по запросу «отчёт» перекрывает панель с черновиком.",
       "viewport": {
         "width": 1440,
         "height": 900
       },
-      "sha256": "5383f40d59fc8fca178750fdeadc640b1bbaf484e5293fe9f9442a642a5a5232"
+      "sha256": "58d0fc4aab76619d527fba570056a09b4aaf696a4b171b4d95621b73083b1c76"
+    },
+    {
+      "file": "assistant-first-chat.png",
+      "route": "/preview/navigation?section=home",
+      "state": "После «Новая беседа» видны заголовок «Чаты» и первая пустая запись.",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "ab08df2e471afca32a4b1f9d06e16eab83af24f3ed503698c07fb1597f974f33"
     }
   ]
 }

@@ -44,14 +44,14 @@
 .label { white-space: nowrap; overflow:hidden; text-overflow:ellipsis; }
 .count { flex:none; color: #8e919a; line-height: 16px; }
 .sidebar::after { content:''; position:absolute; top:0; right:0; bottom:0; width:1px; background:var(--sidebar-edge-color); pointer-events:none; transition:background-color var(--navigation-hover-duration) ease; }
-.sidebar:is(:hover, [data-resizing='true'], :has(.boundary :focus-visible)) { --sidebar-edge-color:#007aff; --sidebar-toggle-ink:#007aff; }
+.sidebar:is([data-resizing='true'], :has(:is(.resizeHandle, .toggle):is(:hover, :focus-visible))) { --sidebar-edge-color:#007aff; --sidebar-toggle-ink:#007aff; }
 .boundary { position: absolute; z-index: 2; right: -12px; top: 0; width: 24px; height: 100%; }
 .resizeHandle { position:absolute; inset:0; cursor:col-resize; touch-action:none; }
 .resizeHandle:focus-visible { outline:2px solid #007aff; outline-offset:-2px; }
 .sidebar[data-resizing='true'] { transition:none; user-select:none; }
 .toggle {
   position: absolute;
-  top: 32px;
+  top: 35px;
   left: 0;
   display: grid;
   place-items: center;

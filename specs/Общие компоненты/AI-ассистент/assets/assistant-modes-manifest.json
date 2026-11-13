@@ -1,35 +1,34 @@
 {
-  "date": "2026-11-12",
-  "browser": "157.0.8103.51",
+  "date": "2026-11-13",
+  "browser": "Chromium",
   "deviceScaleFactor": 1,
-  "reducedMotion": "reduce",
   "frames": [
     {
-      "file": "assistant-modes-frame.png",
+      "file": "04-modes.png",
       "route": "/preview/navigation?section=reports",
-      "state": "Открыть AI-ассистента и меню «Ассистент». Два варианта, одна галочка, привязка над кнопкой с зазором 8 px.",
+      "state": "Два режима и одна галочка. Меню открыто на 8 px выше кнопки.",
       "viewport": {
         "width": 1440,
         "height": 900
       },
-      "sha256": "de6ee4b3253295ebaf951a91578fd510ece43c760ac364d353ca3a5ab3db52fe"
+      "sha256": "f157879f8da39f0d7d351bc5ee7b4ad407b156945bc79c37ad19327e0ebd6874"
     },
     {
       "file": "assistant-modes-crop.png",
       "route": "/preview/navigation?section=reports",
-      "state": "Открыть AI-ассистента и меню «Ассистент». Два варианта, одна галочка, привязка над кнопкой с зазором 8 px.",
+      "state": "Привязка меню и единственная галочка у текущего режима.",
       "viewport": {
         "width": 1440,
         "height": 900
       },
+      "sha256": "60c5b3de0c01bb038bb2a8ace3c2cda2b2a889d75b94c77ecc8e5d3f1ee5be85",
+      "parent": "04-modes.png",
       "clip": {
         "x": 1098,
         "y": 671,
         "width": 254,
         "height": 182
-      },
-      "parent": "assistant-modes-frame.png",
-      "sha256": "be9eba1f7be18318a746c521d82c9e457d155eeaed4df0c801d88576c87888d3"
+      }
     }
   ]
 }

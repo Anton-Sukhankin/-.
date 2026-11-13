@@ -1,0 +1,71 @@
+{
+  "date": "2026-11-13",
+  "browser": "Chromium",
+  "deviceScaleFactor": 1,
+  "frames": [
+    {
+      "file": "sidebar-item-hover.png",
+      "route": "/preview/navigation?section=ai",
+      "state": "Раскрытая панель, наведение на пункт «Отчёты».",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "472e3d863144c3dd9d640ffd1b594a1f7733426531587a76eb1b6f6172fa9734"
+    },
+    {
+      "file": "sidebar-expanded-edge.png",
+      "route": "/preview/navigation?section=ai",
+      "state": "Раскрытая панель, наведение на правую границу. Кнопка «Свернуть панель» на 35 px ниже верха панели.",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "14317fa56237355f76bd91aa9a4b0e30da9bb76ebad00dff2a49d4353797b041"
+    },
+    {
+      "file": "sidebar-expanded-edge-crop.png",
+      "route": "/preview/navigation?section=ai",
+      "state": "Раскрытая панель, наведение на правую границу. Кнопка «Свернуть панель» на 35 px ниже верха панели.",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "b7d521021ddb4a271984dc94b18653d5b8f9c5f529fbc3ac126c06799831fff3",
+      "parent": "sidebar-expanded-edge.png",
+      "clip": {
+        "x": 242,
+        "y": 48,
+        "width": 148,
+        "height": 125
+      }
+    },
+    {
+      "file": "sidebar-collapsed.png",
+      "route": "/preview/navigation?section=reports",
+      "state": "Свёрнутая панель после нажатия кнопки «Свернуть панель» в разделе «Отчёты». Кнопка «Развернуть панель» на 35 px ниже верха панели.",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "512591ba9319f86893e498fab948e2d49d6779a2e241a2120395b38671ca9109"
+    },
+    {
+      "file": "sidebar-collapsed-crop.png",
+      "route": "/preview/navigation?section=reports",
+      "state": "Свёрнутая панель после нажатия кнопки «Свернуть панель» в разделе «Отчёты». Кнопка «Развернуть панель» на 35 px ниже верха панели.",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "229da426f5bbb743fb2ac66db19fa82bcbc484b018cfc5c2a578b50de584d5bc",
+      "parent": "sidebar-collapsed.png",
+      "clip": {
+        "x": 0,
+        "y": 48,
+        "width": 95,
+        "height": 372
+      }
+    }
+  ]
+}

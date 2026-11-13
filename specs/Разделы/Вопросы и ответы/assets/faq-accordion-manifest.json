@@ -1,0 +1,27 @@
+{
+  "date": "2026-11-13",
+  "browser": "Chromium",
+  "deviceScaleFactor": 1,
+  "frames": [
+    {
+      "file": "faq-closed-1440.png",
+      "route": "/preview/navigation?section=questions",
+      "state": "Первые вопросы свёрнуты.",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "15ff74cb87c74407b9843610d3ff825881713ad8c7982368bfd9d1d14e7de170"
+    },
+    {
+      "file": "faq-open-1440.png",
+      "route": "/preview/navigation?section=questions",
+      "state": "Первый вопрос раскрыт, соседний остаётся свёрнутым.",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "7e0551b6f6c3dc7638c37815573b54b02473c0a5a344671d0c2ada281c5823b9"
+    }
+  ]
+}

@@ -12,6 +12,7 @@ test('tree matches the same multi-attribute result as table and cards and prunes
   await page.goto(catalog + '&' + filters);
   const workspace = page.getByRole('region',{name:'Каталог источников'});
   const picker = workspace.getByRole('group',{name:'Вид представления'});
+  await expect(picker.getByRole('button')).toHaveCount(3);
   expect(await picker.getByRole('button').evaluateAll(buttons=>buttons.map(button=>button.getAttribute('aria-label'))))
     .toEqual(['Табличный вид','Карточный вид','Дерево']);
   const expected = await sourceIds(workspace);
@@ -115,7 +116,7 @@ test('tree preserves disclosures and breadcrumb path around detail navigation, a
     expect(await page.evaluate(()=>document.documentElement.scrollWidth)).toBe(width);
   }
   await bookmark.click();
-  await expect(bookmark).toHaveAttribute('aria-pressed','true');
+  await expect(bookmark).toHaveAttribute('aria-pressed','false');
   await expect(tree).toBeVisible();
   await leaf.focus();
   await leaf.press('Enter');
@@ -124,7 +125,7 @@ test('tree preserves disclosures and breadcrumb path around detail navigation, a
     .getByRole('button',{name:'Источники',exact:true}).click();
   await expect(tree).toBeVisible();
   await expect(sql).toHaveAttribute('aria-expanded','false');
-  await expect(bookmark).toHaveAttribute('aria-pressed','true');
+  await expect(bookmark).toHaveAttribute('aria-pressed','false');
   await expect(current).toHaveText('public');
   await expect(crumbs.getByRole('button').or(crumbs.getByRole('link'))).toHaveCount(0);
   await expect(crumbs.locator('span')).toHaveText(['Источники','PostgreSQL','Amocrm Rerooms','rewedo_crm_production','public']);
@@ -167,6 +168,7 @@ test('Navigator opens an excluded source in detail and returns to the filtered t
   await page.emulateMedia({ reducedMotion:'reduce' });
   await page.goto(treeRoute + '&' + new URLSearchParams({'source.domain':'Гостеприимство'}));
   const tree = page.getByRole('region',{name:'Дерево источников'});
+  await expect(tree.locator('[data-source-id]')).toHaveCount(2);
   const expected = await sourceIds(tree);
   expect(expected).toEqual(['source-demo-feedback','source-demo-requests']);
   await page.getByRole('combobox',{name:'Поиск по каталогу'}).fill('Календарный');

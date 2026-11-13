@@ -1,7 +1,7 @@
 {
-  "date": "2026-11-12",
+  "date": "2026-11-13",
   "browser": "Chromium",
-  "prototype_commit": "91cfb91b3904ce810bbf9e49b862d4828769fd94",
+  "deviceScaleFactor": 1,
   "frames": [
     {
       "file": "home-domains.png",
@@ -11,7 +11,7 @@
         "width": 1440,
         "height": 900
       },
-      "sha256": "e99a00f4aa7940a1c54e97f53a44eccd89c134ae6fe77d1580d98345ea146d27"
+      "sha256": "bbf00cb85e45ca807f7deb1c88d2b778aa0abe86ecb05cec48d6d102b80dfc25"
     },
     {
       "file": "home-domain-table.png",
@@ -21,7 +21,7 @@
         "width": 1440,
         "height": 900
       },
-      "sha256": "f32fb5076a59955b45c1ae802d59cdaf47df86aa2b1a97f1c875faf1a16f4a00"
+      "sha256": "eaa668ca92de6c0dd077058e9dbb03908b9f366eca54f4c84f274ddc4dd30203"
     },
     {
       "file": "home-domain-cards.png",
@@ -31,19 +31,19 @@
         "width": 1440,
         "height": 900
       },
-      "sha256": "fd0944b2c6b9fcda19b444beb713d9b352d6200e516c588806c9097b67dace54"
+      "sha256": "acb3b7b7f22bf174a1fcbd039214866e40ffb30624e7f30db309d65c5a030c5f"
     },
     {
       "file": "domain-empty-mau.png",
       "route": "/preview/navigation?section=home&segment=domains&paginationDemo=0&reportDomain=%D0%93%D0%BE%D1%81%D1%82%D0%B5%D0%BF%D1%80%D0%B8%D0%B8%D0%BC%D1%81%D1%82%D0%B2%D0%BE",
       "state": "Выбранный домен без результатов фильтра",
-      "action": "Открыть домен «Гостеприимство», в заголовке MAU задать нижнюю границу 100000 и применить",
       "viewport": {
         "width": 1440,
         "height": 900
       },
-      "startRoute": "/preview/navigation?section=home&segment=domains&paginationDemo=0",
-      "sha256": "72f6705cb7aaa05b64175608f5d404cc82abf69633d2839129b75537e282c18e"
+      "sha256": "bef5a00a782a3e216da7b9b5e7361ce9e00da0e80e4648c00f36e8fc9a2158f0",
+      "action": "Открыть домен «Гостеприимство», в заголовке MAU задать нижнюю границу 100000 и применить",
+      "startRoute": "/preview/navigation?section=home&segment=domains&paginationDemo=0"
     }
   ]
 }

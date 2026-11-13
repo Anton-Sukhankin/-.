@@ -1,14 +1,118 @@
 import { expect, test } from '@playwright/test';
 
+test('Home saved sources and AI solutions open details and share bookmark state with their catalogs', async ({ page }, info) => {
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.goto('/preview/navigation?section=home&tab=sources');
+  const tabs = page.getByRole('tablist', { name: 'Тип содержимого' });
+  const sourceTab = tabs.locator('[data-control-id="sources"]');
+  const aiTab = tabs.locator('[data-control-id="ai-hub"]');
+  const sidebar = page.getByRole('navigation', { name: 'Разделы каталога' });
+  const sourceList = page.getByRole('region', { name: 'Избранные источники', exact: true });
+  const source = sourceList.getByRole('button', { name: /rewedo_crm_production/ });
+  const sourceBookmark = page.getByRole('button', { name: 'Закладка источника', exact: true });
+  await expect(sourceTab).toHaveAccessibleName('Источники 1');
+  await expect(source).toContainText('PostgreSQL · Без слоя');
+  await page.screenshot({ path: info.outputPath('saved-sources.png'), animations: 'disabled' });
+  const sourceCard = sourceList.locator('[data-home-favorite-id]');
+  const idleBorder = await sourceCard.evaluate(element => getComputedStyle(element).borderTopColor);
+  await source.hover();
+  await expect.poll(() => sourceCard.evaluate(element => getComputedStyle(element).borderTopColor)).not.toBe(idleBorder);
+  await source.press('Enter');
+  await expect(sourceBookmark).toHaveAttribute('aria-pressed', 'true');
+  await page.goBack();
+  await expect(source).toBeFocused();
+  await source.click();
+  await sourceBookmark.click();
+  await page.getByRole('button', { name: 'Избранные источники', exact: true }).click();
+  await expect(sourceTab).toHaveAccessibleName('Источники 0');
+  await expect(sourceList.getByRole('heading')).toHaveText('В избранном пока нет источников');
+  await page.screenshot({ path: info.outputPath('saved-sources-empty.png'), animations: 'disabled' });
+  await sourceList.getByRole('button', { name: 'К источникам' }).click();
+  await page.getByRole('button', { name: 'Дерево', exact: true }).click();
+  const treeBookmark = page.getByRole('button', { name: 'Закладка rewedo_crm_production.public.versions', exact: true });
+  await expect(treeBookmark).toHaveAttribute('aria-pressed', 'false');
+  await treeBookmark.click();
+  await sidebar.getByRole('button', { name: 'Главная', exact: true }).click();
+  await sourceTab.click();
+  await expect(source).toBeVisible();
+
+  await aiTab.click();
+  const aiList = page.getByRole('region', { name: 'Избранные решения AI Hub' });
+  const solution = aiList.getByRole('button', { name: /fAIлик/ });
+  await expect(aiTab).toHaveAccessibleName('AI Hub 2');
+  await expect(solution).toContainText('Продажи и маркетинг');
+  await page.screenshot({ path: info.outputPath('saved-ai.png'), animations: 'disabled' });
+  await solution.click();
+  const detail = page.locator('[data-ai-detail="failik"]');
+  await detail.getByRole('button', { name: /^Закладка/ }).click();
+  await detail.getByRole('button', { name: 'Вернуться к избранным решениям AI Hub' }).click();
+  await expect(aiTab).toHaveAccessibleName('AI Hub 1');
+  await expect(aiList).toBeFocused();
+  await aiList.getByRole('button', { name: /^n8n/ }).click();
+  await page.locator('[data-ai-detail="n8n"]').getByRole('button', { name: /^Закладка/ }).click();
+  await page.getByRole('button', { name: 'Вернуться к избранным решениям AI Hub' }).click();
+  await expect(aiList.getByRole('heading')).toHaveText('В избранном пока нет ИИ-решений');
+  await page.screenshot({ path: info.outputPath('saved-ai-empty.png'), animations: 'disabled' });
+  await aiList.getByRole('button', { name: 'В AI Hub' }).click();
+  await page.getByRole('button', { name: 'Табличный вид' }).click();
+  await page.locator('[data-ai-solution="failik"]').getByRole('button', { name: /^Закладка/ }).click();
+  await sidebar.getByRole('button', { name: 'Главная', exact: true }).click();
+  await aiTab.click();
+  await expect(solution).toBeVisible();
+  await expect(sourceTab).toHaveAccessibleName('Источники 1');
+});
+
+test('Home saved solutions preserve the page on return and clamp it when the last item is removed', async ({ page }, info) => {
+  await page.setViewportSize({ width: 1920, height: 1080 });
+  await page.goto('/preview/navigation?section=ai&homeCase=paginated');
+  for (const id of ['komblok', 's-assist', 'ragu']) {
+    await page.locator(`[data-ai-solution="${id}"]`).getByRole('button', { name: /^Закладка/ }).click();
+  }
+  await page.getByRole('navigation', { name: 'Разделы каталога' }).getByRole('button', { name: 'Главная', exact: true }).click();
+  const tabs = page.getByRole('tablist', { name: 'Тип содержимого' });
+  await tabs.getByRole('tab', { name: 'AI Hub 5', exact: true }).click();
+  const list = page.getByRole('region', { name: 'Избранные решения AI Hub' });
+  const pages = list.getByRole('navigation', { name: 'Страницы избранных ИИ-решений' });
+  await expect(list.locator('[data-home-favorite-id]')).toHaveCount(3);
+  expect((await list.boundingBox())!.y - (await tabs.boundingBox())!.y - (await tabs.boundingBox())!.height).toBe(16);
+  await page.screenshot({ path: info.outputPath('saved-ai-wide.png'), animations: 'disabled' });
+  await pages.getByRole('button', { name: 'Следующая страница' }).click();
+  const n8n = list.getByRole('button', { name: /^n8n/ });
+  await n8n.click();
+  await page.getByRole('button', { name: 'Вернуться к избранным решениям AI Hub' }).click();
+  await expect(pages.getByRole('button', { name: '2', exact: true })).toHaveAttribute('aria-current', 'page');
+  await expect(n8n).toBeFocused();
+  for (const id of ['n8n', 'ragu']) {
+    await list.locator(`[data-home-favorite-id="${id}"]`).getByRole('button').click();
+    await page.locator(`[data-ai-detail="${id}"]`).getByRole('button', { name: /^Закладка/ }).click();
+    await page.getByRole('button', { name: 'Вернуться к избранным решениям AI Hub' }).click();
+  }
+  await expect(pages).toHaveCount(0);
+  await expect(list.locator('[data-home-favorite-id]')).toHaveCount(3);
+  await page.setViewportSize({ width: 900, height: 760 });
+  await tabs.getByRole('tab', { name: 'Источники 1', exact: true }).click();
+  await expect(page.getByRole('region', { name: 'Избранные источники' }).getByRole('button')).toBeVisible();
+  await page.screenshot({ path: info.outputPath('saved-sources-compact.png'), animations: 'disabled' });
+  await page.setViewportSize({ width: 660, height: 760 });
+  const sourceTitle = page.getByRole('region', { name: 'Избранные источники' }).getByText('rewedo_crm_production.public.versions', { exact: true });
+  await expect(sourceTitle).toHaveAttribute('data-overflow-clipped', 'true');
+  await sourceTitle.hover();
+  await expect(page.getByRole('tooltip')).toHaveText('rewedo_crm_production.public.versions');
+});
+
 test('Home Domains lists catalog domains and opens the same reports in both views', async ({ page }, info) => {
   await page.setViewportSize({ width: 1440, height: 900 });
   await page.goto('/preview/navigation?section=home&paginationDemo=0');
   const segments = page.getByRole('tablist', { name: 'Раздел отчётов' });
-  const domains = segments.getByRole('tab', { name: 'Домены', exact: true });
+  const domains = segments.getByRole('tab', { name: 'Домены 6', exact: true });
+  const badge = domains.locator('[data-control-count]');
   await expect(segments.getByRole('tab')).toHaveCount(4);
   expect(await segments.getByRole('tab').evaluateAll(tabs => tabs.map(tab => tab.getAttribute('data-control-id'))))
     .toEqual(['favorites', 'domains', 'subscriptions', 'contribution']);
+  await expect(badge).toHaveText('6');
+  await expect(badge).toHaveAttribute('data-selected', 'false');
   await domains.click();
+  await expect(badge).toHaveAttribute('data-selected', 'true');
   const grid = page.getByRole('region', { name: 'Домены отчётов' });
   const card = grid.getByRole('button', { name: 'Гостеприимство 5 отчётов' });
   await expect(grid.getByRole('article')).toHaveCount(6);
@@ -22,6 +126,7 @@ test('Home Domains lists catalog domains and opens the same reports in both view
   await expect(domains).toHaveAttribute('aria-selected', 'true');
   await expect(breadcrumb.getByText('Гостеприимство')).toBeVisible();
   await expect(table.locator('[data-table-report-id]')).toHaveCount(5);
+  await expect(badge).toHaveText('6');
   await expect(table.getByRole('button', { name: 'Гостеприимство' })).toHaveCount(0);
   const tableIds = await table.locator('[data-table-report-id]').evaluateAll(rows => rows.map(row => row.getAttribute('data-table-report-id')));
   await page.screenshot({ path: info.outputPath('home-domain-table.png'), animations: 'disabled' });

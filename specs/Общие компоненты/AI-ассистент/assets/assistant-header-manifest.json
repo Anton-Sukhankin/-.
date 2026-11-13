@@ -1,0 +1,24 @@
+{
+  "date": "2026-11-13",
+  "browser": "Chromium",
+  "deviceScaleFactor": 1,
+  "frames": [
+    {
+      "file": "assistant-header-crop.png",
+      "route": "/preview/navigation?section=home",
+      "state": "Шапка пустой панели. Заголовок и подпись слева, справа «История», высота, разворот, разделитель и закрытие.",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sha256": "75dab934be31f33604a07bfad66dfe57ebb059c7f781a8ba57e20060d7673106",
+      "parent": "02-empty.png",
+      "clip": {
+        "x": 663,
+        "y": 68,
+        "width": 759,
+        "height": 78
+      }
+    }
+  ]
+}

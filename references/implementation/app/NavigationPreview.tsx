@@ -17,7 +17,7 @@ import { metricCatalogPage, readMetricCatalogState } from '../data/metrics';
 import { readSourceCatalogView, sourceCatalogPage } from '../data/sources';
 import { readSourceDetailTab } from '../data/sourceDetails';
 import { demoMetricsGateway } from '../demo/metrics';
-import { demoSourcesGateway } from '../demo/sources';
+import { demoSourcesGateway, rewedoSourceId } from '../demo/sources';
 import { readRelatedSourceReportSummary } from '../demo/relatedSourceReports';
 import { demoAdditionalSearchEntries, demoAiSearchEntries, demoQuestionSearchEntries, demoReferenceSearchEntries, demoReportSearchEntries } from '../demo/catalogSearch';
 import type { ReportSummary } from '../data/reports';
@@ -55,6 +55,7 @@ import { SourcesWorkspace } from '../features/sources/SourcesWorkspace';
 import { DictionaryWorkspace } from '../features/dictionary/DictionaryWorkspace';
 import { demoDictionaryGateway } from '../demo/dictionary';
 import { AiHubCatalog } from '../features/ai-hub/AiHubCatalog';
+import { HomeFavoriteCards, type HomeFavoritePosition } from '../features/home-favorites/HomeFavoriteCards';
 import { AiAssistant } from '../features/ai-assistant/AiAssistant';
 import { SystemReferencesWorkspace } from '../features/system-references/SystemReferencesWorkspace';
 import { demoSystemReferencesGateway } from '../demo/systemReferences';
@@ -76,7 +77,7 @@ type SearchSelection = {
   highlightDescription?: true;
 };
 type DetailOriginState = { searchSelection?: SearchSelection; restoreCatalogSearch?: boolean; report?: ReportSummary; returnTo?: string; reportOrigin?: 'tasks' | 'domains' };
-type NavigationState = DetailOriginState & { detailHistoryDepth?: number; detailOrigin?: DetailOriginState | null };
+type NavigationState = DetailOriginState & { detailHistoryDepth?: number; detailOrigin?: DetailOriginState | null; fromHomeFavorite?: 'source' | 'ai' };
 
 const defaultHomeViews = { favorites: DEFAULT_VIEW_MODE, domains: DEFAULT_VIEW_MODE, subscriptions: DEFAULT_VIEW_MODE, contribution: DEFAULT_VIEW_MODE };
 const additionalDomainReportIds = new Set(['demo-report-construction', 'demo-report-team-workload']);
@@ -98,6 +99,13 @@ const aiSearchEntries = demoAiSearchEntries(demoAiSolutions);
 const paginatedAiSearchEntries = demoAiSearchEntries(paginatedAi);
 const referenceSearchEntries = demoReferenceSearchEntries(demoSystemReferencesGateway.list());
 const paginatedReferenceSearchEntries = demoReferenceSearchEntries(paginationReferencesGateway.list());
+
+function toggleBookmark(bookmarks: ReadonlySet<string>, id: string) {
+  const next = new Set(bookmarks);
+  if (next.has(id)) next.delete(id);
+  else next.add(id);
+  return next;
+}
 
 function createHighlightToken() {
   return crypto.getRandomValues(new Uint32Array(2)).join('-');
@@ -173,7 +181,12 @@ export function NavigationPreview({ tablePageSize = listPageSize, favoritePageSi
   const main = useRef<HTMLElement>(null);
   const aiScrollPosition = useRef(0);
   const sourceDetailScroll = useRef(new Map<string, number>());
-  const [aiBookmarks, setAiBookmarks] = useState<ReadonlySet<string>>(() => new Set());
+  const [aiBookmarks, setAiBookmarks] = useState<ReadonlySet<string>>(() => new Set(emptyHome === 'ai-hub' ? [] : ['failik', 'n8n']));
+  const [sourceBookmarks, setSourceBookmarks] = useState<ReadonlySet<string>>(() => new Set(emptyHome === 'sources' ? [] : [rewedoSourceId]));
+  const [homeFavoritePositions, setHomeFavoritePositions] = useState<ReadonlyMap<string, HomeFavoritePosition>>(() => new Map());
+  const aiSolutions = paginationDemo ? paginatedAi : demoAiSolutions;
+  const favoriteSolutions = aiSolutions.filter(item => aiBookmarks.has(item.id));
+  const favoriteSources = sourcesGateway.list().filter(item => sourceBookmarks.has(item.id));
   const [submittedAppeals, setSubmittedAppeals] = useState<readonly QuestionAppeal[]>([]);
   const activeId = navigationFixture.some(item => item.id === params.get('section')) ? params.get('section')! : 'home';
   const activeSection = navigationFixture.find(item => item.id === activeId)!;
@@ -191,7 +204,8 @@ export function NavigationPreview({ tablePageSize = listPageSize, favoritePageSi
   const favoriteFilters = useReportFilters(() => { setFavoritePageIndex(0); clearSearchSelection(); });
   const homeTab = homeTabs.some(item => item.id === params.get('tab')) ? params.get('tab')! : 'reports';
   const homeSegment = homeReportSegments.some(item => item.id === params.get('segment')) ? params.get('segment')! : 'favorites';
-  const isDomains = activeId === 'home' && homeTab === 'reports' && homeSegment === 'domains' && !hasDetail;
+  const isHomeReports = activeId === 'home' && homeTab === 'reports' && !hasDetail;
+  const isDomains = isHomeReports && homeSegment === 'domains';
   const homeDomain = params.get('reportDomain');
   const domainFilters = useReportFilters(() => {
     if (params.has('domainPage')) updateLocation({ domainPage: undefined }, { replace: true }, 'tab');
@@ -215,11 +229,11 @@ export function NavigationPreview({ tablePageSize = listPageSize, favoritePageSi
     enabled: activeId === 'home' && !selectedReportId });
   const favoriteRows = emptyHome === 'favorites' ? [] : favoriteRecords.data && (expandFavorites ? paginationReportRows(favoriteRecords.data) : favoriteRecords.data);
   const tableRecords = useQuery({ queryKey: ['demo', 'report-table-records'],
-    queryFn: ({ signal }) => readDemoReportRows(signal), enabled: activeId === 'reports' || isDomains });
+    queryFn: ({ signal }) => readDemoReportRows(signal), enabled: activeId === 'reports' || isHomeReports });
   const reportRows = tableRecords.data && (expandReportCatalog ? paginationReportRows(tableRecords.data) : tableRecords.data);
   const domainRowsReady = reportRows !== undefined && favoriteRecords.data !== undefined;
   const domains = new Map<string, ReportTableRow[]>();
-  if (isDomains && domainRowsReady) {
+  if (isHomeReports && domainRowsReady) {
     const catalogIds = new Set(reportRows.map(row => row.id));
     const additions = favoriteRecords.data.filter(row => additionalDomainReportIds.has(row.id) && !catalogIds.has(row.id));
     for (const row of [...reportRows, ...additions]) {
@@ -228,7 +242,13 @@ export function NavigationPreview({ tablePageSize = listPageSize, favoritePageSi
       else domains.set(row.domain, [row]);
     }
   }
-  const domainRows = homeDomain ? domains.get(homeDomain) : undefined;
+  const domainRows = isDomains && homeDomain ? domains.get(homeDomain) : undefined;
+  const homeReportSegmentCounts = {
+    favorites: favoriteRows?.length,
+    domains: domainRowsReady ? domains.size : undefined,
+    subscriptions: subscriptions.length,
+    contribution: contributors.length,
+  };
   const domainPage = domainRows && reportTablePage(
     sortReportRows(filterReportRows(domainRows, domainFilters.applied), domainFilters.sort),
     Number(params.get('domainPage') ?? '1') - 1, tablePageSize,
@@ -491,6 +511,15 @@ export function NavigationPreview({ tablePageSize = listPageSize, favoritePageSi
     ...detailTrail.map((step, index) => ({ label: detailLabel(step), onSelect: () => openDetailAncestor(index) })),
   ] : undefined;
   function changeHomeTab(id: string) { closeOverlays(); updateLocation({ tab: id, news: undefined }, undefined, 'tab'); setEditNotice(undefined); }
+  function openHomeFavorite(kind: 'source' | 'ai', id: string, position: HomeFavoritePosition) {
+    setHomeFavoritePositions(previous => new Map(previous).set(location.key, position));
+    const state: NavigationState = { fromHomeFavorite: kind };
+    const destination = kind === 'source'
+      ? { section: 'sources', source: id, sourceTab: 'fields' }
+      : { section: 'ai', 'ai.solution': id };
+    updateLocation(destination, { state });
+  }
+  function backToHomeFavorite() { transitionCatalog(() => navigate(-1)); }
   function changeHomeSegment(id: string) {
     closeOverlays();
     updateLocation({ segment: id, ...(id !== 'domains' ? { reportDomain: undefined, domainPage: undefined } : {}) }, undefined, 'tab');
@@ -522,6 +551,10 @@ export function NavigationPreview({ tablePageSize = listPageSize, favoritePageSi
     setEditNotice(intent.kind === 'unsubscribe' ? 'Отписка не выполнена: серверные действия в демопрототип не подключены.' : 'Переход к боту не выполнен: внешний адрес в документации не определён.');
   }
   const isFavorites = activeId === 'home' && homeTab === 'reports' && homeSegment === 'favorites' && !selectedReportId;
+  const homeFavoriteKind = activeId === 'home' && !hasDetail
+    ? homeTab === 'sources' ? 'source' : homeTab === 'ai-hub' ? 'ai' : undefined
+    : undefined;
+  const homeFavoritePosition = homeFavoritePositions.get(location.key);
   const isSubscriptions = activeId === 'home' && homeTab === 'reports' && homeSegment === 'subscriptions' && !selectedReportId;
   const isContribution = activeId === 'home' && homeTab === 'reports' && homeSegment === 'contribution' && contributionType === 'contributors' && !selectedReportId;
   const hasFavoriteRows = Boolean(favoriteRows?.length);
@@ -564,11 +597,7 @@ export function NavigationPreview({ tablePageSize = listPageSize, favoritePageSi
     }, ...previous]);
   }
   function toggleAiBookmark(id:string) {
-    setAiBookmarks(previous => {
-      const next = new Set(previous);
-      if (next.has(id)) next.delete(id); else next.add(id);
-      return next;
-    });
+    setAiBookmarks(previous => toggleBookmark(previous, id));
   }
   return (
     <div className={styles.preview} inert={panel.isOpen || sourcePanelOpen || aiPanelOpen}>
@@ -609,9 +638,12 @@ export function NavigationPreview({ tablePageSize = listPageSize, favoritePageSi
             onOpenRelatedMetric={id=>openRelatedDetail('metric',id)} onOpenReport={id=>openRelatedDetail('report',id)} />}
           {activeId === 'home' && !selectedReportId && (
             <HomeControls tabs={{ ariaLabel: 'Тип содержимого', items: homeTabs.map(item => ({
-              ...item, count: item.id === 'news' ? newsRecords.length : item.id === 'reports' ? favoriteRows?.length : undefined,
+              ...item, count: item.id === 'news' ? newsRecords.length : item.id === 'reports' ? favoriteRows?.length
+                : item.id === 'sources' ? favoriteSources.length : item.id === 'ai-hub' ? favoriteSolutions.length : undefined,
             })), selectedId: homeTab, onChange: changeHomeTab }}
-              segments={homeTab === 'reports' ? { ariaLabel: 'Раздел отчётов', items: homeReportSegments.map(item => ({...item,count:item.id === 'favorites' ? favoriteRows?.length : item.id === 'subscriptions' ? subscriptions.length : item.id === 'contribution' ? contributors.length : undefined})), selectedId: homeSegment, onChange: changeHomeSegment }
+              segments={homeTab === 'reports' ? { ariaLabel: 'Раздел отчётов', items: homeReportSegments.map(item => ({
+                ...item, count: homeReportSegmentCounts[item.id],
+              })), selectedId: homeSegment, onChange: changeHomeSegment }
                 : homeTab === 'news' && !isReadingNews && newsRecords.length > 0 ? { ariaLabel: 'Категории новостей', items: homeNewsCategories.map(item => ({...item,count:filterNewsByCategory(newsRecords,item.id as NewsCategoryId).length})), selectedId: newsCategory, onChange: id => updateLocation({ category: id, news: undefined, newsPage: undefined }, undefined, 'tab') } : undefined}
               contribution={homeTab === 'reports' && homeSegment === 'contribution' && contributors.length > 0 ? { ariaLabel: 'Тип вклада', items: homeContributionTypes, selectedId: contributionType, onChange: setContributionType } : undefined}
               view={hasHomeResults ? { value: homeView, onChange: value => { closeOverlays(); clearSearchSelection(); setHomeViews(previous => ({ ...previous, [homeSegment]: value })); } } : undefined}
@@ -634,6 +666,19 @@ export function NavigationPreview({ tablePageSize = listPageSize, favoritePageSi
               onChangeArticle={id => updateLocation({ news: id }, { replace: true, state: location.state }, 'tab')}
               listScrollTop={newsScroll.current[newsCategory] ?? 0} onListScroll={top => { newsScroll.current[newsCategory] = top; }}
               listViewportOffset={newsRecords.length ? 210 : 154} readingViewportOffset={162} />
+          </div>}
+          {homeFavoriteKind && <div className={styles.homeResults} data-detail-tab-content>
+            <HomeFavoriteCards key={homeFavoriteKind} kind={homeFavoriteKind} pageSize={homePageSize}
+              items={homeFavoriteKind === 'source'
+                ? favoriteSources.map(item => ({ id: item.id, title: item.technicalName, description: [item.platform, item.layer].filter(Boolean).join(' · ') }))
+                : favoriteSolutions.map(item => ({ id: item.id, title: item.title, description: item.domain }))}
+              pageIndex={Number(params.get(homeFavoriteKind === 'source' ? 'favoriteSourcePage' : 'favoriteAiPage') ?? 0)}
+              position={homeFavoritePosition}
+              onOpen={(id, position) => openHomeFavorite(homeFavoriteKind, id, position)}
+              onPageChange={index => updateLocation({
+                [homeFavoriteKind === 'source' ? 'favoriteSourcePage' : 'favoriteAiPage']: index ? String(index) : undefined,
+              }, { replace: true }, 'tab')}
+              onOpenCatalog={() => openSectionStart(homeFavoriteKind === 'source' ? 'sources' : 'ai')} />
           </div>}
           {isDomains && <div className={styles.homeResults} data-detail-tab-content>
             {homeDomain && <div className={styles.domainBreadcrumb}>
@@ -710,14 +755,18 @@ export function NavigationPreview({ tablePageSize = listPageSize, favoritePageSi
           </div>}
           {editNotice && <div className={styles.notice}><p role="status">{editNotice}</p><button type="button" onClick={() => setEditNotice(undefined)} aria-label="Закрыть уведомление">×</button></div>}
           {(isSourceDetail || activeId === 'sources' && !hasDetail) && <SourcesWorkspace gateway={sourcesGateway} detailsGateway={paginationDemo ? paginationSourceDetailsGateway : undefined}
-            breadcrumbs={detailBreadcrumbs} reportDetails={reportDetails} onModalChange={setSourcePanelOpen} searchTarget={searchDestination?.kind === 'source' ? searchDestination.id : undefined}
+            breadcrumbs={detailBreadcrumbs ?? (navigationState?.fromHomeFavorite === 'source' ? [{ label: 'Избранные источники', onSelect: backToHomeFavorite }] : undefined)}
+            bookmarks={sourceBookmarks} onBookmark={id => setSourceBookmarks(previous => toggleBookmark(previous, id))}
+            reportDetails={reportDetails} onModalChange={setSourcePanelOpen} searchTarget={searchDestination?.kind === 'source' ? searchDestination.id : undefined}
             relatedNavigation={{
               link: relatedDetailDestination,
               saveScroll: top => { sourceDetailScroll.current.set(location.key, top); },
               scrollTop: sourceDetailScroll.current.get(location.key),
             }} />}
           {activeId === 'dictionary' && !selectedReportId && <DictionaryWorkspace gateway={paginationDemo ? paginationDictionaryGateway : demoDictionaryGateway} />}
-          {isAiCatalog && <AiHubCatalog items={paginationDemo ? paginatedAi : demoAiSolutions} scrollPosition={aiScrollPosition} bookmarks={aiBookmarks} onBookmark={toggleAiBookmark} onModalChange={setAiPanelOpen}/>}
+          {isAiCatalog && <AiHubCatalog items={aiSolutions} scrollPosition={aiScrollPosition} bookmarks={aiBookmarks}
+            onBookmark={toggleAiBookmark} onModalChange={setAiPanelOpen}
+            onBackToHome={navigationState?.fromHomeFavorite === 'ai' ? backToHomeFavorite : undefined} />}
           {isSystemReferences && <SystemReferencesWorkspace gateway={paginationDemo ? paginationReferencesGateway : demoSystemReferencesGateway} />}
           {isQuestions && <QuestionsWorkspace key={sidebarEntry} faq={faq} appeals={appeals} onSubmitQuestion={submitQuestion}
             onClearSearch={clearSearchSelection} />}
@@ -729,13 +778,9 @@ export function NavigationPreview({ tablePageSize = listPageSize, favoritePageSi
                 action={{ label: 'К отчётам', onClick: returnFromReport }} />}
           </section>}
           {isTasks && <TasksWorkspace tasks={demoMailingTasks} onOpenReport={openReport} />}
-          {activeId === 'home' && !selectedReportId && !isFavorites && !isSubscriptions && !isContribution && !isNews &&
+          {activeId === 'home' && !selectedReportId && !homeFavoriteKind && !isDomains && !isFavorites && !isSubscriptions && !isContribution && !isNews &&
             <EmptyState className={styles.catalogEmpty} data-detail-tab-content title="Содержимое недоступно на главной"
-              description={homeTab === 'sources' || homeTab === 'ai-hub' ? 'Откройте полный каталог в соответствующем разделе.' : 'Выберите другой раздел на главной.'}
-              action={homeTab === 'sources' || homeTab === 'ai-hub' ? {
-                label: homeTab === 'sources' ? 'К источникам' : 'В AI Hub',
-                onClick: () => updateLocation({ section: homeTab === 'sources' ? 'sources' : 'ai', source: undefined }),
-              } : undefined} />}
+              description="Выберите другой раздел на главной." />}
           </SearchLandingContext.Provider>
         </main>
       </div>

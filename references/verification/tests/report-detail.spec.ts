@@ -148,10 +148,21 @@ test('all report tabs share the pinned information panel', async ({ page }) => {
   }).toEqual([0, 8]);
 });
 
-test('overview accordions, question form and responsive content work without server claims', async ({ page }) => {
+test('overview accordions, question form and responsive content work without server claims', async ({ page }, testInfo) => {
   const errors:string[]=[]; page.on('pageerror',e=>errors.push(e.message));
   await page.setViewportSize({ width:1440,height:900 }); await page.goto(entry);
   const accordion=page.getByRole('button',{name:/Об отчёте Назначение/});
+  const surface = accordion.locator('xpath=../..');
+  await expect(surface).toHaveCSS('border-bottom-left-radius', '0px');
+  await expect(surface).toHaveCSS('border-bottom-right-radius', '0px');
+  await expect(surface).toHaveCSS('border-bottom-style', 'solid');
+  await expect(surface.locator('[data-accordion-body]')).toHaveCSS('border-top-left-radius', '0px');
+  const businessQuestions = page.getByRole('button', { name: /^На какие вопросы отвечает отчёт/ });
+  const questionCount = (await businessQuestions.getByText('8', { exact: true }).boundingBox())!;
+  const ai = (await businessQuestions.locator('img[src$="ai-hint.svg"]').boundingBox())!;
+  expect(questionCount.x + questionCount.width).toBeLessThan(ai.x);
+  await page.evaluate(() => document.fonts.ready);
+  await page.screenshot({ path: testInfo.outputPath('overview-accordion-1440.png'), animations: 'disabled' });
   const initial=await accordion.boundingBox();
   await accordion.click(); await expect(accordion).toHaveAttribute('aria-expanded','false');
   await accordion.press('Space'); await expect(accordion).toHaveAttribute('aria-expanded','true');
